@@ -1,0 +1,448 @@
+{
+  "_doc": "Topic queue. Status: idea -> spec_ready -> rendered -> approved -> scheduled -> posted. Scheduled runs take the next 'approved' item of the right kind; posted.json is the source of truth for what went live. Keep neighbouring Shorts on different pillars; ~1 in 5 India stories.",
+  "shorts": [
+    {
+      "slug": "rule_of_72",
+      "kind": "short",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "The Rule of 72: how fast your money doubles at 4%, 7% and 10%",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "minimum_payment_trap_us",
+      "kind": "short",
+      "pillar": "financing_traps",
+      "currency": "usd",
+      "idea": "Only paying the credit card minimum: 16 years, $7,600 interest",
+      "spec": "014_minimum_payment_trap_us",
+      "status": "spec_ready"
+    },
+    {
+      "slug": "buying_a_share",
+      "kind": "short",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "What actually happens when you buy a share",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "upi_free",
+      "kind": "short",
+      "pillar": "business",
+      "currency": "inr",
+      "idea": "How UPI is free: who pays for it? (India story)",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "start_early_us",
+      "kind": "short",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "Same $300/month: start at 25 vs 35",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "real_hourly_wage",
+      "kind": "short",
+      "pillar": "earn_more",
+      "currency": "usd",
+      "idea": "Your real hourly wage after commute and work costs",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "index_funds_vs_managers",
+      "kind": "short",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "Why most fund managers lose to the index (SPIVA)",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "bnpl",
+      "kind": "short",
+      "pillar": "financing_traps",
+      "currency": "usd",
+      "idea": "Buy Now Pay Later: the late-fee and overspending math",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "airline_loyalty",
+      "kind": "short",
+      "pillar": "business",
+      "currency": "usd",
+      "idea": "How airlines make money from credit cards, not seats",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "inflation_100",
+      "kind": "short",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "What $100 buys in 20 years at 3% inflation",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "expense_ratio",
+      "kind": "short",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "A 1% fee vs 0.05%: what it costs over 30 years",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "emergency_fund",
+      "kind": "short",
+      "pillar": "financing_traps",
+      "currency": "usd",
+      "idea": "Emergency fund: how much and where to keep it",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "start_early_in",
+      "kind": "short",
+      "pillar": "money_math",
+      "currency": "inr",
+      "idea": "Same ₹5,000 SIP: start at 25 vs 35 (India story)",
+      "spec": "001_start_early",
+      "status": "spec_ready"
+    },
+    {
+      "slug": "news_week1",
+      "kind": "short",
+      "pillar": "news",
+      "currency": "usd",
+      "idea": "Money news of the week, explained (researched on the day)",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "lifestyle_inflation",
+      "kind": "short",
+      "pillar": "financing_traps",
+      "currency": "usd",
+      "idea": "Lifestyle inflation: how a raise can make you poorer",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "market_cap",
+      "kind": "short",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "Market cap: why a company's value isn't its revenue",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "zerodha",
+      "kind": "short",
+      "pillar": "business",
+      "currency": "inr",
+      "idea": "How Zerodha makes money with zero brokerage (India story)",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "car_loan_cost",
+      "kind": "short",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "The real cost of a $35,000 car loan",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "raise_vs_switch",
+      "kind": "short",
+      "pillar": "earn_more",
+      "currency": "usd",
+      "idea": "Asking for a raise vs switching jobs: the 10-year math",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "rates_and_you",
+      "kind": "short",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "What the Fed rate does to your loans and savings",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "free_apps",
+      "kind": "short",
+      "pillar": "business",
+      "currency": "usd",
+      "idea": "How 'free' apps like Instagram earn from you",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "credit_score",
+      "kind": "short",
+      "pillar": "financing_traps",
+      "currency": "usd",
+      "idea": "Your credit score: what moves it up and down",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "dca_vs_lump",
+      "kind": "short",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "Lump sum vs monthly investing: which wins, and when",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "gold_fear",
+      "kind": "short",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "Why gold rises when the world is scared",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "minimum_due_in",
+      "kind": "short",
+      "pillar": "financing_traps",
+      "currency": "inr",
+      "idea": "The credit card 'minimum due' trap (India story)",
+      "spec": "013_minimum_due_trap",
+      "status": "spec_ready"
+    },
+    {
+      "slug": "apple_profit",
+      "kind": "short",
+      "pillar": "business",
+      "currency": "usd",
+      "idea": "Why Apple makes more profit than almost anyone",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "side_income",
+      "kind": "short",
+      "pillar": "earn_more",
+      "currency": "usd",
+      "idea": "$500/month side income: what it's worth in 10 years",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "mortgage_prepay",
+      "kind": "short",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "One extra mortgage payment a year: what it saves",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "bonds_friend",
+      "kind": "short",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "Bonds explained with a friend who borrows money",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "no_cost_emi",
+      "kind": "short",
+      "pillar": "financing_traps",
+      "currency": "inr",
+      "idea": "'No-cost EMI': who actually pays the interest (India story)",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "ipl",
+      "kind": "short",
+      "pillar": "business",
+      "currency": "inr",
+      "idea": "How the IPL makes billions (India story)",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "save_for_million",
+      "kind": "short",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "How much to save monthly to reach $1M by 50, 60, 65",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "dividends_buybacks",
+      "kind": "short",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "Dividends vs buybacks: how companies return money",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "rent_vs_buy",
+      "kind": "short",
+      "pillar": "financing_traps",
+      "currency": "usd",
+      "idea": "Rent vs buy: the costs nobody shows you",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "quick_commerce",
+      "kind": "short",
+      "pillar": "business",
+      "currency": "usd",
+      "idea": "How 10-minute delivery works, and what it costs",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "raise_vs_inflation",
+      "kind": "short",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "Your raise vs inflation: are you actually richer?",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "crash_and_sip",
+      "kind": "short",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "What a market crash really means for a monthly investor",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "insurance_types",
+      "kind": "short",
+      "pillar": "financing_traps",
+      "currency": "usd",
+      "idea": "Term vs whole life insurance: the $1M question",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "amul",
+      "kind": "short",
+      "pillar": "business",
+      "currency": "inr",
+      "idea": "How Amul sells milk so cheap and still wins (India story)",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "online_income_ads",
+      "kind": "short",
+      "pillar": "earn_more",
+      "currency": "usd",
+      "idea": "Why 'make $10K a month online' ads are lies",
+      "spec": null,
+      "status": "idea"
+    }
+  ],
+  "long": [
+    {
+      "slug": "L001_costco",
+      "kind": "long",
+      "pillar": "business",
+      "currency": "usd",
+      "idea": "How Costco Makes $9 Billion While Barely Profiting From Products",
+      "spec": "L001_costco",
+      "status": "spec_ready"
+    },
+    {
+      "slug": "L002_compounding",
+      "kind": "long",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "Compound interest, explained properly: the 4 numbers that decide your wealth",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "L003_index_funds",
+      "kind": "long",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "Why Most Professional Investors Lose to a Simple Index Fund",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "L004_credit_cards_business",
+      "kind": "long",
+      "pillar": "financing_traps",
+      "currency": "usd",
+      "idea": "How Credit Card Companies Really Make Money (and who pays)",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "L005_airlines",
+      "kind": "long",
+      "pillar": "business",
+      "currency": "usd",
+      "idea": "Airlines Barely Make Money Flying. Here's What Actually Pays.",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "L006_inflation",
+      "kind": "long",
+      "pillar": "money_math",
+      "currency": "usd",
+      "idea": "Inflation, explained: why your money quietly shrinks",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "L007_upi",
+      "kind": "long",
+      "pillar": "business",
+      "currency": "inr",
+      "idea": "How India Built a Free Payment System Used 20 Billion Times a Month",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "L008_stock_market",
+      "kind": "long",
+      "pillar": "markets",
+      "currency": "usd",
+      "idea": "What Actually Happens When You Buy a Stock",
+      "spec": null,
+      "status": "idea"
+    },
+    {
+      "slug": "L009_rent_vs_buy",
+      "kind": "long",
+      "pillar": "financing_traps",
+      "currency": "usd",
+      "idea": "Rent vs Buy: The Full Math Nobody Shows You",
+      "spec": null,
+      "status": "idea"
+    }
+  ]
+}
