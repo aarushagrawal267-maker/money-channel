@@ -13,9 +13,15 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 
 ## Repo layout
 - `pipeline/render.py`: vertical Short renderer (spec JSON → mp4). Visual types: pair, compare, timeline, stat, bars, equation, line, cta.
-- `pipeline/render_long.py`: 16:9 long-form renderer (chapters file + thumbnail). Types: chapter, title, stat, stat_grid, hbars, share, flywheel, bullets, equation, line, cta.
+- `pipeline/render_long.py`: 16:9 long-form renderer (chapters file + thumbnail). Types: chapter, title, stat, count, stat_grid, hbars, share, flywheel, bullets, equation, line, cta, waterfall, donut, columns, versus, timeline, quote, table.
+- `pipeline/preview.py SPEC.json OUT_DIR`: contact sheet of every scene in seconds (no voice). Always check it before rendering.
+- `pipeline/upload.py SPEC.json VIDEO.mp4 [--thumb] [--chapters] [--publish-at ISO+tz]`: uploads, sets thumbnail, waits for processing, appends to `pipeline/posted.json`. Refuses to re-upload an id already posted.
+- `pipeline/queue.json`: topic queue (40 Shorts, 9 long) with pillar/currency/status; neighbouring Shorts must differ in pillar.
+- `tools/render_batch.sh id1 id2 ...`: renders one at a time into `output/` (gitignored), logs to `output/batch.log`.
+- `docs/AUDIT_FORM_ANSWERS.md` + `docs/audit/`: owner's copy-paste answers and evidence files for the YouTube API audit form.
 - `pipeline/specs/*.py`: one file per video; running it validates numbers and writes the JSON spec.
-  - Done: `001_start_early` (INR), `013_minimum_due_trap` (INR), `014_minimum_payment_trap_us` (USD), `L001_costco` (long, FY2026 Costco figures; rendered but not yet reviewed).
+  - Shorts: `001_start_early` (INR), `013_minimum_due_trap` (INR), `014_minimum_payment_trap_us`, `015_rule_of_72`, `016_buying_a_share`, `017_upi_free` (INR), `018_start_early_us`, `019_real_hourly_wage`, `020_index_funds_vs_managers`, `021_bnpl`, `022_airline_loyalty`, `023_inflation_100`, `024_expense_ratio`, `025_emergency_fund`.
+  - Long: `L001_costco` (~8 min, figures checked against FY2026 release + 10-K), `L002_compounding` (~10 min), `L003_index_funds` (~9 min; SPIVA figures from secondary write-ups, S&P PDFs block automated fetches).
 - `tools/get_youtube_token.py`: one-time OAuth script (owner already ran it).
 - `tools/branding_v3.py`: final branding generator. `branding/` holds the final files + `CHANNEL_DESCRIPTION.md`.
 - `site/`: homepage + privacy policy, published at https://aarushagrawal267-maker.github.io (repo `aarushagrawal267-maker/aarushagrawal267-maker.github.io`), used by the Google consent screen.
@@ -31,13 +37,14 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 - [x] Channel created, settings, branding
 - [x] Google Cloud project `money-channel`, consent screen **In production** (unverified, owner-only; warning screen is expected)
 - [x] OAuth Desktop client created; owner ran the token script
-- [ ] Owner saves env vars in the Claude environment: `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN` (optional `PEXELS_API_KEY`)
-- [ ] YouTube API audit form (needed for public API uploads; until approved, API uploads are locked to **private**). Draft the answers for the owner.
+- [x] Env vars saved (`YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`); token works, scopes: youtube.upload, youtube.readonly, yt-analytics.readonly.
+- [x] `pipeline/upload.py` built; private test upload of 014 succeeded 2026-11-21 (https://youtu.be/Ss1WYNrD6Kk, logged as `test` in posted.json).
+- [x] Audit form answers drafted (`docs/AUDIT_FORM_ANSWERS.md`). Site privacy policy expanded + `terms.html` added on branch `claude/friendly-gates-8o3lq0` of the Pages repo; **live site serves `main`, needs merging before the audit**.
+- [ ] Owner submits the audit form. Until approved, API uploads are locked to **private**; owner publishes in Studio.
+- [ ] Owner approves week 1 (14 Shorts incl. 1 news Short made fresh on the day, + L001–L003).
 
 ## Next steps for Claude
-1. Check the env vars exist (don't print values). Build `pipeline/upload.py` (YouTube Data API v3: videos.insert resumable upload, thumbnails.set, `publishAt` scheduling, category 27 Education, `selfDeclaredMadeForKids=false`, `containsSyntheticMedia=false` for chart videos).
-2. Test with one **private** upload of an existing sample; confirm with the owner.
-3. Build a topic queue + posted log (`pipeline/queue.json`, `pipeline/posted.json`) committed to the repo so scheduled runs never repeat.
-4. Review/fix `L001_costco`, add more long-form visual variety, then make week 1: 14 Shorts + 3 long videos for owner approval.
-5. Draft the audit form answers.
-6. After approval, set up scheduled tasks (fresh session per fire) for the upload times above, with failure notifications.
+1. Get owner feedback on week 1 and the private test upload; fix what they flag.
+2. News Short for week 1: research on the day it's made (rule 6), add as `026_news_...`.
+3. After approval, set up scheduled tasks (fresh session per fire) for the upload times above, with failure notifications. Each run: setup.sh → pick next approved item from queue.json → render → upload with `--publish-at` → commit posted.json/queue.json.
+4. Keep writing specs from `queue.json` a week ahead.
