@@ -419,6 +419,28 @@ def draw_captions(img, chunks, t):
             break
 
 # ---------------------------------------------------------------- main render
+def draw_chrome(img, spec):
+    d = ImageDraw.Draw(img)
+    badge, disclaimer = spec.get("badge", ""), spec.get("disclaimer", "")
+    if badge:
+        f = font(32, "Bold")
+        bw = f.getlength(badge) + 60
+        rrect(d, [CX - bw / 2, 225, CX + bw / 2, 285], 30, fill=col("green", 0.18), outline=col("green"), width=2)
+        text_c(d, (CX, 255), badge, f, col("green"))
+    if disclaimer:
+        text_c(d, (CX, 325), disclaimer, font(26, "Medium", False), col("dim"))
+
+def preview_frame(spec, i, t, dur=6.0):
+    """One still of scene i at time t (no audio): used by preview.py for quick layout checks."""
+    img = make_background().copy()
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw_chrome(layer, spec)
+    img.alpha_composite(layer)
+    vis = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    VISUALS[spec["scenes"][i]["visual"]["type"]](ImageDraw.Draw(vis), spec["scenes"][i]["visual"], t, max(dur, t + 0.5))
+    img.alpha_composite(vis, (0, VIS_SHIFT))
+    return img
+
 def render(spec_path, out_dir):
     spec = json.load(open(spec_path))
     global DEFAULT_FMT
@@ -438,8 +460,6 @@ def render(spec_path, out_dir):
            "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     nframes = int(total * FPS)
-    badge = spec.get("badge", "")
-    disclaimer = spec.get("disclaimer", "")
     for fi in range(nframes):
         t = fi / FPS
         si = 0
@@ -449,14 +469,7 @@ def render(spec_path, out_dir):
         seg, sc = tl[si], spec["scenes"][si]
         img = bg.copy()
         layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        d = ImageDraw.Draw(layer)
-        if badge:
-            f = font(32, "Bold")
-            bw = f.getlength(badge) + 60
-            rrect(d, [CX - bw / 2, 225, CX + bw / 2, 285], 30, fill=col("green", 0.18), outline=col("green"), width=2)
-            text_c(d, (CX, 255), badge, f, col("green"))
-        if disclaimer:
-            text_c(d, (CX, 325), disclaimer, font(26, "Medium", False), col("dim"))
+        draw_chrome(layer, spec)
         img.alpha_composite(layer)
         vis = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         st = t - (seg["start"] - 0.1)

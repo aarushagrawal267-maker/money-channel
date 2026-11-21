@@ -3,8 +3,8 @@
 Usage: python3 render_long.py spec.json out_dir
 
 Reuses audio, ASR caption sync and drawing helpers from render.py.
-Scene visual types: chapter, stat, stat_grid, hbars, share, flywheel, bullets,
-equation, line, cta, title.
+Scene visual types: chapter, title, stat, count, stat_grid, hbars, share, flywheel, bullets,
+equation, line, cta, waterfall, donut, columns, versus, timeline, quote, table.
 Writes <id>.mp4, <id>_chapters.txt (YouTube chapters) and <id>_thumb.png.
 """
 import json, math, os, subprocess, sys
@@ -200,9 +200,185 @@ def v_line(d, v, t, dur):
             if p > 0.98:
                 text_c(d, (ex - 20, ey - 30), s["label"], font(36, "Bold"), col(c), anchor="rb")
 
+def v_count(d, v, t, dur):
+    """Big number that counts up: {to, prefix, suffix, dp, label, sub, color, from}."""
+    title(d, v.get("title"), t)
+    p = ease(t / max(0.8, min(2.2, dur * 0.5)))
+    val = v.get("from", 0) + (v["to"] - v.get("from", 0)) * p
+    s = f"{v.get('prefix', '')}{val:,.{v.get('dp', 0)}f}{v.get('suffix', '')}"
+    a = ease(t / 0.4)
+    text_c(d, (CX, 540), s, font(230, "Black"), col(v.get("color", "gold"), a))
+    text_c(d, (CX, 720), v.get("label", ""), font(52, "SemiBold", False), col("text", a))
+    if v.get("sub"):
+        text_c(d, (CX, 790), v["sub"], font(38, "Medium", False), col("muted", a))
+
+def v_waterfall(d, v, t, dur):
+    """Revenue -> minus costs -> result. steps: [{label, value, kind: start|minus|plus|total, color?}]"""
+    title(d, v.get("title"), t)
+    steps = v["steps"]
+    run, tops = 0, []
+    for s in steps:
+        if s["kind"] in ("start", "total"):
+            lo, hi = 0, s["value"]; run = s["value"]
+        elif s["kind"] == "minus":
+            lo, hi = run - s["value"], run; run -= s["value"]
+        else:
+            lo, hi = run, run + s["value"]; run += s["value"]
+        tops.append((lo, hi))
+    mx = max(h for _, h in tops)
+    n = len(steps)
+    L, Rr, T, B = 260, 1660, 300, 800
+    bw = (Rr - L) / n * 0.62
+    Y = lambda val: B - val / mx * (B - T)
+    d.line([(L - 40, B), (Rr + 40, B)], fill=col("muted"), width=3)
+    per = max(0.5, (dur - 1.0) / n)
+    for i, (s, (lo, hi)) in enumerate(zip(steps, tops)):
+        p = ease((t - per * i) / 0.6)
+        if p <= 0:
+            continue
+        x = L + (i + 0.5) * (Rr - L) / n
+        c = s.get("color") or {"start": "blue", "minus": "red", "plus": "green", "total": "gold"}[s["kind"]]
+        if s["kind"] == "minus":   # grows downward from previous top
+            y1, y2 = Y(hi), Y(hi - (hi - lo) * p)
+        else:
+            y1, y2 = Y(lo + (hi - lo) * p), Y(lo)
+        if abs(y2 - y1) < 3:
+            y2 = y1 + 3
+        rrect(d, [x - bw / 2, y1, x + bw / 2, y2], 10, fill=col(c, 0.92))
+        if i + 1 < n and p > 0.95:
+            nxt = run_y = Y(hi if s["kind"] != "minus" else lo)
+            d.line([(x + bw / 2, nxt), (x + bw / 2 + (Rr - L) / n - bw, run_y)], fill=col("dim"), width=2)
+        lab = s.get("display") or ("−" if s["kind"] == "minus" else "") + fmt(s["value"], v.get("format"))
+        text_c(d, (x, min(y1, y2) - 34), lab, font(42, "Black"), col("text", p))
+        text_c(d, (x, B + 42), s["label"], font(34, "SemiBold", False), col("muted", p))
+
+def v_donut(d, v, t, dur):
+    """segments: [{label, value, color}], center (text), center_sub."""
+    title(d, v.get("title"), t)
+    segs = v["segments"]
+    tot = sum(s["value"] for s in segs)
+    cx, cy, r, wdt = 640, 570, 270, 90
+    p = ease(t / 1.4)
+    start = -90.0
+    for s in segs:
+        sweep = 360 * s["value"] / tot * p
+        if sweep > 0.3:
+            d.arc([cx - r, cy - r, cx + r, cy + r], start, start + sweep, fill=col(s.get("color", "green")), width=wdt)
+        start += sweep
+    a = ease((t - 0.6) / 0.5)
+    text_c(d, (cx, cy - 10), v.get("center", ""), font(76, "Black"), col("text", a))
+    if v.get("center_sub"):
+        text_c(d, (cx, cy + 55), v["center_sub"], font(32, "Medium", False), col("muted", a))
+    for i, s in enumerate(segs):
+        a = ease((t - 0.5 - 0.3 * i) / 0.4)
+        y = 570 - (len(segs) - 1) * 65 + i * 130
+        d.ellipse([1060, y - 20, 1100, y + 20], fill=col(s.get("color", "green"), a))
+        pct = s.get("display") or f"{s['value'] / tot * 100:.{v.get('dp', 0)}f}%"
+        text_c(d, (1130, y - 2), pct, font(56, "Black"), col(s.get("color", "green"), a), anchor="lm")
+        text_c(d, (1330, y - 2), s["label"], font(40, "SemiBold", False), col("text", a), anchor="lm")
+
+def v_columns(d, v, t, dur):
+    """Vertical columns: items [{label, value, color?, display?}], optional highlight index."""
+    title(d, v.get("title"), t)
+    items = v["items"]
+    n = len(items)
+    mx = max(i["value"] for i in items) * 1.08
+    L, Rr, T, B = 240, 1680, 330, 800
+    slot = (Rr - L) / n
+    bw = min(170, slot * 0.6)
+    d.line([(L - 20, B), (Rr + 20, B)], fill=col("muted"), width=3)
+    for i, it in enumerate(items):
+        p = ease((t - 0.12 * i) / 0.9)
+        x = L + (i + 0.5) * slot
+        h = (B - T) * it["value"] / mx * p
+        c = it.get("color") or ("gold" if i == v.get("highlight") else v.get("color", "green"))
+        if h > 2:
+            rrect(d, [x - bw / 2, B - h, x + bw / 2, B], min(14, bw / 4), fill=col(c, 0.92))
+        lab = it.get("display") or fmt(it["value"] * p if p < 0.999 else it["value"], v.get("format"))
+        fs = 40 if n <= 8 else 30
+        text_c(d, (x, B - h - 32), lab, font(fs, "Black"), col("text", min(1, p * 2)))
+        text_c(d, (x, B + 40), str(it["label"]), font(32 if n <= 10 else 26, "SemiBold", False), col("muted"))
+    if v.get("note"):
+        text_c(d, (CX, B + 100), v["note"], font(32, "Medium", False), col("dim", ease((t - 1) / 0.5)))
+
+def v_versus(d, v, t, dur):
+    """Two cards: left/right {label, value, sub, color}; optional verdict line."""
+    title(d, v.get("title"), t)
+    cw, ch, y0 = 640, 440, 320
+    for i, side in enumerate(("left", "right")):
+        it = v[side]
+        a = ease((t - 0.35 * i) / 0.5)
+        x0 = CX - 60 - cw if i == 0 else CX + 60
+        c = it.get("color", "green" if i else "blue")
+        y = y0 + 30 * (1 - a)
+        rrect(d, [x0, y, x0 + cw, y + ch], 36, fill=col(c, 0.10 * a), outline=col(c, 0.8 * a), width=4)
+        text_c(d, (x0 + cw / 2, y + 80), it["label"], font(46, "Bold"), col("text", a))
+        text_c(d, (x0 + cw / 2, y + 220), it["value"], font(120 if len(it["value"]) < 8 else 88, "Black"), col(c, a))
+        if it.get("sub"):
+            text_c(d, (x0 + cw / 2, y + 345), it["sub"], font(34, "Medium", False), col("muted", a))
+    a = ease((t - 0.2) / 0.4)
+    text_c(d, (CX, y0 + ch / 2), "vs", font(54, "Black"), col("dim", a))
+    if v.get("verdict"):
+        text_c(d, (CX, y0 + ch + 70), v["verdict"], font(46, "Bold"), col("gold", ease((t - 1.0) / 0.5)))
+
+def v_timeline(d, v, t, dur):
+    """Horizontal milestones: events [{when, text, color?}]."""
+    title(d, v.get("title"), t)
+    ev = v["events"]
+    n = len(ev)
+    L, Rr, y = 220, 1700, 560
+    p = ease(t / max(1.0, dur * 0.7))
+    d.line([(L, y), (L + (Rr - L) * p, y)], fill=col("dim"), width=6)
+    for i, e in enumerate(ev):
+        x = L + (Rr - L) * (i / (n - 1) if n > 1 else 0.5)
+        a = ease((p * (Rr - L) - (x - L)) / 120 + 1) if n > 1 else ease(t / 0.5)
+        c = e.get("color", "green")
+        d.ellipse([x - 20, y - 20, x + 20, y + 20], fill=col(c, a))
+        up = i % 2 == 0
+        text_c(d, (x, y + (-80 if up else 80)), e["when"], font(48, "Black"), col(c, a))
+        for j, ln in enumerate(e["text"].split("\n")):
+            yy = y + (-150 - 44 * (len(e["text"].split("\n")) - 1 - j) if up else 140 + 44 * j)
+            text_c(d, (x, yy), ln, font(34, "SemiBold", False), col("text", a))
+
+def v_quote(d, v, t, dur):
+    """Big statement with a source line: {text (\\n allowed), source, color}."""
+    title(d, v.get("title"), t)
+    lines = v["text"].split("\n")
+    y0 = 540 - (len(lines) - 1) * 60
+    for i, ln in enumerate(lines):
+        a = ease((t - 0.3 * i) / 0.5)
+        text_c(d, (CX, y0 + i * 120), ln, font(86, "Black"), col(v.get("color", "text") if i else v.get("first_color", v.get("color", "text")), a))
+    d.rectangle([CX - 60, y0 - 130, CX + 60, y0 - 124], fill=col("green", ease(t / 0.5)))
+    if v.get("source"):
+        text_c(d, (CX, y0 + len(lines) * 120 + 20), v["source"], font(34, "Medium", False),
+               col("muted", ease((t - 0.8) / 0.5)))
+
+def v_table(d, v, t, dur):
+    """Simple table: header [..], rows [[..]], highlight_col optional."""
+    title(d, v.get("title"), t)
+    hdr, rows = v["header"], v["rows"]
+    nc = len(hdr)
+    L, Rr = 260, 1660
+    cw = (Rr - L) / nc
+    y0, rh = 330, min(110, 480 / max(1, len(rows)))
+    a = ease(t / 0.4)
+    for j, h in enumerate(hdr):
+        text_c(d, (L + (j + 0.5) * cw, y0), h, font(40, "Bold"), col("muted", a))
+    d.line([(L, y0 + 40), (Rr, y0 + 40)], fill=col("dim", a), width=3)
+    for i, row in enumerate(rows):
+        a = ease((t - 0.3 - 0.25 * i) / 0.4)
+        y = y0 + 40 + (i + 0.6) * rh
+        hl = v.get("highlight_row") == i
+        if hl:
+            rrect(d, [L - 20, y - rh / 2 + 6, Rr + 20, y + rh / 2 - 6], 18, fill=col("gold", 0.12 * a))
+        for j, cell in enumerate(row):
+            c = "gold" if hl else ("text" if j == 0 else v.get("col_colors", {}).get(str(j), "text"))
+            text_c(d, (L + (j + 0.5) * cw, y), str(cell), font(50 if j else 44, "Black" if j else "Bold"), col(c, a))
+
 VISUALS = dict(chapter=v_chapter, title=v_title, stat=v_stat, stat_grid=v_stat_grid, hbars=v_hbars,
                share=v_share, flywheel=v_flywheel, bullets=v_bullets, equation=v_equation,
-               cta=v_cta, line=v_line)
+               cta=v_cta, line=v_line, count=v_count, waterfall=v_waterfall, donut=v_donut,
+               columns=v_columns, versus=v_versus, timeline=v_timeline, quote=v_quote, table=v_table)
 
 # ------------------------------------------------------------------ captions
 def draw_caps(img, chunks, t):
