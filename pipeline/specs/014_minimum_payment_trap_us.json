@@ -1,0 +1,214 @@
+{
+ "id": "014_minimum_payment_trap_us",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.06,
+ "badge": "MONEY TRAP",
+ "disclaimer": "Illustration · 22% APR · minimum = 1% + interest ($35 floor) · no new spending",
+ "title": "Only paying the minimum on your credit card? Watch this. #shorts",
+ "description": "A $5,000 credit card balance at 22% APR. Pay only the minimum and it takes about 16 years and over $7,500 in interest to clear. Pay $300 a month and it's gone in 21 months for about $1,000.\n\nAssumptions: 22% APR (close to the 2026 US average for cards charging interest), minimum payment = 1% of balance + interest with a $35 floor, no new purchases. Minimum-payment formulas vary by card issuer; check your statement. Not financial advice.\n\n#creditcard #personalfinance #debt #moneytips #financialliteracy",
+ "tags": [
+  "credit card",
+  "minimum payment",
+  "credit card debt",
+  "APR",
+  "personal finance",
+  "debt payoff",
+  "money tips",
+  "financial literacy"
+ ],
+ "scenes": [
+  {
+   "say": "Your credit card balance is five thousand dollars. But the minimum payment? Only about a hundred and forty.",
+   "visual": {
+    "type": "compare",
+    "title": "Your card statement",
+    "left": {
+     "label": "Balance",
+     "value": 5000,
+     "color": "text"
+    },
+    "right": {
+     "label": "Minimum due",
+     "value": 141.66666666666669,
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "The average card that charges interest is now around twenty-two percent a year.",
+   "visual": {
+    "type": "stat",
+    "value": "22%",
+    "label": "average APR",
+    "sub": "on cards charging interest · 2026",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Pay only the minimum, and that five thousand takes sixteen years to clear.",
+   "visual": {
+    "type": "stat",
+    "value": "16 yrs",
+    "label": "to clear $5,000",
+    "sub": "paying only the minimum",
+    "color": "red"
+   }
+  },
+  {
+   "say": "You'd pay over seven and a half thousand dollars in interest. One and a half times what you spent.",
+   "visual": {
+    "type": "equation",
+    "lines": [
+     {
+      "text": "Spent: $5,000",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "Interest: $7,673",
+      "color": "red",
+      "size": 100
+     }
+    ]
+   }
+  },
+  {
+   "say": "Now pay a fixed three hundred a month instead. The debt is gone in under two years.",
+   "visual": {
+    "type": "line",
+    "title": "Balance left",
+    "x": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "x_label": "years",
+    "series": [
+     {
+      "label": "Minimum only",
+      "values": [
+       5000,
+       4431.924358580647,
+       3928.390704036095,
+       3482.066090247869,
+       3086.4507047114403,
+       2735.783211953808,
+       2424.956851370816,
+       2149.4450676194706,
+       1905.2355905227516,
+       1688.7720044945127,
+       1496.901956561659,
+       1326.831248738529,
+       1172.7125410530377,
+       993.3332905266698,
+       770.257868417832,
+       492.84203685976036,
+       147.8486580665195,
+       0
+      ],
+      "color": "red"
+     },
+     {
+      "label": "$300/month",
+      "values": [
+       5000,
+       2231.8570688126965,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Total interest? About one thousand dollars, instead of over seven and a half.",
+   "visual": {
+    "type": "bars",
+    "title": "Total interest paid",
+    "items": [
+     {
+      "label": "Minimum",
+      "value": 7673.113790937255,
+      "color": "red"
+     },
+     {
+      "label": "$300/mo",
+      "value": 1021.5993003613077,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "The rule is simple. Pay the full balance every month. If you can't, pay as much as you can, and stop using the card until it's clear.",
+   "visual": {
+    "type": "equation",
+    "title": "The rule",
+    "lines": [
+     {
+      "text": "Pay it IN FULL",
+      "color": "green",
+      "size": 96
+     },
+     {
+      "text": "Can't? Pay the most you can",
+      "color": "text",
+      "size": 56
+     },
+     {
+      "text": "+ pause the card",
+      "color": "muted",
+      "size": 56
+     }
+    ]
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Never pay",
+     "just the minimum."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

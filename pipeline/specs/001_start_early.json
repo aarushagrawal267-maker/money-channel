@@ -1,0 +1,435 @@
+{
+ "id": "001_start_early",
+ "voice": "af_heart",
+ "speed": 1.06,
+ "badge": "DAILY MONEY LESSON",
+ "disclaimer": "Illustration · assumes ~12% p.a. · returns not guaranteed · not financial advice",
+ "title": "Same ₹5,000 SIP. ₹3.2 Crore vs ₹95 Lakh. Why? #shorts",
+ "description": "Two friends invest the same ₹5,000 every month. One starts at 25, the other at 35. At 60, one has over ₹3.2 crore and the other about ₹95 lakh.\n\nAssumptions: ₹5,000 monthly SIP, ~12% average annual return compounded monthly, invested at the start of each month until age 60. Illustration only: market returns vary and are not guaranteed. This is not financial advice.\n\n#sip #compounding #personalfinance #investing #mutualfunds #moneytips",
+ "tags": [
+  "sip",
+  "compounding",
+  "personal finance india",
+  "mutual funds",
+  "investing",
+  "money tips",
+  "financial literacy",
+  "power of compounding",
+  "start investing early"
+ ],
+ "scenes": [
+  {
+   "say": "Two friends invest the same five thousand rupees every month.",
+   "visual": {
+    "type": "pair",
+    "title": "Same SIP. Same fund.",
+    "left": {
+     "label": "Rahul",
+     "sub": "₹5,000 / month",
+     "color": "green"
+    },
+    "right": {
+     "label": "Aman",
+     "sub": "₹5,000 / month",
+     "color": "slate"
+    }
+   }
+  },
+  {
+   "say": "At sixty, one has over three crore. The other? About ninety-five lakh.",
+   "visual": {
+    "type": "compare",
+    "title": "Wealth at age 60",
+    "left": {
+     "label": "Rahul",
+     "value": 32476345.330857154,
+     "color": "green"
+    },
+    "right": {
+     "label": "Aman",
+     "value": 9488175.462271843,
+     "color": "slate"
+    }
+   }
+  },
+  {
+   "say": "The only difference: Rahul started at twenty-five. Aman waited until thirty-five.",
+   "visual": {
+    "type": "timeline",
+    "title": "The only difference",
+    "start": 25,
+    "end": 60,
+    "rows": [
+     {
+      "label": "Rahul",
+      "from": 25,
+      "color": "green"
+     },
+     {
+      "label": "Aman",
+      "from": 35,
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Both earn about twelve percent a year, a common long-term assumption for Indian equity funds.",
+   "visual": {
+    "type": "stat",
+    "value": "12%",
+    "label": "average yearly return",
+    "sub": "assumed · not guaranteed",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Rahul puts in twenty-one lakh in total. Aman puts in fifteen.",
+   "visual": {
+    "type": "bars",
+    "title": "Total money invested",
+    "items": [
+     {
+      "label": "Rahul",
+      "value": 2100000,
+      "color": "green"
+     },
+     {
+      "label": "Aman",
+      "value": 1500000,
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Just six lakh more, but Rahul ends up with over two crore more.",
+   "visual": {
+    "type": "equation",
+    "lines": [
+     {
+      "text": "+₹6 L invested",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 84
+     },
+     {
+      "text": "+₹2.3 Cr wealth",
+      "color": "green",
+      "size": 100
+     }
+    ]
+   }
+  },
+  {
+   "say": "Here's the crazy part. By fifty, Rahul already has ninety-five lakh. That's Aman's entire final amount, ten years early.",
+   "visual": {
+    "type": "line",
+    "title": "Growth by age",
+    "x": [
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60
+    ],
+    "x_label": "age",
+    "series": [
+     {
+      "label": "Rahul",
+      "values": [
+       0,
+       64046.64021664473,
+       136215.99750861694,
+       217538.2357137484,
+       309174.1692296449,
+       412431.83277486614,
+       528785.1526105667,
+       659894.9857403851,
+       807632.8274074896,
+       974107.5252956573,
+       1161695.3817597027,
+       1373074.0737721918,
+       1611260.8747684213,
+       1879655.7239780354,
+       2182089.7580259237,
+       2522879.9975548694,
+       2906890.9694807543,
+       3339604.1444921466,
+       3827196.180962859,
+       4376627.092151078,
+       4995739.59520618,
+       5693371.060116324,
+       6479479.656584705,
+       7365286.499487192,
+       8363435.821931889,
+       9488175.462271843,
+       10755560.241388531,
+       12183681.133305492,
+       13792923.500371918,
+       15606258.079131186,
+       17649568.870480943,
+       19952022.61451261,
+       22546485.12400856,
+       25469990.4194476,
+       28764269.36207167,
+       32476345.330857154
+      ],
+      "color": "green"
+     },
+     {
+      "label": "Aman",
+      "values": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       64046.64021664473,
+       136215.99750861694,
+       217538.2357137484,
+       309174.1692296449,
+       412431.83277486614,
+       528785.1526105667,
+       659894.9857403851,
+       807632.8274074896,
+       974107.5252956573,
+       1161695.3817597027,
+       1373074.0737721918,
+       1611260.8747684213,
+       1879655.7239780354,
+       2182089.7580259237,
+       2522879.9975548694,
+       2906890.9694807543,
+       3339604.1444921466,
+       3827196.180962859,
+       4376627.092151078,
+       4995739.59520618,
+       5693371.060116324,
+       6479479.656584705,
+       7365286.499487192,
+       8363435.821931889,
+       9488175.462271843
+      ],
+      "color": "slate"
+     }
+    ],
+    "hline": {
+     "value": 9488175.462271843,
+     "label": "Aman at 60 = Rahul at 50",
+     "x": 50,
+     "at": 2.2
+    }
+   }
+  },
+  {
+   "say": "And in his last five years alone, his money grows by almost one and a half crore.",
+   "visual": {
+    "type": "line",
+    "title": "The last 5 years",
+    "x": [
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60
+    ],
+    "x_label": "age",
+    "reveal": false,
+    "series": [
+     {
+      "label": "Rahul",
+      "values": [
+       0,
+       64046.64021664473,
+       136215.99750861694,
+       217538.2357137484,
+       309174.1692296449,
+       412431.83277486614,
+       528785.1526105667,
+       659894.9857403851,
+       807632.8274074896,
+       974107.5252956573,
+       1161695.3817597027,
+       1373074.0737721918,
+       1611260.8747684213,
+       1879655.7239780354,
+       2182089.7580259237,
+       2522879.9975548694,
+       2906890.9694807543,
+       3339604.1444921466,
+       3827196.180962859,
+       4376627.092151078,
+       4995739.59520618,
+       5693371.060116324,
+       6479479.656584705,
+       7365286.499487192,
+       8363435.821931889,
+       9488175.462271843,
+       10755560.241388531,
+       12183681.133305492,
+       13792923.500371918,
+       15606258.079131186,
+       17649568.870480943,
+       19952022.61451261,
+       22546485.12400856,
+       25469990.4194476,
+       28764269.36207167,
+       32476345.330857154
+      ],
+      "color": "green"
+     },
+     {
+      "label": "Aman",
+      "values": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       64046.64021664473,
+       136215.99750861694,
+       217538.2357137484,
+       309174.1692296449,
+       412431.83277486614,
+       528785.1526105667,
+       659894.9857403851,
+       807632.8274074896,
+       974107.5252956573,
+       1161695.3817597027,
+       1373074.0737721918,
+       1611260.8747684213,
+       1879655.7239780354,
+       2182089.7580259237,
+       2522879.9975548694,
+       2906890.9694807543,
+       3339604.1444921466,
+       3827196.180962859,
+       4376627.092151078,
+       4995739.59520618,
+       5693371.060116324,
+       6479479.656584705,
+       7365286.499487192,
+       8363435.821931889,
+       9488175.462271843
+      ],
+      "color": "slate"
+     }
+    ],
+    "highlight": {
+     "from": 55,
+     "to": 60,
+     "label": "+₹1.5 Cr"
+    }
+   }
+  },
+  {
+   "say": "That's compounding. The biggest gains come at the very end, so every year you wait cuts off the best part.",
+   "visual": {
+    "type": "equation",
+    "title": "Compounding rewards",
+    "lines": [
+     {
+      "text": "TIME",
+      "color": "gold",
+      "size": 200
+     },
+     {
+      "text": "more than amount",
+      "color": "muted",
+      "size": 64
+     }
+    ]
+   }
+  },
+  {
+   "say": "Start today, even with five hundred rupees. Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Start today.",
+     "Even ₹500."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

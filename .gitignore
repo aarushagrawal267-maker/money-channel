@@ -1,0 +1,15 @@
+# large / regenerated files
+models/
+output/
+branding_v2/
+branding_v3/_safe_check.png
+branding_v3/_desk.png
+**/work/
+**/work_*/
+**/frames/
+*.wav
+__pycache__/
+# never commit credentials
+client_secret*.json
+*.token
+.env
