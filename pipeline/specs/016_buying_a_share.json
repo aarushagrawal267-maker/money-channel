@@ -37,7 +37,7 @@
    }
   },
   {
-   "say": "It goes to another investor who's selling. The company got its money once, when it first sold those shares, like in an I-P-O.",
+   "say": "It goes to another investor who's selling. The company only got money when it first sold those shares.",
    "visual": {
     "type": "equation",
     "title": "Your money goes to",
@@ -56,7 +56,7 @@
    }
   },
   {
-   "say": "Here's the path. Your app is a broker. It sends your order to an exchange, like the Nasdaq, or to a market maker, a firm that buys and sells all day. There, it's matched with a seller almost instantly.",
+   "say": "Your app is a broker. It sends the order to an exchange, or to a market maker, a firm that trades all day. A seller is matched almost instantly.",
    "visual": {
     "type": "equation",
     "title": "The path of your order",
@@ -80,7 +80,7 @@
    }
   },
   {
-   "say": "But it isn't final yet. In the US, trades settle one business day later. That's called T plus one, the rule since May twenty twenty-four. It used to be two days.",
+   "say": "But it isn't final yet. US trades settle one business day later. That's called T plus one, the rule since May twenty twenty-four. It used to be two days.",
    "visual": {
     "type": "stat",
     "value": "T+1",
@@ -90,7 +90,7 @@
    }
   },
   {
-   "say": "On settlement day, a clearinghouse swaps the cash and the shares. The seller gets your money. You get the share.",
+   "say": "On settlement day, a clearinghouse swaps the cash and shares. The seller gets your money. You get the share.",
    "visual": {
     "type": "equation",
     "title": "Settlement day",
@@ -114,7 +114,7 @@
    }
   },
   {
-   "say": "And what do you own? A tiny slice of a real business. One Apple share is about one in fourteen and a half billion.",
+   "say": "What do you own? A tiny slice of a real business. One Apple share is about one in fourteen and a half billion.",
    "visual": {
     "type": "equation",
     "title": "A tiny slice",

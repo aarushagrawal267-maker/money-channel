@@ -1,0 +1,143 @@
+{
+ "id": "022_airline_loyalty",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "BUSINESS BREAKDOWN",
+ "disclaimer": "Partner payments are revenue, not profit · source: company filings",
+ "title": "Airlines make billions from credit cards, not just seats #shorts",
+ "description": "In 2025 American Airlines earned $111 million in net profit, while its co-branded credit card and other partners paid it $6.2 billion in cash. American Express paid Delta $8.2 billion, more than Delta's $6.2 billion pre-tax profit and about 13% of its revenue. The trick: airlines sell miles to banks, get cash today, and provide the seat later.\n\nSources: American Airlines Group 2025 Form 10-K and Q4 2025 earnings release (Jan 27, 2026); Delta Air Lines December quarter and full-year 2025 results (Jan 13, 2026). Partner payments are revenue, not profit.\n\n#airlines #creditcards #business #frequentflyer #personalfinance",
+ "tags": [
+  "airline business model",
+  "airline miles",
+  "credit card rewards",
+  "delta amex",
+  "american airlines",
+  "frequent flyer",
+  "loyalty programs",
+  "business breakdown"
+ ],
+ "scenes": [
+  {
+   "say": "In twenty twenty-five, American Airlines made a hundred and eleven million dollars in profit. Its credit card and other partners paid it six point two billion.",
+   "visual": {
+    "type": "compare",
+    "title": "American Airlines, 2025",
+    "left": {
+     "label": "Net profit",
+     "value": 111000000.0,
+     "color": "slate"
+    },
+    "right": {
+     "label": "Card partners",
+     "value": 6200000000.0,
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "That's because airlines don't just sell seats. They sell miles. Banks buy them in bulk and give them to you as card rewards.",
+   "visual": {
+    "type": "equation",
+    "title": "What airlines really sell",
+    "lines": [
+     {
+      "text": "Airline sells miles",
+      "color": "text",
+      "size": 76
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 72
+     },
+     {
+      "text": "Bank gives them to you",
+      "color": "gold",
+      "size": 66
+     }
+    ]
+   }
+  },
+  {
+   "say": "Delta's card partner, American Express, paid it eight point two billion dollars in twenty twenty-five.",
+   "visual": {
+    "type": "stat",
+    "value": "$8.2B",
+    "label": "paid to Delta by American Express",
+    "sub": "2025 · Delta earnings release, Jan 2026",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "That's more than Delta's entire pre-tax profit of six point two billion, and about one in every eight dollars it brought in.",
+   "visual": {
+    "type": "bars",
+    "title": "Delta, 2025",
+    "items": [
+     {
+      "label": "From Amex",
+      "value": 8200000000.0,
+      "color": "gold"
+     },
+     {
+      "label": "Pre-tax profit",
+      "value": 6185000000.0,
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Why do airlines love it? They get the cash today, and only provide the seat later, when you redeem.",
+   "visual": {
+    "type": "pair",
+    "title": "Why airlines love miles",
+    "left": {
+     "label": "Cash",
+     "sub": "paid today",
+     "color": "green"
+    },
+    "right": {
+     "label": "Seat",
+     "sub": "given later",
+     "color": "slate"
+    }
+   }
+  },
+  {
+   "say": "So you might be the passenger. But one of the airline's biggest customers is your bank.",
+   "visual": {
+    "type": "equation",
+    "lines": [
+     {
+      "text": "You fly.",
+      "color": "text",
+      "size": 110
+     },
+     {
+      "text": "Your bank pays",
+      "color": "gold",
+      "size": 110
+     },
+     {
+      "text": "the airline.",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Not just seats.",
+     "Miles."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

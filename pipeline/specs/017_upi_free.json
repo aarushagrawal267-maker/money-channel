@@ -21,7 +21,7 @@
  ],
  "scenes": [
   {
-   "say": "In October alone, Indians made over twenty-five billion UPI payments, and paid nothing to send them. So who pays?",
+   "say": "In October, Indians made over twenty-five billion UPI payments and paid nothing to send them. So who pays?",
    "visual": {
     "type": "stat",
     "value": "25.5B",
@@ -31,7 +31,7 @@
    }
   },
   {
-   "say": "UPI is India's instant payment system. Scan a shop's QR code, and money moves straight from your bank to theirs.",
+   "say": "UPI is India's instant payment system. Scan a QR code, and money moves bank to bank.",
    "visual": {
     "type": "pair",
     "title": "How UPI works",
@@ -48,7 +48,7 @@
    }
   },
   {
-   "say": "Normally, shops pay a fee on card sales. In India, a debit card can cost up to zero point nine percent. UPI costs zero, by law, since twenty twenty.",
+   "say": "Shops pay up to zero point nine percent on debit card sales in India. On UPI, they pay zero, by law, since twenty twenty.",
    "visual": {
     "type": "compare",
     "title": "Shop's fee on a ₹1,000 sale",
@@ -71,7 +71,7 @@
     "title": "Who covers the bill?",
     "items": [
      {
-      "label": "Yearly cost",
+      "label": "Cost (est.)",
       "value": 200000000000.0,
       "color": "red"
      },
@@ -84,7 +84,7 @@
    }
   },
   {
-   "say": "So apps like PhonePe and PayTM make money elsewhere: loans, insurance, and payment speakers rented to shops.",
+   "say": "So apps like PhonePe and PayTM earn elsewhere: loans, insurance, and payment speakers rented to shops.",
    "visual": {
     "type": "equation",
     "title": "How the apps earn",
@@ -108,7 +108,7 @@
    }
   },
   {
-   "say": "And free may not last. India has announced a zero point four percent fee on shop payments over two thousand rupees, paid by the shop, not you. Its start has been delayed.",
+   "say": "And free may not last. India plans a zero point four percent fee on shop payments over two thousand rupees, paid by the shop, not you. The start has been delayed.",
    "visual": {
     "type": "equation",
     "title": "Announced, not yet started",

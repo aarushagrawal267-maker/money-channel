@@ -46,7 +46,7 @@ def ease(t):
 
 def fmt_inr(v):
     if v >= 1e7:
-        s = f"{v/1e7:.2f}".rstrip("0").rstrip(".")
+        s = f"{v/1e7:,.2f}".rstrip("0").rstrip(".")
         return f"₹{s} Cr"
     if v >= 1e5:
         l = v / 1e5
