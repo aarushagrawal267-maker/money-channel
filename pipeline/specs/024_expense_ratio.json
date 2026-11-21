@@ -1,0 +1,183 @@
+{
+ "id": "024_expense_ratio",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "HIDDEN COSTS",
+ "disclaimer": "Illustration · assumes 7% a year before fees · not financial advice",
+ "title": "A 1% fee sounds tiny. Here's what it can cost over 30 years #shorts",
+ "description": "Same plan, two funds: $10,000 to start plus $500 a month for 30 years. With a 0.05% yearly fee you'd end with about $687K. With a 1% fee, about $564K. The gap is about $123K: the fees plus the growth those fees would have earned. A fund's yearly fee is called its expense ratio, and it's listed on the fund's fact sheet.\n\nAssumptions: 7% average yearly return before fees, compounded monthly; fees charged monthly as a share of the balance; no taxes or other costs. Illustration only: real returns vary and are not guaranteed. Not financial advice.\n\n#expenseratio #investing #indexfunds #personalfinance #moneytips",
+ "tags": [
+  "expense ratio",
+  "investment fees",
+  "mutual fund fees",
+  "index funds",
+  "investing basics",
+  "personal finance",
+  "retirement savings",
+  "financial literacy"
+ ],
+ "scenes": [
+  {
+   "say": "A one percent fee sounds tiny. On this plan, it could cost you over a hundred and twenty thousand dollars.",
+   "visual": {
+    "type": "equation",
+    "title": "A \"tiny\" fee",
+    "lines": [
+     {
+      "text": "1% a year",
+      "color": "text",
+      "size": 110
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "−$123K",
+      "color": "red",
+      "size": 150
+     }
+    ]
+   }
+  },
+  {
+   "say": "The plan: ten thousand dollars to start, plus five hundred a month, for thirty years.",
+   "visual": {
+    "type": "equation",
+    "title": "The plan",
+    "lines": [
+     {
+      "text": "$10,000 to start",
+      "color": "text",
+      "size": 80
+     },
+     {
+      "text": "+ $500 a month",
+      "color": "text",
+      "size": 80
+     },
+     {
+      "text": "for 30 years",
+      "color": "muted",
+      "size": 64
+     },
+     {
+      "text": "= $190,000 put in",
+      "color": "gold",
+      "size": 92
+     }
+    ]
+   }
+  },
+  {
+   "say": "Assume it earns seven percent a year before fees. Real returns vary.",
+   "visual": {
+    "type": "stat",
+    "value": "7%",
+    "label": "assumed yearly return, before fees",
+    "sub": "real returns vary · not guaranteed",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Fund A charges five hundredths of a percent a year. Fund B charges one percent.",
+   "visual": {
+    "type": "pair",
+    "title": "Two funds, same plan",
+    "left": {
+     "label": "A",
+     "sub": "0.05% a year",
+     "color": "green"
+    },
+    "right": {
+     "label": "B",
+     "sub": "1% a year",
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "After thirty years: Fund A, nearly six hundred and ninety thousand. Fund B, about five hundred and sixty.",
+   "visual": {
+    "type": "compare",
+    "title": "After 30 years",
+    "left": {
+     "label": "Fund A",
+     "value": 687421.2664856692,
+     "color": "green"
+    },
+    "right": {
+     "label": "Fund B",
+     "value": 564324.5065655889,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Fund B takes over sixty-two thousand in fees. Fund A, about thirty-six hundred.",
+   "visual": {
+    "type": "bars",
+    "title": "Fees paid over 30 years",
+    "items": [
+     {
+      "label": "Fund A",
+      "value": 3599.5963178802504,
+      "color": "green"
+     },
+     {
+      "label": "Fund B",
+      "value": 62812.41198730203,
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "That's over a hundred and twenty thousand dollars, gone to fees and the growth they took with them.",
+   "visual": {
+    "type": "stat",
+    "value": "$123K",
+    "label": "lost to the higher fee",
+    "sub": "fees + the growth they would have earned",
+    "color": "red"
+   }
+  },
+  {
+   "say": "That yearly fee is called the expense ratio. Check it on the fund's fact sheet before you invest.",
+   "visual": {
+    "type": "equation",
+    "title": "Before you invest",
+    "lines": [
+     {
+      "text": "Check the",
+      "color": "muted",
+      "size": 72
+     },
+     {
+      "text": "EXPENSE RATIO",
+      "color": "gold",
+      "size": 104
+     },
+     {
+      "text": "on the fund's fact sheet",
+      "color": "muted",
+      "size": 56
+     }
+    ]
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Small fees.",
+     "Big bills."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

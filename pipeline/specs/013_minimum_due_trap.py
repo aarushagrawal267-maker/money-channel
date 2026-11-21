@@ -38,7 +38,7 @@ spec = {
     "id": "013_minimum_due_trap",
     "currency": "inr", "voice": "af_heart", "speed": 1.06,
     "badge": "MONEY TRAP",
-    "disclaimer": "Illustration · 3.5%/month + 18% GST · 5% minimum due · no new spends · terms vary by bank",
+    "disclaimer": "Illustration · 3.5%/mo + 18% GST · 5% min due · terms vary by bank",
     "title": "Paying only the minimum on your credit card? Watch this. #shorts",
     "description": (
         "A ₹50,000 credit card bill. Pay only the minimum due and it can take over 22 years "

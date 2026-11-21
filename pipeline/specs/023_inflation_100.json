@@ -1,0 +1,236 @@
+{
+ "id": "023_inflation_100",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "MONEY MATH",
+ "disclaimer": "Illustration · assumes 3% inflation a year · real inflation varies",
+ "title": "What $100 will buy in 30 years (it's not $100) #shorts",
+ "description": "At 3% inflation a year, $100 in cash buys about $74 of today's goods after 10 years, $55 after 20 and $41 after 30. To just keep up, that $100 has to grow to $134, $181 and $243.\n\nAssumptions: a steady 3% inflation rate every year (a round number; actual inflation changes year to year). The US Federal Reserve's longer-run goal is 2% inflation, measured by the PCE price index (source: federalreserve.gov); at 2%, $100 buys about $55 of today's goods after 30 years.\n\n#inflation #personalfinance #moneytips #savings #financialliteracy",
+ "tags": [
+  "inflation",
+  "purchasing power",
+  "cost of living",
+  "money math",
+  "personal finance",
+  "savings",
+  "money tips",
+  "financial literacy",
+  "federal reserve"
+ ],
+ "scenes": [
+  {
+   "say": "Put a hundred dollar bill in a drawer. In thirty years, it'll only buy what forty-one dollars buys today.",
+   "visual": {
+    "type": "compare",
+    "title": "What $100 buys",
+    "left": {
+     "label": "Today",
+     "value": 100,
+     "color": "text"
+    },
+    "right": {
+     "label": "In 30 years",
+     "value": 41.19867595159064,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "That's with prices rising three percent a year. A simple round number. Real inflation changes every year.",
+   "visual": {
+    "type": "stat",
+    "value": "3%",
+    "label": "prices rise each year",
+    "sub": "assumed · real inflation varies",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "After ten years, your hundred buys about seventy-four dollars of today's stuff. After twenty, fifty-five. After thirty, forty-one.",
+   "visual": {
+    "type": "bars",
+    "title": "What $100 cash can buy",
+    "items": [
+     {
+      "label": "10 years",
+      "value": 74.4093914896725,
+      "color": "slate"
+     },
+     {
+      "label": "20 years",
+      "value": 55.36757541863345,
+      "color": "gold"
+     },
+     {
+      "label": "30 years",
+      "value": 41.19867595159064,
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Flip it around. Just to keep up, that hundred has to grow to one thirty-four in ten years, one eighty-one in twenty, and two forty-three in thirty.",
+   "visual": {
+    "type": "line",
+    "title": "Just to keep up",
+    "x": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30
+    ],
+    "x_label": "years",
+    "series": [
+     {
+      "label": "Needed",
+      "values": [
+       100.0,
+       103.0,
+       106.08999999999999,
+       109.2727,
+       112.55088100000002,
+       115.92740743,
+       119.40522965290002,
+       122.98738654248702,
+       126.67700813876164,
+       130.4773183829245,
+       134.39163793441222,
+       138.4233870724446,
+       142.57608868461793,
+       146.8533713451565,
+       151.25897248551118,
+       155.79674166007652,
+       160.47064390987882,
+       165.28476322717518,
+       170.24330612399046,
+       175.35060530771017,
+       180.61112346694148,
+       186.0294571709497,
+       191.61034088607823,
+       197.35865111266057,
+       203.2794106460404,
+       209.3777929654216,
+       215.6591267543843,
+       222.1289005570158,
+       228.79276757372628,
+       235.6565506009381,
+       242.72624711896623
+      ],
+      "color": "green"
+     },
+     {
+      "label": "Cash in a drawer",
+      "values": [
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100,
+       100
+      ],
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Even at the Federal Reserve's two percent target, thirty years cuts a hundred dollars down to about fifty-five.",
+   "visual": {
+    "type": "stat",
+    "value": "$55",
+    "label": "what $100 buys after 30 years",
+    "sub": "at the Fed's 2% inflation target",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "So money you won't need for years has to grow faster than prices, just to stand still.",
+   "visual": {
+    "type": "equation",
+    "title": "What really counts",
+    "lines": [
+     {
+      "text": "your growth",
+      "color": "green",
+      "size": 96
+     },
+     {
+      "text": "− inflation",
+      "color": "red",
+      "size": 96
+     },
+     {
+      "text": "= real growth",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Prices never",
+     "stand still."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

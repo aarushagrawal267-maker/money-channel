@@ -95,7 +95,11 @@ def v_hbars(d, v, t, dur):
         if wbar > 4:
             rrect(d, [L, y - 40, L + max(wbar, 40), y + 40], 20, fill=col(c, 0.9))
         lab = it.get("display") or fmt(it["value"] * p if p < 0.999 else it["value"], v.get("format"))
-        text_c(d, (L + wbar + 30, y), lab, font(54, "Black"), col("text", min(1, p * 2)), anchor="lm")
+        f = font(54, "Black")
+        if L + wbar + 30 + f.getlength(lab) > W - 60 and wbar > f.getlength(lab) + 60:
+            text_c(d, (L + wbar - 30, y), lab, f, col("bg0", min(1, p * 2)), anchor="rm")   # inside the bar
+        else:
+            text_c(d, (L + wbar + 30, y), lab, f, col("text", min(1, p * 2)), anchor="lm")
 
 def v_share(d, v, t, dur):
     """Rows of 100% bars: highlighted share vs rest."""
@@ -175,14 +179,14 @@ def v_line(d, v, t, dur):
     """Landscape line chart (reuses portrait logic by drawing into a scaled box)."""
     title(d, v.get("title"), t)
     xs, series = v["x"], v["series"]
-    mx = max(max(s["values"]) for s in series) * 1.1
+    ticks = R.nice_ticks(max(max(s["values"]) for s in series))
+    mx = ticks[-1] * 1.04
     L, Rr, T, B = 360, 1620, 300, 840
     X = lambda x: L + (x - xs[0]) / (xs[-1] - xs[0]) * (Rr - L)
     Y = lambda y: B - y / mx * (B - T)
-    for frac in (0.25, 0.5, 0.75, 1.0):
-        val = mx / 1.1 * frac
+    for val in ticks:
         d.line([(L, Y(val)), (Rr, Y(val))], fill=col("grid"), width=2)
-        text_c(d, (L - 20, Y(val)), v.get("ylabels", {}).get(str(frac)) or fmt(val, v.get("format")),
+        text_c(d, (L - 20, Y(val)), fmt(val, v.get("format")),
                font(32, "Medium", False), col("muted"), anchor="rm")
     d.line([(L, B), (Rr, B)], fill=col("muted"), width=3)
     step = max(1, len(xs) // 8)

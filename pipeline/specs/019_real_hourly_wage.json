@@ -1,0 +1,168 @@
+{
+ "id": "019_real_hourly_wage",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "EARN MORE",
+ "disclaimer": "Example only · 20% tax, 7 extra hrs and $70 costs a week · yours will differ",
+ "title": "Your $60K job pays less per hour than you think #shorts",
+ "description": "A $60,000 salary for 40 hours a week works out to $28.85 an hour on paper. Add taxes, the commute, unpaid extra time and the cost of going to work, and the real figure in this example is about $18.15 an hour, over a third less. Work out your own number before comparing jobs or big purchases.\n\nExample assumptions (yours will differ): 20% combined income and payroll tax, 4 hours a week commuting, 3 hours a week of unpaid extra work, $70 a week in work costs ($30 gas or transit, $30 lunches out, $10 clothes and other). Weeks averaged over the year.\n\n#personalfinance #salary #careeradvice #moneytips #financialliteracy",
+ "tags": [
+  "real hourly wage",
+  "hourly rate",
+  "salary",
+  "commute cost",
+  "personal finance",
+  "career advice",
+  "money tips",
+  "financial literacy",
+  "earn more"
+ ],
+ "scenes": [
+  {
+   "say": "You earn sixty thousand dollars a year. That's almost twenty-nine dollars an hour. Or is it?",
+   "visual": {
+    "type": "stat",
+    "value": "$28.85",
+    "label": "per hour, on paper",
+    "sub": "$60,000 ÷ (40 hours × 52 weeks)",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "First, taxes. In this example, about twenty percent goes to income and payroll tax. You keep forty-eight thousand.",
+   "visual": {
+    "type": "equation",
+    "title": "Example: taxes",
+    "lines": [
+     {
+      "text": "$60,000 salary",
+      "color": "text",
+      "size": 88
+     },
+     {
+      "text": "− 20% tax",
+      "color": "red",
+      "size": 80
+     },
+     {
+      "text": "= $48,000 kept",
+      "color": "green",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "Next, time. Add four hours a week of commuting, and three hours of unpaid extras, like early emails.",
+   "visual": {
+    "type": "bars",
+    "title": "Hours per week",
+    "format": "num",
+    "items": [
+     {
+      "label": "Paid",
+      "value": 40,
+      "color": "slate"
+     },
+     {
+      "label": "Real",
+      "value": 47,
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Then the cost of going to work. Gas, lunches out, work clothes. Say seventy dollars a week.",
+   "visual": {
+    "type": "equation",
+    "title": "Example: work costs",
+    "lines": [
+     {
+      "text": "Gas / transit  $30",
+      "color": "muted",
+      "size": 68
+     },
+     {
+      "text": "Lunches out  $30",
+      "color": "muted",
+      "size": 68
+     },
+     {
+      "text": "Clothes & other  $10",
+      "color": "muted",
+      "size": 68
+     },
+     {
+      "text": "= $70 a week",
+      "color": "red",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "Put it together, and your real hourly wage is about eighteen dollars. Over a third less than it looked.",
+   "visual": {
+    "type": "compare",
+    "title": "Your hourly wage",
+    "left": {
+     "label": "On paper",
+     "value": 28.846153846153847,
+     "color": "slate"
+    },
+    "right": {
+     "label": "Real",
+     "value": 18.150572831423897,
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Why it matters: a three hundred dollar gadget doesn't cost ten hours of your life. It costs over sixteen.",
+   "visual": {
+    "type": "stat",
+    "value": "16.5 h",
+    "label": "of your life for a $300 gadget",
+    "sub": "at $18.15 per real hour",
+    "color": "red"
+   }
+  },
+  {
+   "say": "And a job that pays a little less, but with no commute, might actually pay you more per hour.",
+   "visual": {
+    "type": "equation",
+    "title": "Compare jobs by",
+    "lines": [
+     {
+      "text": "money kept",
+      "color": "green",
+      "size": 96
+     },
+     {
+      "text": "÷",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "hours it really takes",
+      "color": "text",
+      "size": 76
+     }
+    ]
+   }
+  },
+  {
+   "say": "Work out your real number. Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Know your",
+     "real wage."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

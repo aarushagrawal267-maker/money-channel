@@ -1,0 +1,149 @@
+{
+ "id": "025_emergency_fund",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "SAFETY NET",
+ "disclaimer": "Example · $3,000/month of essentials · not financial advice",
+ "title": "Emergency fund: how much you need, and where to keep it #shorts",
+ "description": "A common guideline is 3 to 6 months of essential expenses. With $3,000 a month of essentials, that's $9,000 to $18,000. Keep it somewhere safe and easy to reach, like a high-yield savings account at an FDIC-insured bank, not in the stock market, which can fall right when you need the cash.\n\nExample: $3,000 a month of essentials (rent, food, bills, insurance, transport). Sources: FDIC standard deposit insurance is $250,000 per depositor, per insured bank, per ownership category (fdic.gov). The S&P 500 fell about 34% from its 19 Feb 2020 close to its 23 Mar 2020 close (S&P Dow Jones Indices). Savings rates change often; check the current rate before opening an account. Not financial advice.\n\n#emergencyfund #personalfinance #savings #moneytips #budgeting",
+ "tags": [
+  "emergency fund",
+  "high yield savings account",
+  "savings",
+  "personal finance",
+  "budgeting",
+  "FDIC",
+  "money tips",
+  "financial literacy"
+ ],
+ "scenes": [
+  {
+   "say": "If your paycheck stopped tomorrow, how many months could you last?",
+   "visual": {
+    "type": "equation",
+    "title": "Paycheck stops.",
+    "lines": [
+     {
+      "text": "How many months",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "could you last?",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "The common guideline: keep three to six months of essential expenses. Rent, food, bills, insurance, getting to work.",
+   "visual": {
+    "type": "stat",
+    "value": "3–6",
+    "label": "months of essential expenses",
+    "sub": "the common guideline",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "If your essentials cost three thousand dollars a month, that's nine thousand to eighteen thousand dollars.",
+   "visual": {
+    "type": "bars",
+    "title": "At $3,000 a month",
+    "items": [
+     {
+      "label": "3 months",
+      "value": 9000,
+      "color": "blue"
+     },
+     {
+      "label": "6 months",
+      "value": 18000,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Where should it live? Not in the stock market. In early twenty twenty, US stocks fell about a third in about a month, just as millions lost their jobs.",
+   "visual": {
+    "type": "compare",
+    "title": "$18,000 in stocks, 2020",
+    "left": {
+     "label": "February",
+     "value": 18000,
+     "color": "text"
+    },
+    "right": {
+     "label": "March",
+     "value": 11893.507375633093,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Keep it in a high-yield savings account at an FDIC-insured bank. Deposits are covered up to two hundred fifty thousand dollars, per depositor, per bank.",
+   "visual": {
+    "type": "pair",
+    "title": "Where it lives",
+    "left": {
+     "label": "Savings",
+     "sub": "insured · steady",
+     "color": "green"
+    },
+    "right": {
+     "label": "Market",
+     "sub": "can drop fast",
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "It earns some interest, and you can move it to checking in a day or two.",
+   "visual": {
+    "type": "equation",
+    "title": "High-yield savings",
+    "lines": [
+     {
+      "text": "FDIC insured",
+      "color": "green",
+      "size": 88
+     },
+     {
+      "text": "earns interest",
+      "color": "text",
+      "size": 88
+     },
+     {
+      "text": "cash in 1–2 days",
+      "color": "gold",
+      "size": 88
+     }
+    ]
+   }
+  },
+  {
+   "say": "Starting from zero? Aim for one month first. Then build.",
+   "visual": {
+    "type": "stat",
+    "value": "1 month",
+    "label": "a great first goal",
+    "sub": "= $3,000 in this example",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Build your",
+     "safety net."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

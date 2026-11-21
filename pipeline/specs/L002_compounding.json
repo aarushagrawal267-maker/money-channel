@@ -1,0 +1,1221 @@
+{
+ "id": "L002_compounding",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "gap": 0.35,
+ "badge": "MONEY MATH",
+ "disclaimer": "Illustrations · assumed returns · not investment advice",
+ "intro_chapter": "Same $96,000, very different results",
+ "title": "Both Invested $96,000. One Ended Up With 2.4x More | Compound Interest Explained",
+ "thumbnail": {
+  "big": "2.4X",
+  "line": "SAME $96K INVESTED",
+  "tag": "THE 4 NUMBERS",
+  "color": "gold"
+ },
+ "description": "Two people each invest $96,000. One ends up with about $494,000, the other about $203,000. The difference is compound interest, and it comes down to four numbers: how much you put in, the rate, time, and the leaks (fees, inflation and taxes). We work through each one with simple examples, the Rule of 72, the real cost of a 1% fee, and nominal vs real returns.\n\nAssumptions: all returns are illustrations, not forecasts. 7% a year before fees unless stated (other rates shown for comparison), monthly contributions at the end of each month, 3% yearly inflation, fees modelled as a reduction in the yearly return, no taxes in the examples. Real investments go up and down and can lose money. Tax-advantaged account rules vary by country.\n\nSource: S&P 500 total return in 2008 (-36.55%, dividends included): Damodaran, NYU Stern, Historical Returns on Stocks, Bonds and Bills: https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html\n\nFor education only. Not financial advice.\n\n#compoundinterest #personalfinance #investing #ruleof72 #moneymath",
+ "tags": [
+  "compound interest",
+  "compound interest explained",
+  "rule of 72",
+  "investing for beginners",
+  "personal finance",
+  "start investing early",
+  "investment fees",
+  "inflation",
+  "real return",
+  "money math",
+  "financial literacy"
+ ],
+ "scenes": [
+  {
+   "say": "Two friends each invest ninety-six thousand dollars. Same investment, same returns. At sixty-five, one has about two hundred thousand dollars. The other has almost half a million.",
+   "visual": {
+    "type": "versus",
+    "title": "Same $96,000 invested",
+    "left": {
+     "label": "Sam",
+     "value": "$203K",
+     "sub": "at 65",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Maya",
+     "value": "$494K",
+     "sub": "at 65",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Maya puts in two hundred dollars a month, starting at twenty-five. Sam waits until forty-five, then puts in four hundred a month to catch up. Both put in exactly ninety-six thousand dollars.",
+   "visual": {
+    "type": "table",
+    "title": "Two plans, same total",
+    "header": [
+     "",
+     "Maya",
+     "Sam"
+    ],
+    "rows": [
+     [
+      "Starts at",
+      "25",
+      "45"
+     ],
+     [
+      "Each month",
+      "$200",
+      "$400"
+     ],
+     [
+      "Years",
+      "40",
+      "20"
+     ],
+     [
+      "Total put in",
+      "$96,000",
+      "$96,000"
+     ]
+    ],
+    "highlight_row": 3,
+    "col_colors": {
+     "1": "green",
+     "2": "blue"
+    }
+   }
+  },
+  {
+   "say": "Sam saved twice as hard, yet Maya ends up with almost two and a half times as much money. Same dollars in. The only difference was when they went in.",
+   "visual": {
+    "type": "line",
+    "title": "Balance by age (assumed 7% a year)",
+    "x": [
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65
+    ],
+    "series": [
+     {
+      "label": "Maya",
+      "values": [
+       0.0,
+       2476.05942910228,
+       5125.443018241719,
+       7960.283458620917,
+       10993.562729826663,
+       14239.171550016807,
+       17711.972987620262,
+       21427.87052585596,
+       25403.880891768156,
+       29658.211983294204,
+       34210.34625122708,
+       39081.12991791525,
+       44292.868441271574,
+       49869.428661262864,
+       55836.34809665355,
+       62220.95189252157,
+       69052.47795410034,
+       76362.21083998964,
+       84183.62502789118,
+       92552.53820894581,
+       101507.2753126743,
+       111088.8440136638,
+       121341.12252372252,
+       132311.06052948537,
+       144048.8941956516,
+       156608.37621844956,
+       170047.02198284332,
+       184426.37295074467,
+       199812.278486399,
+       216275.1974095492,
+       233890.52065731992,
+       252738.9165324346,
+       272906.7001188073,
+       294486.2285562262,
+       317576.3239842643,
+       342282.72609226516,
+       368718.57634782605,
+       397004.93612127606,
+       427271.3410788676,
+       459656.39438349067,
+       494308.4014194373
+      ],
+      "color": "green"
+     },
+     {
+      "label": "Sam",
+      "values": [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       4952.11885820456,
+       10250.886036483438,
+       15920.566917241835,
+       21987.125459653325,
+       28478.343100033613,
+       35423.945975240524,
+       42855.74105171192,
+       50807.76178353631,
+       59316.42396658841,
+       68420.69250245416,
+       78162.2598358305,
+       88585.73688254315,
+       99738.85732252573,
+       111672.6961933071,
+       124441.90378504313,
+       138104.95590820067,
+       152724.42167997928,
+       168367.25005578235,
+       185105.07641789163,
+       203014.5506253486
+      ],
+      "color": "blue"
+     }
+    ]
+   }
+  },
+  {
+   "say": "That gap is compound interest, and it comes down to just four numbers. By the end of this video, you'll know how each one works, and which one people underestimate the most.",
+   "visual": {
+    "type": "title",
+    "title": "The 4 Numbers",
+    "sub": "amount · rate · time · leaks"
+   }
+  },
+  {
+   "say": "First, what compounding actually is.",
+   "visual": {
+    "type": "chapter",
+    "n": 1,
+    "title": "What compounding is"
+   }
+  },
+  {
+   "say": "Say you invest ten thousand dollars, and it earns seven percent a year. That rate is just an assumption for this video, not a promise. After one year, you've earned seven hundred dollars.",
+   "visual": {
+    "type": "stat",
+    "value": "$700",
+    "label": "earned in year one",
+    "sub": "$10,000 at an assumed 7% a year",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Here's the key. In year two, you earn seven percent on ten thousand seven hundred, not just on ten thousand. So you make seven hundred and forty-nine dollars. That extra forty-nine is interest on your interest.",
+   "visual": {
+    "type": "equation",
+    "title": "Year two",
+    "lines": [
+     {
+      "text": "Year 1:  7% × $10,000 = $700",
+      "color": "muted",
+      "size": 76
+     },
+     {
+      "text": "Year 2:  7% × $10,700 = $749",
+      "color": "text",
+      "size": 76
+     },
+     {
+      "text": "+$49 interest on interest",
+      "color": "gold",
+      "size": 92
+     }
+    ]
+   }
+  },
+  {
+   "say": "It looks tiny. But each year's growth joins the pile, and the bigger pile earns more. By year thirty, you're earning almost five thousand dollars in a single year, without adding a cent.",
+   "visual": {
+    "type": "table",
+    "title": "$10,000 at 7% a year, nothing added",
+    "header": [
+     "Year",
+     "Start",
+     "Growth",
+     "End"
+    ],
+    "rows": [
+     [
+      "1",
+      "$10,000",
+      "$700",
+      "$10,700"
+     ],
+     [
+      "2",
+      "$10,700",
+      "$749",
+      "$11,449"
+     ],
+     [
+      "3",
+      "$11,449",
+      "$801",
+      "$12,250"
+     ],
+     [
+      "10",
+      "$18,385",
+      "$1,287",
+      "$19,672"
+     ],
+     [
+      "20",
+      "$36,165",
+      "$2,532",
+      "$38,697"
+     ],
+     [
+      "30",
+      "$71,143",
+      "$4,980",
+      "$76,123"
+     ]
+    ],
+    "highlight_row": 5,
+    "col_colors": {
+     "2": "green"
+    }
+   }
+  },
+  {
+   "say": "This is the compounding loop. Your money earns a return. The return is added to your balance. A bigger balance earns a bigger return. And it repeats, every single year.",
+   "visual": {
+    "type": "flywheel",
+    "title": "The compounding loop",
+    "center": "REPEAT",
+    "steps": [
+     "Money earns",
+     "Added to balance",
+     "Bigger balance",
+     "Bigger return"
+    ]
+   }
+  },
+  {
+   "say": "Compare that with simple interest, where you only ever earn on the original ten thousand. After thirty years, simple interest gets you thirty-one thousand dollars. Compounding gets you about seventy-six thousand.",
+   "visual": {
+    "type": "versus",
+    "title": "$10,000 for 30 years at 7%",
+    "left": {
+     "label": "Simple interest",
+     "value": "$31,000",
+     "sub": "earns on $10,000 only",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Compound interest",
+     "value": "$76,123",
+     "sub": "earns on everything",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Same starting money, same seven percent, and more than double the result, simply because the growth was allowed to grow.",
+   "visual": {
+    "type": "quote",
+    "text": "Your money earns money.\nThen that money\nearns money too.",
+    "first_color": "gold"
+   }
+  },
+  {
+   "say": "You can write the whole thing in one line. What you end up with depends on how much you put in, the rate it grows at, how long it grows, and what leaks out along the way. Those are the four levers.",
+   "visual": {
+    "type": "equation",
+    "title": "The whole idea in one line",
+    "lines": [
+     {
+      "text": "Amount × (1 + Rate) ^ Time",
+      "color": "gold",
+      "size": 104
+     },
+     {
+      "text": "where Rate is what's left after fees, taxes and inflation",
+      "color": "muted",
+      "size": 46
+     }
+    ]
+   }
+  },
+  {
+   "say": "Lever one: how much you put in.",
+   "visual": {
+    "type": "chapter",
+    "n": 2,
+    "title": "Lever 1: The amount"
+   }
+  },
+  {
+   "say": "Most people don't invest one big lump. They invest a bit every month. So let's switch to a monthly example: three hundred dollars a month, for thirty years, at the same assumed seven percent.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Our base case",
+    "items": [
+     {
+      "value": "$300",
+      "label": "every month",
+      "color": "gold"
+     },
+     {
+      "value": "30",
+      "label": "years",
+      "color": "text"
+     },
+     {
+      "value": "7%",
+      "label": "a year",
+      "sub": "assumed, not promised",
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "You'd put in one hundred and eight thousand dollars of your own money. At the end, you'd have about three hundred and fifty thousand.",
+   "visual": {
+    "type": "count",
+    "to": 350836,
+    "prefix": "$",
+    "label": "after 30 years",
+    "sub": "you put in $108,000",
+    "color": "green"
+   }
+  },
+  {
+   "say": "That means about seventy percent of the final pile is growth. Your own contributions are the smaller slice.",
+   "visual": {
+    "type": "donut",
+    "title": "What the $351K is made of",
+    "center": "$351K",
+    "center_sub": "after 30 years",
+    "segments": [
+     {
+      "label": "Your money in",
+      "value": 108000,
+      "color": "blue"
+     },
+     {
+      "label": "Growth",
+      "value": 242835.7809859799,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "This lever is the simplest, because it's a straight line. Double what you put in, and you double what you end up with. One hundred a month becomes about one hundred and seventeen thousand. Five hundred a month becomes about five hundred and eighty-five thousand.",
+   "visual": {
+    "type": "columns",
+    "title": "Monthly amount → value after 30 years",
+    "items": [
+     {
+      "label": "$100/mo",
+      "value": 116945.26032865996,
+      "display": "$117K"
+     },
+     {
+      "label": "$300/mo",
+      "value": 350835.7809859799,
+      "display": "$351K"
+     },
+     {
+      "label": "$500/mo",
+      "value": 584726.3016433003,
+      "display": "$585K"
+     }
+    ],
+    "highlight": 2
+   }
+  },
+  {
+   "say": "Small increases add up too. If you raise that three hundred by three percent every year as your income grows, you'd end with about four hundred and eighty thousand instead of three hundred and fifty.",
+   "visual": {
+    "type": "hbars",
+    "title": "$300 a month for 30 years",
+    "items": [
+     {
+      "label": "Same $300",
+      "value": 350835.7809859799,
+      "display": "$351K",
+      "color": "slate"
+     },
+     {
+      "label": "Raised 3% a year",
+      "value": 481438.1154907303,
+      "display": "$481K",
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So the lesson for lever one: you don't need a big amount to start. But whatever you add over time goes straight into the machine.",
+   "visual": {
+    "type": "bullets",
+    "title": "Lever 1 in a nutshell",
+    "items": [
+     "Twice the money in = twice the money out",
+     "Start with what you can",
+     "Raise it when your income rises"
+    ]
+   }
+  },
+  {
+   "say": "Lever two: the rate of return.",
+   "visual": {
+    "type": "chapter",
+    "n": 3,
+    "title": "Lever 2: The rate"
+   }
+  },
+  {
+   "say": "Keep everything the same, three hundred a month for thirty years, and only change the rate. At three percent, you end with about one hundred and seventy-four thousand. At five, about two hundred and forty-five thousand. At seven, three hundred and fifty-one thousand. And at nine, over half a million.",
+   "visual": {
+    "type": "columns",
+    "title": "$300 a month for 30 years, at different rates",
+    "items": [
+     {
+      "label": "3% a year",
+      "value": 173613.9112457955,
+      "display": "$174K"
+     },
+     {
+      "label": "5% a year",
+      "value": 244612.77208734874,
+      "display": "$245K"
+     },
+     {
+      "label": "7% a year",
+      "value": 350835.7809859799,
+      "display": "$351K"
+     },
+     {
+      "label": "9% a year",
+      "value": 510633.8899074304,
+      "display": "$511K"
+     }
+    ],
+    "highlight": 3
+   }
+  },
+  {
+   "say": "Notice that's not a straight line. Going from seven to nine percent adds about one hundred and sixty thousand dollars. Two percentage points, and the result grows by almost half.",
+   "visual": {
+    "type": "equation",
+    "title": "Just two percentage points",
+    "lines": [
+     {
+      "text": "7% → 9%",
+      "color": "muted",
+      "size": 96
+     },
+     {
+      "text": "+$160K",
+      "color": "gold",
+      "size": 140
+     },
+     {
+      "text": "almost half as much again (+46%)",
+      "color": "text",
+      "size": 54
+     }
+    ]
+   }
+  },
+  {
+   "say": "So naturally, people chase higher rates. This is where it gets risky. Higher expected returns almost always come with bigger swings. Investments that can rise faster can also fall harder.",
+   "visual": {
+    "type": "quote",
+    "text": "Higher returns\ncome with\nbigger swings.",
+    "first_color": "gold"
+   }
+  },
+  {
+   "say": "For example, in two thousand and eight, the S and P five hundred, a basket of five hundred large US companies, lost over a third of its value in a single year, even including dividends.",
+   "visual": {
+    "type": "stat",
+    "value": "−37%",
+    "label": "S&P 500 in 2008",
+    "sub": "total return incl. dividends · source in description",
+    "color": "red"
+   }
+  },
+  {
+   "say": "And losses hurt more than gains help. If an investment rises fifty percent and then falls fifty percent, the average return is zero. But your ten thousand dollars has turned into seven thousand five hundred.",
+   "visual": {
+    "type": "waterfall",
+    "title": "+50%, then −50%",
+    "steps": [
+     {
+      "label": "Start",
+      "value": 10000,
+      "kind": "start",
+      "display": "$10,000"
+     },
+     {
+      "label": "+50%",
+      "value": 5000.0,
+      "kind": "plus",
+      "display": "+$5,000"
+     },
+     {
+      "label": "−50%",
+      "value": 7500.0,
+      "kind": "minus",
+      "display": "−$7,500"
+     },
+     {
+      "label": "End",
+      "value": 7500.0,
+      "kind": "total",
+      "display": "$7,500",
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So a bumpy ride grows slower than its average suggests. Up forty percent, then down twenty, again and again, averages ten percent a year. But your money only grows about five point eight percent a year. Less than a steady seven.",
+   "visual": {
+    "type": "versus",
+    "title": "What you actually keep each year",
+    "left": {
+     "label": "Steady",
+     "value": "7.0%",
+     "sub": "every year",
+     "color": "green"
+    },
+    "right": {
+     "label": "+40%, then −20%",
+     "value": "5.8%",
+     "sub": "even though it averages 10%",
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "And be very careful with anyone promising high returns with little or no risk. Guaranteed big returns, pressure to act fast, profits that never dip. Those are classic warning signs of a scam.",
+   "visual": {
+    "type": "bullets",
+    "title": "Red flags",
+    "color": "red",
+    "items": [
+     "\"Guaranteed\" high returns",
+     "Pressure to act right now",
+     "Returns that never go down",
+     "Can't explain how it makes money"
+    ]
+   }
+  },
+  {
+   "say": "We're not here to tell you what to invest in. The lesson for lever two is simple: a slightly better rate is powerful, but a too-good-to-be-true rate is a trap.",
+   "visual": {
+    "type": "title",
+    "title": "Better rate: powerful",
+    "sub": "too-good-to-be-true rate: a trap",
+    "sub_color": "red"
+   }
+  },
+  {
+   "say": "Lever three: time. This is the one people underestimate the most.",
+   "visual": {
+    "type": "chapter",
+    "n": 4,
+    "title": "Lever 3: Time"
+   }
+  },
+  {
+   "say": "There's a handy shortcut called the Rule of seventy-two. Divide seventy-two by your yearly return, and you get roughly how many years it takes your money to double.",
+   "visual": {
+    "type": "equation",
+    "title": "The Rule of 72",
+    "lines": [
+     {
+      "text": "72 ÷ rate = years to double",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "72 ÷ 7 ≈ 10 years",
+      "color": "gold",
+      "size": 120
+     }
+    ]
+   }
+  },
+  {
+   "say": "At three percent, money doubles about every twenty-four years. At seven percent, about every ten. At nine percent, about every eight.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Years to double your money",
+    "items": [
+     {
+      "value": "24",
+      "label": "years",
+      "sub": "at 3% a year",
+      "color": "slate"
+     },
+     {
+      "value": "~10",
+      "label": "years",
+      "sub": "at 7% a year",
+      "color": "green"
+     },
+     {
+      "value": "8",
+      "label": "years",
+      "sub": "at 9% a year",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So at seven percent, ten thousand dollars invested at twenty-five roughly doubles every decade. About twenty thousand by thirty-five, thirty-nine thousand by forty-five, seventy-six thousand by fifty-five, and almost one hundred and fifty thousand by sixty-five.",
+   "visual": {
+    "type": "timeline",
+    "title": "$10,000 invested once at age 25",
+    "events": [
+     {
+      "when": "Age 25",
+      "text": "$10,000",
+      "color": "slate"
+     },
+     {
+      "when": "35",
+      "text": "$19,672"
+     },
+     {
+      "when": "45",
+      "text": "$38,697"
+     },
+     {
+      "when": "55",
+      "text": "$76,123"
+     },
+     {
+      "when": "65",
+      "text": "$149,745",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Now look at where the growth happens. The last decade adds more than the first three decades combined. Those final years are the most powerful, and you only get them if you start early.",
+   "visual": {
+    "type": "columns",
+    "title": "Growth added in each decade",
+    "items": [
+     {
+      "label": "25 to 35",
+      "value": 9671.513572895663,
+      "display": "+$9.7K"
+     },
+     {
+      "label": "35 to 45",
+      "value": 19025.33105196617,
+      "display": "+$19.0K"
+     },
+     {
+      "label": "45 to 55",
+      "value": 37425.70580175859,
+      "display": "+$37.4K"
+     },
+     {
+      "label": "55 to 65",
+      "value": 73622.02796544942,
+      "display": "+$73.6K"
+     }
+    ],
+    "highlight": 3
+   }
+  },
+  {
+   "say": "Back to monthly investing: three hundred dollars a month until sixty-five. Start at twenty-five, and you end with about seven hundred and forty thousand. Start at thirty-five, about three hundred and fifty thousand. Start at forty-five, about one hundred and fifty thousand.",
+   "visual": {
+    "type": "table",
+    "title": "$300 a month until 65",
+    "header": [
+     "Start at",
+     "You put in",
+     "Value at 65"
+    ],
+    "rows": [
+     [
+      "25",
+      "$144,000",
+      "$741K"
+     ],
+     [
+      "35",
+      "$108,000",
+      "$351K"
+     ],
+     [
+      "45",
+      "$72,000",
+      "$152K"
+     ]
+    ],
+    "highlight_row": 0,
+    "col_colors": {
+     "2": "green"
+    }
+   }
+  },
+  {
+   "say": "Waiting ten years, from twenty-five to thirty-five, saves you only thirty-six thousand dollars in contributions. But it cuts your ending balance by more than half. That's nearly four hundred thousand dollars.",
+   "visual": {
+    "type": "versus",
+    "title": "The cost of waiting ten years",
+    "left": {
+     "label": "Start at 35",
+     "value": "$351K",
+     "sub": "put in $108,000",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Start at 25",
+     "value": "$741K",
+     "sub": "put in $144,000",
+     "color": "green"
+    },
+    "verdict": "Waiting costs about $391K"
+   }
+  },
+  {
+   "say": "Remember Maya? Her first ten years of deposits, just twenty-four thousand dollars, end up as more than half of her final balance.",
+   "visual": {
+    "type": "share",
+    "title": "Maya's balance at 65",
+    "rows": [
+     {
+      "label": "From her first 10 years of deposits ($24,000)",
+      "share": 0.5268328031939407,
+      "color": "green"
+     }
+    ],
+    "note": "$200 a month from 25 to 35, left to grow at an assumed 7%"
+   }
+  },
+  {
+   "say": "That's the real power of time. Your earliest dollars are the most valuable dollars you'll ever invest, because they get the most doublings.",
+   "visual": {
+    "type": "quote",
+    "text": "Your earliest dollars\nget the most\ndoublings.",
+    "first_color": "gold"
+   }
+  },
+  {
+   "say": "Lever four: the leaks. Fees, inflation, and taxes.",
+   "visual": {
+    "type": "chapter",
+    "n": 5,
+    "title": "Lever 4: The leaks"
+   }
+  },
+  {
+   "say": "Fees first. A fund fee of one percent a year sounds tiny. But it's charged on your whole balance, every year, so it compounds against you.",
+   "visual": {
+    "type": "stat",
+    "value": "1%",
+    "label": "a year in fees sounds tiny",
+    "sub": "but it's charged on your whole balance, every year",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Back to three hundred a month for thirty years. With no fees, about three hundred and fifty-one thousand. With a zero point one percent fee, about three hundred and forty-four thousand. With one percent, about two hundred and ninety-two thousand. And with two percent, just two hundred and forty-five thousand.",
+   "visual": {
+    "type": "hbars",
+    "title": "$300 a month for 30 years, assumed 7% before fees",
+    "items": [
+     {
+      "label": "No fee",
+      "value": 350835.7809859799,
+      "display": "$351K",
+      "color": "green"
+     },
+     {
+      "label": "0.1% fee",
+      "value": 344437.0045174604,
+      "display": "$344K",
+      "color": "green"
+     },
+     {
+      "label": "1% fee",
+      "value": 292353.8919155923,
+      "display": "$292K",
+      "color": "gold"
+     },
+     {
+      "label": "2% fee",
+      "value": 244612.77208734874,
+      "display": "$245K",
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So a one percent fee quietly takes about one sixth of your final balance. That's almost sixty thousand dollars, for a fee that sounded like nothing.",
+   "visual": {
+    "type": "share",
+    "title": "Lost to a 1% yearly fee",
+    "rows": [
+     {
+      "label": "Share of your final balance",
+      "share": 0.16669305766370687,
+      "color": "red"
+     }
+    ],
+    "note": "$58K on $300 a month for 30 years"
+   }
+  },
+  {
+   "say": "Next, inflation. Prices rise over time, so a future dollar buys less than a dollar today. At three percent inflation, prices roughly double every twenty-four years. That's the Rule of seventy-two again.",
+   "visual": {
+    "type": "line",
+    "title": "What $100 buys, at 3% inflation",
+    "x": [
+     0,
+     5,
+     10,
+     15,
+     20,
+     25,
+     30
+    ],
+    "series": [
+     {
+      "label": "buys $41",
+      "values": [
+       100.0,
+       86.2608784384164,
+       74.4093914896725,
+       64.18619473967173,
+       55.36757541863345,
+       47.76055692616592,
+       41.19867595159064
+      ],
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So the three hundred and fifty-one thousand you'd have in thirty years would only buy what about one hundred and forty-five thousand buys today. That's the difference between nominal returns, the number on your statement, and real returns, what the money can actually buy.",
+   "visual": {
+    "type": "versus",
+    "title": "Your $351K in 30 years",
+    "left": {
+     "label": "Nominal",
+     "value": "$351K",
+     "sub": "the number on the statement",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Real",
+     "value": "$145K",
+     "sub": "in today's dollars, 3% inflation",
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "Taxes are the third leak. Many countries offer accounts where investments can grow without being taxed every year, like retirement accounts in the US, ISAs in the UK, or tax-free savings accounts in Canada. Rules differ, so check what applies to you.",
+   "visual": {
+    "type": "bullets",
+    "title": "Tax-advantaged accounts (examples)",
+    "items": [
+     "US: 401(k) and IRA accounts",
+     "UK: ISAs and pensions",
+     "Canada: TFSA and RRSP",
+     "Rules and limits vary by country"
+    ]
+   }
+  },
+  {
+   "say": "Now put the leaks together. An assumed seven percent return, minus a one percent fee, minus three percent inflation, leaves a real return of roughly three percent a year.",
+   "visual": {
+    "type": "waterfall",
+    "title": "From headline return to real return",
+    "steps": [
+     {
+      "label": "Return",
+      "value": 7.000000000000001,
+      "kind": "start",
+      "display": "7%",
+      "color": "green"
+     },
+     {
+      "label": "Fee",
+      "value": 1.0,
+      "kind": "minus",
+      "display": "−1%"
+     },
+     {
+      "label": "Inflation",
+      "value": 3.0873786407767008,
+      "kind": "minus",
+      "display": "−3%"
+     },
+     {
+      "label": "Real return",
+      "value": 2.9126213592232997,
+      "kind": "total",
+      "display": "≈2.9%"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So which lever matters most? Let's line them up.",
+   "visual": {
+    "type": "chapter",
+    "n": 6,
+    "title": "Which lever wins?"
+   }
+  },
+  {
+   "say": "Our base case: three hundred a month for thirty years, at seven percent, with no fees, ends at about three hundred and fifty-one thousand. Now let's change just one thing at a time.",
+   "visual": {
+    "type": "stat",
+    "value": "$351K",
+    "label": "our base case",
+    "sub": "$300 a month · 30 years · assumed 7% · no fees",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Starting ten years earlier gets you about seven hundred and forty thousand. Doubling the monthly amount, about seven hundred thousand. Two extra points of return, about five hundred and ten thousand. And a one percent fee pulls it down to two hundred and ninety-two.",
+   "visual": {
+    "type": "table",
+    "title": "Change one thing from the base case",
+    "header": [
+     "Change",
+     "Value at the end"
+    ],
+    "rows": [
+     [
+      "Start 10 years earlier",
+      "$741K"
+     ],
+     [
+      "Double the amount",
+      "$702K"
+     ],
+     [
+      "Rate 7% → 9%",
+      "$511K"
+     ],
+     [
+      "Add a 1% fee",
+      "$292K"
+     ]
+    ],
+    "highlight_row": 0
+   }
+  },
+  {
+   "say": "Time wins, and look at the cost. The ten extra years add just thirty-six thousand dollars of contributions. Doubling the amount adds one hundred and eight thousand. Yet the extra years still produce the bigger result.",
+   "visual": {
+    "type": "versus",
+    "title": "Time vs effort",
+    "left": {
+     "label": "Double the amount",
+     "value": "$702K",
+     "sub": "you put in $216,000",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Start 10 years earlier",
+     "value": "$741K",
+     "sub": "you put in $144,000",
+     "color": "green"
+    },
+    "verdict": "Time beats effort"
+   }
+  },
+  {
+   "say": "Here's the catch. The amount, you can raise slowly. The leaks, you can shrink. The rate is partly risk and partly luck. But time is the only lever that disappears if you don't use it.",
+   "visual": {
+    "type": "bullets",
+    "title": "The four levers",
+    "items": [
+     "Amount: raise it over time",
+     "Rate: higher means riskier",
+     "Time: can't be bought back",
+     "Leaks: keep them small"
+    ]
+   }
+  },
+  {
+   "say": "So what does this mean for you?",
+   "visual": {
+    "type": "chapter",
+    "n": 7,
+    "title": "What to do with this"
+   }
+  },
+  {
+   "say": "One: start as early as you can, even if the amount feels too small to matter. Small and early beat big and late, just like Maya and Sam.",
+   "visual": {
+    "type": "columns",
+    "title": "Same $96,000 put in, value at 65",
+    "items": [
+     {
+      "label": "Maya: $200/mo from 25",
+      "value": 494308.4014194373,
+      "display": "$494K",
+      "color": "green"
+     },
+     {
+      "label": "Sam: $400/mo from 45",
+      "value": 203014.5506253486,
+      "display": "$203K",
+      "color": "blue"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Two: automate it. Set up a monthly transfer so investing happens before you can spend the money, and raise it whenever your income goes up.",
+   "visual": {
+    "type": "timeline",
+    "title": "Make it automatic",
+    "events": [
+     {
+      "when": "Payday",
+      "text": "income lands",
+      "color": "slate"
+     },
+     {
+      "when": "Same day",
+      "text": "auto-transfer\nto investments"
+     },
+     {
+      "when": "Then",
+      "text": "spend what's left",
+      "color": "blue"
+     },
+     {
+      "when": "Each raise",
+      "text": "raise the\ntransfer",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Three: watch the costs. Check what fees you're paying, because a one percent difference can cost tens of thousands of dollars over a lifetime.",
+   "visual": {
+    "type": "stat",
+    "value": "−$58K",
+    "label": "what a 1% fee cost in our example",
+    "sub": "$300 a month · 30 years · assumed 7% before fees",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Four: think in real terms. Ask what your money will buy, not just how big the number looks. And stay skeptical of any promise of high, guaranteed returns.",
+   "visual": {
+    "type": "quote",
+    "text": "Ask what it will buy,\nnot how big it looks.",
+    "first_color": "gold"
+   }
+  },
+  {
+   "say": "So, the four numbers that decide your wealth: how much you put in, the rate you earn, how long you give it, and how much leaks out. Of those four, time is the one you can never get back.",
+   "visual": {
+    "type": "equation",
+    "title": "The 4 numbers",
+    "lines": [
+     {
+      "text": "Amount · Rate · Time · Leaks",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "Time is the one you can't get back.",
+      "color": "gold",
+      "size": 72
+     }
+    ]
+   }
+  },
+  {
+   "say": "If this made compounding click, subscribe. We explain how money really works, every week. And tell us in the comments: which lever surprised you most?",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Make time",
+     "work for you."
+    ],
+    "sub": "Subscribe for weekly money math"
+   }
+  }
+ ]
+}

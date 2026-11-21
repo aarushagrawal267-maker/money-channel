@@ -1,0 +1,304 @@
+{
+ "id": "015_rule_of_72",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "MONEY MATH",
+ "disclaimer": "Illustration · yearly compounding · returns not guaranteed · not financial advice",
+ "title": "How fast does your money double? The Rule of 72 #shorts",
+ "description": "Divide 72 by your yearly return and you get roughly how many years your money takes to double. At 4% that's 18 years, at 7% about 10, at 10% about 7.2. The exact answers (17.7, 10.2 and 7.3 years) are very close.\n\nAssumptions: returns compounded once a year; $1,000 example left untouched for 30 years. Rates are examples only: real returns vary and are not guaranteed. Not financial advice.\n\n#ruleof72 #compoundinterest #personalfinance #investing #moneytips",
+ "tags": [
+  "rule of 72",
+  "compound interest",
+  "doubling time",
+  "money math",
+  "personal finance",
+  "investing basics",
+  "inflation",
+  "financial literacy"
+ ],
+ "scenes": [
+  {
+   "say": "How long does it take for your money to double? There's a trick that answers it in about one second.",
+   "visual": {
+    "type": "equation",
+    "title": "The question",
+    "lines": [
+     {
+      "text": "$1,000 → $2,000",
+      "color": "green",
+      "size": 100
+     },
+     {
+      "text": "how many years?",
+      "color": "muted",
+      "size": 64
+     }
+    ]
+   }
+  },
+  {
+   "say": "It's called the Rule of seventy-two. Divide seventy-two by your yearly return. The answer is roughly how many years it takes.",
+   "visual": {
+    "type": "equation",
+    "title": "The Rule of 72",
+    "lines": [
+     {
+      "text": "72 ÷ return %",
+      "color": "gold",
+      "size": 110
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "≈ years to double",
+      "color": "text",
+      "size": 76
+     }
+    ]
+   }
+  },
+  {
+   "say": "At four percent, seventy-two divided by four is eighteen years.",
+   "visual": {
+    "type": "stat",
+    "value": "18 yrs",
+    "label": "to double at 4% a year",
+    "sub": "72 ÷ 4 = 18",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "At seven percent, about ten years. At ten percent, just over seven.",
+   "visual": {
+    "type": "bars",
+    "title": "Years to double",
+    "format": "num",
+    "items": [
+     {
+      "label": "at 4%",
+      "value": 18.0,
+      "color": "slate"
+     },
+     {
+      "label": "at 7%",
+      "value": 10.285714285714286,
+      "color": "blue"
+     },
+     {
+      "label": "at 10%",
+      "value": 7.2,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Is it accurate? The exact answers are seventeen point seven, ten point two, and seven point three years. Very close.",
+   "visual": {
+    "type": "equation",
+    "title": "Rule vs exact",
+    "lines": [
+     {
+      "text": "rule  ·  exact",
+      "color": "muted",
+      "size": 56
+     },
+     {
+      "text": "4%:  18.0  ·  17.7",
+      "color": "text",
+      "size": 84
+     },
+     {
+      "text": "7%:  10.3  ·  10.2",
+      "color": "text",
+      "size": 84
+     },
+     {
+      "text": "10%:  7.2  ·  7.3",
+      "color": "green",
+      "size": 84
+     }
+    ]
+   }
+  },
+  {
+   "say": "And doubling stacks. At ten percent, money doubles about four times in thirty years. One thousand dollars becomes over seventeen thousand.",
+   "visual": {
+    "type": "line",
+    "title": "$1,000 over 30 years",
+    "x": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30
+    ],
+    "x_label": "years",
+    "series": [
+     {
+      "label": "10%",
+      "values": [
+       1000.0,
+       1100.0,
+       1210.0000000000002,
+       1331.0000000000005,
+       1464.1000000000004,
+       1610.5100000000004,
+       1771.5610000000008,
+       1948.7171000000012,
+       2143.5888100000016,
+       2357.947691000002,
+       2593.7424601000025,
+       2853.1167061100023,
+       3138.428376721003,
+       3452.271214393104,
+       3797.4983358324143,
+       4177.248169415656,
+       4594.972986357222,
+       5054.470284992945,
+       5559.917313492239,
+       6115.9090448414645,
+       6727.499949325611,
+       7400.249944258173,
+       8140.2749386839905,
+       8954.302432552391,
+       9849.73267580763,
+       10834.705943388395,
+       11918.176537727235,
+       13109.99419149996,
+       14420.993610649957,
+       15863.092971714952,
+       17449.40226888645
+      ],
+      "color": "green"
+     },
+     {
+      "label": "7%",
+      "values": [
+       1000.0,
+       1070.0,
+       1144.9,
+       1225.0430000000001,
+       1310.7960100000003,
+       1402.5517307000005,
+       1500.7303518490005,
+       1605.7814764784307,
+       1718.186179831921,
+       1838.4592124201556,
+       1967.1513572895665,
+       2104.8519522998363,
+       2252.191588960825,
+       2409.845000188083,
+       2578.534150201249,
+       2759.031540715336,
+       2952.16374856541,
+       3158.8152109649886,
+       3379.932275732538,
+       3616.5275350338165,
+       3869.6844624861833,
+       4140.562374860217,
+       4430.401741100432,
+       4740.5298629774625,
+       5072.366953385886,
+       5427.432640122897,
+       5807.352924931501,
+       6213.867629676706,
+       6648.838363754076,
+       7114.257049216862,
+       7612.255042662042
+      ],
+      "color": "blue"
+     },
+     {
+      "label": "4%",
+      "values": [
+       1000.0,
+       1040.0,
+       1081.6000000000001,
+       1124.864,
+       1169.8585600000001,
+       1216.6529024000001,
+       1265.3190184960004,
+       1315.9317792358402,
+       1368.5690504052739,
+       1423.311812421485,
+       1480.2442849183444,
+       1539.4540563150783,
+       1601.0322185676814,
+       1665.0735073103888,
+       1731.6764476028043,
+       1800.9435055069166,
+       1872.9812457271933,
+       1947.9004955562812,
+       2025.8165153785326,
+       2106.8491759936737,
+       2191.123143033421,
+       2278.7680687547577,
+       2369.918791504948,
+       2464.7155431651463,
+       2563.3041648917524,
+       2665.836331487422,
+       2772.4697847469192,
+       2883.368576136796,
+       2998.703319182268,
+       3118.651451949559,
+       3243.3975100275416
+      ],
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "It works on prices too. At three percent inflation, prices double in about twenty-four years.",
+   "visual": {
+    "type": "stat",
+    "value": "24 yrs",
+    "label": "for prices to double at 3% inflation",
+    "sub": "72 ÷ 3 = 24",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Seventy-two, divided by the rate. Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "72 ÷ rate",
+     "= years to 2×"
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

@@ -1,0 +1,1120 @@
+{
+ "id": "L003_index_funds",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "gap": 0.35,
+ "badge": "HOW MARKETS WORK",
+ "intro_chapter": "The 92% problem",
+ "disclaimer": "Past performance doesn't guarantee future results · not investment advice",
+ "title": "Why Most Professional Fund Managers Lose to a Simple Index Fund",
+ "thumbnail": {
+  "big": "92.6%",
+  "line": "LOST TO THE INDEX",
+  "tag": "PRO FUNDS · 20 YEARS",
+  "color": "gold"
+ },
+ "description": "Over the 20 years to June 2026, more than 9 in 10 actively managed large-cap US stock funds trailed the S&P 500. Why do full-time professionals keep losing to a fund that does no research at all? We explain what an index fund is, William Sharpe's \"arithmetic of active management\", how a fee gap of less than 1% a year compounds over 30 years, why past winners rarely stay winners, the story of the first index fund (1976) and Warren Buffett's 10-year bet against hedge funds, and the honest weaknesses of index funds: they buy overpriced stocks too, the S&P 500 is top-heavy, and you take the full market crash.\n\nThe 30-year fee example is a hypothetical illustration ($100,000, 7% a year before fees, 2025 average asset-weighted expense ratios from ICI), not a prediction. This video explains how markets work; it does not recommend any fund or security.\n\nSources:\n- S&P Dow Jones Indices, SPIVA U.S. Mid-Year 2026 Scorecard (data to June 30, 2026): https://www.spglobal.com/spdji/en/documents/spiva/spiva-us-mid-year-2026.pdf\n- S&P Dow Jones Indices, SPIVA U.S. Year-End 2025 Scorecard: https://www.spglobal.com/spdji/en/spiva/article/spiva-us-year-end-2025/\n- S&P Dow Jones Indices, U.S. Persistence Scorecard Year-End 2025: https://www.spglobal.com/spdji/en/documents/spiva/persistence-scorecard-year-end-2025.pdf\n- Investment Company Institute, Trends in the Expenses and Fees of Funds, 2025 (March 2026): https://www.ici.org/system/files/2026-03/per32-01.pdf\n- Investment Company Institute, 2026 Investment Company Fact Book, ch. 2: https://icifactbook.org/pdf/2026-factbook-ch2.pdf\n- William F. Sharpe, The Arithmetic of Active Management (Financial Analysts Journal, 1991): https://web.stanford.edu/~wfsharpe/art/active/active.htm\n- Vanguard, 50th anniversary of the Vanguard 500 Index Fund (Aug 31, 2026): https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-50th-anniversary-vanguard-500-index-fund-083126.html\n- Berkshire Hathaway 2017 shareholder letter (the bet): https://www.berkshirehathaway.com/letters/2017ltr.pdf\n- RBC Wealth Management, The Great Narrowing: S&P 500 concentration (Jan 22, 2026): https://www.rbcwealthmanagement.com/en-us/insights/the-great-narrowing-sp-500-concentration\n\nNot financial advice. Past performance doesn't guarantee future results.\n\n#indexfunds #investing #stockmarket #personalfinance #warrenbuffett",
+ "description_sources": [
+  "S&P Dow Jones Indices, SPIVA U.S. Mid-Year 2026 Scorecard (data to June 30, 2026): https://www.spglobal.com/spdji/en/documents/spiva/spiva-us-mid-year-2026.pdf",
+  "S&P Dow Jones Indices, SPIVA U.S. Year-End 2025 Scorecard: https://www.spglobal.com/spdji/en/spiva/article/spiva-us-year-end-2025/",
+  "S&P Dow Jones Indices, U.S. Persistence Scorecard Year-End 2025: https://www.spglobal.com/spdji/en/documents/spiva/persistence-scorecard-year-end-2025.pdf",
+  "Investment Company Institute, Trends in the Expenses and Fees of Funds, 2025 (March 2026): https://www.ici.org/system/files/2026-03/per32-01.pdf",
+  "Investment Company Institute, 2026 Investment Company Fact Book, ch. 2: https://icifactbook.org/pdf/2026-factbook-ch2.pdf",
+  "William F. Sharpe, The Arithmetic of Active Management (Financial Analysts Journal, 1991): https://web.stanford.edu/~wfsharpe/art/active/active.htm",
+  "Vanguard, 50th anniversary of the Vanguard 500 Index Fund (Aug 31, 2026): https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-50th-anniversary-vanguard-500-index-fund-083126.html",
+  "Berkshire Hathaway 2017 shareholder letter (the bet): https://www.berkshirehathaway.com/letters/2017ltr.pdf",
+  "RBC Wealth Management, The Great Narrowing: S&P 500 concentration (Jan 22, 2026): https://www.rbcwealthmanagement.com/en-us/insights/the-great-narrowing-sp-500-concentration"
+ ],
+ "tags": [
+  "index funds",
+  "index fund vs active fund",
+  "S&P 500",
+  "SPIVA",
+  "active vs passive investing",
+  "expense ratio",
+  "John Bogle",
+  "Warren Buffett bet",
+  "how the stock market works",
+  "investing for beginners",
+  "personal finance",
+  "fund fees"
+ ],
+ "scenes": [
+  {
+   "say": "Over the last twenty years, more than nine out of ten actively managed large US stock funds did worse than one simple benchmark: the S and P five hundred.",
+   "visual": {
+    "type": "count",
+    "to": 92.61,
+    "dp": 1,
+    "suffix": "%",
+    "color": "gold",
+    "label": "of large-cap US funds trailed the S&P 500",
+    "sub": "20 years to June 2026 · S&P SPIVA scorecard"
+   }
+  },
+  {
+   "say": "And it isn't ancient history. In 2025 alone, seventy-nine percent of them fell behind.",
+   "visual": {
+    "type": "share",
+    "title": "Large-cap US funds that trailed the S&P 500",
+    "rows": [
+     {
+      "label": "In 2025",
+      "share": 0.79,
+      "color": "gold"
+     },
+     {
+      "label": "Over 20 years",
+      "share": 0.9261,
+      "color": "red",
+      "dp": 1
+     }
+    ],
+    "note": "Source: S&P Dow Jones Indices, SPIVA U.S. Scorecards"
+   }
+  },
+  {
+   "say": "These are full-time professionals with research teams and huge budgets. And they lost to a fund that does no research at all.",
+   "visual": {
+    "type": "versus",
+    "title": "Who should win?",
+    "left": {
+     "label": "Active fund",
+     "value": "Experts",
+     "sub": "analysts, research, trading",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Index fund",
+     "value": "Autopilot",
+     "sub": "no stock picking at all",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "In this video, we'll see why that happens, why it isn't just bad luck, and where index funds have real weaknesses too.",
+   "visual": {
+    "type": "title",
+    "title": "The Index Fund Paradox",
+    "sub": "why the experts keep losing"
+   }
+  },
+  {
+   "say": "First, what is an index fund?",
+   "visual": {
+    "type": "chapter",
+    "n": 1,
+    "title": "What is an index fund?"
+   }
+  },
+  {
+   "say": "An index is just a list. The S and P five hundred, for example, is a list of about five hundred of the largest companies in the United States.",
+   "visual": {
+    "type": "stat",
+    "value": "~500",
+    "label": "large US companies, one list",
+    "sub": "the S&P 500 index",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "An index fund simply buys every company on that list, in the same proportions, and holds them. Nobody inside the fund is trying to guess which stocks will win.",
+   "visual": {
+    "type": "equation",
+    "title": "An index fund, in one line",
+    "lines": [
+     {
+      "text": "Buy the whole list.",
+      "color": "text",
+      "size": 100
+     },
+     {
+      "text": "Hold it.",
+      "color": "green",
+      "size": 110
+     },
+     {
+      "text": "No guessing.",
+      "color": "muted",
+      "size": 80
+     }
+    ]
+   }
+  },
+  {
+   "say": "So who decides what's on the list? For the S and P five hundred, it's a committee at S and P Dow Jones Indices, following published rules about size, profits, and how easily the shares trade.",
+   "visual": {
+    "type": "bullets",
+    "title": "Who picks the S&P 500?",
+    "items": [
+     "A committee at S&P Dow Jones Indices",
+     "Big US companies",
+     "Recently profitable",
+     "Shares that trade easily"
+    ]
+   }
+  },
+  {
+   "say": "Bigger companies get a bigger slice of the fund. That's called market cap weighting, and we'll come back to why it matters.",
+   "visual": {
+    "type": "hbars",
+    "title": "Bigger company, bigger slice (illustration)",
+    "format": "num",
+    "items": [
+     {
+      "label": "Giant company",
+      "value": 100,
+      "display": "big slice",
+      "color": "gold"
+     },
+     {
+      "label": "Mid-size",
+      "value": 35,
+      "display": "smaller",
+      "color": "green"
+     },
+     {
+      "label": "Smaller",
+      "value": 10,
+      "display": "tiny",
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "There are index funds for almost everything: the whole US market, stocks around the world, even bonds. In this video we'll mostly use the S and P five hundred, because that's where the best long-term data is.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Index funds can track almost any list",
+    "items": [
+     {
+      "value": "US",
+      "label": "the whole US market",
+      "color": "green"
+     },
+     {
+      "value": "World",
+      "label": "global stocks",
+      "color": "blue"
+     },
+     {
+      "value": "Bonds",
+      "label": "loans to governments",
+      "sub": "and companies",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "And index funds are no longer a niche idea. By the end of 2025, index funds held fifty-two percent of the money in long-term US funds, up from just nineteen percent in 2010.",
+   "visual": {
+    "type": "columns",
+    "title": "Index funds' share of US long-term fund assets",
+    "items": [
+     {
+      "label": "2010",
+      "value": 19.0,
+      "display": "19%",
+      "color": "slate"
+     },
+     {
+      "label": "2025",
+      "value": 52.0,
+      "display": "52%",
+      "color": "green"
+     }
+    ],
+    "note": "Index mutual funds + index ETFs · Source: ICI 2026 Fact Book"
+   }
+  },
+  {
+   "say": "Now, the other side.",
+   "visual": {
+    "type": "chapter",
+    "n": 2,
+    "title": "The active approach"
+   }
+  },
+  {
+   "say": "An active fund manager tries to beat the index. They research companies, buy the ones they like, skip the ones they don't, and keep trading as their views change.",
+   "visual": {
+    "type": "flywheel",
+    "title": "What an active manager does",
+    "center": "BEAT IT?",
+    "steps": [
+     "Research",
+     "Pick stocks",
+     "Trade",
+     "Review"
+    ]
+   }
+  },
+  {
+   "say": "All that research and trading costs money, so active funds charge a higher yearly fee. It's called the expense ratio.",
+   "visual": {
+    "type": "equation",
+    "title": "The expense ratio",
+    "lines": [
+     {
+      "text": "A % of your money",
+      "color": "text",
+      "size": 100
+     },
+     {
+      "text": "taken every year",
+      "color": "gold",
+      "size": 100
+     },
+     {
+      "text": "whether the fund wins or not",
+      "color": "muted",
+      "size": 64
+     }
+    ]
+   }
+  },
+  {
+   "say": "In 2025, the average actively managed stock mutual fund charged zero point six four percent a year. The average index stock mutual fund charged just zero point zero five percent.",
+   "visual": {
+    "type": "versus",
+    "title": "Average yearly fee, US stock mutual funds (2025)",
+    "left": {
+     "label": "Active",
+     "value": "0.64%",
+     "sub": "asset-weighted average",
+     "color": "red"
+    },
+    "right": {
+     "label": "Index",
+     "value": "0.05%",
+     "sub": "asset-weighted average",
+     "color": "green"
+    },
+    "verdict": "Source: Investment Company Institute, March 2026"
+   }
+  },
+  {
+   "say": "On ten thousand dollars, that's sixty-four dollars a year versus five dollars. Small numbers. But they repeat every single year.",
+   "visual": {
+    "type": "table",
+    "title": "What the fee costs you",
+    "header": [
+     "",
+     "Active",
+     "Index"
+    ],
+    "rows": [
+     [
+      "Fee rate",
+      "0.64%",
+      "0.05%"
+     ],
+     [
+      "On $10,000",
+      "$64 / yr",
+      "$5 / yr"
+     ]
+    ],
+    "col_colors": {
+     "1": "red",
+     "2": "green"
+    }
+   }
+  },
+  {
+   "say": "That means a manager has to beat the market by more than their fee, just to tie with the index fund. So, can they?",
+   "visual": {
+    "type": "quote",
+    "text": "To win, a manager must\nbeat the market by more\nthan their own fee.",
+    "first_color": "gold",
+    "source": "The hurdle every active fund faces"
+   }
+  },
+  {
+   "say": "Why most of them lose.",
+   "visual": {
+    "type": "chapter",
+    "n": 3,
+    "title": "The arithmetic of losing"
+   }
+  },
+  {
+   "say": "In 1991, Nobel prize-winning economist William Sharpe published a short paper called The Arithmetic of Active Management. Its logic is so simple, it's almost annoying.",
+   "visual": {
+    "type": "title",
+    "title": "The Arithmetic of",
+    "sub": "Active Management · William F. Sharpe, 1991",
+    "sub_color": "gold"
+   }
+  },
+  {
+   "say": "Think of every dollar invested in the stock market. Some of it sits in index funds. The rest is managed actively. Together, they are the market.",
+   "visual": {
+    "type": "equation",
+    "lines": [
+     {
+      "text": "The whole market",
+      "color": "gold",
+      "size": 100
+     },
+     {
+      "text": "= index investors",
+      "color": "green",
+      "size": 90
+     },
+     {
+      "text": "+ active investors",
+      "color": "blue",
+      "size": 90
+     }
+    ]
+   }
+  },
+  {
+   "say": "Say the market returns eight percent in a year. Index investors get eight percent. So the average active dollar must also earn eight percent, before costs.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Before costs (illustration)",
+    "items": [
+     {
+      "value": "8%",
+      "label": "whole market",
+      "color": "gold"
+     },
+     {
+      "value": "8%",
+      "label": "index investors",
+      "color": "green"
+     },
+     {
+      "value": "8%",
+      "label": "average active $",
+      "color": "blue"
+     }
+    ]
+   }
+  },
+  {
+   "say": "That makes active investing a zero-sum game before costs. For every manager who beats the market by a point, another trails it by a point.",
+   "visual": {
+    "type": "versus",
+    "title": "Before costs, it's zero-sum",
+    "left": {
+     "label": "One manager",
+     "value": "+1%",
+     "sub": "vs the market",
+     "color": "green"
+    },
+    "right": {
+     "label": "Another manager",
+     "value": "−1%",
+     "sub": "vs the market",
+     "color": "red"
+    },
+    "verdict": "Average: exactly the market"
+   }
+  },
+  {
+   "say": "But then the costs come out. Take away the average fee, and the average active dollar must earn less than the market. Not because managers are foolish. It's just arithmetic.",
+   "visual": {
+    "type": "waterfall",
+    "title": "After costs (illustration)",
+    "steps": [
+     {
+      "label": "Market return",
+      "value": 8.0,
+      "kind": "start",
+      "display": "8%"
+     },
+     {
+      "label": "Average fee",
+      "value": 0.64,
+      "kind": "minus",
+      "display": "−0.64%"
+     },
+     {
+      "label": "Avg active dollar",
+      "value": 7.36,
+      "kind": "total",
+      "display": "7.36%"
+     }
+    ]
+   }
+  },
+  {
+   "say": "And fees aren't the only cost. Active funds trade more, so they pay more trading costs. And in a regular taxable account, frequent selling can mean paying tax on gains sooner.",
+   "visual": {
+    "type": "bullets",
+    "title": "Costs that quietly eat returns",
+    "items": [
+     "Yearly fees",
+     "Trading costs",
+     "Taxes on gains from selling"
+    ],
+    "color": "red"
+   }
+  },
+  {
+   "say": "Now watch what a small fee does over a long time. Imagine one hundred thousand dollars growing for thirty years, at seven percent a year before fees. This is an illustration, not a prediction.",
+   "visual": {
+    "type": "line",
+    "title": "Index fee vs active fee: $100,000 over 30 years",
+    "x": [
+     0,
+     5,
+     10,
+     15,
+     20,
+     25,
+     30
+    ],
+    "series": [
+     {
+      "label": "Index fee",
+      "color": "green",
+      "values": [
+       100000.0,
+       139927.780185171,
+       195797.83667549537,
+       273975.5665106073,
+       383367.9284680396,
+       536438.2322472021,
+       750626.1104480821
+      ]
+     },
+     {
+      "label": "",
+      "color": "red",
+      "values": [
+       100000.0,
+       136110.5043671218,
+       185260.69399072276,
+       252159.26498480284,
+       343215.24737924227,
+       467152.00427275134,
+       635842.94917676
+      ]
+     }
+    ],
+    "format": "usd"
+   }
+  },
+  {
+   "say": "With the average index fee, you'd end up with about seven hundred and fifty thousand dollars. With the average active fee, about six hundred and thirty-six thousand.",
+   "visual": {
+    "type": "hbars",
+    "title": "After 30 years (illustration)",
+    "format": "usd",
+    "items": [
+     {
+      "label": "Index fee",
+      "value": 750626.1104480821,
+      "display": "$751K",
+      "color": "green"
+     },
+     {
+      "label": "Active fee",
+      "value": 635842.94917676,
+      "display": "$636K",
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "That's a gap of almost one hundred and fifteen thousand dollars, from a fee difference of less than one percent a year.",
+   "visual": {
+    "type": "count",
+    "to": 114783.16127132205,
+    "prefix": "$",
+    "color": "red",
+    "label": "lost to the fee gap",
+    "sub": "same market, same 30 years · illustration"
+   }
+  },
+  {
+   "say": "Can't you just pick the winners?",
+   "visual": {
+    "type": "chapter",
+    "n": 4,
+    "title": "Picking the winners"
+   }
+  },
+  {
+   "say": "It's the obvious idea: find a fund that's been beating the market, and invest with it. S and P actually tests this, in a report called the Persistence Scorecard.",
+   "visual": {
+    "type": "equation",
+    "title": "The obvious plan",
+    "lines": [
+     {
+      "text": "Find a recent winner",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "→ invest with it",
+      "color": "muted",
+      "size": 80
+     },
+     {
+      "text": "→ keeps winning?",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "They took the large US stock funds that ranked in the top quarter of their peers in 2021. There were one hundred and sixty-four of them.",
+   "visual": {
+    "type": "count",
+    "to": 164,
+    "color": "green",
+    "label": "large-cap funds in the top quarter in 2021",
+    "sub": "S&P Persistence Scorecard, year-end 2025"
+   }
+  },
+  {
+   "say": "How many stayed in the top quarter every year through 2025? Zero. Not one.",
+   "visual": {
+    "type": "stat",
+    "value": "0",
+    "color": "red",
+    "label": "stayed in the top quarter every year to 2025",
+    "sub": "out of 164 funds"
+   }
+  },
+  {
+   "say": "Even just staying in the top half every year was too much. Only about four and a half percent of funds did it. Pure coin flips would give you six point two five percent.",
+   "visual": {
+    "type": "versus",
+    "title": "Staying above average, 2021 to 2025",
+    "left": {
+     "label": "Funds that did it",
+     "value": "4.5%",
+     "sub": "large-cap, top half",
+     "color": "red"
+    },
+    "right": {
+     "label": "Coin-flip odds",
+     "value": "6.25%",
+     "sub": "½ × ½ × ½ × ½",
+     "color": "slate"
+    },
+    "verdict": "Worse than pure luck"
+   }
+  },
+  {
+   "say": "A big reason is luck. In any single year, plenty of managers will beat the market partly by chance, and chance doesn't repeat on command.",
+   "visual": {
+    "type": "equation",
+    "title": "Why winners fade",
+    "lines": [
+     {
+      "text": "Skill is real.",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "But luck is louder.",
+      "color": "gold",
+      "size": 110
+     },
+     {
+      "text": "And luck doesn't repeat.",
+      "color": "muted",
+      "size": 72
+     }
+    ]
+   }
+  },
+  {
+   "say": "Funds also quietly disappear. Of the large US stock funds that existed twenty years ago, just over a third were still around by mid-2026. The rest were closed or merged away.",
+   "visual": {
+    "type": "share",
+    "title": "Large-cap US funds alive in 2006…",
+    "rows": [
+     {
+      "label": "Still around in mid-2026",
+      "share": 0.3652,
+      "color": "gold",
+      "dp": 1
+     }
+    ],
+    "note": "Source: S&P SPIVA U.S. Scorecard, mid-year 2026"
+   }
+  },
+  {
+   "say": "So past winners rarely stay winners. Picking a fund by its recent record is a lot closer to luck than it looks.",
+   "visual": {
+    "type": "quote",
+    "text": "Past winners\nrarely stay winners.",
+    "first_color": "gold",
+    "source": "S&P Persistence Scorecard, year-end 2025"
+   }
+  },
+  {
+   "say": "Two people made this idea famous.",
+   "visual": {
+    "type": "chapter",
+    "n": 5,
+    "title": "Bogle and Buffett"
+   }
+  },
+  {
+   "say": "In 1975, John Bogle founded Vanguard. On August thirty-first, 1976, it launched the first index fund for everyday investors, built to track the S and P five hundred.",
+   "visual": {
+    "type": "timeline",
+    "title": "How the index fund grew up",
+    "events": [
+     {
+      "when": "1975",
+      "text": "Bogle founds\nVanguard"
+     },
+     {
+      "when": "1976",
+      "text": "First index fund\nfor everyday investors",
+      "color": "gold"
+     },
+     {
+      "when": "1991",
+      "text": "Sharpe's\narithmetic",
+      "color": "blue"
+     },
+     {
+      "when": "2007",
+      "text": "Buffett makes\nhis bet",
+      "color": "gold"
+     },
+     {
+      "when": "2025",
+      "text": "Index funds hold\nmost fund assets"
+     }
+    ]
+   }
+  },
+  {
+   "say": "At first, it flopped. The goal was to raise one hundred and fifty million dollars. It raised just eleven point three million.",
+   "visual": {
+    "type": "columns",
+    "title": "The first index fund's launch, 1976",
+    "items": [
+     {
+      "label": "Target",
+      "value": 150.0,
+      "display": "$150M",
+      "color": "slate"
+     },
+     {
+      "label": "Raised",
+      "value": 11.3,
+      "display": "$11.3M",
+      "color": "gold"
+     }
+    ],
+    "note": "Source: Vanguard"
+   }
+  },
+  {
+   "say": "But the idea grew into an industry. By the end of 2025, US index mutual funds and ETFs held nineteen point one trillion dollars.",
+   "visual": {
+    "type": "stat",
+    "value": "$19.1T",
+    "color": "green",
+    "label": "in US index mutual funds and ETFs",
+    "sub": "year-end 2025 · Investment Company Institute"
+   }
+  },
+  {
+   "say": "Then came Warren Buffett. In December 2007, he made a one million dollar bet, for charity, that a plain S and P five hundred index fund would beat hedge fund experts over the next ten years.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Buffett's bet",
+    "items": [
+     {
+      "value": "$1M",
+      "label": "for charity",
+      "color": "gold"
+     },
+     {
+      "value": "10 yrs",
+      "label": "2008 to 2017",
+      "color": "text"
+     },
+     {
+      "value": "1 fund",
+      "label": "S&P 500 index",
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "His opponent, Protégé Partners, picked five funds of funds. Together, they owned stakes in more than two hundred hedge funds, and they could switch managers whenever they liked.",
+   "visual": {
+    "type": "bullets",
+    "title": "The other side of the bet",
+    "items": [
+     "Protégé Partners",
+     "5 funds of funds",
+     "200+ hedge funds inside",
+     "Free to switch managers"
+    ],
+    "color": "blue"
+   }
+  },
+  {
+   "say": "And those funds were expensive. Buffett estimated fixed fees of around two and a half percent of assets every year, before any share of the profits.",
+   "visual": {
+    "type": "stat",
+    "value": "~2.5%",
+    "color": "red",
+    "label": "yearly fixed fees, Buffett's estimate",
+    "sub": "plus a share of any gains"
+   }
+  },
+  {
+   "say": "After ten years, here's the result. The index fund gained one hundred and twenty-five point eight percent. The five funds of funds gained between two point eight and eighty-seven point seven percent.",
+   "visual": {
+    "type": "columns",
+    "title": "Total gain, 2008 to 2017",
+    "highlight": 5,
+    "items": [
+     {
+      "label": "Fund A",
+      "value": 21.7,
+      "display": "21.7%",
+      "color": "blue"
+     },
+     {
+      "label": "Fund B",
+      "value": 42.3,
+      "display": "42.3%",
+      "color": "blue"
+     },
+     {
+      "label": "Fund C",
+      "value": 87.7,
+      "display": "87.7%",
+      "color": "blue"
+     },
+     {
+      "label": "Fund D",
+      "value": 2.8,
+      "display": "2.8%",
+      "color": "blue"
+     },
+     {
+      "label": "Fund E",
+      "value": 27.0,
+      "display": "27.0%",
+      "color": "blue"
+     },
+     {
+      "label": "Index fund",
+      "value": 125.8,
+      "display": "125.8%",
+      "color": "gold"
+     }
+    ],
+    "note": "Source: Berkshire Hathaway 2017 shareholder letter"
+   }
+  },
+  {
+   "say": "Per year, the index fund made eight point five percent. The best of the five made six point five, and their average was about three.",
+   "visual": {
+    "type": "table",
+    "title": "Buffett's bet, final scorecard",
+    "header": [
+     "",
+     "Total gain",
+     "Per year"
+    ],
+    "rows": [
+     [
+      "Index fund",
+      "125.8%",
+      "8.5%"
+     ],
+     [
+      "Best of the 5",
+      "87.7%",
+      "6.5%"
+     ],
+     [
+      "Average of the 5",
+      "36.3%",
+      "3.0%"
+     ]
+    ],
+    "highlight_row": 0
+   }
+  },
+  {
+   "say": "The prize had grown to over two point two million dollars, and it went to Girls Inc. of Omaha.",
+   "visual": {
+    "type": "count",
+    "to": 2222279,
+    "prefix": "$",
+    "color": "green",
+    "label": "donated to Girls Inc. of Omaha",
+    "sub": "early 2018"
+   }
+  },
+  {
+   "say": "Buffett summed it up in his letter that year: performance comes, performance goes. Fees never falter.",
+   "visual": {
+    "type": "quote",
+    "text": "Performance comes,\nperformance goes.\nFees never falter.",
+    "first_color": "text",
+    "color": "gold",
+    "source": "Warren Buffett · Berkshire Hathaway letter, 2017"
+   }
+  },
+  {
+   "say": "Now, index funds aren't perfect. Here's the honest catch.",
+   "visual": {
+    "type": "chapter",
+    "n": 6,
+    "title": "The honest catch"
+   }
+  },
+  {
+   "say": "First, an index fund holds everything on the list, including companies that may be overpriced. It never asks whether a stock is a bargain. It just buys it.",
+   "visual": {
+    "type": "equation",
+    "title": "No judgment, by design",
+    "lines": [
+     {
+      "text": "It buys the bargains…",
+      "color": "green",
+      "size": 96
+     },
+     {
+      "text": "…and the bubbles too.",
+      "color": "red",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "Second, because bigger companies get bigger slices, the S and P five hundred has become top-heavy. At the end of 2025, its ten largest companies made up about forty-one percent of the whole index.",
+   "visual": {
+    "type": "donut",
+    "title": "Weight inside the S&P 500, end of 2025",
+    "dp": 1,
+    "center": "S&P 500",
+    "center_sub": "end of 2025",
+    "segments": [
+     {
+      "label": "10 largest companies",
+      "value": 40.699999999999996,
+      "color": "gold"
+     },
+     {
+      "label": "The other ~490",
+      "value": 59.3,
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Between 1990 and 2015, that figure mostly sat around eighteen to twenty-three percent. So today, a lot of an S and P five hundred investor's money rides on just a few giant companies.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Weight of the 10 largest S&P 500 companies",
+    "items": [
+     {
+      "value": "18–23%",
+      "label": "typical, 1990–2015",
+      "color": "slate"
+     },
+     {
+      "value": "40.7%",
+      "label": "end of 2025",
+      "sub": "a record",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Third, you get the whole market, including the crashes. In 2008, the index fund in Buffett's bet lost thirty-seven percent. No manager steps in to protect you.",
+   "visual": {
+    "type": "stat",
+    "value": "−37%",
+    "color": "red",
+    "label": "S&P 500 index fund in 2008",
+    "sub": "from Buffett's 2017 letter"
+   }
+  },
+  {
+   "say": "And fourth, an index fund will never beat the market. By design, you get the market's return, minus a small fee.",
+   "visual": {
+    "type": "bullets",
+    "title": "The honest trade-offs",
+    "items": [
+     "Buys overpriced stocks too",
+     "Top-heavy in a few giants",
+     "Takes the full crash",
+     "Never beats the market"
+    ],
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Some active managers do beat the index, and a few do it for years. The hard part is spotting them before the results are in, not after.",
+   "visual": {
+    "type": "title",
+    "title": "Winners do exist",
+    "sub": "finding them in advance is the hard part"
+   }
+  },
+  {
+   "say": "So what does this mean for you?",
+   "visual": {
+    "type": "chapter",
+    "n": 7,
+    "title": "What it means for you"
+   }
+  },
+  {
+   "say": "This isn't advice to buy any particular fund. It's about the principles the evidence points to.",
+   "visual": {
+    "type": "equation",
+    "lines": [
+     {
+      "text": "Not a fund pick.",
+      "color": "muted",
+      "size": 90
+     },
+     {
+      "text": "Principles.",
+      "color": "gold",
+      "size": 120
+     }
+    ]
+   }
+  },
+  {
+   "say": "One: costs matter. Every dollar paid in fees is a dollar that stops compounding for you. Check the expense ratio of anything you own.",
+   "visual": {
+    "type": "count",
+    "title": "1 · Costs matter",
+    "from": 0.64,
+    "to": 0.05,
+    "dp": 2,
+    "suffix": "%",
+    "color": "green",
+    "label": "check the expense ratio",
+    "sub": "average active vs average index fee, 2025"
+   }
+  },
+  {
+   "say": "Two: diversify. Owning a broad slice of the market means no single company can sink you, though a top-heavy index is less spread out than it looks.",
+   "visual": {
+    "type": "versus",
+    "title": "2 · Diversify",
+    "left": {
+     "label": "One stock",
+     "value": "1",
+     "sub": "one bad year can sink you",
+     "color": "red"
+    },
+    "right": {
+     "label": "Whole index",
+     "value": "~500",
+     "sub": "but still top-heavy",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Three: think long term. Over a single year, about one in five large-cap funds beat the S and P five hundred. Over twenty years, fewer than one in ten did.",
+   "visual": {
+    "type": "columns",
+    "title": "3 · Large-cap funds that trailed the S&P 500",
+    "items": [
+     {
+      "label": "1 yr",
+      "value": 78.69,
+      "display": "79%"
+     },
+     {
+      "label": "5 yrs",
+      "value": 89.32,
+      "display": "89%"
+     },
+     {
+      "label": "10 yrs",
+      "value": 83.33,
+      "display": "83%"
+     },
+     {
+      "label": "15 yrs",
+      "value": 90.49,
+      "display": "90%"
+     },
+     {
+      "label": "20 yrs",
+      "value": 92.61,
+      "display": "93%"
+     }
+    ],
+    "highlight": 4,
+    "note": "Periods ending June 30, 2026 · Source: S&P SPIVA U.S. Scorecard"
+   }
+  },
+  {
+   "say": "And four: boring is often smart. Most of investing well is avoiding big, quiet costs, and letting time do the heavy lifting.",
+   "visual": {
+    "type": "equation",
+    "title": "4 · Boring is often smart",
+    "lines": [
+     {
+      "text": "Low costs",
+      "color": "green",
+      "size": 100
+     },
+     {
+      "text": "+ broad diversification",
+      "color": "text",
+      "size": 84
+     },
+     {
+      "text": "+ time",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Here's the whole video in one line. Most professionals don't lose because they're bad at their jobs. They lose because the math of costs is working against them.",
+   "visual": {
+    "type": "quote",
+    "text": "They don't lose\nbecause they're bad.\nThe math is against them.",
+    "first_color": "text",
+    "color": "gold",
+    "source": "Money Mechanics"
+   }
+  },
+  {
+   "say": "If this made markets make a bit more sense, subscribe. We explain how money really works, every week.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "How markets",
+     "really work."
+    ],
+    "sub": "Subscribe for weekly breakdowns"
+   }
+  }
+ ]
+}

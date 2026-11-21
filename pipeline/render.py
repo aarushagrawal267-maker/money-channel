@@ -73,6 +73,13 @@ def fmt(v, kind=None):
         return fmt_usd(v)
     return f"{v:,.0f}" if kind == "num" else str(v)
 
+def nice_ticks(vmax, n=5):
+    """Round axis steps (1/2/2.5/5 x 10^k) so labels read $100K, $200K... Returns tick values."""
+    raw = vmax / n
+    mag = 10 ** math.floor(math.log10(raw))
+    step = next(m * mag for m in (1, 2, 2.5, 5, 10) if m * mag >= raw)
+    return [step * i for i in range(1, math.ceil(vmax / step - 1e-9) + 1)]
+
 # ---------------------------------------------------------------- drawing utils
 def text_c(d, xy, s, f, fill, anchor="mm", stroke=0, stroke_fill=None):
     d.text(xy, s, font=f, fill=fill, anchor=anchor, stroke_width=stroke,
@@ -195,14 +202,14 @@ def v_line(d, v, t, dur):
     scene_title(d, v.get("title"), t)
     xs = v["x"]
     series = v["series"]
-    mx = max(max(s["values"]) for s in series) * 1.08
+    ticks = nice_ticks(max(max(s["values"]) for s in series))
+    mx = ticks[-1] * 1.04
     L, R, T, B = 200, 900, 580, 1110
     X = lambda x: L + (x - xs[0]) / (xs[-1] - xs[0]) * (R - L)
     Y = lambda y: B - y / mx * (B - T)
     kind = v.get("format")
     # axes + gridlines
-    for frac in (0.25, 0.5, 0.75, 1.0):
-        val = mx / 1.08 * frac
+    for val in ticks:
         d.line([(L, Y(val)), (R, Y(val))], fill=col("grid", 1), width=2)
         text_c(d, (L - 16, Y(val)), fmt(val, kind), font(28, "Medium", False), col("muted"), anchor="rm")
     d.line([(L, B), (R, B)], fill=col("muted"), width=3)
