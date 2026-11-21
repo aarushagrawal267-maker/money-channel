@@ -50,7 +50,7 @@ spec = {
          "visual": {"type": "compare", "title": "$18,000 in stocks, 2020",
                     "left": {"label": "February", "value": high, "color": "text"},
                     "right": {"label": "March", "value": after, "color": "red"}}},
-        {"say": "Keep it in a high-yield savings account at an FDIC-insured bank. Deposits are covered up to two hundred fifty thousand dollars, per depositor, per bank.",
+        {"say": "Keep it in a high-yield savings account at a bank insured by the FDIC. Deposits are covered up to two hundred fifty thousand dollars, per depositor, per bank.",
          "visual": {"type": "pair", "title": "Where it lives",
                     "left": {"label": "Savings", "sub": "insured · steady", "color": "green"},
                     "right": {"label": "Market", "sub": "can drop fast", "color": "red"}}},

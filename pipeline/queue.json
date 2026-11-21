@@ -7,8 +7,9 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "The Rule of 72: how fast your money doubles at 4%, 7% and 10%",
-      "spec": null,
-      "status": "idea"
+      "spec": "015_rule_of_72",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "minimum_payment_trap_us",
@@ -17,7 +18,8 @@
       "currency": "usd",
       "idea": "Only paying the credit card minimum: 16 years, $7,600 interest",
       "spec": "014_minimum_payment_trap_us",
-      "status": "spec_ready"
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "buying_a_share",
@@ -25,8 +27,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "What actually happens when you buy a share",
-      "spec": null,
-      "status": "idea"
+      "spec": "016_buying_a_share",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "upi_free",
@@ -34,8 +37,9 @@
       "pillar": "business",
       "currency": "inr",
       "idea": "How UPI is free: who pays for it? (India story)",
-      "spec": null,
-      "status": "idea"
+      "spec": "017_upi_free",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "start_early_us",
@@ -43,8 +47,9 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "Same $300/month: start at 25 vs 35",
-      "spec": null,
-      "status": "idea"
+      "spec": "018_start_early_us",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "real_hourly_wage",
@@ -52,8 +57,9 @@
       "pillar": "earn_more",
       "currency": "usd",
       "idea": "Your real hourly wage after commute and work costs",
-      "spec": null,
-      "status": "idea"
+      "spec": "019_real_hourly_wage",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "index_funds_vs_managers",
@@ -61,8 +67,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "Why most fund managers lose to the index (SPIVA)",
-      "spec": null,
-      "status": "idea"
+      "spec": "020_index_funds_vs_managers",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "bnpl",
@@ -70,8 +77,9 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Buy Now Pay Later: the late-fee and overspending math",
-      "spec": null,
-      "status": "idea"
+      "spec": "021_bnpl",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "airline_loyalty",
@@ -79,8 +87,9 @@
       "pillar": "business",
       "currency": "usd",
       "idea": "How airlines make money from credit cards, not seats",
-      "spec": null,
-      "status": "idea"
+      "spec": "022_airline_loyalty",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "inflation_100",
@@ -88,8 +97,9 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "What $100 buys in 20 years at 3% inflation",
-      "spec": null,
-      "status": "idea"
+      "spec": "023_inflation_100",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "expense_ratio",
@@ -97,8 +107,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "A 1% fee vs 0.05%: what it costs over 30 years",
-      "spec": null,
-      "status": "idea"
+      "spec": "024_expense_ratio",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "emergency_fund",
@@ -106,8 +117,9 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Emergency fund: how much and where to keep it",
-      "spec": null,
-      "status": "idea"
+      "spec": "025_emergency_fund",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "start_early_in",
@@ -116,7 +128,8 @@
       "currency": "inr",
       "idea": "Same ₹5,000 SIP: start at 25 vs 35 (India story)",
       "spec": "001_start_early",
-      "status": "spec_ready"
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "news_week1",
@@ -125,7 +138,8 @@
       "currency": "usd",
       "idea": "Money news of the week, explained (researched on the day)",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": 1
     },
     {
       "slug": "lifestyle_inflation",
@@ -134,7 +148,8 @@
       "currency": "usd",
       "idea": "Lifestyle inflation: how a raise can make you poorer",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "market_cap",
@@ -143,7 +158,8 @@
       "currency": "usd",
       "idea": "Market cap: why a company's value isn't its revenue",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "zerodha",
@@ -152,7 +168,8 @@
       "currency": "inr",
       "idea": "How Zerodha makes money with zero brokerage (India story)",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "car_loan_cost",
@@ -161,7 +178,8 @@
       "currency": "usd",
       "idea": "The real cost of a $35,000 car loan",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "raise_vs_switch",
@@ -170,7 +188,8 @@
       "currency": "usd",
       "idea": "Asking for a raise vs switching jobs: the 10-year math",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "rates_and_you",
@@ -179,7 +198,8 @@
       "currency": "usd",
       "idea": "What the Fed rate does to your loans and savings",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "free_apps",
@@ -188,7 +208,8 @@
       "currency": "usd",
       "idea": "How 'free' apps like Instagram earn from you",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "credit_score",
@@ -197,7 +218,8 @@
       "currency": "usd",
       "idea": "Your credit score: what moves it up and down",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "dca_vs_lump",
@@ -206,7 +228,8 @@
       "currency": "usd",
       "idea": "Lump sum vs monthly investing: which wins, and when",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "gold_fear",
@@ -215,7 +238,8 @@
       "currency": "usd",
       "idea": "Why gold rises when the world is scared",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "minimum_due_in",
@@ -224,7 +248,8 @@
       "currency": "inr",
       "idea": "The credit card 'minimum due' trap (India story)",
       "spec": "013_minimum_due_trap",
-      "status": "spec_ready"
+      "status": "spec_ready",
+      "week": null
     },
     {
       "slug": "apple_profit",
@@ -233,7 +258,8 @@
       "currency": "usd",
       "idea": "Why Apple makes more profit than almost anyone",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "side_income",
@@ -242,7 +268,8 @@
       "currency": "usd",
       "idea": "$500/month side income: what it's worth in 10 years",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "mortgage_prepay",
@@ -251,7 +278,8 @@
       "currency": "usd",
       "idea": "One extra mortgage payment a year: what it saves",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "bonds_friend",
@@ -260,7 +288,8 @@
       "currency": "usd",
       "idea": "Bonds explained with a friend who borrows money",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "no_cost_emi",
@@ -269,7 +298,8 @@
       "currency": "inr",
       "idea": "'No-cost EMI': who actually pays the interest (India story)",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "ipl",
@@ -278,7 +308,8 @@
       "currency": "inr",
       "idea": "How the IPL makes billions (India story)",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "save_for_million",
@@ -287,7 +318,8 @@
       "currency": "usd",
       "idea": "How much to save monthly to reach $1M by 50, 60, 65",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "dividends_buybacks",
@@ -296,7 +328,8 @@
       "currency": "usd",
       "idea": "Dividends vs buybacks: how companies return money",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "rent_vs_buy",
@@ -305,7 +338,8 @@
       "currency": "usd",
       "idea": "Rent vs buy: the costs nobody shows you",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "quick_commerce",
@@ -314,7 +348,8 @@
       "currency": "usd",
       "idea": "How 10-minute delivery works, and what it costs",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "raise_vs_inflation",
@@ -323,7 +358,8 @@
       "currency": "usd",
       "idea": "Your raise vs inflation: are you actually richer?",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "crash_and_sip",
@@ -332,7 +368,8 @@
       "currency": "usd",
       "idea": "What a market crash really means for a monthly investor",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "insurance_types",
@@ -341,7 +378,8 @@
       "currency": "usd",
       "idea": "Term vs whole life insurance: the $1M question",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "amul",
@@ -350,7 +388,8 @@
       "currency": "inr",
       "idea": "How Amul sells milk so cheap and still wins (India story)",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "online_income_ads",
@@ -359,7 +398,8 @@
       "currency": "usd",
       "idea": "Why 'make $10K a month online' ads are lies",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     }
   ],
   "long": [
@@ -370,7 +410,8 @@
       "currency": "usd",
       "idea": "How Costco Makes $9 Billion While Barely Profiting From Products",
       "spec": "L001_costco",
-      "status": "spec_ready"
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "L002_compounding",
@@ -378,8 +419,9 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "Compound interest, explained properly: the 4 numbers that decide your wealth",
-      "spec": null,
-      "status": "idea"
+      "spec": "L002_compounding",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "L003_index_funds",
@@ -387,8 +429,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "Why Most Professional Investors Lose to a Simple Index Fund",
-      "spec": null,
-      "status": "idea"
+      "spec": "L003_index_funds",
+      "status": "rendered",
+      "week": 1
     },
     {
       "slug": "L004_credit_cards_business",
@@ -397,7 +440,8 @@
       "currency": "usd",
       "idea": "How Credit Card Companies Really Make Money (and who pays)",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "L005_airlines",
@@ -406,7 +450,8 @@
       "currency": "usd",
       "idea": "Airlines Barely Make Money Flying. Here's What Actually Pays.",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "L006_inflation",
@@ -415,7 +460,8 @@
       "currency": "usd",
       "idea": "Inflation, explained: why your money quietly shrinks",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "L007_upi",
@@ -424,7 +470,8 @@
       "currency": "inr",
       "idea": "How India Built a Free Payment System Used 20 Billion Times a Month",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "L008_stock_market",
@@ -433,7 +480,8 @@
       "currency": "usd",
       "idea": "What Actually Happens When You Buy a Stock",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     },
     {
       "slug": "L009_rent_vs_buy",
@@ -442,7 +490,8 @@
       "currency": "usd",
       "idea": "Rent vs Buy: The Full Math Nobody Shows You",
       "spec": null,
-      "status": "idea"
+      "status": "idea",
+      "week": null
     }
   ]
 }

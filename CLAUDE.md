@@ -17,6 +17,7 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 - `pipeline/preview.py SPEC.json OUT_DIR`: contact sheet of every scene in seconds (no voice). Always check it before rendering.
 - `pipeline/upload.py SPEC.json VIDEO.mp4 [--thumb] [--chapters] [--publish-at ISO+tz]`: uploads, sets thumbnail, waits for processing, appends to `pipeline/posted.json`. Refuses to re-upload an id already posted.
 - `pipeline/queue.json`: topic queue (40 Shorts, 9 long) with pillar/currency/status; neighbouring Shorts must differ in pillar.
+- `tools/voice_check.py`: transcribes the voice track and diffs it against the script to catch mispronunciations.
 - `tools/render_batch.sh id1 id2 ...`: renders one at a time into `output/` (gitignored), logs to `output/batch.log`.
 - `docs/AUDIT_FORM_ANSWERS.md` + `docs/audit/`: owner's copy-paste answers and evidence files for the YouTube API audit form.
 - `pipeline/specs/*.py`: one file per video; running it validates numbers and writes the JSON spec.
@@ -32,6 +33,8 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 - `faster-whisper` decode via `av` fails; pass a numpy array (render.py converts to 16 kHz wav with ffmpeg and reads with soundfile).
 - Rendering: Short ≈ 1–1.5 min, 3-min long video ≈ 4.5 min on 4 CPUs.
 - Banner safe area: 1546x423 centred on 2560x1440.
+- Voice (Kokoro) gotchas: write numbers as words; hyphenated acronyms break ("FDIC-insured" -> "f dick and short"; say "insured by the FDIC"); "PhonePe" -> write "Phone-Pay"; "Paytm" -> "PayTM"; "IPO" -> "I-P-O". After every render run `tools/voice_check.py SPEC.json output/work_<id>/[work/]audio.wav` and read the non-number differences.
+- Render times: Short ≈ 1 min; 9–10 min long video ≈ 10–11 min.
 
 ## Setup status
 - [x] Channel created, settings, branding

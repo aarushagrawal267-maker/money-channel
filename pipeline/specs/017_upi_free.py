@@ -76,7 +76,7 @@ spec = {
          "visual": {"type": "bars", "title": "Who covers the bill?",
                     "items": [{"label": "Cost (est.)", "value": UPI_COST_EST, "color": "red"},
                               {"label": "Govt help", "value": GOVT_INCENTIVE_FY25, "color": "green"}]}},
-        {"say": "So apps like PhonePe and PayTM earn elsewhere: loans, insurance, and payment speakers rented to shops.",
+        {"say": "So apps like Phone-Pay and PayTM make their money in other ways: loans, insurance, and payment speakers rented to shops.",
          "visual": {"type": "equation", "title": "How the apps earn",
                     "lines": [{"text": "Loans", "color": "gold", "size": 96},
                               {"text": "Insurance", "color": "text", "size": 84},
