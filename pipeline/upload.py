@@ -104,6 +104,20 @@ def resumable_upload(request):
     return response
 
 
+def wait_for_processing(yt, vid, timeout=600):
+    """Poll videos.list until YouTube finishes processing our upload (or give up after `timeout` s)."""
+    end = time.time() + timeout
+    while True:
+        items = yt.videos().list(part="status,processingDetails", id=vid).execute().get("items", [])
+        if items:
+            st = items[0].get("processingDetails", {}).get("processingStatus")
+            if st in ("succeeded", "failed", "terminated") or items[0]["status"].get("uploadStatus") in ("processed", "rejected", "failed"):
+                return st or items[0]["status"].get("uploadStatus")
+        if time.time() > end:
+            return "still processing"
+        time.sleep(15)
+
+
 def load_posted():
     if os.path.exists(POSTED):
         with open(POSTED) as f:
@@ -173,6 +187,9 @@ def main():
             thumb_ok = False
             print(f"WARNING: thumbnail failed: {e}")
 
+    processing = wait_for_processing(yt, vid)
+    print(f"Processing: {processing}")
+
     if not a.no_log:
         log_posted({
             "id": spec["id"], "video_id": vid, "url": f"https://youtu.be/{vid}",
@@ -180,7 +197,7 @@ def main():
             "uploaded_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "publish_at": body["status"].get("publishAt"),
             "privacy": resp["status"].get("privacyStatus"),
-            "thumbnail": thumb_ok,
+            "thumbnail": thumb_ok, "processing": processing,
             **({"test": True} if a.test else {}),
         })
     print(json.dumps({"video_id": vid, "thumbnail": thumb_ok}))

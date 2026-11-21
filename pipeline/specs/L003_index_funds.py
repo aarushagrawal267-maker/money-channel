@@ -12,7 +12,7 @@ from collections import Counter
 # "All Large-Cap Funds vs S&P 500", % of funds underperforming. Primary PDF blocks automated
 # fetches; figures as reproduced identically by two independent summaries of the report
 # (retirementliteracyfoundation.org, assetwhisper.com), checked 2026-11-21.
-LC_UNDER = {"1 yr": 78.69, "5 yrs": 89.32, "10 yrs": 83.33, "15 yrs": 90.49, "20 yrs": 92.61}
+LC_UNDER = {"5 yrs": 89.32, "10 yrs": 83.33, "15 yrs": 90.49, "20 yrs": 92.61}
 # Same report, Report 2 (survivorship): share of large-cap funds alive in mid-2006 still alive in mid-2026.
 LC_SURVIVE_20Y = 0.3652
 # SPIVA U.S. Year-End 2025 (S&P DJI, March 2026): 79% of large-cap funds trailed the S&P 500 in 2025.
@@ -61,7 +61,7 @@ TOP10_RANGE = (0.18, 0.23)  # "hovered stably around 18%-23% between 1990 and 20
 under20 = LC_UNDER["20 yrs"] / 100
 assert under20 > 0.9                                   # "more than nine out of ten"
 assert 1 - under20 < 0.1                               # "fewer than one in ten" beat it
-assert abs(LC_UNDER["1 yr"] / 100 - 0.8) < 0.015       # "about four in five" trailed over one year
+assert abs(LC_UNDER_2025 - 0.8) < 0.015                # "about four in five" trailed in 2025
 assert 1 / 3 < LC_SURVIVE_20Y < 0.40                   # "just over a third" survived
 
 PER_10K_ACTIVE = 10_000 * FEE_ACTIVE
@@ -381,10 +381,10 @@ scene("Two: diversify. Owning a broad slice of the market means no single compan
       type="versus", title="2 · Diversify",
       left={"label": "One stock", "value": "1", "sub": "one bad year can sink you", "color": "red"},
       right={"label": "Whole index", "value": "~500", "sub": "but still top-heavy", "color": "green"})
-scene("Three: think long term. Over a single year, about one in five large-cap funds beat the S and P five hundred. "
-      "Over twenty years, fewer than one in ten did.",
+scene("Three: think long term. In twenty twenty-five alone, about four in five large-cap funds trailed the S and P five hundred. "
+      "Over twenty years, more than nine in ten did.",
       type="columns", title="3 · Large-cap funds that trailed the S&P 500",
-      items=[{"label": k, "value": v, "display": f"{v:.0f}%"} for k, v in LC_UNDER.items()], highlight=4,
+      items=[{"label": k, "value": v, "display": f"{v:.0f}%"} for k, v in LC_UNDER.items()], highlight=3,
       note="Periods ending June 30, 2026 · Source: S&P SPIVA U.S. Scorecard")
 scene("And four: boring is often smart. Most of investing well is avoiding big, quiet costs, "
       "and letting time do the heavy lifting.",

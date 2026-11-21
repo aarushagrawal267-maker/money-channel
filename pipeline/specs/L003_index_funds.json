@@ -1036,16 +1036,11 @@
    }
   },
   {
-   "say": "Three: think long term. Over a single year, about one in five large-cap funds beat the S and P five hundred. Over twenty years, fewer than one in ten did.",
+   "say": "Three: think long term. In twenty twenty-five alone, about four in five large-cap funds trailed the S and P five hundred. Over twenty years, more than nine in ten did.",
    "visual": {
     "type": "columns",
     "title": "3 · Large-cap funds that trailed the S&P 500",
     "items": [
-     {
-      "label": "1 yr",
-      "value": 78.69,
-      "display": "79%"
-     },
      {
       "label": "5 yrs",
       "value": 89.32,
@@ -1067,7 +1062,7 @@
       "display": "93%"
      }
     ],
-    "highlight": 4,
+    "highlight": 3,
     "note": "Periods ending June 30, 2026 · Source: S&P SPIVA U.S. Scorecard"
    }
   },
