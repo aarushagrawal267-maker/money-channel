@@ -28,11 +28,10 @@
     "url": "https://youtu.be/3inj6_vZEkQ",
     "title": "How Costco Makes $9 Billion While Barely Profiting From Products",
     "uploaded_at": "2026-11-22T05:13:00Z",
-    "publish_at": null,
+    "publish_at": "2026-11-23T18:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "superseded": true,
-    "note": "duplicate; owner asked to delete in Studio"
+    "note": "live copy; owner asked to schedule it in Studio for Mon 23 Nov 11:30 PM IST (verify)"
   },
   {
     "id": "015_rule_of_72",
@@ -45,7 +44,8 @@
     "thumbnail": null,
     "processing": "succeeded",
     "superseded": true,
-    "note": "duplicate; owner asked to delete in Studio"
+    "note": "duplicate; deleted by owner 2026-11-22",
+    "deleted": true
   },
   {
     "id": "014_minimum_payment_trap_us",
@@ -69,7 +69,10 @@
     "publish_at": "2026-11-23T18:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "note": "scheduled copy deleted by owner by mistake 2026-11-22; 3inj6_vZEkQ is the live copy"
   },
   {
     "id": "016_buying_a_share",
