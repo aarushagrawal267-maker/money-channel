@@ -165,7 +165,7 @@ def main():
     spec = json.load(open(a.spec))
     if not os.path.getsize(a.video):
         sys.exit("Video file is empty")
-    if not a.allow_repeat and any(p["id"] == spec["id"] and not p.get("test") for p in load_posted()):
+    if not a.allow_repeat and any(p["id"] == spec["id"] and not p.get("test") and not p.get("superseded") for p in load_posted()):
         sys.exit(f"{spec['id']} is already in posted.json; refusing to upload it twice (use --allow-repeat).")
     chapters = open(a.chapters).read() if a.chapters else None
     body = build_body(spec, chapters, a.privacy, parse_publish_at(a.publish_at))
