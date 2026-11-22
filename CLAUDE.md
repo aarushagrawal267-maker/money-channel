@@ -5,7 +5,7 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 
 ## Decisions already made (do not re-ask)
 - **Channel:** Money Mechanics, handle **@MoneyMechanics-v7t** (cleaner handles were all unavailable). Channel Gmail: the owner's channel account.
-- **Niche:** money education: personal finance, smart financing, how markets work, business breakdowns, money news, earning more. See `CONTENT_PLAN.md`.
+- **Niche:** money education: personal finance, smart financing, how markets work, business breakdowns, money news, earning more, and **case studies of top businesses and business founders** (owner request 22 Nov 2026: ~1 in 4 Shorts, and 1 of the 3 long videos every week). See `CONTENT_PLAN.md` pillar 7. Founder/company stories must be sourced, no myths or hero worship, and end with a usable lesson.
 - **Audience:** global first (US/UK/CA/AU + English-speaking India). English. **USD by default**; ₹ only for India-story videos (~1 in 5).
 - **Schedule:** 2 Shorts/day at **6:30 AM IST** (8 PM ET / 5 PM PT) and **10:30 PM IST** (noon ET / 5 PM UK); 3 long videos/week (Mon/Wed/Fri) at **11:30 PM IST** (1 PM ET / 6 PM UK), 8–12 min. Uploads go up early with `--publish-at`; YouTube publishes at the slot.
 - **Style:** dark navy + green + gold, animated charts and text, AI voice (Kokoro `af_heart`), word-synced captions. Owner prefers **simple, clean design** (rejected both a plain and a "too fancy" version; approved flat style in `branding/`).

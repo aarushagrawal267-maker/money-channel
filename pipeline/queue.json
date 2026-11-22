@@ -1,5 +1,5 @@
 {
-  "_doc": "Topic queue. Status: idea -> spec_ready -> rendered -> approved -> scheduled -> posted. Scheduled runs take the next 'approved' item of the right kind; posted.json is the source of truth for what went live. Keep neighbouring Shorts on different pillars; ~1 in 5 India stories.",
+  "_doc": "Topic queue. Status: idea -> spec_ready -> rendered -> approved -> scheduled -> posted. Scheduled runs take the next 'approved' item of the right kind; posted.json is the source of truth for what went live. Keep neighbouring Shorts on different pillars; ~1 in 5 India stories. Case studies (company/founder) are ~1 in 4 Shorts and 1 of 3 long videos per week (owner request 22 Nov 2026).",
   "shorts": [
     {
       "slug": "rule_of_72",
@@ -162,6 +162,16 @@
       "week": null
     },
     {
+      "slug": "netflix_blockbuster",
+      "kind": "short",
+      "pillar": "case_study",
+      "currency": "usd",
+      "idea": "Netflix vs Blockbuster: the deal Blockbuster turned down",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
       "slug": "zerodha",
       "kind": "short",
       "pillar": "business",
@@ -177,6 +187,16 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "The real cost of a $35,000 car loan",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "buffett_after_50",
+      "kind": "short",
+      "pillar": "founder",
+      "currency": "usd",
+      "idea": "Warren Buffett made most of his fortune after 50: the compounding math",
       "spec": null,
       "status": "idea",
       "week": null
@@ -202,6 +222,16 @@
       "week": null
     },
     {
+      "slug": "nokia_fall",
+      "kind": "short",
+      "pillar": "case_study",
+      "currency": "usd",
+      "idea": "Nokia: from #1 phone maker to selling its phone business",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
       "slug": "free_apps",
       "kind": "short",
       "pillar": "business",
@@ -217,6 +247,16 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Your credit score: what moves it up and down",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "dhirubhai",
+      "kind": "short",
+      "pillar": "founder",
+      "currency": "inr",
+      "idea": "Dhirubhai Ambani: from a petrol station job to Reliance (India story)",
       "spec": null,
       "status": "idea",
       "week": null
@@ -242,6 +282,16 @@
       "week": null
     },
     {
+      "slug": "kodak",
+      "kind": "short",
+      "pillar": "case_study",
+      "currency": "usd",
+      "idea": "Kodak invented the digital camera, then lost to it",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
       "slug": "minimum_due_in",
       "kind": "short",
       "pillar": "financing_traps",
@@ -257,6 +307,16 @@
       "pillar": "business",
       "currency": "usd",
       "idea": "Why Apple makes more profit than almost anyone",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "phil_knight",
+      "kind": "short",
+      "pillar": "founder",
+      "currency": "usd",
+      "idea": "Phil Knight sold shoes from his car. Then came Nike",
       "spec": null,
       "status": "idea",
       "week": null
@@ -282,6 +342,16 @@
       "week": null
     },
     {
+      "slug": "tata_nano",
+      "kind": "short",
+      "pillar": "case_study",
+      "currency": "inr",
+      "idea": "Why the ₹1 lakh Tata Nano failed (India story)",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
       "slug": "bonds_friend",
       "kind": "short",
       "pillar": "markets",
@@ -297,6 +367,16 @@
       "pillar": "financing_traps",
       "currency": "inr",
       "idea": "'No-cost EMI': who actually pays the interest (India story)",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "sara_blakely",
+      "kind": "short",
+      "pillar": "founder",
+      "currency": "usd",
+      "idea": "Spanx: from $5,000 in savings to a billion-dollar company",
       "spec": null,
       "status": "idea",
       "week": null
@@ -322,6 +402,16 @@
       "week": null
     },
     {
+      "slug": "wework",
+      "kind": "short",
+      "pillar": "case_study",
+      "currency": "usd",
+      "idea": "WeWork: from a $47B valuation to bankruptcy",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
       "slug": "dividends_buybacks",
       "kind": "short",
       "pillar": "markets",
@@ -337,6 +427,16 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Rent vs buy: the costs nobody shows you",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "narayana_murthy",
+      "kind": "short",
+      "pillar": "founder",
+      "currency": "inr",
+      "idea": "Infosys started with ₹10,000 (India story)",
       "spec": null,
       "status": "idea",
       "week": null
@@ -362,6 +462,16 @@
       "week": null
     },
     {
+      "slug": "mcdonalds_real_estate",
+      "kind": "short",
+      "pillar": "case_study",
+      "currency": "usd",
+      "idea": "McDonald's is really a real-estate business",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
       "slug": "crash_and_sip",
       "kind": "short",
       "pillar": "markets",
@@ -377,6 +487,16 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Term vs whole life insurance: the $1M question",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "ray_kroc",
+      "kind": "short",
+      "pillar": "founder",
+      "currency": "usd",
+      "idea": "Ray Kroc: the milkshake-machine salesman behind McDonald's",
       "spec": null,
       "status": "idea",
       "week": null
@@ -434,6 +554,16 @@
       "week": 1
     },
     {
+      "slug": "L010_netflix_blockbuster",
+      "kind": "long",
+      "pillar": "case_study",
+      "currency": "usd",
+      "idea": "Netflix vs Blockbuster: How a $50M 'No' Changed an Industry",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
       "slug": "L004_credit_cards_business",
       "kind": "long",
       "pillar": "financing_traps",
@@ -449,6 +579,16 @@
       "pillar": "business",
       "currency": "usd",
       "idea": "Airlines Barely Make Money Flying. Here's What Actually Pays.",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "L011_buffett",
+      "kind": "long",
+      "pillar": "founder",
+      "currency": "usd",
+      "idea": "Warren Buffett: How the Fortune Was Actually Built",
       "spec": null,
       "status": "idea",
       "week": null
@@ -474,6 +614,16 @@
       "week": null
     },
     {
+      "slug": "L012_nokia",
+      "kind": "long",
+      "pillar": "case_study",
+      "currency": "usd",
+      "idea": "The Rise and Fall of Nokia",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
       "slug": "L008_stock_market",
       "kind": "long",
       "pillar": "markets",
@@ -489,6 +639,36 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Rent vs Buy: The Full Math Nobody Shows You",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "L013_dhirubhai",
+      "kind": "long",
+      "pillar": "founder",
+      "currency": "inr",
+      "idea": "Dhirubhai Ambani: How Reliance Was Built (India story)",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "L014_apple_1997",
+      "kind": "long",
+      "pillar": "case_study",
+      "currency": "usd",
+      "idea": "Apple in 1997: The Turnaround That Saved the Company",
+      "spec": null,
+      "status": "idea",
+      "week": null
+    },
+    {
+      "slug": "L015_phil_knight",
+      "kind": "long",
+      "pillar": "founder",
+      "currency": "usd",
+      "idea": "Phil Knight and Nike: From a Car Trunk to a Global Brand",
       "spec": null,
       "status": "idea",
       "week": null

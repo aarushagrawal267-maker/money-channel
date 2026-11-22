@@ -14,12 +14,13 @@
 
 | # | Pillar | Share | Per week | What it covers |
 |---|---|---|---|---|
-| 1 | **Money Math** | 25% | 3–4 | Compounding, SIPs, inflation, EMIs, FD vs mutual funds |
-| 2 | **Smart Financing & Money Traps** | 20% | 3 | Credit cards, loans, "no-cost EMI", BNPL, insurance, tax saving |
-| 3 | **How Markets Work** | 20% | 3 | Stocks, IPOs, index funds, Nifty/Sensex, gold, bonds, interest rates |
-| 4 | **Business Breakdowns** | 20% | 3 | How famous companies actually make money |
+| 1 | **Money Math** | 20% | 3 | Compounding, SIPs, inflation, EMIs, FD vs mutual funds |
+| 2 | **Smart Financing & Money Traps** | 15% | 2 | Credit cards, loans, "no-cost EMI", BNPL, insurance, tax saving |
+| 3 | **How Markets Work** | 15% | 2 | Stocks, IPOs, index funds, Nifty/Sensex, gold, bonds, interest rates |
+| 4 | **Business Breakdowns** | 15% | 2 | How famous companies actually make money |
 | 5 | **Money News Explained** | 10% | 1–2 | This week's big business or economy story, explained simply |
 | 6 | **Earn More** | 5% | 1 | Legit ways to raise income: skills, negotiation, side income maths |
+| 7 | **Case Studies: Companies & Founders** | 20% | 3 | Famous business wins and failures (Netflix vs Blockbuster, Nokia, Kodak, Tata Nano) and how top founders actually built their companies (Buffett, Dhirubhai Ambani, Phil Knight). **1 of the 3 long videos each week is a case study** (owner request, 22 Nov 2026). |
 
 ## Quality rules (every video)
 
@@ -98,3 +99,29 @@
 58. Freelancing rates: how to price your time
 59. The real hourly wage of your job, after commute and costs
 60. Why most "earn ₹1 lakh a month online" ads are lies
+
+### Pillar 7: Case Studies: Companies & Founders (owner request, 22 Nov 2026)
+Rules: every fact sourced (company filings, reputable biographies, major news archives), with sources in the description.
+No myths or hype ("he started with nothing" only if documented), no hero worship, no "copy this and get rich".
+Each story ends with a money/business lesson the viewer can use. ~1 in 5 is an India story.
+
+**Company case studies**
+61. Netflix vs Blockbuster: the deal Blockbuster turned down
+62. Nokia: from the world's biggest phone maker to selling the phone business
+63. Kodak invented the digital camera, then lost to it
+64. McDonald's is really a real-estate business
+65. Tata Nano: why the ₹1 lakh car failed (India story)
+66. WeWork: from a $47B valuation to bankruptcy
+67. Apple in 1997: weeks from trouble to the most valuable company
+68. Toyota's production system: how small fixes beat big budgets
+
+**Founder case studies**
+69. Warren Buffett: how the fortune was actually built (mostly after 50)
+70. Dhirubhai Ambani: from a Yemen petrol station job to Reliance (India story)
+71. Phil Knight: selling shoes from a car to Nike
+72. Sara Blakely: Spanx from $5,000 in savings
+73. Narayana Murthy: Infosys from ₹10,000 (India story)
+74. Ray Kroc: the milkshake-machine salesman behind McDonald's
+75. Sam Walton: Walmart's obsession with cheap prices
+76. Ratan Tata: buying Jaguar Land Rover from Ford (India story)
+
