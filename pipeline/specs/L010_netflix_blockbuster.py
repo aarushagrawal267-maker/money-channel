@@ -236,14 +236,14 @@ scene("The stores went too. From over nine thousand in two thousand four to six 
       items=[{"label": str(y), "value": v, "display": f"{v:,}"} for y, v in BB_STORES.items() if y >= 2004])
 scene("In two thousand nine, Blockbuster lost five hundred and fifty-eight million dollars. Netflix made a profit of a hundred and sixteen million. Blockbuster's own filing warned of substantial doubt about its ability to keep going.",
       type="stat_grid", title="Fiscal 2009",
-      items=[{"value": f"−${BB_NET_LOSS_2009 / 1e6:.0f}M", "label": "Blockbuster", "sub": "net loss", "color": "red"},
-             {"value": f"+${NF_NET_INC_2009 / 1e6:.0f}M", "label": "Netflix", "sub": "net profit", "color": "green"}])
+      items=[{"value": f"−${BB_NET_LOSS_2009 / 1e6:.1f}M", "label": "Blockbuster", "sub": "net loss", "color": "red"},
+             {"value": f"+${NF_NET_INC_2009 / 1e6:.1f}M", "label": "Netflix", "sub": "net profit", "color": "green"}])
 scene("On September twenty-third, two thousand ten, Blockbuster filed for bankruptcy, with nearly a billion dollars of debt and some three thousand US stores left. Netflix, by then, said it had more than fifteen million members.",
       type="stat", value="2010", label="Blockbuster files for bankruptcy", sub="Sept 23 · nearly $1B of debt · Netflix: 15M+ members", color="red")
 scene("In April two thousand eleven, the satellite TV company Dish won Blockbuster's assets at auction, with a three hundred and twenty million dollar bid. The company-owned stores were all closed by two thousand fourteen. And in March two thousand nineteen, when a store in Perth, Australia closed, an independently owned store in Bend, Oregon became the last Blockbuster on Earth.",
       type="table", title="The end of Blockbuster",
       header=["Year", "What happened"],
-      rows=[["2010", "Bankruptcy filing"], ["2011", "Dish wins assets ($320M bid)"],
+      rows=[["2010", "Bankruptcy filing"], ["2011", "Dish wins auction ($320M)"],
             ["2014", "Company stores closed"], ["2019", "Bend, Oregon: the last one"]],
       col_colors={"1": "text"})
 scene("Notice what didn't happen. Blockbuster didn't ignore the internet. It saw the threat, built a real answer, and then pulled back when that answer got expensive while the stores still made money.",

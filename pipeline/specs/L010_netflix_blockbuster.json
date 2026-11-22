@@ -629,13 +629,13 @@
     "title": "Fiscal 2009",
     "items": [
      {
-      "value": "−$558M",
+      "value": "−$558.2M",
       "label": "Blockbuster",
       "sub": "net loss",
       "color": "red"
      },
      {
-      "value": "+$116M",
+      "value": "+$115.9M",
       "label": "Netflix",
       "sub": "net profit",
       "color": "green"
@@ -669,7 +669,7 @@
      ],
      [
       "2011",
-      "Dish wins assets ($320M bid)"
+      "Dish wins auction ($320M)"
      ],
      [
       "2014",
