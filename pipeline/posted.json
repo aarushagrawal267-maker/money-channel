@@ -6,10 +6,9 @@
     "title": "Only paying the minimum on your credit card? Watch this. #shorts",
     "uploaded_at": "2026-11-21T18:06:36Z",
     "publish_at": null,
-    "privacy": "private",
+    "privacy": "public",
     "thumbnail": null,
-    "test": true,
-    "superseded": true
+    "note": "owner made public manually 2026-11-22; this is the live copy"
   },
   {
     "id": "015_rule_of_72",
@@ -18,10 +17,10 @@
     "title": "How fast does your money double? The Rule of 72 #shorts",
     "uploaded_at": "2026-11-22T05:11:55Z",
     "publish_at": null,
-    "privacy": "private",
+    "privacy": "public",
     "thumbnail": null,
     "processing": "succeeded",
-    "superseded": true
+    "note": "owner made public manually 2026-11-22; this is the live copy"
   },
   {
     "id": "L001_costco",
@@ -32,7 +31,8 @@
     "publish_at": null,
     "privacy": "private",
     "thumbnail": true,
-    "superseded": true
+    "superseded": true,
+    "note": "duplicate; owner asked to delete in Studio"
   },
   {
     "id": "015_rule_of_72",
@@ -43,7 +43,9 @@
     "publish_at": "2026-11-23T01:00:00.000Z",
     "privacy": "private",
     "thumbnail": null,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "note": "duplicate; owner asked to delete in Studio"
   },
   {
     "id": "014_minimum_payment_trap_us",
@@ -54,7 +56,9 @@
     "publish_at": "2026-11-23T17:00:00.000Z",
     "privacy": "private",
     "thumbnail": null,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "note": "duplicate; owner asked to delete in Studio"
   },
   {
     "id": "L001_costco",
