@@ -49,6 +49,7 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 
 ## Autopilot
 Owner is away and asked Claude to run everything (22 Nov 2026). Scheduled tasks follow `docs/AUTOPILOT.md`: A weekly production (Wed), B daily upload check, C news Short (Sat). `pipeline/schedule.txt` + `tools/upload_pending.sh` drive uploads.
+Scheduled tasks (fresh session per fire, push notifications): weekly production `trig_01X9ZHVQbroZRFyKLDQNZ94D` (Wed 09:13 IST), daily upload check `trig_01WJXQj8tmv9edJYn2We2Hsr` (17:47 IST), news Short `trig_01D4xurnMFSBhs3dwTPHnhoz` (Sat 14:23 IST). One-off retry of the 9 week-1 uploads blocked by YouTube's daily limit: Mon 23 Nov 12:30 IST (`trig_01WUoWHNFenx1neiV55WoFeq`, in the original session).
 
 ## Next steps for Claude
 1. Get owner feedback on week 1; fix what they flag.
