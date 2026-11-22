@@ -63,8 +63,9 @@ def build_body(spec, chapters=None, privacy="private", publish_at=None):
     if not spec["id"].startswith("L"):
         hashtags.append("#shorts")
     desc = body
-    if chapters:
-        desc += "\n\nChapters\n" + chapters.strip()
+    if chapters:   # chapters right after the opening summary, where viewers (and search) see them
+        first, _, rest = body.partition("\n\n")
+        desc = first + "\n\nChapters\n" + chapters.strip() + ("\n\n" + rest if rest else "")
     desc += "\n\n" + AI_LINE + "\n\n" + SUBSCRIBE_LINE
     if hashtags:
         desc += "\n\n" + " ".join(hashtags)
