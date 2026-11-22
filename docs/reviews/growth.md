@@ -18,16 +18,16 @@
 
 ## 1. What gets a new channel from 0 to monetised, and when
 
-1. **Long-form click-through × retention.** One long video picked up by search or suggested is worth more than 50 average Shorts. Rough maths: 8,000 h = 480,000 min. At about 3.5 min watched per view, that's **~137k long-form views a year, ~900 per long video** at 3 a week. Most channels get there because 2–3 videos keep pulling views for months, not because every video does well.
-2. **Shorts for subscribers.** Rule of thumb: 1–3 subs per 1,000 Shorts views, so 1,000 subs ≈ 0.3–1M Shorts views. Check this against our own numbers by week 3.
-3. **Series and binge paths.** Playlists, end screens and Short→long links turn one view into several.
-4. **Looking authentic.** The YPP review checks for "inauthentic", mass-produced content. Real sourcing, varied visuals and opinionated analysis protect the channel's approval. That matters more than posting volume.
+1. **Long-form CTR × retention.** 8,000 h = 480,000 min. At ~3.5 min watched per view that's **~137k long views a year, ~900 per long video**. In practice 2–3 videos that keep pulling search/suggested views carry the total.
+2. **Shorts for subscribers.** Rule of thumb: 1–3 subs per 1,000 Shorts views, so 1,000 subs ≈ 0.3–1M Shorts views. Check against our data by week 3.
+3. **Binge paths.** Playlists, end screens and Short→long links turn one view into several.
+4. **Looking authentic.** YPP review checks for mass-produced "inauthentic" content. Real sourcing, varied visuals and opinionated analysis matter more than volume.
 
-**Realistic timeline (from 0):** 1,000 subs in **month 2–6** (needs at least one Short above 100k views). 8,000 hours in **month 8–14** if long videos average ~900 views. Many faceless channels never make it. The deciding factor is whether case-study and "how X makes money" long videos get a CTR above 4% and keep 35%+ of viewers. If Shorts take off instead, the 20M-views route is possible but rare.
+**Realistic timeline:** 1,000 subs in **month 2–6** (needs at least one Short above 100k views). 8,000 hours in **month 8–14** if long videos average ~900 views. Many faceless channels never get there. What decides it: long videos reaching 4%+ CTR and keeping 35%+ of viewers. The 20M-Shorts route is possible but rare.
 
 ## 2. Experiments, weeks 1–6
 
-Weeks 1–2 are already rendered. Tag them afterwards (hook type, length, title style) and treat them as the **baseline**. Changes start with the week-3 specs (written Wed 25 Nov). Test one variable per Short. Spread each test's versions evenly across pillars so the topic doesn't skew the result.
+Weeks 1–2 are already rendered: tag them (hook, length, title style) as the **baseline**. Tests start with the week-3 specs (Wed 25 Nov). Spread each test's versions evenly across pillars so topic doesn't skew results.
 
 | Weeks | Variable | Arms | Primary metric | Secondary |
 |---|---|---|---|---|
@@ -40,14 +40,14 @@ Weeks 1–2 are already rendered. Tag them afterwards (hook type, length, title 
 
 **Reading it from the API** (`youtubeAnalytics.reports.query`, ids=channel==MINE):
 - Per video: `dimensions=video`, `filters=creatorContentType==SHORTS` (or `VIDEO_ON_DEMAND`), metrics `views,engagedViews,averageViewPercentage,averageViewDuration,estimatedMinutesWatched,subscribersGained,likes,shares`.
-- Age-normalise: query `dimensions=day&filters=video==ID` and add up days 0–6. Never compare a 2-day-old video with a 3-week-old one.
-- Hook strength: `dimensions=elapsedVideoTimeRatio`, metrics `audienceWatchRatio,relativeRetentionPerformance`, one video per call. Read the drop before ratio 0.1. Studio's "viewed vs swiped away" isn't in the API, so engagedViews÷views stands in for it.
-- Traffic and audience: `insightTrafficSourceType` (SHORTS, YT_SEARCH, RELATED_VIDEO, BROWSE…), `country`.
-- Impressions and CTR aren't in the Analytics API. Create a **YouTube Reporting API** job for the reach report (`channel_reach_basic_a1`; check the name in the docs) under the same read-only scope. It only covers dates from job creation onward, so **create it now**.
+- Age-normalise: `dimensions=day&filters=video==ID`, sum days 0–6. Never compare videos of different ages.
+- Hook strength: `dimensions=elapsedVideoTimeRatio`, metrics `audienceWatchRatio,relativeRetentionPerformance` (one video per call); read the drop before ratio 0.1. "Viewed vs swiped away" is Studio-only, so engagedViews÷views stands in.
+- Traffic/audience: `insightTrafficSourceType` (SHORTS, YT_SEARCH, RELATED_VIDEO…), `country`.
+- Impressions/CTR aren't in the Analytics API. Create a **Reporting API** job for the reach report (`channel_reach_basic_a1`; verify name) with the same read-only scope. Data starts at job creation, so **create it now**.
 
-**Decision rule:** each version needs at least 6 videos. Compare medians, not averages. Act only if one version leads by **25% or more on the main metric in 2 separate weeks** and doesn't lose on the secondary metric. Record every decision in `docs/analytics/`. Expect about 1 test in 3 to produce a clear winner. "No difference" is a valid result: keep the cheaper option.
+**Decision rule:** at least 6 videos per version; compare medians; act only if one leads by **25%+ on the primary metric in 2 separate weeks** without losing on the secondary. Log decisions in `docs/analytics/`. Expect ~1 test in 3 to find a winner; on "no difference", keep the cheaper option.
 
-**Frequency check (week 4):** if the weaker Shorts slot's median is under 40% of the stronger one's, drop to 1 Short a day plus the news Short. Spend the saved effort on long videos.
+**Frequency check (week 4):** if the weaker Shorts slot's median is under 40% of the stronger one's, drop to 1 Short a day plus news, and spend the effort on long videos.
 
 ## 3. Series that compound
 
