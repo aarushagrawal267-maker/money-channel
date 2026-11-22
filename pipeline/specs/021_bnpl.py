@@ -34,7 +34,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "MONEY TRAP",
     "disclaimer": "Survey figures are self-reported · not financial advice",
-    "title": "Buy Now, Pay Later has no interest. So how do they make money? #shorts",
+    "title": "How Buy Now, Pay Later Makes Money (It's Not Interest)",
     "description": (
         "Pay-in-4 plans feel free, but lenders mostly earn from the store: a CFPB study found big BNPL lenders "
         "charged partner merchants about 3% per sale (2021). Some also charge late fees, and nearly half of users "

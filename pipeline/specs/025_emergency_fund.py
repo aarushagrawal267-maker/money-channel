@@ -20,7 +20,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "SAFETY NET",
     "disclaimer": "Example · $3,000/month of essentials · not financial advice",
-    "title": "Emergency fund: how much you need, and where to keep it #shorts",
+    "title": "Emergency Fund: How Much You Need and Where to Keep It",
     "description": (
         "A common guideline is 3 to 6 months of essential expenses. With $3,000 a month of essentials, that's "
         "$9,000 to $18,000. Keep it somewhere safe and easy to reach, like a high-yield savings account at an "

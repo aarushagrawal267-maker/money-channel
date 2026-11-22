@@ -21,6 +21,7 @@ POSTED = os.path.join(HERE, "posted.json")
 CATEGORY_EDUCATION = "27"
 RETRY_STATUS = {500, 502, 503, 504}
 MAX_TITLE, MAX_DESC, MAX_TAGS_CHARS = 100, 5000, 500
+SUBSCRIBE_LINE = "New money lesson every day. Subscribe: https://www.youtube.com/@MoneyMechanics-v7t?sub_confirmation=1"
 
 
 def youtube_client():
@@ -53,14 +54,20 @@ def build_body(spec, chapters=None, privacy="private", publish_at=None):
     title = spec["title"].replace("<", "").replace(">", "")
     if len(title) > MAX_TITLE:
         sys.exit(f"Title is {len(title)} chars (max {MAX_TITLE}): {title}")
-    desc = spec.get("description", "")
+    lines = spec.get("description", "").rstrip().split("\n")
+    tags_line = lines.pop() if lines and lines[-1].startswith("#") else ""
+    body = "\n".join(lines).rstrip()
+    # Hashtags: first 3 show above the title, so keep the broad ones first and the list short.
+    hashtags = [h for h in tags_line.split() if h.startswith("#") and h.lower() != "#shorts"][:4]
+    if not spec["id"].startswith("L"):
+        hashtags.append("#shorts")
+    desc = body
     if chapters:
-        desc = desc.rstrip() + "\n\nChapters\n" + chapters.strip() + "\n"
-        # keep hashtags at the very end
-        lines = spec.get("description", "").rstrip().split("\n")
-        if lines and lines[-1].startswith("#"):
-            body = "\n".join(lines[:-1]).rstrip()
-            desc = body + "\n\nChapters\n" + chapters.strip() + "\n\n" + lines[-1] + "\n"
+        desc += "\n\nChapters\n" + chapters.strip()
+    desc += "\n\n" + SUBSCRIBE_LINE
+    if hashtags:
+        desc += "\n\n" + " ".join(hashtags)
+    desc += "\n"
     desc = desc.replace("<", "").replace(">", "")
     if len(desc.encode("utf-8")) > MAX_DESC:
         sys.exit(f"Description too long ({len(desc.encode('utf-8'))} bytes, max {MAX_DESC}).")

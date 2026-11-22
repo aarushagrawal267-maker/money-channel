@@ -442,7 +442,7 @@ spec = {
     "id": "L003_index_funds", "currency": "usd", "voice": "af_heart", "speed": 1.0, "gap": 0.35,
     "badge": "HOW MARKETS WORK", "intro_chapter": "The 92% problem",
     "disclaimer": "Past performance doesn't guarantee future results · not investment advice",
-    "title": "Why Most Professional Fund Managers Lose to a Simple Index Fund",
+    "title": "Why 93% of Fund Managers Lose to a Simple Index Fund",
     "thumbnail": {"big": f"{LC_UNDER['20 yrs']:.1f}%", "line": "LOST TO THE INDEX", "tag": "PRO FUNDS · 20 YEARS",
                   "color": "gold"},
     "description": DESCRIPTION,

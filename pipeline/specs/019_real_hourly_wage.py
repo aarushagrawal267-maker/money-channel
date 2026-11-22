@@ -31,7 +31,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "EARN MORE",
     "disclaimer": "Example only · 20% tax, 7 extra hrs and $70 costs a week · yours will differ",
-    "title": "Your $60K job pays less per hour than you think #shorts",
+    "title": "Your Real Hourly Wage Is Lower Than You Think",
     "description": (
         f"A $60,000 salary for 40 hours a week works out to ${headline:.2f} an hour on paper. "
         f"Add taxes, the commute, unpaid extra time and the cost of going to work, and the real figure in this "

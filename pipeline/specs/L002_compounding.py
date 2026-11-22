@@ -371,7 +371,7 @@ spec = {
     "badge": "MONEY MATH",
     "disclaimer": "Illustrations · assumed returns · not investment advice",
     "intro_chapter": "Same $96,000, very different results",
-    "title": "Both Invested $96,000. One Ended Up With 2.4x More | Compound Interest Explained",
+    "title": "Compound Interest Explained: Same $96K, 2.4x the Money",
     "thumbnail": {"big": "2.4X", "line": "SAME $96K INVESTED", "tag": "THE 4 NUMBERS", "color": "gold"},
     "description": (
         "Two people each invest $96,000. One ends up with about $494,000, the other about $203,000. "

@@ -44,7 +44,7 @@ spec = {
     "currency": "inr", "voice": "af_heart", "speed": 1.05,
     "badge": "INDIA STORY",
     "disclaimer": "Figures: NPCI, Govt of India (PIB) · status as of Nov 2026",
-    "title": "25 billion payments a month, and they're free. Who pays for India's UPI? #shorts",
+    "title": "Who Pays for India's Free UPI? 25 Billion Payments a Month",
     "description": (
         f"India's UPI handled about 25.5 billion payments worth ₹31.53 lakh crore in October 2026 "
         f"(about ₹{avg_ticket:,.0f} per payment on average), and customers pay nothing. Since 2020 the law has kept the "

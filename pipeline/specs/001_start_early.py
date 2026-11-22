@@ -28,7 +28,7 @@ spec = {
     "currency": "inr", "voice": "af_heart", "speed": 1.06,
     "badge": "DAILY MONEY LESSON",
     "disclaimer": "Illustration · assumes ~12% p.a. · returns not guaranteed · not financial advice",
-    "title": "Same ₹5,000 SIP. ₹3.2 Crore vs ₹95 Lakh. Why? #shorts",
+    "title": "Start Investing at 25 vs 35: ₹3.2 Crore vs ₹95 Lakh (SIP)",
     "description": (
         "Two friends invest the same ₹5,000 every month. One starts at 25, the other at 35. "
         "At 60, one has over ₹3.2 crore and the other about ₹95 lakh.\n\n"

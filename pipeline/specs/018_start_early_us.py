@@ -29,7 +29,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "INVESTING BASICS",
     "disclaimer": "Illustration · assumes 7% a year · returns vary · not financial advice",
-    "title": f"Same $300 a month. ${M65/1e3:.0f}K vs ${J65/1e3:.0f}K. Why? #shorts",
+    "title": "Start Investing at 25 vs 35: $792K vs $368K",
     "description": (
         "Two friends invest the same $300 every month. One starts at 25, the other at 35. "
         f"At 65, one has about ${M65/1e3:,.0f}K and the other about ${J65/1e3:,.0f}K, "

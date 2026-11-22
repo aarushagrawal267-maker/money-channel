@@ -19,7 +19,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "MONEY MATH",
     "disclaimer": "Illustration · assumes 3% inflation a year · real inflation varies",
-    "title": "What $100 will buy in 30 years (it's not $100) #shorts",
+    "title": "What $100 Will Buy in 30 Years (Inflation Explained)",
     "description": (
         f"At 3% inflation a year, $100 in cash buys about ${buys[10]:.0f} of today's goods after 10 years, "
         f"${buys[20]:.0f} after 20 and ${buys[30]:.0f} after 30. To just keep up, that $100 has to grow to "

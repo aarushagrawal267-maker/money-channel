@@ -25,7 +25,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "HOW MARKETS WORK",
     "disclaimer": "Past results don't guarantee future ones · not financial advice",
-    "title": "93% of pro fund managers trailed the S&P 500 over 20 years. Why? #shorts",
+    "title": "93% of Fund Managers Lose to the S&P 500. Here's Why",
     "description": (
         "S&P's SPIVA scorecard compares actively managed funds with their benchmark. Through June 30, 2026, "
         "83% of US large-cap funds trailed the S&P 500 over 10 years, 90% over 15 years and 93% over 20 years. "

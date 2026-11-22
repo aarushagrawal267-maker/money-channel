@@ -34,7 +34,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "HIDDEN COSTS",
     "disclaimer": "Illustration · assumes 7% a year before fees · not financial advice",
-    "title": "A 1% fee sounds tiny. Here's what it can cost over 30 years #shorts",
+    "title": "A 1% Investment Fee Can Cost You $120,000. Here's How",
     "description": (
         "Same plan, two funds: $10,000 to start plus $500 a month for 30 years. With a 0.05% yearly fee you'd end "
         f"with about ${low/1e3:,.0f}K. With a 1% fee, about ${high/1e3:,.0f}K. The gap is about "

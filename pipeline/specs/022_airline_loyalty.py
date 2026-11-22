@@ -27,7 +27,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "BUSINESS BREAKDOWN",
     "disclaimer": "Partner payments are revenue, not profit · source: company filings",
-    "title": "Airlines make billions from credit cards, not just seats #shorts",
+    "title": "How Airlines Really Make Money: Credit Cards",
     "description": (
         "In 2025 American Airlines earned $111 million in net profit, while its co-branded credit card and "
         "other partners paid it $6.2 billion in cash. American Express paid Delta $8.2 billion, more than Delta's "
