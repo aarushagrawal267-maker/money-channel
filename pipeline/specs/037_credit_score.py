@@ -99,7 +99,7 @@ spec = {
                     "lines": [{"text": "✗ Many new cards", "color": "red", "size": 80},
                               {"text": "✓ Check your score", "color": "green", "size": 80},
                               {"text": "it doesn't lower it", "color": "muted", "size": 56}]}},
-        {"say": "Pay on time, keep balances low. Follow for one money lesson every day.",
+        {"say": "Pay on time, keep balances low. Follow for the next breakdown.",
          "visual": {"type": "cta", "lines": ["On time.", "Low balances."],
                     "sub": "Follow for daily money lessons"}},
     ],

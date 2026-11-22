@@ -102,7 +102,7 @@ spec = {
          "visual": {"type": "compare", "title": "This car, by 20/4/10",
                     "left": {"label": "Payment", "value": p_rule, "color": "gold"},
                     "right": {"label": "Income / yr", "value": income_needed, "color": "green"}}},
-        {"say": "Look past the monthly payment. Follow for one money lesson every day.",
+        {"say": "Look past the monthly payment. Follow for the next breakdown.",
          "visual": {"type": "cta", "lines": ["Check the", "total cost."],
                     "sub": "Follow for daily money lessons"}},
     ],

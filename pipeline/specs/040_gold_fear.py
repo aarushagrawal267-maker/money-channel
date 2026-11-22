@@ -84,7 +84,7 @@ spec = {
          "visual": {"type": "compare", "title": "Average gold price, 2026",
                     "left": {"label": "Q1 2026", "value": PRICE["Q1 2026"], "color": "gold"},
                     "right": {"label": "Q3 2026", "value": PRICE["Q3 2026"], "color": "red"}}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "There's a new one every day. Follow so you don't miss it.",
          "visual": {"type": "cta", "lines": ["Safe haven.", "Not risk-free."],
                     "sub": "Follow for daily money lessons"}},
     ],

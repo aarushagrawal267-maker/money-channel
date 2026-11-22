@@ -21,6 +21,7 @@ POSTED = os.path.join(HERE, "posted.json")
 CATEGORY_EDUCATION = "27"
 RETRY_STATUS = {500, 502, 503, 504}
 MAX_TITLE, MAX_DESC, MAX_TAGS_CHARS = 100, 5000, 500
+AI_LINE = "Made with AI assistance: scripts are researched and written with AI and narrated by a synthetic voice; every number is checked against the sources listed."
 SUBSCRIBE_LINE = "New money lesson every day. Subscribe: https://www.youtube.com/channel/UC-DK-CcVvDnkZoehOWGWlBg?sub_confirmation=1"
 
 
@@ -64,7 +65,7 @@ def build_body(spec, chapters=None, privacy="private", publish_at=None):
     desc = body
     if chapters:
         desc += "\n\nChapters\n" + chapters.strip()
-    desc += "\n\n" + SUBSCRIBE_LINE
+    desc += "\n\n" + AI_LINE + "\n\n" + SUBSCRIBE_LINE
     if hashtags:
         desc += "\n\n" + " ".join(hashtags)
     desc += "\n"

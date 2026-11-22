@@ -60,7 +60,7 @@ spec = {
                     "lines": [{"text": "Beat the market", "color": "text", "size": 92},
                               {"text": "+ cover the fee", "color": "gold", "size": 80},
                               {"text": "for decades", "color": "muted", "size": 64}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "There's a new one every day. Follow so you don't miss it.",
          "visual": {"type": "cta", "lines": ["Hard to beat", "the market."],
                     "sub": "Follow for daily money lessons"}},
     ],

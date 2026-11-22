@@ -101,7 +101,7 @@ spec = {
                     "lines": [{"text": "Save half first", "color": "green", "size": 104},
                               {"text": "+", "color": "dim", "size": 80},
                               {"text": "enjoy the rest", "color": "gold", "size": 104}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Save this for later, and follow for more.",
          "visual": {"type": "cta", "lines": ["Grow your", "wealth, too."],
                     "sub": "Follow for daily money lessons"}},
     ],

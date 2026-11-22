@@ -276,7 +276,7 @@ spec = {
     "id": "L001_costco", "currency": "usd", "voice": "af_heart", "speed": 1.0, "gap": 0.35,
     "badge": "BUSINESS BREAKDOWN",
     "disclaimer": "Figures: Costco FY2026 results & 10-K · for education, not investment advice",
-    "title": "How Costco Makes $9 Billion While Barely Profiting From Products",
+    "title": "How Costco Makes Money (It's Not the Groceries)",
     "intro_chapter": "Intro",
     "thumbnail": {"big": "$5.9B", "line": "COSTCO'S REAL BUSINESS", "tag": "IT'S NOT GROCERIES", "color": "gold"},
     "description": (

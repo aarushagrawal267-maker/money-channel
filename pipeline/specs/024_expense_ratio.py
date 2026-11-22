@@ -82,7 +82,7 @@ spec = {
                     "lines": [{"text": "Check the", "color": "muted", "size": 72},
                               {"text": "EXPENSE RATIO", "color": "gold", "size": 104},
                               {"text": "on the fund's fact sheet", "color": "muted", "size": 56}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Follow for the next breakdown.",
          "visual": {"type": "cta", "lines": ["Small fees.", "Big bills."],
                     "sub": "Follow for daily money lessons"}},
     ],

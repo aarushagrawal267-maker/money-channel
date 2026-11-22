@@ -36,7 +36,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "CASE STUDY",
     "disclaimer": "Sources: Netflix filings, AP, Newsweek · see description",
-    "title": "Netflix vs Blockbuster: The $50 Million 'No'",
+    "title": "Why Blockbuster Didn't Buy Netflix for $50 Million",
     "description": (
         "In 2000, Netflix's co-founders say they offered to sell the company to Blockbuster for $50 million, "
         "and Blockbuster said no (Blockbuster's former CEO later said there were never serious talks). "
@@ -94,7 +94,7 @@ spec = {
                     "lines": [{"text": "Protect today's profits?", "color": "muted", "size": 64},
                               {"text": "Protect the future.", "color": "gold", "size": 84},
                               {"text": "Ask what customers want next", "color": "text", "size": 50}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Share this with someone who needs it.",
          "visual": {"type": "cta", "lines": ["$50 million.", "Turned down."],
                     "sub": "Follow for daily money lessons"}},
     ],

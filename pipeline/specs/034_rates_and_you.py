@@ -95,7 +95,7 @@ spec = {
          "visual": {"type": "equation", "title": "If your bank passes it on",
                     "lines": [{"text": "$10,000 × 0.25%", "color": "text", "size": 92},
                               {"text": f"= ${extra_interest_savings:.0f} more a year", "color": "green", "size": 92}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Save this for later, and follow for more.",
          "visual": {"type": "cta", "lines": ["One rate.", "Your wallet."],
                     "sub": "Follow for daily money lessons"}},
     ],

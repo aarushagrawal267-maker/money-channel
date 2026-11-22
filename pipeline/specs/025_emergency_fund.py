@@ -62,7 +62,7 @@ spec = {
         {"say": "Starting from zero? Aim for one month first. Then build.",
          "visual": {"type": "stat", "value": "1 month", "label": "a great first goal",
                     "sub": f"= ${ESSENTIALS:,} in this example", "color": "green"}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Follow for tomorrow's money lesson.",
          "visual": {"type": "cta", "lines": ["Build your", "safety net."],
                     "sub": "Follow for daily money lessons"}},
     ],

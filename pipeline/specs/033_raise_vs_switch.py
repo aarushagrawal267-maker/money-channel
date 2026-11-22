@@ -98,7 +98,7 @@ spec = {
          "visual": {"type": "pair", "title": "Your two moves",
                     "left": {"label": "Ask", "sub": "with market data", "color": "gold"},
                     "right": {"label": "Move", "sub": "if the answer is no", "color": "green"}}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "There's a new one every day. Follow so you don't miss it.",
          "visual": {"type": "cta", "lines": ["Know your", "market value."],
                     "sub": "Follow for daily money lessons"}},
     ],

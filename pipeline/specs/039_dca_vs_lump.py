@@ -95,7 +95,7 @@ spec = {
                     "lines": [{"text": "Investing in steps", "color": "blue", "size": 88},
                               {"text": "beats", "color": "dim", "size": 72},
                               {"text": "waiting in cash", "color": "green", "size": 100}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Follow if this changed how you think about money.",
          "visual": {"type": "cta", "lines": ["Time in", "the market."],
                     "sub": "Follow for daily money lessons"}},
     ],

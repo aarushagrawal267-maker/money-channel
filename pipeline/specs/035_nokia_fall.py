@@ -97,7 +97,7 @@ spec = {
                     "lines": [{"text": "Success can make", "color": "text", "size": 80},
                               {"text": "you slow to change.", "color": "gold", "size": 80},
                               {"text": "What could replace your best product?", "color": "muted", "size": 42}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Share this with someone who needs it.",
          "visual": {"type": "cta", "lines": ["Winning today", "isn't enough."],
                     "sub": "Follow for daily money lessons"}},
     ],

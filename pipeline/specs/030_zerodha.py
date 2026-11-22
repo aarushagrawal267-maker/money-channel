@@ -95,7 +95,7 @@ spec = {
          "visual": {"type": "equation",
                     "lines": [{"text": "Investing: free", "color": "green", "size": 100},
                               {"text": "Trading: paid", "color": "gold", "size": 100}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Follow if this changed how you think about money.",
          "visual": {"type": "cta", "lines": ["Free to invest.", "Paid to trade."],
                     "sub": "Follow for daily money lessons"}},
     ],

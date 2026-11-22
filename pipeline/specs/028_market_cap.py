@@ -107,7 +107,7 @@ spec = {
                     "lines": [{"text": f"Microsoft ${msft_ps:.0f}", "color": "blue", "size": 100},
                               {"text": f"Walmart ${wmt_ps:.2f}", "color": "gold", "size": 100},
                               {"text": f"prices as of {PRICE_DATE}", "color": "muted", "size": 46}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "There's a new one every day. Follow so you don't miss it.",
          "visual": {"type": "cta", "lines": ["Sales aren't", "value."],
                     "sub": "Follow for daily money lessons"}},
     ],

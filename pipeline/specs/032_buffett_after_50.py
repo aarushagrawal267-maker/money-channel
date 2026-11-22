@@ -109,7 +109,7 @@ spec = {
                     "lines": [{"text": "Not his returns.", "color": "muted", "size": 76},
                               {"text": "His time.", "color": "gold", "size": 120},
                               {"text": "Start early. Stay in.", "color": "text", "size": 64}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Follow for tomorrow's money lesson.",
          "visual": {"type": "cta", "lines": ["Start early.", "Let time work."],
                     "sub": "Follow for daily money lessons"}},
     ],

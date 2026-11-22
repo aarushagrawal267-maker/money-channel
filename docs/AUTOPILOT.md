@@ -28,7 +28,7 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
    and review their work. Rules:
    - every spoken/shown number computed with `assert`s or sourced (Python constant + source/date comment;
      sources listed in the description). Prefer primary sources. If unconfirmed, leave it out.
-   - Shorts 35–55 s (~95–140 words), hook in the first sentence. Long 8–12 min (1,400–1,700 words),
+   - Shorts 30–45 s (~85–115 words), payoff-first hook. Long 8–12 min (1,400–1,700 words),
      6–7 chapters, ≥10 visual types, never the same visual twice in a row, `thumbnail` set.
    - spoken numbers in words; see voice gotchas in `CLAUDE.md`.
    - no stock tips, no "buy this", no get-rich-quick; on-screen disclaimer when returns are shown;
@@ -40,6 +40,20 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
    - **Localizations** (global reach): add `"localizations"` for `es`, `pt`, `hi`, `id`, `de`, `fr`, each
      `{"title": ..., "summary": ...}` (natural translation, same numbers and currency, Hindi in Devanagari,
      ≤60 characters where possible). upload.py turns these into translated titles/descriptions.
+   - **Specialist rules (from docs/reviews/, 23 Nov 2026):**
+     - Shorts: open on the payoff (the surprising number or result), not the setup; aim for 30–45 s
+       (~85–115 words); one visual per ~4 s; end with a varied closing line (never the same line as the
+       previous Short; ideally one that loops back to the opening). Short title must differ from its
+       matching long video's title (they shouldn't compete in search).
+     - Long videos are the priority for monetisation (from Feb 2027 YPP needs 1,000 subs + 8,000 long-form
+       watch hours/12 months): write the title + thumbnail idea before the script; make 2–3 Shorts from
+       each long video and publish the long one first; renderer adds a 16 s end-screen hold automatically.
+     - No topic repeated within 14 days (incl. $ and ₹ versions of the same idea). The narrator never
+       speaks as a person or claimed expert ("I", "as a financial advisor").
+     - Allegations about real people/companies: always name the source, never in a title or thumbnail.
+     - Localized titles keep brand/person names in Latin script (also in Hindi).
+     - Shorts get a vertical thumbnail automatically (render.py make_short_thumb: badge + key number +
+       title). If the auto-picked number isn't the key one, add an override in pipeline/short_thumbs.json.
 5. **Check**: `python3 pipeline/preview.py <spec.json> <scratch dir>` and look at every sheet; fix overflow.
    `tools/render_batch.sh <ids...>`, then `python3 tools/voice_check.py` on each; fix real mispronunciations
    (not number formatting noise) and re-render.

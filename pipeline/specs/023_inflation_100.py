@@ -56,7 +56,7 @@ spec = {
                     "lines": [{"text": "your growth", "color": "green", "size": 96},
                               {"text": "− inflation", "color": "red", "size": 96},
                               {"text": "= real growth", "color": "gold", "size": 110}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Follow for tomorrow's money lesson.",
          "visual": {"type": "cta", "lines": ["Prices never", "stand still."],
                     "sub": "Follow for daily money lessons"}},
     ],

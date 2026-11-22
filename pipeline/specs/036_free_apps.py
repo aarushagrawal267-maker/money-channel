@@ -90,7 +90,7 @@ spec = {
                     "lines": [{"text": "Free app?", "color": "text", "size": 110},
                               {"text": "You pay", "color": "gold", "size": 110},
                               {"text": "with your time.", "color": "gold", "size": 100}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Follow if this changed how you think about money.",
          "visual": {"type": "cta", "lines": ["Free to use.", "Paid by ads."],
                     "sub": "Follow for daily money lessons"}},
     ],

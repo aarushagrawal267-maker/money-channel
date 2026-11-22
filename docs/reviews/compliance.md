@@ -19,12 +19,12 @@ Fixes:
 - In the spec template, `assert` that every digit group in `localizations[*].title` also appears in the English title or description.
 - News Shorts: two independent sources must agree on every number before the video is written. If they do not, skip the slot.
 - Have a second agent fact-check each spec before `schedule.txt`.
-- Owner action: re-run `get_youtube_token.py` with the `youtube.force-ssl` scope, so mistakes can be fixed the same day.
+- Owner: re-run `get_youtube_token.py` with `youtube.force-ssl` so mistakes can be fixed same day.
 
 ## MEDIUM
 
 **3. Disclaimers are too weak to rely on.**
-The on-screen disclaimer is 24–26 px dim text in the header (render.py:438, render_long.py:457), which is hard to read on a phone. Five specs have no advice line at all: 017, 022, 023, 035 and 036. They show no returns, so this is acceptable for now. A disclaimer never fixes misleading content; protection comes from staying impersonal and general (US publisher's exclusion) and outside "advice"/"financial promotion" (India, UK).
+The on-screen disclaimer is 24–26 px dim text in the header (render.py:438, render_long.py:457), which is hard to read on a phone. Specs 017, 022, 023, 035, 036 have no advice line (acceptable: no returns shown). A disclaimer never fixes misleading content; protection comes from staying impersonal and general (US publisher's exclusion) and outside "advice"/"financial promotion" (India, UK).
 Fixes:
 - upload.py: `sys.exit` if a spec in pillars 1–3, or one that shows returns, has no "not financial advice" or "not investment advice" in its description.
 - Renderer: when `disclaimer` mentions returns, show it for 2 s as a full-width line at 40 px or larger.
@@ -38,7 +38,7 @@ Fixes (script rules):
 - If any paid link is ever added, disclose it inside the video and above the description fold. This follows the FTC Endorsement Guides [9] and India's CCPA influencer guidelines.
 
 **5. Real people and companies (defamation, publicity rights).**
-038 repeats Reuters' report of "accusations" that Dhirubhai Ambani manipulated government policy. It is attributed and balanced, so it is acceptable. But India's BNS s.356 Expl. 1 allows criminal defamation of a dead person when the words are meant to hurt the family [10].
+038 repeats Reuters' report of "accusations" that Dhirubhai Ambani manipulated government policy. Attributed and balanced: acceptable. But India's BNS s.356 Expl. 1 allows criminal defamation of a dead person when the words are meant to hurt the family [10].
 Rules:
 - Every allegation names its source in the spoken line ("Reuters reported…").
 - Include the person's or company's response when one exists.
@@ -55,11 +55,11 @@ Fixes:
 
 ## LOW
 
-**7. Trademarks in titles and thumbnails.** Thumbnails are text only ("COSTCO'S REAL BUSINESS"). Using a company's name to talk about it (nominative use) is fine. Rule: no logos, brand colours or brand typefaces, product photos or the word "official".
+**7. Trademarks.** Text-only thumbnails naming companies are nominative use. Rule: no logos, brand colours/typefaces, product photos or "official".
 
-**8. Copyright.** The music is made in code, the font is Inter (OFL), and quotes are short and attributed to books and filings, which fair use and fair dealing allow. Rule: no news footage, screenshots of articles, or clips from other channels. (also "reused content" [1]).
+**8. Copyright.** Procedural music, Inter (OFL), short attributed quotes: fine. Rule: no news footage, screenshots of articles, or other channels' clips (also "reused content" [1]).
 
-**9. Made for kids.** `selfDeclaredMadeForKids: False` is correct. The topics (credit, loans, investing) are for adults. Keep the look adult: no cartoon mascots or nursery-style themes.
+**9. Made for kids.** `False` is correct (adult topics). No cartoon mascots or kid-style themes.
 
 **10. Privacy policy site.** The live page (main branch) still says "Money Mechanics" and has no section on how long data is kept or how it is deleted.
 Fixes:

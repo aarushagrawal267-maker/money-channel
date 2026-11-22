@@ -61,23 +61,23 @@ Each series gets a playlist, a fixed on-screen badge and a consistent title form
 
 ## 4. Topics most likely to reach a global audience
 
-- **From the queue, prioritise:** Kodak, WeWork, McDonald's real estate, Apple profit, Phil Knight, Spanx, save for $1M, rent vs buy, "$10K a month online" ads are lies, term vs whole life, car loan cost, free apps. Long: L012 Nokia, L014 Apple 1997, L011 Buffett, L009 rent vs buy.
-- **India stories that work worldwide:** UPI, Tata Nano (a failure story), Dhirubhai, IPL.
-- **Deprioritise:** Zerodha, no-cost EMI, Amul, minimum_due_in (repeats the US Short). Reframe quick_commerce globally ("Why 10-minute delivery keeps losing money": Getir, Gopuff, sourced).
+- **Prioritise from the queue:** Kodak, WeWork, McDonald's real estate, Apple profit, Phil Knight, Spanx, save for $1M, rent vs buy, "$10K a month online" lies, term vs whole life, free apps. Long: L012 Nokia, L014 Apple 1997, L011 Buffett, L009 rent vs buy.
+- **India stories that travel:** UPI, Tata Nano (failure story), Dhirubhai, IPL.
+- **Deprioritise:** Zerodha, no-cost EMI, Amul, minimum_due_in (repeats the US Short). Reframe quick_commerce globally ("Why 10-minute delivery keeps losing money": Getir, Gopuff).
 
 **10 new topics:**
-1. **A penny doubled for 30 days vs $1M today**: the brand's signature Short; shows how compounding back-loads.
-2. **How long would $1 billion last?** Spend $1M a day and the scale becomes concrete. Highly shareable.
-3. **Costco's $1.50 hot dog since 1985**: what inflation says it "should" cost, and why it's a loss leader.
-4. **The Big Mac Index**: what burger prices say about currencies (The Economist data). Works in every country.
-5. **How Visa makes money without lending a cent**: a toll-booth model with very high margins (10-K).
-6. **Yahoo said no to $44.6B**: Microsoft's 2008 offer vs the 2017 sale to Verizon. A Billion-Dollar Mistakes episode.
-7. **LEGO's near-collapse and comeback**: too many products, then focus. Taken from LEGO's annual reports.
-8. **The 4% rule, explained**: huge US/UK search demand. Show the maths and its limits, no advice.
-9. **Why prices end in .99**: the left-digit effect, with academic sources. Pure curiosity, works everywhere.
-10. **Toys "R" Us**: how a leveraged buyout's debt sank a profitable brand. Teaches leverage.
+1. **A penny doubled for 30 days vs $1M today**: signature Short; compounding is back-loaded.
+2. **How long would $1 billion last at $1M a day?** Makes scale concrete; very shareable.
+3. **Costco's $1.50 hot dog since 1985**: its inflation-adjusted price, and loss leaders.
+4. **The Big Mac Index**: what burger prices say about currencies (Economist data).
+5. **How Visa makes money without lending a cent**: a toll-booth model (10-K margins).
+6. **Yahoo said no to $44.6B**: Microsoft's 2008 offer vs the 2017 Verizon sale.
+7. **LEGO's near-collapse and comeback**: too many products, then focus (annual reports).
+8. **The 4% rule, explained**: big US/UK search demand; maths and limits, no advice.
+9. **Why prices end in .99**: the left-digit effect, academically sourced.
+10. **Toys "R" Us**: how buyout debt sank a profitable brand.
 
-**Seasonal:** "New-year money reset" maths in week 6 (28 Dec – 3 Jan). US tax season Jan–Apr. India Budget on 1 Feb as the news Short.
+**Seasonal:** "new-year money reset" in week 6; US tax season Jan–Apr; India Budget (1 Feb) as the news Short.
 
 ## 5. Owner one-time steps in YouTube Studio (studio.youtube.com, computer)
 
@@ -97,20 +97,20 @@ Each series gets a playlist, a fixed on-screen badge and a consistent title form
 2. Create these as Public, using the series names in section 3: How They Make Money, Billion-Dollar Mistakes, Founder Files, Penny to Billion Math, Money Traps, Sunday Money News.
 3. Add the matching videos.
 
-**D. Give Claude more permissions (10 min, most useful).** When you're back, Claude will prepare an updated `tools/get_youtube_token.py`. Run it like last time and approve. Claude can then build playlists and fix titles itself.
+**D. More permissions for Claude (10 min, most useful).** When you're back, Claude prepares an updated `tools/get_youtube_token.py`; run it like last time and approve. Claude can then build playlists and fix titles itself.
 
-**E. Check advanced features.** Settings → Channel → Feature eligibility → if "Advanced features" isn't on, verify your phone number. This unlocks title/thumbnail testing.
+**E. Advanced features.** Settings → Channel → Feature eligibility → if "Advanced features" is off, verify your phone. This unlocks title/thumbnail testing.
 
-**F. Weekly, about 10 min (optional but valuable):**
-1. **End screens:** Content → long video → Editor → End screen → "Import from video" (the first time: add "Best for viewer" video + Subscribe) → Save.
-2. **Short → long link:** Content → Shorts → pencil → "Related video" → choose the matching long video → Save.
-3. **Test & Compare:** Content → long video → thumbnail → "Test & compare" → add the extra thumbnails Claude leaves in `output/`.
+**F. Weekly, ~10 min (optional, valuable):**
+1. **End screens:** Content → long video → Editor → End screen → "Import from video" (first time: add "Best for viewer" + Subscribe) → Save.
+2. **Short → long link:** Content → Shorts → pencil → "Related video" → matching long video → Save.
+3. **Test & Compare:** Content → long video → thumbnail → "Test & compare" → add Claude's extra thumbnails.
 
 ## 6. Off-YouTube distribution (legitimate, low effort)
 
-1. **Website articles (Claude, zero owner effort):** turn each long script, charts and sources into a page on the GitHub Pages site with the video embedded. This brings Google search traffic, and embedded plays count. Fresh sessions can't push to the Pages repo, so do it from the main session.
+1. **Website articles (Claude, no owner effort):** each long script + charts + sources as a page on the GitHub Pages site with the video embedded. Brings Google traffic; embedded plays count. Do it from the main session (fresh sessions can't push there).
 2. **Instagram/Facebook Reels (owner, 20 min every 2 weeks):** schedule the same Short files in Meta Business Suite.
-3. **LinkedIn (owner, 5 min a week):** share the case-study long video with 3 takeaways. That audience fits business stories.
-4. **Reddit/Quora:** only genuine answers that follow each forum's rules. No automated posting. Low priority.
+3. **LinkedIn (owner, 5 min a week):** the case-study long video plus 3 takeaways.
+4. **Reddit/Quora:** genuine answers only, following each forum's rules; no automation. Low priority.
 
-**Avoid:** sub-for-sub groups, "comment X to get Y" prompts, misleading thumbnails, and mass-messaging friends. All of these hurt reach or break policy. Real questions to viewers are fine.
+**Avoid:** sub-for-sub groups, "comment X to get Y" prompts, misleading thumbnails, mass-messaging friends. They hurt reach or break policy. Genuine questions to viewers are fine.

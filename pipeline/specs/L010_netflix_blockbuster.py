@@ -351,7 +351,7 @@ spec = {
     "id": "L010_netflix_blockbuster", "currency": "usd", "voice": "af_heart", "speed": 1.0, "gap": 0.35,
     "badge": "CASE STUDY",
     "disclaimer": "Figures: company filings & reports · for education, not investment advice",
-    "title": "Netflix vs Blockbuster: The $50M Deal That Got Away",
+    "title": "Netflix vs Blockbuster: Why Blockbuster Really Failed",
     "intro_chapter": "The $50M deal",
     "thumbnail": {"big": "$50M", "line": "THE DEAL THEY REJECTED", "tag": "NETFLIX VS BLOCKBUSTER", "color": "gold"},
     "description": DESCRIPTION,

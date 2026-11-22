@@ -99,7 +99,7 @@ spec = {
                     "lines": [{"text": "Think big.", "color": "gold", "size": 110},
                               {"text": "Bring people with you.", "color": "text", "size": 70},
                               {"text": "How you win matters too.", "color": "muted", "size": 56}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Follow for tomorrow's money lesson.",
          "visual": {"type": "cta", "lines": ["Think big.", "Play fair."],
                     "sub": "Follow for daily money lessons"}},
     ],

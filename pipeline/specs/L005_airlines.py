@@ -366,7 +366,7 @@ spec = {
     "id": "L005_airlines", "currency": "usd", "voice": "af_heart", "speed": 1.0, "gap": 0.35,
     "badge": "BUSINESS BREAKDOWN",
     "disclaimer": "Figures: IATA (2026 = forecast), US BTS, airline filings · education, not investment advice",
-    "title": "Airlines Barely Make Money Flying. Here's What Pays.",
+    "title": "How Airlines Really Make Money: $4.50 a Passenger",
     "intro_chapter": "The $4.50 problem",
     "thumbnail": {"big": "$4.50", "line": "PROFIT PER PASSENGER", "tag": "SO WHAT PAYS?", "color": "gold"},
     "description": (

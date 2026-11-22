@@ -66,7 +66,7 @@ spec = {
                     "lines": [{"text": "You fly.", "color": "text", "size": 110},
                               {"text": "Your bank pays", "color": "gold", "size": 110},
                               {"text": "the airline.", "color": "gold", "size": 110}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Share this with someone who needs it.",
          "visual": {"type": "cta", "lines": ["Not just seats.", "Miles."],
                     "sub": "Follow for daily money lessons"}},
     ],

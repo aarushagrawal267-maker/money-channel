@@ -72,7 +72,7 @@ spec = {
                     "lines": [{"text": "Could you pay today?", "color": "green", "size": 76},
                               {"text": "No? Don't split it.", "color": "text", "size": 64},
                               {"text": "Track every plan", "color": "muted", "size": 64}]}},
-        {"say": "Follow for one money lesson every day.",
+        {"say": "Save this for later, and follow for more.",
          "visual": {"type": "cta", "lines": ["Pay later", "is still paying."],
                     "sub": "Follow for daily money lessons"}},
     ],
