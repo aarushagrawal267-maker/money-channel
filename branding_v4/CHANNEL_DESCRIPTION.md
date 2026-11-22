@@ -1,5 +1,13 @@
 # Channel description (paste into YouTube Studio → Customization → Basic info → Description)
 
+**Use this (short version, owner's choice, 22 Nov 2026):**
+
+Penny to Billion explains how money really works: from your savings and investments to how the world's biggest companies and founders made their billions. Simple charts, real numbers, no hype. New Shorts daily and deep dives every week. Subscribe and get smarter about money. Not financial advice.
+
+---
+
+Older long version (not used):
+
 Penny to Billion explains how money really works: personal finance, investing, and how the world's biggest companies and founders actually made their billions.
 
 Nobody really teaches us this. Not in school, and usually not at home either. So most of us learn it the hard way: a credit card bill that never shrinks, savings that never seem to grow, or a "great deal" that wasn't.
