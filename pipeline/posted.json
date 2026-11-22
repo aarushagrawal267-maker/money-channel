@@ -44,5 +44,37 @@
     "privacy": "private",
     "thumbnail": null,
     "processing": "succeeded"
+  },
+  {
+    "id": "014_minimum_payment_trap_us",
+    "video_id": "O_m56QwX76o",
+    "url": "https://youtu.be/O_m56QwX76o",
+    "title": "Only paying the minimum on your credit card? Watch this. #shorts",
+    "uploaded_at": "2026-11-22T05:14:11Z",
+    "publish_at": "2026-11-23T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": null,
+    "processing": "succeeded"
+  },
+  {
+    "id": "L001_costco",
+    "video_id": "1rV4WFA_DW8",
+    "url": "https://youtu.be/1rV4WFA_DW8",
+    "title": "How Costco Makes $9 Billion While Barely Profiting From Products",
+    "uploaded_at": "2026-11-22T05:15:05Z",
+    "publish_at": "2026-11-23T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "016_buying_a_share",
+    "video_id": "XaOxyEpKrkY",
+    "url": "https://youtu.be/XaOxyEpKrkY",
+    "title": "What actually happens when you tap \"Buy\" on a stock? #shorts",
+    "uploaded_at": "2026-11-22T05:25:00Z",
+    "publish_at": "2026-11-24T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": null
   }
 ]
