@@ -1,0 +1,982 @@
+{
+ "id": "L004_credit_cards_business",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "gap": 0.35,
+ "badge": "BUSINESS BREAKDOWN",
+ "disclaimer": "Figures: NY Fed, Federal Reserve, CFPB, Visa & Capital One filings · education, not financial advice",
+ "title": "How Credit Card Companies Really Make Money",
+ "intro_chapter": "Intro",
+ "thumbnail": {
+  "big": "$160B",
+  "line": "IN CARD INTEREST",
+  "tag": "WHO REALLY PAYS?",
+  "color": "gold"
+ },
+ "description": "How do credit card companies really make money? Americans owe $1.29 trillion on credit cards, and in 2024 card issuers charged $160 billion in interest plus $31.3 billion in fees. We follow the money from swipe fees (what a store pays on a $100 purchase) to interest, late and annual fees, who really pays for rewards, and why Visa keeps about 51 cents of profit per revenue dollar while a big card bank keeps about 12.\n\nAssumptions: the $5,000 example keeps the balance at $5,000 for a year at the Fed's Q3 2026 average rate on accounts assessed interest (22.36%), with interest paid monthly (no compounding). The 2% cash back card is an example, not a specific product. Swipe fees are Visa's published US default rates (card present, retail); large merchants can negotiate lower, and stores also pay network and processor fees not shown.\n\nSources:\n- New York Fed, Household Debt and Credit Report, Q3 2026 (Nov 10, 2026): https://www.newyorkfed.org/microeconomics/hhdc\n- Federal Reserve G.19 Consumer Credit, Nov 6, 2026 release (credit card plans, accounts assessed interest): https://www.federalreserve.gov/releases/g19/current/\n- CFPB, The Consumer Credit Card Market report (Dec 30, 2025; 2024 data): https://www.consumerfinance.gov/data-research/research-reports/the-consumer-credit-card-market-2025/\n- Visa USA Interchange Reimbursement Fees, effective Oct 24, 2026: https://usa.visa.com/support/small-business/regulations-fees.html\n- Visa fiscal 2026 Form 10-K (filed Nov 5, 2026) and Q4 FY2026 results (Oct 27, 2026): https://investor.visa.com\n- Capital One 2025 Form 10-K (filed Feb 19, 2026), Credit Card business results and rewards note (2024 figures): https://investor.capitalone.com\n- Agarwal, Presbitero, Silva & Wix, \"Who Pays For Your Rewards?\", Federal Reserve FEDS 2023-007: https://www.federalreserve.gov/econres/feds/who-pays-for-your-rewards-redistribution-in-the-credit-card-market.htm\n- Schuh, Shy & Stavins, \"Who Gains and Who Loses from Credit Card Payments?\", Boston Fed (2010)\n- Credit CARD Act of 2009 / Regulation Z 12 CFR 1026.5(b)(2)(ii) (21-day rule)\n- Costco FY2026 results (net income $9.2B on $303.2B revenue)\n\nFor education only. Not financial advice.\n\n#creditcards #personalfinance #businessbreakdown #creditcarddebt #moneytips",
+ "tags": [
+  "how credit card companies make money",
+  "credit card business model",
+  "interchange fees",
+  "swipe fees",
+  "credit card interest",
+  "credit card rewards",
+  "who pays for credit card rewards",
+  "visa business model",
+  "credit card late fees",
+  "credit card debt",
+  "business breakdown",
+  "personal finance"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Cómo ganan dinero realmente las tarjetas de crédito",
+   "summary": "Los estadounidenses deben 1,29 billones de dólares en tarjetas de crédito, y en 2024 los bancos cobraron 160.000 millones en intereses y 31.300 millones en comisiones. Seguimos el dinero: comisiones por pago, intereses, cargos y quién paga de verdad las recompensas."
+  },
+  "pt": {
+   "title": "Como as empresas de cartão de crédito realmente lucram",
+   "summary": "Os americanos devem US$ 1,29 trilhão no cartão de crédito, e em 2024 os bancos cobraram US$ 160 bilhões em juros e US$ 31,3 bilhões em tarifas. Seguimos o dinheiro: taxas de transação, juros, tarifas e quem realmente paga pelas recompensas."
+  },
+  "hi": {
+   "title": "क्रेडिट कार्ड कंपनियाँ असल में पैसे कैसे कमाती हैं",
+   "summary": "अमेरिकियों पर क्रेडिट कार्ड का 1.29 ट्रिलियन डॉलर बकाया है, और 2024 में बैंकों ने 160 अरब डॉलर ब्याज और 31.3 अरब डॉलर फ़ीस वसूली। स्वाइप फ़ीस, ब्याज, लेट फ़ीस और रिवॉर्ड्स का असली खर्च कौन उठाता है, यह आसान भाषा में समझिए।"
+  },
+  "id": {
+   "title": "Cara Perusahaan Kartu Kredit Benar-benar Untung",
+   "summary": "Warga AS berutang US$1,29 triliun di kartu kredit, dan pada 2024 bank menagih US$160 miliar bunga plus US$31,3 miliar biaya. Kita telusuri uangnya: biaya gesek, bunga, denda, dan siapa yang sebenarnya membayar hadiah kartu."
+  },
+  "de": {
+   "title": "Wie Kreditkartenfirmen wirklich Geld verdienen",
+   "summary": "Amerikaner schulden 1,29 Billionen Dollar auf Kreditkarten, und 2024 berechneten Banken 160 Milliarden Dollar Zinsen plus 31,3 Milliarden Gebühren. Wir folgen dem Geld: Händlergebühren, Zinsen, Gebühren und wer Prämien wirklich bezahlt."
+  },
+  "fr": {
+   "title": "Comment les cartes de crédit gagnent vraiment de l'argent",
+   "summary": "Les Américains doivent 1 290 milliards de dollars sur leurs cartes de crédit, et en 2024 les banques ont facturé 160 milliards d'intérêts et 31,3 milliards de frais. Suivons l'argent : commissions, intérêts, frais et qui paie vraiment les récompenses."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Americans now owe about one point two nine trillion dollars on their credit cards. A record. And it grew another twenty-two billion in just three months.",
+   "visual": {
+    "type": "count",
+    "to": 1.29,
+    "prefix": "$",
+    "suffix": "T",
+    "dp": 2,
+    "label": "owed on US credit cards",
+    "sub": "Q3 2026 · New York Fed",
+    "color": "red"
+   }
+  },
+  {
+   "say": "In twenty twenty-four alone, card companies charged one hundred and sixty billion dollars in interest. Plus another thirty-one billion in fees.",
+   "visual": {
+    "type": "stat",
+    "value": "$160B",
+    "label": "interest charged to US cardholders",
+    "sub": "2024 · plus $31.3B in fees · CFPB",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "So who actually gets all that money? The answer involves several companies on every swipe, a fee you never see, and a rewards system that's quietly paid for by someone else.",
+   "visual": {
+    "type": "title",
+    "title": "Follow the Swipe",
+    "sub": "how credit card companies really make money"
+   }
+  },
+  {
+   "say": "Chapter one. The players.",
+   "visual": {
+    "type": "chapter",
+    "n": 1,
+    "title": "The players"
+   }
+  },
+  {
+   "say": "Every card payment involves five parties. You. Your bank, which gave you the card. The network, like Visa or Mastercard. The store. And the store's bank, which handles its card payments.",
+   "visual": {
+    "type": "bullets",
+    "title": "Five parties on every swipe",
+    "items": [
+     "You, the cardholder",
+     "Your bank (the issuer)",
+     "The network (Visa, Mastercard)",
+     "The store",
+     "The store's bank (the acquirer)"
+    ]
+   }
+  },
+  {
+   "say": "The two that people mix up are the network and your bank. The network runs the rails that move the payment. Your bank lends you the money and sends you the bill.",
+   "visual": {
+    "type": "versus",
+    "title": "Two very different jobs",
+    "left": {
+     "label": "The network",
+     "value": "Rails",
+     "sub": "moves the payment",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Your bank",
+     "value": "Lender",
+     "sub": "lends money, sends the bill",
+     "color": "gold"
+    },
+    "verdict": "Different jobs, very different profits"
+   }
+  },
+  {
+   "say": "Visa says it plainly in its annual report. It does not issue cards, extend credit, or set the rates and fees you pay. That's your bank's job.",
+   "visual": {
+    "type": "quote",
+    "text": "\"We do not issue cards,\nextend credit or set\nrates and fees\"",
+    "first_color": "text",
+    "color": "text",
+    "source": "Visa fiscal 2026 annual report (10-K)"
+   }
+  },
+  {
+   "say": "When you tap your card, the store's bank sends the request through the network to your bank, which approves it in moments. Then the money flows back the other way, minus a few small cuts.",
+   "visual": {
+    "type": "equation",
+    "title": "One tap, in order",
+    "lines": [
+     {
+      "text": "Store → store's bank",
+      "color": "muted",
+      "size": 76
+     },
+     {
+      "text": "→ network → your bank",
+      "color": "text",
+      "size": 76
+     },
+     {
+      "text": "money flows back, minus fees",
+      "color": "gold",
+      "size": 64
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter two. The swipe fee.",
+   "visual": {
+    "type": "chapter",
+    "n": 2,
+    "title": "The swipe fee"
+   }
+  },
+  {
+   "say": "The biggest cut is the interchange fee, also called the swipe fee. The store pays it, and it goes to the bank that issued your card. On a one hundred dollar purchase with a premium rewards card, Visa's published rate works out to two dollars and twenty cents.",
+   "visual": {
+    "type": "stat",
+    "value": "$2.20",
+    "label": "swipe fee on a $100 premium-card purchase",
+    "sub": "Visa US rates, Oct 2026 · goes to your bank",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "And the fancier the card, the bigger the fee. A basic Visa credit card costs the store about a dollar sixty on that same purchase. A top-tier card, about two forty.",
+   "visual": {
+    "type": "table",
+    "title": "Swipe fee on a $100 store purchase (Visa)",
+    "header": [
+     "Card",
+     "Rate",
+     "On $100"
+    ],
+    "rows": [
+     [
+      "Basic",
+      "1.51% + 10¢",
+      "$1.61"
+     ],
+     [
+      "Rewards",
+      "1.65% + 10¢",
+      "$1.75"
+     ],
+     [
+      "Premium",
+      "2.10% + 10¢",
+      "$2.20"
+     ],
+     [
+      "Top tier",
+      "2.30% + 10¢",
+      "$2.40"
+     ]
+    ],
+    "highlight_row": 3,
+    "col_colors": {
+     "1": "muted",
+     "2": "gold"
+    }
+   }
+  },
+  {
+   "say": "Where you shop matters too. On a premium rewards card, a hundred dollar grocery run can cost the store as little as a dollar seventy. A restaurant meal, two sixty.",
+   "visual": {
+    "type": "hbars",
+    "title": "Swipe fee on $100, premium rewards card",
+    "items": [
+     {
+      "label": "Supermarket",
+      "value": 1.7,
+      "display": "$1.70",
+      "color": "green"
+     },
+     {
+      "label": "Retail store",
+      "value": 2.2,
+      "display": "$2.20",
+      "color": "green"
+     },
+     {
+      "label": "Travel",
+      "value": 2.5,
+      "display": "$2.50",
+      "color": "green"
+     },
+     {
+      "label": "Restaurant",
+      "value": 2.6,
+      "display": "$2.60",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So follow that hundred dollars. The swipe fee goes to your bank, and before its own processing charges, the store ends up with about ninety-seven dollars and eighty cents.",
+   "visual": {
+    "type": "waterfall",
+    "title": "A $100 premium-card sale",
+    "steps": [
+     {
+      "label": "Sale",
+      "value": 100,
+      "kind": "start",
+      "display": "$100"
+     },
+     {
+      "label": "Swipe fee",
+      "value": 2.2,
+      "kind": "minus",
+      "display": "−$2.20"
+     },
+     {
+      "label": "Store gets",
+      "value": 97.8,
+      "kind": "total",
+      "display": "$97.80"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Now multiply that by every swipe in America. In twenty twenty-four, people bought three point six trillion dollars of stuff on credit cards. A cut of around two percent of that is tens of billions of dollars a year.",
+   "visual": {
+    "type": "count",
+    "to": 3.6,
+    "prefix": "$",
+    "suffix": "T",
+    "dp": 1,
+    "label": "spent on US credit cards",
+    "sub": "2024 · CFPB",
+    "color": "text"
+   }
+  },
+  {
+   "say": "And notice who never sees this fee. You. It's built into the store's prices. So everyone pays it, even people paying with cash.",
+   "visual": {
+    "type": "equation",
+    "title": "Who really pays the swipe fee",
+    "lines": [
+     {
+      "text": "Swipe fee",
+      "color": "gold",
+      "size": 96
+     },
+     {
+      "text": "→ built into prices",
+      "color": "text",
+      "size": 84
+     },
+     {
+      "text": "→ everyone pays, even cash users",
+      "color": "muted",
+      "size": 60
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter three. The interest engine.",
+   "visual": {
+    "type": "chapter",
+    "n": 3,
+    "title": "The interest engine"
+   }
+  },
+  {
+   "say": "Swipe fees are steady money. But for the banks, the real engine is interest. The Federal Reserve says the average rate on cards that actually charged interest was twenty-two point three six percent in the third quarter of twenty twenty-six.",
+   "visual": {
+    "type": "stat",
+    "value": "22.36%",
+    "label": "average rate on cards charged interest",
+    "sub": "Q3 2026 (preliminary) · Federal Reserve G.19",
+    "color": "red"
+   }
+  },
+  {
+   "say": "That rate jumped fast. In twenty twenty-one it was about sixteen and a half percent. Within two years it passed twenty-two, and it has stayed there.",
+   "visual": {
+    "type": "line",
+    "title": "Average card rate when interest is charged (%)",
+    "format": "num",
+    "x": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "series": [
+     {
+      "label": "22.36%",
+      "values": [
+       16.45,
+       17.91,
+       22.15,
+       22.89,
+       22.32,
+       22.36
+      ],
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Here's what that means. Carry a five thousand dollar balance for a year at that rate, and you'd pay about eleven hundred dollars in interest. That's roughly three dollars, every single day.",
+   "visual": {
+    "type": "equation",
+    "title": "$5,000 balance kept for a year",
+    "lines": [
+     {
+      "text": "$5,000 × 22.36%",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "= $1,118 a year",
+      "color": "red",
+      "size": 120
+     },
+     {
+      "text": "≈ $3 every day",
+      "color": "text",
+      "size": 60
+     }
+    ]
+   }
+  },
+  {
+   "say": "Across the country, interest charges hit one hundred and sixty billion dollars in twenty twenty-four. That's up fifty-two percent in just two years, while the number of cardholders grew less than ten percent.",
+   "visual": {
+    "type": "columns",
+    "title": "Interest charged to US cardholders",
+    "highlight": 1,
+    "items": [
+     {
+      "label": "2022",
+      "value": 105000000000.0,
+      "display": "$105B",
+      "color": "slate"
+     },
+     {
+      "label": "2024",
+      "value": 160000000000.0,
+      "display": "$160B",
+      "color": "red"
+     }
+    ],
+    "note": "Source: CFPB credit card market report, Dec 2025"
+   }
+  },
+  {
+   "say": "Now look inside a big card bank. In twenty twenty-four, Capital One's credit card business brought in twenty-eight point two billion dollars. Almost four out of every five of those dollars came from interest, after its own borrowing costs.",
+   "visual": {
+    "type": "donut",
+    "title": "Capital One card business revenue, 2024",
+    "segments": [
+     {
+      "label": "Interest (net)",
+      "value": 22088000000.0,
+      "color": "red"
+     },
+     {
+      "label": "Swipe fees & other",
+      "value": 6076000000.0,
+      "color": "blue"
+     }
+    ],
+    "center": "$28.2B",
+    "center_sub": "card revenue"
+   }
+  },
+  {
+   "say": "Why so much? Because about half of all card accounts carry a balance from month to month. And about fifteen percent of cardholders pay only the minimum, the highest share since at least twenty fifteen.",
+   "visual": {
+    "type": "share",
+    "title": "US credit card accounts, 2024",
+    "rows": [
+     {
+      "label": "Carry a balance month to month",
+      "share": 0.5,
+      "color": "gold"
+     },
+     {
+      "label": "Pay only the minimum",
+      "share": 0.15,
+      "color": "red"
+     }
+    ],
+    "note": "Source: CFPB, 2024 data (general purpose cards for minimum payers)"
+   }
+  },
+  {
+   "say": "Chapter four. The fees.",
+   "visual": {
+    "type": "chapter",
+    "n": 4,
+    "title": "The fees"
+   }
+  },
+  {
+   "say": "Interest isn't the only charge. In twenty twenty-four, cardholders paid thirty-one point three billion dollars in fees. Late fees were the biggest piece, at seventeen billion. Annual fees came next, at a record eight point seven billion.",
+   "visual": {
+    "type": "donut",
+    "title": "Credit card fees paid in 2024",
+    "segments": [
+     {
+      "label": "Late fees",
+      "value": 17000000000.0,
+      "color": "red",
+      "display": "$17B"
+     },
+     {
+      "label": "Annual fees",
+      "value": 8700000000.0,
+      "color": "gold",
+      "display": "$8.7B"
+     },
+     {
+      "label": "Other fees",
+      "value": 5600000000.0,
+      "color": "blue",
+      "display": "$5.6B"
+     }
+    ],
+    "center": "$31.3B",
+    "center_sub": "total fees · CFPB"
+   }
+  },
+  {
+   "say": "And late fees don't land evenly. People with the lowest credit scores hold about fourteen percent of card accounts, but pay forty percent of all late fees. People with the best scores hold fifty-nine percent of accounts, and pay under eight percent.",
+   "visual": {
+    "type": "table",
+    "title": "Who pays the late fees (2024)",
+    "header": [
+     "Credit score",
+     "Accounts",
+     "Late fees"
+    ],
+    "rows": [
+     [
+      "Lowest scores",
+      "14%",
+      "40%"
+     ],
+     [
+      "Best scores",
+      "59%",
+      "7.8%"
+     ]
+    ],
+    "highlight_row": 0,
+    "col_colors": {
+     "1": "muted",
+     "2": "red"
+    }
+   }
+  },
+  {
+   "say": "Annual fees work differently. People with excellent credit are the most likely to pay them, usually to unlock premium rewards. The test is simple: a fee is only worth it if the perks you actually use are worth more.",
+   "visual": {
+    "type": "bullets",
+    "title": "Annual fees: $8.7B in 2024",
+    "color": "gold",
+    "items": [
+     "Most common on premium cards",
+     "They pay for rewards and perks",
+     "Count only perks you really use",
+     "Worth it only if perks > fee"
+    ]
+   }
+  },
+  {
+   "say": "So fees fall hardest on people with the weakest credit. Keep that in mind, because the next part is about who benefits.",
+   "visual": {
+    "type": "quote",
+    "text": "Fees fall hardest on\nthe weakest credit scores.",
+    "first_color": "text",
+    "color": "red",
+    "source": "CFPB: lowest scores, 14% of accounts, 40% of late fees"
+   }
+  },
+  {
+   "say": "Chapter five. Who pays for rewards?",
+   "visual": {
+    "type": "chapter",
+    "n": 5,
+    "title": "Who pays for rewards?"
+   }
+  },
+  {
+   "say": "Here's the part everyone loves. In twenty twenty-four, cardholders earned forty-seven and a half billion dollars in rewards. Cash back, points and miles.",
+   "visual": {
+    "type": "count",
+    "to": 47.5,
+    "prefix": "$",
+    "suffix": "B",
+    "dp": 1,
+    "label": "in card rewards earned",
+    "sub": "2024 · CFPB",
+    "color": "green"
+   }
+  },
+  {
+   "say": "But put that next to what cardholders paid. One hundred and sixty billion in interest, plus thirty-one billion in fees. Rewards are only about a quarter of that.",
+   "visual": {
+    "type": "columns",
+    "title": "US cardholders, 2024",
+    "items": [
+     {
+      "label": "Interest paid",
+      "value": 160000000000.0,
+      "display": "$160B",
+      "color": "red"
+     },
+     {
+      "label": "Fees paid",
+      "value": 31300000000.0,
+      "display": "$31.3B",
+      "color": "gold"
+     },
+     {
+      "label": "Rewards earned",
+      "value": 47500000000.0,
+      "display": "$47.5B",
+      "color": "green"
+     }
+    ],
+    "note": "Source: CFPB credit card market report, Dec 2025"
+   }
+  },
+  {
+   "say": "So where does the reward money come from? Largely from swipe fees. Capital One's rewards cost nine billion dollars in twenty twenty-four, and it subtracts that straight from its swipe fee income. About two of every three swipe fee dollars went back out as rewards.",
+   "visual": {
+    "type": "waterfall",
+    "title": "Capital One swipe-fee income, 2024",
+    "steps": [
+     {
+      "label": "Swipe fees",
+      "value": 13882000000.0,
+      "kind": "start",
+      "display": "$13.9B"
+     },
+     {
+      "label": "Rewards",
+      "value": 9000000000.0,
+      "kind": "minus",
+      "display": "−$9.0B"
+     },
+     {
+      "label": "Kept",
+      "value": 4882000000.0,
+      "kind": "total",
+      "display": "$4.9B"
+     }
+    ]
+   }
+  },
+  {
+   "say": "And it becomes a loop. Rewards make people use their cards more. More spending means more swipe fees, and for some people, bigger balances. The interest and fees on those balances help fund even richer rewards.",
+   "visual": {
+    "type": "flywheel",
+    "title": "The rewards loop",
+    "center": "LOOP",
+    "steps": [
+     "Rewards",
+     "More spending",
+     "Swipe fees",
+     "Bigger balances",
+     "Interest + fees"
+    ]
+   }
+  },
+  {
+   "say": "So who collects the rewards? Mostly people with the best credit. In twenty twenty-four, superprime cardholders redeemed eighteen and a half billion dollars of rewards. Below-prime cardholders, under three billion.",
+   "visual": {
+    "type": "hbars",
+    "title": "Rewards redeemed by credit score, 2024",
+    "items": [
+     {
+      "label": "Superprime",
+      "value": 18500000000.0,
+      "display": "$18.5B",
+      "color": "green"
+     },
+     {
+      "label": "Prime plus",
+      "value": 16600000000.0,
+      "display": "$16.6B",
+      "color": "green"
+     },
+     {
+      "label": "Prime",
+      "value": 5000000000.0,
+      "display": "$5.0B",
+      "color": "slate"
+     },
+     {
+      "label": "Below prime",
+      "value": 2900000000.0,
+      "display": "$2.9B",
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Together, the two highest credit groups took about four out of every five reward dollars.",
+   "visual": {
+    "type": "share",
+    "title": "Share of rewards redeemed, 2024",
+    "rows": [
+     {
+      "label": "Two best credit-score groups",
+      "share": 0.8162790697674419,
+      "color": "green"
+     },
+     {
+      "label": "Everyone else",
+      "share": 0.1837209302325581,
+      "color": "slate"
+     }
+    ],
+    "note": "Source: CFPB (general purpose cards)"
+   }
+  },
+  {
+   "say": "Economists in a study published by the Federal Reserve looked at this closely. They estimate that rewards cards move about fifteen billion dollars a year from poorer, less educated areas to richer, more educated ones.",
+   "visual": {
+    "type": "quote",
+    "text": "About $15 billion a year\nflows from poorer areas\nto richer ones.",
+    "first_color": "gold",
+    "color": "text",
+    "source": "Agarwal, Presbitero, Silva & Wix · Federal Reserve FEDS 2023-007"
+   }
+  },
+  {
+   "say": "Cash users chip in too, because most stores charge one price however you pay. A Boston Fed study estimated each household paying cash hands about one hundred and forty-nine dollars a year to card users, while each card-using household gains about eleven hundred.",
+   "visual": {
+    "type": "versus",
+    "title": "The hidden transfer at the checkout",
+    "left": {
+     "label": "Cash household",
+     "value": "−$149",
+     "sub": "pays per year",
+     "color": "red"
+    },
+    "right": {
+     "label": "Card household",
+     "value": "+$1,133",
+     "sub": "gains per year",
+     "color": "green"
+    },
+    "verdict": "Boston Fed estimate, 2010 study"
+   }
+  },
+  {
+   "say": "That's why critics call rewards a reverse Robin Hood. The money tends to flow from people who carry balances or pay cash, to people who pay in full with premium cards.",
+   "visual": {
+    "type": "title",
+    "title": "Reverse Robin Hood",
+    "sub": "rewards flow from those who pay interest to those who don't",
+    "sub_color": "gold"
+   }
+  },
+  {
+   "say": "Chapter six. The network versus the bank.",
+   "visual": {
+    "type": "chapter",
+    "n": 6,
+    "title": "Network vs bank"
+   }
+  },
+  {
+   "say": "Now, the network. In its fiscal year ending September twenty twenty-six, Visa brought in forty-five point nine billion dollars of revenue. Its net profit was twenty-three point five billion.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Visa, fiscal 2026",
+    "items": [
+     {
+      "value": "$45.9B",
+      "label": "net revenue",
+      "color": "text"
+     },
+     {
+      "value": "$23.5B",
+      "label": "net income",
+      "color": "green"
+     },
+     {
+      "value": "51%",
+      "label": "net profit margin",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "That's about fifty-one cents of profit on every dollar of revenue. For comparison, Costco keeps about three cents.",
+   "visual": {
+    "type": "columns",
+    "title": "Net profit per $1 of revenue",
+    "highlight": 0,
+    "items": [
+     {
+      "label": "Visa (FY2026)",
+      "value": 51.203625035400734,
+      "display": "51¢",
+      "color": "gold"
+     },
+     {
+      "label": "Costco (FY2026)",
+      "value": 3.043337709546963,
+      "display": "3¢",
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Visa gets there by taking a tiny slice of a huge flow. Over fifteen trillion dollars was paid on Visa cards that year. Its revenue works out to about thirty cents for every hundred dollars.",
+   "visual": {
+    "type": "stat",
+    "value": "30¢",
+    "label": "Visa revenue per $100 paid on its cards",
+    "sub": "FY2026: $45.9B revenue ÷ $15.3T payments volume",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Why so profitable? Visa doesn't lend, so it never loses money when someone can't pay. Your bank funds your rewards. Visa runs the network and charges small fees on a giant volume. It even paid eighteen point three billion dollars in incentives to banks and partners to win their business.",
+   "visual": {
+    "type": "bullets",
+    "title": "Why the network's margin is so high",
+    "items": [
+     "No loans, so no credit losses",
+     "Your bank funds the rewards",
+     "Small fees on giant volume",
+     "Paid $18.3B in client incentives"
+    ]
+   }
+  },
+  {
+   "say": "Now compare a card bank. Capital One's card business in twenty twenty-four: twenty-eight point two billion in revenue. Minus ten point three billion set aside for loans that won't be repaid. Minus thirteen point six billion in running costs and marketing. Minus taxes. Left over: three point three billion.",
+   "visual": {
+    "type": "waterfall",
+    "title": "Capital One card business, 2024",
+    "steps": [
+     {
+      "label": "Revenue",
+      "value": 28164000000.0,
+      "kind": "start"
+     },
+     {
+      "label": "Credit losses",
+      "value": 10272000000.0,
+      "kind": "minus"
+     },
+     {
+      "label": "Running costs",
+      "value": 13576000000.0,
+      "kind": "minus"
+     },
+     {
+      "label": "Taxes",
+      "value": 1024000000.0,
+      "kind": "minus",
+      "display": "−$1.0B"
+     },
+     {
+      "label": "Net profit",
+      "value": 3292000000.0,
+      "kind": "total"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So Visa keeps about fifty-one cents of each revenue dollar. Capital One's card business kept about twelve. The difference is risk. In twenty twenty-four, Capital One wrote off nearly six percent of its card loans.",
+   "visual": {
+    "type": "versus",
+    "title": "Profit per $1 of revenue",
+    "left": {
+     "label": "Visa",
+     "value": "51¢",
+     "sub": "network · FY2026",
+     "color": "gold"
+    },
+    "right": {
+     "label": "Capital One cards",
+     "value": "12¢",
+     "sub": "lender · 2024",
+     "color": "blue"
+    },
+    "verdict": "The lender carries the risk: 5.88% of card loans written off"
+   }
+  },
+  {
+   "say": "Chapter seven. What it means for you.",
+   "visual": {
+    "type": "chapter",
+    "n": 7,
+    "title": "What it means for you"
+   }
+  },
+  {
+   "say": "Here's the good news. On most cards, if you pay the full statement balance by the due date, you pay no interest on purchases. And by law, your bill must reach you at least twenty-one days before it's due.",
+   "visual": {
+    "type": "timeline",
+    "title": "The interest-free window",
+    "events": [
+     {
+      "when": "Buy",
+      "text": "Use your card\nas normal"
+     },
+     {
+      "when": "Bill",
+      "text": "Statement\narrives"
+     },
+     {
+      "when": "21+ days",
+      "text": "Time to pay,\nby law"
+     },
+     {
+      "when": "$0",
+      "text": "Pay in full:\nno interest",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Do that, and the math flips in your favor. Say you put a thousand dollars a month on a card with two percent cash back, and pay in full. That's two hundred and forty dollars a year back, and zero interest.",
+   "visual": {
+    "type": "table",
+    "title": "$1,000 a month on a 2% cash back card (example)",
+    "header": [
+     "You…",
+     "Rewards",
+     "Interest"
+    ],
+    "rows": [
+     [
+      "Pay in full",
+      "+$240",
+      "$0"
+     ],
+     [
+      "Carry $5,000",
+      "+$240",
+      "−$1,118"
+     ]
+    ],
+    "highlight_row": 0,
+    "col_colors": {
+     "1": "green",
+     "2": "red"
+    }
+   }
+  },
+  {
+   "say": "But carry a five thousand dollar balance at today's average rate, and the interest is more than four times the rewards. You'd be about eight hundred and seventy-eight dollars a year behind.",
+   "visual": {
+    "type": "equation",
+    "title": "Carrying a balance",
+    "lines": [
+     {
+      "text": "+$240 rewards",
+      "color": "green",
+      "size": 84
+     },
+     {
+      "text": "− $1,118 interest",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "= −$878 a year",
+      "color": "red",
+      "size": 120
+     }
+    ]
+   }
+  },
+  {
+   "say": "So, four simple rules. Pay the full statement balance every month. Set up autopay so you're never late. Only pay an annual fee if you'd use the perks anyway. And if you already carry a balance, pay it down before chasing rewards.",
+   "visual": {
+    "type": "bullets",
+    "title": "Four rules",
+    "items": [
+     "Pay the full balance, every month",
+     "Autopay: never pay a late fee",
+     "Annual fee only if perks > fee",
+     "Carry a balance? Pay it off first"
+    ]
+   }
+  },
+  {
+   "say": "Remember who this business makes the most money from: people who pay late and carry balances. Your goal is to be the customer they make the least money from.",
+   "visual": {
+    "type": "quote",
+    "text": "Be the customer\nthey make the\nleast money from.",
+    "first_color": "text",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "If this changed how you see your wallet, subscribe. We break down how money really works, every week.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Follow",
+     "the money."
+    ],
+    "sub": "Subscribe for weekly breakdowns"
+   }
+  }
+ ]
+}
