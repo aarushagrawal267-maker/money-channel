@@ -1,8 +1,6 @@
 # SEO review: YouTube search discoverability (22 Nov 2026)
 
-Scope: CLAUDE.md, AUTOPILOT A4, `branding_v4/CHANNEL_DESCRIPTION.md`, `pipeline/upload.py` (`build_body`, `fit_tags`, `SUBSCRIBE_LINE`), the week 2 specs, `pipeline/queue.json`. Week 2 is **not uploaded yet** (`posted.json`), so you can still change its titles. After upload, our scopes can't edit them.
-
-**What's already right:** titles are mostly under 60 characters with the search phrase first. Every spec has 3–5 hashtags and `build_body` caps them at 4 + `#shorts`. `defaultLanguage`/`defaultAudioLanguage` = `en`. The localized description keeps the English sources. The tag lists are sensible.
+Week 2 is **not uploaded yet** (`posted.json`), so you can still change its titles. After upload, our scopes can't edit them. Already right: titles mostly under 60 characters with the search phrase first, hashtags capped at 4 + `#shorts`, `defaultLanguage`/`defaultAudioLanguage` = `en`, and localized descriptions keep the English sources.
 
 ## Top 10 recommendations (ranked)
 
@@ -19,7 +17,7 @@ Scope: CLAUDE.md, AUTOPILOT A4, `branding_v4/CHANNEL_DESCRIPTION.md`, `pipeline/
 
 4. **Supply accurate English captions.** We already have the exact script and word timings (`render.py` word-synced captions), so writing an `<id>.en.srt` next to each mp4 is cheap. Uploaded captions get names and numbers right where auto-captions fail ("Zerodha", "Dhirubhai", "crore"). They also feed YouTube's caption auto-translate and give auto-dubbing a clean source. Evidence that captions improve search ranking is thin; it mostly comes from vendors. Uploading needs `captions.insert` with the `youtube.force-ssl` scope. **Owner action:** re-run `tools/get_youtube_token.py` with the broader scopes (already proposed in AUTOPILOT "Optional upgrade"). Until then, the owner can upload the .srt in Studio → Subtitles.
 
-5. **Keep the 6 translation languages, and make sure auto-dubbing is on.** es, pt, hi, id, de and fr are exactly YouTube's "Expressive Speech" auto-dub languages (plus Italian), so the set is a good one. YouTube says translated titles and descriptions can show in search for speakers of those languages. But a Spanish title that opens English audio loses viewers fast. **Owner action:** Studio → Settings → Upload defaults → Advanced → allow automatic dubbing. Then check retention by country and audio track in the Wednesday analytics, and drop any language that doesn't hold viewers after 3 weeks. Optional: add `it`. Hindi fix: keep brand names in Latin script. `029` has "नेटफ्लिक्स बनाम ब्लॉकबस्टर" while `L010` correctly keeps "Netflix", and people search brand names in Latin script. Add this to the A4 localization rule.
+5. **Keep the 6 translation languages, and make sure auto-dubbing is on.** es, pt, hi, id, de and fr are exactly YouTube's "Expressive Speech" auto-dub languages (plus Italian), and translated titles can show in search for those speakers. But a Spanish title that opens English audio loses viewers fast. **Owner action:** Studio → Settings → Upload defaults → Advanced → allow automatic dubbing. Check retention by country in the Wednesday analytics, and drop any language that doesn't hold viewers after 3 weeks. Hindi: keep brand names in Latin script. `029` has "नेटफ्लिक्स बनाम ब्लॉकबस्टर" while `L010` correctly keeps "Netflix". Add this to the A4 rule.
 
 6. **Build series with playlists, not title prefixes.** Don't add "Case Study:" to titles. It uses up the first, most-weighted words on a phrase nobody searches. Series identity already comes from the badge and the thumbnail `tag`. Add playlists, which show up in search and lengthen viewing sessions: Business Case Studies, Founder Stories, Money Math, How Markets Work, India Money Stories. **Owner action** in Studio (or Claude via API after the scope upgrade). Also make the series hashtag the 3rd hashtag every time (`#casestudy`, `#founderstory`, `#businessbreakdown`). It's 4th in `029`.
 
@@ -52,12 +50,12 @@ Scope: CLAUDE.md, AUTOPILOT A4, `branding_v4/CHANNEL_DESCRIPTION.md`, `pipeline/
 5. **028 (Short):** "Market Cap Explained: Why Microsoft Beats Walmart"
    Opener: "Market cap explained: share price times shares, not revenue. Walmart sells over twice as much as Microsoft, yet Microsoft is worth almost 4x more."
 
-The numbers in these openers come from the current specs. Re-run the spec `.py` after editing and check the `assert`s still pass.
+The numbers in these openers come from the current specs. Re-run each spec `.py` after editing.
 
 ## Sources
-- YouTube Help, hashtags (up to 3 shown above the title; more than 60 hashtags are all ignored): https://support.google.com/youtube/answer/6390658
-- YouTube Help, tags have a "minimal role"; titles, thumbnails and descriptions matter more: https://support.google.com/youtube/answer/146402
-- YouTube Help, translated titles and descriptions can show in search: https://support.google.com/youtube/answer/4792576
-- YouTube Blog, auto-dubbing for everyone, 27 languages, Expressive Speech in 8 (4 Feb 2026): https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/
-- 3Play Media, YouTube dubbing guide (2026): https://www.3playmedia.com/blog/youtube-dubbing-guide/
-- YouTube autocomplete (suggestqueries.google.com, ds=yt), checked 22 Nov 2026 for: why nokia, why blockbuster, how airlines make, market cap, how does instagram make, 72 month car loan, side income, 10 minute delivery, mcdonalds real estate, how ipl makes, dividends vs buybacks, lifestyle inflation.
+- Hashtags: https://support.google.com/youtube/answer/6390658
+- Tags "minimal role": https://support.google.com/youtube/answer/146402
+- Translated metadata in search: https://support.google.com/youtube/answer/4792576
+- Auto-dubbing, 27 languages, Expressive Speech (4 Feb 2026): https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/
+- 3Play Media dubbing guide: https://www.3playmedia.com/blog/youtube-dubbing-guide/
+- YouTube autocomplete (suggestqueries.google.com, ds=yt), checked 22 Nov 2026.
