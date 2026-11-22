@@ -6,7 +6,7 @@
  "badge": "MONEY MATH",
  "disclaimer": "Past results don't guarantee future returns · not financial advice",
  "title": "Lump Sum vs Dollar-Cost Averaging: Which Wins More?",
- "description": "Lump sum vs dollar-cost averaging: if you already have the cash, investing it all at once has beaten spreading it out about two-thirds of the time (68% in Vanguard's study of global stocks, 1976–2022), because stocks usually beat cash. Spreading it out still beat sitting in cash 69% of the time, and it can make a drop easier to live with.\n\nSources:\n- Vanguard, Finlay & Zorn, \"Cost averaging: Invest now or temporarily hold your cash?\", February 2023 (MSCI World Index returns 1976–2022, 100% stocks, lump sum vs. three equal monthly parts, compared after one year): https://corporate.vanguard.com/content/dam/corp/research/pdf/cost_averaging_invest_now_or_temporarily_hold_your_cash.pdf\n\nExample assumptions: $12,000 invested at once vs. $1,000 at the start of each month for 12 months, a steady 7% yearly return, uninvested cash earns nothing, no fees or taxes. Real markets don't move steadily; returns vary, can be negative, and past results don't guarantee future returns. Not financial advice.\n\n#investing #dollarcostaveraging #personalfinance #stockmarket #moneytips",
+ "description": "Lump sum vs dollar-cost averaging: if you already have the cash, investing it all at once has beaten splitting it into three monthly parts about two-thirds of the time (68% in Vanguard's study of global stocks, 1976–2022), because stocks usually beat cash. Splitting it over three months still beat sitting in cash 69% of the time, and it can make a drop easier to live with.\n\nSources:\n- Vanguard, Finlay & Zorn, \"Cost averaging: Invest now or temporarily hold your cash?\", February 2023 (MSCI World Index returns 1976–2022, 100% stocks, lump sum vs. three equal monthly parts, compared after one year): https://corporate.vanguard.com/content/dam/corp/research/pdf/cost_averaging_invest_now_or_temporarily_hold_your_cash.pdf\n\nOur own example (not from the Vanguard study): $12,000 invested at once vs. $1,000 at the start of each month for 12 months, a steady 7% yearly return, uninvested cash earns nothing, no fees or taxes. Real markets don't move steadily; returns vary, can be negative, and past results don't guarantee future returns. Not financial advice.\n\n#investing #dollarcostaveraging #personalfinance #stockmarket #moneytips",
  "tags": [
   "lump sum vs dollar cost averaging",
   "dollar cost averaging",
@@ -63,12 +63,12 @@
    }
   },
   {
-   "say": "Vanguard studied global stocks from nineteen seventy-six to twenty twenty-two. Investing all at once beat spreading it out about two-thirds of the time.",
+   "say": "Vanguard studied global stocks from nineteen seventy-six to twenty twenty-two. Investing all at once beat splitting it over three months about two-thirds of the time.",
    "visual": {
     "type": "stat",
     "value": "68%",
     "label": "of the time, lump sum won",
-    "sub": "Vanguard · global stocks · 1976–2022",
+    "sub": "vs 3 monthly parts · Vanguard · 1976–2022",
     "color": "gold"
    }
   },
@@ -97,10 +97,10 @@
    }
   },
   {
-   "say": "In a steady seven percent year, all at once ends about three hundred ninety dollars ahead.",
+   "say": "In our own example, a steady seven percent year leaves all at once about three hundred ninety dollars ahead.",
    "visual": {
     "type": "compare",
-    "title": "Example: steady 7% year",
+    "title": "Our example: steady 7% year",
     "left": {
      "label": "All now",
      "value": 12840.0,
@@ -114,11 +114,11 @@
    }
   },
   {
-   "say": "But if the market drops right after you invest, spreading it out wins. And it still beat leaving the money in cash sixty-nine percent of the time.",
+   "say": "But if the market drops right after you invest, spreading it out wins. And splitting it over three months still beat cash sixty-nine percent of the time.",
    "visual": {
     "type": "stat",
     "value": "69%",
-    "label": "of the time, spreading it out beat cash",
+    "label": "of the time, 3 monthly parts beat cash",
     "sub": "Vanguard · global stocks · 1976–2022",
     "color": "green"
    }

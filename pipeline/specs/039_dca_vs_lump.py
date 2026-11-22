@@ -36,14 +36,14 @@ spec = {
     "title": "Lump Sum vs Dollar-Cost Averaging: Which Wins More?",
     "description": (
         "Lump sum vs dollar-cost averaging: if you already have the cash, investing it all at once has beaten "
-        f"spreading it out about two-thirds of the time ({LS_BEATS_CA}% in Vanguard's study of global stocks, "
-        f"{STUDY_FROM}–{STUDY_TO}), because stocks usually beat cash. Spreading it out still beat "
-        f"sitting in cash {CA_BEATS_CASH}% of the time, and it can make a drop easier to live with.\n\n"
+        f"splitting it into three monthly parts about two-thirds of the time ({LS_BEATS_CA}% in Vanguard's study of "
+        f"global stocks, {STUDY_FROM}–{STUDY_TO}), because stocks usually beat cash. Splitting it over three months "
+        f"still beat sitting in cash {CA_BEATS_CASH}% of the time, and it can make a drop easier to live with.\n\n"
         "Sources:\n"
         "- Vanguard, Finlay & Zorn, \"Cost averaging: Invest now or temporarily hold your cash?\", February 2023 "
         "(MSCI World Index returns 1976–2022, 100% stocks, lump sum vs. three equal monthly parts, compared after one "
         "year): https://corporate.vanguard.com/content/dam/corp/research/pdf/cost_averaging_invest_now_or_temporarily_hold_your_cash.pdf\n\n"
-        "Example assumptions: $12,000 invested at once vs. $1,000 at the start of each month for 12 months, a steady "
+        "Our own example (not from the Vanguard study): $12,000 invested at once vs. $1,000 at the start of each month for 12 months, a steady "
         "7% yearly return, uninvested cash earns nothing, no fees or taxes. Real markets don't move steadily; returns "
         "vary, can be negative, and past results don't guarantee future returns. Not financial advice.\n\n"
         "#investing #dollarcostaveraging #personalfinance #stockmarket #moneytips"
@@ -75,20 +75,20 @@ spec = {
          "visual": {"type": "pair", "title": "$12,000 to invest",
                     "left": {"label": "All now", "sub": "one lump sum", "color": "gold"},
                     "right": {"label": "Monthly", "sub": "$1,000 × 12", "color": "blue"}}},
-        {"say": "Vanguard studied global stocks from nineteen seventy-six to twenty twenty-two. Investing all at once beat spreading it out about two-thirds of the time.",
+        {"say": "Vanguard studied global stocks from nineteen seventy-six to twenty twenty-two. Investing all at once beat splitting it over three months about two-thirds of the time.",
          "visual": {"type": "stat", "value": f"{LS_BEATS_CA}%", "label": "of the time, lump sum won",
-                    "sub": f"Vanguard · global stocks · {STUDY_FROM}–{STUDY_TO}", "color": "gold"}},
+                    "sub": f"vs 3 monthly parts · Vanguard · {STUDY_FROM}–{STUDY_TO}", "color": "gold"}},
         {"say": "Why? Stocks usually beat cash. So money waiting on the sidelines usually missed growth.",
          "visual": {"type": "equation", "title": "Why lump sum usually wins",
                     "lines": [{"text": "Stocks usually", "color": "text", "size": 80},
                               {"text": "beat cash", "color": "green", "size": 110},
                               {"text": "Cash waiting = missed growth", "color": "red", "size": 64}]}},
-        {"say": "In a steady seven percent year, all at once ends about three hundred ninety dollars ahead.",
-         "visual": {"type": "compare", "title": "Example: steady 7% year",
+        {"say": "In our own example, a steady seven percent year leaves all at once about three hundred ninety dollars ahead.",
+         "visual": {"type": "compare", "title": "Our example: steady 7% year",
                     "left": {"label": "All now", "value": lump, "color": "gold"},
                     "right": {"label": "Monthly", "value": monthly, "color": "blue"}}},
-        {"say": "But if the market drops right after you invest, spreading it out wins. And it still beat leaving the money in cash sixty-nine percent of the time.",
-         "visual": {"type": "stat", "value": f"{CA_BEATS_CASH}%", "label": "of the time, spreading it out beat cash",
+        {"say": "But if the market drops right after you invest, spreading it out wins. And splitting it over three months still beat cash sixty-nine percent of the time.",
+         "visual": {"type": "stat", "value": f"{CA_BEATS_CASH}%", "label": "of the time, 3 monthly parts beat cash",
                     "sub": f"Vanguard · global stocks · {STUDY_FROM}–{STUDY_TO}", "color": "green"}},
         {"say": "So if fear of a crash would keep you in cash, investing in steps beats waiting. And if you invest from each paycheck, keep going. That's investing as soon as you can.",
          "visual": {"type": "equation", "title": "The real lesson",

@@ -73,7 +73,7 @@ spec = {
                "summary": "À 17 ans, il part travailler à Aden, au Yémen, puis fonde Reliance, qui réalise aujourd'hui environ 124 milliards de dollars de revenus par an. Son histoire, éloges et critiques compris."},
     },
     "scenes": [
-        {"say": "Reliance now brings in over eleven lakh crore rupees a year, about a hundred and twenty-four billion dollars. Its founder once worked at a petrol station in Yemen.",
+        {"say": "Reliance now brings in over eleven lakh crore rupees a year, about a hundred and twenty-four billion dollars. Its founder is said to have started out at a petrol station in Yemen.",
          "visual": {"type": "equation", "title": "Reliance revenue, FY2025-26",
                     "lines": [{"text": f"₹{lakh_crore:.2f} lakh crore", "color": "gold", "size": 100},
                               {"text": f"≈ ${RIL_REV_FY26_USD / 1e9:.0f} billion a year", "color": "text", "size": 64},

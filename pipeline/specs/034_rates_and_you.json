@@ -6,7 +6,7 @@
  "badge": "HOW MARKETS WORK",
  "disclaimer": "Loan example is illustrative · Fed range as of Oct 28, 2026",
  "title": "Fed Rate Hike Explained: What It Does to Your Loan",
- "description": "What does a Federal Reserve interest rate change mean for you? The Fed raised its federal funds target range by a quarter point to 3.75%-4% on Sept 16, 2026, and held it there on Oct 28, 2026. Variable-rate loans and credit cards tend to follow: on a $300,000 loan over 30 years, going from 6% to 6.25% raises the monthly payment from about $1,799 to $1,847. Fixed-rate loans you already have don't change, and savings rates tend to rise, often slowly.\n\nSources: Federal Reserve FOMC statements of Sept 16, 2026 and Oct 28, 2026 (federalreserve.gov). The loan and savings figures are illustrative examples computed for this video, not offers or forecasts; the Fed's range may have changed since. Not financial advice.\n\n#interestrates #federalreserve #personalfinance #loans #economy",
+ "description": "What does a Federal Reserve interest rate change mean for you? The Fed raised its federal funds target range by a quarter point to 3.75%-4% on Sept 16, 2026, and held it there on Oct 28, 2026. Variable-rate loans and credit cards tend to follow (adjustable loans at their next reset): on a $300,000 loan over 30 years, going from 6% to 6.25% raises the monthly payment from about $1,799 to $1,847. Fixed-rate loans you already have don't change, and savings rates tend to rise, often slowly.\n\nSources: Federal Reserve FOMC statements of Sept 16, 2026 and Oct 28, 2026 (federalreserve.gov). The loan and savings figures are illustrative examples computed for this video, not offers or forecasts; the Fed's range may have changed since. Not financial advice.\n\n#interestrates #federalreserve #personalfinance #loans #economy",
  "tags": [
   "fed rate hike",
   "federal funds rate",
@@ -79,7 +79,7 @@
    }
   },
   {
-   "say": "Say you owe three hundred thousand dollars over thirty years at a variable rate. Going from six percent to six and a quarter adds about forty-eight dollars fifty a month. Almost six hundred a year.",
+   "say": "Say you owe three hundred thousand dollars over thirty years at a variable rate. If it rises from six to six and a quarter percent at its next reset, you pay about forty-eight dollars fifty more a month.",
    "visual": {
     "type": "compare",
     "title": "Monthly payment, $300K over 30 yrs",

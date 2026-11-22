@@ -1,5 +1,6 @@
 """Video 033 (global/USD): staying for yearly raises vs. switching jobs every few years, over 10 years.
-Clearly labelled example raise sizes (no survey data used); all maths computed here."""
+Clearly labelled example raise sizes; one sourced real-data check (Atlanta Fed) shows the real gap is smaller.
+All maths computed here."""
 import json, os
 
 # --- example assumptions (labelled as an example on screen and in the description)
@@ -9,10 +10,15 @@ SWITCH_RAISE = 0.10     # example pay bump when switching jobs
 SWITCH_EVERY = 3        # switch at the start of years 4, 7 and 10
 YEARS = 10
 
-def path(switch):
+# --- sourced real data: Federal Reserve Bank of Atlanta, Wage Growth Tracker (3-month moving average of median
+#     year-over-year wage growth), data to September 2026, released Oct 8, 2026:
+#     job switchers 4.7%, job stayers 3.4%. https://www.atlantafed.org/chcs/wage-growth-tracker
+REAL_SWITCHER, REAL_STAYER = 0.047, 0.034
+
+def path(switch, stay_raise=STAY_RAISE, switch_raise=SWITCH_RAISE):
     sal, out = START, [START]
     for year in range(2, YEARS + 1):
-        bump = SWITCH_RAISE if switch and (year - 1) % SWITCH_EVERY == 0 else STAY_RAISE
+        bump = switch_raise if switch and (year - 1) % SWITCH_EVERY == 0 else stay_raise
         sal *= 1 + bump
         out.append(sal)
     return out
@@ -23,6 +29,8 @@ S10, M10 = stay[-1], move[-1]
 S_tot, M_tot = sum(stay), sum(move)
 gap_year, gap_tot = M10 - S10, M_tot - S_tot
 switches = sum(1 for y in range(2, YEARS + 1) if (y - 1) % SWITCH_EVERY == 0)
+# same model, but with the Atlanta Fed medians in place of the example raises
+real_gap_tot = sum(path(True, REAL_STAYER, REAL_SWITCHER)) - sum(path(False, REAL_STAYER, REAL_SWITCHER))
 
 assert switches == 3                            # "three switches in ten years"
 assert 78_000 < S10 < 78_500, S10               # "about seventy-eight thousand"
@@ -30,9 +38,12 @@ assert 95_000 < M10 < 95_500, M10               # "about ninety-five thousand"
 assert 17_000 < gap_year < 17_500, gap_year     # year-10 pay gap (shown via the bars)
 assert 687_000 < S_tot < 688_500, S_tot
 assert 749_000 < M_tot < 750_500, M_tot
-assert 61_500 < gap_tot < 62_500, gap_tot       # "about sixty-two thousand dollars" (hook + scene 5)
+assert 61_500 < gap_tot < 62_500, gap_tot       # "about sixty-two thousand dollars" (hook + scene 4)
+assert (REAL_SWITCHER, REAL_STAYER) == (0.047, 0.034)   # "four point seven" vs "three point four percent"
+assert 10_500 < real_gap_tot < 11_500, real_gap_tot     # "shrinks to about eleven thousand"
+assert real_gap_tot < gap_tot / 5                       # real-world gap is much smaller than the example
 print(f"year10 stay ${S10:,.0f} move ${M10:,.0f} gap ${gap_year:,.0f} | 10y stay ${S_tot:,.0f} "
-      f"move ${M_tot:,.0f} gap ${gap_tot:,.0f}")
+      f"move ${M_tot:,.0f} gap ${gap_tot:,.0f} | real-data gap ${real_gap_tot:,.0f}")
 
 spec = {
     "id": "033_raise_vs_switch",
@@ -44,7 +55,12 @@ spec = {
         "Should you stay for yearly raises or switch jobs for a bigger bump? In this example, two people start on "
         f"$60,000. Staying with 3% raises reaches about ${S10/1e3:,.0f}K in year ten; switching every three years "
         f"for a 10% bump reaches about ${M10/1e3:,.0f}K, about ${gap_tot/1e3:,.0f}K more earned over the decade.\n\n"
-        "Example assumptions (not survey data; real raises vary by job, field and year): $60,000 starting salary, "
+        "Real raises are often smaller. In the Atlanta Fed's Wage Growth Tracker (data to September 2026), median "
+        f"pay growth was {REAL_SWITCHER:.1%} a year for job switchers vs {REAL_STAYER:.1%} for people who stayed. "
+        f"Using those numbers in the same example, the 10-year gap shrinks to about ${real_gap_tot/1e3:,.0f}K.\n\n"
+        "Source: Federal Reserve Bank of Atlanta, Wage Growth Tracker (3-month moving average of median wage growth, "
+        "released Oct 8, 2026): https://www.atlantafed.org/chcs/wage-growth-tracker\n\n"
+        "Example assumptions (real raises vary by job, field and year): $60,000 starting salary, "
         "3% yearly raise when staying, 10% raise at each switch in years 4, 7 and 10 and 3% in the other years, "
         "no gaps between jobs, salary only (no bonuses, benefits or retirement matching). Switching has costs too: "
         "risk, a learning curve and benefits you may lose. This is not career or financial advice.\n\n"
@@ -73,32 +89,36 @@ spec = {
                           f"ans avec 10 % de plus : environ ${gap_tot/1e3:,.0f}K d'écart en 10 ans."},
     },
     "scenes": [
-        {"say": "Staying loyal to one employer could cost you about sixty-two thousand dollars over ten years. Here's the math.",
+        {"say": "In this example, staying loyal costs about sixty-two thousand dollars over ten years. Here's the math, and the catch.",
          "visual": {"type": "equation", "title": "Stay or switch?",
-                    "lines": [{"text": "10 years", "color": "text", "size": 100},
+                    "lines": [{"text": "10-year example", "color": "text", "size": 96},
                               {"text": "↓", "color": "dim", "size": 80},
                               {"text": f"${gap_tot/1e3:,.0f}K gap", "color": "gold", "size": 140}]}},
-        {"say": "Two people start at sixty thousand dollars. In this example, Sara stays and gets three percent a year. Leo switches jobs every three years for a ten percent bump.",
+        {"say": "Two people start at sixty thousand dollars. Sara stays and gets three percent a year. Leo switches every three years for a ten percent bump.",
          "visual": {"type": "pair", "title": "Example: both start at $60K",
                     "left": {"label": "Sara", "sub": "stays · 3% a year", "color": "slate"},
                     "right": {"label": "Leo", "sub": "switches · +10%", "color": "green"}}},
-        {"say": "Each switch resets Leo's pay higher, and later raises build on it. By year ten, Sara earns about seventy-eight thousand. Leo, about ninety-five thousand.",
+        {"say": "Each switch resets Leo's pay higher. By year ten, Sara earns about seventy-eight thousand; Leo, about ninety-five thousand.",
          "visual": {"type": "bars", "title": "Salary in year 10",
                     "items": [{"label": "Sara", "value": S10, "color": "slate"},
                               {"label": "Leo", "value": M10, "color": "green"}]}},
-        {"say": "Over the whole decade, Leo earns about sixty-two thousand dollars more.",
+        {"say": "Over the decade, Leo earns about sixty-two thousand dollars more.",
          "visual": {"type": "stat", "value": f"+${gap_tot/1e3:,.0f}K", "label": "more earned over 10 years",
                     "sub": "example: 3 switches at +10%", "color": "green"}},
-        {"say": "But switching isn't free. New jobs carry risk, and you can lose bonuses or benefits that haven't kicked in yet.",
+        {"say": "But real bumps are often smaller. In US data, switchers' pay recently grew four point seven percent a year, versus three point four for stayers. At those rates, Leo's lead shrinks to about eleven thousand.",
+         "visual": {"type": "pair", "title": "Real US pay growth · Atlanta Fed",
+                    "left": {"label": "Stayers", "sub": f"{REAL_STAYER:.1%} a year", "color": "slate"},
+                    "right": {"label": "Switchers", "sub": f"{REAL_SWITCHER:.1%} a year", "color": "green"}}},
+        {"say": "Switching has costs too: risk, and lost bonuses or benefits.",
          "visual": {"type": "equation", "title": "The catch",
                     "lines": [{"text": "New-job risk", "color": "red", "size": 88},
                               {"text": "Lost bonuses", "color": "red", "size": 88},
                               {"text": "Benefits reset", "color": "red", "size": 88}]}},
-        {"say": "So know your market value. Use it to ask for a raise first, and be ready to move if the answer is no.",
+        {"say": "So know your market value: ask for a raise first, and move if the answer is no.",
          "visual": {"type": "pair", "title": "Your two moves",
                     "left": {"label": "Ask", "sub": "with market data", "color": "gold"},
                     "right": {"label": "Move", "sub": "if the answer is no", "color": "green"}}},
-        {"say": "There's a new one every day. Follow so you don't miss it.",
+        {"say": "Follow for a new one every day.",
          "visual": {"type": "cta", "lines": ["Know your", "market value."],
                     "sub": "Follow for daily money lessons"}},
     ],

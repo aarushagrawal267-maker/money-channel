@@ -31,6 +31,8 @@ Sources (checked 2026-11-22). Dollar figures in $ unless noted.
         memberships (Netflix no longer reports member counts every quarter; this is its latest figure).
   [N26] Netflix Q3 2026 shareholder letter (Oct 20, 2026): Q3 2026 income statement; operating margin 34.6%
         (28.2% in Q3 2025); 2026 revenue forecast $51.1B.
+  [N25Q3] Netflix Q3 2025 shareholder letter (Oct 21, 2025): Q3 2025 operating margin was pulled down by a
+        one-off ~$619M expense from a tax dispute in Brazil (Netflix had guided ~31.5% before it).
   [M]   The 2000 meeting: Marc Randolph, "That Will Never Work" (2019) and Reed Hastings & Erin Meyer,
         "No Rules Rules" (2020), as reported by Marketplace (Sep 8, 2020) and The Independent (Feb 7, 2022);
         Antioco's response in a LinkedIn post, reported by Next TV (Jun 3, 2022) and Newsweek's fact check.
@@ -263,11 +265,11 @@ scene("Here's one recent quarter. From July to September twenty twenty-six, Netf
              {"label": "Technology", "value": Q3["td"], "kind": "minus", "display": "−$1.0B"},
              {"label": "Admin", "value": Q3["ga"], "kind": "minus", "display": "−$0.5B"},
              {"label": "Op. profit", "value": Q3["op"], "kind": "total", "display": "$4.5B"}])
-scene("That's an operating margin of about thirty-five percent, up from twenty-eight percent a year earlier. About thirty-five cents of operating profit on every dollar of revenue.",
+scene("That's an operating margin of about thirty-five percent, up from twenty-eight percent a year earlier, when a one-off tax charge in Brazil hit. About thirty-five cents of operating profit on every dollar of revenue.",
       type="share", title="Netflix operating margin",
       rows=[{"label": "July–Sept 2025", "share": NF_MARGIN_Q3_25, "color": "blue", "dp": 1},
             {"label": "July–Sept 2026", "share": NF_MARGIN_Q3_26, "color": "green", "dp": 1}],
-      note="Source: Netflix Q3 2026 shareholder letter")
+      note="2025 quarter hit by a one-off Brazil tax charge · Source: Netflix Q3 2025 and Q3 2026 letters")
 scene("In that one quarter, Netflix brought in more than twice what Blockbuster made in its best full year.",
       type="columns", title="Revenue: one year vs one quarter", highlight=1,
       items=[{"label": "Blockbuster, all of 2004", "value": BB_REV[2004], "display": "$6.05B", "color": "blue"},
@@ -322,6 +324,7 @@ SOURCES = [
     "Netflix Form 10-K for 2009 (revenue, subscribers, profit 2005-2009): https://www.sec.gov/Archives/edgar/data/1065280/000119312510036181/d10k.htm",
     "Netflix Q4 2025 shareholder letter (Jan 20, 2026): https://s22.q4cdn.com/959853165/files/doc_financials/2025/q4/FINAL-Q4-25-Shareholder-Letter.pdf",
     "Netflix Q3 2026 shareholder letter (Oct 20, 2026): https://s22.q4cdn.com/959853165/files/doc_financials/2026/q3/FINAL-Q3-26-Shareholder-Letter.pdf",
+    "Netflix Q3 2025 shareholder letter (Oct 21, 2025; one-off Brazilian tax expense that lowered Q3 2025 operating margin)",
     "Marc Randolph, That Will Never Work (2019); Reed Hastings & Erin Meyer, No Rules Rules (2020); see Marketplace (Sep 8, 2020): https://www.marketplace.org/story/2020/09/08/ceo-reed-hastings-on-how-netflix-beat-blockbuster",
     "John Antioco's response, Next TV (Jun 3, 2022): https://www.nexttv.com/news/blockbusters-famous-netflix-2002-rebuff-that-didnt-happen-says-video-chains-former-ceo",
     "John Antioco, Blockbuster's Former CEO on Sparring with an Activist Shareholder, Harvard Business Review (April 2011)",

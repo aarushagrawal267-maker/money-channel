@@ -30,7 +30,7 @@ assert (FED_LOW, FED_HIGH) == (3.75, 4.00)                       # "three and th
 assert abs(RATE_AFTER - 0.0625) < 1e-12                          # "six to six and a quarter percent"
 assert round(pay_before) == 1799 and round(pay_after) == 1847, (pay_before, pay_after)
 assert abs(extra_month - 48.50) < 0.01, extra_month             # "about forty-eight dollars fifty a month"
-assert 550 < extra_year < 600, extra_year                        # "almost six hundred dollars a year"
+assert 550 < extra_year < 600, extra_year                        # (yearly extra; no longer spoken)
 assert abs(extra_interest_savings - 25) < 1e-9                   # "twenty-five dollars more a year"
 print(f"payment ${pay_before:,.2f} -> ${pay_after:,.2f} (+${extra_month:.2f}/mo, +${extra_year:.0f}/yr); "
       f"savings +${extra_interest_savings:.0f}/yr")
@@ -44,7 +44,7 @@ spec = {
     "description": (
         "What does a Federal Reserve interest rate change mean for you? The Fed raised its federal funds target "
         f"range by a quarter point to 3.75%-4% on Sept 16, 2026, and held it there on {RANGE_DATE}. Variable-rate "
-        f"loans and credit cards tend to follow: on a ${LOAN:,} loan over {YEARS} years, going from 6% to 6.25% "
+        f"loans and credit cards tend to follow (adjustable loans at their next reset): on a ${LOAN:,} loan over {YEARS} years, going from 6% to 6.25% "
         f"raises the monthly payment from about ${pay_before:,.0f} to ${pay_after:,.0f}. Fixed-rate loans you already "
         "have don't change, and savings rates tend to rise, often slowly.\n\n"
         "Sources: Federal Reserve FOMC statements of Sept 16, 2026 and Oct 28, 2026 (federalreserve.gov). The loan "
@@ -83,7 +83,7 @@ spec = {
                     "lines": [{"text": "Fed rate ↑", "color": "gold", "size": 96},
                               {"text": "Banks' prime rate ↑", "color": "text", "size": 80},
                               {"text": "Cards & variable loans ↑", "color": "red", "size": 68}]}},
-        {"say": "Say you owe three hundred thousand dollars over thirty years at a variable rate. Going from six percent to six and a quarter adds about forty-eight dollars fifty a month. Almost six hundred a year.",
+        {"say": "Say you owe three hundred thousand dollars over thirty years at a variable rate. If it rises from six to six and a quarter percent at its next reset, you pay about forty-eight dollars fifty more a month.",
          "visual": {"type": "compare", "title": f"Monthly payment, ${LOAN // 1000}K over {YEARS} yrs",
                     "left": {"label": "At 6%", "value": pay_before, "color": "slate"},
                     "right": {"label": "At 6.25%", "value": pay_after, "color": "red"}}},

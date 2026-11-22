@@ -25,13 +25,19 @@ DEAL_TOTAL_USD = 7.17e9
 # Microsoft press release, July 8, 2015: "impairment charge of approximately $7.6 billion" related to assets
 # from the Nokia Devices and Services acquisition; "reduction of up to 7,800 positions".
 WRITEOFF_YEAR, WRITEOFF_USD = 2015, 7.6e9
+JOBS_CUT = 7_800
+# NOT compared with the price on screen: Microsoft's FY2014 10-K (Note 9, filed Jul 31, 2014) gives a "total
+# purchase price of $9.5 billion, including cash acquired of $1.5 billion" (cash $7.1B + Nokia's repurchase of
+# convertible notes $2.1B), so the $7.6B write-off was NOT bigger than what Microsoft paid on its own accounts.
+TOTAL_PURCHASE_USD = 9.5e9
 
 # ---------------------------------------------------------------- checks behind spoken / shown claims
 assert abs(DEAL_DEVICES_EUR + DEAL_PATENTS_EUR - DEAL_TOTAL_EUR) < 1e6
 assert NOKIA_SHARE_Q4_2007 / 100 == 4 / 10                 # "four in every ten phones sold"
 assert round(DEAL_TOTAL_USD / 1e9, 1) == 7.2               # "about seven point two billion dollars"
 assert WRITEOFF_YEAR - DEAL_YEAR == 2                      # "two years later"
-assert WRITEOFF_USD > DEAL_TOTAL_USD                       # write-off bigger than the price (in USD terms)
+assert JOBS_CUT == 7800                                    # "up to seven thousand eight hundred jobs"
+assert round(WRITEOFF_USD / 1e9, 1) == 7.6                 # "seven point six billion dollars"
 assert MEMO_YEAR - IPHONE_YEAR == 4
 print(f"share {NOKIA_SHARE_Q4_2007}% -> {NOKIA_SHARE_Q2_2013}%; deal ${DEAL_TOTAL_USD/1e9:.2f}B, "
       f"write-off ${WRITEOFF_USD/1e9:.1f}B")
@@ -46,11 +52,13 @@ spec = {
         "At the end of 2007, Nokia estimated it sold about 4 in every 10 phones in the world. The first iPhone "
         "shipped that same year. By mid-2013, Gartner put Nokia at 14% of phone sales, and Microsoft agreed to "
         "buy its phone business plus a patent licence for EUR 5.44 billion (about $7.2 billion). In 2015 "
-        "Microsoft took a $7.6 billion impairment charge tied to the deal. Nokia itself survived as a network "
+        "Microsoft took a $7.6 billion impairment charge tied to the deal and cut up to 7,800 jobs (Microsoft's "
+        "own accounts put the total purchase price at $9.5 billion, including $1.5 billion of cash acquired). Nokia itself survived as a network "
         "equipment company. The lesson: success can make you slow to change.\n\n"
         "Sources: Nokia Q4 and full-year 2007 results, Form 6-K (Jan 24, 2008); Gartner mobile phone sales, "
         "Q2 2013 (Aug 14, 2013); Stephen Elop memo to Nokia staff (Feb 2011, published by Engadget, Feb 8, "
-        "2011); Microsoft press releases (Sept 3, 2013; July 8, 2015); TechCrunch (Sept 2, 2013) for the "
+        "2011); Microsoft press releases (Sept 3, 2013; July 8, 2015); Microsoft Form 10-K for fiscal 2014 (Note 9, "
+        "filed July 31, 2014); TechCrunch (Sept 2, 2013) for the "
         "dollar conversion; Nokia release on completing the sale (Apr 25, 2014). Market share figures come from "
         "Nokia's own estimate (2007) and Gartner (2013), which use different methods.\n\n"
         "#nokia #business #casestudy #smartphones #microsoft"
@@ -88,10 +96,9 @@ spec = {
                     "lines": [{"text": "“We fell behind,", "color": "text", "size": 84},
                               {"text": "we missed big trends,", "color": "text", "size": 84},
                               {"text": "and we lost time.”", "color": "gold", "size": 84}]}},
-        {"say": "In twenty thirteen, Microsoft agreed to buy Nokia's phone business, plus a patent licence, for about seven point two billion dollars. Two years later, Microsoft wrote off seven point six billion tied to the deal.",
-         "visual": {"type": "compare", "title": "Microsoft and Nokia's phones",
-                    "left": {"label": "Paid, 2013", "value": DEAL_TOTAL_USD, "color": "slate"},
-                    "right": {"label": "Written off, 2015", "value": WRITEOFF_USD, "color": "red"}}},
+        {"say": "In twenty thirteen, Microsoft agreed to buy Nokia's phone business, plus a patent licence, for about seven point two billion dollars. Two years later, Microsoft wrote off seven point six billion dollars tied to the deal, and cut up to seven thousand eight hundred jobs.",
+         "visual": {"type": "stat", "value": f"${WRITEOFF_USD / 1e9:.1f}B", "label": "written off by Microsoft",
+                    "sub": f"July {WRITEOFF_YEAR} · tied to the Nokia phone deal", "color": "red"}},
         {"say": "Nokia itself survived, as a network equipment company. The lesson: success can make you slow to change. When you're winning, ask what could make your best product obsolete.",
          "visual": {"type": "equation", "title": "The lesson",
                     "lines": [{"text": "Success can make", "color": "text", "size": 80},

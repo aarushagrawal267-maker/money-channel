@@ -6,7 +6,7 @@
  "badge": "CASE STUDY",
  "disclaimer": "Sources: Nokia, Gartner, Microsoft · see description",
  "title": "Nokia: From 40% of Phones to Selling the Business",
- "description": "At the end of 2007, Nokia estimated it sold about 4 in every 10 phones in the world. The first iPhone shipped that same year. By mid-2013, Gartner put Nokia at 14% of phone sales, and Microsoft agreed to buy its phone business plus a patent licence for EUR 5.44 billion (about $7.2 billion). In 2015 Microsoft took a $7.6 billion impairment charge tied to the deal. Nokia itself survived as a network equipment company. The lesson: success can make you slow to change.\n\nSources: Nokia Q4 and full-year 2007 results, Form 6-K (Jan 24, 2008); Gartner mobile phone sales, Q2 2013 (Aug 14, 2013); Stephen Elop memo to Nokia staff (Feb 2011, published by Engadget, Feb 8, 2011); Microsoft press releases (Sept 3, 2013; July 8, 2015); TechCrunch (Sept 2, 2013) for the dollar conversion; Nokia release on completing the sale (Apr 25, 2014). Market share figures come from Nokia's own estimate (2007) and Gartner (2013), which use different methods.\n\n#nokia #business #casestudy #smartphones #microsoft",
+ "description": "At the end of 2007, Nokia estimated it sold about 4 in every 10 phones in the world. The first iPhone shipped that same year. By mid-2013, Gartner put Nokia at 14% of phone sales, and Microsoft agreed to buy its phone business plus a patent licence for EUR 5.44 billion (about $7.2 billion). In 2015 Microsoft took a $7.6 billion impairment charge tied to the deal and cut up to 7,800 jobs (Microsoft's own accounts put the total purchase price at $9.5 billion, including $1.5 billion of cash acquired). Nokia itself survived as a network equipment company. The lesson: success can make you slow to change.\n\nSources: Nokia Q4 and full-year 2007 results, Form 6-K (Jan 24, 2008); Gartner mobile phone sales, Q2 2013 (Aug 14, 2013); Stephen Elop memo to Nokia staff (Feb 2011, published by Engadget, Feb 8, 2011); Microsoft press releases (Sept 3, 2013; July 8, 2015); Microsoft Form 10-K for fiscal 2014 (Note 9, filed July 31, 2014); TechCrunch (Sept 2, 2013) for the dollar conversion; Nokia release on completing the sale (Apr 25, 2014). Market share figures come from Nokia's own estimate (2007) and Gartner (2013), which use different methods.\n\n#nokia #business #casestudy #smartphones #microsoft",
  "tags": [
   "nokia",
   "rise and fall of nokia",
@@ -117,20 +117,13 @@
    }
   },
   {
-   "say": "In twenty thirteen, Microsoft agreed to buy Nokia's phone business, plus a patent licence, for about seven point two billion dollars. Two years later, Microsoft wrote off seven point six billion tied to the deal.",
+   "say": "In twenty thirteen, Microsoft agreed to buy Nokia's phone business, plus a patent licence, for about seven point two billion dollars. Two years later, Microsoft wrote off seven point six billion dollars tied to the deal, and cut up to seven thousand eight hundred jobs.",
    "visual": {
-    "type": "compare",
-    "title": "Microsoft and Nokia's phones",
-    "left": {
-     "label": "Paid, 2013",
-     "value": 7170000000.0,
-     "color": "slate"
-    },
-    "right": {
-     "label": "Written off, 2015",
-     "value": 7600000000.0,
-     "color": "red"
-    }
+    "type": "stat",
+    "value": "$7.6B",
+    "label": "written off by Microsoft",
+    "sub": "July 2015 · tied to the Nokia phone deal",
+    "color": "red"
    }
   },
   {

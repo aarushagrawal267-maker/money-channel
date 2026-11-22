@@ -6,7 +6,7 @@
  "badge": "EARN MORE",
  "disclaimer": "Example raises only · 3% a year vs 10% per switch · yours will differ",
  "title": "Ask for a Raise or Switch Jobs? The 10-Year Math",
- "description": "Should you stay for yearly raises or switch jobs for a bigger bump? In this example, two people start on $60,000. Staying with 3% raises reaches about $78K in year ten; switching every three years for a 10% bump reaches about $95K, about $62K more earned over the decade.\n\nExample assumptions (not survey data; real raises vary by job, field and year): $60,000 starting salary, 3% yearly raise when staying, 10% raise at each switch in years 4, 7 and 10 and 3% in the other years, no gaps between jobs, salary only (no bonuses, benefits or retirement matching). Switching has costs too: risk, a learning curve and benefits you may lose. This is not career or financial advice.\n\n#careeradvice #salary #personalfinance #moneytips #jobsearch",
+ "description": "Should you stay for yearly raises or switch jobs for a bigger bump? In this example, two people start on $60,000. Staying with 3% raises reaches about $78K in year ten; switching every three years for a 10% bump reaches about $95K, about $62K more earned over the decade.\n\nReal raises are often smaller. In the Atlanta Fed's Wage Growth Tracker (data to September 2026), median pay growth was 4.7% a year for job switchers vs 3.4% for people who stayed. Using those numbers in the same example, the 10-year gap shrinks to about $11K.\n\nSource: Federal Reserve Bank of Atlanta, Wage Growth Tracker (3-month moving average of median wage growth, released Oct 8, 2026): https://www.atlantafed.org/chcs/wage-growth-tracker\n\nExample assumptions (real raises vary by job, field and year): $60,000 starting salary, 3% yearly raise when staying, 10% raise at each switch in years 4, 7 and 10 and 3% in the other years, no gaps between jobs, salary only (no bonuses, benefits or retirement matching). Switching has costs too: risk, a learning curve and benefits you may lose. This is not career or financial advice.\n\n#careeradvice #salary #personalfinance #moneytips #jobsearch",
  "tags": [
   "ask for a raise",
   "switch jobs",
@@ -46,15 +46,15 @@
  },
  "scenes": [
   {
-   "say": "Staying loyal to one employer could cost you about sixty-two thousand dollars over ten years. Here's the math.",
+   "say": "In this example, staying loyal costs about sixty-two thousand dollars over ten years. Here's the math, and the catch.",
    "visual": {
     "type": "equation",
     "title": "Stay or switch?",
     "lines": [
      {
-      "text": "10 years",
+      "text": "10-year example",
       "color": "text",
-      "size": 100
+      "size": 96
      },
      {
       "text": "↓",
@@ -70,7 +70,7 @@
    }
   },
   {
-   "say": "Two people start at sixty thousand dollars. In this example, Sara stays and gets three percent a year. Leo switches jobs every three years for a ten percent bump.",
+   "say": "Two people start at sixty thousand dollars. Sara stays and gets three percent a year. Leo switches every three years for a ten percent bump.",
    "visual": {
     "type": "pair",
     "title": "Example: both start at $60K",
@@ -87,7 +87,7 @@
    }
   },
   {
-   "say": "Each switch resets Leo's pay higher, and later raises build on it. By year ten, Sara earns about seventy-eight thousand. Leo, about ninety-five thousand.",
+   "say": "Each switch resets Leo's pay higher. By year ten, Sara earns about seventy-eight thousand; Leo, about ninety-five thousand.",
    "visual": {
     "type": "bars",
     "title": "Salary in year 10",
@@ -106,7 +106,7 @@
    }
   },
   {
-   "say": "Over the whole decade, Leo earns about sixty-two thousand dollars more.",
+   "say": "Over the decade, Leo earns about sixty-two thousand dollars more.",
    "visual": {
     "type": "stat",
     "value": "+$62K",
@@ -116,7 +116,24 @@
    }
   },
   {
-   "say": "But switching isn't free. New jobs carry risk, and you can lose bonuses or benefits that haven't kicked in yet.",
+   "say": "But real bumps are often smaller. In US data, switchers' pay recently grew four point seven percent a year, versus three point four for stayers. At those rates, Leo's lead shrinks to about eleven thousand.",
+   "visual": {
+    "type": "pair",
+    "title": "Real US pay growth · Atlanta Fed",
+    "left": {
+     "label": "Stayers",
+     "sub": "3.4% a year",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Switchers",
+     "sub": "4.7% a year",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Switching has costs too: risk, and lost bonuses or benefits.",
    "visual": {
     "type": "equation",
     "title": "The catch",
@@ -140,7 +157,7 @@
    }
   },
   {
-   "say": "So know your market value. Use it to ask for a raise first, and be ready to move if the answer is no.",
+   "say": "So know your market value: ask for a raise first, and move if the answer is no.",
    "visual": {
     "type": "pair",
     "title": "Your two moves",
@@ -157,7 +174,7 @@
    }
   },
   {
-   "say": "There's a new one every day. Follow so you don't miss it.",
+   "say": "Follow for a new one every day.",
    "visual": {
     "type": "cta",
     "lines": [
