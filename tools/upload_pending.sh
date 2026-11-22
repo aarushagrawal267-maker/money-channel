@@ -5,13 +5,18 @@
 set -uo pipefail
 cd "$(dirname "$0")/.."
 [ -s models/kokoro-v1.0.onnx ] || ./setup.sh
+# Titles already on the channel (scheduled, public or private), so we never upload twice even if
+# posted.json is out of date (e.g. a run that couldn't push).
+ON_CHANNEL=$(python3 tools/channel_titles.py) || { echo "Could not read the channel's videos; stopping to avoid duplicates."; exit 1; }
 grep -v '^#' pipeline/schedule.txt | while read -r id when; do
   [ -z "$id" ] && continue
   done_already=$(python3 -c "import json,sys;print(any(e['id']=='$id' and e.get('publish_at') and not e.get('superseded') for e in json.load(open('pipeline/posted.json'))))")
   [ "$done_already" = "True" ] && continue
+  (cd pipeline/specs && python3 "$id.py" >/dev/null)
+  title=$(python3 -c "import json;print(json.load(open('pipeline/specs/$id.json'))['title'])")
+  if grep -Fxq "$title" <<<"$ON_CHANNEL"; then echo "SKIP $id: a video titled '$title' is already on the channel"; continue; fi
   if [ "$(python3 -c "import datetime as d;print(d.datetime.fromisoformat('$when')<=d.datetime.now(d.timezone.utc)+d.timedelta(minutes=20))")" = "True" ]; then
     echo "MISSED SLOT $id $when (not uploaded; pick a new time)"; continue; fi
-  (cd pipeline/specs && python3 "$id.py" >/dev/null)
   [ -s "output/$id.mp4" ] || tools/render_batch.sh "$id"
   extra=""; [[ $id == L* ]] && extra="--thumb output/${id}_thumb.png --chapters output/${id}_chapters.txt"
   echo "=== $id $when"
