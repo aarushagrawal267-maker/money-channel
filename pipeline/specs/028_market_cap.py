@@ -77,7 +77,7 @@ spec = {
         "id": {"title": "Kapitalisasi Pasar vs Pendapatan: Walmart Jual Lebih Banyak",
                "summary": "Kapitalisasi pasar adalah harga saham dikali jumlah saham, bukan penjualan. "
                           "Penjualan Walmart lebih dari dua kali Microsoft, tetapi Microsoft bernilai hampir empat kali lipat."},
-        "de": {"title": "Börsenwert vs. Umsatz: Walmart setzt mehr um, ist weniger wert",
+        "de": {"title": "Börsenwert vs. Umsatz: Warum Walmart weniger wert ist",
                "summary": "Der Börsenwert ist Aktienkurs mal Anzahl der Aktien, nicht der Umsatz. "
                           "Walmart setzt mehr als doppelt so viel um wie Microsoft, doch Microsoft ist fast viermal so viel wert."},
         "fr": {"title": "Capitalisation vs chiffre d'affaires : Walmart vend plus",

@@ -39,7 +39,8 @@ Sources (checked 2026-11-22). Dollar figures in $ unless noted.
         "off-the-cuff offer", and that serious merger talks came only in early 2007.
   [O]   Origin story: CNBC (May 23, 2017): Hastings' $40 "Apollo 13" late fee; Randolph calls it a
         "convenient fiction".
-  [CH]  AFP via phys.org (Sep 23, 2010): Chapter 11 filing, nearly $1B of debt, some 3,000 US stores.
+  [CH]  AFP via phys.org (Sep 23, 2010): Chapter 11 filing, nearly $1B of debt, some 3,000 US stores;
+        "Netflix, which claims more than 15 million members".
   [D]   AFP via phys.org (Apr 6, 2011) and Bloomberg (Apr 26, 2011): Dish Network won the auction with a
         $320M bid.
   [DVD] NPR (Apr 18, 2023) and CBS News: Netflix's DVD-by-mail service mailed its last discs Sept 29, 2023.
@@ -164,9 +165,9 @@ scene("The subscription was the real idea. For nineteen dollars and ninety-five 
       type="stat", value=f"${NF_PRICE_1999}", label="a month · 3 DVDs out at a time",
       sub="no due dates · no late fees · no shipping charges", color="green")
 scene("Think about what that did. Keep a movie as long as you like. Send it back when you're ready, and the next one arrives. Netflix still gets paid every month. The customer's biggest annoyance became the selling point.",
-      type="flywheel", title="The subscription loop", center="NO LATE FEES",
+      type="flywheel", title="The subscription loop", center="$19.95",
       steps=["Keep it longer", "Mail it back", "Next DVD arrives", "Pay monthly"])
-scene("But Netflix was tiny. At the end of two thousand, it had about two hundred and ninety thousand subscribers and around thirty-six million dollars in revenue.",
+scene("But Netflix was tiny. At the end of two thousand, it had about two hundred and ninety thousand subscribers and around thirty-six million dollars in revenue. Tiny next to Blockbuster, and still losing money.",
       type="count", to=NF_SUBS[2000] / 1e3, suffix="K", label="Netflix subscribers, end of 2000",
       sub="revenue that year: $35.9M", color="green")
 
@@ -237,8 +238,8 @@ scene("In two thousand nine, Blockbuster lost five hundred and fifty-eight milli
       type="stat_grid", title="Fiscal 2009",
       items=[{"value": f"−${BB_NET_LOSS_2009 / 1e6:.0f}M", "label": "Blockbuster", "sub": "net loss", "color": "red"},
              {"value": f"+${NF_NET_INC_2009 / 1e6:.0f}M", "label": "Netflix", "sub": "net profit", "color": "green"}])
-scene("On September twenty-third, two thousand ten, Blockbuster filed for bankruptcy, with nearly a billion dollars of debt and some three thousand US stores left.",
-      type="stat", value="2010", label="Blockbuster files for bankruptcy", sub="Sept 23 · nearly $1B of debt", color="red")
+scene("On September twenty-third, two thousand ten, Blockbuster filed for bankruptcy, with nearly a billion dollars of debt and some three thousand US stores left. Netflix, by then, said it had more than fifteen million members.",
+      type="stat", value="2010", label="Blockbuster files for bankruptcy", sub="Sept 23 · nearly $1B of debt · Netflix: 15M+ members", color="red")
 scene("In April two thousand eleven, the satellite TV company Dish won Blockbuster's assets at auction, with a three hundred and twenty million dollar bid. The company-owned stores were all closed by two thousand fourteen. And in March two thousand nineteen, when a store in Perth, Australia closed, an independently owned store in Bend, Oregon became the last Blockbuster on Earth.",
       type="table", title="The end of Blockbuster",
       header=["Year", "What happened"],
@@ -257,18 +258,18 @@ scene("Netflix even shut down the business that beat Blockbuster. It mailed its 
 scene("Here's one recent quarter. From July to September twenty twenty-six, Netflix brought in about twelve point nine billion dollars. After the cost of its shows and delivering them, marketing, technology and admin, about four and a half billion was left as operating profit.",
       type="waterfall", title="Netflix, July–September 2026",
       steps=[{"label": "Revenue", "value": Q3["rev"], "kind": "start", "display": "$12.9B"},
-             {"label": "Shows & delivery", "value": Q3["cor"], "kind": "minus", "display": "−$6.1B"},
+             {"label": "Shows, etc.", "value": Q3["cor"], "kind": "minus", "display": "−$6.1B"},
              {"label": "Marketing", "value": Q3["sm"], "kind": "minus", "display": "−$0.8B"},
              {"label": "Technology", "value": Q3["td"], "kind": "minus", "display": "−$1.0B"},
              {"label": "Admin", "value": Q3["ga"], "kind": "minus", "display": "−$0.5B"},
              {"label": "Op. profit", "value": Q3["op"], "kind": "total", "display": "$4.5B"}])
-scene("That's an operating margin of about thirty-five percent, up from twenty-eight percent a year earlier.",
+scene("That's an operating margin of about thirty-five percent, up from twenty-eight percent a year earlier. About thirty-five cents of operating profit on every dollar of revenue.",
       type="share", title="Netflix operating margin",
       rows=[{"label": "July–Sept 2025", "share": NF_MARGIN_Q3_25, "color": "blue", "dp": 1},
             {"label": "July–Sept 2026", "share": NF_MARGIN_Q3_26, "color": "green", "dp": 1}],
       note="Source: Netflix Q3 2026 shareholder letter")
 scene("In that one quarter, Netflix brought in more than twice what Blockbuster made in its best full year.",
-      type="columns", title="Revenue", highlight=1,
+      type="columns", title="Revenue: one year vs one quarter", highlight=1,
       items=[{"label": "Blockbuster, all of 2004", "value": BB_REV[2004], "display": "$6.05B", "color": "blue"},
              {"label": "Netflix, one quarter", "value": Q3["rev"], "display": "$12.9B", "color": "green"}])
 scene("And that fifty million dollar price? At last year's revenue, Netflix now takes in fifty million dollars in less than ten hours.",
@@ -279,7 +280,7 @@ scene("And that fifty million dollar price? At last year's revenue, Netflix now 
 
 # ---------------------------------------------------------------- 7
 scene("Chapter seven. The lessons.", type="chapter", n=7, title="The lessons")
-scene("Lesson one. A customer's pain is an opportunity. Late fees were Blockbuster's most common complaint. Netflix built a business around removing it.",
+scene("Lesson one. A customer's pain is an opportunity. Late fees were Blockbuster's most common complaint. Netflix built a business around removing it. Look around you: any fee people resent, or any wait they hate, is an opening for someone.",
       type="quote", text="Find what customers hate.\nThen remove it.", first_color="text", color="gold")
 scene("Lesson two. Don't protect a profit stream your customers hate. Sixteen percent of Blockbuster's revenue came from the thing people liked least. Giving it up hurt, so the company waited, and a rival without that baggage promised what Blockbuster couldn't.",
       type="share", title="Blockbuster revenue from late fees (2000)",
@@ -292,7 +293,7 @@ scene("Lesson three. Disruption starts small. Netflix began with a few hundred t
 scene("And for your own money: notice the fees you pay only because leaving is a hassle. Those are exactly the fees a competitor will remove. And when you look at any business, ask which of its profits depend on customers having no better option.",
       type="bullets", title="Use it yourself",
       items=["Spot fees you pay out of habit", "Expect rivals to remove them", "Ask: which profits need no rival?"])
-scene("Netflix isn't guaranteed to win forever, either. The same rules apply to it. Customers stay only while the deal feels fair.",
+scene("Netflix isn't guaranteed to win forever, either. It now competes with many other streaming services, and the same rules apply to it. Customers stay only while the deal feels fair.",
       type="title", title="No one is too big", sub="the same rules apply to Netflix")
 scene("If you learned something, subscribe. We break down how money and business really work, every week.",
       type="cta", lines=["How money", "really works."], sub="Subscribe for weekly breakdowns")

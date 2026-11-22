@@ -278,7 +278,7 @@
    "visual": {
     "type": "flywheel",
     "title": "The subscription loop",
-    "center": "NO LATE FEES",
+    "center": "$19.95",
     "steps": [
      "Keep it longer",
      "Mail it back",
@@ -288,7 +288,7 @@
    }
   },
   {
-   "say": "But Netflix was tiny. At the end of two thousand, it had about two hundred and ninety thousand subscribers and around thirty-six million dollars in revenue.",
+   "say": "But Netflix was tiny. At the end of two thousand, it had about two hundred and ninety thousand subscribers and around thirty-six million dollars in revenue. Tiny next to Blockbuster, and still losing money.",
    "visual": {
     "type": "count",
     "to": 292.0,
@@ -644,12 +644,12 @@
    }
   },
   {
-   "say": "On September twenty-third, two thousand ten, Blockbuster filed for bankruptcy, with nearly a billion dollars of debt and some three thousand US stores left.",
+   "say": "On September twenty-third, two thousand ten, Blockbuster filed for bankruptcy, with nearly a billion dollars of debt and some three thousand US stores left. Netflix, by then, said it had more than fifteen million members.",
    "visual": {
     "type": "stat",
     "value": "2010",
     "label": "Blockbuster files for bankruptcy",
-    "sub": "Sept 23 · nearly $1B of debt",
+    "sub": "Sept 23 · nearly $1B of debt · Netflix: 15M+ members",
     "color": "red"
    }
   },
@@ -736,7 +736,7 @@
       "display": "$12.9B"
      },
      {
-      "label": "Shows & delivery",
+      "label": "Shows, etc.",
       "value": 6079016000.0,
       "kind": "minus",
       "display": "−$6.1B"
@@ -769,7 +769,7 @@
    }
   },
   {
-   "say": "That's an operating margin of about thirty-five percent, up from twenty-eight percent a year earlier.",
+   "say": "That's an operating margin of about thirty-five percent, up from twenty-eight percent a year earlier. About thirty-five cents of operating profit on every dollar of revenue.",
    "visual": {
     "type": "share",
     "title": "Netflix operating margin",
@@ -794,7 +794,7 @@
    "say": "In that one quarter, Netflix brought in more than twice what Blockbuster made in its best full year.",
    "visual": {
     "type": "columns",
-    "title": "Revenue",
+    "title": "Revenue: one year vs one quarter",
     "highlight": 1,
     "items": [
      {
@@ -845,7 +845,7 @@
    }
   },
   {
-   "say": "Lesson one. A customer's pain is an opportunity. Late fees were Blockbuster's most common complaint. Netflix built a business around removing it.",
+   "say": "Lesson one. A customer's pain is an opportunity. Late fees were Blockbuster's most common complaint. Netflix built a business around removing it. Look around you: any fee people resent, or any wait they hate, is an opening for someone.",
    "visual": {
     "type": "quote",
     "text": "Find what customers hate.\nThen remove it.",
@@ -924,7 +924,7 @@
    }
   },
   {
-   "say": "Netflix isn't guaranteed to win forever, either. The same rules apply to it. Customers stay only while the deal feels fair.",
+   "say": "Netflix isn't guaranteed to win forever, either. It now competes with many other streaming services, and the same rules apply to it. Customers stay only while the deal feels fair.",
    "visual": {
     "type": "title",
     "title": "No one is too big",
