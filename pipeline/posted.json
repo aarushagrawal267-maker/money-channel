@@ -87,5 +87,27 @@
     "privacy": "private",
     "thumbnail": null,
     "processing": "succeeded"
+  },
+  {
+    "id": "018_start_early_us",
+    "video_id": "9GoVJZFW13I",
+    "url": "https://youtu.be/9GoVJZFW13I",
+    "title": "Start Investing at 25 vs 35: $792K vs $368K",
+    "uploaded_at": "2026-11-22T05:17:40Z",
+    "publish_at": "2026-11-25T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": null,
+    "processing": "succeeded"
+  },
+  {
+    "id": "019_real_hourly_wage",
+    "video_id": "JNm9kh8T2ac",
+    "url": "https://youtu.be/JNm9kh8T2ac",
+    "title": "Your Real Hourly Wage Is Lower Than You Think",
+    "uploaded_at": "2026-11-22T05:18:14Z",
+    "publish_at": "2026-11-25T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": null,
+    "processing": "succeeded"
   }
 ]

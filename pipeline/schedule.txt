@@ -1,0 +1,17 @@
+# video_id_spec   publish time (IST)   -- tools/upload_pending.sh uploads anything here not yet scheduled
+015_rule_of_72              2026-11-23T06:30:00+05:30
+014_minimum_payment_trap_us 2026-11-23T22:30:00+05:30
+L001_costco                 2026-11-23T23:30:00+05:30
+016_buying_a_share          2026-11-24T06:30:00+05:30
+017_upi_free                2026-11-24T22:30:00+05:30
+018_start_early_us          2026-11-25T06:30:00+05:30
+019_real_hourly_wage        2026-11-25T22:30:00+05:30
+L002_compounding            2026-11-25T23:30:00+05:30
+020_index_funds_vs_managers 2026-11-26T06:30:00+05:30
+021_bnpl                    2026-11-26T22:30:00+05:30
+022_airline_loyalty         2026-11-27T06:30:00+05:30
+023_inflation_100           2026-11-27T22:30:00+05:30
+L003_index_funds            2026-11-27T23:30:00+05:30
+024_expense_ratio           2026-11-28T06:30:00+05:30
+025_emergency_fund          2026-11-28T22:30:00+05:30
+001_start_early             2026-11-29T06:30:00+05:30
