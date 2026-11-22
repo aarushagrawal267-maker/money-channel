@@ -83,13 +83,26 @@ def build_body(spec, chapters=None, privacy="private", publish_at=None):
     if publish_at:
         status["privacyStatus"] = "private"   # required by the API for scheduled videos
         status["publishAt"] = publish_at
-    return {
+    body = {
         "snippet": {
             "title": title, "description": desc, "tags": fit_tags(spec.get("tags", [])),
             "categoryId": CATEGORY_EDUCATION, "defaultLanguage": "en", "defaultAudioLanguage": "en",
         },
         "status": status,
     }
+    # Translated title/description shown to viewers whose YouTube language matches (global reach).
+    # Spec: "localizations": {"es": {"title": ..., "summary": ...}, ...}. The localized description is
+    # the translated summary followed by the full English description (keeps sources + disclaimers).
+    locs = {}
+    for lang, l10n in (spec.get("localizations") or {}).items():
+        t = l10n["title"].replace("<", "").replace(">", "")[:MAX_TITLE]
+        d = (l10n.get("summary", "").strip() + "\n\n" + desc).strip()
+        if len(d.encode("utf-8")) > MAX_DESC:
+            d = l10n.get("summary", "").strip() + "\n\n" + SUBSCRIBE_LINE
+        locs[lang] = {"title": t, "description": d}
+    if locs:
+        body["localizations"] = locs
+    return body
 
 
 def resumable_upload(request):
@@ -177,7 +190,8 @@ def main():
     from googleapiclient.http import MediaFileUpload
     yt = youtube_client()
     print(f"Uploading {os.path.basename(a.video)} ({os.path.getsize(a.video)/1e6:.1f} MB)...", flush=True)
-    req = yt.videos().insert(part="snippet,status", body=body, notifySubscribers=True,
+    parts = "snippet,status" + (",localizations" if "localizations" in body else "")
+    req = yt.videos().insert(part=parts, body=body, notifySubscribers=True,
                              media_body=MediaFileUpload(a.video, mimetype="video/mp4",
                                                         chunksize=8 * 1024 * 1024, resumable=True))
     resp = resumable_upload(req)

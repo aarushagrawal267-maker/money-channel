@@ -47,6 +47,9 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 - [x] Week 1 uploaded and scheduled 2026-11-22 (Mon 23 – Sun 29 Nov); see `pipeline/posted.json`. The news Short slot (Sun 29, 10:30 PM IST) is still open.
 - Our OAuth scopes (youtube.upload, youtube.readonly) **cannot** edit or delete a video after upload (videos.update → 403). To change a scheduled video, re-upload; the owner deletes/unschedules old copies in Studio. Old private copies marked `superseded` in posted.json: Ss1WYNrD6Kk, dhFkCh-pj-U, 3inj6_vZEkQ.
 
+## Autopilot
+Owner is away and asked Claude to run everything (22 Nov 2026). Scheduled tasks follow `docs/AUTOPILOT.md`: A weekly production (Wed), B daily upload check, C news Short (Sat). `pipeline/schedule.txt` + `tools/upload_pending.sh` drive uploads.
+
 ## Next steps for Claude
 1. Get owner feedback on week 1; fix what they flag.
 2. News Short for week 1 (Sun 29 Nov, 10:30 PM IST): research on the day it's made (rule 6), add as `026_news_...`.

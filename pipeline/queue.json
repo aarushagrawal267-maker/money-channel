@@ -8,7 +8,7 @@
       "currency": "usd",
       "idea": "The Rule of 72: how fast your money doubles at 4%, 7% and 10%",
       "spec": "015_rule_of_72",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -18,7 +18,7 @@
       "currency": "usd",
       "idea": "Only paying the credit card minimum: 16 years, $7,600 interest",
       "spec": "014_minimum_payment_trap_us",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -28,7 +28,7 @@
       "currency": "usd",
       "idea": "What actually happens when you buy a share",
       "spec": "016_buying_a_share",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -38,7 +38,7 @@
       "currency": "inr",
       "idea": "How UPI is free: who pays for it? (India story)",
       "spec": "017_upi_free",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -48,7 +48,7 @@
       "currency": "usd",
       "idea": "Same $300/month: start at 25 vs 35",
       "spec": "018_start_early_us",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -58,7 +58,7 @@
       "currency": "usd",
       "idea": "Your real hourly wage after commute and work costs",
       "spec": "019_real_hourly_wage",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -68,7 +68,7 @@
       "currency": "usd",
       "idea": "Why most fund managers lose to the index (SPIVA)",
       "spec": "020_index_funds_vs_managers",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -78,7 +78,7 @@
       "currency": "usd",
       "idea": "Buy Now Pay Later: the late-fee and overspending math",
       "spec": "021_bnpl",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -88,7 +88,7 @@
       "currency": "usd",
       "idea": "How airlines make money from credit cards, not seats",
       "spec": "022_airline_loyalty",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -98,7 +98,7 @@
       "currency": "usd",
       "idea": "What $100 buys in 20 years at 3% inflation",
       "spec": "023_inflation_100",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -108,7 +108,7 @@
       "currency": "usd",
       "idea": "A 1% fee vs 0.05%: what it costs over 30 years",
       "spec": "024_expense_ratio",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -118,7 +118,7 @@
       "currency": "usd",
       "idea": "Emergency fund: how much and where to keep it",
       "spec": "025_emergency_fund",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -128,7 +128,7 @@
       "currency": "inr",
       "idea": "Same ₹5,000 SIP: start at 25 vs 35 (India story)",
       "spec": "001_start_early",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -530,7 +530,7 @@
       "currency": "usd",
       "idea": "How Costco Makes $9 Billion While Barely Profiting From Products",
       "spec": "L001_costco",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -540,7 +540,7 @@
       "currency": "usd",
       "idea": "Compound interest, explained properly: the 4 numbers that decide your wealth",
       "spec": "L002_compounding",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
@@ -550,7 +550,7 @@
       "currency": "usd",
       "idea": "Why Most Professional Investors Lose to a Simple Index Fund",
       "spec": "L003_index_funds",
-      "status": "rendered",
+      "status": "scheduled",
       "week": 1
     },
     {
