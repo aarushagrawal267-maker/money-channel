@@ -1,29 +1,24 @@
 # Channel description (paste into YouTube Studio → Customization → Basic info → Description)
 
-**Use this (short version, owner's choice, 22 Nov 2026):**
+YouTube allows max 1,000 characters; this is 792.
 
-Penny to Billion explains how money really works: from your savings and investments to how the world's biggest companies and founders made their billions. Simple charts, real numbers, no hype. New Shorts daily and deep dives every week. Subscribe and get smarter about money. Not financial advice.
+Penny to Billion explains how money really works, from your wallet to the world's biggest companies.
 
----
+Nobody teaches this in school, so we break it down in plain English with clear numbers and simple animated charts:
 
-Older long version (not used):
-
-Penny to Billion explains how money really works: personal finance, investing, and how the world's biggest companies and founders actually made their billions.
-
-Nobody really teaches us this. Not in school, and usually not at home either. So most of us learn it the hard way: a credit card bill that never shrinks, savings that never seem to grow, or a "great deal" that wasn't.
-
-Here, every idea is broken down in plain English with clear numbers and simple animated charts:
-• Money basics: saving, compounding, inflation, debt traps
-• How markets work: stocks, index funds, interest rates
-• Business case studies: how companies like Costco, Netflix and Nokia won or lost
-• Founder stories: how people like Warren Buffett, Phil Knight and Dhirubhai Ambani really built their fortunes
-• The week's biggest money news, explained
+• Money basics: saving, investing, compounding and debt traps
+• How markets work: stocks, index funds and interest rates
+• Business case studies: how Costco, Netflix and Nokia won or lost
+• Founder stories: how Warren Buffett, Phil Knight and Dhirubhai Ambani built their empires
+• The week's biggest money news, explained simply
 
 New Shorts every day, plus deep dives three times a week.
 
-No hype. No get-rich-quick promises. Every number is calculated or sourced, with sources in the description.
+No hype. No get-rich-quick promises. Every number is calculated or sourced.
 
-Everything here is for education, not financial advice.
+Subscribe and learn how money really works, one video at a time.
+
+For education only, not financial advice.
 
 ---
 
