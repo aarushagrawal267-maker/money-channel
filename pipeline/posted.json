@@ -8,6 +8,41 @@
     "publish_at": null,
     "privacy": "private",
     "thumbnail": null,
-    "test": true
+    "test": true,
+    "superseded": true
+  },
+  {
+    "id": "015_rule_of_72",
+    "video_id": "dhFkCh-pj-U",
+    "url": "https://youtu.be/dhFkCh-pj-U",
+    "title": "How fast does your money double? The Rule of 72 #shorts",
+    "uploaded_at": "2026-11-22T05:11:55Z",
+    "publish_at": null,
+    "privacy": "private",
+    "thumbnail": null,
+    "processing": "succeeded",
+    "superseded": true
+  },
+  {
+    "id": "L001_costco",
+    "video_id": "3inj6_vZEkQ",
+    "url": "https://youtu.be/3inj6_vZEkQ",
+    "title": "How Costco Makes $9 Billion While Barely Profiting From Products",
+    "uploaded_at": "2026-11-22T05:13:00Z",
+    "publish_at": null,
+    "privacy": "private",
+    "thumbnail": true,
+    "superseded": true
+  },
+  {
+    "id": "015_rule_of_72",
+    "video_id": "AJ24jHjmc6g",
+    "url": "https://youtu.be/AJ24jHjmc6g",
+    "title": "How fast does your money double? The Rule of 72 #shorts",
+    "uploaded_at": "2026-11-22T05:13:30Z",
+    "publish_at": "2026-11-23T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": null,
+    "processing": "succeeded"
   }
 ]

@@ -7,7 +7,7 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 - **Channel:** Money Mechanics, handle **@MoneyMechanics-v7t** (cleaner handles were all unavailable). Channel Gmail: the owner's channel account.
 - **Niche:** money education: personal finance, smart financing, how markets work, business breakdowns, money news, earning more. See `CONTENT_PLAN.md`.
 - **Audience:** global first (US/UK/CA/AU + English-speaking India). English. **USD by default**; ₹ only for India-story videos (~1 in 5).
-- **Schedule:** 2 Shorts/day at **6:30 AM IST** and **10:30 PM IST**; 3 long videos/week (Mon/Wed/Fri), 8–12 min.
+- **Schedule:** 2 Shorts/day at **6:30 AM IST** (8 PM ET / 5 PM PT) and **10:30 PM IST** (noon ET / 5 PM UK); 3 long videos/week (Mon/Wed/Fri) at **11:30 PM IST** (1 PM ET / 6 PM UK), 8–12 min. Uploads go up early with `--publish-at`; YouTube publishes at the slot.
 - **Style:** dark navy + green + gold, animated charts and text, AI voice (Kokoro `af_heart`), word-synced captions. Owner prefers **simple, clean design** (rejected both a plain and a "too fancy" version; approved flat style in `branding/`).
 - **Rules:** every spoken number is computed in the spec file with `assert`s, or sourced (sources in description). No stock tips, no get-rich-quick claims, on-screen disclaimer when returns are shown. Vary pillars and visuals to avoid YouTube's "inauthentic content" policy.
 
@@ -43,11 +43,12 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 - [x] Env vars saved (`YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`); token works, scopes: youtube.upload, youtube.readonly, yt-analytics.readonly.
 - [x] `pipeline/upload.py` built; private test upload of 014 succeeded 2026-11-21 (https://youtu.be/Ss1WYNrD6Kk, logged as `test` in posted.json).
 - [x] Audit form answers drafted (`docs/AUDIT_FORM_ANSWERS.md`). Site privacy policy expanded + `terms.html` added on branch `claude/friendly-gates-8o3lq0` of the Pages repo; **live site serves `main`, needs merging before the audit**.
-- [ ] Owner submits the audit form. Until approved, API uploads are locked to **private**; owner publishes in Studio.
-- [ ] Owner approves week 1 (14 Shorts incl. 1 news Short made fresh on the day, + L001–L003).
+- [x] **Private lock is gone:** Google's revision history (Nov 2, 2026) says uploads from unverified API projects are no longer restricted to private. Scheduled uploads with `publishAt` work (verified 2026-11-22). The audit form is **not needed** (only for more quota). Website update for the audit was never merged and isn't required.
+- [x] Week 1 uploaded and scheduled 2026-11-22 (Mon 23 – Sun 29 Nov); see `pipeline/posted.json`. The news Short slot (Sun 29, 10:30 PM IST) is still open.
+- Our OAuth scopes (youtube.upload, youtube.readonly) **cannot** edit or delete a video after upload (videos.update → 403). To change a scheduled video, re-upload; the owner deletes/unschedules old copies in Studio. Old private copies marked `superseded` in posted.json: Ss1WYNrD6Kk, dhFkCh-pj-U, 3inj6_vZEkQ.
 
 ## Next steps for Claude
-1. Get owner feedback on week 1 and the private test upload; fix what they flag.
-2. News Short for week 1: research on the day it's made (rule 6), add as `026_news_...`.
+1. Get owner feedback on week 1; fix what they flag.
+2. News Short for week 1 (Sun 29 Nov, 10:30 PM IST): research on the day it's made (rule 6), add as `026_news_...`.
 3. After approval, set up scheduled tasks (fresh session per fire) for the upload times above, with failure notifications. Each run: setup.sh → pick next approved item from queue.json → render → upload with `--publish-at` → commit posted.json/queue.json.
 4. Keep writing specs from `queue.json` a week ahead.

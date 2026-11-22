@@ -1,3 +1,5 @@
+> **Update 22 Nov 2026: you don't need this form any more.** Google removed the private lock for new projects on 2 Nov 2026, so scheduled uploads now go public on their own. Keep this only in case we ever need more upload quota.
+
 # YouTube API audit form: answers to copy
 
 **Why we need this:** Google locks every video uploaded through the API to **Private** until the project passes this audit. After approval, our scheduled uploads can go public on their own. Until then, I upload as Private and you click "Public" (or schedule) in YouTube Studio.
