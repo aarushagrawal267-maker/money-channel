@@ -1,0 +1,108 @@
+"""Video 033 (global/USD): staying for yearly raises vs. switching jobs every few years, over 10 years.
+Clearly labelled example raise sizes (no survey data used); all maths computed here."""
+import json, os
+
+# --- example assumptions (labelled as an example on screen and in the description)
+START = 60_000          # year-1 salary
+STAY_RAISE = 0.03       # example yearly raise for staying
+SWITCH_RAISE = 0.10     # example pay bump when switching jobs
+SWITCH_EVERY = 3        # switch at the start of years 4, 7 and 10
+YEARS = 10
+
+def path(switch):
+    sal, out = START, [START]
+    for year in range(2, YEARS + 1):
+        bump = SWITCH_RAISE if switch and (year - 1) % SWITCH_EVERY == 0 else STAY_RAISE
+        sal *= 1 + bump
+        out.append(sal)
+    return out
+
+stay, move = path(False), path(True)
+yrs = list(range(1, YEARS + 1))
+S10, M10 = stay[-1], move[-1]
+S_tot, M_tot = sum(stay), sum(move)
+gap_year, gap_tot = M10 - S10, M_tot - S_tot
+switches = sum(1 for y in range(2, YEARS + 1) if (y - 1) % SWITCH_EVERY == 0)
+
+assert switches == 3                            # "three switches in ten years"
+assert 78_000 < S10 < 78_500, S10               # "about seventy-eight thousand"
+assert 95_000 < M10 < 95_500, M10               # "about ninety-five thousand"
+assert 17_000 < gap_year < 17_500, gap_year     # year-10 pay gap (shown via the bars)
+assert 687_000 < S_tot < 688_500, S_tot
+assert 749_000 < M_tot < 750_500, M_tot
+assert 61_500 < gap_tot < 62_500, gap_tot       # "about sixty-two thousand dollars" (hook + scene 5)
+print(f"year10 stay ${S10:,.0f} move ${M10:,.0f} gap ${gap_year:,.0f} | 10y stay ${S_tot:,.0f} "
+      f"move ${M_tot:,.0f} gap ${gap_tot:,.0f}")
+
+spec = {
+    "id": "033_raise_vs_switch",
+    "currency": "usd", "voice": "af_heart", "speed": 1.05,
+    "badge": "EARN MORE",
+    "disclaimer": "Example raises only · 3% a year vs 10% per switch · yours will differ",
+    "title": "Ask for a Raise or Switch Jobs? The 10-Year Math",
+    "description": (
+        "Should you stay for yearly raises or switch jobs for a bigger bump? In this example, two people start on "
+        f"$60,000. Staying with 3% raises reaches about ${S10/1e3:,.0f}K in year ten; switching every three years "
+        f"for a 10% bump reaches about ${M10/1e3:,.0f}K, about ${gap_tot/1e3:,.0f}K more earned over the decade.\n\n"
+        "Example assumptions (not survey data; real raises vary by job, field and year): $60,000 starting salary, "
+        "3% yearly raise when staying, 10% raise at each switch in years 4, 7 and 10 and 3% in the other years, "
+        "no gaps between jobs, salary only (no bonuses, benefits or retirement matching). Switching has costs too: "
+        "risk, a learning curve and benefits you may lose. This is not career or financial advice.\n\n"
+        "#careeradvice #salary #personalfinance #moneytips #jobsearch"
+    ),
+    "tags": ["ask for a raise", "switch jobs", "job hopping salary", "salary negotiation", "career advice",
+             "how to earn more", "personal finance", "money tips", "pay raise"],
+    "localizations": {
+        "es": {"title": "¿Pedir aumento o cambiar de trabajo? Cálculo a 10 años",
+               "summary": "Ejemplo: dos personas empiezan con $60,000. Quedarse con aumentos del 3% vs cambiar cada "
+                          f"tres años con un 10% más: unos ${gap_tot/1e3:,.0f}K de diferencia en 10 años."},
+        "pt": {"title": "Pedir aumento ou trocar de emprego? A conta de 10 anos",
+               "summary": "Exemplo: duas pessoas começam com $60,000. Ficar com aumentos de 3% vs trocar a cada três "
+                          f"anos com 10% a mais: cerca de ${gap_tot/1e3:,.0f}K de diferença em 10 anos."},
+        "hi": {"title": "रेज़ मांगें या नौकरी बदलें? 10 साल का हिसाब",
+               "summary": "उदाहरण: दोनों की शुरुआती सैलरी $60,000। हर साल 3% बढ़ोतरी बनाम हर तीन साल में 10% बढ़त "
+                          f"के साथ नौकरी बदलना: 10 साल में करीब ${gap_tot/1e3:,.0f}K का फर्क।"},
+        "id": {"title": "Minta Naik Gaji atau Pindah Kerja? Hitungan 10 Tahun",
+               "summary": "Contoh: dua orang mulai dengan gaji $60,000. Bertahan dengan kenaikan 3% vs pindah tiap tiga "
+                          f"tahun dengan kenaikan 10%: selisih sekitar ${gap_tot/1e3:,.0f}K dalam 10 tahun."},
+        "de": {"title": "Gehaltserhöhung oder Jobwechsel? Die 10-Jahres-Rechnung",
+               "summary": "Beispiel: Zwei Personen starten mit $60,000. Bleiben mit 3% pro Jahr vs. Wechsel alle drei "
+                          f"Jahre mit 10% mehr: rund ${gap_tot/1e3:,.0f}K Unterschied in 10 Jahren."},
+        "fr": {"title": "Demander une hausse ou changer de job ? Le calcul sur 10 ans",
+               "summary": "Exemple : deux personnes débutent à $60,000. Rester avec 3 % par an ou changer tous les trois "
+                          f"ans avec 10 % de plus : environ ${gap_tot/1e3:,.0f}K d'écart en 10 ans."},
+    },
+    "scenes": [
+        {"say": "Staying loyal to one employer could cost you about sixty-two thousand dollars over ten years. Here's the math.",
+         "visual": {"type": "equation", "title": "Stay or switch?",
+                    "lines": [{"text": "10 years", "color": "text", "size": 100},
+                              {"text": "↓", "color": "dim", "size": 80},
+                              {"text": f"${gap_tot/1e3:,.0f}K gap", "color": "gold", "size": 140}]}},
+        {"say": "Two people start at sixty thousand dollars. In this example, Sara stays and gets three percent a year. Leo switches jobs every three years for a ten percent bump.",
+         "visual": {"type": "pair", "title": "Example: both start at $60K",
+                    "left": {"label": "Sara", "sub": "stays · 3% a year", "color": "slate"},
+                    "right": {"label": "Leo", "sub": "switches · +10%", "color": "green"}}},
+        {"say": "Each switch resets Leo's pay higher, and later raises build on it. By year ten, Sara earns about seventy-eight thousand. Leo, about ninety-five thousand.",
+         "visual": {"type": "bars", "title": "Salary in year 10",
+                    "items": [{"label": "Sara", "value": S10, "color": "slate"},
+                              {"label": "Leo", "value": M10, "color": "green"}]}},
+        {"say": "Over the whole decade, Leo earns about sixty-two thousand dollars more.",
+         "visual": {"type": "stat", "value": f"+${gap_tot/1e3:,.0f}K", "label": "more earned over 10 years",
+                    "sub": "example: 3 switches at +10%", "color": "green"}},
+        {"say": "But switching isn't free. New jobs carry risk, and you can lose bonuses or benefits that haven't kicked in yet.",
+         "visual": {"type": "equation", "title": "The catch",
+                    "lines": [{"text": "New-job risk", "color": "red", "size": 88},
+                              {"text": "Lost bonuses", "color": "red", "size": 88},
+                              {"text": "Benefits reset", "color": "red", "size": 88}]}},
+        {"say": "So know your market value. Use it to ask for a raise first, and be ready to move if the answer is no.",
+         "visual": {"type": "pair", "title": "Your two moves",
+                    "left": {"label": "Ask", "sub": "with market data", "color": "gold"},
+                    "right": {"label": "Move", "sub": "if the answer is no", "color": "green"}}},
+        {"say": "Follow for one money lesson every day.",
+         "visual": {"type": "cta", "lines": ["Know your", "market value."],
+                    "sub": "Follow for daily money lessons"}},
+    ],
+}
+out = os.path.join(os.path.dirname(__file__), "033_raise_vs_switch.json")
+json.dump(spec, open(out, "w"), ensure_ascii=False, indent=1)
+print(out)

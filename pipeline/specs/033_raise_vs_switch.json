@@ -1,0 +1,171 @@
+{
+ "id": "033_raise_vs_switch",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "EARN MORE",
+ "disclaimer": "Example raises only · 3% a year vs 10% per switch · yours will differ",
+ "title": "Ask for a Raise or Switch Jobs? The 10-Year Math",
+ "description": "Should you stay for yearly raises or switch jobs for a bigger bump? In this example, two people start on $60,000. Staying with 3% raises reaches about $78K in year ten; switching every three years for a 10% bump reaches about $95K, about $62K more earned over the decade.\n\nExample assumptions (not survey data; real raises vary by job, field and year): $60,000 starting salary, 3% yearly raise when staying, 10% raise at each switch in years 4, 7 and 10 and 3% in the other years, no gaps between jobs, salary only (no bonuses, benefits or retirement matching). Switching has costs too: risk, a learning curve and benefits you may lose. This is not career or financial advice.\n\n#careeradvice #salary #personalfinance #moneytips #jobsearch",
+ "tags": [
+  "ask for a raise",
+  "switch jobs",
+  "job hopping salary",
+  "salary negotiation",
+  "career advice",
+  "how to earn more",
+  "personal finance",
+  "money tips",
+  "pay raise"
+ ],
+ "localizations": {
+  "es": {
+   "title": "¿Pedir aumento o cambiar de trabajo? Cálculo a 10 años",
+   "summary": "Ejemplo: dos personas empiezan con $60,000. Quedarse con aumentos del 3% vs cambiar cada tres años con un 10% más: unos $62K de diferencia en 10 años."
+  },
+  "pt": {
+   "title": "Pedir aumento ou trocar de emprego? A conta de 10 anos",
+   "summary": "Exemplo: duas pessoas começam com $60,000. Ficar com aumentos de 3% vs trocar a cada três anos com 10% a mais: cerca de $62K de diferença em 10 anos."
+  },
+  "hi": {
+   "title": "रेज़ मांगें या नौकरी बदलें? 10 साल का हिसाब",
+   "summary": "उदाहरण: दोनों की शुरुआती सैलरी $60,000। हर साल 3% बढ़ोतरी बनाम हर तीन साल में 10% बढ़त के साथ नौकरी बदलना: 10 साल में करीब $62K का फर्क।"
+  },
+  "id": {
+   "title": "Minta Naik Gaji atau Pindah Kerja? Hitungan 10 Tahun",
+   "summary": "Contoh: dua orang mulai dengan gaji $60,000. Bertahan dengan kenaikan 3% vs pindah tiap tiga tahun dengan kenaikan 10%: selisih sekitar $62K dalam 10 tahun."
+  },
+  "de": {
+   "title": "Gehaltserhöhung oder Jobwechsel? Die 10-Jahres-Rechnung",
+   "summary": "Beispiel: Zwei Personen starten mit $60,000. Bleiben mit 3% pro Jahr vs. Wechsel alle drei Jahre mit 10% mehr: rund $62K Unterschied in 10 Jahren."
+  },
+  "fr": {
+   "title": "Demander une hausse ou changer de job ? Le calcul sur 10 ans",
+   "summary": "Exemple : deux personnes débutent à $60,000. Rester avec 3 % par an ou changer tous les trois ans avec 10 % de plus : environ $62K d'écart en 10 ans."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Staying loyal to one employer could cost you about sixty-two thousand dollars over ten years. Here's the math.",
+   "visual": {
+    "type": "equation",
+    "title": "Stay or switch?",
+    "lines": [
+     {
+      "text": "10 years",
+      "color": "text",
+      "size": 100
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "$62K gap",
+      "color": "gold",
+      "size": 140
+     }
+    ]
+   }
+  },
+  {
+   "say": "Two people start at sixty thousand dollars. In this example, Sara stays and gets three percent a year. Leo switches jobs every three years for a ten percent bump.",
+   "visual": {
+    "type": "pair",
+    "title": "Example: both start at $60K",
+    "left": {
+     "label": "Sara",
+     "sub": "stays · 3% a year",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Leo",
+     "sub": "switches · +10%",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Each switch resets Leo's pay higher, and later raises build on it. By year ten, Sara earns about seventy-eight thousand. Leo, about ninety-five thousand.",
+   "visual": {
+    "type": "bars",
+    "title": "Salary in year 10",
+    "items": [
+     {
+      "label": "Sara",
+      "value": 78286.39102975468,
+      "color": "slate"
+     },
+     {
+      "label": "Leo",
+      "value": 95357.01640080598,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Over the whole decade, Leo earns about sixty-two thousand dollars more.",
+   "visual": {
+    "type": "stat",
+    "value": "+$62K",
+    "label": "more earned over 10 years",
+    "sub": "example: 3 switches at +10%",
+    "color": "green"
+   }
+  },
+  {
+   "say": "But switching isn't free. New jobs carry risk, and you can lose bonuses or benefits that haven't kicked in yet.",
+   "visual": {
+    "type": "equation",
+    "title": "The catch",
+    "lines": [
+     {
+      "text": "New-job risk",
+      "color": "red",
+      "size": 88
+     },
+     {
+      "text": "Lost bonuses",
+      "color": "red",
+      "size": 88
+     },
+     {
+      "text": "Benefits reset",
+      "color": "red",
+      "size": 88
+     }
+    ]
+   }
+  },
+  {
+   "say": "So know your market value. Use it to ask for a raise first, and be ready to move if the answer is no.",
+   "visual": {
+    "type": "pair",
+    "title": "Your two moves",
+    "left": {
+     "label": "Ask",
+     "sub": "with market data",
+     "color": "gold"
+    },
+    "right": {
+     "label": "Move",
+     "sub": "if the answer is no",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Know your",
+     "market value."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

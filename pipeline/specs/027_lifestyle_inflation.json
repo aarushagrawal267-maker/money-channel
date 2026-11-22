@@ -1,0 +1,265 @@
+{
+ "id": "027_lifestyle_inflation",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "MONEY TRAP",
+ "disclaimer": "Example · 30% tax · assumes 7% a year · not financial advice",
+ "title": "Lifestyle Inflation: Why Your Raise Leaves You No Richer",
+ "description": "Lifestyle inflation is when spending rises as fast as your pay, so a raise leaves you no richer. In this example, a $5,000 raise is about $292 a month after tax. Spend it all on upgrades and you have nothing extra in 20 years; save half and invest it, and it could grow to about $76K, while you still enjoy the other half.\n\nExample assumptions: $5,000 yearly raise, 30% combined tax on the extra pay (yours will differ), half of the after-tax raise ($145.83 a month) invested at the start of every month for 20 years at an assumed 7% average yearly return compounded monthly, no fees or taxes on the investment, no further raises. Illustration only: real returns vary, can be negative, and are not guaranteed. Not financial advice.\n\n#personalfinance #lifestyleinflation #saving #investing #moneytips",
+ "tags": [
+  "lifestyle inflation",
+  "lifestyle creep",
+  "what to do with a raise",
+  "saving money",
+  "investing",
+  "personal finance",
+  "money tips",
+  "financial literacy",
+  "compound interest"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Inflación del estilo de vida: tu aumento no te enriquece",
+   "summary": "Un aumento de $5,000 puede no hacerte más rico si tus gastos suben con él. Si ahorras la mitad y la inviertes al 7% supuesto, podría llegar a unos $76K en 20 años."
+  },
+  "pt": {
+   "title": "Inflação do estilo de vida: seu aumento não te enriquece",
+   "summary": "Um aumento de $5,000 pode não te deixar mais rico se os gastos subirem junto. Poupando metade e investindo a 7% ao ano (suposição), pode virar cerca de $76K em 20 anos."
+  },
+  "hi": {
+   "title": "लाइफस्टाइल इन्फ्लेशन: बढ़ी सैलरी फिर भी अमीर क्यों नहीं",
+   "summary": "अगर खर्च भी साथ में बढ़ें, तो $5,000 की बढ़ोतरी आपको अमीर नहीं बनाती। आधी बचत 7% अनुमानित रिटर्न पर निवेश करें, तो 20 साल में करीब $76K बन सकते हैं।"
+  },
+  "id": {
+   "title": "Inflasi Gaya Hidup: Kenapa Naik Gaji Tak Bikin Kaya",
+   "summary": "Kenaikan gaji $5,000 bisa tidak membuat Anda lebih kaya jika pengeluaran ikut naik. Tabung separuhnya dan investasikan dengan asumsi 7% per tahun: sekitar $76K dalam 20 tahun."
+  },
+  "de": {
+   "title": "Lifestyle-Inflation: Warum die Gehaltserhöhung verpufft",
+   "summary": "Eine Gehaltserhöhung von $5,000 macht nicht reicher, wenn die Ausgaben mitwachsen. Wer die Hälfte zu angenommenen 7% anlegt, könnte in 20 Jahren etwa $76K haben."
+  },
+  "fr": {
+   "title": "Inflation du mode de vie : pourquoi votre hausse s'évapore",
+   "summary": "Une hausse de salaire de $5,000 ne vous enrichit pas si vos dépenses montent avec elle. En plaçant la moitié à 7 % supposés, elle pourrait atteindre environ $76K en 20 ans."
+  }
+ },
+ "scenes": [
+  {
+   "say": "You get a five thousand dollar raise. Twenty years later, you could be no richer at all.",
+   "visual": {
+    "type": "equation",
+    "title": "The raise trap",
+    "lines": [
+     {
+      "text": "+$5,000 raise",
+      "color": "green",
+      "size": 110
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "+$0 wealth",
+      "color": "red",
+      "size": 130
+     }
+    ]
+   }
+  },
+  {
+   "say": "After an example thirty percent in taxes, you keep three thousand five hundred a year. Almost three hundred dollars a month.",
+   "visual": {
+    "type": "stat",
+    "value": "$292",
+    "label": "extra a month, after tax",
+    "sub": "$5,000 − 30% tax (example) = $3,500 a year",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Alex spends all of it. A nicer car, more takeout, a pricier phone plan. Sam saves half and enjoys the rest.",
+   "visual": {
+    "type": "pair",
+    "title": "Same raise, two choices",
+    "left": {
+     "label": "Alex",
+     "sub": "spends it all",
+     "color": "red"
+    },
+    "right": {
+     "label": "Sam",
+     "sub": "saves half",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "That's about one hundred forty-six dollars a month, invested at an assumed seven percent a year. Real returns vary.",
+   "visual": {
+    "type": "equation",
+    "title": "Sam's plan",
+    "lines": [
+     {
+      "text": "$146 a month",
+      "color": "green",
+      "size": 110
+     },
+     {
+      "text": "at an assumed 7% a year",
+      "color": "text",
+      "size": 64
+     },
+     {
+      "text": "for 20 years",
+      "color": "muted",
+      "size": 64
+     }
+    ]
+   }
+  },
+  {
+   "say": "Twenty years later, Sam has about seventy-six thousand dollars. Alex's upgrades just became normal life.",
+   "visual": {
+    "type": "line",
+    "title": "Extra wealth from the raise",
+    "x": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "x_label": "years",
+    "series": [
+     {
+      "label": "Sam",
+      "values": [
+       0.0,
+       1817.7943248640984,
+       3766.9971484526313,
+       5857.108001763587,
+       8098.313137658884,
+       10501.535174043462,
+       13078.486325753769,
+       15841.725484583785,
+       18804.719425630745,
+       21981.90843825252,
+       25388.77670149227,
+       29041.927746948164,
+       32959.16537686011,
+       37159.58043177148,
+       41663.64383063215,
+       46493.30633677806,
+       51672.105536001596,
+       57225.28054807521,
+       63179.89503078046,
+       69564.96907590819,
+       76411.62064003122
+      ],
+      "color": "green"
+     },
+     {
+      "label": "Alex",
+      "values": [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "And Sam only put in thirty-five thousand of it. The rest is growth.",
+   "visual": {
+    "type": "bars",
+    "title": "Sam after 20 years",
+    "items": [
+     {
+      "label": "Put in",
+      "value": 35000.0,
+      "color": "slate"
+     },
+     {
+      "label": "Worth",
+      "value": 76411.62064003122,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "The fix is simple. Next time your pay goes up, raise your savings first, then upgrade with what's left.",
+   "visual": {
+    "type": "equation",
+    "title": "Next raise",
+    "lines": [
+     {
+      "text": "Save half first",
+      "color": "green",
+      "size": 104
+     },
+     {
+      "text": "+",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "enjoy the rest",
+      "color": "gold",
+      "size": 104
+     }
+    ]
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Grow your",
+     "wealth, too."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

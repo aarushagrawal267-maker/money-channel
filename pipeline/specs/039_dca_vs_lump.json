@@ -1,0 +1,162 @@
+{
+ "id": "039_dca_vs_lump",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "MONEY MATH",
+ "disclaimer": "Past results don't guarantee future returns · not financial advice",
+ "title": "Lump Sum vs Dollar-Cost Averaging: Which Wins More?",
+ "description": "Lump sum vs dollar-cost averaging: if you already have the cash, investing it all at once has beaten spreading it out about two-thirds of the time (68% in Vanguard's study of global stocks, 1976–2022), because stocks usually beat cash. Spreading it out still beat sitting in cash 69% of the time, and it can make a drop easier to live with.\n\nSources:\n- Vanguard, Finlay & Zorn, \"Cost averaging: Invest now or temporarily hold your cash?\", February 2023 (MSCI World Index returns 1976–2022, 100% stocks, lump sum vs. three equal monthly parts, compared after one year): https://corporate.vanguard.com/content/dam/corp/research/pdf/cost_averaging_invest_now_or_temporarily_hold_your_cash.pdf\n\nExample assumptions: $12,000 invested at once vs. $1,000 at the start of each month for 12 months, a steady 7% yearly return, uninvested cash earns nothing, no fees or taxes. Real markets don't move steadily; returns vary, can be negative, and past results don't guarantee future returns. Not financial advice.\n\n#investing #dollarcostaveraging #personalfinance #stockmarket #moneytips",
+ "tags": [
+  "lump sum vs dollar cost averaging",
+  "dollar cost averaging",
+  "lump sum investing",
+  "investing basics",
+  "Vanguard research",
+  "stock market",
+  "personal finance",
+  "money tips",
+  "financial literacy"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Todo de una vez o cada mes: ¿qué gana más al invertir?",
+   "summary": "Según Vanguard (acciones globales, 1976–2022), invertir todo de una vez ganó a repartirlo el 68% de las veces. Pero repartirlo superó al efectivo el 69%."
+  },
+  "pt": {
+   "title": "Tudo de uma vez ou todo mês: o que rende mais?",
+   "summary": "Segundo a Vanguard (ações globais, 1976–2022), investir tudo de uma vez venceu o aporte parcelado em 68% das vezes. Mas parcelar venceu o dinheiro parado em 69%."
+  },
+  "hi": {
+   "title": "एकमुश्त निवेश या हर महीने: कौन ज़्यादा जीतता है?",
+   "summary": "Vanguard के अध्ययन (1976–2022, ग्लोबल शेयर) में एकमुश्त निवेश 68% बार किस्तों से आगे रहा। फिर भी किस्तों में निवेश 69% बार नकद रखने से बेहतर रहा।"
+  },
+  "id": {
+   "title": "Sekaligus atau Bertahap: Mana yang Lebih Sering Menang?",
+   "summary": "Menurut riset Vanguard (saham global, 1976–2022), investasi sekaligus menang 68% dari waktu. Tapi investasi bertahap tetap mengalahkan uang tunai 69% dari waktu."
+  },
+  "de": {
+   "title": "Einmalanlage oder Sparplan: Was gewinnt öfter?",
+   "summary": "Laut Vanguard (globale Aktien, 1976–2022) schlug die Einmalanlage das gestaffelte Investieren in 68% der Fälle. Gestaffelt schlug aber Bargeld in 69% der Fälle."
+  },
+  "fr": {
+   "title": "Tout investir d'un coup ou chaque mois : qui gagne ?",
+   "summary": "Selon Vanguard (actions mondiales, 1976–2022), investir d'un coup a battu l'investissement étalé 68 % du temps. Mais étaler a battu le cash 69 % du temps."
+  }
+ },
+ "scenes": [
+  {
+   "say": "You have twelve thousand dollars to invest. All at once, or a thousand a month? History has a favorite.",
+   "visual": {
+    "type": "pair",
+    "title": "$12,000 to invest",
+    "left": {
+     "label": "All now",
+     "sub": "one lump sum",
+     "color": "gold"
+    },
+    "right": {
+     "label": "Monthly",
+     "sub": "$1,000 × 12",
+     "color": "blue"
+    }
+   }
+  },
+  {
+   "say": "Vanguard studied global stocks from nineteen seventy-six to twenty twenty-two. Investing all at once beat spreading it out about two-thirds of the time.",
+   "visual": {
+    "type": "stat",
+    "value": "68%",
+    "label": "of the time, lump sum won",
+    "sub": "Vanguard · global stocks · 1976–2022",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Why? Stocks usually beat cash. So money waiting on the sidelines usually missed growth.",
+   "visual": {
+    "type": "equation",
+    "title": "Why lump sum usually wins",
+    "lines": [
+     {
+      "text": "Stocks usually",
+      "color": "text",
+      "size": 80
+     },
+     {
+      "text": "beat cash",
+      "color": "green",
+      "size": 110
+     },
+     {
+      "text": "Cash waiting = missed growth",
+      "color": "red",
+      "size": 64
+     }
+    ]
+   }
+  },
+  {
+   "say": "In a steady seven percent year, all at once ends about three hundred ninety dollars ahead.",
+   "visual": {
+    "type": "compare",
+    "title": "Example: steady 7% year",
+    "left": {
+     "label": "All now",
+     "value": 12840.0,
+     "color": "gold"
+    },
+    "right": {
+     "label": "Monthly",
+     "value": 12450.2971455114,
+     "color": "blue"
+    }
+   }
+  },
+  {
+   "say": "But if the market drops right after you invest, spreading it out wins. And it still beat leaving the money in cash sixty-nine percent of the time.",
+   "visual": {
+    "type": "stat",
+    "value": "69%",
+    "label": "of the time, spreading it out beat cash",
+    "sub": "Vanguard · global stocks · 1976–2022",
+    "color": "green"
+   }
+  },
+  {
+   "say": "So if fear of a crash would keep you in cash, investing in steps beats waiting. And if you invest from each paycheck, keep going. That's investing as soon as you can.",
+   "visual": {
+    "type": "equation",
+    "title": "The real lesson",
+    "lines": [
+     {
+      "text": "Investing in steps",
+      "color": "blue",
+      "size": 88
+     },
+     {
+      "text": "beats",
+      "color": "dim",
+      "size": 72
+     },
+     {
+      "text": "waiting in cash",
+      "color": "green",
+      "size": 100
+     }
+    ]
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Time in",
+     "the market."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

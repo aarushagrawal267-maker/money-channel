@@ -1,0 +1,181 @@
+{
+ "id": "031_car_loan_cost",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "MONEY MATH",
+ "disclaimer": "Example · 7% APR on both loans · your rate and costs will differ",
+ "title": "Car Loan Math: 72 vs 48 Months on a $35,000 Car",
+ "description": "A 72-month car loan makes the monthly payment look smaller, but you pay more in total. On a $35,000 car at an example 7% APR, 72 months costs about $7,963 in interest versus about $5,230 over 48 months: roughly $2,734 more for the same car. We also run the 20/4/10 rule of thumb.\n\nAssumptions: $35,000 borrowed in full, 7% APR on both terms (an example; real rates depend on your credit and the lender, and longer loans can carry different rates), fixed monthly payments, no fees, taxes or add-ons. The 20/4/10 rule is a common guideline, not a law: put 20% down, borrow for 4 years or less, and keep car costs under 10% of gross income. The income figure uses the loan payment alone. Not financial advice.\n\n#carloan #personalfinance #debt #moneytips #financialliteracy",
+ "tags": [
+  "car loan",
+  "auto loan",
+  "72 month car loan",
+  "car payment",
+  "20/4/10 rule",
+  "how much car can I afford",
+  "car loan interest",
+  "personal finance",
+  "money tips"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Préstamo de auto: 72 vs 48 meses por un auto de $35,000",
+   "summary": "Con una tasa de ejemplo del 7%, el préstamo a 72 meses cuesta unos $7,963 en intereses, frente a $5,230 a 48 meses. Además, la regla 20/4/10."
+  },
+  "pt": {
+   "title": "Financiamento de carro: 72 x 48 meses em um carro de $35,000",
+   "summary": "Com juros de exemplo de 7% ao ano, 72 meses custam cerca de $7,963 em juros, contra $5,230 em 48 meses. E a regra 20/4/10."
+  },
+  "hi": {
+   "title": "कार लोन का गणित: $35,000 की कार, 72 बनाम 48 महीने",
+   "summary": "7% के उदाहरण APR पर 72 महीने के लोन में करीब $7,963 ब्याज लगता है, जबकि 48 महीने में $5,230। साथ में 20/4/10 नियम।"
+  },
+  "id": {
+   "title": "Hitung Kredit Mobil: 72 vs 48 Bulan untuk Mobil $35,000",
+   "summary": "Dengan contoh bunga 7% per tahun, tenor 72 bulan memakan bunga sekitar $7,963, dibanding $5,230 untuk 48 bulan. Plus aturan 20/4/10."
+  },
+  "de": {
+   "title": "Autokredit: 72 vs. 48 Monate bei einem $35,000-Auto",
+   "summary": "Bei einem Beispielzins von 7% kosten 72 Monate rund $7,963 Zinsen, 48 Monate nur $5,230. Dazu die 20/4/10-Faustregel."
+  },
+  "fr": {
+   "title": "Crédit auto : 72 ou 48 mois pour une voiture à $35,000",
+   "summary": "Avec un taux d'exemple de 7 %, 72 mois coûtent environ $7,963 d'intérêts, contre $5,230 sur 48 mois. Plus la règle 20/4/10."
+  }
+ },
+ "scenes": [
+  {
+   "say": "A thirty-five thousand dollar car can cost you almost forty-three thousand. Here's how.",
+   "visual": {
+    "type": "equation",
+    "title": "The real price",
+    "lines": [
+     {
+      "text": "$35,000 car",
+      "color": "text",
+      "size": 110
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "$42,963 paid",
+      "color": "red",
+      "size": 130
+     }
+    ]
+   }
+  },
+  {
+   "say": "Take a seventy-two month loan at an example seven percent A-P-R. The payment looks friendly: about five hundred ninety-seven a month.",
+   "visual": {
+    "type": "stat",
+    "value": "$597",
+    "label": "a month for 72 months",
+    "sub": "$35,000 at 7% APR (example)",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Over forty-eight months, it's about eight hundred thirty-eight.",
+   "visual": {
+    "type": "compare",
+    "title": "Monthly payment",
+    "left": {
+     "label": "72 months",
+     "value": 596.7152265189347,
+     "color": "green"
+    },
+    "right": {
+     "label": "48 months",
+     "value": 838.1185631854988,
+     "color": "slate"
+    }
+   }
+  },
+  {
+   "say": "But look at the interest. Seventy-two months: almost eight thousand dollars. Forty-eight months: about fifty-two hundred.",
+   "visual": {
+    "type": "bars",
+    "title": "Total interest paid",
+    "items": [
+     {
+      "label": "72 mo",
+      "value": 7963.496309363298,
+      "color": "red"
+     },
+     {
+      "label": "48 mo",
+      "value": 5229.691032903946,
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Same car, same rate. Two extra years of payments cost you over twenty-seven hundred dollars more.",
+   "visual": {
+    "type": "stat",
+    "value": "+$2.7K",
+    "label": "extra interest for 2 more years",
+    "sub": "same car · same rate",
+    "color": "red"
+   }
+  },
+  {
+   "say": "A common guideline: twenty percent down, four years at most, and car costs under ten percent of your gross income.",
+   "visual": {
+    "type": "equation",
+    "title": "The 20/4/10 guideline",
+    "lines": [
+     {
+      "text": "20% down",
+      "color": "green",
+      "size": 96
+     },
+     {
+      "text": "4 years max",
+      "color": "gold",
+      "size": 96
+     },
+     {
+      "text": "10% of income",
+      "color": "text",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "For this car, that's a payment of about six hundred seventy a month. By that guide, you'd want to earn over eighty thousand dollars a year, before even counting insurance.",
+   "visual": {
+    "type": "compare",
+    "title": "This car, by 20/4/10",
+    "left": {
+     "label": "Payment",
+     "value": 670.4948505483991,
+     "color": "gold"
+    },
+    "right": {
+     "label": "Income / yr",
+     "value": 80459.38206580789,
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Look past the monthly payment. Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Check the",
+     "total cost."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}
