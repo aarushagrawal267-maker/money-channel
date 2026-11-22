@@ -1,0 +1,176 @@
+{
+ "id": "029_netflix_blockbuster",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "CASE STUDY",
+ "disclaimer": "Sources: Netflix filings, AP, Newsweek · see description",
+ "title": "Netflix vs Blockbuster: The $50 Million 'No'",
+ "description": "In 2000, Netflix's co-founders say they offered to sell the company to Blockbuster for $50 million, and Blockbuster said no (Blockbuster's former CEO later said there were never serious talks). Blockbuster peaked at about 9,100 stores in 2004 and filed for bankruptcy in September 2010. Netflix moved from DVDs by mail to streaming, and in 2025 brought in $45.2 billion, about 904 times that asking price, with over 325 million paid memberships. The lesson: protect the future, not just this year's profits.\n\nSources: Marc Randolph, 'That Will Never Work' (2019); Reed Hastings & Erin Meyer, 'No Rules Rules' (2020); Newsweek fact check (updated Feb 2, 2022); Netflix Form S-1 (SEC, Mar 6, 2002), 2000 revenue $35.9M and net loss $57.4M; Associated Press (Sept 23, 2010) on Blockbuster's bankruptcy and 2004 store peak; Netflix Q4 2025 shareholder letter (Jan 20, 2026). Educational content, not investment advice.\n\n#netflix #blockbuster #business #casestudy #entrepreneurship",
+ "tags": [
+  "netflix",
+  "blockbuster",
+  "netflix vs blockbuster",
+  "netflix blockbuster 50 million",
+  "business case study",
+  "business lessons",
+  "disruption",
+  "streaming",
+  "entrepreneurship"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Netflix vs Blockbuster: el 'no' de 50 millones",
+   "summary": "En 2000, los fundadores de Netflix dicen que ofrecieron venderla a Blockbuster por 50 millones de dólares. Blockbuster dijo que no, quebró en 2010, y Netflix ingresó 45.200 millones de dólares en 2025."
+  },
+  "pt": {
+   "title": "Netflix vs Blockbuster: o 'não' de 50 milhões",
+   "summary": "Em 2000, os fundadores da Netflix dizem que ofereceram a empresa à Blockbuster por 50 milhões de dólares. A Blockbuster recusou, faliu em 2010, e a Netflix faturou 45,2 bilhões de dólares em 2025."
+  },
+  "hi": {
+   "title": "नेटफ्लिक्स बनाम ब्लॉकबस्टर: 5 करोड़ डॉलर का 'ना'",
+   "summary": "नेटफ्लिक्स के संस्थापकों के मुताबिक, 2000 में उन्होंने कंपनी ब्लॉकबस्टर को 5 करोड़ डॉलर में बेचने की पेशकश की। ब्लॉकबस्टर ने मना किया, 2010 में दिवालिया हुई, और 2025 में नेटफ्लिक्स की कमाई 45.2 अरब डॉलर रही।"
+  },
+  "id": {
+   "title": "Netflix vs Blockbuster: Penolakan 50 Juta Dolar",
+   "summary": "Pada 2000, pendiri Netflix mengaku menawarkan perusahaannya ke Blockbuster seharga 50 juta dolar. Blockbuster menolak, bangkrut pada 2010, dan pendapatan Netflix mencapai 45,2 miliar dolar pada 2025."
+  },
+  "de": {
+   "title": "Netflix vs. Blockbuster: Das 50-Millionen-Nein",
+   "summary": "Laut den Netflix-Gründern boten sie Blockbuster ihre Firma im Jahr 2000 für 50 Millionen Dollar an. Blockbuster lehnte ab, ging 2010 pleite, und Netflix setzte 2025 45,2 Milliarden Dollar um."
+  },
+  "fr": {
+   "title": "Netflix contre Blockbuster : le « non » à 50 M$",
+   "summary": "En 2000, les fondateurs de Netflix disent avoir proposé leur société à Blockbuster pour 50 millions de dollars. Blockbuster a refusé, a fait faillite en 2010, et Netflix a réalisé 45,2 milliards de dollars de revenus en 2025."
+  }
+ },
+ "scenes": [
+  {
+   "say": "In two thousand, Netflix's founders say they offered to sell their company to Blockbuster for fifty million dollars. Blockbuster said no.",
+   "visual": {
+    "type": "stat",
+    "value": "$50M",
+    "label": "Netflix's asking price, 2000",
+    "sub": "as told by both Netflix co-founders",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Back then, Netflix brought in about thirty-six million dollars a year, and lost fifty-seven million.",
+   "visual": {
+    "type": "compare",
+    "title": "Netflix in 2000",
+    "left": {
+     "label": "Revenue",
+     "value": 35894000.0,
+     "color": "green"
+    },
+    "right": {
+     "label": "Net loss",
+     "value": 57363000.0,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Blockbuster's former boss later said there were never serious talks. But both Netflix co-founders describe the offer in their books.",
+   "visual": {
+    "type": "pair",
+    "title": "Two sides of the story",
+    "left": {
+     "label": "Netflix",
+     "sub": "“We offered $50M”",
+     "color": "red"
+    },
+    "right": {
+     "label": "Blockbuster",
+     "sub": "“No serious talks”",
+     "color": "blue"
+    }
+   }
+  },
+  {
+   "say": "Blockbuster peaked at about nine thousand one hundred stores in two thousand four. In September twenty ten, it filed for bankruptcy.",
+   "visual": {
+    "type": "equation",
+    "title": "Blockbuster",
+    "lines": [
+     {
+      "text": "9,100 stores",
+      "color": "blue",
+      "size": 110
+     },
+     {
+      "text": "at its peak, 2004",
+      "color": "muted",
+      "size": 52
+     },
+     {
+      "text": "Bankrupt",
+      "color": "red",
+      "size": 110
+     },
+     {
+      "text": "September 2010",
+      "color": "muted",
+      "size": 52
+     }
+    ]
+   }
+  },
+  {
+   "say": "Netflix moved from DVDs by mail to streaming. In twenty twenty-five, it brought in forty-five billion dollars, about nine hundred times that asking price, in a single year.",
+   "visual": {
+    "type": "bars",
+    "title": "Asking price vs revenue",
+    "items": [
+     {
+      "label": "Price, 2000",
+      "value": 50000000.0,
+      "color": "slate"
+     },
+     {
+      "label": "Revenue, 2025",
+      "value": 45183036000.0,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "The lesson: protecting this year's profits can cost you the future. Keep asking what your customers will want next.",
+   "visual": {
+    "type": "equation",
+    "title": "The lesson",
+    "lines": [
+     {
+      "text": "Protect today's profits?",
+      "color": "muted",
+      "size": 64
+     },
+     {
+      "text": "Protect the future.",
+      "color": "gold",
+      "size": 84
+     },
+     {
+      "text": "Ask what customers want next",
+      "color": "text",
+      "size": 50
+     }
+    ]
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "$50 million.",
+     "Turned down."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

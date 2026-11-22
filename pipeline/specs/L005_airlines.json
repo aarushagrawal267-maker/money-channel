@@ -1,0 +1,1080 @@
+{
+ "id": "L005_airlines",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "gap": 0.35,
+ "badge": "BUSINESS BREAKDOWN",
+ "disclaimer": "Figures: IATA (2026 = forecast), US BTS, airline filings · education, not investment advice",
+ "title": "Airlines Barely Make Money Flying. Here's What Pays.",
+ "intro_chapter": "The $4.50 problem",
+ "thumbnail": {
+  "big": "$4.50",
+  "line": "PROFIT PER PASSENGER",
+  "tag": "SO WHAT PAYS?",
+  "color": "gold"
+ },
+ "description": "The world's airlines are expected to earn about $4.50 of net profit per passenger in 2026, a 2% margin, and the industry has never had a net margin above 5%. So what actually pays? Credit card miles, bag fees, premium cabins and cargo. We break down the economics of flying, the 2020 losses, United's $21.9 billion loyalty program, Warren Buffett's airline warning, and what it means for your miles.\n\nThe per-flight example (180 seats, 84% full) and the miles/card examples are simple illustrations, not airline data. 2025 industry figures are IATA estimates; 2026 figures are IATA forecasts.\n\nSources:\n- IATA, industry outlook press release (7 June 2026): https://www.iata.org/en/pressroom/2026-releases/06-07-middle-east-disruptions-high-fuel-prices-halve-airline-industry-profitability/\n- IATA, Industry Statistics fact sheet (June 2026): https://www.iata.org/en/iata-repository/pressroom/fact-sheets/industry-statistics/\n- IATA, Chart of the Week, Profits and Margins to Shrink in 2026 (19 June 2026)\n- US Bureau of Transportation Statistics, US Airlines gained $6.0 billion in 2025 (May 12, 2026): https://www.bts.gov/newsroom\n- Delta Air Lines, December quarter and full-year 2025 results (Jan 13, 2026): https://ir.delta.com\n- American Airlines Group, 2025 Form 10-K and Q4 2025 earnings release (Jan 27, 2026): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000006201\n- United Airlines Holdings, Form 8-K and MileagePlus investor presentation (June 15, 2020): https://www.sec.gov/Archives/edgar/data/100517/000110465920073190/tm2022354d3_8k.htm\n- United, Completion of MileagePlus Senior Secured Notes Offering (July 2, 2020): https://united.mediaroom.com/2020-07-02-United-Announces-Completion-of-MileagePlus-Senior-Secured-Notes-Offering\n- Berkshire Hathaway 2007 shareholder letter: https://www.berkshirehathaway.com/letters/2007ltr.pdf\n\nFor education only. Not financial advice.\n\n#airlines #businessbreakdown #frequentflyer #creditcards #personalfinance",
+ "tags": [
+  "how airlines make money",
+  "airline business model",
+  "airline profits",
+  "airline miles",
+  "frequent flyer programs",
+  "credit card rewards",
+  "baggage fees",
+  "MileagePlus",
+  "Delta American Express",
+  "Warren Buffett airlines",
+  "business breakdown",
+  "economics explained"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Las aerolíneas apenas ganan volando. Esto es lo que paga",
+   "summary": "Las aerolíneas del mundo ganarán unos 4,50 dólares por pasajero en 2026, un margen del 2 %. Entonces, ¿de dónde sale el dinero? Millas vendidas a bancos, tarifas de equipaje, cabinas premium y carga. Explicamos la economía de volar y qué significa para tus millas."
+  },
+  "pt": {
+   "title": "Companhias aéreas quase não lucram voando. Veja o que paga",
+   "summary": "As companhias aéreas do mundo devem lucrar cerca de US$ 4,50 por passageiro em 2026, uma margem de 2%. Então, de onde vem o dinheiro? Milhas vendidas a bancos, taxas de bagagem, cabines premium e carga. Explicamos a economia da aviação e o que isso significa para as suas milhas."
+  },
+  "hi": {
+   "title": "एयरलाइंस उड़ान से मुश्किल से कमाती हैं, असली कमाई कहाँ है",
+   "summary": "2026 में दुनिया की एयरलाइंस को हर यात्री पर लगभग 4.50 डॉलर का ही मुनाफ़ा होने का अनुमान है, यानी सिर्फ़ 2% मार्जिन। तो पैसा कहाँ से आता है? बैंकों को बेचे गए माइल्स, बैगेज फ़ीस, प्रीमियम सीटें और कार्गो। इस वीडियो में उड़ान का अर्थशास्त्र और आपके माइल्स पर इसका असर।"
+  },
+  "id": {
+   "title": "Maskapai Nyaris Tak Untung dari Terbang. Ini Sumber Uangnya",
+   "summary": "Maskapai dunia diperkirakan hanya untung sekitar 4,50 dolar AS per penumpang pada 2026, margin 2%. Lalu dari mana uangnya? Mil yang dijual ke bank, biaya bagasi, kabin premium, dan kargo. Kami jelaskan ekonomi penerbangan dan artinya bagi mil Anda."
+  },
+  "de": {
+   "title": "Airlines verdienen kaum am Fliegen. Das bringt das Geld",
+   "summary": "Die Airlines der Welt verdienen 2026 voraussichtlich nur rund 4,50 US-Dollar pro Passagier, eine Marge von 2 %. Woher kommt also das Geld? Meilen, die an Banken verkauft werden, Gepäckgebühren, Premium-Kabinen und Fracht. Wir erklären die Ökonomie des Fliegens und was sie für Ihre Meilen bedeutet."
+  },
+  "fr": {
+   "title": "Voler rapporte peu aux compagnies aériennes. Voici ce qui paie",
+   "summary": "Les compagnies aériennes mondiales devraient gagner environ 4,50 dollars par passager en 2026, soit une marge de 2 %. D'où vient donc l'argent ? Des miles vendus aux banques, des frais de bagages, des cabines premium et du fret. Nous expliquons l'économie du transport aérien et ce que cela change pour vos miles."
+  }
+ },
+ "scenes": [
+  {
+   "say": "This year, the world's airlines are expected to earn about four dollars and fifty cents of profit for each passenger they fly. Not per ticket upgrade. Per passenger, after everything.",
+   "visual": {
+    "type": "count",
+    "to": 4.5,
+    "prefix": "$",
+    "dp": 2,
+    "label": "net profit per passenger",
+    "sub": "2026 forecast · International Air Transport Association (IATA)",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Meanwhile, each passenger brings in about two hundred and twenty-nine dollars on average. Almost all of it goes straight back out as costs.",
+   "visual": {
+    "type": "versus",
+    "title": "The average passenger, 2026",
+    "left": {
+     "label": "Revenue",
+     "value": "$229",
+     "sub": "all sources, per passenger",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Net profit",
+     "value": "$4.50",
+     "sub": "what the airline keeps",
+     "color": "gold"
+    },
+    "verdict": "About 2 cents of every dollar"
+   }
+  },
+  {
+   "say": "So if flying barely pays, how do airlines survive at all? The answer is hiding in your wallet, your suitcase, and the front of the plane.",
+   "visual": {
+    "type": "title",
+    "title": "What Really Pays",
+    "sub": "how airlines actually make money"
+   }
+  },
+  {
+   "say": "Chapter one. The brutal math of flying.",
+   "visual": {
+    "type": "chapter",
+    "n": 1,
+    "title": "The brutal math"
+   }
+  },
+  {
+   "say": "The International Air Transport Association expects airlines to bring in about one point one seven trillion dollars this year. Net profit? Just twenty-three billion. A margin of two percent.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Global airlines, 2026 forecast",
+    "items": [
+     {
+      "value": "$1.17T",
+      "label": "revenue",
+      "color": "text"
+     },
+     {
+      "value": "$23B",
+      "label": "net profit",
+      "color": "gold"
+     },
+     {
+      "value": "2.0%",
+      "label": "net margin",
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "And that isn't bad luck. The association itself says the industry has never posted a net profit margin higher than five percent.",
+   "visual": {
+    "type": "quote",
+    "text": "\"Never posted a net profit\nmargin higher than 5%\"",
+    "first_color": "text",
+    "color": "gold",
+    "source": "IATA, Chart of the Week, 19 June 2026"
+   }
+  },
+  {
+   "say": "Look at the good years. Three point one percent in twenty nineteen. Around four percent from twenty twenty-three to twenty twenty-five. And about two percent forecast for this year.",
+   "visual": {
+    "type": "columns",
+    "title": "Airline industry net profit margin",
+    "highlight": 4,
+    "items": [
+     {
+      "label": "2019",
+      "value": 3.1,
+      "display": "3.1%"
+     },
+     {
+      "label": "2023",
+      "value": 4.3,
+      "display": "4.3%"
+     },
+     {
+      "label": "2024",
+      "value": 3.6999999999999997,
+      "display": "3.7%"
+     },
+     {
+      "label": "2025*",
+      "value": 4.2,
+      "display": "4.2%"
+     },
+     {
+      "label": "2026*",
+      "value": 2.0,
+      "display": "2.0%"
+     }
+    ],
+    "note": "Source: IATA industry statistics, June 2026 · *2025 estimate, 2026 forecast"
+   }
+  },
+  {
+   "say": "So where does the money go? Fuel is the biggest cost, about thirty-one percent of everything airlines spend this year. Staff come next, about twenty-four percent. Together, more than half.",
+   "visual": {
+    "type": "donut",
+    "title": "Where airline costs go, 2026",
+    "segments": [
+     {
+      "label": "Fuel",
+      "value": 0.314,
+      "color": "red",
+      "display": "31.4%"
+     },
+     {
+      "label": "Staff",
+      "value": 0.242,
+      "color": "gold",
+      "display": "24.2%"
+     },
+     {
+      "label": "Everything else",
+      "value": 0.44399999999999995,
+      "color": "slate",
+      "display": "44.4%"
+     }
+    ],
+    "center": "$1.12T",
+    "center_sub": "total costs"
+   }
+  },
+  {
+   "say": "Follow one year of money. Start with one point one seven trillion of revenue. Take out fuel. Take out wages. Take out planes, airports, maintenance and everything else. Before interest and tax, forty-eight billion dollars is left.",
+   "visual": {
+    "type": "waterfall",
+    "title": "Global airlines 2026: profit before interest & tax",
+    "steps": [
+     {
+      "label": "Revenue",
+      "value": 1165000000000.0,
+      "kind": "start",
+      "display": "$1.17T"
+     },
+     {
+      "label": "Fuel",
+      "value": 350000000000.0,
+      "kind": "minus",
+      "display": "−$350B"
+     },
+     {
+      "label": "Staff",
+      "value": 271000000000.0,
+      "kind": "minus",
+      "display": "−$271B"
+     },
+     {
+      "label": "Other costs",
+      "value": 496000000000.0,
+      "kind": "minus",
+      "display": "−$496B"
+     },
+     {
+      "label": "Left over",
+      "value": 48000000000.0,
+      "kind": "total",
+      "display": "$48B"
+     }
+    ]
+   }
+  },
+  {
+   "say": "And it's not because planes fly empty. This year, airlines are expected to fill eighty-four percent of all their seats. That's a record.",
+   "visual": {
+    "type": "share",
+    "title": "Seats filled (passenger load factor)",
+    "rows": [
+     {
+      "label": "Global airlines, 2026 forecast",
+      "share": 0.84,
+      "color": "green",
+      "dp": 0
+     }
+    ],
+    "note": "Source: IATA, June 2026"
+   }
+  },
+  {
+   "say": "Here's a rough example using those industry averages. Take a plane with one hundred and eighty seats, eighty-four percent full. That's about a hundred and fifty-one passengers.",
+   "visual": {
+    "type": "equation",
+    "title": "One flight (illustration)",
+    "lines": [
+     {
+      "text": "180 seats × 84% full",
+      "color": "muted",
+      "size": 90
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "≈ 151 passengers",
+      "color": "text",
+      "size": 120
+     }
+    ]
+   }
+  },
+  {
+   "say": "At two hundred and twenty-nine dollars each, they bring in about thirty-four thousand six hundred dollars. At four fifty each, the airline keeps about six hundred and eighty.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "One flight at industry averages",
+    "items": [
+     {
+      "value": "151",
+      "label": "passengers",
+      "color": "text"
+     },
+     {
+      "value": "$34.6K",
+      "label": "revenue",
+      "color": "blue"
+     },
+     {
+      "value": "$680",
+      "label": "profit",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Now lose just three passengers. The plane still flies the same route, with the same crew, burning nearly the same fuel. That's about six hundred and ninety dollars of revenue gone, and the profit goes with it.",
+   "visual": {
+    "type": "table",
+    "title": "Three empty seats later",
+    "header": [
+     "Passengers",
+     "Seats full",
+     "Profit"
+    ],
+    "rows": [
+     [
+      "151",
+      "84%",
+      "≈ $680"
+     ],
+     [
+      "148",
+      "82%",
+      "≈ $0"
+     ]
+    ],
+    "highlight_row": 1,
+    "col_colors": {
+     "2": "green"
+    }
+   }
+  },
+  {
+   "say": "In this simple example, the break-even point is about a hundred and forty-eight passengers, roughly eighty-two percent full. Airlines fly just a few seats away from a loss.",
+   "visual": {
+    "type": "stat",
+    "value": "3 seats",
+    "label": "between profit and loss",
+    "sub": "illustration using 2026 industry averages",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Chapter two. Why it's so hard.",
+   "visual": {
+    "type": "chapter",
+    "n": 2,
+    "title": "Why it's so hard"
+   }
+  },
+  {
+   "say": "Why is this business so tough? An empty seat can't be saved for later. Once the door closes, it's worth nothing. Most costs are fixed. Rivals can add seats on your route fast. And shocks hit everyone at once.",
+   "visual": {
+    "type": "bullets",
+    "title": "Four reasons flying barely pays",
+    "color": "red",
+    "items": [
+     "Empty seats expire at take-off",
+     "Most costs are fixed",
+     "Rivals add seats fast",
+     "Shocks hit everyone at once"
+    ]
+   }
+  },
+  {
+   "say": "That creates a trap. Airlines buy planes to grow. More seats push fares down. Thin profits leave little cushion. And when times are good, everyone adds seats again.",
+   "visual": {
+    "type": "flywheel",
+    "title": "The airline trap",
+    "center": "TRAP",
+    "steps": [
+     "Buy planes",
+     "Add seats",
+     "Fares fall",
+     "Thin profits"
+    ]
+   }
+  },
+  {
+   "say": "Take this year. War in the Middle East pushed the industry's fuel bill up nearly forty percent, from two hundred and fifty-two billion dollars to three hundred and fifty billion.",
+   "visual": {
+    "type": "columns",
+    "title": "Global airline fuel bill",
+    "highlight": 1,
+    "items": [
+     {
+      "label": "2025",
+      "value": 252000000000.0,
+      "display": "$252B"
+     },
+     {
+      "label": "2026 forecast",
+      "value": 350000000000.0,
+      "display": "$350B",
+      "color": "red"
+     }
+    ],
+    "note": "Source: IATA, June 2026"
+   }
+  },
+  {
+   "say": "That's expected to cut the industry's profit roughly in half, from forty-five billion to twenty-three.",
+   "visual": {
+    "type": "hbars",
+    "title": "Global airline net profit",
+    "items": [
+     {
+      "label": "2025 estimate",
+      "value": 45000000000.0,
+      "display": "$45B",
+      "color": "slate"
+     },
+     {
+      "label": "2026 forecast",
+      "value": 23000000000.0,
+      "display": "$23B",
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "But nothing compares to twenty twenty. When the pandemic grounded the world, airlines lost about one hundred and thirty-eight billion dollars in a single year.",
+   "visual": {
+    "type": "count",
+    "to": 137.7,
+    "prefix": "−$",
+    "suffix": "B",
+    "dp": 1,
+    "label": "global airline net loss, 2020",
+    "sub": "IATA industry statistics",
+    "color": "red"
+   }
+  },
+  {
+   "say": "That's about seventy-seven dollars lost on every passenger who flew.",
+   "visual": {
+    "type": "stat",
+    "value": "−$77",
+    "label": "lost per passenger, 2020",
+    "sub": "IATA",
+    "color": "red"
+   }
+  },
+  {
+   "say": "And the losses kept coming. Forty billion more in twenty twenty-one, and three and a half billion in twenty twenty-two.",
+   "visual": {
+    "type": "table",
+    "title": "Global airline net result",
+    "header": [
+     "Year",
+     "Net result"
+    ],
+    "rows": [
+     [
+      "2020",
+      "−$137.7B"
+     ],
+     [
+      "2021",
+      "−$40.4B"
+     ],
+     [
+      "2022",
+      "−$3.5B"
+     ]
+    ],
+    "col_colors": {
+     "1": "red"
+    }
+   }
+  },
+  {
+   "say": "Add it up. From twenty twenty to twenty twenty-two, the industry lost about a hundred and eighty-two billion dollars. Its profits since then, including this year's forecast, add up to about a hundred and forty-six billion. Still not enough to win it back.",
+   "visual": {
+    "type": "versus",
+    "title": "Have airlines earned it back?",
+    "left": {
+     "label": "Lost, 2020–22",
+     "value": "−$182B",
+     "sub": "pandemic years",
+     "color": "red"
+    },
+    "right": {
+     "label": "Earned, 2023–26",
+     "value": "$146B",
+     "sub": "incl. 2025 est. & 2026 forecast",
+     "color": "green"
+    },
+    "verdict": "Not yet"
+   }
+  },
+  {
+   "say": "Chapter three. The miles machine.",
+   "visual": {
+    "type": "chapter",
+    "n": 3,
+    "title": "The miles machine"
+   }
+  },
+  {
+   "say": "So where does the real money come from? Start with miles. Airlines sell miles to banks. Banks hand them to you as credit card rewards. And you redeem them for a seat, later.",
+   "visual": {
+    "type": "equation",
+    "title": "How the miles machine works",
+    "lines": [
+     {
+      "text": "Airline sells miles to a bank",
+      "color": "text",
+      "size": 76
+     },
+     {
+      "text": "Bank gives them to you",
+      "color": "gold",
+      "size": 76
+     },
+     {
+      "text": "You claim a seat later",
+      "color": "green",
+      "size": 76
+     }
+    ]
+   }
+  },
+  {
+   "say": "Take American Airlines. In twenty twenty-five, it made a net profit of just one hundred and eleven million dollars. Its credit card and other partners paid it six point two billion in cash. About fifty-six times more.",
+   "visual": {
+    "type": "columns",
+    "title": "American Airlines, 2025",
+    "items": [
+     {
+      "label": "Net profit",
+      "value": 111000000.0,
+      "display": "$111M",
+      "color": "slate"
+     },
+     {
+      "label": "Cash from card & other partners",
+      "value": 6200000000.0,
+      "display": "$6.2B",
+      "color": "gold"
+     }
+    ],
+    "note": "Source: American Airlines 2025 10-K · partner cash is revenue, not profit"
+   }
+  },
+  {
+   "say": "At Delta, American Express alone paid eight point two billion dollars last year. That's more than Delta's entire pre-tax profit of six point two billion.",
+   "visual": {
+    "type": "versus",
+    "title": "Delta, 2025",
+    "left": {
+     "label": "Paid by American Express",
+     "value": "$8.2B",
+     "sub": "card partnership",
+     "color": "gold"
+    },
+    "right": {
+     "label": "Delta's pre-tax profit",
+     "value": "$6.2B",
+     "sub": "the whole airline",
+     "color": "blue"
+    },
+    "verdict": "The card deal beats the whole airline's profit"
+   }
+  },
+  {
+   "say": "It works out to about one in every eight dollars Delta brought in.",
+   "visual": {
+    "type": "share",
+    "title": "American Express payments as a share of Delta's revenue",
+    "rows": [
+     {
+      "label": "Delta, 2025",
+      "share": 0.12941102203143742,
+      "color": "gold",
+      "dp": 0
+     }
+    ],
+    "note": "Source: Delta full-year 2025 results"
+   }
+  },
+  {
+   "say": "Why do airlines love this? The bank pays cash today, and the seat is only provided later. The airline decides how many miles a seat costs. And some miles are never used at all.",
+   "visual": {
+    "type": "bullets",
+    "title": "Why miles are a great business",
+    "items": [
+     "Cash today, seat later",
+     "The airline sets the price",
+     "Some miles never get used",
+     "Members stay loyal"
+    ]
+   }
+  },
+  {
+   "say": "How valuable is this? In twenty twenty, with planes grounded, United needed cash. So it borrowed six point eight billion dollars, backed by its loyalty program, Mileage Plus.",
+   "visual": {
+    "type": "stat",
+    "value": "$6.8B",
+    "label": "borrowed against MileagePlus, July 2020",
+    "sub": "$3.8B of bonds + a $3.0B loan · United press release",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "In its filing, United valued Mileage Plus at about twenty-one point nine billion dollars. That was roughly twelve times the program's twenty nineteen cash earnings of about one point eight billion.",
+   "visual": {
+    "type": "equation",
+    "title": "United's own math (2020 SEC filing)",
+    "lines": [
+     {
+      "text": "≈ $1.8B cash earnings (2019)",
+      "color": "muted",
+      "size": 80
+     },
+     {
+      "text": "× 12",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "≈ $21.9B",
+      "color": "gold",
+      "size": 130
+     }
+    ]
+   }
+  },
+  {
+   "say": "And look at the margin. Mileage Plus kept about thirty-four cents of cash earnings from every dollar. The airline industry as a whole managed about eighteen, even on a measure that flatters the airlines.",
+   "visual": {
+    "type": "share",
+    "title": "Cash earnings per $1 of revenue, 2019",
+    "rows": [
+     {
+      "label": "United MileagePlus",
+      "share": 0.34,
+      "color": "gold",
+      "dp": 0
+     },
+     {
+      "label": "Global airline industry",
+      "share": 0.182,
+      "color": "slate",
+      "dp": 0
+     }
+    ],
+    "note": "MileagePlus EBITDA margin (United) vs industry EBITDAR margin (IATA)"
+   }
+  },
+  {
+   "say": "In other words, a big part of an airline's value isn't the planes. It's the miles.",
+   "visual": {
+    "type": "quote",
+    "text": "Not just an airline.\nA miles business.",
+    "first_color": "text",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Chapter four. Bags, front seats, and freight.",
+   "visual": {
+    "type": "chapter",
+    "n": 4,
+    "title": "Bags, seats & freight"
+   }
+  },
+  {
+   "say": "Next, fees. In twenty twenty-five, US airlines collected seven point four billion dollars in baggage fees, according to the US Bureau of Transportation Statistics.",
+   "visual": {
+    "type": "stat",
+    "value": "$7.4B",
+    "label": "US airline baggage fees, 2025",
+    "sub": "US Bureau of Transportation Statistics, May 2026",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Compare that with what those same airlines earned in total after tax: six billion. Fees aren't pure profit, but bags alone brought in more than the whole industry's profit. Change fees added another one point one billion.",
+   "visual": {
+    "type": "columns",
+    "title": "US airlines, 2025",
+    "items": [
+     {
+      "label": "Baggage fees",
+      "value": 7400000000.0,
+      "display": "$7.4B",
+      "color": "gold"
+     },
+     {
+      "label": "Change fees",
+      "value": 1100000000.0,
+      "display": "$1.1B",
+      "color": "gold"
+     },
+     {
+      "label": "Net profit (after tax)",
+      "value": 6000000000.0,
+      "display": "$6.0B",
+      "color": "slate"
+     }
+    ],
+    "note": "Source: US Bureau of Transportation Statistics · fees are revenue, not profit"
+   }
+  },
+  {
+   "say": "Worldwide, fees and other extras are expected to bring in a hundred and sixty-five billion dollars this year. For the first time since twenty nineteen, that's more than air cargo.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Global airlines, 2026 forecast",
+    "items": [
+     {
+      "value": "$165B",
+      "label": "fees & other extras",
+      "sub": "bags, seats, upgrades and more",
+      "color": "gold"
+     },
+     {
+      "value": "$162B",
+      "label": "air cargo",
+      "color": "blue"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Then there's the front of the plane. At Delta, premium cabin ticket revenue grew seven percent last year, to about twenty-two point one billion dollars. Main cabin fell five percent.",
+   "visual": {
+    "type": "table",
+    "title": "Delta ticket revenue",
+    "header": [
+     "Cabin",
+     "2024",
+     "2025",
+     "Change"
+    ],
+    "rows": [
+     [
+      "Premium",
+      "$20.6B",
+      "$22.1B",
+      "+7%"
+     ],
+     [
+      "Main cabin",
+      "$24.5B",
+      "$23.4B",
+      "−5%"
+     ]
+    ],
+    "highlight_row": 0
+   }
+  },
+  {
+   "say": "Premium cabins now bring in almost as much as the main cabin, even though they hold far fewer seats.",
+   "visual": {
+    "type": "hbars",
+    "title": "Delta ticket revenue, 2025",
+    "items": [
+     {
+      "label": "Main cabin",
+      "value": 23391000000.0,
+      "display": "$23.4B",
+      "color": "slate"
+     },
+     {
+      "label": "Premium",
+      "value": 22097000000.0,
+      "display": "$22.1B",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Why chase premium flyers? They tend to care more about comfort and flexibility than price. And they're often the most loyal members, the ones with the airline's credit card.",
+   "visual": {
+    "type": "bullets",
+    "title": "Why airlines chase the front cabin",
+    "items": [
+     "Less focused on price",
+     "Pay for comfort & flexibility",
+     "Often the most loyal members"
+    ]
+   }
+  },
+  {
+   "say": "Finally, the belly of the plane. Cargo brought the industry about a hundred and one billion dollars in twenty nineteen. When passenger flights stopped in the pandemic, freight prices soared, and cargo hit two hundred and ten billion in twenty twenty-one.",
+   "visual": {
+    "type": "line",
+    "title": "Global air cargo revenue ($ billions)",
+    "format": "num",
+    "x": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "series": [
+     {
+      "label": "Cargo",
+      "values": [
+       101,
+       140,
+       210,
+       206,
+       139,
+       147,
+       151,
+       162
+      ],
+      "color": "blue"
+     }
+    ]
+   }
+  },
+  {
+   "say": "This year, cargo is expected to bring in a hundred and sixty-two billion. Put it all together, and only about seventy-two cents of every dollar airlines earn comes from passenger tickets.",
+   "visual": {
+    "type": "donut",
+    "title": "Where airline revenue comes from, 2026",
+    "segments": [
+     {
+      "label": "Passenger tickets",
+      "value": 839000000000.0,
+      "color": "slate",
+      "display": "72%"
+     },
+     {
+      "label": "Fees & other extras",
+      "value": 165000000000.0,
+      "color": "gold"
+     },
+     {
+      "label": "Cargo",
+      "value": 162000000000.0,
+      "color": "blue"
+     }
+    ],
+    "center": "$1.17T",
+    "center_sub": "2026 forecast"
+   }
+  },
+  {
+   "say": "Chapter five. Buffett's warning.",
+   "visual": {
+    "type": "chapter",
+    "n": 5,
+    "title": "Buffett's warning"
+   }
+  },
+  {
+   "say": "Warren Buffett put it bluntly. In his letter to shareholders for twenty oh seven, he wrote that the worst sort of business is one that grows rapidly, requires significant capital to engender the growth, and then earns little or no money. Think airlines.",
+   "visual": {
+    "type": "quote",
+    "text": "\"The worst sort of business ...\nThink airlines.\"",
+    "first_color": "text",
+    "color": "gold",
+    "source": "Warren Buffett, Berkshire Hathaway 2007 letter"
+   }
+  },
+  {
+   "say": "Airlines tick every box. They grow fast. They need enormous sums for planes. And they keep very little of what they earn.",
+   "visual": {
+    "type": "bullets",
+    "title": "Buffett's \"worst sort of business\"",
+    "items": [
+     "Grows rapidly",
+     "Needs significant capital",
+     "Earns little or no money"
+    ]
+   }
+  },
+  {
+   "say": "Then came his most famous line. If a farsighted capitalist had been present at Kitty Hawk, where the Wright brothers first flew, he would have done his successors a huge favor by shooting Orville down.",
+   "visual": {
+    "type": "quote",
+    "text": "\"...a huge favor by\nshooting Orville down.\"",
+    "first_color": "text",
+    "color": "gold",
+    "source": "Warren Buffett on Kitty Hawk, Berkshire Hathaway 2007 letter"
+   }
+  },
+  {
+   "say": "He spoke from experience. In nineteen eighty-nine, Berkshire bought U.S. Air preferred stock. Soon after, the airline went into a tailspin and stopped paying the dividend. Berkshire got lucky and sold in nineteen ninety-eight at a hefty gain. In the decade after that sale, the airline went bankrupt. Twice.",
+   "visual": {
+    "type": "timeline",
+    "title": "Buffett and US Air",
+    "events": [
+     {
+      "when": "1989",
+      "text": "Berkshire buys\nUS Air preferred"
+     },
+     {
+      "when": "Soon after",
+      "text": "Dividend\nstops",
+      "color": "red"
+     },
+     {
+      "when": "1998",
+      "text": "Sold at a\nhefty gain",
+      "color": "gold"
+     },
+     {
+      "when": "Next decade",
+      "text": "Airline goes\nbankrupt twice",
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "The lesson isn't that airlines are useless. They connect the world. It's that a huge, popular business can still be a poor one for the people who own it.",
+   "visual": {
+    "type": "equation",
+    "title": "The lesson",
+    "lines": [
+     {
+      "text": "Huge & popular",
+      "color": "text",
+      "size": 100
+     },
+     {
+      "text": "isn't always a",
+      "color": "muted",
+      "size": 64
+     },
+     {
+      "text": "Good business",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter six. What it means for you.",
+   "visual": {
+    "type": "chapter",
+    "n": 6,
+    "title": "What it means for you"
+   }
+  },
+  {
+   "say": "First, know what a mile is worth. Here's a simple example. If a flight costs two hundred and fifty dollars, or twenty-five thousand miles, each mile is worth one cent.",
+   "visual": {
+    "type": "equation",
+    "title": "What is a mile worth? (example)",
+    "lines": [
+     {
+      "text": "$250 ÷ 25,000 miles",
+      "color": "muted",
+      "size": 96
+     },
+     {
+      "text": "↓",
+      "color": "dim",
+      "size": 80
+     },
+     {
+      "text": "= 1¢ per mile",
+      "color": "gold",
+      "size": 130
+     }
+    ]
+   }
+  },
+  {
+   "say": "Now say the airline raises that seat to thirty-five thousand miles. Same seat. Your miles are now worth about seven tenths of a cent each. You just lost almost thirty percent of their value, and nobody asked you.",
+   "visual": {
+    "type": "columns",
+    "title": "Value of one mile, same $250 seat (example)",
+    "items": [
+     {
+      "label": "25,000 miles",
+      "value": 1.0,
+      "display": "1.0¢",
+      "color": "green"
+     },
+     {
+      "label": "35,000 miles",
+      "value": 0.7142857142857143,
+      "display": "0.71¢",
+      "color": "red"
+     }
+    ],
+    "note": "−29% value, with no change to your balance"
+   }
+  },
+  {
+   "say": "Miles are a currency printed by the airline, and it can change their value at any time. So don't hoard them. Earn them, then spend them on something you actually want.",
+   "visual": {
+    "type": "bullets",
+    "title": "Treat miles like this",
+    "items": [
+     "The airline's own currency",
+     "It can change their value",
+     "Earn and spend, don't hoard"
+    ]
+   }
+  },
+  {
+   "say": "Second, card rewards aren't free. Say a card charges ninety-five dollars a year and earns one mile per dollar. At one cent a mile, you'd need to spend nine thousand five hundred dollars a year just to cover the fee.",
+   "visual": {
+    "type": "stat",
+    "value": "$9,500",
+    "label": "yearly spending just to cover a $95 fee",
+    "sub": "example: 1 mile per $1, miles worth 1¢",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "And if you carry a balance, it gets worse. Two thousand dollars of debt at twenty percent interest costs about four hundred dollars a year. The miles from that spending are worth about twenty.",
+   "visual": {
+    "type": "versus",
+    "title": "Carrying a balance (example)",
+    "left": {
+     "label": "Interest paid",
+     "value": "$400",
+     "sub": "$2,000 at 20% for a year",
+     "color": "red"
+    },
+    "right": {
+     "label": "Miles earned",
+     "value": "$20",
+     "sub": "2,000 miles at 1¢",
+     "color": "green"
+    },
+    "verdict": "Pay in full, or the miles cost you"
+   }
+  },
+  {
+   "say": "And remember who the airline's best customer really is. Every time you swipe that card, your bank pays the airline. That's why they push those cards so hard.",
+   "visual": {
+    "type": "quote",
+    "text": "You fly.\nYour bank pays the airline.",
+    "first_color": "text",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Airlines barely make money flying. They make it from miles, fees, front seats and freight. Now you know where to look.",
+   "visual": {
+    "type": "equation",
+    "lines": [
+     {
+      "text": "Flying barely pays.",
+      "color": "muted",
+      "size": 96
+     },
+     {
+      "text": "Miles, fees & front seats do.",
+      "color": "gold",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "If this changed how you see your next flight, subscribe. We break down how money really works, every week.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "How money",
+     "really works."
+    ],
+    "sub": "Subscribe for weekly breakdowns"
+   }
+  }
+ ]
+}

@@ -1,0 +1,161 @@
+{
+ "id": "028_market_cap",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "HOW MARKETS WORK",
+ "disclaimer": "Share prices as of Nov 18, 2026 · not a recommendation",
+ "title": "Market Cap vs Revenue: Walmart Sells More, Worth Less",
+ "description": "Market cap is a company's share price times its number of shares, and it is not the same as revenue. Walmart's yearly sales ($713 billion) are more than double Microsoft's ($332 billion), yet on Nov 18, 2026 Microsoft was worth about $3.8 trillion and Walmart about $1.0 trillion. The difference is profit: Microsoft kept about 40% of its revenue as net income, Walmart about 3%.\n\nSources: Walmart Form 10-K for fiscal 2026 (year to Jan 31, 2026, filed Mar 13, 2026) and Form 10-Q (filed Aug 28, 2026, shares outstanding); Microsoft Form 10-K for fiscal 2026 (year to Jun 30, 2026, filed Jul 29, 2026) and Form 10-Q (filed Oct 28, 2026, shares outstanding); closing prices on Nov 18, 2026. Market caps change every trading day. Not financial advice and not a recommendation to buy or sell any stock.\n\n#stockmarket #investing #marketcap #business #personalfinance",
+ "tags": [
+  "market cap",
+  "market capitalization explained",
+  "market cap vs revenue",
+  "price to sales",
+  "walmart",
+  "microsoft",
+  "how the stock market works",
+  "investing basics"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Capitalización vs ingresos: Walmart vende más y vale menos",
+   "summary": "La capitalización bursátil es el precio de la acción por el número de acciones, no las ventas. Walmart vende más del doble que Microsoft, pero Microsoft vale casi cuatro veces más."
+  },
+  "pt": {
+   "title": "Valor de mercado x receita: Walmart vende mais e vale menos",
+   "summary": "Valor de mercado é o preço da ação vezes o número de ações, não as vendas. O Walmart vende mais que o dobro da Microsoft, mas a Microsoft vale quase quatro vezes mais."
+  },
+  "hi": {
+   "title": "मार्केट कैप बनाम बिक्री: Walmart ज़्यादा बेचकर भी कम कीमती",
+   "summary": "मार्केट कैप = शेयर का दाम × शेयरों की संख्या, यह बिक्री नहीं है। Walmart की बिक्री Microsoft से दोगुनी से ज़्यादा है, फिर भी Microsoft लगभग चार गुना ज़्यादा मूल्यवान है।"
+  },
+  "id": {
+   "title": "Kapitalisasi Pasar vs Pendapatan: Walmart Jual Lebih Banyak",
+   "summary": "Kapitalisasi pasar adalah harga saham dikali jumlah saham, bukan penjualan. Penjualan Walmart lebih dari dua kali Microsoft, tetapi Microsoft bernilai hampir empat kali lipat."
+  },
+  "de": {
+   "title": "Börsenwert vs. Umsatz: Walmart setzt mehr um, ist weniger wert",
+   "summary": "Der Börsenwert ist Aktienkurs mal Anzahl der Aktien, nicht der Umsatz. Walmart setzt mehr als doppelt so viel um wie Microsoft, doch Microsoft ist fast viermal so viel wert."
+  },
+  "fr": {
+   "title": "Capitalisation vs chiffre d'affaires : Walmart vend plus",
+   "summary": "La capitalisation boursière, c'est le cours de l'action multiplié par le nombre d'actions, pas les ventes. Walmart vend plus du double de Microsoft, mais Microsoft vaut presque quatre fois plus."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Walmart sells more than twice as much as Microsoft. Yet Microsoft is worth almost four times as much. How?",
+   "visual": {
+    "type": "compare",
+    "title": "Sales, last fiscal year",
+    "left": {
+     "label": "Walmart",
+     "value": 713163000000.0,
+     "color": "gold"
+    },
+    "right": {
+     "label": "Microsoft",
+     "value": 331839000000.0,
+     "color": "blue"
+    }
+   }
+  },
+  {
+   "say": "Because a company's value isn't its sales. Its value, called market cap, is the share price times the number of shares.",
+   "visual": {
+    "type": "equation",
+    "title": "Market cap",
+    "lines": [
+     {
+      "text": "Share price",
+      "color": "text",
+      "size": 92
+     },
+     {
+      "text": "× number of shares",
+      "color": "muted",
+      "size": 72
+     },
+     {
+      "text": "= market cap",
+      "color": "gold",
+      "size": 92
+     }
+    ]
+   }
+  },
+  {
+   "say": "Microsoft: about five hundred and eight dollars a share, times seven point four billion shares. That's about three point eight trillion dollars. Walmart? About one trillion.",
+   "visual": {
+    "type": "bars",
+    "title": "Market cap ($ billions)",
+    "format": "num",
+    "items": [
+     {
+      "label": "Microsoft",
+      "value": 3775,
+      "color": "blue"
+     },
+     {
+      "label": "Walmart",
+      "value": 1010,
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Investors aren't buying sales. They're buying future profits. Microsoft kept about forty cents of every dollar it sold as profit. Walmart kept about three cents.",
+   "visual": {
+    "type": "pair",
+    "title": "Profit from each $1 of sales",
+    "left": {
+     "label": "Microsoft",
+     "sub": "about 40¢",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Walmart",
+     "sub": "about 3¢",
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "So investors pay about eleven dollars for each dollar of Microsoft's yearly sales, and about one dollar forty for Walmart's. And that value moves every time the share price does.",
+   "visual": {
+    "type": "equation",
+    "title": "Value per $1 of sales",
+    "lines": [
+     {
+      "text": "Microsoft $11",
+      "color": "blue",
+      "size": 100
+     },
+     {
+      "text": "Walmart $1.42",
+      "color": "gold",
+      "size": 100
+     },
+     {
+      "text": "prices as of Nov 18, 2026",
+      "color": "muted",
+      "size": 46
+     }
+    ]
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Sales aren't",
+     "value."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

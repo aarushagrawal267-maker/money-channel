@@ -1,0 +1,946 @@
+{
+ "id": "L010_netflix_blockbuster",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "gap": 0.35,
+ "badge": "CASE STUDY",
+ "disclaimer": "Figures: company filings & reports · for education, not investment advice",
+ "title": "Netflix vs Blockbuster: The $50M Deal That Got Away",
+ "intro_chapter": "The $50M deal",
+ "thumbnail": {
+  "big": "$50M",
+  "line": "THE DEAL THEY REJECTED",
+  "tag": "NETFLIX VS BLOCKBUSTER",
+  "color": "gold"
+ },
+ "description": "In 2000, Netflix's founders say they offered to sell the company to Blockbuster for $50 million, and Blockbuster said no. Ten years later Blockbuster was bankrupt, and Netflix now brings in over $45 billion a year. This case study follows Blockbuster's late-fee business, Netflix's no-late-fee subscription, the disputed meeting, Blockbuster's fight back with Total Access, the bankruptcy, and three business lessons you can use.\n\nAccounts of the 2000 meeting differ: both Netflix co-founders describe a $50M offer that was turned down; Blockbuster's former CEO John Antioco says no serious talks took place. We show both.\nThe late-fee total for 2000 is an estimate: 16% (as reported by the Washington Post) x Blockbuster's 2000 revenue of $4.96B.\n\nSources:\n- Blockbuster Form 10-Q, Q1 2000 (late fees 16.1% of Q1 1999 revenue): https://www.sec.gov/Archives/edgar/data/1085734/000093066100001267/0000930661-00-001267.txt\n- UPI, Late fees key to movie rental business (Aug 30, 2003), citing the Washington Post: https://www.upi.com/Business_News/2003/08/30/Late-fees-key-to-movie-rental-business/16201062257151/\n- Blockbuster Form 10-K405 for 2000 (revenue, stores): https://www.sec.gov/Archives/edgar/data/1085734/000093066101000794/0000930661-01-000794-0001.txt\n- Blockbuster Form 10-K for 2004 (revenue, stores, employees, Blockbuster Online, late-fee estimate): https://www.sec.gov/Archives/edgar/data/1085734/000119312505063510/d10k.htm\n- Blockbuster Form 10-K for 2006 (Total Access, online subscribers, \"most prevalent customer complaint\"): https://www.sec.gov/Archives/edgar/data/1085734/000119312507044360/d10k.htm\n- Blockbuster Form 10-K for 2007 (Total Access plan and price changes): https://www.sec.gov/Archives/edgar/data/1085734/000119312508048757/d10k.htm\n- Blockbuster Form 10-K for 2009 (revenue 2005-2009, 2009 loss, stores, going-concern warning): https://www.sec.gov/Archives/edgar/data/1085734/000119312510058339/d10k.htm\n- Netflix Form S-1 (Mar 2002; founding, subscription terms, 2000 results): https://www.sec.gov/Archives/edgar/data/1065280/000101287002001044/ds1.txt\n- Netflix, Netflix offers subscribers the option of instantly watching movies on their PCs (Jan 16, 2007): https://about.netflix.com/en/news/netflix-offers-subscribers-the-option-of-instantly-watching-movies-on-their\n- Netflix Form 10-K for 2009 (revenue, subscribers, profit 2005-2009): https://www.sec.gov/Archives/edgar/data/1065280/000119312510036181/d10k.htm\n- Netflix Q4 2025 shareholder letter (Jan 20, 2026): https://s22.q4cdn.com/959853165/files/doc_financials/2025/q4/FINAL-Q4-25-Shareholder-Letter.pdf\n- Netflix Q3 2026 shareholder letter (Oct 20, 2026): https://s22.q4cdn.com/959853165/files/doc_financials/2026/q3/FINAL-Q3-26-Shareholder-Letter.pdf\n- Marc Randolph, That Will Never Work (2019); Reed Hastings & Erin Meyer, No Rules Rules (2020); see Marketplace (Sep 8, 2020): https://www.marketplace.org/story/2020/09/08/ceo-reed-hastings-on-how-netflix-beat-blockbuster\n- John Antioco's response, Next TV (Jun 3, 2022): https://www.nexttv.com/news/blockbusters-famous-netflix-2002-rebuff-that-didnt-happen-says-video-chains-former-ceo\n- John Antioco, Blockbuster's Former CEO on Sparring with an Activist Shareholder, Harvard Business Review (April 2011)\n- CNBC, Reed Hastings on how Netflix was born (May 23, 2017): https://www.cnbc.com/2017/05/23/netflix-ceo-reed-hastings-on-how-the-company-was-born.html\n- AFP, Blockbuster files for bankruptcy (Sep 23, 2010): https://phys.org/news/2010-09-blockbuster-bankruptcy.html\n- AFP, Dish Network buys Blockbuster for $320mn (Apr 6, 2011): https://phys.org/news/2011-04-dish-network-blockbuster-320mn.html\n- NPR, Netflix ends DVD-by-mail service (Apr 18, 2023): https://www.npr.org/2023/04/18/1170740799/netflix-ends-dvd-by-mail-service\n- Fortune, The last Blockbuster on Earth (Mar 7, 2019): https://fortune.com/2019/03/07/last-blockbuster-on-earth/\n\nFor education only. Not financial advice.\n\n#netflix #blockbuster #casestudy #business #businessstrategy",
+ "tags": [
+  "netflix vs blockbuster",
+  "netflix",
+  "blockbuster",
+  "blockbuster netflix 50 million",
+  "why blockbuster failed",
+  "business case study",
+  "disruptive innovation",
+  "late fees",
+  "netflix history",
+  "reed hastings",
+  "business strategy",
+  "subscription business"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Netflix vs Blockbuster: el trato de $50M que se les escapó",
+   "summary": "En el año 2000, los fundadores de Netflix dicen que ofrecieron vender la empresa a Blockbuster por 50 millones de dólares, y Blockbuster dijo que no. Diez años después, Blockbuster estaba en quiebra y hoy Netflix ingresa más de 45.000 millones de dólares al año. Te contamos la historia, las versiones que no coinciden y tres lecciones de negocio."
+  },
+  "pt": {
+   "title": "Netflix vs Blockbuster: o negócio de US$50 mi que escapou",
+   "summary": "Em 2000, os fundadores da Netflix dizem que ofereceram vender a empresa à Blockbuster por US$ 50 milhões, e a Blockbuster recusou. Dez anos depois, a Blockbuster faliu, e hoje a Netflix fatura mais de US$ 45 bilhões por ano. Contamos a história, as versões que não batem e três lições de negócios."
+  },
+  "hi": {
+   "title": "Netflix बनाम Blockbuster: $50M की डील जो हाथ से निकल गई",
+   "summary": "साल 2000 में Netflix के संस्थापकों के मुताबिक़ उन्होंने अपनी कंपनी Blockbuster को 5 करोड़ डॉलर ($50M) में बेचने की पेशकश की, और Blockbuster ने मना कर दिया। दस साल बाद Blockbuster दिवालिया हो गई, और आज Netflix की सालाना कमाई 45 अरब डॉलर से ज़्यादा है। पूरी कहानी, दोनों पक्षों का दावा, और बिज़नेस के तीन सबक।"
+  },
+  "id": {
+   "title": "Netflix vs Blockbuster: Kesepakatan $50 Juta yang Lepas",
+   "summary": "Pada tahun 2000, para pendiri Netflix mengatakan mereka menawarkan perusahaannya kepada Blockbuster seharga 50 juta dolar AS, dan Blockbuster menolak. Sepuluh tahun kemudian Blockbuster bangkrut, sementara Netflix kini meraup lebih dari 45 miliar dolar AS per tahun. Inilah kisahnya, versi yang saling berbeda, dan tiga pelajaran bisnis."
+  },
+  "de": {
+   "title": "Netflix vs. Blockbuster: Der verpasste 50-Millionen-Deal",
+   "summary": "Im Jahr 2000 boten die Netflix-Gründer ihre Firma nach eigener Aussage Blockbuster für 50 Millionen Dollar an, und Blockbuster lehnte ab. Zehn Jahre später war Blockbuster pleite, und Netflix setzt heute über 45 Milliarden Dollar im Jahr um. Die Geschichte, die widersprüchlichen Versionen und drei Lehren fürs Business."
+  },
+  "fr": {
+   "title": "Netflix vs Blockbuster : le deal à 50 M$ qui leur a échappé",
+   "summary": "En 2000, les fondateurs de Netflix disent avoir proposé de vendre leur entreprise à Blockbuster pour 50 millions de dollars, et Blockbuster a refusé. Dix ans plus tard, Blockbuster faisait faillite, et Netflix réalise aujourd'hui plus de 45 milliards de dollars de chiffre d'affaires par an. L'histoire, les versions qui divergent et trois leçons de business."
+  }
+ },
+ "scenes": [
+  {
+   "say": "In the year two thousand, Netflix's founders say they offered to sell their company to Blockbuster for fifty million dollars. Blockbuster said no.",
+   "visual": {
+    "type": "count",
+    "to": 50,
+    "prefix": "$",
+    "suffix": "M",
+    "label": "the price Netflix's founders say they asked",
+    "sub": "year 2000, by their account",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Ten years later, Blockbuster was bankrupt. Today there is one Blockbuster store left on Earth, in Bend, Oregon.",
+   "visual": {
+    "type": "stat",
+    "value": "1",
+    "label": "Blockbuster store left on Earth",
+    "sub": "Bend, Oregon",
+    "color": "red"
+   }
+  },
+  {
+   "say": "And Netflix? Last year it brought in over forty-five billion dollars in revenue. That's more than seven times Blockbuster's best year ever.",
+   "visual": {
+    "type": "hbars",
+    "title": "Annual revenue",
+    "items": [
+     {
+      "label": "Netflix 2025",
+      "value": 45183036000.0,
+      "display": "$45.2B",
+      "color": "green"
+     },
+     {
+      "label": "Blockbuster 2004",
+      "value": 6053200000.0,
+      "display": "$6.05B",
+      "color": "blue"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So how did a small, money-losing startup beat a giant? And what does it teach you about money and business? Let's break it down.",
+   "visual": {
+    "type": "title",
+    "title": "Netflix vs Blockbuster",
+    "sub": "the deal that wasn't, and what it teaches"
+   }
+  },
+  {
+   "say": "Chapter one. The giant.",
+   "visual": {
+    "type": "chapter",
+    "n": 1,
+    "title": "The giant"
+   }
+  },
+  {
+   "say": "At its peak in two thousand four, Blockbuster had about nine thousand one hundred stores across the US and twenty-four other countries, around eighty-four thousand employees, and just over six billion dollars in revenue.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Blockbuster at its peak (2004)",
+    "items": [
+     {
+      "value": "9,094",
+      "label": "stores",
+      "sub": "US + 24 other countries",
+      "color": "blue"
+     },
+     {
+      "value": "$6.05B",
+      "label": "revenue",
+      "sub": "its best year",
+      "color": "gold"
+     },
+     {
+      "value": "84,300",
+      "label": "employees",
+      "sub": "worldwide",
+      "color": "text"
+     }
+    ]
+   }
+  },
+  {
+   "say": "The model was simple. You drove to the store, picked a movie off the wall, and rented it for a few nights. Then you drove back to return it. And if you were late, you paid extra.",
+   "visual": {
+    "type": "bullets",
+    "title": "How renting worked",
+    "items": [
+     "Drive to the store",
+     "Pick a movie off the wall",
+     "Rent it for a few nights",
+     "Late? Pay a fee"
+    ]
+   }
+  },
+  {
+   "say": "Those late fees were a big deal. Blockbuster's own filing shows that in early nineteen ninety-nine, late fees were sixteen percent of its revenue. The Washington Post reported the same share for the year two thousand.",
+   "visual": {
+    "type": "donut",
+    "title": "Blockbuster revenue, 2000",
+    "segments": [
+     {
+      "label": "Late fees",
+      "value": 0.16,
+      "color": "red"
+     },
+     {
+      "label": "Everything else",
+      "value": 0.84,
+      "color": "blue"
+     }
+    ],
+    "center": "16%",
+    "center_sub": "from late fees"
+   }
+  },
+  {
+   "say": "Sixteen percent of about five billion dollars is nearly eight hundred million dollars. In one year. From people who brought a movie back late.",
+   "visual": {
+    "type": "equation",
+    "title": "Late fees, year 2000 (estimate)",
+    "lines": [
+     {
+      "text": "$4.96B revenue × 16%",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "≈ $794M",
+      "color": "red",
+      "size": 130
+     },
+     {
+      "text": "from late returns",
+      "color": "text",
+      "size": 56
+     }
+    ]
+   }
+  },
+  {
+   "say": "And customers hated them. Blockbuster's own annual report later called late fees its most common customer complaint, in its words, the most prevalent one.",
+   "visual": {
+    "type": "quote",
+    "text": "\"Our most prevalent\ncustomer complaint\"",
+    "first_color": "text",
+    "color": "gold",
+    "source": "Blockbuster 2006 annual report (10-K), on late fees"
+   }
+  },
+  {
+   "say": "Chapter two. The upstart.",
+   "visual": {
+    "type": "chapter",
+    "n": 2,
+    "title": "The upstart"
+   }
+  },
+  {
+   "say": "Netflix was founded in nineteen ninety-seven by Reed Hastings and Marc Randolph. Its website launched in April nineteen ninety-eight, renting DVDs by mail. The monthly subscription came in September nineteen ninety-nine.",
+   "visual": {
+    "type": "timeline",
+    "title": "Netflix's early years",
+    "events": [
+     {
+      "when": "1997",
+      "text": "Netflix\nfounded"
+     },
+     {
+      "when": "1998",
+      "text": "Website launches\nDVDs by mail"
+     },
+     {
+      "when": "1999",
+      "text": "Monthly\nsubscription"
+     },
+     {
+      "when": "2000",
+      "text": "Pitch to\nBlockbuster"
+     }
+    ]
+   }
+  },
+  {
+   "say": "You may have heard Hastings started Netflix after a forty dollar late fee for Apollo Thirteen. He has told that story. But his co-founder, Marc Randolph, calls it a convenient fiction. The real start was two entrepreneurs looking for something to sell online.",
+   "visual": {
+    "type": "versus",
+    "title": "The origin story",
+    "left": {
+     "label": "The legend",
+     "value": "$40",
+     "sub": "late fee for Apollo 13",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Co-founder Randolph",
+     "value": "Fiction",
+     "sub": "\"a convenient fiction\"",
+     "color": "gold"
+    },
+    "verdict": "Good story. Disputed history."
+   }
+  },
+  {
+   "say": "The subscription was the real idea. For nineteen dollars and ninety-five cents a month, you could keep three DVDs at a time. No due dates. No late fees. No shipping charges.",
+   "visual": {
+    "type": "stat",
+    "value": "$19.95",
+    "label": "a month · 3 DVDs out at a time",
+    "sub": "no due dates · no late fees · no shipping charges",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Think about what that did. Keep a movie as long as you like. Send it back when you're ready, and the next one arrives. Netflix still gets paid every month. The customer's biggest annoyance became the selling point.",
+   "visual": {
+    "type": "flywheel",
+    "title": "The subscription loop",
+    "center": "NO LATE FEES",
+    "steps": [
+     "Keep it longer",
+     "Mail it back",
+     "Next DVD arrives",
+     "Pay monthly"
+    ]
+   }
+  },
+  {
+   "say": "But Netflix was tiny. At the end of two thousand, it had about two hundred and ninety thousand subscribers and around thirty-six million dollars in revenue.",
+   "visual": {
+    "type": "count",
+    "to": 292.0,
+    "suffix": "K",
+    "label": "Netflix subscribers, end of 2000",
+    "sub": "revenue that year: $35.9M",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Chapter three. The meeting.",
+   "visual": {
+    "type": "chapter",
+    "n": 3,
+    "title": "The meeting"
+   }
+  },
+  {
+   "say": "In two thousand, Hastings and Randolph flew to Blockbuster's headquarters in Dallas. Hastings later wrote that, walking in, he whispered: Blockbuster is a thousand times our size.",
+   "visual": {
+    "type": "quote",
+    "text": "\"Blockbuster is a thousand\ntimes our size.\"",
+    "first_color": "text",
+    "color": "text",
+    "source": "Reed Hastings, No Rules Rules (2020)"
+   }
+  },
+  {
+   "say": "By revenue, it was more like a hundred and forty times. Still enormous. Blockbuster had nearly five billion dollars in revenue and over seven thousand six hundred stores. Netflix had thirty-six million dollars, and no stores at all.",
+   "visual": {
+    "type": "table",
+    "title": "The year 2000",
+    "header": [
+     "",
+     "Blockbuster",
+     "Netflix"
+    ],
+    "rows": [
+     [
+      "Revenue",
+      "$4.96B",
+      "$35.9M"
+     ],
+     [
+      "Stores",
+      "7,677",
+      "0"
+     ],
+     [
+      "Size",
+      "138×",
+      "1×"
+     ]
+    ],
+    "col_colors": {
+     "1": "blue",
+     "2": "green"
+    }
+   }
+  },
+  {
+   "say": "In both founders' books, the pitch went like this. Blockbuster buys Netflix. Netflix runs the online side under Blockbuster's name, and Blockbuster focuses on its stores. The price: fifty million dollars.",
+   "visual": {
+    "type": "bullets",
+    "title": "The pitch, per Netflix's founders",
+    "items": [
+     "Blockbuster buys Netflix",
+     "Netflix runs the online side",
+     "Blockbuster runs the stores",
+     "Price: $50 million"
+    ]
+   }
+  },
+  {
+   "say": "Randolph wrote that Blockbuster's chief executive, John Antioco, was struggling not to laugh. The answer was no.",
+   "visual": {
+    "type": "title",
+    "title": "\"No.\"",
+    "sub": "per Randolph's book, That Will Never Work (2019)"
+   }
+  },
+  {
+   "say": "But accounts differ. Antioco has said he wasn't at any meeting where a sale came up. In his version, Netflix came to pitch a partnership and made an off-the-cuff offer to sell. No serious talks.",
+   "visual": {
+    "type": "versus",
+    "title": "Two versions of the meeting",
+    "left": {
+     "label": "Netflix's founders",
+     "value": "Rejected",
+     "sub": "a $50M offer, laughed off",
+     "color": "green"
+    },
+    "right": {
+     "label": "Blockbuster's CEO",
+     "value": "Not serious",
+     "sub": "an off-the-cuff remark",
+     "color": "blue"
+    },
+    "verdict": "Both agree: Blockbuster passed"
+   }
+  },
+  {
+   "say": "And to be fair, Antioco has a point. Netflix lost fifty-seven million dollars that year. Paying fifty million for a money-losing website, just as the dot-com bubble burst, looked risky.",
+   "visual": {
+    "type": "stat",
+    "value": "−$57M",
+    "label": "Netflix's net loss in 2000",
+    "sub": "Netflix S-1 filing, 2002",
+    "color": "red"
+   }
+  },
+  {
+   "say": "So saying no to one deal wasn't the real mistake. What happened next was.",
+   "visual": {
+    "type": "equation",
+    "lines": [
+     {
+      "text": "Saying no to $50M",
+      "color": "muted",
+      "size": 90
+     },
+     {
+      "text": "≠ the real mistake",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter four. The fight back.",
+   "visual": {
+    "type": "chapter",
+    "n": 4,
+    "title": "The fight back"
+   }
+  },
+  {
+   "say": "Blockbuster did fight back, and hard. It launched Blockbuster Online in August two thousand four. On January first, two thousand five, it dropped late fees at its US company stores. In November two thousand six came Total Access: rent online, and return the disc to any store for a free in-store rental.",
+   "visual": {
+    "type": "timeline",
+    "title": "Blockbuster's counter-attack",
+    "events": [
+     {
+      "when": "2004",
+      "text": "Blockbuster Online\nlaunches"
+     },
+     {
+      "when": "2005",
+      "text": "Late fees\ndropped (US)"
+     },
+     {
+      "when": "2006",
+      "text": "Total Access:\nreturn by mail or store"
+     },
+     {
+      "when": "2007",
+      "text": "Netflix starts\nstreaming"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Dropping late fees was expensive. In its own annual report, Blockbuster estimated those fees would have brought in four hundred to four hundred and fifty million dollars of revenue in two thousand five. It gave that up on purpose.",
+   "visual": {
+    "type": "equation",
+    "title": "Late fees Blockbuster gave up (its own estimate)",
+    "lines": [
+     {
+      "text": "2005 revenue from late fees",
+      "color": "muted",
+      "size": 72
+     },
+     {
+      "text": "$400M–$450M",
+      "color": "red",
+      "size": 130
+     },
+     {
+      "text": "given up on purpose",
+      "color": "text",
+      "size": 56
+     }
+    ]
+   }
+  },
+  {
+   "say": "And it was working. By the end of two thousand six, Blockbuster had about two point two million online subscribers, against Netflix's six point three million. Antioco says that by early two thousand seven, the two companies were in serious merger talks.",
+   "visual": {
+    "type": "versus",
+    "title": "Online subscribers, end of 2006",
+    "left": {
+     "label": "Blockbuster",
+     "value": "2.2M",
+     "sub": "incl. Total Access",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Netflix",
+     "value": "6.3M",
+     "sub": "DVD by mail",
+     "color": "green"
+    },
+    "verdict": "The gap was closing"
+   }
+  },
+  {
+   "say": "Then, in January two thousand seven, Netflix quietly launched Watch Now, streaming on computers at no extra cost. It had about a thousand titles. Its DVD library had more than seventy thousand.",
+   "visual": {
+    "type": "hbars",
+    "title": "Netflix titles, January 2007",
+    "format": "num",
+    "items": [
+     {
+      "label": "DVD by mail",
+      "value": 70000,
+      "display": "70,000+",
+      "color": "slate"
+     },
+     {
+      "label": "Streaming",
+      "value": 1000,
+      "display": "~1,000",
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "A thousand titles, on a computer screen. Easy to dismiss. That's how disruption usually starts: small, a bit worse, and cheap to try.",
+   "visual": {
+    "type": "quote",
+    "text": "Disruption starts small,\nand easy to dismiss.",
+    "first_color": "text",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Then the giant blinked. Antioco had clashed with his board, including the activist investor Carl Icahn, and in July two thousand seven, Jim Keyes replaced him as chief executive. That year, Blockbuster limited the free in-store swaps, and then raised Total Access prices.",
+   "visual": {
+    "type": "bullets",
+    "title": "2007: Blockbuster pulls back",
+    "color": "red",
+    "items": [
+     "CEO John Antioco replaced",
+     "Free in-store swaps limited",
+     "Total Access prices raised"
+    ]
+   }
+  },
+  {
+   "say": "Chapter five. The fall.",
+   "visual": {
+    "type": "chapter",
+    "n": 5,
+    "title": "The fall"
+   }
+  },
+  {
+   "say": "Watch the next few years. Blockbuster's revenue slid from about five and a half billion dollars in two thousand five to about four billion in two thousand nine. Netflix grew from under seven hundred million to almost one point seven billion.",
+   "visual": {
+    "type": "line",
+    "title": "Annual revenue, 2005–2009",
+    "x": [
+     2005,
+     2006,
+     2007,
+     2008,
+     2009
+    ],
+    "series": [
+     {
+      "label": "Blockbuster",
+      "values": [
+       5551100000.0,
+       5337600000.0,
+       5314000000.0,
+       5065400000.0,
+       4062400000.0
+      ],
+      "color": "blue"
+     },
+     {
+      "label": "Netflix",
+      "values": [
+       682213000.0,
+       996660000.0,
+       1205340000.0,
+       1364661000.0,
+       1670269000.0
+      ],
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "The stores went too. From over nine thousand in two thousand four to six thousand five hundred by the start of two thousand ten.",
+   "visual": {
+    "type": "columns",
+    "title": "Blockbuster stores worldwide (year end)",
+    "format": "num",
+    "highlight": 0,
+    "color": "blue",
+    "items": [
+     {
+      "label": "2004",
+      "value": 9094,
+      "display": "9,094"
+     },
+     {
+      "label": "2006",
+      "value": 8360,
+      "display": "8,360"
+     },
+     {
+      "label": "2007",
+      "value": 7830,
+      "display": "7,830"
+     },
+     {
+      "label": "2008",
+      "value": 7405,
+      "display": "7,405"
+     },
+     {
+      "label": "2009",
+      "value": 6520,
+      "display": "6,520"
+     }
+    ]
+   }
+  },
+  {
+   "say": "In two thousand nine, Blockbuster lost five hundred and fifty-eight million dollars. Netflix made a profit of a hundred and sixteen million. Blockbuster's own filing warned of substantial doubt about its ability to keep going.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Fiscal 2009",
+    "items": [
+     {
+      "value": "−$558M",
+      "label": "Blockbuster",
+      "sub": "net loss",
+      "color": "red"
+     },
+     {
+      "value": "+$116M",
+      "label": "Netflix",
+      "sub": "net profit",
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "On September twenty-third, two thousand ten, Blockbuster filed for bankruptcy, with nearly a billion dollars of debt and some three thousand US stores left.",
+   "visual": {
+    "type": "stat",
+    "value": "2010",
+    "label": "Blockbuster files for bankruptcy",
+    "sub": "Sept 23 · nearly $1B of debt",
+    "color": "red"
+   }
+  },
+  {
+   "say": "In April two thousand eleven, the satellite TV company Dish won Blockbuster's assets at auction, with a three hundred and twenty million dollar bid. The company-owned stores were all closed by two thousand fourteen. And in March two thousand nineteen, when a store in Perth, Australia closed, an independently owned store in Bend, Oregon became the last Blockbuster on Earth.",
+   "visual": {
+    "type": "table",
+    "title": "The end of Blockbuster",
+    "header": [
+     "Year",
+     "What happened"
+    ],
+    "rows": [
+     [
+      "2010",
+      "Bankruptcy filing"
+     ],
+     [
+      "2011",
+      "Dish wins assets ($320M bid)"
+     ],
+     [
+      "2014",
+      "Company stores closed"
+     ],
+     [
+      "2019",
+      "Bend, Oregon: the last one"
+     ]
+    ],
+    "col_colors": {
+     "1": "text"
+    }
+   }
+  },
+  {
+   "say": "Notice what didn't happen. Blockbuster didn't ignore the internet. It saw the threat, built a real answer, and then pulled back when that answer got expensive while the stores still made money.",
+   "visual": {
+    "type": "quote",
+    "text": "It saw the threat.\nThen it pulled back.",
+    "first_color": "text",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Chapter six. Netflix today.",
+   "visual": {
+    "type": "chapter",
+    "n": 6,
+    "title": "Netflix today"
+   }
+  },
+  {
+   "say": "At the end of twenty twenty-five, Netflix said it had crossed three hundred and twenty-five million paid memberships. Up from about two hundred and ninety thousand subscribers in two thousand.",
+   "visual": {
+    "type": "count",
+    "to": 325.0,
+    "suffix": "M+",
+    "label": "Netflix paid memberships",
+    "sub": "end of 2025 · Netflix Q4 2025 letter",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Netflix even shut down the business that beat Blockbuster. It mailed its last DVDs in September twenty twenty-three, after twenty-five years. It replaced its own winner before someone else could.",
+   "visual": {
+    "type": "stat",
+    "value": "2023",
+    "label": "Netflix mails its last DVD",
+    "sub": "Sept 29, 2023 · after 25 years of DVD by mail",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Here's one recent quarter. From July to September twenty twenty-six, Netflix brought in about twelve point nine billion dollars. After the cost of its shows and delivering them, marketing, technology and admin, about four and a half billion was left as operating profit.",
+   "visual": {
+    "type": "waterfall",
+    "title": "Netflix, July–September 2026",
+    "steps": [
+     {
+      "label": "Revenue",
+      "value": 12874176000.0,
+      "kind": "start",
+      "display": "$12.9B"
+     },
+     {
+      "label": "Shows & delivery",
+      "value": 6079016000.0,
+      "kind": "minus",
+      "display": "−$6.1B"
+     },
+     {
+      "label": "Marketing",
+      "value": 837051000.0,
+      "kind": "minus",
+      "display": "−$0.8B"
+     },
+     {
+      "label": "Technology",
+      "value": 1033142000.0,
+      "kind": "minus",
+      "display": "−$1.0B"
+     },
+     {
+      "label": "Admin",
+      "value": 466367000.0,
+      "kind": "minus",
+      "display": "−$0.5B"
+     },
+     {
+      "label": "Op. profit",
+      "value": 4458600000.0,
+      "kind": "total",
+      "display": "$4.5B"
+     }
+    ]
+   }
+  },
+  {
+   "say": "That's an operating margin of about thirty-five percent, up from twenty-eight percent a year earlier.",
+   "visual": {
+    "type": "share",
+    "title": "Netflix operating margin",
+    "rows": [
+     {
+      "label": "July–Sept 2025",
+      "share": 0.282,
+      "color": "blue",
+      "dp": 1
+     },
+     {
+      "label": "July–Sept 2026",
+      "share": 0.346,
+      "color": "green",
+      "dp": 1
+     }
+    ],
+    "note": "Source: Netflix Q3 2026 shareholder letter"
+   }
+  },
+  {
+   "say": "In that one quarter, Netflix brought in more than twice what Blockbuster made in its best full year.",
+   "visual": {
+    "type": "columns",
+    "title": "Revenue",
+    "highlight": 1,
+    "items": [
+     {
+      "label": "Blockbuster, all of 2004",
+      "value": 6053200000.0,
+      "display": "$6.05B",
+      "color": "blue"
+     },
+     {
+      "label": "Netflix, one quarter",
+      "value": 12874176000.0,
+      "display": "$12.9B",
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "And that fifty million dollar price? At last year's revenue, Netflix now takes in fifty million dollars in less than ten hours.",
+   "visual": {
+    "type": "equation",
+    "title": "The $50M price today",
+    "lines": [
+     {
+      "text": "$45.2B ÷ 8,760 hours",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "≈ $5.2M an hour",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "$50M ≈ every 9.7 hours",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter seven. The lessons.",
+   "visual": {
+    "type": "chapter",
+    "n": 7,
+    "title": "The lessons"
+   }
+  },
+  {
+   "say": "Lesson one. A customer's pain is an opportunity. Late fees were Blockbuster's most common complaint. Netflix built a business around removing it.",
+   "visual": {
+    "type": "quote",
+    "text": "Find what customers hate.\nThen remove it.",
+    "first_color": "text",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Lesson two. Don't protect a profit stream your customers hate. Sixteen percent of Blockbuster's revenue came from the thing people liked least. Giving it up hurt, so the company waited, and a rival without that baggage promised what Blockbuster couldn't.",
+   "visual": {
+    "type": "share",
+    "title": "Blockbuster revenue from late fees (2000)",
+    "rows": [
+     {
+      "label": "The fee customers hated most",
+      "share": 0.16,
+      "color": "red",
+      "dp": 0
+     }
+    ],
+    "note": "Source: Washington Post, via UPI (2003)"
+   }
+  },
+  {
+   "say": "Lesson three. Disruption starts small. Netflix began with a few hundred thousand subscribers and big losses. By two thousand nine it had about forty times as many. Streaming started with a thousand titles. Both were easy to dismiss, until they weren't.",
+   "visual": {
+    "type": "columns",
+    "title": "Netflix subscribers (millions, year end)",
+    "format": "num",
+    "highlight": 5,
+    "items": [
+     {
+      "label": "2000",
+      "value": 0.292,
+      "display": "0.3M"
+     },
+     {
+      "label": "2005",
+      "value": 4.179,
+      "display": "4.2M"
+     },
+     {
+      "label": "2006",
+      "value": 6.316,
+      "display": "6.3M"
+     },
+     {
+      "label": "2007",
+      "value": 7.479,
+      "display": "7.5M"
+     },
+     {
+      "label": "2008",
+      "value": 9.39,
+      "display": "9.4M"
+     },
+     {
+      "label": "2009",
+      "value": 12.268,
+      "display": "12.3M"
+     }
+    ],
+    "note": "Sources: Netflix S-1 (2002) and 2009 annual report"
+   }
+  },
+  {
+   "say": "And for your own money: notice the fees you pay only because leaving is a hassle. Those are exactly the fees a competitor will remove. And when you look at any business, ask which of its profits depend on customers having no better option.",
+   "visual": {
+    "type": "bullets",
+    "title": "Use it yourself",
+    "items": [
+     "Spot fees you pay out of habit",
+     "Expect rivals to remove them",
+     "Ask: which profits need no rival?"
+    ]
+   }
+  },
+  {
+   "say": "Netflix isn't guaranteed to win forever, either. The same rules apply to it. Customers stay only while the deal feels fair.",
+   "visual": {
+    "type": "title",
+    "title": "No one is too big",
+    "sub": "the same rules apply to Netflix"
+   }
+  },
+  {
+   "say": "If you learned something, subscribe. We break down how money and business really work, every week.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "How money",
+     "really works."
+    ],
+    "sub": "Subscribe for weekly breakdowns"
+   }
+  }
+ ]
+}

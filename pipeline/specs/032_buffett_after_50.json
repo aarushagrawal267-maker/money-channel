@@ -1,0 +1,269 @@
+{
+ "id": "032_buffett_after_50",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "FOUNDER STORY",
+ "disclaimer": "Past returns don't predict future returns · not investment advice",
+ "title": "Warren Buffett: 99% of His Fortune Came After 52",
+ "description": "Forbes put Warren Buffett's net worth at $250 million in 1982, when he was 52. On Nov 1, 2026, at 96, Forbes estimated about $154 billion: 616 times more, so over 99% of today's fortune came after 52 (and that is after giving away roughly $60 billion since 2006). That is like growing about 15.7% a year for 44 years, doubling roughly every 4.7 years. The late boom came from an early start: he bought his first stock at 11. His returns were exceptional; the lesson is time in compounding, not copying him.\n\nSources: Forbes 400 (1982), as reported by Forbes (Dec 9, 2016; Sept 28, 2022; Oct 5, 2024); Forbes real-time ranking as of Nov 1, 2026 (reported by Forbes Argentina, Nov 2, 2026); Berkshire Hathaway 2018 shareholder letter (Feb 2019); Associated Press (June 30, 2025) on gifts since 2006. The growth curve shown is a smoothed illustration, not his actual yearly path. Net worth estimates move daily. Educational content, not investment advice; past returns don't predict future returns.\n\n#warrenbuffett #compounding #investing #personalfinance #money",
+ "tags": [
+  "warren buffett",
+  "buffett net worth",
+  "compound interest",
+  "compounding",
+  "buffett age 50",
+  "berkshire hathaway",
+  "long term investing",
+  "founder story",
+  "money lessons"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Warren Buffett: el 99% de su fortuna llegó tras los 52",
+   "summary": "Forbes calculó su patrimonio en 250 millones de dólares en 1982, a los 52 años; en noviembre de 2026 eran unos 154.000 millones. Así funciona el interés compuesto con el tiempo."
+  },
+  "pt": {
+   "title": "Warren Buffett: 99% da fortuna veio depois dos 52",
+   "summary": "A Forbes estimou sua fortuna em 250 milhões de dólares em 1982, aos 52 anos; em novembro de 2026, cerca de 154 bilhões. É a matemática dos juros compostos ao longo do tempo."
+  },
+  "hi": {
+   "title": "वॉरेन बफे: 99% दौलत 52 की उम्र के बाद आई",
+   "summary": "1982 में, 52 की उम्र में, फोर्ब्स ने उनकी संपत्ति 25 करोड़ डॉलर आंकी; नवंबर 2026 में करीब 154 अरब डॉलर। समय के साथ चक्रवृद्धि का गणित ऐसे काम करता है।"
+  },
+  "id": {
+   "title": "Warren Buffett: 99% Kekayaannya Datang Setelah Usia 52",
+   "summary": "Forbes menaksir kekayaannya 250 juta dolar pada 1982, saat ia berusia 52; pada November 2026 sekitar 154 miliar dolar. Inilah matematika bunga majemuk seiring waktu."
+  },
+  "de": {
+   "title": "Warren Buffett: 99 % seines Vermögens kamen nach 52",
+   "summary": "Forbes schätzte sein Vermögen 1982, mit 52, auf 250 Millionen Dollar; im November 2026 auf rund 154 Milliarden. So wirkt der Zinseszins über lange Zeit."
+  },
+  "fr": {
+   "title": "Warren Buffett : 99 % de sa fortune après 52 ans",
+   "summary": "Forbes estimait sa fortune à 250 millions de dollars en 1982, à 52 ans ; environ 154 milliards en novembre 2026. Voici les maths des intérêts composés dans la durée."
+  }
+ },
+ "scenes": [
+  {
+   "say": "More than ninety-nine percent of Warren Buffett's fortune came after he turned fifty-two.",
+   "visual": {
+    "type": "stat",
+    "value": "99%+",
+    "label": "of his fortune came after age 52",
+    "sub": "Forbes estimates, 1982 vs Nov 2026",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "In nineteen eighty-two, at fifty-two, Forbes put his net worth at two hundred and fifty million dollars. In November twenty twenty-six: about one hundred and fifty-four billion.",
+   "visual": {
+    "type": "compare",
+    "title": "Buffett's net worth (Forbes)",
+    "left": {
+     "label": "Age 52",
+     "value": 250000000.0,
+     "color": "slate"
+    },
+    "right": {
+     "label": "Age 96",
+     "value": 154000000000.0,
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "That's like growing about sixteen percent a year for forty-four years. Smoothed out, the curve looks flat for decades, then shoots up.",
+   "visual": {
+    "type": "line",
+    "title": "Smoothed: 15.7% a year",
+    "x": [
+     1982,
+     1983,
+     1984,
+     1985,
+     1986,
+     1987,
+     1988,
+     1989,
+     1990,
+     1991,
+     1992,
+     1993,
+     1994,
+     1995,
+     1996,
+     1997,
+     1998,
+     1999,
+     2000,
+     2001,
+     2002,
+     2003,
+     2004,
+     2005,
+     2006,
+     2007,
+     2008,
+     2009,
+     2010,
+     2011,
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "series": [
+     {
+      "label": "",
+      "values": [
+       250000000.0,
+       289294095.8566101,
+       334764295.58997416,
+       387381336.8711062,
+       448268534.4074064,
+       518725761.4494334,
+       600257200.624182,
+       694603456.5439702,
+       803778715.7590562,
+       930113747.3772136,
+       1076305662.365178,
+       1245475493.8371365,
+       1441234827.6047175,
+       1667762905.4758568,
+       1929895847.3713245,
+       2233229897.050855,
+       2584240895.629111,
+       2990422533.5068,
+       3460446332.240333,
+       4004346771.7831593,
+       4633735515.357379,
+       5362049305.415906,
+       6204836822.995436,
+       7180090634.585064,
+       8308631313.2032,
+       9614551934.236156,
+       11125732435.525085,
+       12874434822.711163,
+       14897991926.80433,
+       17239604418.175743,
+       19949263092.327095,
+       23084816117.201637,
+       26713204026.5678,
+       30911888825.196354,
+       35770507715.620926,
+       41392786751.689804,
+       47898755273.26229,
+       55427308397.74181,
+       64139172274.76084,
+       74220335408.87318,
+       85886019305.13725,
+       99385273206.4122,
+       115006291014.84477,
+       133082563907.84683,
+       154000000000.00034
+      ],
+      "color": "gold"
+     }
+    ],
+    "x_label": "illustration, not actual yearly values",
+    "highlight": {
+     "from": 2022,
+     "to": 2026,
+     "label": "last doubling"
+    }
+   }
+  },
+  {
+   "say": "At that pace, money doubles roughly every five years. After nine doublings, the final doubling alone added about seventy-seven billion dollars.",
+   "visual": {
+    "type": "equation",
+    "title": "The doubling math",
+    "lines": [
+     {
+      "text": "Doubles every ~5 years",
+      "color": "text",
+      "size": 70
+     },
+     {
+      "text": "9+ doublings since 1982",
+      "color": "muted",
+      "size": 60
+     },
+     {
+      "text": "Last one: +$77B",
+      "color": "gold",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "And that late boom came from an early start: he bought his first stock at eleven.",
+   "visual": {
+    "type": "timeline",
+    "title": "41 years of investing by 52",
+    "start": 10,
+    "end": 70,
+    "rows": [
+     {
+      "label": "Investing",
+      "from": 11,
+      "color": "green"
+     },
+     {
+      "label": "Forbes 400",
+      "from": 52,
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "His returns were exceptional, and nobody can count on them. The real lesson is time: start early, and give compounding decades to work.",
+   "visual": {
+    "type": "equation",
+    "title": "The lesson",
+    "lines": [
+     {
+      "text": "Not his returns.",
+      "color": "muted",
+      "size": 76
+     },
+     {
+      "text": "His time.",
+      "color": "gold",
+      "size": 120
+     },
+     {
+      "text": "Start early. Stay in.",
+      "color": "text",
+      "size": 64
+     }
+    ]
+   }
+  },
+  {
+   "say": "Follow for one money lesson every day.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Start early.",
+     "Let time work."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}
