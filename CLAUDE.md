@@ -44,12 +44,12 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 - [x] `pipeline/upload.py` built; private test upload of 014 succeeded 2026-11-21 (https://youtu.be/Ss1WYNrD6Kk, logged as `test` in posted.json).
 - [x] Audit form answers drafted (`docs/AUDIT_FORM_ANSWERS.md`). Site privacy policy expanded + `terms.html` added on branch `claude/friendly-gates-8o3lq0` of the Pages repo; **live site serves `main`, needs merging before the audit**.
 - [x] **Private lock is gone:** Google's revision history (Nov 2, 2026) says uploads from unverified API projects are no longer restricted to private. Scheduled uploads with `publishAt` work (verified 2026-11-22). The audit form is **not needed** (only for more quota). Website update for the audit was never merged and isn't required.
-- [x] Week 1 uploaded and scheduled 2026-11-22 (Mon 23 – Sun 29 Nov); see `pipeline/posted.json`. The news Short slot (Sun 29, 10:30 PM IST) is still open.
+- [x] Week 1 partly uploaded 2026-11-22 (YouTube's daily upload limit stopped the rest; retry Mon). Week 2 (29 Nov – 6 Dec) written, rendered, voice-checked and in `pipeline/schedule.txt`. News Short slots (Sundays 22:30 IST) are made by the Saturday task.
 - Our OAuth scopes (youtube.upload, youtube.readonly) **cannot** edit or delete a video after upload (videos.update → 403). To change a scheduled video, re-upload; the owner deletes/unschedules old copies in Studio. Old private copies marked `superseded` in posted.json: Ss1WYNrD6Kk, dhFkCh-pj-U, 3inj6_vZEkQ.
 
 ## Autopilot
 Owner is away and asked Claude to run everything (22 Nov 2026). Scheduled tasks follow `docs/AUTOPILOT.md`: A weekly production (Wed), B daily upload check, C news Short (Sat). `pipeline/schedule.txt` + `tools/upload_pending.sh` drive uploads.
-Scheduled tasks (fresh session per fire, push notifications): weekly production `trig_01X9ZHVQbroZRFyKLDQNZ94D` (Wed 09:13 IST), daily upload check `trig_01WJXQj8tmv9edJYn2We2Hsr` (17:47 IST), news Short `trig_01D4xurnMFSBhs3dwTPHnhoz` (Sat 14:23 IST). One-off retry of the 9 week-1 uploads blocked by YouTube's daily limit: Mon 23 Nov 12:30 IST (`trig_01WUoWHNFenx1neiV55WoFeq`, in the original session).
+Scheduled tasks fire **into the original session** `session_013tpD17Vmx1R1YRB8yqCV91` (fresh-session routines could not push to this repo: it isn't in their sources): weekly production `trig_01FB253nTMcdoqNHnyBv9cgW` (Wed 09:13 IST), daily upload check `trig_01Ubmbazf5pP8nbXFcNjWPfB` (17:47 IST), news Short `trig_01THfABcLyhCHpvunfj31Vm4` (Sat 14:23 IST); one-off upload retry Mon 23 Nov 12:30 IST (`trig_01WUoWHNFenx1neiV55WoFeq`). `tools/upload_pending.sh` also checks the live channel's titles (tools/channel_titles.py) so it never uploads a video twice.
 
 ## Next steps for Claude
 1. Get owner feedback on week 1; fix what they flag.
