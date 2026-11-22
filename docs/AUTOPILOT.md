@@ -18,7 +18,7 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
    `docs/analytics/<date>.md`: what worked (topics, title styles, lengths), what didn't, what you'll change.
    Act on it: move better-performing topic types up in `pipeline/queue.json`; adjust title style.
    Only change upload times if data covers 3+ weeks; record the change in `CLAUDE.md`.
-2. **Slots.** Next Monday–Sunday: Shorts at 06:30 and 22:30 IST; long videos Mon/Wed/Fri 23:30 IST.
+2. **Slots.** The first Monday–Sunday week whose slots are not yet in `pipeline/schedule.txt` (stay about one week ahead): Shorts at 06:30 and 22:30 IST; long videos Mon/Wed/Fri 23:30 IST.
    Leave **Sunday 22:30 IST** for the news Short (section C). Also fill any empty slot in the next 10 days.
 3. **Pick topics** from `pipeline/queue.json` (status `idea`), keeping: neighbouring Shorts on different
    pillars; ~1 in 5 India stories (₹); ~3 case-study Shorts and **1 case-study long video** per week
