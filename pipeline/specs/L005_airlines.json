@@ -57,7 +57,7 @@
  },
  "scenes": [
   {
-   "say": "This year, the world's airlines are expected to earn about four dollars and fifty cents of profit for each passenger they fly. Not per ticket upgrade. Per passenger, after everything.",
+   "say": "This year, the world's airlines are expected to earn about four dollars and fifty cents of profit for each passenger they fly. Not per flight. Per passenger, after every cost.",
    "visual": {
     "type": "count",
     "to": 4.5,
@@ -935,7 +935,7 @@
       "size": 64
      },
      {
-      "text": "Good business",
+      "text": "good business",
       "color": "gold",
       "size": 110
      }

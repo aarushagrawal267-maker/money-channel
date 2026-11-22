@@ -132,7 +132,7 @@ def scene(say, **visual):
     S.append({"say": say, "visual": visual})
 
 # ---------------------------------------------------------------- Hook
-scene("This year, the world's airlines are expected to earn about four dollars and fifty cents of profit for each passenger they fly. Not per ticket upgrade. Per passenger, after everything.",
+scene("This year, the world's airlines are expected to earn about four dollars and fifty cents of profit for each passenger they fly. Not per flight. Per passenger, after every cost.",
       type="count", to=PER_PAX_26, prefix="$", dp=2, label="net profit per passenger",
       sub="2026 forecast · International Air Transport Association (IATA)", color="gold")
 scene("Meanwhile, each passenger brings in about two hundred and twenty-nine dollars on average. Almost all of it goes straight back out as costs.",
@@ -325,7 +325,7 @@ scene("The lesson isn't that airlines are useless. They connect the world. It's 
       type="equation", title="The lesson",
       lines=[{"text": "Huge & popular", "color": "text", "size": 100},
              {"text": "isn't always a", "color": "muted", "size": 64},
-             {"text": "Good business", "color": "gold", "size": 110}])
+             {"text": "good business", "color": "gold", "size": 110}])
 
 # ---------------------------------------------------------------- 6
 scene("Chapter six. What it means for you.", type="chapter", n=6, title="What it means for you")
