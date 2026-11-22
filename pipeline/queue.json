@@ -147,9 +147,9 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Lifestyle inflation: how a raise can make you poorer",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "027_lifestyle_inflation",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "market_cap",
@@ -157,9 +157,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "Market cap: why a company's value isn't its revenue",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "028_market_cap",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "netflix_blockbuster",
@@ -167,9 +167,9 @@
       "pillar": "case_study",
       "currency": "usd",
       "idea": "Netflix vs Blockbuster: the deal Blockbuster turned down",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "029_netflix_blockbuster",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "zerodha",
@@ -177,9 +177,9 @@
       "pillar": "business",
       "currency": "inr",
       "idea": "How Zerodha makes money with zero brokerage (India story)",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "030_zerodha",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "car_loan_cost",
@@ -187,9 +187,9 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "The real cost of a $35,000 car loan",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "031_car_loan_cost",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "buffett_after_50",
@@ -197,9 +197,9 @@
       "pillar": "founder",
       "currency": "usd",
       "idea": "Warren Buffett made most of his fortune after 50: the compounding math",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "032_buffett_after_50",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "raise_vs_switch",
@@ -207,9 +207,9 @@
       "pillar": "earn_more",
       "currency": "usd",
       "idea": "Asking for a raise vs switching jobs: the 10-year math",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "033_raise_vs_switch",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "rates_and_you",
@@ -217,9 +217,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "What the Fed rate does to your loans and savings",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "034_rates_and_you",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "nokia_fall",
@@ -227,9 +227,9 @@
       "pillar": "case_study",
       "currency": "usd",
       "idea": "Nokia: from #1 phone maker to selling its phone business",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "035_nokia_fall",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "free_apps",
@@ -237,9 +237,9 @@
       "pillar": "business",
       "currency": "usd",
       "idea": "How 'free' apps like Instagram earn from you",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "036_free_apps",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "credit_score",
@@ -247,9 +247,9 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Your credit score: what moves it up and down",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "037_credit_score",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "dhirubhai",
@@ -257,9 +257,9 @@
       "pillar": "founder",
       "currency": "inr",
       "idea": "Dhirubhai Ambani: from a petrol station job to Reliance (India story)",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "038_dhirubhai",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "dca_vs_lump",
@@ -267,9 +267,9 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "Lump sum vs monthly investing: which wins, and when",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "039_dca_vs_lump",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "gold_fear",
@@ -277,9 +277,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "Why gold rises when the world is scared",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "040_gold_fear",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "kodak",
@@ -559,9 +559,9 @@
       "pillar": "case_study",
       "currency": "usd",
       "idea": "Netflix vs Blockbuster: How a $50M 'No' Changed an Industry",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "L010_netflix_blockbuster",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "L004_credit_cards_business",
@@ -569,9 +569,9 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "How Credit Card Companies Really Make Money (and who pays)",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "L004_credit_cards_business",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "L005_airlines",
@@ -579,9 +579,9 @@
       "pillar": "business",
       "currency": "usd",
       "idea": "Airlines Barely Make Money Flying. Here's What Actually Pays.",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "L005_airlines",
+      "status": "rendered",
+      "week": 2
     },
     {
       "slug": "L011_buffett",
