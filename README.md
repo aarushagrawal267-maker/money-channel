@@ -1,4 +1,4 @@
-# Money Mechanics: video pipeline
+# Penny to Billion: video pipeline
 
 Faceless finance channel: 2 Shorts a day + 3 long videos a week.
 

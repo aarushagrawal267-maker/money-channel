@@ -395,7 +395,7 @@ scene("And four: boring is often smart. Most of investing well is avoiding big, 
 scene("Here's the whole video in one line. Most professionals don't lose because they're bad at their jobs. "
       "They lose because the math of costs is working against them.",
       type="quote", text="They don't lose\nbecause they're bad.\nThe math is against them.", first_color="text",
-      color="gold", source="Money Mechanics")
+      color="gold")
 scene("If this made markets make a bit more sense, subscribe. We explain how money really works, every week.",
       type="cta", lines=["How markets", "really work."], sub="Subscribe for weekly breakdowns")
 

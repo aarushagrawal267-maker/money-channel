@@ -1,10 +1,10 @@
-# Money Mechanics: project notes for Claude
+# Penny to Billion: project notes for Claude
 
 Faceless YouTube finance channel run by Claude. Owner is non-technical, in India, and follows step-by-step
 instructions with screenshots. Explain in plain language, one step at a time. Never ask for credentials in chat.
 
 ## Decisions already made (do not re-ask)
-- **Channel:** Money Mechanics, handle **@MoneyMechanics-v7t** (cleaner handles were all unavailable). Channel Gmail: the owner's channel account.
+- **Channel:** **Penny to Billion**, handle **@PennyToBillion** (renamed 22 Nov 2026 from "Money Mechanics" @MoneyMechanics-v7t because many channels share that name; the new name and handle had zero matches on YouTube). Channel ID `UC-DK-CcVvDnkZoehOWGWlBg`: always link with `https://www.youtube.com/channel/<id>` (survives renames). The owner makes the rename in Studio; check `channels.list` to see if it's done. Channel Gmail: the owner's channel account.
 - **Niche:** money education: personal finance, smart financing, how markets work, business breakdowns, money news, earning more, and **case studies of top businesses and business founders** (owner request 22 Nov 2026: ~1 in 4 Shorts, and 1 of the 3 long videos every week). See `CONTENT_PLAN.md` pillar 7. Founder/company stories must be sourced, no myths or hero worship, and end with a usable lesson.
 - **Audience:** global first (US/UK/CA/AU + English-speaking India). English. **USD by default**; ₹ only for India-story videos (~1 in 5).
 - **Schedule:** 2 Shorts/day at **6:30 AM IST** (8 PM ET / 5 PM PT) and **10:30 PM IST** (noon ET / 5 PM UK); 3 long videos/week (Mon/Wed/Fri) at **11:30 PM IST** (1 PM ET / 6 PM UK), 8–12 min. Uploads go up early with `--publish-at`; YouTube publishes at the slot.
@@ -24,7 +24,7 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
   - Shorts: `001_start_early` (INR), `013_minimum_due_trap` (INR), `014_minimum_payment_trap_us`, `015_rule_of_72`, `016_buying_a_share`, `017_upi_free` (INR), `018_start_early_us`, `019_real_hourly_wage`, `020_index_funds_vs_managers`, `021_bnpl`, `022_airline_loyalty`, `023_inflation_100`, `024_expense_ratio`, `025_emergency_fund`.
   - Long: `L001_costco` (~8 min, figures checked against FY2026 release + 10-K), `L002_compounding` (~10 min), `L003_index_funds` (~9 min; SPIVA figures from secondary write-ups, S&P PDFs block automated fetches).
 - `tools/get_youtube_token.py`: one-time OAuth script (owner already ran it).
-- `tools/branding_v3.py`: final branding generator. `branding/` holds the final files + `CHANNEL_DESCRIPTION.md`.
+- `tools/branding_v4.py`: current branding generator (coin logo, rising bars). `branding_v4/` holds the current files + `CHANNEL_DESCRIPTION.md`. (`branding/` + v3 = old Money Mechanics set.)
 - `site/`: homepage + privacy policy, published at https://aarushagrawal267-maker.github.io (repo `aarushagrawal267-maker/aarushagrawal267-maker.github.io`), used by the Google consent screen.
 - `setup.sh`: installs Python deps and downloads the Kokoro voice model into `models/` (gitignored, ~350 MB).
 

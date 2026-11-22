@@ -1,4 +1,4 @@
-"""Upload a rendered video to the Money Mechanics channel (YouTube Data API v3).
+"""Upload a rendered video to the Penny to Billion channel (YouTube Data API v3).
 
 Usage:
     python3 pipeline/upload.py SPEC.json VIDEO.mp4 [--thumb PNG] [--chapters TXT]
@@ -21,7 +21,7 @@ POSTED = os.path.join(HERE, "posted.json")
 CATEGORY_EDUCATION = "27"
 RETRY_STATUS = {500, 502, 503, 504}
 MAX_TITLE, MAX_DESC, MAX_TAGS_CHARS = 100, 5000, 500
-SUBSCRIBE_LINE = "New money lesson every day. Subscribe: https://www.youtube.com/@MoneyMechanics-v7t?sub_confirmation=1"
+SUBSCRIBE_LINE = "New money lesson every day. Subscribe: https://www.youtube.com/channel/UC-DK-CcVvDnkZoehOWGWlBg?sub_confirmation=1"
 
 
 def youtube_client():
