@@ -51,6 +51,8 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 Owner is away and asked Claude to run everything (22 Nov 2026). Scheduled tasks follow `docs/AUTOPILOT.md`: A weekly production (Wed), B daily upload check, C news Short (Sat). `pipeline/schedule.txt` + `tools/upload_pending.sh` drive uploads.
 Scheduled tasks fire **into the original session** `session_013tpD17Vmx1R1YRB8yqCV91` (fresh-session routines could not push to this repo: it isn't in their sources): weekly production `trig_01FB253nTMcdoqNHnyBv9cgW` (Wed 09:13 IST), daily upload check `trig_01Ubmbazf5pP8nbXFcNjWPfB` (17:47 IST), news Short `trig_01THfABcLyhCHpvunfj31Vm4` (Sat 14:23 IST); one-off upload retry Mon 23 Nov 12:30 IST (`trig_01WUoWHNFenx1neiV55WoFeq`). `tools/upload_pending.sh` also checks the live channel's titles (tools/channel_titles.py) so it never uploads a video twice.
 
+Owner (23 Nov 2026): keep using the appropriate specialist agents to manage and improve the channel; see `docs/AUTOPILOT.md` "Specialist agents". First full review in `docs/reviews/`.
+
 ## Next steps for Claude
 1. Get owner feedback on week 1; fix what they flag.
 2. News Short for week 1 (Sun 29 Nov, 10:30 PM IST): research on the day it's made (rule 6), add as `026_news_...`.

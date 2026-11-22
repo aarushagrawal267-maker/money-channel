@@ -63,6 +63,18 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
 3. Preview, render, voice check; add to `schedule.txt` for **Sunday 22:30 IST**; run `tools/upload_pending.sh`;
    commit and push.
 
+## Specialist agents (owner request, 23 Nov 2026)
+The owner asked Claude to keep using the *appropriate* specialist agents (not every agent) to manage and improve the channel.
+Use them as reviewers/helpers; Claude applies the changes itself so edits don't collide.
+- Every weekly production run: before rendering, have a **Financial Analyst** agent fact-check the week's specs
+  (MUST FIX items get fixed before upload); use **general-purpose** agents in parallel to write specs.
+- Every 4 weeks (or when analytics show a drop): **Video Optimization Specialist** (hooks, titles, thumbnails, retention),
+  **SEO Specialist** (search, titles, localizations), **Growth Hacker** (experiments from analytics),
+  **Short-Video Editing Coach** (pacing, audio, captions). Reports go in `docs/reviews/<date>_<topic>.md`.
+- When the pipeline code changes: **Code Reviewer**. Quarterly or when YouTube policy news appears: **Legal Compliance Checker**.
+- When visuals/branding change: **Brand Guardian** (owner prefers simple, clean design).
+Skip agents unrelated to a YouTube finance channel.
+
 ## Guardrails
 - Our OAuth scopes are upload + read-only: **we cannot edit or delete a video after upload**.
   Get it right before uploading. If something already uploaded is wrong, tell the owner exactly which
