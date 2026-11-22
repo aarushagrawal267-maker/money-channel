@@ -47,13 +47,33 @@ spec = {
     ),
     "tags": ["buy now pay later", "bnpl", "pay in 4", "klarna", "afterpay", "affirm", "late fees",
              "personal finance", "money traps", "debt"],
+    "localizations": {
+        "es": {"title": "Compra ahora, paga después: cómo ganan (no es el interés)",
+               "summary": "Dividir $200 en 4 pagos de $50 sin intereses parece gratis, pero los prestamistas cobran sobre todo a la tienda: cerca del 3% por venta, según la CFPB. "
+                          "Algunos también cobran recargos por pagos atrasados, y el riesgo silencioso es acumular varios planes a la vez."},
+        "pt": {"title": "Compre agora, pague depois: como lucram (não são os juros)",
+               "summary": "Dividir $200 em 4 parcelas de $50 sem juros parece de graça, mas as empresas ganham principalmente da loja: cerca de 3% por venda, segundo a CFPB. "
+                          "Algumas também cobram multa por atraso, e o risco silencioso é acumular vários parcelamentos ao mesmo tempo."},
+        "hi": {"title": "Buy Now, Pay Later पैसे कैसे कमाता है (ब्याज से नहीं)",
+               "summary": "$200 को बिना ब्याज $50 की 4 किस्तों में बाँटना मुफ़्त लगता है, पर कंपनियाँ ज़्यादातर दुकान से कमाती हैं: CFPB के मुताबिक हर बिक्री पर करीब 3%। "
+                          "कुछ लेट फीस भी लेती हैं, और असली ख़तरा है एक साथ कई प्लान चलाना।"},
+        "id": {"title": "Cara Layanan Paylater Cari Untung (Bukan dari Bunga)",
+               "summary": "Membagi $200 jadi 4 cicilan $50 tanpa bunga terasa gratis, tapi penyedianya terutama dibayar oleh toko: sekitar 3% per penjualan, menurut CFPB. "
+                          "Sebagian juga memungut denda keterlambatan, dan risiko diam-diamnya adalah menumpuk beberapa cicilan sekaligus."},
+        "de": {"title": "Buy Now, Pay Later: So verdienen Anbieter (nicht mit Zinsen)",
+               "summary": "$200 zinsfrei in 4 Raten zu $50 aufzuteilen wirkt kostenlos, doch die Anbieter verdienen vor allem am Händler: laut CFPB etwa 3% pro Verkauf. "
+                          "Manche verlangen zudem Mahngebühren, und das stille Risiko ist, mehrere Ratenpläne gleichzeitig laufen zu haben."},
+        "fr": {"title": "Payer plus tard : d'où vient l'argent (pas des intérêts)",
+               "summary": "Payer $200 en 4 fois $50 sans intérêts semble gratuit, mais les prêteurs gagnent surtout sur le commerçant : environ 3 % par vente, selon la CFPB. "
+                          "Certains facturent aussi des frais de retard, et le risque discret est de cumuler plusieurs paiements à la fois."},
+    },
     "scenes": [
         {"say": "Split two hundred dollars into four payments of fifty, with no interest. So how does the lender make money?",
          "visual": {"type": "equation", "title": "Pay in 4",
                     "lines": [{"text": "$200", "color": "text", "size": 140},
                               {"text": "= 4 × $50", "color": "gold", "size": 96},
                               {"text": "0% interest", "color": "green", "size": 64}]}},
-        {"say": "Mostly from the store. A CFPB study found lenders charged partner stores about three percent per sale. About six dollars on two hundred.",
+        {"say": "Mostly from the store. A CFPB study found that in twenty twenty-one, lenders charged partner stores about three percent per sale. About six dollars on two hundred.",
          "visual": {"type": "compare", "title": "On a $200 sale",
                     "left": {"label": "You pay", "value": PRICE, "color": "text"},
                     "right": {"label": "Store keeps", "value": store_gets, "color": "gold"}}},

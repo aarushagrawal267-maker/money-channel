@@ -18,6 +18,32 @@
   "financial literacy",
   "federal reserve"
  ],
+ "localizations": {
+  "es": {
+   "title": "Qué podrás comprar con $100 en 30 años (inflación explicada)",
+   "summary": "Con una inflación del 3% anual, $100 en efectivo compran unos $74 de bienes de hoy tras 10 años, $55 tras 20 y $41 tras 30. Solo para no perder, esos $100 tendrían que crecer hasta $134, $181 y $243."
+  },
+  "pt": {
+   "title": "O que $100 vão comprar daqui a 30 anos (inflação explicada)",
+   "summary": "Com inflação de 3% ao ano, $100 em dinheiro compram cerca de $74 em produtos de hoje após 10 anos, $55 após 20 e $41 após 30. Só para acompanhar, esses $100 precisariam crescer para $134, $181 e $243."
+  },
+  "hi": {
+   "title": "30 साल बाद $100 में क्या मिलेगा (महंगाई समझिए)",
+   "summary": "हर साल 3% महंगाई पर, नकद $100 से 10 साल बाद आज के सिर्फ़ $74 का सामान आएगा, 20 साल बाद $55 और 30 साल बाद $41 का। बराबरी पर रहने के लिए भी उन $100 को बढ़कर $134, $181 और $243 होना होगा।"
+  },
+  "id": {
+   "title": "Daya Beli $100 dalam 30 Tahun (Penjelasan Inflasi)",
+   "summary": "Dengan inflasi 3% per tahun, uang tunai $100 hanya bisa membeli barang senilai $74 hari ini setelah 10 tahun, $55 setelah 20 tahun, dan $41 setelah 30 tahun. Agar tidak tergerus, $100 itu harus tumbuh menjadi $134, $181, dan $243."
+  },
+  "de": {
+   "title": "Was $100 in 30 Jahren noch wert sind (Inflation erklärt)",
+   "summary": "Bei 3% Inflation pro Jahr kaufen $100 in bar nach 10 Jahren nur noch Waren für etwa $74 von heute, nach 20 Jahren $55 und nach 30 Jahren $41. Um nur mitzuhalten, müssten die $100 auf $134, $181 und $243 wachsen."
+  },
+  "fr": {
+   "title": "Ce que $100 achèteront dans 30 ans (l'inflation expliquée)",
+   "summary": "Avec 3 % d'inflation par an, $100 en espèces n'achètent plus qu'environ $74 de biens d'aujourd'hui après 10 ans, $55 après 20 ans et $41 après 30 ans. Rien que pour suivre, ces $100 doivent devenir $134, $181 et $243."
+  }
+ },
  "scenes": [
   {
    "say": "Put a hundred dollar bill in a drawer. In thirty years, it'll only buy what forty-one dollars buys today.",
@@ -198,7 +224,7 @@
    }
   },
   {
-   "say": "So money you won't need for years has to grow faster than prices, just to stand still.",
+   "say": "So money you won't need for years has to grow at least as fast as prices, just to stand still.",
    "visual": {
     "type": "equation",
     "title": "What really counts",

@@ -18,6 +18,32 @@
   "stock market",
   "personal finance"
  ],
+ "localizations": {
+  "es": {
+   "title": "Por qué el 93% de los gestores pierde ante el S&P 500",
+   "summary": "Según el informe SPIVA de S&P, hasta el 30 de junio de 2026 el 93% de los fondos activos de gran capitalización de EE. UU. quedó por detrás del S&P 500 en 20 años. Una gran razón es el costo: en 2025 un fondo activo cobraba de media un 0.57% al año, frente al 0.09% de los fondos indexados amplios."
+  },
+  "pt": {
+   "title": "Por que 93% dos gestores perdem para o S&P 500",
+   "summary": "Segundo o relatório SPIVA da S&P, até 30 de junho de 2026, 93% dos fundos ativos de grandes empresas dos EUA ficaram atrás do S&P 500 em 20 anos. Um grande motivo é o custo: em 2025 um fundo ativo cobrava em média 0.57% ao ano, contra 0.09% dos fundos de índice amplos."
+  },
+  "hi": {
+   "title": "93% फंड मैनेजर S&P 500 से क्यों हार जाते हैं",
+   "summary": "S&P के SPIVA स्कोरकार्ड के मुताबिक, 30 जून 2026 तक 20 साल में अमेरिका के 93% लार्ज-कैप एक्टिव फंड S&P 500 से पीछे रहे। बड़ी वजह है खर्च: 2025 में एक्टिव फंड औसतन 0.57% सालाना फीस लेते थे, जबकि ब्रॉड इंडेक्स फंड सिर्फ़ 0.09%।"
+  },
+  "id": {
+   "title": "93% Manajer Investasi Kalah dari S&P 500. Ini Sebabnya",
+   "summary": "Menurut laporan SPIVA dari S&P, hingga 30 Juni 2026, 93% reksa dana aktif saham besar AS tertinggal dari S&P 500 dalam 20 tahun. Penyebab utamanya biaya: pada 2025 reksa dana aktif rata-rata memungut 0.57% per tahun, dibanding 0.09% untuk reksa dana indeks luas."
+  },
+  "de": {
+   "title": "93% der Fondsmanager verlieren gegen den S&P 500. Darum",
+   "summary": "Laut dem SPIVA-Bericht von S&P lagen bis zum 30. Juni 2026 über 20 Jahre 93% der aktiven US-Large-Cap-Fonds hinter dem S&P 500. Ein Hauptgrund sind die Kosten: 2025 kostete ein aktiver Fonds im Schnitt 0.57% pro Jahr, ein breiter Indexfonds nur 0.09%."
+  },
+  "fr": {
+   "title": "93 % des gérants perdent face au S&P 500. Voici pourquoi",
+   "summary": "Selon le rapport SPIVA de S&P, au 30 juin 2026, 93 % des fonds actifs américains de grandes capitalisations ont fait moins bien que le S&P 500 sur 20 ans. Grande raison : les frais, en moyenne 0.57 % par an pour un fonds actif en 2025, contre 0.09 % pour un fonds indiciel large."
+  }
+ },
  "scenes": [
   {
    "say": "Ninety-three percent of US large-cap fund managers trailed the S&P five hundred over the last twenty years.",

@@ -28,6 +28,32 @@
   "money math",
   "financial literacy"
  ],
+ "localizations": {
+  "es": {
+   "title": "Interés compuesto: los mismos $96K, 2.4x más dinero",
+   "summary": "Dos personas invierten $96,000 cada una. Una termina con unos $494,000 y la otra con unos $203,000. La diferencia es el interés compuesto, y depende de cuatro números: cuánto aportas, la tasa, el tiempo y las fugas (comisiones, inflación e impuestos)."
+  },
+  "pt": {
+   "title": "Juros compostos: os mesmos $96K, 2.4x mais dinheiro",
+   "summary": "Duas pessoas investem $96,000 cada uma. Uma termina com cerca de $494,000, a outra com cerca de $203,000. A diferença são os juros compostos, que dependem de quatro números: quanto você aplica, a taxa, o tempo e os vazamentos (taxas, inflação e impostos)."
+  },
+  "hi": {
+   "title": "कंपाउंड इंटरेस्ट समझिए: वही $96K, पर 2.4x पैसा",
+   "summary": "दो लोग, दोनों $96,000 निवेश करते हैं। एक के पास आख़िर में करीब $494,000 होते हैं, दूसरे के पास करीब $203,000। फ़र्क है कंपाउंड इंटरेस्ट का, जो चार चीज़ों पर टिका है: आप कितना लगाते हैं, रिटर्न की दर, समय, और रिसाव (फीस, महंगाई और टैक्स)।"
+  },
+  "id": {
+   "title": "Bunga Majemuk: Sama-sama $96K, Hasilnya 2.4x Lipat",
+   "summary": "Dua orang masing-masing berinvestasi $96,000. Satu berakhir dengan sekitar $494,000, yang lain sekitar $203,000. Bedanya adalah bunga majemuk, yang ditentukan empat angka: berapa yang Anda setor, tingkat imbal hasil, waktu, dan kebocoran (biaya, inflasi, dan pajak)."
+  },
+  "de": {
+   "title": "Zinseszins erklärt: gleiche $96K, 2.4x so viel Geld",
+   "summary": "Zwei Menschen investieren je $96,000. Einer hat am Ende rund $494,000, der andere rund $203,000. Der Unterschied ist der Zinseszins, und er hängt an vier Zahlen: wie viel Sie einzahlen, die Rendite, die Zeit und die Lecks (Gebühren, Inflation und Steuern)."
+  },
+  "fr": {
+   "title": "Les intérêts composés : mêmes $96K, 2.4x plus d'argent",
+   "summary": "Deux personnes investissent chacune $96,000. L'une finit avec environ $494,000, l'autre avec environ $203,000. La différence, ce sont les intérêts composés, qui reposent sur quatre chiffres : combien vous investissez, le taux, le temps et les fuites (frais, inflation et impôts)."
+  }
+ },
  "scenes": [
   {
    "say": "Two friends each invest ninety-six thousand dollars. Same investment, same returns. At sixty-five, one has about two hundred thousand dollars. The other has almost half a million.",

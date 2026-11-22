@@ -47,6 +47,26 @@ spec = {
     ),
     "tags": ["expense ratio", "investment fees", "mutual fund fees", "index funds", "investing basics",
              "personal finance", "retirement savings", "financial literacy"],
+    "localizations": {
+        "es": {"title": "Una comisión del 1% puede costarte $120,000. Así es como",
+               "summary": f"Mismo plan, dos fondos: $10,000 al inicio más $500 al mes durante 30 años, con un 7% anual supuesto. Con una comisión anual del 0.05% terminarías con unos ${low/1e3:,.0f}K; con un 1%, unos ${high/1e3:,.0f}K. "
+                          "Esa comisión se llama ratio de gastos (expense ratio) y aparece en la ficha del fondo."},
+        "pt": {"title": "Uma taxa de 1% pode te custar $120,000. Veja como",
+               "summary": f"Mesmo plano, dois fundos: $10,000 iniciais mais $500 por mês durante 30 anos, com 7% ao ano (suposição). Com taxa anual de 0.05% você terminaria com cerca de ${low/1e3:,.0f}K; com 1%, cerca de ${high/1e3:,.0f}K. "
+                          "Essa taxa se chama taxa de despesas (expense ratio) e aparece na lâmina do fundo."},
+        "hi": {"title": "1% फीस आपको $120,000 का नुकसान कैसे करा सकती है",
+               "summary": f"एक ही प्लान, दो फंड: शुरुआत में $10,000 और फिर 30 साल तक हर महीने $500, 7% सालाना अनुमानित रिटर्न पर। 0.05% सालाना फीस पर करीब ${low/1e3:,.0f}K बनते हैं, 1% फीस पर करीब ${high/1e3:,.0f}K। "
+                          "इस सालाना फीस को एक्सपेंस रेशियो कहते हैं, और यह फंड की फैक्ट शीट पर लिखा होता है।"},
+        "id": {"title": "Biaya Investasi 1% Bisa Menelan $120,000. Begini Caranya",
+               "summary": f"Rencana sama, dua reksa dana: $10,000 di awal plus $500 per bulan selama 30 tahun, dengan asumsi 7% per tahun. Dengan biaya tahunan 0.05% hasilnya sekitar ${low/1e3:,.0f}K; dengan biaya 1%, sekitar ${high/1e3:,.0f}K. "
+                          "Biaya tahunan ini disebut expense ratio dan tercantum di fact sheet reksa dana."},
+        "de": {"title": "1% Fondsgebühr kann Sie $120,000 kosten. So funktioniert's",
+               "summary": f"Gleicher Plan, zwei Fonds: $10,000 zum Start plus $500 im Monat über 30 Jahre, bei angenommenen 7% pro Jahr. Mit 0.05% Jahresgebühr hätten Sie am Ende etwa ${low/1e3:,.0f}K, mit 1% etwa ${high/1e3:,.0f}K. "
+                          "Diese jährliche Gebühr heißt Kostenquote (Expense Ratio) und steht im Factsheet des Fonds."},
+        "fr": {"title": "Des frais de 1 % peuvent vous coûter $120,000. Voici comment",
+               "summary": f"Même plan, deux fonds : $10,000 au départ plus $500 par mois pendant 30 ans, à 7 % par an supposés. Avec 0.05 % de frais annuels, vous finiriez avec environ ${low/1e3:,.0f}K ; avec 1 %, environ ${high/1e3:,.0f}K. "
+                          "Ces frais annuels s'appellent le ratio de frais (expense ratio) et figurent sur la fiche du fonds."},
+    },
     "scenes": [
         {"say": "A one percent fee sounds tiny. On this plan, it could cost you over a hundred and twenty thousand dollars.",
          "visual": {"type": "equation", "title": "A \"tiny\" fee",

@@ -34,6 +34,26 @@ spec = {
     ),
     "tags": ["emergency fund", "high yield savings account", "savings", "personal finance", "budgeting",
              "FDIC", "money tips", "financial literacy"],
+    "localizations": {
+        "es": {"title": "Fondo de emergencia: cuánto necesitas y dónde guardarlo",
+               "summary": "Una guía común es tener de 3 a 6 meses de gastos esenciales: con $3,000 al mes, eso es de $9,000 a $18,000. "
+                          "Guárdalo en un lugar seguro y accesible, como una cuenta de ahorro de alto rendimiento en un banco asegurado por la FDIC, no en la bolsa."},
+        "pt": {"title": "Reserva de emergência: quanto ter e onde guardar",
+               "summary": "Uma regra comum é guardar de 3 a 6 meses de despesas essenciais: com $3,000 por mês, isso dá de $9,000 a $18,000. "
+                          "Deixe esse dinheiro em um lugar seguro e de fácil acesso, como uma poupança de alto rendimento em um banco segurado pela FDIC, não na bolsa."},
+        "hi": {"title": "इमरजेंसी फंड: कितना चाहिए और कहाँ रखें",
+               "summary": "आम नियम है 3 से 6 महीने के ज़रूरी खर्च जितना पैसा अलग रखना: हर महीने $3,000 के खर्च पर यह $9,000 से $18,000 बनता है। "
+                          "इसे शेयर बाज़ार में नहीं, बल्कि किसी सुरक्षित और आसानी से निकलने वाली जगह रखें, जैसे FDIC से बीमित बैंक का हाई-यील्ड सेविंग्स अकाउंट।"},
+        "id": {"title": "Dana Darurat: Butuh Berapa dan Disimpan di Mana",
+               "summary": "Patokan umumnya 3 sampai 6 bulan pengeluaran pokok: dengan $3,000 per bulan, berarti $9,000 sampai $18,000. "
+                          "Simpan di tempat yang aman dan mudah dicairkan, seperti tabungan berbunga tinggi di bank yang dijamin FDIC, bukan di pasar saham."},
+        "de": {"title": "Notgroschen: Wie viel Sie brauchen und wo Sie ihn parken",
+               "summary": "Eine gängige Faustregel sind 3 bis 6 Monate notwendiger Ausgaben: bei $3,000 im Monat also $9,000 bis $18,000. "
+                          "Parken Sie das Geld sicher und schnell verfügbar, etwa auf einem gut verzinsten Sparkonto bei einer von der FDIC versicherten Bank, nicht am Aktienmarkt."},
+        "fr": {"title": "Fonds d'urgence : combien il vous faut et où le placer",
+               "summary": "Une règle courante : 3 à 6 mois de dépenses essentielles, soit $9,000 à $18,000 avec $3,000 par mois. "
+                          "Gardez-le en lieu sûr et facile d'accès, comme un compte d'épargne à haut rendement dans une banque assurée par la FDIC, pas en Bourse."},
+    },
     "scenes": [
         {"say": "If your paycheck stopped tomorrow, how many months could you last?",
          "visual": {"type": "equation", "title": "Paycheck stops.",

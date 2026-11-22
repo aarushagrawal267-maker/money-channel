@@ -147,7 +147,7 @@ scene("And that number keeps climbing. In just two years, Costco added almost ei
       note="Source: Costco 10-K")
 scene("Membership fees are almost pure profit. There's no product to buy, no shelf to stock. And members pay upfront, before they've bought a single thing.",
       type="bullets", title="Why fees are the perfect revenue",
-      items=["Almost pure profit", "No inventory needed", "Paid upfront, every year", "Renewed automatically by most"])
+      items=["Almost pure profit", "No inventory needed", "Paid upfront, every year", "Collected before you shop"])
 scene("They also renew. In the US and Canada, about ninety-two percent of members renew. Worldwide, about ninety percent.",
       type="share", title="Members who renew",
       rows=[{"label": "US & Canada", "share": RENEW_US_CA, "color": "green", "dp": 1},
@@ -295,6 +295,26 @@ spec = {
     ),
     "tags": ["costco", "business model", "how costco makes money", "membership business", "business breakdown",
              "costco executive membership", "kirkland signature", "economics explained", "retail business"],
+    "localizations": {
+        "es": {"title": "Cómo gana dinero Costco (no es vendiendo comida)",
+               "summary": "Costco vendió unos $297 mil millones en productos en el año fiscal 2026, pero esos productos le dejaron solo unos 2 centavos de beneficio operativo por dólar. "
+                          "El verdadero motor son las membresías: $5.9 mil millones en cuotas, menos del 2% de los ingresos pero cerca de la mitad del beneficio operativo."},
+        "pt": {"title": "Como a Costco ganha dinheiro (não é vendendo comida)",
+               "summary": "A Costco vendeu cerca de $297 bilhões em produtos no ano fiscal de 2026, mas esses produtos renderam só uns 2 centavos de lucro operacional por dólar. "
+                          "O verdadeiro motor é a assinatura: $5.9 bilhões em taxas, menos de 2% da receita, mas cerca de metade do lucro operacional."},
+        "hi": {"title": "Costco पैसा कैसे कमाती है (किराने से नहीं)",
+               "summary": "वित्त वर्ष 2026 में Costco ने करीब $297 अरब का सामान बेचा, पर इन प्रोडक्ट्स से हर डॉलर पर सिर्फ़ करीब 2 सेंट का ऑपरेटिंग मुनाफ़ा हुआ। "
+                          "असली इंजन है मेंबरशिप: $5.9 अरब की फीस, जो कमाई का 2% से भी कम है पर ऑपरेटिंग मुनाफ़े का करीब आधा।"},
+        "id": {"title": "Cara Costco Cari Untung (Bukan dari Jualan Makanan)",
+               "summary": "Costco menjual produk senilai sekitar $297 miliar pada tahun fiskal 2026, tapi produk itu hanya menghasilkan sekitar 2 sen laba operasi per dolar. "
+                          "Mesin sebenarnya adalah keanggotaan: $5.9 miliar dari iuran, kurang dari 2% pendapatan tapi sekitar separuh laba operasi."},
+        "de": {"title": "Wie Costco Geld verdient (nicht mit Lebensmitteln)",
+               "summary": "Costco verkaufte im Geschäftsjahr 2026 Waren für rund $297 Milliarden, verdiente daran aber nur etwa 2 Cent operativen Gewinn pro Dollar. "
+                          "Der eigentliche Motor sind die Mitgliedschaften: $5.9 Milliarden an Gebühren, weniger als 2% des Umsatzes, aber etwa die Hälfte des operativen Gewinns."},
+        "fr": {"title": "Comment Costco gagne de l'argent (pas avec les courses)",
+               "summary": "Costco a vendu environ $297 milliards de produits sur l'exercice 2026, mais ces produits ne lui ont rapporté qu'environ 2 cents de bénéfice d'exploitation par dollar. "
+                          "Le vrai moteur, ce sont les abonnements : $5.9 milliards de cotisations, moins de 2 % du chiffre d'affaires mais environ la moitié du bénéfice d'exploitation."},
+    },
     "scenes": S,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "L001_costco.json")

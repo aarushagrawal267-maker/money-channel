@@ -213,10 +213,10 @@ scene("Say the market returns eight percent in a year. Index investors get eight
              {"value": "8%", "label": "index investors", "color": "green"},
              {"value": "8%", "label": "average active $", "color": "blue"}])
 scene("That makes active investing a zero-sum game before costs. "
-      "For every manager who beats the market by a point, another trails it by a point.",
+      "For every dollar that beats the market by a point, another dollar trails it by a point.",
       type="versus", title="Before costs, it's zero-sum",
-      left={"label": "One manager", "value": "+1%", "sub": "vs the market", "color": "green"},
-      right={"label": "Another manager", "value": "−1%", "sub": "vs the market", "color": "red"},
+      left={"label": "One dollar", "value": "+1%", "sub": "vs the market", "color": "green"},
+      right={"label": "Another dollar", "value": "−1%", "sub": "vs the market", "color": "red"},
       verdict="Average: exactly the market")
 scene("But then the costs come out. Take away the average fee, and the average active dollar must earn less "
       "than the market. Not because managers are foolish. It's just arithmetic.",
@@ -301,7 +301,7 @@ scene("But the idea grew into an industry. By the end of 2025, US index mutual f
       "held nineteen point one trillion dollars.",
       type="stat", value=f"${INDEX_TNA_2025/1e12:.1f}T", color="green",
       label="in US index mutual funds and ETFs", sub="year-end 2025 · Investment Company Institute")
-scene("Then came Warren Buffett. In December 2007, he made a one million dollar bet, for charity, "
+scene("Then came Warren Buffett. In 2007, he made a one million dollar bet, for charity, "
       "that a plain S and P five hundred index fund would beat hedge fund experts over the next ten years.",
       type="stat_grid", title="Buffett's bet",
       items=[{"value": "$1M", "label": "for charity", "color": "gold"},
@@ -450,6 +450,26 @@ spec = {
     "tags": ["index funds", "index fund vs active fund", "S&P 500", "SPIVA", "active vs passive investing",
              "expense ratio", "John Bogle", "Warren Buffett bet", "how the stock market works", "investing for beginners",
              "personal finance", "fund fees"],
+    "localizations": {
+        "es": {"title": "Por qué el 93% de los gestores pierde ante un fondo indexado",
+               "summary": "En los 20 años hasta junio de 2026, más de 9 de cada 10 fondos activos de grandes empresas de EE. UU. quedaron por detrás del S&P 500. "
+                          "Explicamos por qué: la aritmética de William Sharpe, cómo se acumulan las comisiones en 30 años, la apuesta de Warren Buffett y las debilidades reales de los fondos indexados."},
+        "pt": {"title": "Por que 93% dos gestores perdem para um fundo de índice",
+               "summary": "Nos 20 anos até junho de 2026, mais de 9 em cada 10 fundos ativos de grandes empresas dos EUA ficaram atrás do S&P 500. "
+                          "Explicamos por quê: a aritmética de William Sharpe, o peso das taxas em 30 anos, a aposta de Warren Buffett e as fraquezas reais dos fundos de índice."},
+        "hi": {"title": "93% फंड मैनेजर एक सादे इंडेक्स फंड से क्यों हार जाते हैं",
+               "summary": "जून 2026 तक के 20 सालों में अमेरिका के 10 में से 9 से ज़्यादा लार्ज-कैप एक्टिव फंड S&P 500 से पीछे रहे। "
+                          "हम समझाते हैं क्यों: William Sharpe का गणित, 30 साल में फीस का असर, Warren Buffett की शर्त, और इंडेक्स फंड की असली कमज़ोरियाँ।"},
+        "id": {"title": "Kenapa 93% Manajer Investasi Kalah dari Reksa Dana Indeks",
+               "summary": "Dalam 20 tahun hingga Juni 2026, lebih dari 9 dari 10 reksa dana aktif saham besar AS tertinggal dari S&P 500. "
+                          "Kami jelaskan sebabnya: aritmetika William Sharpe, dampak biaya selama 30 tahun, taruhan Warren Buffett, dan kelemahan nyata reksa dana indeks."},
+        "de": {"title": "Warum 93% der Fondsmanager gegen einen Indexfonds verlieren",
+               "summary": "In den 20 Jahren bis Juni 2026 lagen mehr als 9 von 10 aktiv gemanagten US-Large-Cap-Aktienfonds hinter dem S&P 500. "
+                          "Wir erklären, warum: die Arithmetik von William Sharpe, die Wirkung von Gebühren über 30 Jahre, die Wette von Warren Buffett und die echten Schwächen von Indexfonds."},
+        "fr": {"title": "Pourquoi 93 % des gérants perdent face à un fonds indiciel",
+               "summary": "Sur les 20 ans jusqu'à juin 2026, plus de 9 fonds actifs américains de grandes capitalisations sur 10 ont fait moins bien que le S&P 500. "
+                          "Nous expliquons pourquoi : l'arithmétique de William Sharpe, l'effet des frais sur 30 ans, le pari de Warren Buffett et les vraies faiblesses des fonds indiciels."},
+    },
     "scenes": S,
 }
 assert len(spec["title"]) <= 100 and len(spec["thumbnail"]["big"]) <= 6 and len(spec["thumbnail"]["line"]) <= 22

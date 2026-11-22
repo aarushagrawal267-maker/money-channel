@@ -40,12 +40,32 @@ spec = {
     ),
     "tags": ["airline business model", "airline miles", "credit card rewards", "delta amex",
              "american airlines", "frequent flyer", "loyalty programs", "business breakdown"],
+    "localizations": {
+        "es": {"title": "El negocio real de las aerolíneas: tarjetas de crédito",
+               "summary": "En 2025, American Airlines ganó $111 millones netos, mientras su tarjeta de crédito y otros socios le pagaron $6.2 mil millones. "
+                          "American Express pagó a Delta $8.2 mil millones, más que su beneficio antes de impuestos. El truco: venden millas a los bancos, cobran hoy y dan el asiento después."},
+        "pt": {"title": "O verdadeiro negócio das aéreas: cartões de crédito",
+               "summary": "Em 2025, a American Airlines lucrou $111 milhões, enquanto seu cartão de crédito e outros parceiros lhe pagaram $6.2 bilhões. "
+                          "A American Express pagou $8.2 bilhões à Delta, mais que o lucro antes de impostos dela. O truque: vender milhas aos bancos, receber hoje e entregar o assento depois."},
+        "hi": {"title": "एयरलाइंस की असली कमाई: क्रेडिट कार्ड",
+               "summary": "2025 में American Airlines का शुद्ध मुनाफ़ा $111 मिलियन था, जबकि उसके क्रेडिट कार्ड और दूसरे पार्टनर्स ने उसे $6.2 अरब दिए। "
+                          "American Express ने Delta को $8.2 अरब दिए, जो Delta के टैक्स से पहले के मुनाफ़े से भी ज़्यादा है। तरीका: बैंकों को माइल्स बेचो, पैसा आज लो, सीट बाद में दो।"},
+        "id": {"title": "Sumber Uang Maskapai yang Sebenarnya: Kartu Kredit",
+               "summary": "Pada 2025, American Airlines meraup laba bersih $111 juta, sementara kartu kredit dan mitra lainnya membayarnya $6.2 miliar. "
+                          "American Express membayar Delta $8.2 miliar, lebih besar dari laba sebelum pajak Delta. Triknya: jual mil ke bank, terima uang sekarang, beri kursinya nanti."},
+        "de": {"title": "Womit Airlines wirklich Geld verdienen: Kreditkarten",
+               "summary": "2025 erzielte American Airlines $111 Millionen Nettogewinn, während Kreditkarte und andere Partner ihr $6.2 Milliarden zahlten. "
+                          "American Express zahlte Delta $8.2 Milliarden, mehr als Deltas Gewinn vor Steuern. Der Trick: Meilen an Banken verkaufen, heute kassieren, den Sitz später liefern."},
+        "fr": {"title": "Le vrai filon des compagnies aériennes : la carte de crédit",
+               "summary": "En 2025, American Airlines a dégagé $111 millions de bénéfice net, tandis que sa carte de crédit et d'autres partenaires lui ont versé $6.2 milliards. "
+                          "American Express a versé $8.2 milliards à Delta, plus que son bénéfice avant impôts. L'astuce : vendre des miles aux banques, encaisser aujourd'hui, fournir le siège plus tard."},
+    },
     "scenes": [
         {"say": "In twenty twenty-five, American Airlines made a hundred and eleven million dollars in profit. Its credit card and other partners paid it six point two billion.",
          "visual": {"type": "compare", "title": "American Airlines, 2025",
                     "left": {"label": "Net profit", "value": AAL_NET_INCOME_2025, "color": "slate"},
                     "right": {"label": "Card partners", "value": AAL_PARTNER_CASH_2025, "color": "gold"}}},
-        {"say": "That's because airlines don't just sell seats. They sell miles. Banks buy them in bulk and give them to you as card rewards.",
+        {"say": "A big reason: airlines don't just sell seats. They sell miles. Banks buy them in bulk and give them to you as card rewards.",
          "visual": {"type": "equation", "title": "What airlines really sell",
                     "lines": [{"text": "Airline sells miles", "color": "text", "size": 76},
                               {"text": "↓", "color": "dim", "size": 72},
