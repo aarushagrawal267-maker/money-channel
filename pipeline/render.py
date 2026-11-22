@@ -25,7 +25,7 @@ COLORS = {
 CX = 540            # horizontal centre
 TITLE_Y = 430       # scene title baseline area
 VIS_TOP, VIS_BOT = 520, 1160
-CAP_Y = 1430        # captions centre
+CAP_Y = 1370        # captions centre (clear of the Shorts title/description overlay)
 VIS_SHIFT = 70      # push visuals down to use the screen better
 
 _fonts = {}
@@ -324,8 +324,8 @@ def build_audio(spec, work):
     from kokoro_onnx import Kokoro
     k = Kokoro(os.path.join(MODELS, "kokoro-v1.0.onnx"), os.path.join(MODELS, "voices-v1.0.bin"))
     voice, speed = spec.get("voice", "af_heart"), spec.get("speed", 1.05)
-    gap = int(spec.get("gap", 0.22) * SR)
-    chunks, timeline, cur = [], [], int(0.15 * SR)
+    gap = int(spec.get("gap", 0.15) * SR)
+    chunks, timeline, cur = [], [], int(0.05 * SR)   # start talking almost at once
     chunks.append(np.zeros(cur))
     for sc in spec["scenes"]:
         a, sr = k.create(sc["say"], voice=voice, speed=speed, lang="en-us")
@@ -336,7 +336,8 @@ def build_audio(spec, work):
         chunks.append(a); cur += len(a)
         chunks.append(np.zeros(gap)); cur += gap
         timeline.append({"start": start / SR, "speech_end": (start + len(a)) / SR, "end": cur / SR})
-    chunks.append(np.zeros(int(0.8 * SR))); cur += int(0.8 * SR)
+    tail = int(spec.get("tail", 0.35) * SR)   # long videos pass a longer tail for end screens
+    chunks.append(np.zeros(tail)); cur += tail
     voice_track = np.concatenate(chunks).astype(np.float32)
     voice_track /= (np.max(np.abs(voice_track)) + 1e-9) / 0.9
     music = make_music(len(voice_track)) * 10 ** (-24 / 20)
@@ -352,7 +353,7 @@ def asr_words(audio_path):
     try:
         from faster_whisper import WhisperModel
         a16 = audio_path.replace(".wav", "_16k.wav")
-        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", audio_path, "-ar", "16000",
+        subprocess.run(["ffmpeg", "-nostdin", "-loglevel", "error", "-y", "-i", audio_path, "-ar", "16000",
                         "-ac", "1", a16], check=True)
         a, _ = sf.read(a16, dtype="float32")
         m = WhisperModel("base.en", device="cpu", compute_type="int8")
@@ -425,6 +426,74 @@ def draw_captions(img, chunks, t):
                 x += wd + space
             break
 
+
+# ---------------------------------------------------------------- Shorts thumbnail (1080x1920)
+def _thumb_big(spec):
+    """The headline number for the thumbnail: spec["thumbnail"]["big"], else the first stat/compare value."""
+    th = spec.get("thumbnail") or {}
+    try:
+        th = {**json.load(open(os.path.join(HERE, "short_thumbs.json"))).get(spec["id"], {}), **th}
+    except FileNotFoundError:
+        pass
+    if th.get("big"):
+        return th["big"], th.get("color", "gold")
+    strong = ("gold", "green", "red")
+    for sc in spec["scenes"][:3]:
+        v = sc["visual"]
+        if v["type"] == "stat" and len(str(v.get("value", ""))) <= 9:
+            return str(v["value"]), v.get("color") if v.get("color") in strong else "gold"
+        if v["type"] == "compare":
+            sides = [v["left"], v["right"]]
+            pick = next((x for x in sides if x.get("color") in strong), None) or \
+                max(sides, key=lambda x: x["value"] if not isinstance(x["value"], str) else 0)
+            val = pick["value"] if isinstance(pick["value"], str) else fmt(pick["value"], v.get("format"))
+            if len(val) <= 9:
+                return val, pick.get("color") if pick.get("color") in strong else "gold"
+    return None, "gold"
+
+def _wrap(text, f, width):
+    lines, cur = [], ""
+    for w in text.split():
+        trial = (cur + " " + w).strip()
+        if f.getlength(trial) <= width or not cur:
+            cur = trial
+        else:
+            lines.append(cur); cur = w
+    return lines + ([cur] if cur else [])
+
+def make_short_thumb(spec, out_dir):
+    """Vertical Shorts thumbnail: badge, big number, title. Kept inside y 380-1450 (clear of Shorts overlays)."""
+    img = make_background().copy()
+    d = ImageDraw.Draw(img)
+    th = spec.get("thumbnail") or {}
+    line = th.get("line") or spec["title"].replace("#shorts", "").strip()
+    big, color = _thumb_big(spec)
+    y = 470
+    badge = spec.get("badge")
+    if badge:
+        f = font(46, "Black")
+        bw = f.getlength(badge) + 80
+        rrect(d, [CX - bw / 2, y - 45, CX + bw / 2, y + 45], 45, fill=col("green"))
+        text_c(d, (CX, y), badge, f, col("bg0"))
+    if big:
+        size = 330
+        while font(size, "Black").getlength(big) > 940 and size > 120:
+            size -= 10
+        text_c(d, (CX, 800), big, font(size, "Black"), col(color), stroke=10, stroke_fill=(0, 0, 0, 255))
+        ty = 1060
+    else:
+        ty = 760
+    for size in (110, 100, 90, 80, 72):
+        f = font(size, "Black")
+        lines = _wrap(line.upper(), f, 940)
+        if len(lines) <= (3 if big else 5):
+            break
+    for i, ln in enumerate(lines):
+        text_c(d, (CX, ty + i * size * 1.12), ln, f, col("text"), stroke=7, stroke_fill=(0, 0, 0, 255))
+    path = os.path.join(out_dir, spec["id"] + "_thumb.png")
+    img.convert("RGB").save(path, optimize=True)
+    return path
+
 # ---------------------------------------------------------------- main render
 def draw_chrome(img, spec):
     d = ImageDraw.Draw(img)
@@ -435,7 +504,7 @@ def draw_chrome(img, spec):
         rrect(d, [CX - bw / 2, 225, CX + bw / 2, 285], 30, fill=col("green", 0.18), outline=col("green"), width=2)
         text_c(d, (CX, 255), badge, f, col("green"))
     if disclaimer:
-        text_c(d, (CX, 325), disclaimer, font(26, "Medium", False), col("dim"))
+        text_c(d, (CX, 325), disclaimer, font(28, "Medium", False), col("muted"))
 
 def preview_frame(spec, i, t, dur=6.0):
     """One still of scene i at time t (no audio): used by preview.py for quick layout checks."""
@@ -445,7 +514,7 @@ def preview_frame(spec, i, t, dur=6.0):
     img.alpha_composite(layer)
     vis = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     VISUALS[spec["scenes"][i]["visual"]["type"]](ImageDraw.Draw(vis), spec["scenes"][i]["visual"], t, max(dur, t + 0.5))
-    img.alpha_composite(vis, (0, VIS_SHIFT))
+    img.alpha_composite(vis, (0, VIS_SHIFT), (30, 0))
     return img
 
 def render(spec_path, out_dir):
@@ -461,10 +530,12 @@ def render(spec_path, out_dir):
         caps += chunk_words(align_words(sc["say"], seg, asr))
     bg = make_background()
     out = os.path.join(out_dir, spec["id"] + ".mp4")
+    tmp_out = out[:-4] + ".partial.mp4"
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-i", audio,
            "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",
-           "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out]
+           "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "48000",
+           "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", tmp_out]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     nframes = int(total * FPS)
     for fi in range(nframes):
@@ -479,18 +550,25 @@ def render(spec_path, out_dir):
         draw_chrome(layer, spec)
         img.alpha_composite(layer)
         vis = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        st = t - (seg["start"] - 0.1)
+        st = t - (seg["start"] - 0.25) + (0.6 if si == 0 else 0)   # first frame already shows the visual
         VISUALS[sc["visual"]["type"]](ImageDraw.Draw(vis), sc["visual"], st, seg["end"] - seg["start"])
-        img.alpha_composite(vis, (0, VIS_SHIFT))
+        img.alpha_composite(vis, (0, VIS_SHIFT), (30, 0))
         draw_captions(img, caps, t)
         # progress bar
-        ImageDraw.Draw(img).rectangle([0, H - 10, W * (t / total), H], fill=col("green"))
         proc.stdin.write(img.convert("RGB").tobytes())
         if fi == int(nframes * 0.3):
             img.convert("RGB").save(os.path.join(out_dir, spec["id"] + "_thumb_frame.png"))
-    proc.stdin.close(); proc.wait()
+    proc.stdin.close()
+    if proc.wait() != 0 or not os.path.getsize(tmp_out):
+        raise SystemExit(f"ffmpeg failed for {spec['id']}; no video written")
+    os.replace(tmp_out, out)
+    make_short_thumb(spec, out_dir)
     json.dump({"timeline": tl, "duration": total}, open(os.path.join(work, "timeline.json"), "w"), indent=1)
     return out
 
 if __name__ == "__main__":
-    print(render(sys.argv[1], sys.argv[2]))
+    if sys.argv[1] == "--thumb-only":      # python3 render.py --thumb-only spec.json out_dir
+        sp = json.load(open(sys.argv[2])); DEFAULT_FMT = sp.get("currency", "usd")
+        print(make_short_thumb(sp, sys.argv[3]))
+    else:
+        print(render(sys.argv[1], sys.argv[2]))

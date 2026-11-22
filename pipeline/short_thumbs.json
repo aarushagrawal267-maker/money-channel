@@ -1,0 +1,15 @@
+{
+  "_doc": "Optional per-Short thumbnail overrides (big number + colour) when the automatic pick isn't the key number. Every number must already be in the spec/video.",
+  "018_start_early_us": {
+    "big": "$792K",
+    "color": "green"
+  },
+  "019_real_hourly_wage": {
+    "big": "$18/HR",
+    "color": "red"
+  },
+  "014_minimum_payment_trap_us": {
+    "big": "16 YRS",
+    "color": "red"
+  }
+}

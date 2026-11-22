@@ -11,8 +11,8 @@ Reads title / description / tags from the spec JSON. For long videos, pass --cha
 Credentials come from env vars YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN; they are
 never printed. On success the upload is appended to pipeline/posted.json.
 
-Note: until the YouTube API audit is approved, Google locks every API upload to PRIVATE,
-even with --privacy public or --publish-at. The owner then publishes/schedules in Studio.
+Scheduled uploads (--publish-at) go public by themselves at that time (Google lifted the private lock
+for unverified projects on 2 Nov 2026). Our scopes can't edit or delete a video after upload.
 """
 import argparse, datetime as dt, json, os, random, sys, time
 
@@ -198,6 +198,18 @@ def main():
     vid = resp["id"]
     print(f"Uploaded: https://youtu.be/{vid}  (status: {resp['status'].get('privacyStatus')})")
 
+    # Log immediately, so a crash or timeout later can never leave an unlogged video on YouTube.
+    entry = {
+        "id": spec["id"], "video_id": vid, "url": f"https://youtu.be/{vid}",
+        "title": body["snippet"]["title"],
+        "uploaded_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "publish_at": body["status"].get("publishAt"),
+        "privacy": resp["status"].get("privacyStatus"),
+        **({"test": True} if a.test else {}),
+    }
+    if not a.no_log:
+        log_posted(entry)
+
     thumb_ok = None
     if a.thumb:
         try:
@@ -207,20 +219,19 @@ def main():
         except Exception as e:  # don't lose the upload over a thumbnail error
             thumb_ok = False
             print(f"WARNING: thumbnail failed: {e}")
-
-    processing = wait_for_processing(yt, vid)
+    try:
+        processing = wait_for_processing(yt, vid)
+    except Exception as e:
+        processing = f"unknown ({type(e).__name__})"
     print(f"Processing: {processing}")
-
     if not a.no_log:
-        log_posted({
-            "id": spec["id"], "video_id": vid, "url": f"https://youtu.be/{vid}",
-            "title": body["snippet"]["title"],
-            "uploaded_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "publish_at": body["status"].get("publishAt"),
-            "privacy": resp["status"].get("privacyStatus"),
-            "thumbnail": thumb_ok, "processing": processing,
-            **({"test": True} if a.test else {}),
-        })
+        posted = load_posted()
+        for e in posted:
+            if e.get("video_id") == vid:
+                e.update({"thumbnail": thumb_ok, "processing": processing})
+        with open(POSTED, "w") as f:
+            json.dump(posted, f, indent=2, ensure_ascii=False)
+            f.write("\n")
     print(json.dumps({"video_id": vid, "thumbnail": thumb_ok}))
 
 

@@ -7,7 +7,7 @@
     "uploaded_at": "2026-11-21T18:06:36Z",
     "publish_at": null,
     "privacy": "public",
-    "thumbnail": null,
+    "thumbnail": true,
     "note": "owner made public manually 2026-11-22; this is the live copy"
   },
   {
@@ -18,7 +18,7 @@
     "uploaded_at": "2026-11-22T05:11:55Z",
     "publish_at": null,
     "privacy": "public",
-    "thumbnail": null,
+    "thumbnail": true,
     "processing": "succeeded",
     "note": "owner made public manually 2026-11-22; this is the live copy"
   },
@@ -31,7 +31,7 @@
     "publish_at": null,
     "privacy": "private",
     "thumbnail": true,
-    "note": "old private copy, stays private; Costco re-uploaded with schedule by upload_pending.sh",
+    "note": "old private copy, stays private forever; Costco is re-uploaded with a schedule by upload_pending.sh",
     "superseded": true
   },
   {
@@ -45,7 +45,7 @@
     "thumbnail": null,
     "processing": "succeeded",
     "superseded": true,
-    "note": "duplicate; deleted by owner 2026-11-22",
+    "note": "duplicate deleted by owner in Studio, 22 Nov 2026",
     "deleted": true
   },
   {
@@ -59,7 +59,8 @@
     "thumbnail": null,
     "processing": "succeeded",
     "superseded": true,
-    "note": "duplicate; owner asked to delete in Studio"
+    "note": "duplicate deleted by owner in Studio, 22 Nov 2026",
+    "deleted": true
   },
   {
     "id": "L001_costco",
@@ -73,7 +74,7 @@
     "processing": "succeeded",
     "superseded": true,
     "deleted": true,
-    "note": "scheduled copy deleted by owner by mistake 2026-11-22; 3inj6_vZEkQ is the live copy"
+    "note": "duplicate deleted by owner in Studio, 22 Nov 2026"
   },
   {
     "id": "016_buying_a_share",
@@ -83,7 +84,7 @@
     "uploaded_at": "2026-11-22T05:25:00Z",
     "publish_at": "2026-11-24T01:00:00.000Z",
     "privacy": "private",
-    "thumbnail": null
+    "thumbnail": true
   },
   {
     "id": "017_upi_free",
@@ -93,7 +94,7 @@
     "uploaded_at": "2026-11-22T05:16:52Z",
     "publish_at": "2026-11-24T17:00:00.000Z",
     "privacy": "private",
-    "thumbnail": null,
+    "thumbnail": true,
     "processing": "succeeded"
   },
   {
@@ -104,7 +105,7 @@
     "uploaded_at": "2026-11-22T05:17:40Z",
     "publish_at": "2026-11-25T01:00:00.000Z",
     "privacy": "private",
-    "thumbnail": null,
+    "thumbnail": true,
     "processing": "succeeded"
   },
   {
@@ -115,7 +116,7 @@
     "uploaded_at": "2026-11-22T05:18:14Z",
     "publish_at": "2026-11-25T17:00:00.000Z",
     "privacy": "private",
-    "thumbnail": null,
+    "thumbnail": true,
     "processing": "succeeded"
   }
 ]

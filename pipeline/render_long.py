@@ -414,12 +414,13 @@ def make_thumb(spec, out_dir):
     if th.get("tag"):
         f = font(48, "Black")
         tw = f.getlength(th["tag"]) + 60
-        rrect(d, [640 - tw / 2, 600, 640 + tw / 2, 680], 20, fill=col("red"))
-        text_c(d, (640, 640), th["tag"], f, col("text"))
+        rrect(d, [640 - tw / 2, 596, 640 + tw / 2, 684], 22, fill=col(th.get("tag_color", "green")))
+        text_c(d, (640, 640), th["tag"], f, col("bg0"))
     img.convert("RGB").save(os.path.join(out_dir, spec["id"] + "_thumb.png"))
 
 def render(spec_path, out_dir):
     spec = json.load(open(spec_path))
+    spec.setdefault("tail", 16.0)   # hold the closing scene so YouTube end screens (5-20 s) have room
     R.DEFAULT_FMT = spec.get("currency", "usd")
     os.makedirs(out_dir, exist_ok=True)
     work = os.path.join(out_dir, "work_" + spec["id"]); os.makedirs(work, exist_ok=True)
@@ -438,9 +439,11 @@ def render(spec_path, out_dir):
     make_thumb(spec, out_dir)
     bg = background()
     out = os.path.join(out_dir, spec["id"] + ".mp4")
+    tmp_out = out[:-4] + ".partial.mp4"
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
            "-r", str(FPS), "-i", "-", "-i", audio, "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-           "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out]
+           "-pix_fmt", "yuv420p", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "48000",
+           "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", tmp_out]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     nframes = int(total * FPS)
     for fi in range(nframes):
@@ -454,13 +457,16 @@ def render(spec_path, out_dir):
         if spec.get("badge"):
             text_c(d, (100, 70), spec["badge"], font(30, "Bold"), col("green"), anchor="lm")
         if spec.get("disclaimer"):
-            text_c(d, (W - 100, 70), spec["disclaimer"], font(24, "Medium", False), col("dim"), anchor="rm")
-        VISUALS[sc["visual"]["type"]](d, sc["visual"], t - (seg["start"] - 0.1), seg["end"] - seg["start"])
+            text_c(d, (W - 100, 70), spec["disclaimer"], font(26, "Medium", False), col("muted"), anchor="rm")
+        VISUALS[sc["visual"]["type"]](d, sc["visual"], t - (seg["start"] - 0.25) + (0.6 if si == 0 else 0), seg["end"] - seg["start"])
         img.alpha_composite(layer)
         draw_caps(img, caps, t)
         ImageDraw.Draw(img).rectangle([0, H - 6, W * t / total, H], fill=col("green"))
         proc.stdin.write(img.convert("RGB").tobytes())
-    proc.stdin.close(); proc.wait()
+    proc.stdin.close()
+    if proc.wait() != 0 or not os.path.getsize(tmp_out):
+        raise SystemExit(f"ffmpeg failed for {spec['id']}; no video written")
+    os.replace(tmp_out, out)
     json.dump({"timeline": tl, "duration": total}, open(os.path.join(work, "timeline.json"), "w"), indent=1)
     return out
 

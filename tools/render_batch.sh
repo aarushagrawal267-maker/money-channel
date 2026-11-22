@@ -13,7 +13,7 @@ for id in "$@"; do
   if [[ "$id" == L* ]]; then r=pipeline/render_long.py; w="output/work_$id"; else r=pipeline/render.py; w="output/work_$id"; fi
   rm -rf "$w"
   if [[ "$id" == L* ]]; then python3 "$r" "$spec" output >/dev/null 2>>output/batch.log
-  else python3 "$r" "$spec" "$w" >/dev/null 2>>output/batch.log && mv "$w/$id.mp4" "$w/${id}_thumb_frame.png" output/ 2>/dev/null; fi
+  else python3 "$r" "$spec" "$w" >/dev/null 2>>output/batch.log && mv "$w/$id.mp4" "$w/${id}_thumb.png" "$w/${id}_thumb_frame.png" output/ 2>/dev/null; fi
   status=$?
   dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$out" 2>/dev/null)
   echo "$(date +%H:%M) $id status=$status length=${dur:-?}s took=$(( $(date +%s) - start ))s" | tee -a output/batch.log
