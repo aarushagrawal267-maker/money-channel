@@ -159,6 +159,17 @@
     "title": "93% of Fund Managers Lose to the S&P 500. Here's Why",
     "uploaded_at": "2026-11-23T07:03:29Z",
     "publish_at": "2026-11-26T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "021_bnpl",
+    "video_id": "jYzKV_hDPCg",
+    "url": "https://youtu.be/jYzKV_hDPCg",
+    "title": "How Buy Now, Pay Later Makes Money (It's Not Interest)",
+    "uploaded_at": "2026-11-23T07:04:05Z",
+    "publish_at": "2026-11-26T17:00:00.000Z",
     "privacy": "private"
   }
 ]
