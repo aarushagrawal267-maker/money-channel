@@ -118,5 +118,14 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "023_inflation_100",
+    "video_id": "DLW7_Onjx_0",
+    "url": "https://youtu.be/DLW7_Onjx_0",
+    "title": "What $100 Will Buy in 30 Years (Inflation Explained)",
+    "uploaded_at": "2026-11-23T07:01:02Z",
+    "publish_at": "2026-11-23T17:00:00.000Z",
+    "privacy": "private"
   }
 ]
