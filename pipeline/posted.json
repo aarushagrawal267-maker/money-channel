@@ -126,6 +126,17 @@
     "title": "What $100 Will Buy in 30 Years (Inflation Explained)",
     "uploaded_at": "2026-11-23T07:01:02Z",
     "publish_at": "2026-11-23T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "L001_costco",
+    "video_id": "imDoJAdft6Y",
+    "url": "https://youtu.be/imDoJAdft6Y",
+    "title": "How Costco Makes Money (It's Not the Groceries)",
+    "uploaded_at": "2026-11-23T07:01:44Z",
+    "publish_at": "2026-11-23T18:00:00.000Z",
     "privacy": "private"
   }
 ]
