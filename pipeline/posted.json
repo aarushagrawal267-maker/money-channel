@@ -173,5 +173,14 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "022_airline_loyalty",
+    "video_id": "BW-TKHG_UjA",
+    "url": "https://youtu.be/BW-TKHG_UjA",
+    "title": "How Airlines Really Make Money: Credit Cards",
+    "uploaded_at": "2026-11-23T07:04:41Z",
+    "publish_at": "2026-11-27T01:00:00.000Z",
+    "privacy": "private"
   }
 ]
