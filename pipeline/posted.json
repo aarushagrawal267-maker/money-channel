@@ -140,5 +140,14 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "L002_compounding",
+    "video_id": "ELfkCjbjbMo",
+    "url": "https://youtu.be/ELfkCjbjbMo",
+    "title": "Compound Interest Explained: Same $96K, 2.4x the Money",
+    "uploaded_at": "2026-11-23T07:02:39Z",
+    "publish_at": "2026-11-25T18:00:00.000Z",
+    "privacy": "private"
   }
 ]
