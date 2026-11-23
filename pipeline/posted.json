@@ -137,6 +137,8 @@
     "title": "How Costco Makes Money (It's Not the Groceries)",
     "uploaded_at": "2026-11-23T07:01:44Z",
     "publish_at": "2026-11-23T18:00:00.000Z",
-    "privacy": "private"
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
   }
 ]
