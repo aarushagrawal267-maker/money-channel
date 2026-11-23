@@ -195,5 +195,14 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "L003_index_funds",
+    "video_id": "2O13IaOUsmY",
+    "url": "https://youtu.be/2O13IaOUsmY",
+    "title": "Why 93% of Fund Managers Lose to a Simple Index Fund",
+    "uploaded_at": "2026-11-23T07:05:56Z",
+    "publish_at": "2026-11-27T18:00:00.000Z",
+    "privacy": "private"
   }
 ]
