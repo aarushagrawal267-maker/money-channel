@@ -148,6 +148,17 @@
     "title": "Compound Interest Explained: Same $96K, 2.4x the Money",
     "uploaded_at": "2026-11-23T07:02:39Z",
     "publish_at": "2026-11-25T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "020_index_funds_vs_managers",
+    "video_id": "bAAgr1tTMz0",
+    "url": "https://youtu.be/bAAgr1tTMz0",
+    "title": "93% of Fund Managers Lose to the S&P 500. Here's Why",
+    "uploaded_at": "2026-11-23T07:03:29Z",
+    "publish_at": "2026-11-26T01:00:00.000Z",
     "privacy": "private"
   }
 ]
