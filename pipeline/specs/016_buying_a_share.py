@@ -21,7 +21,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "HOW MARKETS WORK",
     "disclaimer": "Educational only · US market example · not investment advice",
-    "title": "What actually happens when you tap \"Buy\" on a stock? #shorts",
+    "title": "What Happens When You Buy a Stock? (Not What You Think)",
     "description": (
         "When you buy a share, your money almost never goes to the company. Your broker routes the order to an "
         "exchange or a market maker, it's matched with a seller, and one business day later (T+1, the US rule "

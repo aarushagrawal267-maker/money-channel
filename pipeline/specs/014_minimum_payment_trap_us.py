@@ -38,7 +38,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.06,
     "badge": "MONEY TRAP",
     "disclaimer": "Illustration · 22% APR · minimum = 1% + interest ($35 floor) · no new spending",
-    "title": "Only paying the minimum on your credit card? Watch this. #shorts",
+    "title": "Credit Card Minimum Payment Trap: $5,000 Takes 16 Years",
     "description": (
         "A $5,000 credit card balance at 22% APR. Pay only the minimum and it takes about 16 years "
         "and over $7,500 in interest to clear. Pay $300 a month and it's gone in 21 months for about $1,000.\n\n"

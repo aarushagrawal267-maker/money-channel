@@ -49,4 +49,7 @@ PY
   if [ $rc -ne 0 ]; then echo "FAILED $id: upload error"; failures=$((failures + 1)); fi
 done 3< <(grep -v '^#' pipeline/schedule.txt)
 
-[ "$failures" -eq 0 ] || { echo "$failures problem(s); see above."; exit 1; }
+# Put new uploads into their topic playlists (needs the manage permission; skipped quietly without it).
+python3 tools/seo_live.py playlists </dev/null 2>&1 | grep -E "created|done|NO_EDIT" | tail -3
+
+[ "$failures" -eq 0 ] ||{ echo "$failures problem(s); see above."; exit 1; }

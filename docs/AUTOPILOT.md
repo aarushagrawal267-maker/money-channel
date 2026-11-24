@@ -103,3 +103,13 @@ Skip agents unrelated to a YouTube finance channel.
 Re-running `tools/get_youtube_token.py` with the broader `youtube` + `youtube.force-ssl` scopes would let
 Claude also edit titles after upload, delete mistakes, build playlists and upload caption files.
 Suggest it to the owner when they're back; don't block on it.
+
+## Editing live videos and playlists
+`tools/seo_live.py` (titles from specs, topic playlists) needs the youtube.force-ssl permission. The owner
+granted it on 23 Nov 2026, but this long-running session still has the old token in its environment
+(`seo_live.py check` prints NO_EDIT_PERMISSION). Fresh sessions get the new token, so run it there:
+`create_session` with `source_url` = the money-channel repo and `source_revision` = claude/friendly-gates-8o3lq0,
+asking it to run `./setup.sh` if needed, then `python3 tools/seo_live.py playlists` (and `titles <ids>` after a
+title change), and to report the output only. `upload_pending.sh` also calls `playlists` at the end; it is
+skipped quietly here.
+

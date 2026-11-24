@@ -35,7 +35,7 @@ spec = {
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "MONEY MATH",
     "disclaimer": "Illustration · yearly compounding · returns not guaranteed · not financial advice",
-    "title": "How fast does your money double? The Rule of 72 #shorts",
+    "title": "Rule of 72: How Fast Does Your Money Double?",
     "description": (
         "Divide 72 by your yearly return and you get roughly how many years your money takes to double. "
         "At 4% that's 18 years, at 7% about 10, at 10% about 7.2. The exact answers (17.7, 10.2 and 7.3 years) "

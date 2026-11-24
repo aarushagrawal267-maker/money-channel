@@ -228,5 +228,36 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "028_market_cap",
+    "video_id": "5IAZeUD8hMQ",
+    "url": "https://youtu.be/5IAZeUD8hMQ",
+    "title": "Market Cap vs Revenue: Walmart Sells More, Worth Less",
+    "uploaded_at": "2026-11-24T08:06:18Z",
+    "publish_at": "2026-11-29T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "027_lifestyle_inflation",
+    "video_id": "IQ_Yvuqws_w",
+    "url": "https://youtu.be/IQ_Yvuqws_w",
+    "title": "Lifestyle Inflation: Why Your Raise Leaves You No Richer",
+    "uploaded_at": "2026-11-24T08:06:54Z",
+    "publish_at": "2026-11-30T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "029_netflix_blockbuster",
+    "video_id": "CJkDXhrDa0c",
+    "url": "https://youtu.be/CJkDXhrDa0c",
+    "title": "Why Blockbuster Didn't Buy Netflix for $50 Million",
+    "uploaded_at": "2026-11-24T08:07:32Z",
+    "publish_at": "2026-11-30T17:00:00.000Z",
+    "privacy": "private"
   }
 ]
