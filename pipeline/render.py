@@ -25,6 +25,7 @@ COLORS = {
 CX = 540            # horizontal centre
 TITLE_Y = 430       # scene title baseline area
 VIS_TOP, VIS_BOT = 520, 1160
+ZOOM, ZOOM_CY = 0.035, 840   # slow push-in on held visuals, centred on the visual area
 CAP_Y = 1370        # captions centre (clear of the Shorts title/description overlay)
 VIS_SHIFT = 70      # push visuals down to use the screen better
 
@@ -394,6 +395,153 @@ def word_times(say, start, end):
         out.append((w, t, t + dt)); t += dt
     return out
 
+_SMALL = {w: i for i, w in enumerate(
+    "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen "
+    "sixteen seventeen eighteen nineteen".split())}
+_TENS = {w: 10 * i for i, w in enumerate("x x twenty thirty forty fifty sixty seventy eighty ninety".split()) if i >= 2}
+_MULT = {"thousand": 10**3, "million": 10**6, "billion": 10**9, "trillion": 10**12}
+_NUMWORDS = set(_SMALL) | set(_TENS) | set(_MULT) | {"hundred"}
+_PUNCT = ",.?!:;\"'"
+
+
+def _parse_int(parts):
+    """Spoken integer -> (value, used_big_multiplier) or None if the words aren't one clean number."""
+    total, cur, last, big = 0, 0, None, False
+    for i, p in enumerate(parts):
+        if p == "a":
+            if i != 0:
+                return None
+            cur, last = 1, "small"
+        elif p == "and":
+            if last not in ("hundred", "mult"):
+                return None
+        elif p in _SMALL:
+            v = _SMALL[p]
+            if last in ("small", "tens_unit") or (last == "tens" and v >= 10) or (last == "tens" and v == 0):
+                return None
+            cur += v
+            last = "tens_unit" if last == "tens" else "small"
+        elif p in _TENS:
+            if last in ("small", "tens", "tens_unit"):
+                return None
+            cur += _TENS[p]; last = "tens"
+        elif p == "hundred":
+            if last in (None, "hundred", "mult") or cur == 0 or cur >= 100:
+                return None
+            cur *= 100; last = "hundred"
+        elif p in _MULT:
+            if last is None or last == "mult":
+                return None
+            total += cur * _MULT[p]; cur = 0; last = "mult"; big = big or _MULT[p] >= 10**6
+        else:
+            return None
+    if last in (None, "and"):
+        return None
+    return total + cur, big
+
+
+def _parse_number(parts):
+    """Returns (display_number_string, value) or None. Handles years ("twenty twenty-five") and decimals."""
+    if "point" in parts:
+        k = parts.index("point")
+        whole, frac = parts[:k], parts[k + 1:]
+        if not frac or any(f not in _SMALL or _SMALL[f] > 9 for f in frac):
+            return None
+        w = _parse_int(whole) if whole else (0, False)
+        if not w:
+            return None
+        s = f"{w[0]}." + "".join(str(_SMALL[f]) for f in frac)
+        return s, float(s)
+    r = _parse_int(parts)
+    if r:
+        v, big = r
+        if big and v >= 10**6:
+            for d, u in ((10**12, "T"), (10**9, "B"), (10**6, "M")):
+                if v >= d:
+                    return f"{v / d:g}{u}", v
+        return (str(v) if 1900 <= v <= 2100 or v < 1000 else f"{v:,}"), v
+    if parts and parts[0] in ("nineteen", "twenty") and len(parts) in (2, 3):   # spoken years
+        rest = _parse_int(parts[1:])
+        if rest and 10 <= rest[0] <= 99:
+            v = (19 if parts[0] == "nineteen" else 20) * 100 + rest[0]
+            return str(v), v
+    return None
+
+
+def _decimal_mult(parts):
+    """'seven point two billion' -> split off the trailing multiplier so decimals scale."""
+    if "point" in parts and parts[-1] in _MULT and len(parts) > 2:
+        return parts[:-1], parts[-1]
+    return parts, None
+
+
+def digit_captions(wts):
+    """Show spoken numbers as digits in captions: 'seven hundred ninety-two thousand dollars' -> '$792,000',
+    'four point seven percent' -> '4.7%', 'twenty twenty-five' -> '2025'. The voice still says the words.
+    Anything that doesn't parse as one clean number is left as words."""
+    out, i, n = [], 0, len(wts)
+
+    def core(w):
+        return w.lower().strip(_PUNCT)
+
+    def is_num(j):
+        c = core(wts[j][0])
+        return bool(c) and all(p in _NUMWORDS for p in c.split("-"))
+
+    while i < n:
+        j, parts = i, []
+        while j < n:
+            c = core(wts[j][0])
+            nxt_num = j + 1 < n and is_num(j + 1)
+            if is_num(j):
+                parts += c.split("-")
+            elif c == "a" and not parts and j + 1 < n and core(wts[j + 1][0]) in ("hundred", "thousand", "million", "billion"):
+                parts.append("a")
+            elif c == "and" and parts and parts[-1] in ("hundred", "thousand", "million", "billion") and nxt_num \
+                    and wts[j - 1][0][-1] not in _PUNCT:
+                parts.append("and")
+            elif c == "point" and parts and nxt_num and wts[j - 1][0][-1] not in _PUNCT:
+                parts.append("point")
+            else:
+                break
+            j += 1
+            if wts[j - 1][0][-1] in _PUNCT:
+                break
+        if not parts:
+            out.append(wts[i]); i += 1; continue
+        # Longest run of words that parses as one number ("two thousand seven one in..." -> "two thousand seven").
+        while True:
+            base, mult = _decimal_mult(parts)
+            parsed = _parse_number(base)
+            if parsed or j - i <= 1:
+                break
+            j -= 1
+            parts = [p for k in range(i, j) for p in
+                     (core(wts[k][0]).split("-") if is_num(k) else [core(wts[k][0])])]
+        if parsed and mult:
+            parsed = (f"{parsed[1]:g}{ {'thousand': 'K', 'million': 'M', 'billion': 'B', 'trillion': 'T'}[mult]}",
+                      parsed[1] * _MULT[mult])
+        single_small = len(parts) == 1 and parts[0] in _SMALL and _SMALL[parts[0]] <= 10
+        unit, end_j = "", j
+        if parsed and wts[j - 1][0][-1] not in _PUNCT and j < n:
+            u = core(wts[j][0])
+            if u == "percent":
+                unit, end_j = "%", j + 1
+            elif u in ("dollars", "dollar"):
+                unit, end_j = "$", j + 1
+            elif u in ("rupees", "rupee"):
+                unit, end_j = "₹", j + 1
+        if not parsed or (single_small and not unit) or parts[-1] in ("and", "point"):
+            out.append(wts[i]); i += 1; continue
+        num = parsed[0]
+        txt = (unit + num) if unit in ("$", "₹") else (num + unit)
+        tail = wts[end_j - 1][0]
+        trail = tail[len(tail.rstrip(_PUNCT)):]
+        out.append((txt + trail, wts[i][1], wts[end_j - 1][2]))
+        i = end_j
+    return out
+
+
 def chunk_words(wts, max_chars=16, max_words=3):
     chunks, cur = [], []
     for w in wts:
@@ -527,7 +675,7 @@ def render(spec_path, out_dir):
     caps = []
     asr = asr_words(audio)
     for sc, seg in zip(spec["scenes"], tl):
-        caps += chunk_words(align_words(sc["say"], seg, asr))
+        caps += chunk_words(digit_captions(align_words(sc["say"], seg, asr)))
     bg = make_background()
     out = os.path.join(out_dir, spec["id"] + ".mp4")
     tmp_out = out[:-4] + ".partial.mp4"
@@ -551,7 +699,14 @@ def render(spec_path, out_dir):
         img.alpha_composite(layer)
         vis = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         st = t - (seg["start"] - 0.25) + (0.6 if si == 0 else 0)   # first frame already shows the visual
-        VISUALS[sc["visual"]["type"]](ImageDraw.Draw(vis), sc["visual"], st, seg["end"] - seg["start"])
+        dur = seg["end"] - seg["start"]
+        VISUALS[sc["visual"]["type"]](ImageDraw.Draw(vis), sc["visual"], st, dur)
+        # Slow push-in while a visual is held, so the picture never sits still (retention).
+        z = 1 + ZOOM * min(1.0, max(0.0, st) / max(dur, 1.0))
+        if z > 1.001:
+            zw, zh = int(W * z), int(H * z)
+            left, top = int(CX * z - CX), int(ZOOM_CY * z - ZOOM_CY)
+            vis = vis.resize((zw, zh), Image.BILINEAR).crop((left, top, left + W, top + H))
         img.alpha_composite(vis, (0, VIS_SHIFT), (30, 0))
         draw_captions(img, caps, t)
         # progress bar
