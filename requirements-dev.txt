@@ -1,0 +1,5 @@
+# Only what the test suite needs (no voice model, no YouTube login).
+numpy>=1.26
+pillow>=10.0
+soundfile>=0.12
+pytest>=7.0
