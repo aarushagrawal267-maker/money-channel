@@ -14,7 +14,9 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 W, H, FPS, SR = 1080, 1920, 30, 24000
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODELS = os.path.join(HERE, "..", "models")
-FONT_DIR = "/usr/share/fonts/opentype/inter/"
+# Inter fonts: the Debian/Ubuntu `fonts-inter` location, or set INTER_FONT_DIR to a folder holding
+# Inter-*.otf and InterDisplay-*.otf (e.g. on another distro, or the files from https://rsms.me/inter/).
+FONT_DIR = os.path.join(os.environ.get("INTER_FONT_DIR", "/usr/share/fonts/opentype/inter"), "")
 
 COLORS = {
     "bg0": (8, 13, 26), "bg1": (17, 27, 48), "text": (241, 245, 249),

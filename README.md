@@ -66,7 +66,9 @@ tools/voice_check.py (pronunciation diff)  ->  pipeline/upload.py  ->  YouTube (
 
 ## Setup
 
-Needs Linux or macOS, Python 3.10+, `ffmpeg`, and the Inter font (`fonts-inter` on Debian/Ubuntu).
+Needs Linux (tested on Ubuntu 24.04), Python 3.10+, `ffmpeg`, and the Inter font (`fonts-inter` on Debian/Ubuntu;
+elsewhere download Inter from https://rsms.me/inter/ and set `INTER_FONT_DIR` to the folder with the `.otf` files).
+The shell scripts use GNU tools (`stat -c`, `sha256sum`), so macOS is not supported as-is; use Linux or WSL.
 
 ```bash
 git clone https://github.com/aarushagrawal267-maker/money-channel.git

@@ -10,11 +10,11 @@
 1. **Merge the website update.** The audit checks the privacy policy and terms pages. (Claude will tell you how; once done, these must open:
    https://aarushagrawal267-maker.github.io/privacy.html and https://aarushagrawal267-maker.github.io/terms.html)
 2. **Rename the app on the consent screen** so every name matches:
-   Google Cloud Console → project `money-channel` → **APIs & Services → OAuth consent screen → Branding** → App name: `Money Mechanics Uploader`. Also set **Application home page** to `https://aarushagrawal267-maker.github.io`, **Privacy policy** to `https://aarushagrawal267-maker.github.io/privacy.html`, and **Terms of service** to `https://aarushagrawal267-maker.github.io/terms.html`. Save.
+   Google Cloud Console → project `money-channel` → **APIs & Services → OAuth consent screen → Branding** → App name: `Penny to Billion Uploader`. Also set **Application home page** to `https://aarushagrawal267-maker.github.io`, **Privacy policy** to `https://aarushagrawal267-maker.github.io/privacy.html`, and **Terms of service** to `https://aarushagrawal267-maker.github.io/terms.html`. Save.
 3. **Find your project number:** Cloud Console → top-left project picker → `money-channel` → the **Dashboard** shows "Project number" (only digits). Write it down.
 4. **Take 2 screenshots of the consent screen setup** (needed for "OAuth flow screenshots"):
    - the **Branding** page after step 2;
-   - the **Data Access** page showing the 3 scopes (youtube.upload, youtube.readonly, yt-analytics.readonly).
+   - the **Data Access** page showing the 4 scopes that `tools/get_youtube_token.py` asks for (youtube.upload, youtube.force-ssl, youtube.readonly, yt-analytics.readonly).
 5. Have these files from the repo folder `docs/audit/` ready to upload (Claude made them):
    `01_homepage.png`, `02_privacy_policy.png`, `03_terms_of_service.png`, `04_upload_script.pdf`.
    (If the website looks different after merging, Claude can retake them.)
@@ -43,9 +43,9 @@ Fill in the parts in **[brackets]** yourself. Everything else, copy exactly.
 ## Section 3: Business model
 12. **Describe your organization's work as it relates to YouTube** (copy all):
 
-> I run Money Mechanics (https://www.youtube.com/@MoneyMechanics-v7t), an educational YouTube channel that explains personal finance, how markets work and how businesses make money, using animated charts and narration. I publish two YouTube Shorts per day and three longer videos per week.
+> I run Penny to Billion (https://www.youtube.com/@PennyToBillion), an educational YouTube channel that explains personal finance, how markets work and how businesses make money, using animated charts and narration. I publish two YouTube Shorts per day and three longer videos per week.
 >
-> My API client, "Money Mechanics Uploader", is a private command-line script that only I use. It is not offered to anyone else and has no other users. It uses the YouTube Data API v3 to upload my own finished videos to my own channel (videos.insert with a resumable upload), set their custom thumbnail (thumbnails.set), set the title, description, tags, category (Education), made-for-kids status (not made for kids) and a scheduled publish time (status.publishAt). It then reads back my own video's processing status (videos.list) and my own channel's basic details (channels.list). Read-only YouTube Analytics access is used only to look at my own channel's views by hour so I can choose better upload times.
+> My API client, "Penny to Billion Uploader", is a private command-line script that only I use. It is not offered to anyone else and has no other users. It uses the YouTube Data API v3 to upload my own finished videos to my own channel (videos.insert with a resumable upload), set their custom thumbnail (thumbnails.set), set the title, description, tags, category (Education), made-for-kids status (not made for kids) and a scheduled publish time (status.publishAt). It then reads back my own video's processing status (videos.list) and my own channel's basic details (channels.list). The youtube.force-ssl scope is used only on my own channel's videos: to correct a title, description or tags after upload (videos.update) and to add my videos to my own playlists (playlists.insert, playlistItems.insert). Read-only YouTube Analytics access is used only to look at my own channel's views by hour so I can choose better upload times.
 >
 > The tool does not access any other user's account or data, does not collect viewer data, does not download or redistribute YouTube content, and does not display YouTube content anywhere. Credentials are stored privately and never shared.
 >
@@ -59,7 +59,7 @@ Fill in the parts in **[brackets]** yourself. Everything else, copy exactly.
 18. **Google Ads Customer ID:** leave empty
 
 ## Section 4: API client overview
-19. **API Client name:** `Money Mechanics Uploader`
+19. **API Client name:** `Penny to Billion Uploader`
 20. **Contains "YouTube"?** `No, the name does not contain "YouTube"`
 21. **Primary access URL:** `https://aarushagrawal267-maker.github.io`
 22. **Privacy policy URL:** `https://aarushagrawal267-maker.github.io/privacy.html`

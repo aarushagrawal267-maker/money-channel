@@ -15,7 +15,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 
 SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",        # upload videos + thumbnails
-    "https://www.googleapis.com/auth/youtube.force-ssl",     # manage: fix titles, playlists, pinned comments, captions
+    "https://www.googleapis.com/auth/youtube.force-ssl",     # manage own videos: fix titles/descriptions, playlists (tools/seo_live.py)
     "https://www.googleapis.com/auth/youtube.readonly",      # read channel/video stats
     "https://www.googleapis.com/auth/yt-analytics.readonly", # analytics to tune upload times
 ]
