@@ -5,7 +5,7 @@
 # Stops cleanly at YouTube's daily upload limit (run again later) and on quota/auth errors.
 # Exit code: 0 = all done or cleanly stopped at the daily limit; 1 = something failed (see output).
 set -uo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/.." || exit 1
 [ -s models/kokoro-v1.0.onnx ] || ./setup.sh </dev/null || exit 1
 
 # Titles already on the channel (scheduled, public or private, except retired copies).
@@ -16,7 +16,7 @@ failures=0
 while read -r id when <&3; do
   [ -z "${id:-}" ] && continue
   [[ "$id" == \#* ]] && continue
-  done_already=$(python3 - "$id" </dev/null <<'PY'
+  done_already=$(python3 - "$id" <<'PY'
 import json, sys
 print(any(e["id"] == sys.argv[1] and e.get("publish_at") and not e.get("superseded")
           for e in json.load(open("pipeline/posted.json"))))

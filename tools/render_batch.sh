@@ -6,7 +6,7 @@
 # while regenerating an unchanged spec never does. Logs to output/batch.log.
 # Exit code: 0 = every video rendered or already up to date; 1 = at least one render failed.
 set -uo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/.." || exit 1
 mkdir -p output
 failed=0
 for id in "$@"; do
