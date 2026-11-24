@@ -284,12 +284,23 @@ def speech_bounds(x, thr=0.02):
     idx = np.where(np.abs(x) > thr)[0]
     return (idx[0], idx[-1]) if len(idx) else (0, len(x))
 
-def make_music(n):
-    """Soft original ambient pad + pluck, procedurally generated (no licensing)."""
+PROGRESSIONS = [
+    [[57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62]],   # Am F C G
+    [[48, 52, 55], [55, 59, 62], [57, 60, 64], [53, 57, 60]],   # C G Am F
+    [[50, 53, 57], [55, 59, 62], [48, 52, 55], [57, 60, 64]],   # Dm G C Am
+    [[52, 55, 59], [48, 52, 55], [55, 59, 62], [50, 54, 57]],   # Em C G D
+]
+
+
+def make_music(n, seed=""):
+    """Soft original ambient pad + pluck, procedurally generated (no licensing).
+    Tempo and chords vary per video (seeded by its id) so Shorts don't all sound alike."""
+    import zlib
+    h = zlib.crc32(seed.encode())
     t = np.arange(n) / SR
-    bpm = 84
+    bpm = 76 + h % 21 if seed else 84
     beat = 60 / bpm
-    chords = [[57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62]]  # Am F C G
+    chords = PROGRESSIONS[(h // 21) % len(PROGRESSIONS)] if seed else PROGRESSIONS[0]
     hz = lambda m: 440 * 2 ** ((m - 69) / 12)
     out = np.zeros(n)
     bar = beat * 4
@@ -341,7 +352,7 @@ def build_audio(spec, work):
     chunks.append(np.zeros(tail)); cur += tail
     voice_track = np.concatenate(chunks).astype(np.float32)
     voice_track /= (np.max(np.abs(voice_track)) + 1e-9) / 0.9
-    music = make_music(len(voice_track)) * 10 ** (-24 / 20)
+    music = make_music(len(voice_track), spec.get("id", "")) * 10 ** (-24 / 20)
     fade = np.minimum(1, np.arange(len(music))[::-1] / (0.8 * SR))
     mix = voice_track + music * fade
     path = os.path.join(work, "audio.wav")
