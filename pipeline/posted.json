@@ -258,6 +258,85 @@
     "title": "Why Blockbuster Didn't Buy Netflix for $50 Million",
     "uploaded_at": "2026-11-24T08:07:32Z",
     "publish_at": "2026-11-30T17:00:00.000Z",
-    "privacy": "private"
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "L010_netflix_blockbuster",
+    "video_id": "2e_Q_he8uJk",
+    "url": "https://youtu.be/2e_Q_he8uJk",
+    "title": "Netflix vs Blockbuster: Why Blockbuster Really Failed",
+    "uploaded_at": "2026-11-24T08:08:12Z",
+    "publish_at": "2026-11-30T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "030_zerodha",
+    "video_id": "6pYXnnRWTPc",
+    "url": "https://youtu.be/6pYXnnRWTPc",
+    "title": "How Zerodha Makes Money With ₹0 Brokerage",
+    "uploaded_at": "2026-11-24T08:09:04Z",
+    "publish_at": "2026-12-01T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "031_car_loan_cost",
+    "video_id": "5J25UDhHB8k",
+    "url": "https://youtu.be/5J25UDhHB8k",
+    "title": "Car Loan Math: 72 vs 48 Months on a $35,000 Car",
+    "uploaded_at": "2026-11-24T08:09:39Z",
+    "publish_at": "2026-12-01T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "032_buffett_after_50",
+    "video_id": "_VRnaPUfiHw",
+    "url": "https://youtu.be/_VRnaPUfiHw",
+    "title": "Warren Buffett: 99% of His Fortune Came After 52",
+    "uploaded_at": "2026-11-24T08:10:15Z",
+    "publish_at": "2026-12-02T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "033_raise_vs_switch",
+    "video_id": "qE5zNSJjMQc",
+    "url": "https://youtu.be/qE5zNSJjMQc",
+    "title": "Ask for a Raise or Switch Jobs? The 10-Year Math",
+    "uploaded_at": "2026-11-24T08:10:52Z",
+    "publish_at": "2026-12-02T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "L004_credit_cards_business",
+    "video_id": "hyE7e9hVgxw",
+    "url": "https://youtu.be/hyE7e9hVgxw",
+    "title": "How Credit Card Companies Really Make Money",
+    "uploaded_at": "2026-11-24T08:11:33Z",
+    "publish_at": "2026-12-02T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "034_rates_and_you",
+    "video_id": "jvrKH-Lqwag",
+    "url": "https://youtu.be/jvrKH-Lqwag",
+    "title": "Fed Rate Hike Explained: What It Does to Your Loan",
+    "uploaded_at": "2026-11-24T08:12:24Z",
+    "publish_at": "2026-12-03T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
   }
 ]
