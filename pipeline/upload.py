@@ -12,9 +12,11 @@ Credentials come from env vars YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN;
 never printed. On success the upload is appended to pipeline/posted.json.
 
 Scheduled uploads (--publish-at) go public by themselves at that time (Google lifted the private lock
-for unverified projects on 2 Nov 2026). Our scopes can't edit or delete a video after upload.
+for unverified projects on 2 Nov 2026). With only the upload + readonly scopes a video can't be edited
+or deleted after upload; tools/seo_live.py needs the youtube.force-ssl scope for that.
+A thumbnail that failed to upload is logged as "thumbnail": false; tools/retry_thumbs.py retries those.
 """
-import argparse, datetime as dt, json, os, random, sys, time
+import argparse, datetime as dt, http.client, json, os, random, socket, sys, tempfile, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 POSTED = os.path.join(HERE, "posted.json")
@@ -99,12 +101,22 @@ def build_body(spec, chapters=None, privacy="private", publish_at=None):
     for lang, l10n in (spec.get("localizations") or {}).items():
         t = l10n["title"].replace("<", "").replace(">", "")[:MAX_TITLE]
         d = (l10n.get("summary", "").strip() + "\n\n" + desc).strip()
-        if len(d.encode("utf-8")) > MAX_DESC:
-            d = l10n.get("summary", "").strip() + "\n\n" + SUBSCRIBE_LINE
+        if len(d.encode("utf-8")) > MAX_DESC:   # keep the AI-disclosure line even in the short version
+            d = l10n.get("summary", "").strip() + "\n\n" + AI_LINE + "\n\n" + SUBSCRIBE_LINE
         locs[lang] = {"title": t, "description": d}
     if locs:
         body["localizations"] = locs
     return body
+
+
+def is_transient(e):
+    """Retry only server-side (5xx) and network errors; a bug or a 4xx should fail at once."""
+    code = getattr(getattr(e, "resp", None), "status", None)
+    if code is not None:
+        return code in RETRY_STATUS
+    if isinstance(e, (OSError, socket.timeout, http.client.HTTPException)):
+        return True
+    return type(e).__module__.startswith("httplib2")   # e.g. ServerNotFoundError
 
 
 def resumable_upload(request):
@@ -116,8 +128,7 @@ def resumable_upload(request):
                 print(f"  uploaded {status.progress():.0%}", flush=True)
         except Exception as e:  # HttpError or network error
             code = getattr(getattr(e, "resp", None), "status", None)
-            transient = code in RETRY_STATUS or code is None
-            if not transient or retry >= 8:
+            if not is_transient(e) or retry >= 8:
                 raise
             retry += 1
             wait = min(64, 2 ** retry) * random.uniform(0.5, 1.0)
@@ -147,12 +158,25 @@ def load_posted():
     return []
 
 
+def save_posted(posted, path=None):
+    """Write the log atomically (temp file + rename) so a crash can never leave half a JSON file."""
+    path = path or POSTED
+    fd, tmp = tempfile.mkstemp(dir=os.path.dirname(path), prefix=".posted.", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w") as f:
+            json.dump(posted, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+        os.replace(tmp, path)
+    except BaseException:
+        if os.path.exists(tmp):
+            os.remove(tmp)
+        raise
+
+
 def log_posted(entry):
     posted = load_posted()
     posted.append(entry)
-    with open(POSTED, "w") as f:
-        json.dump(posted, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    save_posted(posted)
 
 
 def parse_publish_at(s):
@@ -177,6 +201,9 @@ def main():
     ap.add_argument("--test", action="store_true", help="mark as a test upload in posted.json (doesn't block a real upload later)")
     a = ap.parse_args()
 
+    for path, what in ((a.spec, "Spec"), (a.video, "Video"), (a.thumb, "Thumbnail"), (a.chapters, "Chapters file")):
+        if path and not os.path.isfile(path):
+            sys.exit(f"{what} not found: {path}")
     spec = json.load(open(a.spec))
     if not os.path.getsize(a.video):
         sys.exit("Video file is empty")
@@ -231,9 +258,7 @@ def main():
         for e in posted:
             if e.get("video_id") == vid:
                 e.update({"thumbnail": thumb_ok, "processing": processing})
-        with open(POSTED, "w") as f:
-            json.dump(posted, f, indent=2, ensure_ascii=False)
-            f.write("\n")
+        save_posted(posted)
     print(json.dumps({"video_id": vid, "thumbnail": thumb_ok}))
 
 

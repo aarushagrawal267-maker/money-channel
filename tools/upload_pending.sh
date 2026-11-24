@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Upload every video in pipeline/schedule.txt that isn't on the channel yet, in schedule order, with its
-# publish time. Renders first if the .mp4 is missing (a fresh container has no output/).
+# publish time. Renders first if the .mp4 is missing or out of date with its spec (a fresh container has no output/).
 # Never uploads twice: skips ids scheduled in pipeline/posted.json AND titles already on the channel.
 # Stops cleanly at YouTube's daily upload limit (run again later) and on quota/auth errors.
 # Exit code: 0 = all done or cleanly stopped at the daily limit; 1 = something failed (see output).
@@ -31,9 +31,9 @@ PY
   if [ "$(python3 -c "import datetime as d,sys;print(d.datetime.fromisoformat(sys.argv[1])<=d.datetime.now(d.timezone.utc)+d.timedelta(minutes=20))" "$when" </dev/null)" = "True" ]; then
     echo "MISSED SLOT $id $when (not uploaded; give it a new time in schedule.txt)"; failures=$((failures + 1)); continue
   fi
-  if [ ! -s "output/$id.mp4" ]; then
-    tools/render_batch.sh "$id" </dev/null
-    if [ ! -s "output/$id.mp4" ]; then echo "FAILED $id: render failed"; failures=$((failures + 1)); continue; fi
+  # Renders if the mp4 is missing or was made from an older version of the spec (skips otherwise).
+  if ! tools/render_batch.sh "$id" </dev/null || [ ! -s "output/$id.mp4" ]; then
+    echo "FAILED $id: render failed"; failures=$((failures + 1)); continue
   fi
   extra=()
   [[ $id == L* ]] && extra=(--chapters "output/${id}_chapters.txt")
@@ -52,4 +52,4 @@ done 3< <(grep -v '^#' pipeline/schedule.txt)
 # Put new uploads into their topic playlists (needs the manage permission; skipped quietly without it).
 python3 tools/seo_live.py playlists </dev/null 2>&1 | grep -E "created|done|NO_EDIT" | tail -3
 
-[ "$failures" -eq 0 ] ||{ echo "$failures problem(s); see above."; exit 1; }
+[ "$failures" -eq 0 ] || { echo "$failures problem(s); see above."; exit 1; }
