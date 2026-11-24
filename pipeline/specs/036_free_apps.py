@@ -25,7 +25,8 @@ assert round(ad_share * 100) == 98, ad_share                 # "about ninety-eig
 per_day = AD_REV / DAYS_Q3
 assert 680e6 < per_day < 690e6, per_day                      # "about six hundred eighty-five million a day"
 assert round(AD_REV / 1e9) == 63                             # "sixty-three billion dollars"
-assert round(DAP_SEP26 / 1e9, 1) == 3.6                      # "three point six billion people"
+assert round(DAP_SEP26 / 1e9, 1) == 3.6                      # shown on screen ("3.64B")
+assert DAYS_Q3 == 92 and DAP_SEP26 > 1e9                     # "July to September" / "billions of people"
 print(f"ARPP ${arpp:.2f}; ads {ad_share:.1%} of revenue; ${per_day/1e6:.0f}M/day")
 
 spec = {
@@ -67,34 +68,53 @@ spec = {
                           "par jour. Sur Instagram, l'annonceur paie ; vous payez avec votre attention."},
     },
     "scenes": [
-        {"say": "Instagram is free. Yet in just three months, its owner Meta made sixty-three billion dollars from ads.",
-         "visual": {"type": "stat", "value": f"${AD_REV/1e9:.1f}B", "label": "Meta ad revenue, July to Sept 2026",
-                    "sub": f"about {ad_share:.0%} of all its revenue", "color": "gold"}},
-        {"say": "That's about six hundred and eighty-five million dollars, every single day.",
-         "visual": {"type": "equation", "title": "Per day",
+        # hook: the biggest number on frame 0 + contradiction ("from free apps")
+        {"say": "Six hundred and eighty-five million dollars a day, from free apps.",
+         "visual": {"type": "stat", "value": f"${per_day/1e6:.0f}M", "label": "Meta ad revenue, per day",
+                    "sub": "July to Sept 2026 average · Meta Q3 results", "color": "gold"}},
+        {"say": "That's Meta's ad money, July to September: sixty-three billion dollars in three months.",
+         "visual": {"type": "equation", "title": "Meta ad revenue, Q3 2026",
                     "lines": [{"text": f"${AD_REV/1e9:.1f}B ÷ {DAYS_Q3} days", "color": "text", "size": 88},
-                              {"text": f"≈ ${per_day/1e6:.0f}M a day", "color": "gold", "size": 100}]}},
-        {"say": "Here's the trick. You're not the customer. Advertisers are. They pay to put ads in front of your attention, and the better Meta knows what you like, the more an ad is worth.",
+                              {"text": f"≈ ${per_day/1e6:.0f}M a day", "color": "gold", "size": 100},
+                              {"text": f"ads = {ad_share:.0%} of all its revenue", "color": "muted", "size": 50}]}},
+        {"say": "Here's how. You're not the customer. Advertisers are, and they pay for your attention.",
          "visual": {"type": "pair", "title": "Who pays?",
                     "left": {"label": "You", "sub": "use it free", "color": "green"},
                     "right": {"label": "Advertisers", "sub": "pay for your time", "color": "gold"}}},
-        {"say": "Compared with a year earlier, Meta showed ten percent more ads, and charged fourteen percent more for each one.",
+        {"say": "Versus a year earlier: ten percent more ads, and fourteen percent more per ad.",
          "visual": {"type": "bars", "title": "Growth vs a year ago (%)", "format": "num",
                     "items": [{"label": "Ads shown", "value": IMPRESSIONS_GROWTH, "color": "green"},
                               {"label": "Price per ad", "value": PRICE_PER_AD_GROWTH, "color": "gold"}]}},
-        {"say": "Spread across three point six billion daily users, each person brought in about seventeen dollars seventy in that one quarter.",
+        # mid-video re-hook: opens a second loop (what are you worth?)
+        {"say": "Now the twist: Meta's own numbers put a price on you.",
+         "visual": {"type": "equation", "title": "The twist",
+                    "lines": [{"text": "What are you", "color": "text", "size": 110},
+                              {"text": "worth to Meta?", "color": "gold", "size": 110}]}},
+        {"say": "About seventeen dollars seventy per daily user, in just three months.",
          "visual": {"type": "stat", "value": f"${arpp:.2f}", "label": "revenue per daily user, one quarter",
                     "sub": "Q3 2026 · 3.64B people use Meta's apps daily", "color": "green"}},
-        {"say": "So when an app is free, you're not paying with money. You're paying with your time.",
+        {"say": "When an app is free, you don't pay with money. You pay with time.",
          "visual": {"type": "equation",
                     "lines": [{"text": "Free app?", "color": "text", "size": 110},
                               {"text": "You pay", "color": "gold", "size": 110},
                               {"text": "with your time.", "color": "gold", "size": 100}]}},
-        {"say": "Follow if this changed how you think about money.",
-         "visual": {"type": "cta", "lines": ["Free to use.", "Paid by ads."],
+        # loop line: runs back into "Six hundred and eighty-five million dollars a day..."
+        {"say": "Multiply that by billions of people, and you get...",
+         "visual": {"type": "cta", "lines": [f"${per_day/1e6:.0f}M a day.", "Paid by ads."],
                     "sub": "Follow for daily money lessons"}},
     ],
 }
+# ---------------------------------------------------------------- retention checks (AUTOPILOT "Retention rules")
+words = [len(s["say"].split()) for s in spec["scenes"]]
+for s in spec["scenes"]:
+    assert len(s["say"].split()) <= 14, s["say"]                        # one visual per ~4 s
+assert len(spec["scenes"][0]["say"].split()) <= 12                         # hook: payoff first, ~2 s
+for a, b in zip(spec["scenes"], spec["scenes"][1:]):
+    assert a["visual"]["type"] != b["visual"]["type"], a["say"]           # never the same visual twice in a row
+assert 80 <= sum(words) <= 105, sum(words)                                 # ~30-40 s
+assert "follow" not in spec["scenes"][-1]["say"].lower()                   # loop line, not a spoken CTA
+print(f"{len(words)} scenes, {sum(words)} words (~{sum(words) / 2.9:.0f} s)")
+
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "036_free_apps.json")
 json.dump(spec, open(out, "w"), ensure_ascii=False, indent=1)
 print(out)

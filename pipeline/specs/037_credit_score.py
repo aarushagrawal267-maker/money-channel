@@ -75,35 +75,55 @@ spec = {
                           "ancienneté 15 %, nouveaux crédits 10 % et diversité des crédits 10 %."},
     },
     "scenes": [
-        {"say": "One habit makes up over a third of your credit score. Here's what actually moves it.",
+        # hook: the key number on frame 0 + open loop ("guess which")
+        {"say": "One habit makes up thirty-five percent of your credit score. Guess which.",
          "visual": {"type": "stat", "value": "35%", "label": "of a FICO Score",
                     "sub": "one habit · source: myFICO", "color": "gold"}},
-        {"say": "FICO says a score has five parts. Payment history, thirty-five percent. Amounts owed, thirty. Length of history, fifteen. New credit and credit mix, ten each.",
+        {"say": "FICO says your score has five parts. They're not equal.",
          "visual": {"type": "equation", "title": "What's in a FICO Score",
                     "lines": [{"text": f"{k}  {v}%", "color": c, "size": 68}
                               for (k, v), c in zip(list(FACTORS.items())[:3], ["gold", "green", "text"])]
                              + [{"text": f"New credit, mix  {FACTORS['New credit']}% each", "color": "muted", "size": 60}]}},
-        {"say": "So the big one is simple. Pay every bill on time. Autopay for at least the minimum helps.",
-         "visual": {"type": "pair", "title": "The biggest factor",
+        {"say": "The answer: paying every bill on time. Autopay helps.",
+         "visual": {"type": "pair", "title": "Payment history · 35%",
                     "left": {"label": "On time", "sub": "every bill", "color": "green"},
                     "right": {"label": "Late", "sub": "hurts most", "color": "red"}}},
-        {"say": "Next, amounts owed. A big part is how much of your card limits you're using. Three hundred dollars on a one thousand dollar limit is thirty percent. Lower is better.",
+        {"say": "Second, thirty percent: amounts owed, like how much of your limits you use.",
+         "visual": {"type": "stat", "value": f"{FACTORS['Amounts owed']}%", "label": "amounts owed",
+                    "sub": "incl. how much of your card limits you use", "color": "green"}},
+        {"say": "Three hundred dollars on a one thousand dollar limit: thirty percent. Lower is better.",
          "visual": {"type": "compare", "title": "Example: 30% of the limit used",
                     "left": {"label": "Balance", "value": USED, "color": "gold"},
                     "right": {"label": "Limit", "value": LIMIT, "color": "slate"}}},
-        {"say": "Together, those two make up almost two-thirds of your score.",
+        # mid-video re-hook: opens a second loop (what feels risky but isn't?)
+        {"say": "Now the twist: one thing that feels risky doesn't hurt.",
+         "visual": {"type": "equation", "title": "The twist",
+                    "lines": [{"text": "Feels risky.", "color": "text", "size": 110},
+                              {"text": "Doesn't hurt.", "color": "green", "size": 110}]}},
+        {"say": "Checking your own score doesn't lower it. Just don't open many cards at once.",
+         "visual": {"type": "pair", "title": "Quick rules",
+                    "left": {"label": "Check", "sub": "your own score", "color": "green"},
+                    "right": {"label": "Apply", "sub": "few at a time", "color": "red"}}},
+        {"say": "Focus on those two: together, almost two-thirds of your score.",
          "visual": {"type": "stat", "value": "65%", "label": "on-time payments + low balances",
                     "sub": "35% + 30%", "color": "green"}},
-        {"say": "Don't open lots of new cards at once. And checking your own score doesn't hurt it.",
-         "visual": {"type": "equation", "title": "Quick rules",
-                    "lines": [{"text": "✗ Many new cards", "color": "red", "size": 80},
-                              {"text": "✓ Check your score", "color": "green", "size": 80},
-                              {"text": "it doesn't lower it", "color": "muted", "size": 56}]}},
-        {"say": "Pay on time, keep balances low. Follow for the next breakdown.",
+        # loop line: runs back into "One habit makes up thirty-five percent..."
+        {"say": "Pay on time, keep balances low, and remember:",
          "visual": {"type": "cta", "lines": ["On time.", "Low balances."],
                     "sub": "Follow for daily money lessons"}},
     ],
 }
+# ---------------------------------------------------------------- retention checks (AUTOPILOT "Retention rules")
+words = [len(s["say"].split()) for s in spec["scenes"]]
+for s in spec["scenes"]:
+    assert len(s["say"].split()) <= 14, s["say"]                        # one visual per ~4 s
+assert len(spec["scenes"][0]["say"].split()) <= 12                         # hook: payoff first, ~2 s
+for a, b in zip(spec["scenes"], spec["scenes"][1:]):
+    assert a["visual"]["type"] != b["visual"]["type"], a["say"]           # never the same visual twice in a row
+assert 80 <= sum(words) <= 105, sum(words)                                 # ~30-40 s
+assert "follow" not in spec["scenes"][-1]["say"].lower()                   # loop line, not a spoken CTA
+print(f"{len(words)} scenes, {sum(words)} words (~{sum(words) / 2.9:.0f} s)")
+
 out = os.path.join(os.path.dirname(__file__), "037_credit_score.json")
 json.dump(spec, open(out, "w"), ensure_ascii=False, indent=1)
 print(out)

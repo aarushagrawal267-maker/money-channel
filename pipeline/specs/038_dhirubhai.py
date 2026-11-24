@@ -73,37 +73,60 @@ spec = {
                "summary": "À 17 ans, il part travailler à Aden, au Yémen, puis fonde Reliance, qui réalise aujourd'hui environ 124 milliards de dollars de revenus par an. Son histoire, éloges et critiques compris."},
     },
     "scenes": [
-        {"say": "Reliance now brings in over eleven lakh crore rupees a year, about a hundred and twenty-four billion dollars. Its founder is said to have started out at a petrol station in Yemen.",
+        # hook: the biggest number on frame 0 + open loop (how do you get from Yemen to that?)
+        {"say": "Over eleven lakh crore rupees a year. Its founder started in Yemen.",
          "visual": {"type": "equation", "title": "Reliance revenue, FY2025-26",
                     "lines": [{"text": f"₹{lakh_crore:.2f} lakh crore", "color": "gold", "size": 100},
                               {"text": f"≈ ${RIL_REV_FY26_USD / 1e9:.0f} billion a year", "color": "text", "size": 64},
                               {"text": "source: RIL results, Apr 2026", "color": "muted", "size": 40}]}},
-        {"say": "At seventeen, Dhirubhai Ambani left India for Aden, in today's Yemen. Obituaries say he worked at a petrol station, then as a clerk.",
+        {"say": "At seventeen, Dhirubhai Ambani left India for Aden, in today's Yemen.",
          "visual": {"type": "pair", "title": f"Age {ADEN_AGE}",
                     "left": {"label": "India", "sub": "leaves home", "color": "green"},
-                    "right": {"label": "Aden", "sub": "petrol pump, clerk", "color": "gold"}}},
-        {"say": "Back in Mumbai, he started trading yarn and spices, and at forty-four, took Reliance public.",
+                    "right": {"label": "Aden", "sub": "today's Yemen", "color": "gold"}}},
+        {"say": "Obituaries say he worked at a petrol station, then as a clerk.",
+         "visual": {"type": "equation", "title": "First jobs (accounts vary)",
+                    "lines": [{"text": "Petrol station", "color": "text", "size": 100},
+                              {"text": "then", "color": "muted", "size": 60},
+                              {"text": "Clerk", "color": "gold", "size": 110}]}},
+        {"say": "Back in Mumbai, he traded yarn and spices. At forty-four, he took Reliance public.",
          "visual": {"type": "timeline", "title": "A slow build", "start": 15, "end": DIED_AGE + 1,
                     "rows": [{"label": "Working", "from": ADEN_AGE, "color": "green"},
                              {"label": "Listed company", "from": ipo_age, "color": "gold"}]}},
-        {"say": "That nineteen seventy-seven I-P-O raised two point eight crore rupees, that's twenty-eight million, and was oversubscribed seven times.",
+        {"say": "That nineteen seventy-seven I-P-O raised two point eight crore rupees, oversubscribed seven times.",
          "visual": {"type": "compare", "title": f"{IPO_YEAR} IPO: {OVERSUB}x oversubscribed",
                     "left": {"label": "On offer", "value": ipo_raised, "color": "slate"},
                     "right": {"label": "Demand", "value": bids, "color": "green"}}},
-        {"say": "His rise also drew criticism. Reuters reported accusations that his success owed as much to manipulating government policy as to business skill. He called controversy the price of success.",
+        # mid-video re-hook: opens a second loop (what's the other side?)
+        {"say": "But here's the catch: there's another side.",
+         "visual": {"type": "equation", "title": "The catch",
+                    "lines": [{"text": "Big success.", "color": "text", "size": 110},
+                              {"text": "Big questions.", "color": "red", "size": 110}]}},
+        {"say": "Reuters reported accusations his success owed as much to policy manipulation as business skill.",
          "visual": {"type": "pair", "title": "Two sides",
                     "left": {"label": "Praised", "sub": "for thinking big", "color": "green"},
                     "right": {"label": "Criticised", "sub": "over policy influence", "color": "red"}}},
-        {"say": "The lesson: think big, and bring ordinary investors along. But how you win matters too.",
+        {"say": "The lesson: think big and bring investors along. But how you win matters.",
          "visual": {"type": "equation", "title": "The lesson",
                     "lines": [{"text": "Think big.", "color": "gold", "size": 110},
                               {"text": "Bring people with you.", "color": "text", "size": 70},
                               {"text": "How you win matters too.", "color": "muted", "size": 56}]}},
-        {"say": "Follow for tomorrow's money lesson.",
+        # loop line: runs back into "Over eleven lakh crore rupees a year..."
+        {"say": "From a teenager's job abroad, to...",
          "visual": {"type": "cta", "lines": ["Think big.", "Play fair."],
                     "sub": "Follow for daily money lessons"}},
     ],
 }
+# ---------------------------------------------------------------- retention checks (AUTOPILOT "Retention rules")
+words = [len(s["say"].split()) for s in spec["scenes"]]
+for s in spec["scenes"]:
+    assert len(s["say"].split()) <= 14, s["say"]                        # one visual per ~4 s
+assert len(spec["scenes"][0]["say"].split()) <= 12                         # hook: payoff first, ~2 s
+for a, b in zip(spec["scenes"], spec["scenes"][1:]):
+    assert a["visual"]["type"] != b["visual"]["type"], a["say"]           # never the same visual twice in a row
+assert 80 <= sum(words) <= 105, sum(words)                                 # ~30-40 s
+assert "follow" not in spec["scenes"][-1]["say"].lower()                   # loop line, not a spoken CTA
+print(f"{len(words)} scenes, {sum(words)} words (~{sum(words) / 2.9:.0f} s)")
+
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "038_dhirubhai.json")
 json.dump(spec, open(out, "w"), ensure_ascii=False, indent=1)
 print(out)

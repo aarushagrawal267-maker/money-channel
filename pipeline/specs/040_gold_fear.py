@@ -64,31 +64,58 @@ spec = {
                           "refuge. Les banques centrales en ont acheté 321 tonnes au T3 2026, 42 % de plus qu'un an plus tôt."},
     },
     "scenes": [
-        {"say": "When the world gets scared, money often runs to a metal that pays no interest at all. Gold.",
-         "visual": {"type": "stat", "value": f"${PRICE['Q3 2026']:,.0f}", "label": "average gold price per ounce",
-                    "sub": f"Q3 2026 · up {yoy:.0%} in a year · World Gold Council", "color": "gold"}},
-        {"say": "Why gold? It isn't anyone's debt, so it can't default. No government can print more of it. So in wars, crises and crashes, many treat it as a safe haven.",
+        # hook: contradiction + the number on frame 0; the open loop is "why?"
+        {"say": "Gold pays nothing. Its average price still rose twenty-three percent.",
+         "visual": {"type": "stat", "value": f"+{yoy:.0%}", "label": "average gold price vs a year earlier",
+                    "sub": f"Q3 2026 · ${PRICE['Q3 2026']:,.0f} an ounce · World Gold Council", "color": "gold"}},
+        {"say": "Why? Gold is nobody's debt, so it can't default, and can't be printed.",
          "visual": {"type": "equation", "title": "Why gold feels safe",
                     "lines": [{"text": "Nobody's debt", "color": "gold", "size": 96},
                               {"text": "Can't default", "color": "text", "size": 88},
                               {"text": "Can't be printed", "color": "muted", "size": 80}]}},
-        {"say": "Central banks buy it too. In the third quarter of twenty twenty-six, they added a net three hundred and twenty-one tonnes, forty-two percent more than a year earlier.",
-         "visual": {"type": "bars", "title": "Central bank buying (tonnes)", "format": "num",
+        {"say": "So when the world gets scared, money often runs to it.",
+         "visual": {"type": "pair", "title": "When fear rises",
+                    "left": {"label": "Crisis", "sub": "wars, crashes", "color": "red"},
+                    "right": {"label": "Gold", "sub": "a safe haven", "color": "gold"}}},
+        {"say": "Central banks bought a net three hundred and twenty-one tonnes in one quarter.",
+         "visual": {"type": "bars", "title": f"Central bank buying (tonnes) · +{cb_growth:.0%}", "format": "num",
                     "items": [{"label": "Q3 2025", "value": round(CB_Q3_25), "color": "slate"},
                               {"label": "Q3 2026", "value": round(CB_Q3_26), "color": "gold"}]}},
-        {"say": "Then there are real interest rates: what savings pay after inflation. Gold pays nothing, so when real rates fall, holding it costs less. When they rise, gold often struggles.",
-         "visual": {"type": "pair", "title": "Real interest rates",
-                    "left": {"label": "Lower", "sub": "gold looks better", "color": "green"},
-                    "right": {"label": "Higher", "sub": "gold often lags", "color": "red"}}},
-        {"say": "But safe doesn't mean steady. From July to September, gold averaged about thirteen percent less than from January to March.",
+        # mid-video re-hook: opens a second loop (if it's safe, why isn't it steady?)
+        {"say": "But here's the catch: safe doesn't mean steady.",
+         "visual": {"type": "equation", "title": "The catch",
+                    "lines": [{"text": "Safe", "color": "green", "size": 120},
+                              {"text": "≠", "color": "muted", "size": 90},
+                              {"text": "steady", "color": "red", "size": 120}]}},
+        {"say": "From July to September, it averaged about thirteen percent less than January to March.",
          "visual": {"type": "compare", "title": "Average gold price, 2026",
                     "left": {"label": "Q1 2026", "value": PRICE["Q1 2026"], "color": "gold"},
                     "right": {"label": "Q3 2026", "value": PRICE["Q3 2026"], "color": "red"}}},
-        {"say": "There's a new one every day. Follow so you don't miss it.",
-         "visual": {"type": "cta", "lines": ["Safe haven.", "Not risk-free."],
+        {"say": "When rates after inflation rise, gold often struggles. It pays nothing, remember.",
+         "visual": {"type": "pair", "title": "Real interest rates",
+                    "left": {"label": "Lower", "sub": "gold looks better", "color": "green"},
+                    "right": {"label": "Higher", "sub": "gold often lags", "color": "red"}}},
+        {"say": "The lesson: a safe haven isn't the same as risk-free.",
+         "visual": {"type": "equation", "title": "The lesson",
+                    "lines": [{"text": "Safe haven.", "color": "gold", "size": 110},
+                              {"text": "Not risk-free.", "color": "text", "size": 100}]}},
+        # loop line: runs back into "Gold pays nothing. Yet..."
+        {"say": "And never forget the strange part:",
+         "visual": {"type": "cta", "lines": ["Pays nothing.", f"Up {yoy:.0%}."],
                     "sub": "Follow for daily money lessons"}},
     ],
 }
+# ---------------------------------------------------------------- retention checks (AUTOPILOT "Retention rules")
+words = [len(s["say"].split()) for s in spec["scenes"]]
+for s in spec["scenes"]:
+    assert len(s["say"].split()) <= 14, s["say"]                        # one visual per ~4 s
+assert len(spec["scenes"][0]["say"].split()) <= 12                         # hook: payoff first, ~2 s
+for a, b in zip(spec["scenes"], spec["scenes"][1:]):
+    assert a["visual"]["type"] != b["visual"]["type"], a["say"]           # never the same visual twice in a row
+assert 80 <= sum(words) <= 105, sum(words)                                 # ~30-40 s
+assert "follow" not in spec["scenes"][-1]["say"].lower()                   # loop line, not a spoken CTA
+print(f"{len(words)} scenes, {sum(words)} words (~{sum(words) / 2.9:.0f} s)")
+
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "040_gold_fear.json")
 json.dump(spec, open(out, "w"), ensure_ascii=False, indent=1)
 print(out)

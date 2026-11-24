@@ -46,17 +46,17 @@
  },
  "scenes": [
   {
-   "say": "At the end of two thousand seven, about four in every ten phones sold worldwide were Nokias.",
+   "say": "Nokia once sold four in every ten phones. So what went wrong?",
    "visual": {
     "type": "stat",
     "value": "40%",
     "label": "of phones sold were Nokias",
-    "sub": "Q4 2007 · Nokia's own estimate",
+    "sub": "end of 2007 · Nokia's own estimate",
     "color": "blue"
    }
   },
   {
-   "say": "That same year, Apple shipped its very first iPhone.",
+   "say": "That was two thousand seven, when Apple shipped its first iPhone.",
    "visual": {
     "type": "pair",
     "title": "2007",
@@ -73,27 +73,7 @@
    }
   },
   {
-   "say": "By mid twenty thirteen, research firm Gartner put Nokia at just fourteen percent of phone sales.",
-   "visual": {
-    "type": "bars",
-    "title": "Nokia's share of phones sold (%)",
-    "format": "num",
-    "items": [
-     {
-      "label": "End 2007",
-      "value": 40,
-      "color": "blue"
-     },
-     {
-      "label": "Mid 2013",
-      "value": 14.0,
-      "color": "red"
-     }
-    ]
-   }
-  },
-  {
-   "say": "In twenty eleven, its own chief executive had written to staff: we fell behind, we missed big trends, and we lost time.",
+   "say": "By twenty eleven, its boss admitted: we fell behind, we missed big trends.",
    "visual": {
     "type": "equation",
     "title": "Nokia CEO memo, 2011",
@@ -117,7 +97,68 @@
    }
   },
   {
-   "say": "In twenty thirteen, Microsoft agreed to buy Nokia's phone business, plus a patent licence, for about seven point two billion dollars. Two years later, Microsoft wrote off seven point six billion dollars tied to the deal, and cut up to seven thousand eight hundred jobs.",
+   "say": "By mid twenty thirteen, Gartner put Nokia at fourteen percent.",
+   "visual": {
+    "type": "bars",
+    "title": "Nokia's share of phones sold (%)",
+    "format": "num",
+    "items": [
+     {
+      "label": "End 2007",
+      "value": 40,
+      "color": "blue"
+     },
+     {
+      "label": "Mid 2013",
+      "value": 14.0,
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Microsoft paid about seven point two billion for the phone unit and patent rights.",
+   "visual": {
+    "type": "equation",
+    "title": "Microsoft deal, 2013",
+    "lines": [
+     {
+      "text": "Nokia's phones + patent licence",
+      "color": "text",
+      "size": 60
+     },
+     {
+      "text": "€5.44B",
+      "color": "muted",
+      "size": 88
+     },
+     {
+      "text": "≈ $7.2B",
+      "color": "gold",
+      "size": 130
+     }
+    ]
+   }
+  },
+  {
+   "say": "Now the twist: the buyer got burned too.",
+   "visual": {
+    "type": "pair",
+    "title": "The twist",
+    "left": {
+     "label": "Nokia",
+     "sub": "sold its phones",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Microsoft",
+     "sub": "got burned too",
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Two years later, Microsoft wrote off seven point six billion dollars.",
    "visual": {
     "type": "stat",
     "value": "$7.6B",
@@ -127,36 +168,53 @@
    }
   },
   {
-   "say": "Nokia itself survived, as a network equipment company. The lesson: success can make you slow to change. When you're winning, ask what could make your best product obsolete.",
+   "say": "Nokia survived as a network equipment company.",
+   "visual": {
+    "type": "pair",
+    "title": "What Nokia kept",
+    "left": {
+     "label": "Phones",
+     "sub": "sold off",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Networks",
+     "sub": "still Nokia",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "The lesson: when you're winning, ask what could replace your best product.",
    "visual": {
     "type": "equation",
     "title": "The lesson",
     "lines": [
      {
-      "text": "Success can make",
+      "text": "Winning?",
       "color": "text",
-      "size": 80
+      "size": 110
      },
      {
-      "text": "you slow to change.",
+      "text": "Ask what could replace",
       "color": "gold",
-      "size": 80
+      "size": 76
      },
      {
-      "text": "What could replace your best product?",
-      "color": "muted",
-      "size": 42
+      "text": "your best product.",
+      "color": "gold",
+      "size": 76
      }
     ]
    }
   },
   {
-   "say": "Share this with someone who needs it.",
+   "say": "Being on top guarantees nothing. Ask Nokia.",
    "visual": {
     "type": "cta",
     "lines": [
-     "Winning today",
-     "isn't enough."
+     "40% of phones.",
+     "No guarantee."
     ],
     "sub": "Follow for daily money lessons"
    }

@@ -44,20 +44,20 @@
  },
  "scenes": [
   {
-   "say": "Instagram is free. Yet in just three months, its owner Meta made sixty-three billion dollars from ads.",
+   "say": "Six hundred and eighty-five million dollars a day, from free apps.",
    "visual": {
     "type": "stat",
-    "value": "$63.1B",
-    "label": "Meta ad revenue, July to Sept 2026",
-    "sub": "about 98% of all its revenue",
+    "value": "$685M",
+    "label": "Meta ad revenue, per day",
+    "sub": "July to Sept 2026 average · Meta Q3 results",
     "color": "gold"
    }
   },
   {
-   "say": "That's about six hundred and eighty-five million dollars, every single day.",
+   "say": "That's Meta's ad money, July to September: sixty-three billion dollars in three months.",
    "visual": {
     "type": "equation",
-    "title": "Per day",
+    "title": "Meta ad revenue, Q3 2026",
     "lines": [
      {
       "text": "$63.1B ÷ 92 days",
@@ -68,12 +68,17 @@
       "text": "≈ $685M a day",
       "color": "gold",
       "size": 100
+     },
+     {
+      "text": "ads = 98% of all its revenue",
+      "color": "muted",
+      "size": 50
      }
     ]
    }
   },
   {
-   "say": "Here's the trick. You're not the customer. Advertisers are. They pay to put ads in front of your attention, and the better Meta knows what you like, the more an ad is worth.",
+   "say": "Here's how. You're not the customer. Advertisers are, and they pay for your attention.",
    "visual": {
     "type": "pair",
     "title": "Who pays?",
@@ -90,7 +95,7 @@
    }
   },
   {
-   "say": "Compared with a year earlier, Meta showed ten percent more ads, and charged fourteen percent more for each one.",
+   "say": "Versus a year earlier: ten percent more ads, and fourteen percent more per ad.",
    "visual": {
     "type": "bars",
     "title": "Growth vs a year ago (%)",
@@ -110,7 +115,26 @@
    }
   },
   {
-   "say": "Spread across three point six billion daily users, each person brought in about seventeen dollars seventy in that one quarter.",
+   "say": "Now the twist: Meta's own numbers put a price on you.",
+   "visual": {
+    "type": "equation",
+    "title": "The twist",
+    "lines": [
+     {
+      "text": "What are you",
+      "color": "text",
+      "size": 110
+     },
+     {
+      "text": "worth to Meta?",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "About seventeen dollars seventy per daily user, in just three months.",
    "visual": {
     "type": "stat",
     "value": "$17.72",
@@ -120,7 +144,7 @@
    }
   },
   {
-   "say": "So when an app is free, you're not paying with money. You're paying with your time.",
+   "say": "When an app is free, you don't pay with money. You pay with time.",
    "visual": {
     "type": "equation",
     "lines": [
@@ -143,11 +167,11 @@
    }
   },
   {
-   "say": "Follow if this changed how you think about money.",
+   "say": "Multiply that by billions of people, and you get...",
    "visual": {
     "type": "cta",
     "lines": [
-     "Free to use.",
+     "$685M a day.",
      "Paid by ads."
     ],
     "sub": "Follow for daily money lessons"

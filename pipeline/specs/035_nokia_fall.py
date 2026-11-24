@@ -39,6 +39,8 @@ assert WRITEOFF_YEAR - DEAL_YEAR == 2                      # "two years later"
 assert JOBS_CUT == 7800                                    # "up to seven thousand eight hundred jobs"
 assert round(WRITEOFF_USD / 1e9, 1) == 7.6                 # "seven point six billion dollars"
 assert MEMO_YEAR - IPHONE_YEAR == 4
+assert IPHONE_YEAR == 2007 and MEMO_YEAR == 2011           # "that same year" (end of 2007) / "by twenty eleven"
+assert round(NOKIA_SHARE_Q2_2013) == 14 and DEAL_YEAR == 2013   # "mid twenty thirteen ... fourteen percent"
 print(f"share {NOKIA_SHARE_Q4_2007}% -> {NOKIA_SHARE_Q2_2013}%; deal ${DEAL_TOTAL_USD/1e9:.2f}B, "
       f"write-off ${WRITEOFF_USD/1e9:.1f}B")
 
@@ -80,35 +82,62 @@ spec = {
                "summary": "En 2007, Nokia vendait environ 4 téléphones sur 10 dans le monde. En 2013, son activité mobile a été vendue à Microsoft pour 5,44 milliards d'euros. Pourquoi le succès peut ralentir le changement."},
     },
     "scenes": [
-        {"say": "At the end of two thousand seven, about four in every ten phones sold worldwide were Nokias.",
+        # hook: payoff number on frame 0 + open loop ("what went wrong?")
+        {"say": "Nokia once sold four in every ten phones. So what went wrong?",
          "visual": {"type": "stat", "value": f"{NOKIA_SHARE_Q4_2007}%", "label": "of phones sold were Nokias",
-                    "sub": "Q4 2007 · Nokia's own estimate", "color": "blue"}},
-        {"say": "That same year, Apple shipped its very first iPhone.",
+                    "sub": "end of 2007 · Nokia's own estimate", "color": "blue"}},
+        {"say": "That was two thousand seven, when Apple shipped its first iPhone.",
          "visual": {"type": "pair", "title": str(IPHONE_YEAR),
                     "left": {"label": "Nokia", "sub": "the giant", "color": "blue"},
                     "right": {"label": "iPhone", "sub": "the newcomer", "color": "slate"}}},
-        {"say": "By mid twenty thirteen, research firm Gartner put Nokia at just fourteen percent of phone sales.",
-         "visual": {"type": "bars", "title": "Nokia's share of phones sold (%)", "format": "num",
-                    "items": [{"label": "End 2007", "value": NOKIA_SHARE_Q4_2007, "color": "blue"},
-                              {"label": "Mid 2013", "value": NOKIA_SHARE_Q2_2013, "color": "red"}]}},
-        {"say": "In twenty eleven, its own chief executive had written to staff: we fell behind, we missed big trends, and we lost time.",
+        {"say": "By twenty eleven, its boss admitted: we fell behind, we missed big trends.",
          "visual": {"type": "equation", "title": f"Nokia CEO memo, {MEMO_YEAR}",
                     "lines": [{"text": "“We fell behind,", "color": "text", "size": 84},
                               {"text": "we missed big trends,", "color": "text", "size": 84},
                               {"text": "and we lost time.”", "color": "gold", "size": 84}]}},
-        {"say": "In twenty thirteen, Microsoft agreed to buy Nokia's phone business, plus a patent licence, for about seven point two billion dollars. Two years later, Microsoft wrote off seven point six billion dollars tied to the deal, and cut up to seven thousand eight hundred jobs.",
+        {"say": "By mid twenty thirteen, Gartner put Nokia at fourteen percent.",
+         "visual": {"type": "bars", "title": "Nokia's share of phones sold (%)", "format": "num",
+                    "items": [{"label": "End 2007", "value": NOKIA_SHARE_Q4_2007, "color": "blue"},
+                              {"label": "Mid 2013", "value": NOKIA_SHARE_Q2_2013, "color": "red"}]}},
+        {"say": "Microsoft paid about seven point two billion for the phone unit and patent rights.",
+         "visual": {"type": "equation", "title": f"Microsoft deal, {DEAL_YEAR}",
+                    "lines": [{"text": "Nokia's phones + patent licence", "color": "text", "size": 60},
+                              {"text": "€5.44B", "color": "muted", "size": 88},
+                              {"text": f"≈ ${DEAL_TOTAL_USD / 1e9:.1f}B", "color": "gold", "size": 130}]}},
+        # mid-video re-hook: opens a second loop (what happened to the buyer?)
+        {"say": "Now the twist: the buyer got burned too.",
+         "visual": {"type": "pair", "title": "The twist",
+                    "left": {"label": "Nokia", "sub": "sold its phones", "color": "blue"},
+                    "right": {"label": "Microsoft", "sub": "got burned too", "color": "red"}}},
+        {"say": "Two years later, Microsoft wrote off seven point six billion dollars.",
          "visual": {"type": "stat", "value": f"${WRITEOFF_USD / 1e9:.1f}B", "label": "written off by Microsoft",
                     "sub": f"July {WRITEOFF_YEAR} · tied to the Nokia phone deal", "color": "red"}},
-        {"say": "Nokia itself survived, as a network equipment company. The lesson: success can make you slow to change. When you're winning, ask what could make your best product obsolete.",
+        {"say": "Nokia survived as a network equipment company.",
+         "visual": {"type": "pair", "title": "What Nokia kept",
+                    "left": {"label": "Phones", "sub": "sold off", "color": "slate"},
+                    "right": {"label": "Networks", "sub": "still Nokia", "color": "green"}}},
+        {"say": "The lesson: when you're winning, ask what could replace your best product.",
          "visual": {"type": "equation", "title": "The lesson",
-                    "lines": [{"text": "Success can make", "color": "text", "size": 80},
-                              {"text": "you slow to change.", "color": "gold", "size": 80},
-                              {"text": "What could replace your best product?", "color": "muted", "size": 42}]}},
-        {"say": "Share this with someone who needs it.",
-         "visual": {"type": "cta", "lines": ["Winning today", "isn't enough."],
+                    "lines": [{"text": "Winning?", "color": "text", "size": 110},
+                              {"text": "Ask what could replace", "color": "gold", "size": 76},
+                              {"text": "your best product.", "color": "gold", "size": 76}]}},
+        # loop line: runs back into "Nokia once sold four in every ten phones..."
+        {"say": "Being on top guarantees nothing. Ask Nokia.",
+         "visual": {"type": "cta", "lines": [f"{NOKIA_SHARE_Q4_2007}% of phones.", "No guarantee."],
                     "sub": "Follow for daily money lessons"}},
     ],
 }
+# ---------------------------------------------------------------- retention checks (AUTOPILOT "Retention rules")
+words = [len(s["say"].split()) for s in spec["scenes"]]
+for s in spec["scenes"]:
+    assert len(s["say"].split()) <= 14, s["say"]                        # one visual per ~4 s
+assert len(spec["scenes"][0]["say"].split()) <= 12                         # hook: payoff first, ~2 s
+for a, b in zip(spec["scenes"], spec["scenes"][1:]):
+    assert a["visual"]["type"] != b["visual"]["type"], a["say"]           # never the same visual twice in a row
+assert 80 <= sum(words) <= 105, sum(words)                                 # ~30-40 s
+assert "follow" not in spec["scenes"][-1]["say"].lower()                   # loop line, not a spoken CTA
+print(f"{len(words)} scenes, {sum(words)} words (~{sum(words) / 2.9:.0f} s)")
+
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "035_nokia_fall.json")
 json.dump(spec, open(out, "w"), ensure_ascii=False, indent=1)
 print(out)

@@ -45,7 +45,7 @@
  },
  "scenes": [
   {
-   "say": "Reliance now brings in over eleven lakh crore rupees a year, about a hundred and twenty-four billion dollars. Its founder is said to have started out at a petrol station in Yemen.",
+   "say": "Over eleven lakh crore rupees a year. Its founder started in Yemen.",
    "visual": {
     "type": "equation",
     "title": "Reliance revenue, FY2025-26",
@@ -69,7 +69,7 @@
    }
   },
   {
-   "say": "At seventeen, Dhirubhai Ambani left India for Aden, in today's Yemen. Obituaries say he worked at a petrol station, then as a clerk.",
+   "say": "At seventeen, Dhirubhai Ambani left India for Aden, in today's Yemen.",
    "visual": {
     "type": "pair",
     "title": "Age 17",
@@ -80,13 +80,37 @@
     },
     "right": {
      "label": "Aden",
-     "sub": "petrol pump, clerk",
+     "sub": "today's Yemen",
      "color": "gold"
     }
    }
   },
   {
-   "say": "Back in Mumbai, he started trading yarn and spices, and at forty-four, took Reliance public.",
+   "say": "Obituaries say he worked at a petrol station, then as a clerk.",
+   "visual": {
+    "type": "equation",
+    "title": "First jobs (accounts vary)",
+    "lines": [
+     {
+      "text": "Petrol station",
+      "color": "text",
+      "size": 100
+     },
+     {
+      "text": "then",
+      "color": "muted",
+      "size": 60
+     },
+     {
+      "text": "Clerk",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Back in Mumbai, he traded yarn and spices. At forty-four, he took Reliance public.",
    "visual": {
     "type": "timeline",
     "title": "A slow build",
@@ -107,7 +131,7 @@
    }
   },
   {
-   "say": "That nineteen seventy-seven I-P-O raised two point eight crore rupees, that's twenty-eight million, and was oversubscribed seven times.",
+   "say": "That nineteen seventy-seven I-P-O raised two point eight crore rupees, oversubscribed seven times.",
    "visual": {
     "type": "compare",
     "title": "1977 IPO: 7x oversubscribed",
@@ -124,7 +148,26 @@
    }
   },
   {
-   "say": "His rise also drew criticism. Reuters reported accusations that his success owed as much to manipulating government policy as to business skill. He called controversy the price of success.",
+   "say": "But here's the catch: there's another side.",
+   "visual": {
+    "type": "equation",
+    "title": "The catch",
+    "lines": [
+     {
+      "text": "Big success.",
+      "color": "text",
+      "size": 110
+     },
+     {
+      "text": "Big questions.",
+      "color": "red",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Reuters reported accusations his success owed as much to policy manipulation as business skill.",
    "visual": {
     "type": "pair",
     "title": "Two sides",
@@ -141,7 +184,7 @@
    }
   },
   {
-   "say": "The lesson: think big, and bring ordinary investors along. But how you win matters too.",
+   "say": "The lesson: think big and bring investors along. But how you win matters.",
    "visual": {
     "type": "equation",
     "title": "The lesson",
@@ -165,7 +208,7 @@
    }
   },
   {
-   "say": "Follow for tomorrow's money lesson.",
+   "say": "From a teenager's job abroad, to...",
    "visual": {
     "type": "cta",
     "lines": [

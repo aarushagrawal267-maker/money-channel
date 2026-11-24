@@ -131,17 +131,26 @@ S = []
 def scene(say, **visual):
     S.append({"say": say, "visual": visual})
 
-# ---------------------------------------------------------------- Hook
-scene("This year, the world's airlines are expected to earn about four dollars and fifty cents of profit for each passenger they fly. Not per flight. Per passenger, after every cost.",
-      type="count", to=PER_PAX_26, prefix="$", dp=2, label="net profit per passenger",
-      sub="2026 forecast · International Air Transport Association (IATA)", color="gold")
-scene("Meanwhile, each passenger brings in about two hundred and twenty-nine dollars on average. Almost all of it goes straight back out as costs.",
+# ---------------------------------------------------------------- Hook (retention: payoff in the first 10 s,
+# then the promise, then a tease of the best reveal, which pays off in chapter 3: Delta / American Express)
+scene("Four dollars and fifty cents. That's all the world's airlines are expected to keep per passenger this year, after every cost.",
+      type="stat", value="$4.50", label="net profit per passenger, 2026",
+      sub="forecast · International Air Transport Association (IATA)", color="gold")
+scene("Meanwhile, each passenger brings in about two hundred and twenty-nine dollars. About two cents of every dollar is profit.",
       type="versus", title="The average passenger, 2026",
       left={"label": "Revenue", "value": f"${rev_per_pax:.0f}", "sub": "all sources, per passenger", "color": "blue"},
       right={"label": "Net profit", "value": "$4.50", "sub": "what the airline keeps", "color": "gold"},
       verdict="About 2 cents of every dollar")
-scene("So if flying barely pays, how do airlines survive at all? The answer is hiding in your wallet, your suitcase, and the front of the plane.",
+scene("So if flying barely pays, what does? The answer is hiding in your wallet, your suitcase, and the front of the plane.",
       type="title", title="What Really Pays", sub="how airlines actually make money")
+scene("Here's what you'll learn. Why one flight sits just three seats from a loss. The hidden money machine behind airlines. And how to get more from your own miles.",
+      type="bullets", title="What you'll learn",
+      items=["Why one flight is 3 seats from a loss", "The hidden money machine", "How to get more from your miles"])
+scene("And by the end, you'll see why one credit card company paid an airline more than that airline's entire profit before tax.",
+      type="equation", title="Coming up",
+      lines=[{"text": "One credit card deal", "color": "text", "size": 96},
+             {"text": ">", "color": "muted", "size": 90},
+             {"text": "an airline's entire profit", "color": "gold", "size": 96}])
 
 # ---------------------------------------------------------------- 1
 scene("Chapter one. The brutal math of flying.", type="chapter", n=1, title="The brutal math")
@@ -190,7 +199,7 @@ scene("Now lose just three passengers. The plane still flies the same route, wit
       header=["Passengers", "Seats full", "Profit"],
       rows=[[str(pax), f"{pax / SEATS * 100:.0f}%", f"≈ ${flight_profit:.0f}"], ["148", f"{148 / SEATS * 100:.0f}%", "≈ $0"]],
       highlight_row=1, col_colors={"2": "green"})
-scene("In this simple example, the break-even point is about a hundred and forty-eight passengers, roughly eighty-two percent full. Airlines fly just a few seats away from a loss.",
+scene("In this simple example, the break-even point is about a hundred and forty-eight passengers, roughly eighty-two percent full. Airlines fly just a few seats away from a loss. So why can't they fix that?",
       type="stat", value="3 seats", label="between profit and loss", sub="illustration using 2026 industry averages", color="red")
 
 # ---------------------------------------------------------------- 2
@@ -220,7 +229,7 @@ scene("And the losses kept coming. Forty billion more in twenty twenty-one, and 
       header=["Year", "Net result"],
       rows=[[str(y), f"−${-NET_PROFIT[y] / 1e9:.1f}B"] for y in (2020, 2021, 2022)],
       col_colors={"1": "red"})
-scene("Add it up. From twenty twenty to twenty twenty-two, the industry lost about a hundred and eighty-two billion dollars. Its profits since then, including this year's forecast, add up to about a hundred and forty-six billion. Still not enough to win it back.",
+scene("Add it up. From twenty twenty to twenty twenty-two, the industry lost about a hundred and eighty-two billion dollars. Its profits since then, including this year's forecast, add up to about a hundred and forty-six billion. Still not enough to win it back. So how do airlines keep going? Follow the miles.",
       type="versus", title="Have airlines earned it back?",
       left={"label": "Lost, 2020–22", "value": f"−${lost_20_22 / 1e9:.0f}B", "sub": "pandemic years", "color": "red"},
       right={"label": "Earned, 2023–26", "value": f"${made_23_26 / 1e9:.0f}B", "sub": "incl. 2025 est. & 2026 forecast", "color": "green"},
@@ -263,7 +272,7 @@ scene("And look at the margin. Mileage Plus kept about thirty-four cents of cash
       rows=[{"label": "United MileagePlus", "share": MP_MARGIN_2019, "color": "gold", "dp": 0},
             {"label": "Global airline industry", "share": EBITDAR_MARGIN_2019, "color": "slate", "dp": 0}],
       note="MileagePlus EBITDA margin (United) vs industry EBITDAR margin (IATA)")
-scene("In other words, a big part of an airline's value isn't the planes. It's the miles.",
+scene("In other words, a big part of an airline's value isn't the planes. It's the miles. And miles aren't the only hidden money maker.",
       type="quote", text="Not just an airline.\nA miles business.", first_color="text", color="gold")
 
 # ---------------------------------------------------------------- 4
@@ -297,7 +306,7 @@ scene("Why chase premium flyers? They tend to care more about comfort and flexib
 scene("Finally, the belly of the plane. Cargo brought the industry about a hundred and one billion dollars in twenty nineteen. When passenger flights stopped in the pandemic, freight prices soared, and cargo hit two hundred and ten billion in twenty twenty-one.",
       type="line", title="Global air cargo revenue ($ billions)", format="num",
       x=list(CARGO_REV), series=[{"label": "Cargo", "values": list(CARGO_REV.values()), "color": "blue"}])
-scene("This year, cargo is expected to bring in a hundred and sixty-two billion. Put it all together, and only about seventy-two cents of every dollar airlines earn comes from passenger tickets.",
+scene("This year, cargo is expected to bring in a hundred and sixty-two billion. Put it all together, and only about seventy-two cents of every dollar airlines earn comes from passenger tickets. So would you want to own an airline? Warren Buffett has an answer.",
       type="donut", title="Where airline revenue comes from, 2026",
       segments=[{"label": "Passenger tickets", "value": PAX_REV_26, "color": "slate", "display": f"{ticket_share * 100:.0f}%"},
                 {"label": "Fees & other extras", "value": ANC_26, "color": "gold"},
@@ -321,7 +330,7 @@ scene("He spoke from experience. In nineteen eighty-nine, Berkshire bought U.S. 
               {"when": "Soon after", "text": "Dividend\nstops", "color": "red"},
               {"when": "1998", "text": "Sold at a\nhefty gain", "color": "gold"},
               {"when": "Next decade", "text": "Airline goes\nbankrupt twice", "color": "red"}])
-scene("The lesson isn't that airlines are useless. They connect the world. It's that a huge, popular business can still be a poor one for the people who own it.",
+scene("The lesson isn't that airlines are useless. They connect the world. It's that a huge, popular business can still be a poor one for the people who own it. And you're part of this machine too, every time you swipe.",
       type="equation", title="The lesson",
       lines=[{"text": "Huge & popular", "color": "text", "size": 100},
              {"text": "isn't always a", "color": "muted", "size": 64},
@@ -359,6 +368,11 @@ scene("Airlines barely make money flying. They make it from miles, fees, front s
 scene("If this changed how you see your next flight, subscribe. We break down how money really works, every week.",
       type="cta", lines=["How money", "really works."], sub="Subscribe for weekly breakdowns")
 
+# retention: payoff number inside the first ~10 s, and the intro (before chapter 1) under ~60 s of speech
+assert S[0]["say"].lower().startswith("four dollars and fifty cents")   # PER_PAX_26, asserted above
+intro_words = sum(len(x["say"].split()) for x in S[:next(i for i, x in enumerate(S) if x["visual"]["type"] == "chapter")])
+assert intro_words <= 150, intro_words
+assert DAL_AMEX > DAL_PRETAX                       # tease: "paid an airline more than ... entire profit before tax"
 for a, b in zip(S, S[1:]):
     assert a["visual"]["type"] != b["visual"]["type"], ("same visual twice in a row", a["say"][:40])
 
@@ -431,4 +445,4 @@ spec = {
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "L005_airlines.json")
 json.dump(spec, open(out, "w"), ensure_ascii=False, indent=1)
-print(out, len(S), "scenes,", sum(len(s["say"].split()) for s in S), "words")
+print(out, len(S), "scenes,", sum(len(s["say"].split()) for s in S), "words; intro", intro_words, "words")
