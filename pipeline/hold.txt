@@ -1,8 +1,3 @@
-035_nokia_fall
-036_free_apps
-037_credit_score
-L005_airlines
-038_dhirubhai
 040_gold_fear
 041_save_for_million
 042_kodak

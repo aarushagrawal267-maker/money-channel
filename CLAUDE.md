@@ -23,6 +23,8 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 - `pipeline/specs/*.py`: one file per video; running it validates numbers and writes the JSON spec.
   - Shorts: `001_start_early` (INR), `013_minimum_due_trap` (INR), `014_minimum_payment_trap_us`, `015_rule_of_72`, `016_buying_a_share`, `017_upi_free` (INR), `018_start_early_us`, `019_real_hourly_wage`, `020_index_funds_vs_managers`, `021_bnpl`, `022_airline_loyalty`, `023_inflation_100`, `024_expense_ratio`, `025_emergency_fund`.
   - Long: `L001_costco` (~8 min, figures checked against FY2026 release + 10-K), `L002_compounding` (~10 min), `L003_index_funds` (~9 min; SPIVA figures from secondary write-ups, S&P PDFs block automated fetches).
+- `tools/fetch_photo.py`: finds and saves openly licensed real photos (Openverse) with credit files into `assets/photos/`; `photo` scenes + `thumbnail.photo` use them (see AUTOPILOT.md A4).
+- `tools/replacements.py`, `pipeline/hold.txt`, `pipeline/replace.txt`: swap scheduled videos for re-edited versions without double-publishing.
 - `tools/get_youtube_token.py`: one-time OAuth script (owner already ran it).
 - `tools/branding_v4.py`: current branding generator (coin logo, rising bars). `branding_v4/` holds the current files + `CHANNEL_DESCRIPTION.md`. (`branding/` + v3 = old Money Mechanics set.)
 - `site/`: homepage + privacy policy, published at https://aarushagrawal267-maker.github.io (repo `aarushagrawal267-maker/aarushagrawal267-maker.github.io`), used by the Google consent screen.

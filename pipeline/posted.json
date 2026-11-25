@@ -338,5 +338,60 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "035_nokia_fall",
+    "video_id": "n4tewuMlU_U",
+    "url": "https://youtu.be/n4tewuMlU_U",
+    "title": "Nokia: From 40% of Phones to Selling the Business",
+    "uploaded_at": "2026-11-25T14:38:57Z",
+    "publish_at": "2026-12-03T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "036_free_apps",
+    "video_id": "GOW0GB_b8F0",
+    "url": "https://youtu.be/GOW0GB_b8F0",
+    "title": "How Free Apps Make Money: $63B in 3 Months From Ads",
+    "uploaded_at": "2026-11-25T14:39:36Z",
+    "publish_at": "2026-12-04T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "037_credit_score",
+    "video_id": "yUusTWNTLy4",
+    "url": "https://youtu.be/yUusTWNTLy4",
+    "title": "Credit Score Factors: What Actually Moves Your FICO",
+    "uploaded_at": "2026-11-25T14:39:59Z",
+    "publish_at": "2026-12-04T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "L005_airlines",
+    "video_id": "i5Lc2cgbves",
+    "url": "https://youtu.be/i5Lc2cgbves",
+    "title": "How Airlines Really Make Money: $4.50 a Passenger",
+    "uploaded_at": "2026-11-25T14:40:40Z",
+    "publish_at": "2026-12-04T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "038_dhirubhai",
+    "video_id": "LH77VVFAu0c",
+    "url": "https://youtu.be/LH77VVFAu0c",
+    "title": "Dhirubhai Ambani: From a Job in Yemen to Reliance",
+    "uploaded_at": "2026-11-25T14:41:31Z",
+    "publish_at": "2026-12-05T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
   }
 ]

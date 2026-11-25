@@ -52,8 +52,7 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
        speaks as a person or claimed expert ("I", "as a financial advisor").
      - Allegations about real people/companies: always name the source, never in a title or thumbnail.
      - Localized titles keep brand/person names in Latin script (also in Hindi).
-     - Shorts get a vertical thumbnail automatically (render.py make_short_thumb: badge + key number +
-       title). If the auto-picked number isn't the key one, add an override in pipeline/short_thumbs.json.
+     - Shorts get a vertical thumbnail automatically from the spec's `thumbnail` block (style A, see below).
    - **Retention rules (every video, 24 Nov 2026).** Goal: viewers watch to the end.
      - **Payoff before explanation.** No slow preambles ("hi guys", "in this video", "today we'll look at").
      - **Shorts hook:** first line ≤ 12 words (~2 s) opens on the biggest number, a contradiction or a
@@ -71,6 +70,16 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
      - **Long chapters:** end each chapter's last scene with a one-line open loop into the next chapter
        ("So how do airlines keep going? Follow the miles."). A visual change at least every ~8 s.
      - Retention never beats accuracy: every number in a hook or tease is asserted or sourced; keep hedges.
+   - **Real photos + thumbnails (owner order, 25 Nov 2026).** Every video mixes real photos with the animated charts.
+     - Find photos with `python3 tools/fetch_photo.py search "QUERY" --out <scratch dir>` (look at `sheet.jpg`),
+       then `python3 tools/fetch_photo.py get <openverse_id> <name>` -> `assets/photos/<name>.jpg` + `.json` credit.
+       Only CC BY / CC0 / Public Domain (the tool enforces it). Right person, right company; nothing implying endorsement.
+     - Use them as `photo` scenes (Shorts 2–3, long videos 6–10; long layouts `side`, `full`, `cutout`).
+       upload.py adds the photo credits to the description and refuses to upload if a photo has no `.json`.
+     - Thumbnail = **style A** (owner approved): dark navy, one huge number (`thumbnail.big`) + 2–4 word headline
+       (`thumbnail.line`), `thumbnail.color`, and `thumbnail.photo` (a person with `"cutout": true`, which
+       uses rembg, or a company/place photo shown full-bleed on the right). Never put the number over a face.
+       Every thumbnail number must appear in the video. Copy from `L014_apple_1997.py` / `047_sara_blakely.py`.
 5. **Check**: `python3 pipeline/preview.py <spec.json> <scratch dir>` and look at every sheet; fix overflow.
    `tools/render_batch.sh <ids...>`, then `python3 tools/voice_check.py` on each; fix real mispronunciations
    (not number formatting noise) and re-render.
@@ -86,11 +95,16 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
 3. Commit and push `posted.json` if it changed. Keep the run short when there is nothing to do;
    tell the owner only about problems or newly scheduled videos.
 
+**Hold and replace lists.** `pipeline/hold.txt`: ids `upload_pending.sh` must skip (being re-edited).
+`pipeline/replace.txt`: already-scheduled ids that have a re-edited version; `tools/replacements.py` marks an old
+copy `superseded` once the owner has deleted it in Studio, so the new one uploads at the same time (never two copies).
+`python3 tools/replacements.py --list` prints what the owner still has to delete.
+
 ## C. News Short (Saturday)
 1. Find this week's biggest global money/business story (economy, markets, a big company move) that a
    general audience cares about. Use 2+ reputable sources, check dates, and avoid politics framed as opinion.
 2. Write `pipeline/specs/<next number>_news_<slug>.py` (same rules as A4, badge `MONEY NEWS`,
-   explain it simply and say what it means for an ordinary person). Add localizations.
+   explain it simply and say what it means for an ordinary person). Add localizations, 1–2 real photos and a style-A thumbnail.
 3. Preview, render, voice check; add to `schedule.txt` for **Sunday 22:30 IST**; run `tools/upload_pending.sh`;
    commit and push.
 
