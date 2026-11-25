@@ -1,0 +1,258 @@
+{
+ "id": "053_crash_and_sip",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "HOW MARKETS WORK",
+ "disclaimer": "Made-up prices, not a forecast · S&P data: AP · not advice",
+ "title": "Stock Market Crash: Why Monthly Investors Get a Sale",
+ "description": "What does a stock market crash mean if you invest every month? In our simple illustration, a fund falls from $100 to $50 and only climbs back to $100. Investing $500 a month buys more units when prices are low, so $6,000 put in becomes about $8,456, up 41%, even though the price ended where it started. Halfway through, the same account was down about 30%: that is where many people stop.\n\nThis is an illustration with made-up prices, not real data and not a forecast. It only works if prices recover, which is not guaranteed: a single stock may never recover, and even broad markets can take years. Example: the S&P 500 fell 57% from its October 2007 record close to its March 2009 low and only closed above that 2007 record in March 2013 (price index, dividends not included).\n\nSource: Associated Press / NPR, \"S&P 500 Closes At All-Time High, Rising Above Oct. 2007 Mark\" (Mar 28, 2013): closes of 1,565.15 (Oct 9, 2007), 676.53 (Mar 9, 2009) and 1,569.19 (Mar 28, 2013).\n\nAssumptions: $500 invested at the start of each month at that month's price, no fees or taxes. Past results don't guarantee future returns; prices can fall further and for longer. Not financial advice.\n\n#stockmarket #investing #marketcrash #personalfinance #dollarcostaveraging",
+ "tags": [
+  "stock market crash",
+  "what to do in a market crash",
+  "investing every month",
+  "dollar cost averaging",
+  "SIP in market crash",
+  "monthly investing",
+  "bear market",
+  "how the stock market works",
+  "investing for beginners"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Caída de la bolsa: por qué el inversor mensual compra barato",
+   "summary": "Ejemplo ilustrativo: un fondo cae de $100 a $50 y vuelve a $100. Con $500 al mes, $6.000 se convierten en unos $8,456 (+41%). A mitad de camino, la cuenta iba 30% abajo."
+  },
+  "pt": {
+   "title": "Queda da bolsa: por que o investidor mensal ganha desconto",
+   "summary": "Exemplo ilustrativo: um fundo cai de US$100 para US$50 e volta a US$100. Com US$500 por mês, US$6.000 viram cerca de US$8,456 (+41%). No meio do caminho, a conta caía 30%."
+  },
+  "hi": {
+   "title": "शेयर बाज़ार क्रैश: हर महीने निवेश करने वालों के लिए सेल",
+   "summary": "उदाहरण: एक फंड $100 से $50 तक गिरकर फिर $100 पर लौटता है। हर महीने $500 लगाने पर $6,000 बन जाते हैं लगभग $8,456 (+41%)। बीच में खाता 30% नीचे था।"
+  },
+  "id": {
+   "title": "Pasar Saham Anjlok: Kenapa Investor Bulanan Dapat Diskon",
+   "summary": "Ilustrasi: harga reksa dana turun dari $100 ke $50 lalu kembali ke $100. Dengan $500 per bulan, $6.000 menjadi sekitar $8,456 (+41%). Di tengah jalan, akun sempat turun 30%."
+  },
+  "de": {
+   "title": "Börsencrash: Warum Sparplan-Anleger Rabatt bekommen",
+   "summary": "Beispiel: Ein Fonds fällt von 100 $ auf 50 $ und steigt zurück auf 100 $. Mit 500 $ im Monat werden aus 6.000 $ rund 8,456 $ (+41%). Zwischendurch lag das Depot 30% im Minus."
+  },
+  "fr": {
+   "title": "Krach boursier : l'investisseur mensuel achète en soldes",
+   "summary": "Exemple : un fonds passe de 100 $ à 50 $ puis revient à 100 $. Avec 500 $ par mois, 6 000 $ deviennent environ 8,456 $ (+41%). À mi-parcours, le compte perdait 30%."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Price back to even, yet this monthly investor is up forty-one percent.",
+   "visual": {
+    "type": "stat",
+    "value": "+41%",
+    "label": "monthly investor, price back to even",
+    "sub": "illustration · made-up prices",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Say a fund drops from one hundred dollars to fifty, then climbs back.",
+   "visual": {
+    "type": "line",
+    "title": "Fund price (illustration)",
+    "x": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "x_label": "month",
+    "format": "usd",
+    "series": [
+     {
+      "label": "Price",
+      "values": [
+       100,
+       90,
+       80,
+       70,
+       60,
+       50,
+       50,
+       60,
+       70,
+       80,
+       90,
+       100
+      ],
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Invest five hundred a month: five units at one hundred, ten at fifty.",
+   "visual": {
+    "type": "bars",
+    "title": "Units $500 a month buys",
+    "format": "num",
+    "items": [
+     {
+      "label": "At $100",
+      "value": 5.0,
+      "color": "slate"
+     },
+     {
+      "label": "At $50",
+      "value": 10.0,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So a crash is a sale. But here's the catch.",
+   "visual": {
+    "type": "pair",
+    "title": "A crash means",
+    "left": {
+     "label": "Price",
+     "sub": "cut in half",
+     "color": "red"
+    },
+    "right": {
+     "label": "Units",
+     "sub": "twice as many",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Halfway, you're down almost thirty percent. Most people quit here.",
+   "visual": {
+    "type": "compare",
+    "title": "Month 6, at the bottom",
+    "format": "usd",
+    "left": {
+     "label": "Put in",
+     "value": 3000,
+     "color": "slate"
+    },
+    "right": {
+     "label": "Worth",
+     "value": 2114,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Keep going, and six thousand becomes about eighty-four hundred fifty.",
+   "visual": {
+    "type": "line",
+    "title": "Worth vs money put in",
+    "x": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "x_label": "month",
+    "format": "usd",
+    "series": [
+     {
+      "label": "Worth",
+      "values": [
+       500,
+       950,
+       1344,
+       1676,
+       1937,
+       2114,
+       2614,
+       3637,
+       4743,
+       5921,
+       7161,
+       8456
+      ],
+      "color": "green"
+     },
+     {
+      "label": "",
+      "values": [
+       500,
+       1000,
+       1500,
+       2000,
+       2500,
+       3000,
+       3500,
+       4000,
+       4500,
+       5000,
+       5500,
+       6000
+      ],
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Real crashes run deep: the S and P five hundred once fell fifty-seven percent.",
+   "visual": {
+    "type": "stat",
+    "value": "−57%",
+    "label": "S&P 500, Oct 2007 → Mar 2009",
+    "sub": "closing record to closing low · AP",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Its record took about five and a half years to return.",
+   "visual": {
+    "type": "equation",
+    "title": "Real history: slow recovery",
+    "lines": [
+     {
+      "text": "Oct 2007 → Mar 2013",
+      "color": "text",
+      "size": 84
+     },
+     {
+      "text": "≈ 5.5 years",
+      "color": "gold",
+      "size": 130
+     }
+    ]
+   }
+  },
+  {
+   "say": "Keep buying through the drop, and even a round trip pays.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "$100 → $50 → $100",
+     "+41%"
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

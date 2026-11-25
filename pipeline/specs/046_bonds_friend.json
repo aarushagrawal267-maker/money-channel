@@ -1,0 +1,227 @@
+{
+ "id": "046_bonds_friend",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "HOW MARKETS WORK",
+ "disclaimer": "Simplified example · yearly interest · not advice",
+ "title": "Bonds Explained: Why Prices Fall When Rates Rise",
+ "description": "Bonds explained simply: a bond is a loan. Lend a friend $1,000 for 10 years at 4%, and you get $40 of interest (the coupon) each year and your $1,000 back at the end (maturity). If rates then rise and new bonds pay 5%, nobody will pay $1,000 for your $40 a year, so your bond's price falls to about $923: the price at which a buyer earns 5% a year, counting the $77 gain at maturity.\n\nOur own simplified example, all numbers computed: interest paid once a year (many bonds pay twice a year), 10 years left when rates move, no fees or taxes. Holding to maturity gets you the $1,000 back only if the borrower doesn't default; selling early locks in today's price. The longer the time left, the more a bond's price moves when rates change. Not financial advice.\n\n#bonds #investing #interestrates #personalfinance #stockmarket",
+ "tags": [
+  "bonds explained",
+  "how bonds work",
+  "why bond prices fall when rates rise",
+  "bond coupon",
+  "bond maturity",
+  "interest rates and bonds",
+  "investing for beginners",
+  "fixed income",
+  "how the market works"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Bonos explicados: por qué bajan cuando suben las tasas",
+   "summary": "Un bono es un préstamo: prestas $1.000 a 10 años al 4% y cobras $40 al año. Si los bonos nuevos pagan 5%, el precio del tuyo baja a unos $923."
+  },
+  "pt": {
+   "title": "Títulos explicados: por que caem quando os juros sobem",
+   "summary": "Um título é um empréstimo: você empresta US$1.000 por 10 anos a 4% e recebe US$40 por ano. Se os novos pagam 5%, o preço do seu cai para cerca de US$923."
+  },
+  "hi": {
+   "title": "बॉन्ड आसान भाषा में: ब्याज दर बढ़े तो दाम क्यों गिरते हैं",
+   "summary": "बॉन्ड एक कर्ज़ है: $1,000 दस साल के लिए 4% पर दें, हर साल $40 मिलते हैं। नए बॉन्ड 5% दें तो आपके बॉन्ड का दाम लगभग $923 रह जाता है।"
+  },
+  "id": {
+   "title": "Obligasi Dijelaskan: Kenapa Harga Turun Saat Bunga Naik",
+   "summary": "Obligasi adalah pinjaman: pinjamkan $1.000 selama 10 tahun dengan bunga 4%, dapat $40 per tahun. Jika obligasi baru memberi 5%, harga obligasimu turun ke sekitar $923."
+  },
+  "de": {
+   "title": "Anleihen erklärt: Warum Kurse fallen, wenn Zinsen steigen",
+   "summary": "Eine Anleihe ist ein Kredit: 1.000 $ für 10 Jahre zu 4 %, also 40 $ Zinsen im Jahr. Zahlen neue Anleihen 5 %, fällt der Kurs deiner auf rund 923 $."
+  },
+  "fr": {
+   "title": "Les obligations expliquées : pourquoi leur prix baisse",
+   "summary": "Une obligation est un prêt : 1 000 $ sur 10 ans à 4 %, soit 40 $ d'intérêts par an. Si les nouvelles paient 5 %, le prix de la vôtre tombe à environ 923 $."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Your bond lost seventy-seven dollars, and nobody missed a payment. Why?",
+   "visual": {
+    "type": "stat",
+    "value": "−$77",
+    "label": "your bond's price, after rates rose",
+    "sub": "simplified example · $1,000 bond",
+    "color": "red"
+   }
+  },
+  {
+   "say": "A bond is a loan: lend a friend a thousand for ten years.",
+   "visual": {
+    "type": "pair",
+    "title": "A bond is a loan",
+    "left": {
+     "label": "You",
+     "sub": "lend $1,000",
+     "color": "green"
+    },
+    "right": {
+     "label": "Friend",
+     "sub": "borrows for 10 yrs",
+     "color": "blue"
+    }
+   }
+  },
+  {
+   "say": "He pays forty dollars a year: the coupon, four percent.",
+   "visual": {
+    "type": "equation",
+    "title": "The coupon",
+    "lines": [
+     {
+      "text": "$1,000 × 4%",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "= $40 a year",
+      "color": "gold",
+      "size": 120
+     }
+    ]
+   }
+  },
+  {
+   "say": "In year ten, he repays the thousand. That's maturity.",
+   "visual": {
+    "type": "compare",
+    "title": "Over 10 years",
+    "format": "usd",
+    "left": {
+     "label": "Coupons",
+     "value": 400.0,
+     "color": "gold"
+    },
+    "right": {
+     "label": "At maturity",
+     "value": 1000,
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "The twist: rates rise. New bonds pay five percent.",
+   "visual": {
+    "type": "equation",
+    "title": "The twist",
+    "lines": [
+     {
+      "text": "Rates rise",
+      "color": "red",
+      "size": 110
+     },
+     {
+      "text": "New bonds pay 5%",
+      "color": "gold",
+      "size": 90
+     }
+    ]
+   }
+  },
+  {
+   "say": "Who pays a thousand for your forty, when new bonds pay fifty?",
+   "visual": {
+    "type": "bars",
+    "title": "Interest a year, same $1,000",
+    "format": "usd",
+    "items": [
+     {
+      "label": "Your bond",
+      "value": 40.0,
+      "color": "slate"
+     },
+     {
+      "label": "New bond",
+      "value": 50.0,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "So its price drops to about nine hundred twenty-three, where buyers earn five percent.",
+   "visual": {
+    "type": "stat",
+    "value": "$923",
+    "label": "your bond's new price",
+    "sub": "buyer earns 5%/yr incl. $77 gain at maturity",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Rates up, prices down. Rates down, prices up.",
+   "visual": {
+    "type": "line",
+    "title": "Your 4% bond's price",
+    "x": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "x_label": "rate new bonds pay, %",
+    "format": "usd",
+    "hline": {
+     "value": 923,
+     "x": 5,
+     "at": 0.8,
+     "label": "5% → $923"
+    },
+    "series": [
+     {
+      "label": "",
+      "values": [
+       1180,
+       1085,
+       1000,
+       923,
+       853,
+       789
+      ],
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Hold to maturity, and if he pays, you get your thousand.",
+   "visual": {
+    "type": "pair",
+    "title": "Your choice",
+    "left": {
+     "label": "Hold",
+     "sub": "$1,000 if repaid",
+     "color": "green"
+    },
+    "right": {
+     "label": "Sell now",
+     "sub": "≈ $923",
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Sell early, and that drop is real.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Rates up,",
+     "bond prices down."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

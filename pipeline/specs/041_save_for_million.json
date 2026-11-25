@@ -1,0 +1,378 @@
+{
+ "id": "041_save_for_million",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "MONEY MATH",
+ "disclaimer": "Assumes 7%/yr · returns vary, can be negative · not advice",
+ "title": "How Much to Save a Month for $1 Million by 50, 60, 65",
+ "description": "How much do you need to save each month to become a millionaire? Starting at 25 with an assumed 7% yearly return, reaching $1 million by 65 takes about $381 a month, by 60 about $555, and by 50 about $1,234: over three times as much to get there 15 years sooner. In the age-65 plan you put in about $183K and growth does the rest.\n\nAssumptions (our own illustration, not a forecast): deposits at the end of each month from age 25, a steady 7% yearly return compounded monthly, no fees or taxes. With an assumed 3% yearly inflation, $1 million in 40 years buys about what $307K buys today. Real returns vary year to year, can be negative, and past results don't guarantee future returns. Not financial advice.\n\n#millionaire #investing #personalfinance #compoundinterest #retirement",
+ "tags": [
+  "how much to save to become a millionaire",
+  "save 1 million dollars",
+  "how to become a millionaire",
+  "compound interest",
+  "retirement savings",
+  "investing for beginners",
+  "personal finance",
+  "money math",
+  "financial independence"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Cuánto ahorrar al mes para $1 millón a los 50, 60 o 65",
+   "summary": "Empezando a los 25 con un 7% anual supuesto: unos $381 al mes para llegar a $1 millón a los 65, $555 a los 60 y $1,234 a los 50. El tiempo hace casi todo el trabajo."
+  },
+  "pt": {
+   "title": "Quanto poupar por mês para US$1 milhão aos 50, 60 ou 65",
+   "summary": "Começando aos 25 com 7% ao ano (suposição): cerca de US$381 por mês para US$1 milhão aos 65, US$555 aos 60 e US$1,234 aos 50. O tempo faz quase todo o trabalho."
+  },
+  "hi": {
+   "title": "50, 60 या 65 तक $1 मिलियन के लिए हर महीने कितना बचाएँ?",
+   "summary": "25 की उम्र से, 7% सालाना रिटर्न मानकर: 65 तक $1 मिलियन के लिए हर महीने लगभग $381, 60 तक $555 और 50 तक $1,234। ज़्यादातर काम समय करता है।"
+  },
+  "id": {
+   "title": "Berapa Menabung per Bulan untuk $1 Juta di Usia 50, 60, 65",
+   "summary": "Mulai usia 25 dengan asumsi imbal hasil 7% per tahun: sekitar $381 per bulan untuk $1 juta di usia 65, $555 di usia 60, dan $1,234 di usia 50."
+  },
+  "de": {
+   "title": "Wie viel sparen für 1 Million $ mit 50, 60 oder 65?",
+   "summary": "Ab 25, bei angenommenen 7 % pro Jahr: rund 381 $ im Monat für 1 Million $ mit 65, 555 $ mit 60 und 1,234 $ mit 50. Die Zeit erledigt den Großteil."
+  },
+  "fr": {
+   "title": "Combien épargner par mois pour 1 M$ à 50, 60 ou 65 ans",
+   "summary": "Dès 25 ans, avec 7 % par an supposés : environ 381 $ par mois pour 1 million $ à 65 ans, 555 $ à 60 ans et 1,234 $ à 50 ans. Le temps fait l'essentiel."
+  }
+ },
+ "scenes": [
+  {
+   "say": "A million dollars by sixty-five? About three hundred eighty dollars a month.",
+   "visual": {
+    "type": "stat",
+    "value": "$381",
+    "label": "a month → $1 million by 65",
+    "sub": "start at 25 · 7% a year, assumed",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Starting at twenty-five, at an assumed seven percent a year.",
+   "visual": {
+    "type": "equation",
+    "title": "The assumptions",
+    "lines": [
+     {
+      "text": "Start at 25",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "7% a year (assumed)",
+      "color": "gold",
+      "size": 84
+     },
+     {
+      "text": "Goal: $1,000,000",
+      "color": "green",
+      "size": 84
+     }
+    ]
+   }
+  },
+  {
+   "say": "By sixty? About five hundred fifty-five a month.",
+   "visual": {
+    "type": "compare",
+    "title": "Monthly savings needed",
+    "format": "usd",
+    "left": {
+     "label": "By 65",
+     "value": 381,
+     "color": "green"
+    },
+    "right": {
+     "label": "By 60",
+     "value": 555,
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "By fifty? Over twelve hundred thirty a month.",
+   "visual": {
+    "type": "stat",
+    "value": "$1,234",
+    "label": "a month → $1 million by 50",
+    "sub": "start at 25 · 7% a year, assumed",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Fifteen years sooner costs more than triple, every month.",
+   "visual": {
+    "type": "bars",
+    "title": "Saved per month, from age 25",
+    "format": "usd",
+    "items": [
+     {
+      "label": "By 65",
+      "value": 381,
+      "color": "green"
+     },
+     {
+      "label": "By 60",
+      "value": 555,
+      "color": "gold"
+     },
+     {
+      "label": "By 50",
+      "value": 1234,
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "The twist: at sixty-five you've put in just one hundred eighty-three thousand.",
+   "visual": {
+    "type": "line",
+    "title": "The age-65 plan",
+    "x": [
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65
+    ],
+    "x_label": "age",
+    "format": "usd",
+    "series": [
+     {
+      "label": "Account",
+      "values": [
+       0,
+       4721,
+       9784,
+       15213,
+       21034,
+       27275,
+       33968,
+       41145,
+       48841,
+       57093,
+       65942,
+       75430,
+       85604,
+       96514,
+       108212,
+       120756,
+       134207,
+       148630,
+       164096,
+       180680,
+       198462,
+       217531,
+       237977,
+       259902,
+       283412,
+       308621,
+       335652,
+       364638,
+       395719,
+       429047,
+       464784,
+       503104,
+       544195,
+       588257,
+       635503,
+       686165,
+       740489,
+       798740,
+       861203,
+       928180,
+       1000000
+      ],
+      "color": "green"
+     },
+     {
+      "label": "You put in",
+      "values": [
+       0,
+       4572,
+       9144,
+       13715,
+       18287,
+       22859,
+       27431,
+       32002,
+       36574,
+       41146,
+       45718,
+       50289,
+       54861,
+       59433,
+       64005,
+       68576,
+       73148,
+       77720,
+       82292,
+       86863,
+       91435,
+       96007,
+       100579,
+       105150,
+       109722,
+       114294,
+       118866,
+       123437,
+       128009,
+       132581,
+       137153,
+       141724,
+       146296,
+       150868,
+       155440,
+       160011,
+       164583,
+       169155,
+       173727,
+       178298,
+       182870
+      ],
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Growth adds the other eight hundred seventeen thousand.",
+   "visual": {
+    "type": "equation",
+    "title": "Where the million comes from",
+    "lines": [
+     {
+      "text": "You: $183K",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "Growth: $817K",
+      "color": "green",
+      "size": 96
+     },
+     {
+      "text": "= $1,000,000",
+      "color": "gold",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "One catch: prices rise too, say three percent a year.",
+   "visual": {
+    "type": "pair",
+    "title": "The catch",
+    "left": {
+     "label": "Savings",
+     "sub": "grow 7%",
+     "color": "green"
+    },
+    "right": {
+     "label": "Prices",
+     "sub": "grow 3%",
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "So that million buys what three hundred seven thousand buys today.",
+   "visual": {
+    "type": "compare",
+    "title": "A million in 40 years",
+    "format": "usd",
+    "left": {
+     "label": "On paper",
+     "value": 1000000,
+     "color": "gold"
+    },
+    "right": {
+     "label": "Today's money",
+     "value": 307000.0,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Start early, and raise it with every pay rise.",
+   "visual": {
+    "type": "equation",
+    "title": "The lesson",
+    "lines": [
+     {
+      "text": "Start early.",
+      "color": "text",
+      "size": 110
+     },
+     {
+      "text": "Raise it with",
+      "color": "gold",
+      "size": 90
+     },
+     {
+      "text": "every pay rise.",
+      "color": "gold",
+      "size": 90
+     }
+    ]
+   }
+  },
+  {
+   "say": "Early starters get the small magic number.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "$1M by 65?",
+     "$381 a month."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

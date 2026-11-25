@@ -1,0 +1,322 @@
+{
+ "id": "048_mortgage_prepay",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "MONEY MATH",
+ "disclaimer": "Example · 7.28% avg rate (Freddie Mac, Nov 19, 2026) · yours will differ",
+ "title": "One Extra Mortgage Payment a Year: $143K Saved?",
+ "description": "What does one extra mortgage payment a year save? On a $400,000, 30-year fixed loan at 7.28% (the US average in late November 2026), the monthly payment is about $2,737 and total interest is about $585K. Adding one extra monthly payment each year pays the loan off in 23 years and 9 months, about 6 years early, and cuts interest by about $143K, for about $63K of extra payments.\n\nSource: Freddie Mac Primary Mortgage Market Survey, 30-year fixed-rate average of 7.28% as of Nov 19, 2026 (freddiemac.com/pmms).\n\nAssumptions (our own example): principal and interest only (no property tax, insurance or PMI), the extra payment is made once a year and applied fully to principal, rate fixed for the whole loan. Interest saved is in plain dollars, not adjusted for inflation or for what that money could have earned elsewhere. Before prepaying, check your loan has no prepayment penalty, tell your lender to apply extra money to principal, and keep an emergency fund and pay off higher-interest debt first. Not financial advice.\n\n#mortgage #homebuying #personalfinance #debtfree #realestate",
+ "tags": [
+  "extra mortgage payment",
+  "pay off mortgage early",
+  "mortgage prepayment",
+  "one extra payment a year",
+  "mortgage interest",
+  "30 year mortgage",
+  "mortgage rates",
+  "personal finance",
+  "money math"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Un pago extra de hipoteca al año: ¿$143K ahorrados?",
+   "summary": "Hipoteca de $400.000 a 30 años al 7,28%: un pago extra al año la liquida en 23 años y 9 meses y ahorra unos $143K en intereses."
+  },
+  "pt": {
+   "title": "Uma parcela extra do financiamento por ano: US$143 mil?",
+   "summary": "Financiamento de US$400 mil em 30 anos a 7,28%: uma parcela extra por ano quita em 23 anos e 9 meses e economiza cerca de US$143 mil em juros."
+  },
+  "hi": {
+   "title": "साल में एक एक्स्ट्रा होम लोन EMI: $143K की बचत?",
+   "summary": "$400,000 का 30 साल का होम लोन, 7.28% ब्याज: साल में एक एक्स्ट्रा किस्त से लोन 23 साल 9 महीने में खत्म और लगभग $143K ब्याज की बचत।"
+  },
+  "id": {
+   "title": "Satu Cicilan KPR Ekstra per Tahun: Hemat $143 Ribu?",
+   "summary": "KPR $400.000 tenor 30 tahun bunga 7,28%: satu cicilan ekstra per tahun melunasinya dalam 23 tahun 9 bulan dan menghemat sekitar $143 ribu bunga."
+  },
+  "de": {
+   "title": "Eine Extra-Rate pro Jahr: 143.000 $ Zinsen gespart?",
+   "summary": "Hypothek über 400.000 $, 30 Jahre, 7,28 %: Eine zusätzliche Monatsrate pro Jahr tilgt sie in 23 Jahren und 9 Monaten und spart rund 143.000 $ Zinsen."
+  },
+  "fr": {
+   "title": "Une mensualité de prêt en plus par an : 143 000 $ ?",
+   "summary": "Prêt immobilier de 400 000 $ sur 30 ans à 7,28 % : une mensualité en plus par an le solde en 23 ans et 9 mois et économise environ 143 000 $ d'intérêts."
+  }
+ },
+ "scenes": [
+  {
+   "say": "One extra mortgage payment a year: about one hundred forty-three thousand saved.",
+   "visual": {
+    "type": "stat",
+    "value": "$143K",
+    "label": "interest saved",
+    "sub": "one extra payment a year · $400K, 30 years",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Late November's average American rate: about seven point three percent.",
+   "visual": {
+    "type": "equation",
+    "title": "30-year fixed, US average",
+    "lines": [
+     {
+      "text": "7.28%",
+      "color": "gold",
+      "size": 150
+     },
+     {
+      "text": "Freddie Mac · Nov 19, 2026",
+      "color": "muted",
+      "size": 50
+     }
+    ]
+   }
+  },
+  {
+   "say": "Borrow four hundred thousand for thirty years: about twenty-seven hundred forty a month.",
+   "visual": {
+    "type": "pair",
+    "title": "The loan",
+    "left": {
+     "label": "$400K",
+     "sub": "30 years",
+     "color": "blue"
+    },
+    "right": {
+     "label": "$2,737",
+     "sub": "a month",
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "Interest alone: about five hundred eighty-five thousand.",
+   "visual": {
+    "type": "compare",
+    "title": "Over 30 years",
+    "format": "usd",
+    "left": {
+     "label": "Borrowed",
+     "value": 400000,
+     "color": "blue"
+    },
+    "right": {
+     "label": "Interest",
+     "value": 585000.0,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "More than you borrowed. The trick: thirteen payments a year, not twelve.",
+   "visual": {
+    "type": "equation",
+    "title": "The trick",
+    "lines": [
+     {
+      "text": "12 payments a year",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "→ 13",
+      "color": "gold",
+      "size": 150
+     }
+    ]
+   }
+  },
+  {
+   "say": "The extra goes straight to the balance, so interest shrinks.",
+   "visual": {
+    "type": "pair",
+    "title": "Where the extra goes",
+    "left": {
+     "label": "Balance",
+     "sub": "goes down faster",
+     "color": "green"
+    },
+    "right": {
+     "label": "Interest",
+     "sub": "shrinks with it",
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Debt-free in twenty-three years and nine months, about six years early.",
+   "visual": {
+    "type": "line",
+    "title": "Loan balance",
+    "x": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30
+    ],
+    "x_label": "year",
+    "format": "usd",
+    "series": [
+     {
+      "label": "12 payments",
+      "values": [
+       400000,
+       396151,
+       392012,
+       387562,
+       382777,
+       377631,
+       372099,
+       366149,
+       359752,
+       352873,
+       345477,
+       337523,
+       328971,
+       319775,
+       309887,
+       299255,
+       287822,
+       275528,
+       262309,
+       248095,
+       232811,
+       216376,
+       198704,
+       179702,
+       159269,
+       137298,
+       113674,
+       88270,
+       60955,
+       31583,
+       0
+      ],
+      "color": "slate"
+     },
+     {
+      "label": "13 payments",
+      "values": [
+       400000,
+       393414,
+       386333,
+       378718,
+       370530,
+       361726,
+       352259,
+       342079,
+       331133,
+       319363,
+       306707,
+       293098,
+       278465,
+       262730,
+       245811,
+       227618,
+       208056,
+       187021,
+       164402,
+       140081,
+       113928,
+       85807,
+       55570,
+       23055,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Total interest falls to about four hundred forty-two thousand.",
+   "visual": {
+    "type": "bars",
+    "title": "Total interest paid",
+    "format": "usd",
+    "items": [
+     {
+      "label": "12 a year",
+      "value": 585000.0,
+      "color": "red"
+     },
+     {
+      "label": "13 a year",
+      "value": 442000.0,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "First, check for prepayment penalties, and keep an emergency fund.",
+   "visual": {
+    "type": "equation",
+    "title": "Before you do it",
+    "lines": [
+     {
+      "text": "No prepayment penalty?",
+      "color": "text",
+      "size": 72
+     },
+     {
+      "text": "Emergency fund ready?",
+      "color": "text",
+      "size": 72
+     },
+     {
+      "text": "Extra → principal",
+      "color": "gold",
+      "size": 84
+     }
+    ]
+   }
+  },
+  {
+   "say": "Thirteen payments instead of twelve. That's all it takes.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "13 payments,",
+     "not 12."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}
