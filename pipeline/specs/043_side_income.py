@@ -91,7 +91,7 @@ spec = {
     },
     "scenes": [
         # hook: the biggest number on frame 0 + contradiction/open loop ("or zero?")
-        {"say": "Five hundred a month on the side: eighty-five thousand dollars, or zero?",
+        {"say": "Five hundred a month on the side: spent, or eighty-five thousand dollars?",
          "visual": {"type": "stat", "value": f"${fv / 1e3:.1f}K", "label": "$500 a month, invested 10 years",
                     "sub": "assumed 7% a year · not guaranteed", "color": "green"}},
         {"say": "Say a side gig nets five hundred a month, after tax.",
@@ -127,7 +127,7 @@ spec = {
          "visual": {"type": "pair", "title": "The real formula",
                     "left": {"label": "Habit", "sub": "every month", "color": "green"},
                     "right": {"label": "Time", "sub": "10+ years", "color": "gold"}}},
-        # loop line: runs back into "Five hundred a month on the side: eighty-five thousand dollars, or zero?"
+        # loop line: runs back into "Five hundred a month on the side: spent, or eighty-five thousand dollars?"
         {"say": "So what will your five hundred become?",
          "visual": {"type": "cta", "lines": ["$500 a month.", "Spend or grow?"],
                     "sub": "Follow for daily money lessons"}},

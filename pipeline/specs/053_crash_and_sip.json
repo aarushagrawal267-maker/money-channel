@@ -136,7 +136,7 @@
    }
   },
   {
-   "say": "Halfway, you're down almost thirty percent. Most people quit here.",
+   "say": "Halfway, you're down almost thirty percent. Many people quit here.",
    "visual": {
     "type": "compare",
     "title": "Month 6, at the bottom",
@@ -244,7 +244,7 @@
    }
   },
   {
-   "say": "Keep buying through the drop, and even a round trip pays.",
+   "say": "Here, buying through the drop made even a round trip pay.",
    "visual": {
     "type": "cta",
     "lines": [

@@ -107,7 +107,7 @@ spec = {
         {"say": "Services: a quarter of sales, but forty percent of gross profit.",
          "visual": {"type": "stat", "value": f"{svc_gp_share:.0%}", "label": "of Apple's gross profit is Services",
                     "sub": f"from just {svc_sales_share:.0%} of sales · fiscal 2026", "color": "green"}},
-        {"say": "Why? Every phone needs new parts. Software costs far less to deliver.",
+        {"say": "Why? Every phone needs new parts. Most services don't.",
          "visual": {"type": "pair", "title": "Why the gap?",
                     "left": {"label": "iPhone", "sub": "new parts each sale", "color": "slate"},
                     "right": {"label": "Software", "sub": "cheap to deliver", "color": "gold"}}},

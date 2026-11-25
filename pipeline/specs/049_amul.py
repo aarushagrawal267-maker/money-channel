@@ -51,11 +51,11 @@ spec = {
     "currency": "inr", "voice": "af_heart", "speed": 1.05,
     "badge": "INDIA STORY",
     "disclaimer": "Sources: GCMMF / Amul (FY2025-26), Rural Voice · see description",
-    "title": "Amul Business Model: ₹80 of Every ₹100 to Farmers",
+    "title": "Amul Business Model: Do Farmers Get ₹80 of ₹100?",
     "description": (
         "How does Amul's business model work? Amul is a cooperative owned by about 3.6 million dairy farmers in "
         "Gujarat, India. Amul says farmers get about ₹80-85 of every ₹100 a shopper spends on its products, compared "
-        "with about a third in many other countries (Amul's own estimate, not an independent audit). That leaves "
+        "with about a third in many other countries (Amul's own claim from GCMMF annual general meeting speeches, not an independent audit; the one-third comparison is from Jayen Mehta via Rural Voice). That leaves "
         "little for everything else, yet the Amul brand topped ₹1 lakh crore (₹1 trillion, about $10.7 billion) in "
         "sales in FY2025-26, on about 31 million litres of milk a day. The lesson: a thin margin on huge volume can "
         "build a giant.\n\n"
@@ -63,7 +63,7 @@ spec = {
         "Cooperative Milk Marketing Federation (GCMMF) sells it under the Amul brand. GCMMF's own sales were ₹73,450 "
         "crore; the brand figure also includes the district unions.\n\n"
         "Sources: GCMMF FY2025-26 results (5 Apr 2026, via DeshGujarat and Dairy Industries International); Jayen "
-        "Mehta, GCMMF, quoted by Rural Voice (25 Jun 2022); Amul, 'The Amul Model' and 'A note on the achievements of the dairy cooperatives' (amul.com). Dollar figure at "
+        "Mehta, GCMMF, quoted by Rural Voice (25 Jun 2022); GCMMF chairman's address, 50th Annual General Body Meeting (amul.com); Amul, 'The Amul Model' and 'A note on the achievements of the dairy cooperatives' (amul.com). Dollar figure at "
         "₹93.44 per $ (PTI, 18 Nov 2026). 1 crore = 10 million; 1 lakh crore = 1 trillion.\n\n"
         "#amul #india #business #cooperative #businessmodel"
     ),
@@ -85,9 +85,9 @@ spec = {
     },
     "scenes": [
         # hook: the surprising number on frame 0 + open loop ("why?")
-        {"say": "Spend a hundred rupees on Amul: about eighty goes to farmers. Why?",
+        {"say": "Amul says of every hundred rupees you spend, about eighty reach farmers.",
          "visual": {"type": "stat", "value": f"₹{per_100[0]}–{per_100[1]}", "label": "of every ₹100 goes to farmers",
-                    "sub": "Amul's own estimate (GCMMF, 2022)", "color": "gold"}},
+                    "sub": "Amul's own claim (GCMMF AGM speech)", "color": "gold"}},
         {"say": "Amul's Jayen Mehta says elsewhere, farmers often get about a third.",
          "visual": {"type": "bars", "title": "Farmers' share of ₹100 spent", "format": "num",
                     "items": [{"label": "Amul", "value": per_100[0], "color": "green"},
@@ -102,7 +102,7 @@ spec = {
                               {"text": f"{DISTRICT_UNIONS} unions: process", "color": "text", "size": 80},
                               {"text": "Federation: sells", "color": "gold", "size": 80}]}},
         # mid-video re-hook: opens a second loop (how can that be big?)
-        {"say": "Now the twist: that leaves Amul at most twenty rupees for everything else.",
+        {"say": "Now the twist: that leaves at most twenty rupees for everything else, shops included.",
          "visual": {"type": "compare", "title": "Of every ₹100 (Amul's estimate)",
                     "left": {"label": "Farmers", "value": per_100[0], "color": "green"},
                     "right": {"label": "Everything else", "value": left_over, "color": "red"}}},

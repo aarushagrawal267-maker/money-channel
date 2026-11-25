@@ -110,7 +110,7 @@ spec = {
                     "x_label": "rate new bonds pay, %", "format": "usd",
                     "hline": {"value": round(p_new), "x": 5, "at": 0.8, "label": f"5% → ${p_new:,.0f}"},
                     "series": [{"label": "", "values": prices_axis, "color": "gold"}]}},
-        {"say": "Hold to maturity, and if he pays, you get your thousand.",
+        {"say": "Hold, and if he pays, your thousand returns. Still just four percent.",
          "visual": {"type": "pair", "title": "Your choice",
                     "left": {"label": "Hold", "sub": "$1,000 if repaid", "color": "green"},
                     "right": {"label": "Sell now", "sub": f"≈ ${p_new:,.0f}", "color": "red"}}},

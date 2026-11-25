@@ -46,7 +46,7 @@
  },
  "scenes": [
   {
-   "say": "Five hundred a month on the side: eighty-five thousand dollars, or zero?",
+   "say": "Five hundred a month on the side: spent, or eighty-five thousand dollars?",
    "visual": {
     "type": "stat",
     "value": "$85.5K",

@@ -116,7 +116,7 @@ spec = {
         {"say": "You pay eighteen percent G-S-T on that interest: about two hundred fifty rupees.",
          "visual": {"type": "stat", "value": f"₹{gst_on_interest:.0f}", "label": "18% GST on ₹1,386 interest",
                     "sub": "paid by you, not the brand", "color": "red"}},
-        {"say": "Plus a processing fee: H-D-F-C lists ninety-nine to six hundred ninety-nine rupees.",
+        {"say": "Often a processing fee: H-D-F-C lists ninety-nine to six hundred ninety-nine rupees.",
          "visual": {"type": "bars", "title": "HDFC EMI processing fee (+GST)",
                     "items": [{"label": "Lowest", "value": FEE_MIN, "color": "gold"},
                               {"label": "Highest", "value": FEE_MAX, "color": "red"}]}},

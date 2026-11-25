@@ -104,7 +104,7 @@ spec = {
                     "left": {"label": "Price", "sub": "cut in half", "color": "red"},
                     "right": {"label": "Units", "sub": "twice as many", "color": "green"}}},
         # mid-video re-hook: the painful middle
-        {"say": "Halfway, you're down almost thirty percent. Most people quit here.",
+        {"say": "Halfway, you're down almost thirty percent. Many people quit here.",
          "visual": {"type": "compare", "title": "Month 6, at the bottom", "format": "usd",
                     "left": {"label": "Put in", "value": put_in[mid], "color": "slate"},
                     "right": {"label": "Worth", "value": round(value[mid]), "color": "red"}}},
@@ -120,7 +120,7 @@ spec = {
                     "lines": [{"text": "Oct 2007 → Mar 2013", "color": "text", "size": 84},
                               {"text": "≈ 5.5 years", "color": "gold", "size": 130}]}},
         # lesson + loop line: runs back into "Price back to even, yet..."
-        {"say": "Keep buying through the drop, and even a round trip pays.",
+        {"say": "Here, buying through the drop made even a round trip pay.",
          "visual": {"type": "cta", "lines": ["$100 → $50 → $100", f"+{end_gain:.0%}"],
                     "sub": "Follow for daily money lessons"}},
     ],

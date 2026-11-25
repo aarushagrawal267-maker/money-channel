@@ -52,7 +52,7 @@ spec = {
         "she had. He and six other engineers founded the company in Pune. In the year to March 2026 Infosys reported "
         f"${REV_FY26_USD / 1e9:.1f} billion in revenue (₹{lakh_crore:.2f} lakh crore). The road wasn't smooth: its 1993 "
         "public share sale only scraped through after Morgan Stanley bought 13% of the company. By 1999 it was the "
-        "first Indian company listed on Nasdaq.\n\n"
+        "first India-registered company listed on Nasdaq.\n\n"
         "The other side: Murthy later said keeping his wife, an engineer, out of the company was \"wrongly "
         "idealistic\" (CNBC-TV18, Jan 2024), and his 2023 call for young people to work 70 hours a week was "
         "criticised; an IT employees' union called a 70-hour week \"illegal\" (CNBC, Nov 2023). The lesson: you can "
@@ -100,7 +100,7 @@ spec = {
         {"say": "In nineteen ninety-three, it scraped through after Morgan Stanley bought thirteen percent.",
          "visual": {"type": "stat", "value": f"{MS_STAKE}%", "label": "of Infosys bought by Morgan Stanley",
                     "sub": f"so the {IPO_YEAR} share sale could scrape through", "color": "red"}},
-        {"say": "By nineteen ninety-nine, it was the first Indian company on Nasdaq.",
+        {"say": "By nineteen ninety-nine, it was the first India-registered company on Nasdaq.",
          "visual": {"type": "timeline", "title": "Slow, then fast", "start": 1980, "end": 2010,
                     "rows": [{"label": "Listed in India", "from": IPO_YEAR, "color": "gold"},
                              {"label": "Listed on Nasdaq", "from": NASDAQ_YEAR, "color": "green"}]}},
