@@ -4,6 +4,17 @@
  "voice": "af_heart",
  "speed": 1.05,
  "badge": "MONEY MATH",
+ "thumbnail": {
+  "big": "$143K",
+  "color": "green",
+  "photo": {
+   "file": "assets/photos/single_family_home_brick.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  }
+ },
  "disclaimer": "Example · 7.28% avg rate (Freddie Mac, Nov 19, 2026) · yours will differ",
  "title": "One Extra Mortgage Payment a Year: $143K Saved?",
  "description": "What does one extra mortgage payment a year save? On a $400,000, 30-year fixed loan at 7.28% (the US average in late November 2026), the monthly payment is about $2,737 and total interest is about $585K. Adding one extra monthly payment each year pays the loan off in 23 years and 9 months, about 6 years early, and cuts interest by about $143K, for about $63K of extra payments.\n\nSource: Freddie Mac Primary Mortgage Market Survey, 30-year fixed-rate average of 7.28% as of Nov 19, 2026 (freddiemac.com/pmms).\n\nAssumptions (our own example): principal and interest only (no property tax, insurance or PMI), the extra payment is made once a year and applied fully to principal, rate fixed for the whole loan. Interest saved is in plain dollars, not adjusted for inflation or for what that money could have earned elsewhere. Before prepaying, check your loan has no prepayment penalty, tell your lender to apply extra money to principal, and keep an emergency fund and pay off higher-interest debt first. Not financial advice.\n\n#mortgage #homebuying #personalfinance #debtfree #realestate",
@@ -48,11 +59,16 @@
   {
    "say": "One extra mortgage payment a year: about one hundred forty-three thousand saved.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/houses_dc_logan_circle.jpg",
+    "title": "One extra payment a year",
     "value": "$143K",
-    "label": "interest saved",
-    "sub": "one extra payment a year · $400K, 30 years",
-    "color": "green"
+    "label": "interest saved · $400K, 30 years",
+    "color": "green",
+    "focus": [
+     0.5,
+     0.45
+    ]
    }
   },
   {
@@ -77,18 +93,16 @@
   {
    "say": "Borrow four hundred thousand for thirty years: about twenty-seven hundred forty a month.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/house_keys_on_money.jpg",
     "title": "The loan",
-    "left": {
-     "label": "$400K",
-     "sub": "30 years",
-     "color": "blue"
-    },
-    "right": {
-     "label": "$2,737",
-     "sub": "a month",
-     "color": "gold"
-    }
+    "value": "$2,737/mo",
+    "label": "$400K borrowed for 30 years",
+    "color": "gold",
+    "focus": [
+     0.5,
+     0.5
+    ]
    }
   },
   {
@@ -286,24 +300,13 @@
   {
    "say": "First, check for prepayment penalties, and keep an emergency fund.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/piggy_bank_coins.jpg",
     "title": "Before you do it",
-    "lines": [
-     {
-      "text": "No prepayment penalty?",
-      "color": "text",
-      "size": 72
-     },
-     {
-      "text": "Emergency fund ready?",
-      "color": "text",
-      "size": 72
-     },
-     {
-      "text": "Extra → principal",
-      "color": "gold",
-      "size": 84
-     }
+    "label": "No penalty? Emergency fund ready?",
+    "focus": [
+     0.55,
+     0.5
     ]
    }
   },

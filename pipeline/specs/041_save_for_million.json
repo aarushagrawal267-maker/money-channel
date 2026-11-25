@@ -4,6 +4,17 @@
  "voice": "af_heart",
  "speed": 1.05,
  "badge": "MONEY MATH",
+ "thumbnail": {
+  "big": "$381/MO",
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/retired_couple_hand_in_hand.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  }
+ },
  "disclaimer": "Assumes 7%/yr · returns vary, can be negative · not advice",
  "title": "How Much to Save a Month for $1 Million by 50, 60, 65",
  "description": "How much do you need to save each month to become a millionaire? Starting at 25 with an assumed 7% yearly return, reaching $1 million by 65 takes about $381 a month, by 60 about $555, and by 50 about $1,234: over three times as much to get there 15 years sooner. In the age-65 plan you put in about $183K and growth does the rest.\n\nAssumptions (our own illustration, not a forecast): deposits at the end of each month from age 25, a steady 7% yearly return compounded monthly, no fees or taxes. With an assumed 3% yearly inflation, $1 million in 40 years buys about what $307K buys today. Real returns vary year to year, can be negative, and past results don't guarantee future returns. Not financial advice.\n\n#millionaire #investing #personalfinance #compoundinterest #retirement",
@@ -48,11 +59,16 @@
   {
    "say": "A million dollars by sixty-five? About three hundred eighty dollars a month.",
    "visual": {
-    "type": "stat",
-    "value": "$381",
-    "label": "a month → $1 million by 65",
-    "sub": "start at 25 · 7% a year, assumed",
-    "color": "gold"
+    "type": "photo",
+    "file": "assets/photos/retired_couple_hand_in_hand.jpg",
+    "title": "$1 million by 65",
+    "value": "$381/mo",
+    "label": "start at 25 · 7% a year, assumed",
+    "color": "gold",
+    "focus": [
+     0.5,
+     0.4
+    ]
    }
   },
   {
@@ -307,18 +323,16 @@
   {
    "say": "One catch: prices rise too, say three percent a year.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/grocery_aisle_prices.jpg",
     "title": "The catch",
-    "left": {
-     "label": "Savings",
-     "sub": "grow 7%",
-     "color": "green"
-    },
-    "right": {
-     "label": "Prices",
-     "sub": "grow 3%",
-     "color": "red"
-    }
+    "value": "+3%/yr",
+    "label": "prices rise too (example)",
+    "color": "red",
+    "focus": [
+     0.5,
+     0.45
+    ]
    }
   },
   {
@@ -342,24 +356,15 @@
   {
    "say": "Start early, and raise it with every pay rise.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/construction_worker_welding.jpg",
     "title": "The lesson",
-    "lines": [
-     {
-      "text": "Start early.",
-      "color": "text",
-      "size": 110
-     },
-     {
-      "text": "Raise it with",
-      "color": "gold",
-      "size": 90
-     },
-     {
-      "text": "every pay rise.",
-      "color": "gold",
-      "size": 90
-     }
+    "value": "Start early",
+    "label": "and raise it with every pay rise",
+    "color": "gold",
+    "focus": [
+     0.45,
+     0.4
     ]
    }
   },
