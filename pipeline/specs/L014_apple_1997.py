@@ -162,7 +162,7 @@ scene("Lenders noticed. In October nineteen ninety-seven, Standard and Poor's cu
 
 # ---------------------------------------------------------------- 2
 scene("Chapter two. The Next bet.", type="chapter", n=2, title="The NeXT bet")
-scene("On December twentieth, nineteen ninety-six, Apple, then run by chief executive Gil Amelio, agreed to buy Next, the company Steve Jobs started after he left Apple. The deal closed in February nineteen ninety-seven.",
+scene("On December twentieth, nineteen ninety-six, Apple, then run by chief executive Gil Uh-mellio, agreed to buy Next, the company Steve Jobs started after he left Apple. The deal closed in February nineteen ninety-seven.",
       type="timeline", title="Apple, 1996–97",
       events=[{"when": "Dec 1996", "text": "Deal to buy\nNeXT"},
               {"when": "Feb 1997", "text": "NeXT deal\ncloses"},
@@ -179,13 +179,13 @@ scene("The headline price was four hundred million dollars. Apple's annual repor
 scene("And three hundred and seventy-five million of it was written off straight away, as research still in progress. Add a restructuring charge, and Apple lost seven hundred and eight million dollars in the first three months of nineteen ninety-seven alone.",
       type="stat", value=f"−${Q2_1997_LOSS / 1e6:.0f}M", label="Apple's loss in one quarter (Jan–Mar 1997)",
       sub="incl. $375M NeXT write-off + $155M restructuring", color="red")
-scene("So what did Apple really buy? People and software. Avie Tevanian came from Next to run software. Jon Rubinstein, a former Next hardware chief, took over hardware. And to be fair to Amelio, his team had already hired finance chief Fred Anderson, and started the cost cuts in nineteen ninety-six.",
+scene("So what did Apple really buy? People and software. Avie Tevanian came from Next to run software. Jon Rubinstein, a former Next hardware chief, took over hardware. And to be fair to Uh-mellio, his team had already hired finance chief Fred Anderson, and started the cost cuts in nineteen ninety-six.",
       type="table", title="The team taking shape",
       header=["Who", "Role", "Joined"],
       rows=[["Avie Tevanian", "Software", "1997, NeXT"], ["Jon Rubinstein", "Hardware", "1997, ex-NeXT"],
             ["Fred Anderson", "Finance (CFO)", "April 1996"], ["Steve Jobs", "Adviser", "1997, NeXT"]],
       col_colors={"1": "green", "2": "muted"})
-scene("In July nineteen ninety-seven, Amelio resigned. In September, the board named Jobs interim chief executive, in its words, until a new one was found. But new software takes years. Apple needed help sooner, and it came from its fiercest rival.",
+scene("In July nineteen ninety-seven, Uh-mellio resigned. In September, the board named Jobs interim chief executive, in its words, until a new one was found. But new software takes years. Apple needed help sooner, and it came from its fiercest rival.",
       type="title", title="Interim CEO", sub="\"until a new CEO is named\" · Apple, Sept 16, 1997")
 
 # ---------------------------------------------------------------- 3
@@ -308,7 +308,7 @@ scene("Lesson three: complexity costs cash. Once Apple had fewer products, its i
       rows=[{"label": "Apple inventory, Sept 1997", "share": 1.0, "color": "red", "dp": 0},
             {"label": "Sept 1998 (as % of 1997)", "share": inv_left, "color": "green", "dp": 0}],
       note="Source: Apple 10-K, fiscal 1998")
-scene("And remember who did it. Amelio's team started the cuts and bought Next. Jobs set the focus. Ive, Rubinstein, Tevanian, Anderson and Cook did much of the work. A turnaround is a team effort.",
+scene("And remember who did it. Uh-mellio's team started the cuts and bought Next. Jobs set the focus. Ive, Rubinstein, Tevanian, Anderson and Cook did much of the work. A turnaround is a team effort.",
       type="title", title="Not one genius. A team.", sub="Amelio · Jobs · Ive · Rubinstein · Tevanian · Anderson · Cook")
 scene("If you learned something, subscribe. We break down how money and business really work, every week.",
       type="cta", lines=["How money", "really works."], sub="Subscribe for weekly breakdowns")
