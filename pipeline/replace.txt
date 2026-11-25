@@ -1,0 +1,18 @@
+# Already-scheduled videos being replaced by re-edited versions (real photos), same publish times.
+# tools/replacements.py marks each old copy superseded once the owner has deleted it in Studio.
+021_bnpl
+022_airline_loyalty
+039_dca_vs_lump
+L003_index_funds
+024_expense_ratio
+025_emergency_fund
+028_market_cap
+027_lifestyle_inflation
+029_netflix_blockbuster
+L010_netflix_blockbuster
+030_zerodha
+031_car_loan_cost
+032_buffett_after_50
+033_raise_vs_switch
+L004_credit_cards_business
+034_rates_and_you

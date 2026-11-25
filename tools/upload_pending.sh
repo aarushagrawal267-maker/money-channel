@@ -8,6 +8,9 @@ set -uo pipefail
 cd "$(dirname "$0")/.."
 [ -s models/kokoro-v1.0.onnx ] || ./setup.sh </dev/null || exit 1
 
+# Re-edited replacements: mark old copies the owner has deleted as superseded so their new versions upload.
+python3 tools/replacements.py </dev/null || echo "(could not check replacements)"
+
 # Titles already on the channel (scheduled, public or private, except retired copies).
 ON_CHANNEL=$(python3 tools/channel_titles.py </dev/null) || { echo "Could not read the channel's videos; stopping to avoid duplicates."; exit 1; }
 failures=0
