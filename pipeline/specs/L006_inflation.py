@@ -16,20 +16,24 @@ Sources (checked 2026-11-25):
           categories"; CPI-U covers "over 90 percent of the U.S. population"; weights from the Consumer
           Expenditure Surveys.
   [RI]    BLS, Relative importance of components in the CPI, December 2025 (CPI-U): shelter 35.625,
-          food 13.698, energy 6.383.
+          food 13.698, energy 6.383 (shelter = rent + owners' equivalent rent; the broader Housing group is 44.469,
+          not used).
   [FED]   FOMC, Statement on Longer-Run Goals and Monetary Policy Strategy (adopted effective Jan 24, 2012;
           reaffirmed effective Jan 27, 2026): 2% goal measured by the PCE price index; "The inflation rate
           over the longer run is primarily determined by monetary policy"; policy works "with a lag".
   [STL]   St. Louis Fed, Open Vault, "The Fed's Inflation Target: Why 2 Percent?" (Jan 16, 2019): measurement
           bias, room to cut interest rates, avoiding deflation; economists don't all agree.
   [FOMC]  FOMC statements: Mar 16, 2022 (raised to 1/4-1/2 percent, i.e. from 0-1/4); Jul 26, 2023
-          (5-1/4 to 5-1/2 percent); Sep 16, 2026 (raised to 3-3/4 to 4 percent; "Inflation remains elevated").
+          (5-1/4 to 5-1/2 percent); Sep 18, 2024 (first cut, by 1/2 point to 4-3/4 to 5 percent); Dec 10, 2025
+          (lowered to 3-1/2 to 3-3/4 percent); Sep 16, 2026 (raised by 1/4 point to 3-3/4 to 4 percent; "Inflation
+          remains elevated"); Oct 28, 2026 (held at 3-3/4 to 4 percent). Next decision Dec 9, 2026 (after we publish).
   [RE]    BLS Real Earnings: Jun 2022 release (Jul 13, 2022) real average hourly earnings -3.6% (SA) Jun 2021 -
           Jun 2022 (Table A-1: average hourly earnings +5.1%, CPI-U SA +9.0%); Sep 2026 release (Oct 14, 2026): real AHE -0.7% Sep 2025 - Sep 2026; Table A-1: average
           hourly earnings +3.0%, CPI-U +3.7%.
   [FDIC]  FDIC national rates (Nov 16, 2026): savings 0.39%.
   [TD-I]  TreasuryDirect, I bonds: 5.51% for bonds issued Nov 1, 2026 - Apr 30, 2027, including a 1.40% fixed
-          rate; inflation rate reset every 6 months; up to $10,000 electronic per SSN per calendar year; cash in
+          rate; 5.51% applies to a bond's first six months (the 1.40% fixed part lasts for its life, the inflation part
+          resets every 6 months); up to $10,000 electronic per SSN per calendar year; cash in
           after 12 months; lose last 3 months of interest if cashed before 5 years; earns up to 30 years.
   [TD-T]  TreasuryDirect, TIPS: principal goes up with inflation (CPI) and down with deflation; fixed rate paid
           every six months on the adjusted principal; at maturity the greater of adjusted or original
@@ -56,7 +60,9 @@ W_SHELTER, W_FOOD, W_ENERGY = 35.625, 13.698, 6.383
 # ---- [FED] / [FOMC]
 FED_TARGET = 0.02
 RATE_2022_TOP_BEFORE, RATE_2023 = 0.0025, (0.0525, 0.055)
-RATE_SEP26 = (0.0375, 0.04)
+RATE_SEP24 = (0.0475, 0.05)                 # first cut, Sep 18, 2024
+RATE_DEC25 = (0.035, 0.0375)                # after the Dec 10, 2025 cut
+RATE_SEP26 = (0.0375, 0.04)                 # +1/4 point, Sep 16, 2026; held Oct 28, 2026
 # ---- [RE]
 REAL_AHE_JUN22, REAL_AHE_SEP26, AHE_SEP26 = -0.036, -0.007, 0.030
 AHE_JUN22, CPI_SA_JUN22 = 0.051, 0.090      # [RE] Table A-1, Jun 2022 release (CPI-U seasonally adjusted)
@@ -127,6 +133,8 @@ cash20, sav20, ex20 = path(0)[-1], path(SAVINGS_AVG)[-1], path(ex_rate)[-1]
 assert 5500 < cash20 < 5560                              # "about five thousand five hundred"
 assert 10900 < ex20 < 11100                              # "about eleven thousand"
 
+assert RATE_SEP24[1] < RATE_2023[1] and RATE_DEC25[1] < RATE_SEP24[1]           # cuts in 2024 and 2025
+assert abs(RATE_SEP26[0] - RATE_DEC25[0] - 0.0025) < 1e-9                       # "a quarter point"
 # I bonds: the composite should sit above the fixed rate
 assert IBOND_RATE > IBOND_FIXED
 print(f"r={r:.5f} lost ${lost:.1f} sav ${P - sav_real:.1f} ex ${P - ex_real:.1f} bite ${bite:.1f} "
@@ -170,7 +178,7 @@ scene("In the US, it's measured by the Bureau of Labor Statistics. Every month, 
 scene("Rent, groceries, gas, car insurance, doctor visits, phone bills. Together they form a basket, and the price of that basket is the Consumer Price Index, or C-P-I.",
       type="bullets", title="The basket", color="gold",
       items=["Rent & housing", "Groceries & restaurants", "Gas & electricity", "Cars, insurance, doctors, phones"])
-scene("The basket is weighted by what households actually spend. Housing is the biggest piece, about thirty-six percent. Food is about fourteen. Energy, about six.",
+scene("The basket is weighted by what households actually spend. Shelter, meaning rent and the rental value of owned homes, is the biggest piece, about thirty-six percent. Food is about fourteen. Energy, about six.",
       type="donut", title="What's in the US price basket (CPI-U)",
       segments=[{"label": "Shelter", "value": W_SHELTER, "color": "gold", "display": f"{W_SHELTER:.0f}%"},
                 {"label": "Food", "value": W_FOOD, "color": "green", "display": f"{W_FOOD:.0f}%"},
@@ -243,12 +251,13 @@ scene("The US Federal Reserve aims for inflation of two percent a year, measured
 scene("Why not zero? A St. Louis Fed economist gives three reasons. Price measures may run slightly high, so two percent measured may be closer to zero in reality. Falling prices, called deflation, may do more harm. And a little inflation leaves room to cut interest rates in a recession. Not every economist agrees.",
       type="bullets", title="Why not 0%?", color="green",
       items=["Price measures may run a little high", "Deflation may do more harm", "Room to cut rates in a recession"])
-scene("The Fed's main tool is interest rates. To fight the twenty twenty-two surge, it raised its key rate from near zero in March twenty twenty-two to five and a quarter to five and a half percent by July twenty twenty-three. And this September, with inflation elevated again, it raised rates to between three and three-quarters and four percent.",
+scene("The Fed's main tool is interest rates. To fight the twenty twenty-two surge, it raised its key rate from near zero in March twenty twenty-two to five and a quarter to five and a half percent by July twenty twenty-three. It cut rates in twenty twenty-four and twenty twenty-five, to three and a half to three and three-quarters percent. Then this September, with inflation elevated again, it raised them a quarter point, to between three and three-quarters and four percent, where they stood as this video was made.",
       type="timeline", title="The Fed's key interest rate",
       events=[{"when": "Mar 2022", "text": "First hike\nfrom near 0%"},
               {"when": "Jun 2022", "text": "Inflation\npeaks at 9.1%", "color": "red"},
               {"when": "Jul 2023", "text": "Rate reaches\n5.25%–5.5%", "color": "gold"},
-              {"when": "Sep 2026", "text": "Raised to\n3.75%–4%", "color": "gold"}])
+              {"when": "2024–25", "text": "Cuts to\n3.5%–3.75%", "color": "green"},
+              {"when": "Sep 2026", "text": "+0.25 pt to\n3.75%–4%", "color": "red"}])
 scene("Higher rates make borrowing more expensive. People and businesses spend less, and price pressure cools. But it works with a lag, so the Fed is always steering by the rear-view mirror.",
       type="equation", title="How higher rates cool prices",
       lines=[{"text": "Higher rates", "color": "gold", "size": 96},
@@ -267,13 +276,13 @@ scene("Start with the losers. Cash savers. Money in a drawer, or in an account p
       left={"label": "Average savings rate", "value": f"{SAVINGS_AVG * 100:.2f}%", "sub": "FDIC national rate", "color": "slate"},
       right={"label": "Inflation", "value": f"{YOY_SEP26 * 100:.1f}%", "sub": "12 months to Sept 2026", "color": "red"},
       verdict="Savers fall behind")
-scene("Now the winners. Borrowers with fixed-rate loans. Say your mortgage payment is two thousand dollars a month, fixed. If prices rise three percent a year, in ten years that payment feels like about fourteen hundred and ninety in today's money. In twenty years, about eleven hundred.",
-      type="columns", title="A fixed $2,000 payment, in today's dollars (example)",
+scene("Now the winners. Borrowers with fixed-rate loans. Say your fixed mortgage payment, principal and interest, is two thousand dollars a month. If prices rise three percent a year, in ten years that payment feels like about fourteen hundred and ninety in today's money. In twenty years, about eleven hundred.",
+      type="columns", title="A fixed $2,000 loan payment, in today's dollars (example)",
       items=[{"label": "Today", "value": PAY, "display": "$2,000", "color": "slate"},
              {"label": "In 10 years", "value": pay10, "display": f"${pay10:,.0f}", "color": "green"},
              {"label": "In 20 years", "value": pay20, "display": f"${pay20:,.0f}", "color": "green"}],
-      note="Example: 3% inflation a year · only helps if your income keeps up")
-scene("That's the twist. Inflation quietly moves value from lenders to fixed-rate borrowers. The bank gets paid back in cheaper dollars, as long as the borrower's income keeps rising.",
+      note="Example: principal & interest only, 3% inflation a year · only helps if your income keeps up")
+scene("That's the twist. Inflation quietly moves value from lenders to fixed-rate borrowers. The bank gets paid back in cheaper dollars, especially when inflation turns out higher than expected when the loan was made, and as long as the borrower's income keeps rising.",
       type="equation", title="The twist",
       lines=[{"text": "Fixed payment", "color": "text", "size": 96},
              {"text": "+ rising prices & pay", "color": "muted", "size": 80},
@@ -298,8 +307,8 @@ scene("Here it is. Your real return is one plus your interest rate, divided by o
 scene("That's why our drawer lost about three hundred and sixty dollars, not three hundred and seventy. Prices rose three point seven four percent, and ten thousand divided by one point zero three seven four is about nine thousand six hundred and forty.",
       type="stat", value=f"${round(cash_real, -1):,.0f}", label=f"= $10,000 ÷ {r:.4f}",
       sub=f"lost ≈ ${lost:.0f}, not ${P * YOY_SEP26:.0f}", color="gold")
-scene("Now compare three homes for that ten thousand over the same year. In cash, down about three hundred and sixty. At the average savings rate, down about three hundred and twenty-three. At three and a half percent, an example rate, not a quote, down only about twenty-three.",
-      type="table", title="$10,000 for a year, in buying power (Sept 2025 → Sept 2026)",
+scene("Now compare three homes for that ten thousand over the same year, before tax. In cash, down about three hundred and sixty. At the average savings rate, down about three hundred and twenty-three. At three and a half percent, an example rate, not a quote, down only about twenty-three.",
+      type="table", title="$10,000 for a year, before tax (Sept 2025 → Sept 2026)",
       header=["Where", "Earned", "Buying power"],
       rows=[["Cash", "0%", f"−${lost:.0f}"],
             ["Avg savings", f"{SAVINGS_AVG * 100:.2f}%", f"−${P - sav_real:.0f}"],
@@ -311,8 +320,8 @@ scene("Here's that last one, step by step. Ten thousand, plus three hundred and 
              {"label": "Interest", "value": P * ex_rate, "kind": "plus", "display": f"+${P * ex_rate:.0f}"},
              {"label": "Price rise", "value": bite, "kind": "minus", "display": f"−${bite:.0f}"},
              {"label": "Buying power", "value": ex_real, "kind": "total", "display": f"${ex_real:,.0f}"}])
-scene("Over twenty years, at three percent inflation, the gap gets huge. Cash ends up worth about five thousand five hundred in today's money. At three and a half percent, about eleven thousand. So what can you actually do?",
-      type="line", title="$10,000 over 20 years at 3% inflation (example)", format="usd",
+scene("Over twenty years, at three percent inflation, the gap gets huge. Cash ends up worth about five thousand five hundred in today's money. At three and a half percent, about eleven thousand, before tax. So what can you actually do?",
+      type="line", title="$10,000 over 20 years, 3% inflation, before tax (example)", format="usd",
       x=yrs, series=[{"label": "3.5%", "values": path(ex_rate), "color": "green"},
                      {"label": "Cash", "values": path(0), "color": "red"}])
 
@@ -333,9 +342,9 @@ scene("Second, inflation-protected bonds from the US Treasury. With TIPS, the pr
       rows=[["Linked to", "CPI", "CPI"], ["What adjusts", "Principal", "Interest rate"],
             ["Terms", "5, 10, 30 yrs", "Up to 30 yrs"]],
       col_colors={"1": "gold", "2": "green"})
-scene("For I bonds bought from November twenty twenty-six to April twenty twenty-seven, the rate is five point five one percent. But there are trade-offs. You can buy up to ten thousand dollars a year electronically. You can't cash out for twelve months. And before five years, you lose the last three months of interest.",
-      type="stat_grid", title="I bonds: the fine print (TreasuryDirect)",
-      items=[{"value": f"{IBOND_RATE * 100:.2f}%", "label": "rate, Nov 2026–Apr 2027", "sub": "resets every 6 months", "color": "green"},
+scene("I bonds bought from November twenty twenty-six to April twenty twenty-seven start at five point five one percent, including a one point four percent fixed part that lasts for the life of the bond. But there are trade-offs. You can buy up to ten thousand dollars a year electronically. You can't cash out for twelve months. And before five years, you lose the last three months of interest.",
+      type="stat_grid", title="I bonds: the fine print (1.40% of the rate is fixed for life)",
+      items=[{"value": f"{IBOND_RATE * 100:.2f}%", "label": "first 6 months", "sub": "if bought Nov 2026–Apr 2027", "color": "green"},
              {"value": "$10K", "label": "yearly limit", "sub": "per person, electronic", "color": "gold"},
              {"value": "12 mo", "label": "before you can cash out", "sub": "−3 months' interest before 5 yrs", "color": "red"}])
 scene("These are built to keep pace with inflation, not to make you rich. Whether they fit depends on your goals and your timeline.",
@@ -386,7 +395,9 @@ spec = {
         "what you can do: emergency savings, TIPS and I bonds, and long-term investing.\n\n"
         "Assumptions: the $10,000 example uses the CPI-U index for September 2025 (324.800) and September 2026 "
         "(336.940). The 3.5% savings rate, the $2,000 fixed mortgage payment and the 3% inflation rate in the "
-        "20-year and mortgage examples are illustrations, not quotes or forecasts. There is no 12-month CPI figure "
+        "20-year and mortgage examples are illustrations, not quotes or forecasts. Savings examples are before "
+        "tax. The Fed's target range is as of 25 Nov 2026 (3.75%–4%; its next decision is 9 Dec 2026). The I bond "
+        "rate of 5.51% applies to the first six months; the 1.40% fixed part lasts for the life of the bond. There is no 12-month CPI figure "
         "for October 2026 because October 2025 prices were not collected during the 2025 government shutdown.\n\n"
         "Sources:\n"
         "- BLS, Consumer Price Index, September 2026 (Oct 14, 2026) and October 2026 (Nov 10, 2026): "
@@ -401,7 +412,8 @@ spec = {
         "https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1913-\n"
         "- Federal Reserve, Statement on Longer-Run Goals and Monetary Policy Strategy (reaffirmed Jan 2026): "
         "https://www.federalreserve.gov/monetarypolicy/files/FOMC_LongerRunGoals.pdf\n"
-        "- Federal Reserve FOMC statements (Mar 16, 2022; Jul 26, 2023; Sep 16, 2026): "
+        "- Federal Reserve FOMC statements (Mar 16, 2022; Jul 26, 2023; Sep 18, 2024; Dec 10, 2025; Sep 16, 2026; "
+        "Oct 28, 2026): "
         "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm\n"
         "- St. Louis Fed, The Fed's Inflation Target: Why 2 Percent? (Jan 16, 2019): "
         "https://www.stlouisfed.org/open-vault/2019/january/fed-inflation-target-2-percent\n"

@@ -11,6 +11,8 @@ Sources (checked 2026-11-25):
         (Jun 4, 2026): typical buyer breaks even vs renting in "about six years nationally"; Columbus, OH 4.1 years;
         San Diego 23.3 years; San Francisco, San Jose and New Orleans: buying never surpasses renting within 30 years.
         Zillow's numeric assumptions are not given in the release.
+  [ZV]  Zillow October 2026 market report release ("Newly pending listings fell 17% in October...", Nov 2026):
+        typical US home value $364,812 (Zillow Home Value Index; includes condos).
   [FM]  Freddie Mac Primary Mortgage Market Survey (Nov 19, 2026): 30-year fixed averaged 7.28%; 6.26% a year
         earlier. Jun 4, 2026 release: 6.48%.
   [AT]  ATTOM 2025 property tax analysis (Apr 9, 2026): effective tax rate on US single-family homes 0.9%.
@@ -43,6 +45,7 @@ COMMISSION = 0.0546      # [CL]
 CGT = 0.15               # [IRS] Topic 409
 EXCL_SINGLE, EXCL_JOINT = 250_000, 500_000   # [IRS] Topic 701
 ZILLOW_BE, ZILLOW_COLUMBUS, ZILLOW_SD = 6, 4.1, 23.3   # [ZB]
+ZHVI = 364_812          # [ZV] Zillow typical US home value (ZHVI, all homes incl. condos), Oct 2026
 # ---- assumptions (labelled as such on screen)
 DOWN, BUY_COST, SELL_COST, MAINT = 0.20, 0.03, 0.06, 0.01
 GROWTH, RETURN = 0.03, 0.06     # home prices / rent / costs; investments
@@ -50,8 +53,8 @@ YEARS = 30
 assert BUY_RANGE[0] <= BUY_COST <= BUY_RANGE[1] and SELL_COST > COMMISSION
 
 
-def model(price=PRICE, rent=RENT, rate=RATE, g=GROWTH, r=RETURN, years=YEARS, rg=GROWTH):
-    """Monthly simulation. Whoever spends less each month invests the difference at r.
+def model(price=PRICE, rent=RENT, rate=RATE, g=GROWTH, r=RETURN, years=YEARS, rg=GROWTH, excl=EXCL_JOINT):
+    """Monthly simulation (example buyers: a married couple, $500K home-sale exclusion). Whoever spends less each month invests the difference at r.
     Returns (payment, rows) with rows[y] = (owner $/mo in year y, rent $/mo, buyer net worth, renter net worth),
     net worth = what each would have if they cashed out at the end of year y (y=0: day one)."""
     loan = price * (1 - DOWN)
@@ -76,7 +79,9 @@ def model(price=PRICE, rent=RENT, rate=RATE, g=GROWTH, r=RETURN, years=YEARS, rg
             else:
                 buyer_pf += rent_m - own_m; basis_b += rent_m - own_m
         v = price * (1 + g) ** y
-        b_nw = v * (1 - SELL_COST) - max(bal, 0) + buyer_pf - CGT * (buyer_pf - basis_b)
+        home_gain = v * (1 - SELL_COST) - price * (1 + BUY_COST)
+        b_nw = (v * (1 - SELL_COST) - max(bal, 0) + buyer_pf - CGT * (buyer_pf - basis_b)
+                - CGT * max(0.0, home_gain - excl))   # [IRS 701] gain above the exclusion is taxed (married: $500K)
         r_nw = renter - CGT * (renter - basis_r)
         rows.append((own_m, rent_m, b_nw, r_nw))
     return pmt, rows
@@ -141,13 +146,22 @@ assert 26_900 < 12 * RENT < 27_000                # "about twenty-seven thousand
 assert BE == 21 and 0 < gap[20] < 0.002 * ROWS[20][3]   # lines cross between year 20 and 21: "around year twenty"
 assert 42_000 < gap[5] < 44_000                   # "about forty-three thousand dollars ahead"
 assert 40_000 < gap[10] < 42_000                  # "about forty-one thousand"
-assert 125_000 < -gap[30] < 135_000               # buyer "ahead by about a hundred and thirty thousand"
+assert 125_500 < -gap[30] < 126_500               # buyer "ahead by about a hundred and twenty-six thousand"
 assert ROWS[0][3] > ROWS[0][2]                    # renter starts ahead
 assert gap[5] > gap[10] > gap[15] > gap[20] > 0      # "the gap slowly shrinks" (after year 5)
 assert ROWS[20][0] < ROWS[20][1]                  # by year 20 rent > owner's monthly cost
 # home gain at break-even is within the married exclusion (single: partly taxable, see description)
 gain_21 = PRICE * (1 + GROWTH) ** 21 * (1 - SELL_COST) - PRICE - closing
 assert EXCL_SINGLE < gain_21 < EXCL_JOINT
+GAIN = lambda y: PRICE * (1 + GROWTH) ** y * (1 - SELL_COST) - PRICE * (1 + BUY_COST)
+Y_SINGLE = next(y for y in range(1, 31) if GAIN(y) > EXCL_SINGLE)
+Y_JOINT = next(y for y in range(1, 31) if GAIN(y) > EXCL_JOINT)
+BE_SINGLE = breakeven(excl=EXCL_SINGLE)
+assert Y_SINGLE == 19 and Y_JOINT == 29          # single passes the limit "around year nineteen"; married "almost the end"
+assert BE_SINGLE == BE + 1                        # single owner breaks even "about a year later"
+BE_ZHVI = breakeven(price=ZHVI)
+assert BE_ZHVI == 9                               # Zillow's typical value in our model: "about nine years"
+assert ZHVI < PRICE
 
 # ---- sensitivity: change one number, keep everything else
 SENS_RATIO = {x: breakeven(price=12 * RENT * x) for x in (10, 12, 14, 18)}
@@ -167,13 +181,13 @@ def scene(say, **visual):
     S.append({"say": say, "visual": visual})
 
 # ---------------------------------------------------------------- Hook (payoff in the first line)
-scene("An American home can take five years to beat renting, or twenty, at today's mortgage rates. It depends on one number most buyers never check.",
-      type="stat", value="5 or 20", label="years for buying to beat renting", sub="same rent, different price · Nov 2026 rates · our model", color="gold")
-scene("Same rent, same kind of home. At today's typical price, about twenty years. At a cheaper price, about five. Most rent versus buy advice skips this part.",
+scene("An American home can take five years to beat renting, or twenty, at today's mortgage rates. It depends on a few numbers, and the biggest one most buyers never check.",
+      type="stat", value="5 or 20", label="years for buying to beat renting", sub="same rent, different price · Nov 19, 2026 rate · our model", color="gold")
+scene("Same rent. At the median sale price, about twenty years. At a cheaper price, about five. Most rent versus buy advice skips this part.",
       type="versus", title="Break-even vs renting",
-      left={"label": "Typical home today", "value": "~20 yrs", "sub": "price = 15.7 years of rent", "color": "red"},
+      left={"label": "Median sale price", "value": "~20 yrs", "sub": "price = 15.7 years of rent", "color": "red"},
       right={"label": "Same rent, cheaper home", "value": "~5 yrs", "sub": "price = 12 years of rent", "color": "green"},
-      verdict="One number moves the answer")
+      verdict="Same rent, different price")
 scene("So we'll run the full math nobody shows you: the mortgage, property tax, insurance, repairs, the fees to buy and sell, and what your down payment could have earned instead.",
       type="bullets", title="The full math",
       items=["Mortgage, tax, insurance, repairs", "Fees to buy and to sell", "What your cash could earn instead"])
@@ -184,8 +198,8 @@ scene("By the end, you'll know that one number for your own city, and you'll hav
 scene("Chapter one. The two homes.", type="chapter", n=1, title="The two homes")
 scene("We'll use real, current US numbers. In October, the median existing single-family home sold for four hundred twenty-one thousand nine hundred dollars, according to the National Association of Realtors.",
       type="stat", value=f"${PRICE:,}", label="median US single-family home price", sub="existing homes, October 2026 · NAR", color="gold")
-scene("Renting a similar home? Zillow says the typical single-family rent in October was two thousand two hundred forty-three dollars a month, up three point two percent from a year earlier.",
-      type="versus", title="The same kind of home",
+scene("Renting a single-family home? Zillow says the typical asking rent in October was two thousand two hundred forty-three dollars a month, up three point two percent in a year. A sale price and an asking rent aren't the exact same homes, but they're a fair national match.",
+      type="versus", title="Single-family: buy or rent",
       left={"label": "Buy", "value": f"${PRICE / 1e3:,.1f}K", "sub": "median price · NAR", "color": "blue"},
       right={"label": "Rent", "value": f"${RENT:,}", "sub": "a month · Zillow, Oct 2026", "color": "green"})
 scene("Our buyer puts twenty percent down, about eighty-four thousand dollars, and borrows the rest, about three hundred thirty-seven and a half thousand, on a thirty-year fixed mortgage.",
@@ -282,14 +296,14 @@ scene("Fees come first. Time pays them back, slowly. So when does the buyer actu
 
 # ---------------------------------------------------------------- 5
 scene("Chapter five. The break-even year.", type="chapter", n=5, title="The break-even year")
-scene("Here are the rules. Each month, whoever spends less invests the difference at six percent. Rent, home prices, tax, insurance and repairs all rise three percent a year. These are assumptions, not predictions.",
+scene("Here are the rules. Each month, whoever spends less invests the difference at six percent. Rent, home prices, tax, insurance and repairs all rise three percent a year. We skip renters insurance, a small cost. These are assumptions, not predictions.",
       type="bullets", title="The rules (our assumptions)",
       items=["Whoever spends less invests the gap at 6%", "Rent and home prices rise 3% a year",
              "Tax, insurance, repairs rise 3% too"])
-scene("When we compare, the renter pays fifteen percent tax on investment gains, a typical US rate on long-term gains. The buyer's home profit is tax-free only within the IRS exclusion: up to two hundred fifty thousand dollars, or five hundred thousand for a married couple. We assume it stays within that. And the buyer pays the six percent to sell.",
+scene("When we compare, the renter pays fifteen percent tax on investment gains, a typical US rate on long-term gains. The buyer's home profit is tax-free only within the IRS exclusion: up to two hundred fifty thousand dollars, or five hundred thousand for a married couple. Our example is a married couple, so it stays within that until almost the end. A single owner would pass the limit around year nineteen, and break even about a year later. And the buyer pays the six percent to sell.",
       type="stat_grid", title="When each side cashes out",
       items=[{"value": "15%", "label": "tax on investment gains", "sub": "IRS: at most 15% for most people", "color": "blue"},
-             {"value": "0%", "label": "tax on home profit", "sub": "IRS limit: $250K / $500K married", "color": "green"},
+             {"value": "0%", "label": "tax on home profit", "sub": "married couple, gain up to $500K", "color": "green"},
              {"value": "6%", "label": "cost to sell the home", "sub": "our assumption", "color": "red"}])
 scene("Here's how far ahead the renter would be if both cashed out. The renter starts ahead, with all that cash invested. The buyer starts behind, because of the fees. Then the gap slowly shrinks.",
       type="columns", title="Renter's lead if both cashed out", color="green", highlight=1,
@@ -307,7 +321,7 @@ scene("Then, around year twenty, the lines cross. Rent keeps rising every year, 
               {"when": "Year 5", "text": "Renter ahead\nby ~$43K"},
               {"when": "Year 20", "text": "Lines\ncross"},
               {"when": "Year 30", "text": "Mortgage\npaid off"}])
-scene("By year thirty, with the mortgage paid off, the buyer is ahead by about a hundred and thirty thousand dollars.",
+scene("By year thirty, with the mortgage paid off, the buyer is ahead by about a hundred and twenty-six thousand dollars.",
       type="stat", value=f"+{K(-gap[30])}", label="buyer ahead after 30 years", sub="our model · assumed 3% price growth, 6% returns", color="gold")
 scene("But only if the renter really invests the difference, every month, for decades. Many people don't. A mortgage forces you to save. Renting doesn't. So is buying a bad deal? Not necessarily. Watch what happens when we change one number.",
       type="quote", text="Renting wins only if you\ninvest the difference.", first_color="text", color="green")
@@ -326,13 +340,13 @@ scene("Keep the same rent, and change only the price. At twelve times a year's r
              {"label": "14×", "value": SENS_RATIO[14], "display": "10 yrs", "color": "gold"},
              {"label": "15.7× (ours)", "value": BE, "display": "~20 yrs", "color": "gold"},
              {"label": "18×", "value": 31, "display": "30+ yrs", "color": "red"}])
-scene("Real cities show the same spread. Back in June, when rates were lower, Zillow estimated buying pays off in about six years nationally. In Columbus, Ohio, about four. In San Diego, over twenty-three. In San Francisco and San Jose, never within thirty years.",
+scene("Real cities show the same spread. Zillow's own model put the national break-even at about six years in June. It uses Zillow's lower typical home value and its own assumptions. Plug that value into our model, and we get about nine years at today's rate. In Columbus, Ohio, about four. In San Diego, over twenty-three. In San Francisco and San Jose, never within thirty years.",
       type="columns", title="Zillow: years for buying to pay off (June 2026)", format="num", highlight=1,
       items=[{"label": "Columbus", "value": ZILLOW_COLUMBUS, "display": "4.1"},
              {"label": "US", "value": ZILLOW_BE, "display": "~6"},
              {"label": "San Diego", "value": ZILLOW_SD, "display": "23.3"},
              {"label": "San Francisco", "value": 30, "display": "never", "color": "red"}],
-      note="Zillow's own model · Freddie Mac rate then 6.48%, now 7.28%")
+      note="Zillow's model and inputs differ from ours")
 scene("Other dials matter too. A six percent mortgage rate: about nine years. Home prices rising four percent a year: about ten. Only two percent: about thirty. Investments earning five percent: about fourteen. Earning seven: the renter stays ahead for over thirty years.",
       type="table", title="Change one thing (everything else the same)",
       header=["Change", "Break-even"],
@@ -359,8 +373,8 @@ scene("And remember what the math leaves out. Owning gives you stability and con
       type="versus", title="What the math leaves out",
       left={"label": "Owning", "value": "Stability", "sub": "your home, your rules", "color": "blue"},
       right={"label": "Renting", "value": "Flexibility", "sub": "easy to move, no roof bills", "color": "green"})
-scene("Rent versus buy isn't a moral question. It's a math question, and a life question. How long you stay and your local prices decide most of it. Run your own numbers before you sign anything.",
-      type="title", title="Run your own numbers", sub="how long you stay + local prices decide it")
+scene("Rent versus buy isn't a moral question. It's a math question, and a life question. How long you stay and your local prices decide a lot of it. Run your own numbers before you sign anything.",
+      type="title", title="Run your own numbers", sub="how long you stay + local prices decide a lot")
 scene("If this helped, subscribe. We break down how money really works, every week.",
       type="cta", lines=["How money", "really works."], sub="Subscribe for weekly breakdowns")
 
@@ -390,6 +404,7 @@ SOURCES = [
     "National Association of Realtors, Existing-Home Sales Decreased 5.5% in October (Nov 12, 2026): https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report",
     "Zillow, A house doesn't have to mean a mortgage: Renting requires $14K less income than buying (Nov 12, 2026; typical single-family rent, Zillow Observed Rent Index): https://s25.q4cdn.com/975009107/files/doc_news/A-house-doesnt-have-to-mean-a-mortgage-Renting-requires-14K-less-income-than-buying-2026.pdf",
     "Zillow, Rent or buy: How long it takes for buying a home to pay off in each metro (Jun 4, 2026): https://zillow.mediaroom.com/2026-06-04-Rent-or-buy-How-long-it-takes-for-buying-a-home-to-pay-off-in-each-metro",
+    "Zillow, Newly pending listings fell 17% in October (Nov 2026; typical home value, ZHVI): https://s25.q4cdn.com/975009107/files/doc_news/Newly-pending-listings-fell-17-in-October-the-biggest-year-over-year-drop-since-2023-2026.pdf",
     "Freddie Mac, Primary Mortgage Market Survey (Nov 19, 2026 and Jun 4, 2026): https://www.freddiemac.com/pmms",
     "ATTOM, 2025 property tax analysis (Apr 9, 2026): https://www.attomdata.com/news/market-trends/home-sales-prices/2025-annual-tax-report",
     "NerdWallet, Home insurance pricing report 2026 (Oct 2, 2026): https://www.nerdwallet.com/insurance/homeowners/home-insurance-pricing-report-2026",
@@ -400,20 +415,24 @@ SOURCES = [
 ]
 
 DESCRIPTION = (
-    "Rent vs buy a home: we run the full math for a typical US house at today's mortgage rates, including "
+    "Rent vs buy a home: we run the full math for a median-priced US house at today's mortgage rates, including "
     "property tax, insurance, repairs, closing and selling costs, and what your down payment could earn if you "
-    "rented instead. Buying can take 5 years to beat renting, or 20: with our assumptions it's about 20 for a "
-    "typical home today, and one number, the price-to-rent ratio, can cut that to 5 or push it past 30. Plus a "
+    "rented instead. Buying can take 5 years to beat renting, or 20: with our assumptions it's about 20 at the "
+    "median sale price, and the price-to-rent ratio, the number most buyers never check, can cut that to 5 or push it past 30. Plus a "
     "5-question checklist.\n\n"
     f"Our example: ${PRICE:,} home (NAR median single-family, Oct 2026), ${RENT:,}/month rent (Zillow typical "
-    f"single-family rent, Oct 2026), 20% down, 30-year fixed at 7.28% (Freddie Mac, Nov 19, 2026), property tax "
+    f"single-family asking rent, Oct 2026), 20% down, 30-year fixed at 7.28% (Freddie Mac, Nov 19, 2026), property tax "
     f"0.9% a year (ATTOM), insurance ${INSURANCE:,} a year (NerdWallet).\n"
     "Assumptions (ours, not predictions): 3% to buy, 6% to sell, repairs 1% of value a year (a rule of thumb), "
     "home prices, rent and costs grow 3% a year, investments earn 6% a year, whoever spends less each month "
-    "invests the difference, 15% tax on investment gains when cashed out, the home's gain is tax-free (true up to "
-    "$250,000 single / $500,000 married; at year 21 our example gain is above the single limit), no "
-    "mortgage-interest deduction (it only helps if you itemize), no renters insurance. Real returns, prices and "
-    "rents vary and can be negative. Zillow's break-even estimates use Zillow's own model and assumptions.\n\n"
+    "invests the difference, 15% tax on investment gains when cashed out, the buyers are a married couple, so "
+    "the home's gain is tax-free up to $500,000 and 15% above that (IRS exclusion; single owners: $250,000, which our "
+    "example passes in year 19, so a single owner breaks even about a year later, in year 22, and leads by less at "
+    "year 30), no "
+    "mortgage-interest deduction (it only helps if you itemize), no renters insurance. The NAR price is a median sale price and the Zillow rent a typical asking rent, "
+    "so they are not the exact same homes. Real returns, prices and rents vary and can be negative. Zillow's "
+    "break-even estimates use Zillow's own model and inputs, including its lower typical home value ($364,812 in "
+    "October 2026, which includes condos); at that value our model gives about 9 years.\n\n"
     "Sources:\n" + "\n".join("- " + s for s in SOURCES) + "\n\n"
     "For education only. Not financial advice. Past results don't guarantee future returns.\n\n"
     "#rentvsbuy #realestate #personalfinance #homebuying #mortgage"

@@ -14,7 +14,7 @@
   "tag": "NOBODY TOOK IT",
   "color": "red"
  },
- "description": "Inflation explained simply: what the Consumer Price Index (CPI) measures, why US prices rose 3.7% in the year to September 2026, and why $10,000 in cash lost about $360 of buying power. We cover the 9.1% peak of June 2022, what causes inflation, why the Fed targets 2%, who wins and who loses, and what you can do: emergency savings, TIPS and I bonds, and long-term investing.\n\nAssumptions: the $10,000 example uses the CPI-U index for September 2025 (324.800) and September 2026 (336.940). The 3.5% savings rate, the $2,000 fixed mortgage payment and the 3% inflation rate in the 20-year and mortgage examples are illustrations, not quotes or forecasts. There is no 12-month CPI figure for October 2026 because October 2025 prices were not collected during the 2025 government shutdown.\n\nSources:\n- BLS, Consumer Price Index, September 2026 (Oct 14, 2026) and October 2026 (Nov 10, 2026): https://www.bls.gov/cpi/\n- BLS, CPI-U series CUUR0000SA0: https://data.bls.gov/timeseries/CUUR0000SA0\n- BLS, Consumer Price Index, June 2022 (Jul 13, 2022): https://www.bls.gov/news.release/archives/cpi_07132022.htm\n- BLS, CPI Questions and Answers: https://www.bls.gov/cpi/questions-and-answers.htm\n- BLS, Relative importance of CPI components, December 2025: https://www.bls.gov/cpi/tables/relative-importance/2025.htm\n- BLS, Real Earnings (June 2022 and September 2026): https://www.bls.gov/news.release/realer.htm\n- Federal Reserve Bank of Minneapolis, Consumer Price Index 1913-: https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1913-\n- Federal Reserve, Statement on Longer-Run Goals and Monetary Policy Strategy (reaffirmed Jan 2026): https://www.federalreserve.gov/monetarypolicy/files/FOMC_LongerRunGoals.pdf\n- Federal Reserve FOMC statements (Mar 16, 2022; Jul 26, 2023; Sep 16, 2026): https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm\n- St. Louis Fed, The Fed's Inflation Target: Why 2 Percent? (Jan 16, 2019): https://www.stlouisfed.org/open-vault/2019/january/fed-inflation-target-2-percent\n- FDIC, National Rates and Rate Caps (Nov 16, 2026): https://www.fdic.gov/national-rates-and-rate-caps\n- TreasuryDirect, I bonds: https://www.treasurydirect.gov/savings-bonds/i-bonds/\n- TreasuryDirect, TIPS: https://www.treasurydirect.gov/marketable-securities/tips/\n\nFor education only. Not financial advice. No product is recommended; investments can lose value and past results don't guarantee future ones.\n\n#inflation #personalfinance #economics #savings #moneymath",
+ "description": "Inflation explained simply: what the Consumer Price Index (CPI) measures, why US prices rose 3.7% in the year to September 2026, and why $10,000 in cash lost about $360 of buying power. We cover the 9.1% peak of June 2022, what causes inflation, why the Fed targets 2%, who wins and who loses, and what you can do: emergency savings, TIPS and I bonds, and long-term investing.\n\nAssumptions: the $10,000 example uses the CPI-U index for September 2025 (324.800) and September 2026 (336.940). The 3.5% savings rate, the $2,000 fixed mortgage payment and the 3% inflation rate in the 20-year and mortgage examples are illustrations, not quotes or forecasts. Savings examples are before tax. The Fed's target range is as of 25 Nov 2026 (3.75%–4%; its next decision is 9 Dec 2026). The I bond rate of 5.51% applies to the first six months; the 1.40% fixed part lasts for the life of the bond. There is no 12-month CPI figure for October 2026 because October 2025 prices were not collected during the 2025 government shutdown.\n\nSources:\n- BLS, Consumer Price Index, September 2026 (Oct 14, 2026) and October 2026 (Nov 10, 2026): https://www.bls.gov/cpi/\n- BLS, CPI-U series CUUR0000SA0: https://data.bls.gov/timeseries/CUUR0000SA0\n- BLS, Consumer Price Index, June 2022 (Jul 13, 2022): https://www.bls.gov/news.release/archives/cpi_07132022.htm\n- BLS, CPI Questions and Answers: https://www.bls.gov/cpi/questions-and-answers.htm\n- BLS, Relative importance of CPI components, December 2025: https://www.bls.gov/cpi/tables/relative-importance/2025.htm\n- BLS, Real Earnings (June 2022 and September 2026): https://www.bls.gov/news.release/realer.htm\n- Federal Reserve Bank of Minneapolis, Consumer Price Index 1913-: https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1913-\n- Federal Reserve, Statement on Longer-Run Goals and Monetary Policy Strategy (reaffirmed Jan 2026): https://www.federalreserve.gov/monetarypolicy/files/FOMC_LongerRunGoals.pdf\n- Federal Reserve FOMC statements (Mar 16, 2022; Jul 26, 2023; Sep 18, 2024; Dec 10, 2025; Sep 16, 2026; Oct 28, 2026): https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm\n- St. Louis Fed, The Fed's Inflation Target: Why 2 Percent? (Jan 16, 2019): https://www.stlouisfed.org/open-vault/2019/january/fed-inflation-target-2-percent\n- FDIC, National Rates and Rate Caps (Nov 16, 2026): https://www.fdic.gov/national-rates-and-rate-caps\n- TreasuryDirect, I bonds: https://www.treasurydirect.gov/savings-bonds/i-bonds/\n- TreasuryDirect, TIPS: https://www.treasurydirect.gov/marketable-securities/tips/\n\nFor education only. Not financial advice. No product is recommended; investments can lose value and past results don't guarantee future ones.\n\n#inflation #personalfinance #economics #savings #moneymath",
  "tags": [
   "inflation explained",
   "what is inflation",
@@ -191,7 +191,7 @@
    }
   },
   {
-   "say": "The basket is weighted by what households actually spend. Housing is the biggest piece, about thirty-six percent. Food is about fourteen. Energy, about six.",
+   "say": "The basket is weighted by what households actually spend. Shelter, meaning rent and the rental value of owned homes, is the biggest piece, about thirty-six percent. Food is about fourteen. Energy, about six.",
    "visual": {
     "type": "donut",
     "title": "What's in the US price basket (CPI-U)",
@@ -579,7 +579,7 @@
    }
   },
   {
-   "say": "The Fed's main tool is interest rates. To fight the twenty twenty-two surge, it raised its key rate from near zero in March twenty twenty-two to five and a quarter to five and a half percent by July twenty twenty-three. And this September, with inflation elevated again, it raised rates to between three and three-quarters and four percent.",
+   "say": "The Fed's main tool is interest rates. To fight the twenty twenty-two surge, it raised its key rate from near zero in March twenty twenty-two to five and a quarter to five and a half percent by July twenty twenty-three. It cut rates in twenty twenty-four and twenty twenty-five, to three and a half to three and three-quarters percent. Then this September, with inflation elevated again, it raised them a quarter point, to between three and three-quarters and four percent, where they stood as this video was made.",
    "visual": {
     "type": "timeline",
     "title": "The Fed's key interest rate",
@@ -599,9 +599,14 @@
       "color": "gold"
      },
      {
+      "when": "2024–25",
+      "text": "Cuts to\n3.5%–3.75%",
+      "color": "green"
+     },
+     {
       "when": "Sep 2026",
-      "text": "Raised to\n3.75%–4%",
-      "color": "gold"
+      "text": "+0.25 pt to\n3.75%–4%",
+      "color": "red"
      }
     ]
    }
@@ -681,10 +686,10 @@
    }
   },
   {
-   "say": "Now the winners. Borrowers with fixed-rate loans. Say your mortgage payment is two thousand dollars a month, fixed. If prices rise three percent a year, in ten years that payment feels like about fourteen hundred and ninety in today's money. In twenty years, about eleven hundred.",
+   "say": "Now the winners. Borrowers with fixed-rate loans. Say your fixed mortgage payment, principal and interest, is two thousand dollars a month. If prices rise three percent a year, in ten years that payment feels like about fourteen hundred and ninety in today's money. In twenty years, about eleven hundred.",
    "visual": {
     "type": "columns",
-    "title": "A fixed $2,000 payment, in today's dollars (example)",
+    "title": "A fixed $2,000 loan payment, in today's dollars (example)",
     "items": [
      {
       "label": "Today",
@@ -705,11 +710,11 @@
       "color": "green"
      }
     ],
-    "note": "Example: 3% inflation a year · only helps if your income keeps up"
+    "note": "Example: principal & interest only, 3% inflation a year · only helps if your income keeps up"
    }
   },
   {
-   "say": "That's the twist. Inflation quietly moves value from lenders to fixed-rate borrowers. The bank gets paid back in cheaper dollars, as long as the borrower's income keeps rising.",
+   "say": "That's the twist. Inflation quietly moves value from lenders to fixed-rate borrowers. The bank gets paid back in cheaper dollars, especially when inflation turns out higher than expected when the loan was made, and as long as the borrower's income keeps rising.",
    "visual": {
     "type": "equation",
     "title": "The twist",
@@ -817,10 +822,10 @@
    }
   },
   {
-   "say": "Now compare three homes for that ten thousand over the same year. In cash, down about three hundred and sixty. At the average savings rate, down about three hundred and twenty-three. At three and a half percent, an example rate, not a quote, down only about twenty-three.",
+   "say": "Now compare three homes for that ten thousand over the same year, before tax. In cash, down about three hundred and sixty. At the average savings rate, down about three hundred and twenty-three. At three and a half percent, an example rate, not a quote, down only about twenty-three.",
    "visual": {
     "type": "table",
-    "title": "$10,000 for a year, in buying power (Sept 2025 → Sept 2026)",
+    "title": "$10,000 for a year, before tax (Sept 2025 → Sept 2026)",
     "header": [
      "Where",
      "Earned",
@@ -883,10 +888,10 @@
    }
   },
   {
-   "say": "Over twenty years, at three percent inflation, the gap gets huge. Cash ends up worth about five thousand five hundred in today's money. At three and a half percent, about eleven thousand. So what can you actually do?",
+   "say": "Over twenty years, at three percent inflation, the gap gets huge. Cash ends up worth about five thousand five hundred in today's money. At three and a half percent, about eleven thousand, before tax. So what can you actually do?",
    "visual": {
     "type": "line",
-    "title": "$10,000 over 20 years at 3% inflation (example)",
+    "title": "$10,000 over 20 years, 3% inflation, before tax (example)",
     "format": "usd",
     "x": [
      0,
@@ -1048,15 +1053,15 @@
    }
   },
   {
-   "say": "For I bonds bought from November twenty twenty-six to April twenty twenty-seven, the rate is five point five one percent. But there are trade-offs. You can buy up to ten thousand dollars a year electronically. You can't cash out for twelve months. And before five years, you lose the last three months of interest.",
+   "say": "I bonds bought from November twenty twenty-six to April twenty twenty-seven start at five point five one percent, including a one point four percent fixed part that lasts for the life of the bond. But there are trade-offs. You can buy up to ten thousand dollars a year electronically. You can't cash out for twelve months. And before five years, you lose the last three months of interest.",
    "visual": {
     "type": "stat_grid",
-    "title": "I bonds: the fine print (TreasuryDirect)",
+    "title": "I bonds: the fine print (1.40% of the rate is fixed for life)",
     "items": [
      {
       "value": "5.51%",
-      "label": "rate, Nov 2026–Apr 2027",
-      "sub": "resets every 6 months",
+      "label": "first 6 months",
+      "sub": "if bought Nov 2026–Apr 2027",
       "color": "green"
      },
      {

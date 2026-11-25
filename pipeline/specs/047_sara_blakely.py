@@ -43,6 +43,7 @@ spec = {
     "id": "047_sara_blakely",
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "FOUNDER STORY",
+    "caption_fix": {"Oh-pruh": "Oprah"},   # Kokoro says "Oprah" as "opera"
     "disclaimer": "Sources: CNN, Reuters, Forbes, Fortune, CNBC · see description",
     "title": "Sara Blakely: $5,000 in Savings to Billion-Dollar Spanx",
     "description": (
@@ -93,7 +94,7 @@ spec = {
          "visual": {"type": "pair", "title": "Finding a maker",
                     "left": {"label": "Mills", "sub": "several said no", "color": "red"},
                     "right": {"label": "One mill", "sub": "said yes", "color": "green"}}},
-        {"say": "Oprah featured it in two thousand. Sales: four million, then ten million.",
+        {"say": "Oh-pruh featured it in two thousand. Sales: four million, then ten million.",
          "visual": {"type": "bars", "title": "Spanx sales (per Fortune)", "format": "usd",
                     "items": [{"label": "Year 1", "value": SALES_Y1, "color": "slate"},
                               {"label": "Year 2", "value": SALES_Y2, "color": "green"}]}},

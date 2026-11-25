@@ -428,7 +428,7 @@ def render(spec_path, out_dir):
     asr = R.asr_words(audio)
     caps = []
     for sc, seg in zip(spec["scenes"], tl):
-        caps += R.chunk_words(R.digit_captions(R.align_words(sc["say"], seg, asr)), max_chars=40, max_words=7)
+        caps += R.chunk_words(R.digit_captions(R.caption_fix(R.align_words(sc["say"], seg, asr), spec.get("caption_fix"))), max_chars=40, max_words=7)
     # chapters for the description
     lines = ["0:00 " + spec.get("intro_chapter", "Intro")]
     for sc, seg in zip(spec["scenes"], tl):

@@ -553,6 +553,21 @@ def digit_captions(wts):
     return out
 
 
+def caption_fix(wts, fixes):
+    """Show a different spelling in captions than the one written for the voice, e.g.
+    spec "caption_fix": {"Oh-pruh": "Oprah"} (the voice needs the respelling, viewers need the name)."""
+    if not fixes:
+        return wts
+    out = []
+    for w, s, e in wts:
+        core = w.rstrip(_PUNCT + ".")
+        tail = w[len(core):]
+        if core.endswith("'s") and core[:-2] in fixes:
+            core, tail = core[:-2], "'s" + tail
+        out.append((fixes.get(core, core) + tail, s, e))
+    return out
+
+
 def chunk_words(wts, max_chars=16, max_words=3):
     chunks, cur = [], []
     for w in wts:
@@ -686,7 +701,7 @@ def render(spec_path, out_dir):
     caps = []
     asr = asr_words(audio)
     for sc, seg in zip(spec["scenes"], tl):
-        caps += chunk_words(digit_captions(align_words(sc["say"], seg, asr)))
+        caps += chunk_words(digit_captions(caption_fix(align_words(sc["say"], seg, asr), spec.get("caption_fix"))))
     bg = make_background()
     out = os.path.join(out_dir, spec["id"] + ".mp4")
     tmp_out = out[:-4] + ".partial.mp4"

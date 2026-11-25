@@ -14,7 +14,7 @@
   "tag": "RENT VS BUY: FULL MATH",
   "color": "gold"
  },
- "description": "Rent vs buy a home: we run the full math for a typical US house at today's mortgage rates, including property tax, insurance, repairs, closing and selling costs, and what your down payment could earn if you rented instead. Buying can take 5 years to beat renting, or 20: with our assumptions it's about 20 for a typical home today, and one number, the price-to-rent ratio, can cut that to 5 or push it past 30. Plus a 5-question checklist.\n\nOur example: $421,900 home (NAR median single-family, Oct 2026), $2,243/month rent (Zillow typical single-family rent, Oct 2026), 20% down, 30-year fixed at 7.28% (Freddie Mac, Nov 19, 2026), property tax 0.9% a year (ATTOM), insurance $2,564 a year (NerdWallet).\nAssumptions (ours, not predictions): 3% to buy, 6% to sell, repairs 1% of value a year (a rule of thumb), home prices, rent and costs grow 3% a year, investments earn 6% a year, whoever spends less each month invests the difference, 15% tax on investment gains when cashed out, the home's gain is tax-free (true up to $250,000 single / $500,000 married; at year 21 our example gain is above the single limit), no mortgage-interest deduction (it only helps if you itemize), no renters insurance. Real returns, prices and rents vary and can be negative. Zillow's break-even estimates use Zillow's own model and assumptions.\n\nSources:\n- National Association of Realtors, Existing-Home Sales Decreased 5.5% in October (Nov 12, 2026): https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report\n- Zillow, A house doesn't have to mean a mortgage: Renting requires $14K less income than buying (Nov 12, 2026; typical single-family rent, Zillow Observed Rent Index): https://s25.q4cdn.com/975009107/files/doc_news/A-house-doesnt-have-to-mean-a-mortgage-Renting-requires-14K-less-income-than-buying-2026.pdf\n- Zillow, Rent or buy: How long it takes for buying a home to pay off in each metro (Jun 4, 2026): https://zillow.mediaroom.com/2026-06-04-Rent-or-buy-How-long-it-takes-for-buying-a-home-to-pay-off-in-each-metro\n- Freddie Mac, Primary Mortgage Market Survey (Nov 19, 2026 and Jun 4, 2026): https://www.freddiemac.com/pmms\n- ATTOM, 2025 property tax analysis (Apr 9, 2026): https://www.attomdata.com/news/market-trends/home-sales-prices/2025-annual-tax-report\n- NerdWallet, Home insurance pricing report 2026 (Oct 2, 2026): https://www.nerdwallet.com/insurance/homeowners/home-insurance-pricing-report-2026\n- Redfin, What are closing costs (Apr 24, 2026): https://www.redfin.com/blog/closing-costs-when-buying-a-home/\n- Clever Real Estate, True cost of selling a home: 2026 edition (Oct 26, 2026): https://listwithclever.com/research/how-much-does-it-cost-to-sell-a-house/\n- IRS Topic 409, Capital gains and losses: https://www.irs.gov/taxtopics/tc409\n- IRS Topic 701, Sale of your home: https://www.irs.gov/taxtopics/tc701\n\nFor education only. Not financial advice. Past results don't guarantee future returns.\n\n#rentvsbuy #realestate #personalfinance #homebuying #mortgage",
+ "description": "Rent vs buy a home: we run the full math for a median-priced US house at today's mortgage rates, including property tax, insurance, repairs, closing and selling costs, and what your down payment could earn if you rented instead. Buying can take 5 years to beat renting, or 20: with our assumptions it's about 20 at the median sale price, and the price-to-rent ratio, the number most buyers never check, can cut that to 5 or push it past 30. Plus a 5-question checklist.\n\nOur example: $421,900 home (NAR median single-family, Oct 2026), $2,243/month rent (Zillow typical single-family asking rent, Oct 2026), 20% down, 30-year fixed at 7.28% (Freddie Mac, Nov 19, 2026), property tax 0.9% a year (ATTOM), insurance $2,564 a year (NerdWallet).\nAssumptions (ours, not predictions): 3% to buy, 6% to sell, repairs 1% of value a year (a rule of thumb), home prices, rent and costs grow 3% a year, investments earn 6% a year, whoever spends less each month invests the difference, 15% tax on investment gains when cashed out, the buyers are a married couple, so the home's gain is tax-free up to $500,000 and 15% above that (IRS exclusion; single owners: $250,000, which our example passes in year 19, so a single owner breaks even about a year later, in year 22, and leads by less at year 30), no mortgage-interest deduction (it only helps if you itemize), no renters insurance. The NAR price is a median sale price and the Zillow rent a typical asking rent, so they are not the exact same homes. Real returns, prices and rents vary and can be negative. Zillow's break-even estimates use Zillow's own model and inputs, including its lower typical home value ($364,812 in October 2026, which includes condos); at that value our model gives about 9 years.\n\nSources:\n- National Association of Realtors, Existing-Home Sales Decreased 5.5% in October (Nov 12, 2026): https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report\n- Zillow, A house doesn't have to mean a mortgage: Renting requires $14K less income than buying (Nov 12, 2026; typical single-family rent, Zillow Observed Rent Index): https://s25.q4cdn.com/975009107/files/doc_news/A-house-doesnt-have-to-mean-a-mortgage-Renting-requires-14K-less-income-than-buying-2026.pdf\n- Zillow, Rent or buy: How long it takes for buying a home to pay off in each metro (Jun 4, 2026): https://zillow.mediaroom.com/2026-06-04-Rent-or-buy-How-long-it-takes-for-buying-a-home-to-pay-off-in-each-metro\n- Zillow, Newly pending listings fell 17% in October (Nov 2026; typical home value, ZHVI): https://s25.q4cdn.com/975009107/files/doc_news/Newly-pending-listings-fell-17-in-October-the-biggest-year-over-year-drop-since-2023-2026.pdf\n- Freddie Mac, Primary Mortgage Market Survey (Nov 19, 2026 and Jun 4, 2026): https://www.freddiemac.com/pmms\n- ATTOM, 2025 property tax analysis (Apr 9, 2026): https://www.attomdata.com/news/market-trends/home-sales-prices/2025-annual-tax-report\n- NerdWallet, Home insurance pricing report 2026 (Oct 2, 2026): https://www.nerdwallet.com/insurance/homeowners/home-insurance-pricing-report-2026\n- Redfin, What are closing costs (Apr 24, 2026): https://www.redfin.com/blog/closing-costs-when-buying-a-home/\n- Clever Real Estate, True cost of selling a home: 2026 edition (Oct 26, 2026): https://listwithclever.com/research/how-much-does-it-cost-to-sell-a-house/\n- IRS Topic 409, Capital gains and losses: https://www.irs.gov/taxtopics/tc409\n- IRS Topic 701, Sale of your home: https://www.irs.gov/taxtopics/tc701\n\nFor education only. Not financial advice. Past results don't guarantee future returns.\n\n#rentvsbuy #realestate #personalfinance #homebuying #mortgage",
  "tags": [
   "rent vs buy",
   "rent or buy a house",
@@ -57,22 +57,22 @@
  },
  "scenes": [
   {
-   "say": "An American home can take five years to beat renting, or twenty, at today's mortgage rates. It depends on one number most buyers never check.",
+   "say": "An American home can take five years to beat renting, or twenty, at today's mortgage rates. It depends on a few numbers, and the biggest one most buyers never check.",
    "visual": {
     "type": "stat",
     "value": "5 or 20",
     "label": "years for buying to beat renting",
-    "sub": "same rent, different price · Nov 2026 rates · our model",
+    "sub": "same rent, different price · Nov 19, 2026 rate · our model",
     "color": "gold"
    }
   },
   {
-   "say": "Same rent, same kind of home. At today's typical price, about twenty years. At a cheaper price, about five. Most rent versus buy advice skips this part.",
+   "say": "Same rent. At the median sale price, about twenty years. At a cheaper price, about five. Most rent versus buy advice skips this part.",
    "visual": {
     "type": "versus",
     "title": "Break-even vs renting",
     "left": {
-     "label": "Typical home today",
+     "label": "Median sale price",
      "value": "~20 yrs",
      "sub": "price = 15.7 years of rent",
      "color": "red"
@@ -83,7 +83,7 @@
      "sub": "price = 12 years of rent",
      "color": "green"
     },
-    "verdict": "One number moves the answer"
+    "verdict": "Same rent, different price"
    }
   },
   {
@@ -125,10 +125,10 @@
    }
   },
   {
-   "say": "Renting a similar home? Zillow says the typical single-family rent in October was two thousand two hundred forty-three dollars a month, up three point two percent from a year earlier.",
+   "say": "Renting a single-family home? Zillow says the typical asking rent in October was two thousand two hundred forty-three dollars a month, up three point two percent in a year. A sale price and an asking rent aren't the exact same homes, but they're a fair national match.",
    "visual": {
     "type": "versus",
-    "title": "The same kind of home",
+    "title": "Single-family: buy or rent",
     "left": {
      "label": "Buy",
      "value": "$421.9K",
@@ -576,7 +576,7 @@
    }
   },
   {
-   "say": "Here are the rules. Each month, whoever spends less invests the difference at six percent. Rent, home prices, tax, insurance and repairs all rise three percent a year. These are assumptions, not predictions.",
+   "say": "Here are the rules. Each month, whoever spends less invests the difference at six percent. Rent, home prices, tax, insurance and repairs all rise three percent a year. We skip renters insurance, a small cost. These are assumptions, not predictions.",
    "visual": {
     "type": "bullets",
     "title": "The rules (our assumptions)",
@@ -588,7 +588,7 @@
    }
   },
   {
-   "say": "When we compare, the renter pays fifteen percent tax on investment gains, a typical US rate on long-term gains. The buyer's home profit is tax-free only within the IRS exclusion: up to two hundred fifty thousand dollars, or five hundred thousand for a married couple. We assume it stays within that. And the buyer pays the six percent to sell.",
+   "say": "When we compare, the renter pays fifteen percent tax on investment gains, a typical US rate on long-term gains. The buyer's home profit is tax-free only within the IRS exclusion: up to two hundred fifty thousand dollars, or five hundred thousand for a married couple. Our example is a married couple, so it stays within that until almost the end. A single owner would pass the limit around year nineteen, and break even about a year later. And the buyer pays the six percent to sell.",
    "visual": {
     "type": "stat_grid",
     "title": "When each side cashes out",
@@ -602,7 +602,7 @@
      {
       "value": "0%",
       "label": "tax on home profit",
-      "sub": "IRS limit: $250K / $500K married",
+      "sub": "married couple, gain up to $500K",
       "color": "green"
      },
      {
@@ -689,9 +689,9 @@
      ],
      [
       "30",
-      "$1.04M",
+      "$1.03M",
       "$908K",
-      "Buyer +$130K"
+      "Buyer +$126K"
      ]
     ],
     "col_colors": {
@@ -727,10 +727,10 @@
    }
   },
   {
-   "say": "By year thirty, with the mortgage paid off, the buyer is ahead by about a hundred and thirty thousand dollars.",
+   "say": "By year thirty, with the mortgage paid off, the buyer is ahead by about a hundred and twenty-six thousand dollars.",
    "visual": {
     "type": "stat",
-    "value": "+$130K",
+    "value": "+$126K",
     "label": "buyer ahead after 30 years",
     "sub": "our model · assumed 3% price growth, 6% returns",
     "color": "gold"
@@ -818,7 +818,7 @@
    }
   },
   {
-   "say": "Real cities show the same spread. Back in June, when rates were lower, Zillow estimated buying pays off in about six years nationally. In Columbus, Ohio, about four. In San Diego, over twenty-three. In San Francisco and San Jose, never within thirty years.",
+   "say": "Real cities show the same spread. Zillow's own model put the national break-even at about six years in June. It uses Zillow's lower typical home value and its own assumptions. Plug that value into our model, and we get about nine years at today's rate. In Columbus, Ohio, about four. In San Diego, over twenty-three. In San Francisco and San Jose, never within thirty years.",
    "visual": {
     "type": "columns",
     "title": "Zillow: years for buying to pay off (June 2026)",
@@ -847,7 +847,7 @@
       "color": "red"
      }
     ],
-    "note": "Zillow's own model · Freddie Mac rate then 6.48%, now 7.28%"
+    "note": "Zillow's model and inputs differ from ours"
    }
   },
   {
@@ -976,11 +976,11 @@
    }
   },
   {
-   "say": "Rent versus buy isn't a moral question. It's a math question, and a life question. How long you stay and your local prices decide most of it. Run your own numbers before you sign anything.",
+   "say": "Rent versus buy isn't a moral question. It's a math question, and a life question. How long you stay and your local prices decide a lot of it. Run your own numbers before you sign anything.",
    "visual": {
     "type": "title",
     "title": "Run your own numbers",
-    "sub": "how long you stay + local prices decide it"
+    "sub": "how long you stay + local prices decide a lot"
    }
   },
   {

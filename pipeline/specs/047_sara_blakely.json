@@ -4,6 +4,9 @@
  "voice": "af_heart",
  "speed": 1.05,
  "badge": "FOUNDER STORY",
+ "caption_fix": {
+  "Oh-pruh": "Oprah"
+ },
  "disclaimer": "Sources: CNN, Reuters, Forbes, Fortune, CNBC · see description",
  "title": "Sara Blakely: $5,000 in Savings to Billion-Dollar Spanx",
  "description": "Sara Blakely started Spanx in 2000 with $5,000 in savings, after seven years selling fax machines door to door. Hosiery mills turned her down before one agreed to make her footless pantyhose; Oprah featured Spanx in November 2000. In 2012 Forbes named her the youngest self-made woman billionaire, at 41, while she still owned 100% of the company with no debt and no outside investors. In 2021 Blackstone bought a majority stake valuing Spanx at $1.2 billion; Blakely kept a significant stake (the price paid was not disclosed). Billionaire status depends on estimates: Fortune reports her net worth fell below $1 billion in 2020. The lesson: test a cheap fix for a problem you actually have before you spend big.\n\nSources: CNN Business (Oct 21, 2021); Reuters via CNBC (Oct 20, 2021); Forbes World's Billionaires 2012, as reported by CNN Business, The Week and Marketplace (Mar 14, 2012); CNBC (Apr 3, 2019); Fortune (Sept 20, 2025) for the fax-machine years, mill rejections, Oprah and first-year sales ($4M, then $10M; Spanx is private, so these are company/founder figures). Educational content, not investment advice.\n\n#spanx #entrepreneur #founderstory #business #startup",
@@ -114,7 +117,7 @@
    }
   },
   {
-   "say": "Oprah featured it in two thousand. Sales: four million, then ten million.",
+   "say": "Oh-pruh featured it in two thousand. Sales: four million, then ten million.",
    "visual": {
     "type": "bars",
     "title": "Spanx sales (per Fortune)",
