@@ -134,7 +134,8 @@ scene("In its latest fiscal year, which ended in September, Apple's profit was a
              {"text": f"≈ ${profit_per_day_26 / 1e6:.0f}M a day", "color": "green", "size": 120},
              {"text": f"1997's loss: back in {days_to_earn_97_loss:.1f} days", "color": "gold", "size": 64}])
 scene("So how did a company with shrinking sales and junk-rated debt turn around? Using Apple's own filings, we'll walk through the deal with its biggest rival, the products it killed, the computer that brought it back, and the team behind it.",
-      type="title", title="Apple in 1997", sub="the turnaround, from the filings")
+      type="photo", layout="full", file="assets/photos/apple_infinite_loop_hq.jpg", focus=[0.5, 0.45],
+      value="Apple in 1997", label="the turnaround, from the filings", color="gold")
 scene("And by the end, you'll see the least glamorous fix in those filings. It freed more than twice as much cash as Microsoft's famous investment.",
       type="stat", value="2×", label="more cash than Microsoft put in", sub="the boring fix · chapter five", color="gold")
 
@@ -186,12 +187,14 @@ scene("So what did Apple really buy? People and software. Avie Tevanian came fro
             ["Fred Anderson", "Finance (CFO)", "April 1996"], ["Steve Jobs", "Adviser", "1997, NeXT"]],
       col_colors={"1": "green", "2": "muted"})
 scene("In July nineteen ninety-seven, Uh-mellio resigned. In September, the board named Jobs interim chief executive, in its words, until a new one was found. But new software takes years. Apple needed help sooner, and it came from its fiercest rival.",
-      type="title", title="Interim CEO", sub="\"until a new CEO is named\" · Apple, Sept 16, 1997")
+      type="photo", layout="side", file="assets/photos/steve_jobs_stage.jpg", focus=[0.55, 0.3],
+      value="Interim CEO", label="Steve Jobs, Sept 16, 1997", sub="\"until a new CEO is named\" · Amelio resigned in July", color="gold")
 
 # ---------------------------------------------------------------- 3
 scene("Chapter three. The rival's lifeline.", type="chapter", n=3, title="The rival's lifeline")
 scene("August sixth, nineteen ninety-seven. On stage at the Macworld show in Boston, Jobs announced that Microsoft would invest one hundred and fifty million dollars in Apple.",
-      type="stat", value="$150M", label="Microsoft's investment in Apple", sub="announced Aug 6, 1997 · Macworld Boston", color="blue")
+      type="photo", layout="full", file="assets/photos/microsoft_campus_sign.jpg", focus=[0.5, 0.4],
+      value="$150M", label="Microsoft's investment in Apple · Aug 6, 1997", sub="announced Aug 6, 1997 · Macworld Boston", color="blue")
 scene("Microsoft bought non-voting shares, so it got no say in running Apple. It promised to keep making Office for the Mac for five years. Apple made Internet Explorer the Mac's default browser. And the two companies cross-licensed their patents.",
       type="bullets", title="The 1997 Apple–Microsoft deal",
       items=["$150M of non-voting stock", "Office for Mac, for 5 years", "Internet Explorer as default", "Patent cross-license"])
@@ -216,8 +219,9 @@ scene("Apple's nineteen ninety-eight annual report says it simplified its produc
       right={"label": "By 1998", "value": f"{FAMILIES_AFTER}", "sub": "main product families", "color": "green"},
       verdict="Source: Apple 10-K, fiscal 1998")
 scene("Out went the Newton handheld and the eMate. Many printers and monitors went too. And Apple ended the Mac clone business, agreeing to buy Power Computing's Mac license and customer list for about a hundred and ten million dollars, mostly in stock.",
-      type="bullets", title="What Apple cut", color="red",
-      items=["Newton MessagePad and eMate", "Many printers and monitors", "Mac clones (Power Computing, ~$110M)"])
+      type="photo", layout="side", file="assets/photos/apple_newton_emate.jpg", focus=[0.5, 0.5],
+      title="What Apple cut", value="Cut", label="Newton MessagePad and eMate",
+      sub="plus many printers and monitors · Mac clones (Power Computing, ~$110M)", color="red")
 scene("Jobs' biographer, Walter Isaacson, describes him drawing a simple grid: consumer and pro, desktop and portable. By nineteen ninety-nine, Apple's filing listed four computer lines filling those boxes: iMac, iBook, Power Mac, and PowerBook.",
       type="table", title="Four boxes (Apple's Macs by 1999)",
       header=["", "Desktop", "Portable"],
@@ -235,7 +239,8 @@ scene("Fewer products meant every bet had to count. The first big one was a stra
 # ---------------------------------------------------------------- 5
 scene("Chapter five. The iMac, and the boring fix.", type="chapter", n=5, title="The iMac, and the boring fix")
 scene("In May nineteen ninety-eight, Apple unveiled the iMac: an all-in-one computer, built for getting online, for twelve hundred and ninety-nine dollars. It went on sale on August fifteenth.",
-      type="stat", value=f"${IMAC_PRICE:,}", label="the iMac", sub="unveiled May 6, 1998 · on sale Aug 15, 1998", color="green")
+      type="photo", layout="side", file="assets/photos/imac_g3_bondi_blue.jpg", focus=[0.4, 0.5],
+      value=f"${IMAC_PRICE:,}", label="the iMac", sub="unveiled May 6, 1998 · on sale Aug 15, 1998", color="green")
 scene("It came from a team. Jony Ive, at Apple since nineteen ninety-two, led the industrial design group that shaped its look. Jon Rubinstein's engineers built the hardware.",
       type="bullets", title="Who built the iMac",
       items=["Design: Jony Ive's team", "Hardware: Jon Rubinstein's team", "Focus and launch: Steve Jobs"])
@@ -289,7 +294,8 @@ scene("Put the two years side by side. Before inflation, revenue is up nearly si
             ["Staff (regular / FTE)", f"{EMPLOYEES[1997]:,}", f"~{EMP_26:,}"]],
       col_colors={"1": "red", "2": "green"})
 scene("A fair warning about hindsight. None of this was guaranteed in nineteen ninety-eight. Apple's sales were still shrinking that year, and the iPhone was nearly a decade away. The turnaround bought a chance, not a result. So what can you take from it?",
-      type="quote", text="The turnaround bought a chance,\nnot a result.", first_color="text", color="gold")
+      type="photo", layout="side", file="assets/photos/steve_jobs_iphone_keynote.jpg", focus=[0.5, 0.35],
+      value="A chance,", label="not a result", sub="the iPhone was nearly a decade away", color="gold")
 
 # ---------------------------------------------------------------- 7
 scene("Chapter seven. The lessons.", type="chapter", n=7, title="The lessons")
@@ -309,7 +315,8 @@ scene("Lesson three: complexity costs cash. Once Apple had fewer products, its i
             {"label": "Sept 1998 (as % of 1997)", "share": inv_left, "color": "green", "dp": 0}],
       note="Source: Apple 10-K, fiscal 1998")
 scene("And remember who did it. Uh-mellio's team started the cuts and bought Next. Jobs set the focus. Ive, Rubinstein, Tevanian, Anderson and Cook did much of the work. A turnaround is a team effort.",
-      type="title", title="Not one genius. A team.", sub="Amelio · Jobs · Ive · Rubinstein · Tevanian · Anderson · Cook")
+      type="photo", layout="full", file="assets/photos/apple_infinite_loop_sign.jpg", focus=[0.6, 0.5],
+      value="Not one genius. A team.", label="Amelio · Jobs · Ive · Rubinstein · Tevanian · Anderson · Cook", color="gold")
 scene("If you learned something, subscribe. We break down how money and business really work, every week.",
       type="cta", lines=["How money", "really works."], sub="Subscribe for weekly breakdowns")
 
@@ -380,7 +387,8 @@ spec = {
     "disclaimer": "Figures: Apple 10-K filings & press releases · for education, not investment advice",
     "title": "Apple in 1997: How a $1 Billion Loss Became a Comeback",
     "intro_chapter": "The $1B loss",
-    "thumbnail": {"big": "−$1B", "line": "HOW APPLE SURVIVED", "tag": "APPLE IN 1997", "color": "red"},
+    "thumbnail": {"big": "−$1B", "line": "HOW APPLE SURVIVED", "tag": "APPLE IN 1997", "color": "red",
+                  "photo": {"file": "assets/photos/steve_jobs_iphone_keynote.jpg", "focus": [0.52, 0.4]}},
     "description": DESCRIPTION,
     "tags": ["apple 1997", "apple turnaround", "how apple was saved", "steve jobs return to apple",
              "microsoft apple 150 million", "apple next acquisition", "imac 1998", "business case study",

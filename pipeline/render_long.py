@@ -26,6 +26,10 @@ def background():
     base = b0 + (b1 - b0) * (0.7 * y)[..., None]
     glow = np.exp(-(((x - 0.5) / 0.4) ** 2 + ((y - 0.42) / 0.35) ** 2))[..., None]
     base = base + glow * np.array([18, 36, 36])
+    # two faint brand-colour washes (green low-left, gold high-right) for a little more warmth and depth
+    g2 = np.exp(-(((x - 0.08) / 0.30) ** 2 + ((y - 0.95) / 0.35) ** 2))[..., None]
+    g3 = np.exp(-(((x - 0.92) / 0.28) ** 2 + ((y - 0.05) / 0.30) ** 2))[..., None]
+    base = base + g2 * np.array([4, 30, 14]) + g3 * np.array([22, 17, 2])
     img = Image.fromarray(np.clip(base, 0, 255).astype(np.uint8), "RGB").convert("RGBA")
     d = ImageDraw.Draw(img)
     for gx in range(0, bw, 80):
@@ -42,10 +46,22 @@ def title(d, s, t, y=TOP - 70):
 # ------------------------------------------------------------------ visuals
 def v_chapter(d, v, t, dur):
     a = ease(t / 0.5)
-    text_c(d, (CX, 430 - 20 * (1 - a)), f"CHAPTER {v['n']}", font(40, "Bold"), col("green", a))
-    text_c(d, (CX, 540), v["title"], font(110, "Black"), col("text", a))
+    n = str(v["n"])
+    # huge faint chapter number behind, drifting slightly
+    text_c(d, (CX + 6 * t, 520), n.zfill(2) if n.isdigit() else n, font(520, "Black"), col("green", 0.07 * a))
+    f = font(38, "Black")
+    lab = f"CHAPTER {n}"
+    pw = f.getlength(lab) + 64
+    y = 420 - 20 * (1 - a)
+    rrect(d, [CX - pw / 2, y - 32, CX + pw / 2, y + 32], 32, fill=col("green", 0.16 * a), outline=col("green", a), width=3)
+    text_c(d, (CX, y + 1), lab, f, col("green", a))
+    tf, _ = R.fit_font(v["title"], W - 240, 110, min_size=60, step=6)
+    text_c(d, (CX, 545), v["title"], tf, col("text", a))
     w = 600 * ease((t - 0.2) / 0.6)
-    d.rectangle([CX - w / 2, 630, CX + w / 2, 636], fill=col("green", a))
+    d.rectangle([CX - w / 2, 640, CX + w / 2, 646], fill=col("green", a))
+    g = 140 * ease((t - 0.5) / 0.5)
+    if g > 1:
+        d.rectangle([CX + w / 2 - g, 640, CX + w / 2, 646], fill=col("gold", a))
 
 def v_title(d, v, t, dur):
     a = ease(t / 0.5)
@@ -379,33 +395,173 @@ def v_table(d, v, t, dur):
             c = "gold" if hl else ("text" if j == 0 else v.get("col_colors", {}).get(str(j), "text"))
             text_c(d, (L + (j + 0.5) * cw, y), str(cell), font(50 if j else 44, "Black" if j else "Bold"), col(c, a))
 
+_lc = {}   # per-render caches for photo scenes (tiles, shadows, cut-out layers, panels)
+
+def _count_text(s, p):
+    """'$1.2B' at progress p -> '$0.6B' etc. Only money/percent/multiplier values count up (not years)."""
+    import re
+    m = re.match(r"^(.*?)(\d[\d,]*\.?\d*)(.*)$", s)
+    if not m or p >= 0.999 or not re.search(r"[$₹€£%xXKMBT]", m.group(1) + m.group(3)):
+        return s
+    pre, num, suf = m.groups()
+    dp = len(num.split(".")[1]) if "." in num else 0
+    val = float(num.replace(",", "")) * p
+    return pre + (f"{val:,.{dp}f}" if "," in num else f"{val:.{dp}f}") + suf
+
+def _value_reveal(d, v, cx, y, t, max_w, size=150, anchor="mm", underline=True):
+    """Big number that counts up and settles, with a gold underline growing under it."""
+    if not v.get("value"):
+        return y
+    b = ease((t - 0.25) / 0.5)
+    p = ease((t - 0.25) / 1.1)
+    f, size = R.fit_font(v["value"], max_w, size, min_size=70, step=10)
+    s = _count_text(v["value"], p) if v.get("count", True) else v["value"]
+    c = v.get("color", "gold")
+    text_c(d, (cx, y + 18 * (1 - b)), s, f, col(c, b), anchor=anchor)
+    wfull = f.getlength(v["value"])
+    uw = min(wfull, 260) * ease((t - 0.7) / 0.6) if underline else 0
+    ux = cx - uw / 2 if anchor == "mm" else cx
+    uy = y + size * 0.56
+    if uw > 2:
+        rrect(d, [ux, uy, ux + uw, uy + 10], 5, fill=col(c, 0.9 * b))
+    return uy + 80
+
+def _kb_tile(path, w, h, focus, zoom, r):
+    """Rounded photo tile with a slow push-in (Ken Burns); the corner mask is cached."""
+    tile = R.cover(R.load_photo(path), w, h, focus, zoom).convert("RGBA")
+    key = ("mask", w, h, r)
+    if key not in _lc:
+        m = Image.new("L", (w, h), 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, w - 1, h - 1], r, fill=255)
+        _lc[key] = m
+    tile.putalpha(_lc[key])
+    return tile
+
+def _soft_shadow(w, h, r, blur=28, alpha=150):
+    key = ("shadow", w, h, r, blur, alpha)
+    if key not in _lc:
+        pad = blur * 2
+        sh = Image.new("RGBA", (w + 2 * pad, h + 2 * pad), (0, 0, 0, 0))
+        ImageDraw.Draw(sh).rounded_rectangle([pad, pad, pad + w, pad + h], r, fill=(0, 0, 0, alpha))
+        _lc[key] = (sh.filter(ImageFilter.GaussianBlur(blur)), pad)
+    return _lc[key]
+
+def _fade(im, a):
+    if a >= 0.999:
+        return im
+    im = im.copy()
+    im.putalpha(im.getchannel("A").point(lambda q: int(q * a)))
+    return im
+
+def _credit(d, path, x, y, a, anchor="rb"):
+    c = R.photo_credit(path)
+    if c:
+        d.text((x, y), c, font=font(20, "Medium", False), fill=col("text", 0.8 * a), anchor=anchor,
+               stroke_width=3, stroke_fill=(0, 0, 0, int(200 * a)))
+
+def _panel(box, color="green"):
+    """Soft brand-coloured stage for a cut-out: rounded, faint vertical gradient, thin border, inner glow."""
+    key = ("panel", box, color)
+    if key not in _lc:
+        x0, y0, x1, y1 = box
+        w, h = x1 - x0, y1 - y0
+        c = np.array(R.COLORS[color], np.float32)
+        yy = np.linspace(0, 1, h)[:, None, None]
+        top, bot = np.array(R.COLORS["bg1"], np.float32) * 0.6 + c * 0.4 * 0.55, np.array(R.COLORS["bg0"], np.float32)
+        arr = (top + (bot - top) * yy).repeat(w, 1)
+        im = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGB").convert("RGBA")
+        im.alpha_composite(R.radial(w, h, w / 2, h * 0.42, w * 0.42, h * 0.5, color, 0.28))
+        m = Image.new("L", (w, h), 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, w - 1, h - 1], 40, fill=255)
+        im.putalpha(m)
+        ImageDraw.Draw(im).rounded_rectangle([1, 1, w - 2, h - 2], 40, outline=col(color, 0.45), width=3)
+        _lc[key] = im
+    return _lc[key]
+
+def _cut_scene_layer(path, h):
+    key = ("cut", path, int(h))
+    if key not in _lc:
+        c = R.grade(R.fit_height(R.load_cutout(path), h), k=0.08, sat=1.05, con=1.04)
+        lay, pad = R.rim(c, 3, (255, 255, 255), 0.35, 26, R.COLORS["bg0"], 0.55, R.cutout_open(path))
+        _lc[key] = (lay, pad)
+    return _lc[key]
+
 def v_photo(d, v, t, dur):
     """Real photo with text. v: {"type": "photo", "file", "title"?, "value"?, "color"?, "label"?, "sub"?,
-    "layout": "side" (photo left, text right; default) | "full" (wide photo, value over it), "focus"?: [fx, fy]}"""
+    "layout": "side" (photo left, text right; default) | "full" (wide photo, value over it) |
+              "cutout" (person cut out over a soft brand panel; also chosen by "cutout": true),
+    "focus"?: [fx, fy], "count"?: false (don't count the value up)}.
+    All layouts push in slowly (Ken Burns); values count up with a gold underline."""
     title(d, v.get("title"), t)
     a = ease(t / 0.5)
     focus = tuple(v.get("focus", (0.5, 0.4)))
-    if v.get("layout") == "full":
+    zoom = 1.0 + 0.06 * min(1.0, max(0.0, t) / max(dur, 4.0))
+    img = d._image
+    layout = "cutout" if v.get("cutout") and v.get("layout", "cutout") in ("cutout", "side") else v.get("layout", "side")
+    if layout == "full":
         x0, y0, x1, y1 = 150, TOP - 10, W - 150, BOT - 20
-        R.paste_photo(d, v["file"], (x0, y0 + int(20 * (1 - a)), x1, y1 + int(20 * (1 - a))), a, focus, r=30)
+        dy = int(20 * (1 - a))
+        sh, pad = _soft_shadow(x1 - x0, y1 - y0, 30)
+        R.overlay(img, _fade(sh, a), x0 - pad, y0 + dy - pad + 14)
+        tile = _kb_tile(v["file"], x1 - x0, y1 - y0, focus, zoom, 30)
+        if v.get("value") or v.get("label"):     # soft dark scrim at the bottom so the number reads cleanly
+            key = ("scrim", x1 - x0, y1 - y0)
+            if key not in _lc:
+                hh = y1 - y0
+                g = np.clip((np.arange(hh) - hh * 0.45) / (hh * 0.55), 0, 1) ** 1.3 * 0.85
+                lay = np.zeros((hh, x1 - x0, 4), np.uint8); lay[..., :3] = R.COLORS["bg0"]
+                lay[..., 3] = (g[:, None].repeat(x1 - x0, 1) * 255).astype(np.uint8)
+                _lc[key] = Image.fromarray(lay, "RGBA")
+            sc = _lc[key].copy(); sc.putalpha(Image.fromarray(np.minimum(np.asarray(sc.getchannel("A")), np.asarray(tile.getchannel("A")))))
+            tile.alpha_composite(sc)
+        R.overlay(img, _fade(tile, a), x0, y0 + dy)
+        d.rounded_rectangle([x0, y0 + dy, x1, y1 + dy], 30, outline=col("text", 0.18 * a), width=3)
+        _credit(d, v["file"], x1 - 16, y0 + dy + 34, a)
+        yv = y1 - 150
         if v.get("value"):
-            text_c(d, (x0 + 50, y1 - 150), v["value"], font(int(150 * (0.9 + 0.1 * a)), "Black"),
-                   col(v.get("color", "gold"), a), anchor="lm", stroke=12, stroke_fill=(0, 0, 0, int(255 * a)))
+            _value_reveal(d, v, x0 + 60, yv, t, x1 - x0 - 120, 150, anchor="lm", underline=False)
         if v.get("label"):
-            text_c(d, (x0 + 54, y1 - 55), v["label"], font(46, "Bold"), col("text", a), anchor="lm",
-                   stroke=6, stroke_fill=(0, 0, 0, int(255 * a)))
+            text_c(d, (x0 + 62, y1 - 55), v["label"], font(46, "Bold"), col("text", ease((t - 0.35) / 0.5)), anchor="lm")
         return
-    x0, y0, x1, y1 = 110, TOP - 10, 1060, BOT - 10
-    R.paste_photo(d, v["file"], (x0 - int(30 * (1 - a)), y0, x1 - int(30 * (1 - a)), y1), a, focus, r=30)
-    rx = 1490
+    if layout == "cutout":
+        pop = 90 if v.get("title") else 150               # head pops out above the panel (clear of the title)
+        ph = (BOT - 340) + pop
+        c0 = R.load_cutout(v["file"])
+        pw = int(min(880, max(620, c0.width * ph / c0.height + 110)))
+        box = (1000 - pw, 340, 1000, BOT)
+        panel = _panel(box, v.get("panel_color", "green"))
+        dy = int(30 * (1 - a))
+        R.overlay(img, _fade(panel, a), box[0], box[1] + dy)
+        lay, pad = _cut_scene_layer(v["file"], ph)
+        s = zoom
+        lay2 = lay.resize((int(lay.width * s), int(lay.height * s)), Image.BILINEAR) if s > 1.001 else lay
+        cx = (box[0] + box[2]) / 2
+        top = box[3] - ph * s + dy
+        # clip at the panel's bottom edge
+        cut_h = int(box[3] + dy - (top - pad * s))
+        lay2 = lay2.crop((0, 0, lay2.width, max(1, min(lay2.height, cut_h))))
+        op = R.cutout_open(v["file"])
+        x = cx - lay2.width / 2
+        if "r" in op:                  # photo crops the person on the right: make that edge the panel's edge
+            x = box[2] - (lay2.width - pad * s)
+            lay2 = lay2.crop((0, 0, max(1, int(box[2] - x)), lay2.height))
+        elif "l" in op:
+            x = box[0] - pad * s
+            lay2 = lay2.crop((int(pad * s), 0, lay2.width, lay2.height)); x += int(pad * s)
+        R.overlay(img, _fade(lay2, ease((t - 0.1) / 0.5)), x, top - pad * s)
+        _credit(d, v["file"], box[2] - 20, box[3] + dy - 16, a)
+        rx = 1460
+    else:
+        x0, y0, x1, y1 = 110, TOP - 10, 1060, BOT - 10
+        dx = int(30 * (1 - a))
+        sh, pad = _soft_shadow(x1 - x0, y1 - y0, 30)
+        R.overlay(img, _fade(sh, a), x0 - dx - pad, y0 - pad + 14)
+        R.overlay(img, _fade(_kb_tile(v["file"], x1 - x0, y1 - y0, focus, zoom, 30), a), x0 - dx, y0)
+        d.rounded_rectangle([x0 - dx, y0, x1 - dx, y1], 30, outline=col("text", 0.18 * a), width=3)
+        _credit(d, v["file"], x1 - dx - 16, y1 - 14, a)
+        rx = 1490
     b = ease((t - 0.25) / 0.5)
     y = 470 if v.get("value") else 520
     if v.get("value"):
-        size = 150
-        while font(size, "Black").getlength(v["value"]) > 760 and size > 70:
-            size -= 10
-        text_c(d, (rx, y), v["value"], font(size, "Black"), col(v.get("color", "gold"), b))
-        y += 120
+        y = _value_reveal(d, v, rx, y, t, 760, 150)
     if v.get("label"):
         for i, ln in enumerate(R._wrap(v["label"], font(50, "Bold"), 760)[:3]):
             text_c(d, (rx, y + i * 62), ln, font(50, "Bold"), col("text", b))
@@ -491,50 +647,8 @@ def _tbg(glows=(), vignette=0.55):
         img.alpha_composite(Image.fromarray(lay, "RGBA"))
     return img
 
-def _tparts(th):
-    big = str(th.get("big", "")).strip()
-    trend = th.get("trend") or R.trend_of(big)
-    accent = th.get("color") or ("red" if trend == "down" else "gold")
-    return big, th.get("line", "").upper(), th.get("tag", "").upper(), trend, accent
-
-def _text_block(img, th, x, yc, max_w, big_color, line_color="text", tag_fill="green", tag_text="bg0",
-                big_max=230, sizes=(86, 80, 74, 68, 62, 56), max_lines=2, align="l", shadow=0.55, cue=None):
-    """Tag pill + huge number + 1-3 line headline, vertically centred on yc. Returns the number's box."""
-    big, line, tag, trend, _ = _tparts(th)
-    fb, bs = R.fit_font(big, max_w, big_max, min_size=90, step=4)
-    lines, ls = R.wrap_fit(line, max_w, sizes, max_lines) if line else ([], 0)
-    fl = font(ls, "Black") if lines else None
-    tag_h, tag_gap = (54, 30) if tag else (0, 0)
-    gap, lead = 34, ls * 1.06
-    total = tag_h + tag_gap + bs * CAP + (gap + ls * CAP + lead * (len(lines) - 1) if lines else 0)
-    y = yc - total / 2
-    anc = {"l": "ls", "r": "rs", "m": "ms"}[align]
-    d = ImageDraw.Draw(img)
-    if tag:
-        ft = font(28, "Black")
-        tw = ft.getlength(tag) + 44
-        tx = x if align == "l" else (x - tw if align == "r" else x - tw / 2)
-        rrect(d, [tx, y, tx + tw, y + tag_h], tag_h / 2, fill=col(tag_fill))
-        text_c(d, (tx + tw / 2, y + tag_h / 2 + 1), tag, ft, col(tag_text))
-        y += tag_h + tag_gap
-    by = y + bs * CAP
-    R.shadow_text(img, (x, by), big, fb, col(big_color), anc, blur=12, offset=(0, 8), alpha=shadow) if shadow else \
-        ImageDraw.Draw(img).text((x, by), big, font=fb, fill=col(big_color), anchor=anc)
-    bw = fb.getlength(big)
-    bx0 = x if align == "l" else (x - bw if align == "r" else x - bw / 2)
-    if cue:   # small trend arrow right of the number, when there is room
-        cw, ch = int(bs * 0.62), int(bs * 0.5)
-        if bx0 + bw + 24 + cw <= x + max_w + (0 if align == "l" else -bw):
-            R.overlay(img, R.trend_graphic(cw, ch, cue[0], cue[1], bars=False, width=max(7, bs // 22)),
-                      bx0 + bw + 22, by - bs * CAP + (bs * CAP - ch) / 2)
-    y = by + gap
-    for i, ln in enumerate(lines):
-        ly = y + ls * CAP + i * lead
-        if shadow:
-            R.shadow_text(img, (x, ly), ln, fl, col(line_color), anc, blur=8, offset=(0, 5), alpha=shadow * 0.9)
-        else:
-            ImageDraw.Draw(img).text((x, ly), ln, font=fl, fill=col(line_color), anchor=anc)
-    return (bx0, by - bs * CAP, bx0 + bw, by)
+_tparts = R.thumb_parts
+_text_block = R.text_block
 
 def _cutout_layer(path, h, max_w, glow_color, rim_a=0.5, glow=24, glow_a=0.65, canvas_bottom=None, top=0):
     """Cut-out person scaled to height h (or max_w wide), with a thin light rim and a soft accent glow."""
@@ -547,6 +661,20 @@ def _cutout_layer(path, h, max_w, glow_color, rim_a=0.5, glow=24, glow_a=0.65, c
         lay = R.fade_bottom(lay, 0.0, start=pad + h * 0.78)       # photo crops the body above the frame edge
     return lay, pad
 
+def _place_cutout(img, lay, pad, path, cx, top, right_edge=None):
+    """Put a cut-out layer centred on cx; if the photo crops the person at the side, push that side
+    off the canvas edge (or fade it) so no straight cut line shows."""
+    op = R.cutout_open(path)
+    right_edge = img.width if right_edge is None else right_edge
+    x = cx - lay.width / 2
+    if "r" in op and x + lay.width - pad < right_edge:
+        x = right_edge - (lay.width - pad)
+    if "l" in op and ("r" not in op or x + pad > 0):
+        a = np.asarray(lay.getchannel("A"), np.float32)
+        ramp = np.clip((np.arange(lay.width) - pad) / (0.22 * (lay.width - 2 * pad)), 0, 1)[None, :]
+        lay = lay.copy(); lay.putalpha(Image.fromarray((a * ramp).astype(np.uint8)))
+    R.overlay(img, lay, x, top - pad)
+
 def _subject(img, th, kind, path, box, accent, trend, style):
     """Draw the subject (cut-out person / photo / chart) into box = (x0, y0, x1, y1)."""
     x0, y0, x1, y1 = box
@@ -557,7 +685,7 @@ def _subject(img, th, kind, path, box, accent, trend, style):
         h = (y1 - y0) * zoom
         lay, pad = _cutout_layer(path, h, (x1 - x0) * 1.05, "green" if style != "B" else "text",
                                  glow_a=0.55 if style != "B" else 0.35, canvas_bottom=TH, top=y0)
-        R.overlay(img, lay, (x0 + x1) / 2 - lay.width / 2, y0 - pad)
+        _place_cutout(img, lay, pad, path, (x0 + x1) / 2, y0)
     elif kind == "photo":
         w, h = int((x1 - x0) * 0.86), int((y1 - y0) * 0.7)
         lay, pad = R.card(R.load_photo(path), w, h, focus, r=24, border=8, tilt=-3.5, shadow=26)
@@ -573,12 +701,12 @@ def thumb_image(th):
     kind, path = R.thumb_subject(th)
     tone = "green" if trend == "up" else "red"
     if style == "B":
-        txt = "text" if accent == "red" else "bg0"
+        txt = "bg0"
         img = _tbg([(940, 360, 420, 380, tone, 0.22)], vignette=0.35)
         if kind == "photo":
             tp = th["photo"]
-            ph = R.grade(R.cover(R.load_photo(path), TW - 470, TH, tuple(tp.get("focus", (0.5, 0.4)))), k=0.3).convert("RGBA")
-            img.alpha_composite(ph, (470, 0))
+            ph = R.grade(R.cover(R.load_photo(path), TW - 530, TH, tuple(tp.get("focus", (0.5, 0.4)))), k=0.3).convert("RGBA")
+            img.alpha_composite(ph, (530, 0))
         else:
             _subject(img, th, kind, path, (600, 40 if kind == "cutout" else 120, 1250, TH if kind == "cutout" else 640),
                      accent, trend, "B")
@@ -590,17 +718,22 @@ def thumb_image(th):
         img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(10)))
         img.alpha_composite(panel)
         _text_block(img, th, 52, 360, 470, txt, txt, tag_fill="bg0", tag_text=accent, big_max=210,
-                    sizes=(78, 72, 66, 60, 54), max_lines=3, shadow=0)
+                    sizes=(78, 72, 66, 60, 54, 50), max_lines=2, shadow=0)
     elif style == "C":
         if kind in ("cutout", "photo"):
             tp = th["photo"]
             focus = tuple(tp.get("focus", (0.5, 0.4)))
             src = R.load_photo(path)
-            if kind == "cutout":   # blurred, darkened original backdrop + the sharp person in front
-                back = R.cover(src, TW, TH, (focus[0], focus[1]), zoom=1.15).filter(ImageFilter.GaussianBlur(14))
-                img = R.grade(back, k=0.55, sat=0.8, con=0.95).convert("RGBA")
-            else:
-                img = R.grade(R.cover(src, TW, TH, focus), k=0.32).convert("RGBA")
+            if kind == "cutout":   # the photo's own backdrop (person painted out, blurred, dimmed) + sharp person
+                back = R.remove_person(path, (TW, TH), focus, zoom=1.1)
+                img = R.grade(back, k=0.75, sat=0.55, con=0.9).convert("RGBA")
+            else:                  # photo on the right, fading into navy under the text
+                img = _tbg([], vignette=0.3)
+                pw = 860
+                ph = R.grade(R.cover(src, pw, TH, focus), k=0.25).convert("RGBA")
+                ramp = np.clip(np.arange(pw) / 320, 0, 1) ** 1.4
+                ph.putalpha(Image.fromarray((ramp[None, :].repeat(TH, 0) * 255).astype(np.uint8)))
+                img.alpha_composite(ph, (TW - pw, 0))
         else:
             img = _tbg([(980, 380, 380, 300, tone, 0.30)], vignette=0.3)
             _subject(img, th, kind, path, (560, 110, 1240, 600), accent, trend, "C")
@@ -614,9 +747,9 @@ def thumb_image(th):
         lay2[..., 3] = (bot.repeat(TW, 1) * 255).astype(np.uint8)
         img.alpha_composite(Image.fromarray(lay2, "RGBA"))
         if kind == "cutout":
-            lay, pad = _cutout_layer(path, 700 * th["photo"].get("zoom", 1.0), 640, "bg0", rim_a=0.0,
-                                     glow=30, glow_a=0.7, canvas_bottom=TH, top=50)
-            R.overlay(img, lay, 930 - lay.width / 2, 50 - pad)
+            lay, pad = _cutout_layer(path, 690 * th["photo"].get("zoom", 1.0), 660, "bg0", rim_a=0.0,
+                                     glow=30, glow_a=0.7, canvas_bottom=TH, top=40)
+            _place_cutout(img, lay, pad, path, 950, 40)
         _text_block(img, th, 60, 380, 560, accent, cue=(trend, tone) if kind != "graphic" else None)
         ImageDraw.Draw(img).rectangle([0, TH - 10, TW, TH], fill=col(accent))
     else:  # A
@@ -627,9 +760,10 @@ def thumb_image(th):
             d.line([(gx, 0), (gx, TH)], fill=col("grid", 0.22))
         for gy in range(0, TH, 64):
             d.line([(0, gy), (TW, gy)], fill=col("grid", 0.22))
-        box = (630, 40, 1250, TH) if kind == "cutout" else ((640, 90, 1250, 640) if kind == "photo" else (650, 130, 1240, 600))
+        box = (640, 40, 1250, TH) if kind == "cutout" else ((700, 90, 1260, 640) if kind == "photo" else (660, 130, 1240, 600))
         _subject(img, th, kind, path, box, accent, trend, "A")
-        _text_block(img, th, 64, 370, 580, accent, cue=(trend, tone) if kind != "graphic" else None)
+        _text_block(img, th, 64, 370, 580 if kind == "photo" else 600, accent, big_max=250,
+                    cue=(trend, tone) if kind != "graphic" else None)
     return img
 
 def make_thumb(spec, out_dir):

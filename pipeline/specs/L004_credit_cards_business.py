@@ -137,7 +137,8 @@ def scene(say, **visual):
 scene("Americans now owe about one point two nine trillion dollars on their credit cards. A record. And it grew another twenty-two billion in just three months.",
       type="count", to=1.29, prefix="$", suffix="T", dp=2, label="owed on US credit cards", sub="Q3 2026 · New York Fed", color="red")
 scene("In twenty twenty-four alone, card companies charged one hundred and sixty billion dollars in interest. Plus another thirty-one billion in fees.",
-      type="stat", value="$160B", label="interest charged to US cardholders", sub="2024 · plus $31.3B in fees · CFPB", color="gold")
+      type="photo", file="assets/photos/credit_cards_fanned.jpg", layout="full", focus=[0.5, 0.5],
+      value="$160B", label="interest charged to US cardholders in 2024, plus $31.3B in fees", color="gold")
 scene("So who actually gets all that money? The answer involves several companies on every swipe, a fee you never see, and a rewards system that's quietly paid for by someone else.",
       type="title", title="Follow the Swipe", sub="how credit card companies really make money")
 
@@ -156,16 +157,15 @@ scene("Visa says it plainly in its annual report. It does not issue cards, exten
       type="quote", text="\"We do not issue cards,\nextend credit or set\nrates and fees\"", first_color="text", color="text",
       source="Visa fiscal 2026 annual report (10-K)")
 scene("When you tap your card, the store's bank sends the request through the network to your bank, which approves it in moments. Then the money flows back the other way, minus a few small cuts.",
-      type="equation", title="One tap, in order",
-      lines=[{"text": "Store → store's bank", "color": "muted", "size": 76},
-             {"text": "→ network → your bank", "color": "text", "size": 76},
-             {"text": "money flows back, minus fees", "color": "gold", "size": 64}])
+      type="photo", title="One tap, in order", file="assets/photos/card_payment_terminal.jpg", layout="side",
+      focus=[0.45, 0.5], value="One tap", color="gold", label="Store → store's bank → network → your bank",
+      sub="money flows back, minus fees")
 
 # ---------------------------------------------------------------- 2
 scene("Chapter two. The swipe fee.", type="chapter", n=2, title="The swipe fee")
 scene("The biggest cut is the interchange fee, also called the swipe fee. The store pays it, and it goes to the bank that issued your card. On a one hundred dollar purchase with a premium rewards card, Visa's published rate works out to two dollars and twenty cents.",
-      type="stat", value="$2.20", label="swipe fee on a $100 premium-card purchase",
-      sub="Visa US rates, Oct 2026 · goes to your bank", color="gold")
+      type="photo", file="assets/photos/credit_cards_visa_mc_amex.jpg", layout="full", focus=[0.5, 0.5],
+      value="$2.20", label="swipe fee on a $100 premium-card purchase · goes to your bank", color="gold")
 scene("And the fancier the card, the bigger the fee. A basic Visa credit card costs the store about a dollar sixty on that same purchase. A top-tier card, about two forty.",
       type="table", title="Swipe fee on a $100 store purchase (Visa)",
       header=["Card", "Rate", "On $100"],
@@ -191,8 +191,9 @@ scene("And notice who never sees this fee. You. It's built into the store's pric
 # ---------------------------------------------------------------- 3
 scene("Chapter three. The interest engine.", type="chapter", n=3, title="The interest engine")
 scene("Swipe fees are steady money. But for the banks, the real engine is interest. The Federal Reserve says the average rate on cards that actually charged interest was twenty-two point three six percent in the third quarter of twenty twenty-six.",
-      type="stat", value=f"{APR * 100:.2f}%", label="average rate on cards charged interest",
-      sub="Q3 2026 (preliminary) · Federal Reserve G.19", color="red")
+      type="photo", file="assets/photos/federal_reserve_building.jpg", layout="side", focus=[0.5, 0.45],
+      value=f"{APR * 100:.2f}%", label="average rate on cards charged interest", color="red",
+      sub="Q3 2026 (preliminary) · Federal Reserve G.19")
 scene("That rate jumped fast. In twenty twenty-one it was about sixteen and a half percent. Within two years it passed twenty-two, and it has stayed there.",
       type="line", title="Average card rate when interest is charged (%)", format="num",
       x=list(APR_HIST), series=[{"label": "22.36%", "values": list(APR_HIST.values()), "color": "red"}])
@@ -232,9 +233,9 @@ scene("And late fees don't land evenly. People with the lowest credit scores hol
             ["Best scores", f"{TOP_ACCTS:.0%}", f"{TOP_LATE * 100:.1f}%"]],
       highlight_row=0, col_colors={"1": "muted", "2": "red"})
 scene("Annual fees work differently. People with excellent credit are the most likely to pay them, usually to unlock premium rewards. The test is simple: a fee is only worth it if the perks you actually use are worth more.",
-      type="bullets", title="Annual fees: $8.7B in 2024", color="gold",
-      items=["Most common on premium cards", "They pay for rewards and perks", "Count only perks you really use",
-             "Worth it only if perks > fee"])
+      type="photo", title="Annual fees", file="assets/photos/card_network_logos_sign.jpg", layout="side",
+      focus=[0.5, 0.5], value="$8.7B", color="gold", label="in annual fees, 2024, most on premium cards",
+      sub="Worth it only if the perks you really use are worth more than the fee")
 scene("So fees fall hardest on people with the weakest credit. Keep that in mind, because the next part is about who benefits.",
       type="quote", text="Fees fall hardest on\nthe weakest credit scores.", first_color="text", color="red",
       source="CFPB: lowest scores, 14% of accounts, 40% of late fees")
@@ -280,10 +281,9 @@ scene("That's why critics call rewards a reverse Robin Hood. The money tends to 
 # ---------------------------------------------------------------- 6
 scene("Chapter six. The network versus the bank.", type="chapter", n=6, title="Network vs bank")
 scene("Now, the network. In its fiscal year ending September twenty twenty-six, Visa brought in forty-five point nine billion dollars of revenue. Its net profit was twenty-three point five billion.",
-      type="stat_grid", title="Visa, fiscal 2026",
-      items=[{"value": "$45.9B", "label": "net revenue", "color": "text"},
-             {"value": "$23.5B", "label": "net income", "color": "green"},
-             {"value": f"{v_margin * 100:.0f}%", "label": "net profit margin", "color": "gold"}])
+      type="photo", title="Visa, fiscal 2026", file="assets/photos/visa_hq_san_francisco.jpg", layout="side",
+      focus=[0.5, 0.4], value="$45.9B", color="text", label="net revenue",
+      sub=f"$23.5B net income · {v_margin * 100:.0f}% net profit margin")
 scene("That's about fifty-one cents of profit on every dollar of revenue. For comparison, Costco keeps about three cents.",
       type="columns", title="Net profit per $1 of revenue", highlight=0,
       items=[{"label": "Visa (FY2026)", "value": v_margin * 100, "display": f"{v_margin * 100:.0f}¢", "color": "gold"},
@@ -345,7 +345,8 @@ spec = {
     "disclaimer": "Figures: NY Fed, Federal Reserve, CFPB, Visa & Capital One filings · education, not financial advice",
     "title": "How Credit Card Companies Really Make Money",
     "intro_chapter": "Intro",
-    "thumbnail": {"big": "$160B", "line": "IN CARD INTEREST", "tag": "WHO REALLY PAYS?", "color": "gold"},
+    "thumbnail": {"big": "$160B", "line": "IN CARD INTEREST", "tag": "WHO REALLY PAYS?", "color": "gold",
+                  "photo": {"file": "assets/photos/credit_cards_visa_mc_amex.jpg", "focus": [0.5, 0.5]}},
     "description": (
         "How do credit card companies really make money? Americans owe $1.29 trillion on credit cards, and in "
         "2024 card issuers charged $160 billion in interest plus $31.3 billion in fees. We follow the money from "

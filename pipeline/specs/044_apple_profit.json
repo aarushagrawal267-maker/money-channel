@@ -44,14 +44,29 @@
    "summary": "Sur l'exercice 2026, Apple a dégagé 132,2 milliards de dollars de bénéfice net, environ 4 200 $ par seconde. Les services font 26 % des ventes, mais 40 % de la marge brute."
   }
  },
+ "thumbnail": {
+  "big": "$4,200",
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/apple_store_osaka.jpg",
+   "focus": [
+    0.62,
+    0.4
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Apple clears four thousand two hundred dollars profit every second. From what?",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/apple_store_fifth_avenue.jpg",
+    "focus": [
+     0.6,
+     0.4
+    ],
     "value": "$4,200",
     "label": "Apple profit, every second",
-    "sub": "fiscal 2026 net income ÷ 364 days",
     "color": "gold"
    }
   },
@@ -146,18 +161,14 @@
   {
    "say": "Why? Every phone needs new parts. Most services don't.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/iphone_5_back.jpg",
+    "focus": [
+     0.5,
+     0.45
+    ],
     "title": "Why the gap?",
-    "left": {
-     "label": "iPhone",
-     "sub": "new parts each sale",
-     "color": "slate"
-    },
-    "right": {
-     "label": "Software",
-     "sub": "cheap to deliver",
-     "color": "gold"
-    }
+    "label": "Every phone needs new parts"
    }
   },
   {

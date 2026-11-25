@@ -81,11 +81,13 @@ spec = {
                "summary": "Sur l'exercice 2026, Apple a dégagé 132,2 milliards de dollars de bénéfice net, environ 4 200 $ par "
                           "seconde. Les services font 26 % des ventes, mais 40 % de la marge brute."},
     },
+    "thumbnail": {"big": f"${round(per_sec, -2):,.0f}", "color": "gold",
+                  "photo": {"file": "assets/photos/apple_store_osaka.jpg", "focus": [0.62, 0.4]}},
     "scenes": [
         # hook: the biggest number on frame 0 + open loop ("From what?")
         {"say": "Apple clears four thousand two hundred dollars profit every second. From what?",
-         "visual": {"type": "stat", "value": f"${round(per_sec, -2):,.0f}", "label": "Apple profit, every second",
-                    "sub": f"fiscal 2026 net income ÷ {FY_DAYS} days", "color": "gold"}},
+         "visual": {"type": "photo", "file": "assets/photos/apple_store_fifth_avenue.jpg", "focus": [0.6, 0.4],
+                    "value": f"${round(per_sec, -2):,.0f}", "label": "Apple profit, every second", "color": "gold"}},
         {"say": "Fiscal twenty twenty-six profit: one hundred thirty-two billion dollars.",
          "visual": {"type": "equation", "title": "Apple net income, fiscal 2026",
                     "lines": [{"text": f"${NET_INCOME/1e3:.1f}B", "color": "gold", "size": 130},
@@ -108,9 +110,8 @@ spec = {
          "visual": {"type": "stat", "value": f"{svc_gp_share:.0%}", "label": "of Apple's gross profit is Services",
                     "sub": f"from just {svc_sales_share:.0%} of sales · fiscal 2026", "color": "green"}},
         {"say": "Why? Every phone needs new parts. Most services don't.",
-         "visual": {"type": "pair", "title": "Why the gap?",
-                    "left": {"label": "iPhone", "sub": "new parts each sale", "color": "slate"},
-                    "right": {"label": "Software", "sub": "cheap to deliver", "color": "gold"}}},
+         "visual": {"type": "photo", "file": "assets/photos/iphone_5_back.jpg", "focus": [0.5, 0.45],
+                    "title": "Why the gap?", "label": "Every phone needs new parts"}},
         {"say": "The lesson: one sale pays once. A loyal customer pays again and again.",
          "visual": {"type": "equation", "title": "The lesson",
                     "lines": [{"text": "One sale pays once.", "color": "text", "size": 84},

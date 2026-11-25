@@ -12,7 +12,14 @@
   "big": "$160B",
   "line": "IN CARD INTEREST",
   "tag": "WHO REALLY PAYS?",
-  "color": "gold"
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/credit_cards_visa_mc_amex.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  }
  },
  "description": "How do credit card companies really make money? Americans owe $1.29 trillion on credit cards, and in 2024 card issuers charged $160 billion in interest plus $31.3 billion in fees. We follow the money from swipe fees (what a store pays on a $100 purchase) to interest, late and annual fees, who really pays for rewards, and why Visa keeps about 51 cents of profit per revenue dollar while a big card bank keeps about 12.\n\nAssumptions: the $5,000 example keeps the balance at $5,000 for a year at the Fed's Q3 2026 average rate on accounts assessed interest (22.36%), with interest paid monthly (no compounding). The 2% cash back card is an example, not a specific product. Swipe fees are Visa's published US default rates (card present, retail); large merchants can negotiate lower, and stores also pay network and processor fees not shown.\n\nSources:\n- New York Fed, Household Debt and Credit Report, Q3 2026 (Nov 10, 2026): https://www.newyorkfed.org/microeconomics/hhdc\n- Federal Reserve G.19 Consumer Credit, Nov 6, 2026 release (credit card plans, accounts assessed interest): https://www.federalreserve.gov/releases/g19/current/\n- CFPB, The Consumer Credit Card Market report (Dec 30, 2025; 2024 data): https://www.consumerfinance.gov/data-research/research-reports/the-consumer-credit-card-market-2025/\n- Visa USA Interchange Reimbursement Fees, effective Oct 24, 2026: https://usa.visa.com/support/small-business/regulations-fees.html\n- Visa fiscal 2026 Form 10-K (filed Nov 5, 2026) and Q4 FY2026 results (Oct 27, 2026): https://investor.visa.com\n- Capital One 2025 Form 10-K (filed Feb 19, 2026), Credit Card business results and rewards note (2024 figures): https://investor.capitalone.com\n- Agarwal, Presbitero, Silva & Wix, \"Who Pays For Your Rewards?\", Federal Reserve FEDS 2023-007: https://www.federalreserve.gov/econres/feds/who-pays-for-your-rewards-redistribution-in-the-credit-card-market.htm\n- Schuh, Shy & Stavins, \"Who Gains and Who Loses from Credit Card Payments?\", Boston Fed (2010)\n- Credit CARD Act of 2009 / Regulation Z 12 CFR 1026.5(b)(2)(ii) (21-day rule)\n- Costco FY2026 results (net income $9.2B on $303.2B revenue)\n\nFor education only. Not financial advice.\n\n#creditcards #personalfinance #businessbreakdown #creditcarddebt #moneytips",
  "tags": [
@@ -72,10 +79,15 @@
   {
    "say": "In twenty twenty-four alone, card companies charged one hundred and sixty billion dollars in interest. Plus another thirty-one billion in fees.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/credit_cards_fanned.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.5
+    ],
     "value": "$160B",
-    "label": "interest charged to US cardholders",
-    "sub": "2024 · plus $31.3B in fees · CFPB",
+    "label": "interest charged to US cardholders in 2024, plus $31.3B in fees",
     "color": "gold"
    }
   },
@@ -142,25 +154,18 @@
   {
    "say": "When you tap your card, the store's bank sends the request through the network to your bank, which approves it in moments. Then the money flows back the other way, minus a few small cuts.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
     "title": "One tap, in order",
-    "lines": [
-     {
-      "text": "Store → store's bank",
-      "color": "muted",
-      "size": 76
-     },
-     {
-      "text": "→ network → your bank",
-      "color": "text",
-      "size": 76
-     },
-     {
-      "text": "money flows back, minus fees",
-      "color": "gold",
-      "size": 64
-     }
-    ]
+    "file": "assets/photos/card_payment_terminal.jpg",
+    "layout": "side",
+    "focus": [
+     0.45,
+     0.5
+    ],
+    "value": "One tap",
+    "color": "gold",
+    "label": "Store → store's bank → network → your bank",
+    "sub": "money flows back, minus fees"
    }
   },
   {
@@ -174,10 +179,15 @@
   {
    "say": "The biggest cut is the interchange fee, also called the swipe fee. The store pays it, and it goes to the bank that issued your card. On a one hundred dollar purchase with a premium rewards card, Visa's published rate works out to two dollars and twenty cents.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/credit_cards_visa_mc_amex.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.5
+    ],
     "value": "$2.20",
-    "label": "swipe fee on a $100 premium-card purchase",
-    "sub": "Visa US rates, Oct 2026 · goes to your bank",
+    "label": "swipe fee on a $100 premium-card purchase · goes to your bank",
     "color": "gold"
    }
   },
@@ -328,11 +338,17 @@
   {
    "say": "Swipe fees are steady money. But for the banks, the real engine is interest. The Federal Reserve says the average rate on cards that actually charged interest was twenty-two point three six percent in the third quarter of twenty twenty-six.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/federal_reserve_building.jpg",
+    "layout": "side",
+    "focus": [
+     0.5,
+     0.45
+    ],
     "value": "22.36%",
     "label": "average rate on cards charged interest",
-    "sub": "Q3 2026 (preliminary) · Federal Reserve G.19",
-    "color": "red"
+    "color": "red",
+    "sub": "Q3 2026 (preliminary) · Federal Reserve G.19"
    }
   },
   {
@@ -522,15 +538,18 @@
   {
    "say": "Annual fees work differently. People with excellent credit are the most likely to pay them, usually to unlock premium rewards. The test is simple: a fee is only worth it if the perks you actually use are worth more.",
    "visual": {
-    "type": "bullets",
-    "title": "Annual fees: $8.7B in 2024",
+    "type": "photo",
+    "title": "Annual fees",
+    "file": "assets/photos/card_network_logos_sign.jpg",
+    "layout": "side",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "value": "$8.7B",
     "color": "gold",
-    "items": [
-     "Most common on premium cards",
-     "They pay for rewards and perks",
-     "Count only perks you really use",
-     "Worth it only if perks > fee"
-    ]
+    "label": "in annual fees, 2024, most on premium cards",
+    "sub": "Worth it only if the perks you really use are worth more than the fee"
    }
   },
   {
@@ -737,25 +756,18 @@
   {
    "say": "Now, the network. In its fiscal year ending September twenty twenty-six, Visa brought in forty-five point nine billion dollars of revenue. Its net profit was twenty-three point five billion.",
    "visual": {
-    "type": "stat_grid",
+    "type": "photo",
     "title": "Visa, fiscal 2026",
-    "items": [
-     {
-      "value": "$45.9B",
-      "label": "net revenue",
-      "color": "text"
-     },
-     {
-      "value": "$23.5B",
-      "label": "net income",
-      "color": "green"
-     },
-     {
-      "value": "51%",
-      "label": "net profit margin",
-      "color": "gold"
-     }
-    ]
+    "file": "assets/photos/visa_hq_san_francisco.jpg",
+    "layout": "side",
+    "focus": [
+     0.5,
+     0.4
+    ],
+    "value": "$45.9B",
+    "color": "text",
+    "label": "net revenue",
+    "sub": "$23.5B net income · 51% net profit margin"
    }
   },
   {

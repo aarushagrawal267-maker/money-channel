@@ -364,6 +364,14 @@ def _clean_cutout(src, alpha):
             k = np.maximum(a, 0.35)[..., None]
             fixed = np.clip((rgb - (1 - k) * bg) / k, 0, 255)
             rgb = np.where(soft[..., None], fixed, rgb)
+            # despill: remove the backdrop's tint from the outer ~10 px (e.g. red light on blonde hair)
+            from scipy.ndimage import distance_transform_edt
+            depth = distance_transform_edt(a > 0.05)
+            wgt = np.clip(1 - depth / 10, 0, 1)[..., None] * 0.75
+            lum = rgb.mean(-1, keepdims=True)
+            bgc = bg - bg.mean(); bgc = bgc / (np.linalg.norm(bgc) + 1e-6)
+            proj = np.clip(((rgb - lum) * bgc).sum(-1, keepdims=True), 0, None)
+            rgb = np.clip(rgb - wgt * proj * bgc, 0, 255)
     from scipy.ndimage import label
     lab, n = label(a > 0.3)
     if n > 1:                                             # drop floating specks, keep the person
@@ -573,6 +581,8 @@ def wrap_fit(text, max_w, sizes, max_lines, weight="Black"):
     that fits max_w, with the lines balanced ("YOUR CASH IS / SHRINKING", not "YOUR CASH / IS / ...")."""
     for n in range(1, max_lines + 1):
         for s in sizes:
+            if n < max_lines and s < sizes[0] * 0.9:     # fewer lines only if the text stays big
+                break
             f = font(s, weight)
             lines = _wrap(text, f, max_w)
             if len(lines) <= n and all(f.getlength(l) <= max_w for l in lines):
@@ -594,6 +604,56 @@ def thumb_subject(th):
     if th.get("cutout") or tp.get("cutout"):
         return "cutout", tp["file"]
     return "photo", tp["file"]
+
+CAP = 0.727            # Inter cap height / em
+
+def thumb_parts(th):
+    big = str(th.get("big", "")).strip()
+    trend = th.get("trend") or trend_of(big)
+    accent = th.get("color") or ("red" if trend == "down" else "gold")
+    return big, th.get("line", "").upper(), th.get("tag", "").upper(), trend, accent
+
+def text_block(img, th, x, yc, max_w, big_color, line_color="text", tag_fill="green", tag_text="bg0",
+                big_max=230, sizes=(86, 80, 74, 68, 62, 56), max_lines=2, align="l", shadow=0.55, cue=None,
+                tag_size=32):
+    """Tag pill + huge number + 1-3 line headline, vertically centred on yc. Returns the number's box."""
+    big, line, tag, trend, _ = thumb_parts(th)
+    fb, bs = fit_font(big, max_w, big_max, min_size=90, step=4)
+    if not big:
+        bs, cue = 0, None
+    lines, ls = wrap_fit(line, max_w, sizes, max_lines) if line else ([], 0)
+    fl = font(ls, "Black") if lines else None
+    tag_h, tag_gap = (int(tag_size * 1.9), int(tag_size * 0.95)) if tag else (0, 0)
+    gap, lead = (34 if big else 0), ls * 1.06
+    total = tag_h + tag_gap + bs * CAP + (gap + ls * CAP + lead * (len(lines) - 1) if lines else 0)
+    y = yc - total / 2
+    anc = {"l": "ls", "r": "rs", "m": "ms"}[align]
+    d = ImageDraw.Draw(img)
+    if tag:
+        ft = font(tag_size, "Black")
+        tw = ft.getlength(tag) + tag_size * 1.5
+        tx = x if align == "l" else (x - tw if align == "r" else x - tw / 2)
+        rrect(d, [tx, y, tx + tw, y + tag_h], tag_h / 2, fill=col(tag_fill))
+        text_c(d, (tx + tw / 2, y + tag_h / 2 + 1), tag, ft, col(tag_text))
+        y += tag_h + tag_gap
+    by = y + bs * CAP
+    shadow_text(img, (x, by), big, fb, col(big_color), anc, blur=12, offset=(0, 8), alpha=shadow) if shadow else \
+        ImageDraw.Draw(img).text((x, by), big, font=fb, fill=col(big_color), anchor=anc)
+    bw = fb.getlength(big)
+    bx0 = x if align == "l" else (x - bw if align == "r" else x - bw / 2)
+    if cue:   # small trend arrow right of the number, when there is room
+        cw, ch = int(bs * 0.62), int(bs * 0.5)
+        if bx0 + bw + 24 + cw <= x + max_w + (0 if align == "l" else -bw):
+            overlay(img, trend_graphic(cw, ch, cue[0], cue[1], bars=False, width=max(7, bs // 22)),
+                      bx0 + bw + 22, by - bs * CAP + (bs * CAP - ch) / 2)
+    y = by + gap
+    for i, ln in enumerate(lines):
+        ly = y + ls * CAP + i * lead
+        if shadow:
+            shadow_text(img, (x, ly), ln, fl, col(line_color), anc, blur=8, offset=(0, 5), alpha=shadow * 0.9)
+        else:
+            ImageDraw.Draw(img).text((x, ly), ln, font=fl, fill=col(line_color), anchor=anc)
+    return (bx0, by - bs * CAP, bx0 + bw, by)
 
 def v_photo(d, v, t, dur):
     """Real photo (person, company, product, place) with optional big number and label.
@@ -1012,8 +1072,85 @@ def _photo_short_thumb(spec, out_dir, tp):
     img.convert("RGB").save(path, optimize=True)
     return path
 
+def short_thumb_image(th):
+    """Styled vertical thumbnail (1080x1920 RGBA); all text kept inside y 380-1450.
+    th: big, line, tag, photo {file, focus, zoom?}, cutout, color, trend, style "A" | "B".
+    A "Spotlight": number + headline on top, the person/photo/chart below on a clean navy stage.
+    B "Colour block": person/photo/chart on top, solid accent panel with navy text below."""
+    style = str(th.get("style", "A")).upper()
+    big, line, tag, trend, accent = thumb_parts(th)
+    kind, path = thumb_subject(th)
+    tp = th.get("photo") or {}
+    focus, zoom = tuple(tp.get("focus", (0.5, 0.4))), tp.get("zoom", 1.0)
+    tone = "green" if trend == "up" else "red"
+    img = make_background().copy()
+
+    def person(top, h, cx=CX, glow="green", glow_a=0.6):
+        c = load_cutout(path)
+        h = h * zoom
+        if c.width * h / c.height > W * 1.1:
+            h = c.height * W * 1.1 / c.width
+        c = grade(fit_height(c, h), k=0.08, sat=1.06, con=1.04)
+        op = cutout_open(path)
+        lay, pad = rim(c, 4, (255, 255, 255), 0.5, 30, COLORS.get(glow, glow), glow_a, op)
+        x = cx - lay.width / 2
+        if "r" in op and x + lay.width - pad < W:
+            x = W - (lay.width - pad)
+        if "l" in op and x + pad > 0:
+            if "r" in op:
+                x = -pad
+            else:
+                a = np.asarray(lay.getchannel("A"), np.float32)
+                ramp = np.clip((np.arange(lay.width) - pad) / (0.22 * c.width), 0, 1)[None, :]
+                lay = lay.copy(); lay.putalpha(Image.fromarray((a * ramp).astype(np.uint8)))
+        if "b" in op and top + h < H:
+            lay = fade_bottom(lay, 0.0, start=pad + h * 0.8)
+        overlay(img, lay, x, top - pad)
+
+    if style == "B":
+        py = 1000                                     # panel top (left end); text sits in 1010-1440
+        img.alpha_composite(radial(W, H, CX, 640, 520, 420, "green" if kind == "cutout" else tone, 0.30))
+        if kind == "cutout":
+            person(330, 900)
+        elif kind == "photo":
+            ph = grade(cover(load_photo(path), W, py + 80, focus), k=0.25).convert("RGBA")
+            img.alpha_composite(ph, (0, 0))
+            top = np.clip(1 - np.linspace(0, 1, py + 80) / 0.22, 0, 1) ** 2 * 0.75   # keep the very top calm
+            lay = np.zeros((py + 80, W, 4), np.uint8); lay[..., :3] = COLORS["bg0"]
+            lay[..., 3] = (top[:, None].repeat(W, 1) * 255).astype(np.uint8)
+            img.alpha_composite(Image.fromarray(lay, "RGBA"))
+        else:
+            overlay(img, trend_graphic(900, 560, trend, tone), 90, 400)
+        sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        ImageDraw.Draw(sh).polygon([(0, py - 14), (W, py + 50), (W, H), (0, H)], fill=(0, 0, 0, 150))
+        img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(12)))
+        ImageDraw.Draw(img).polygon([(0, py), (W, py + 64), (W, H), (0, H)], fill=col(accent))
+        text_block(img, th, CX, 1250, 960, "bg0", "bg0", tag_fill="bg0", tag_text=accent, big_max=250,
+                   sizes=(88, 82, 76, 70, 64), max_lines=2, align="m", shadow=0, tag_size=42)
+    else:
+        img.alpha_composite(radial(W, H, CX, 1350, 560, 520, "green" if kind == "cutout" else tone, 0.32))
+        if kind == "cutout":
+            person(930, 1080)
+        elif kind == "photo":
+            lay, pad = card(load_photo(path), 880, 620, focus, r=30, border=10, tilt=-3.0, shadow=30)
+            overlay(img, lay, CX - lay.width / 2, 1310 - lay.height / 2)
+        else:
+            overlay(img, trend_graphic(960, 620, trend, tone), 60, 960)
+        text_block(img, th, CX, 650, 960, accent, big_max=300, sizes=(100, 92, 84, 76, 70), max_lines=3,
+                   align="m", cue=None, tag_size=42)
+    return img
+
 def make_short_thumb(spec, out_dir):
     """Vertical Shorts thumbnail: badge, big number, title. Kept inside y 380-1450 (clear of Shorts overlays)."""
+    th = spec.get("thumbnail") or {}
+    if th.get("style"):
+        big, color = _thumb_big(spec)
+        th = {**th, "big": th.get("big") or big or "", "color": th.get("color") or (color if big else None),
+              "line": th.get("line") or spec["title"].replace("#shorts", "").strip(),
+              "tag": th.get("tag") or spec.get("badge", "")}
+        path = os.path.join(out_dir, spec["id"] + "_thumb.png")
+        short_thumb_image(th).convert("RGB").save(path, optimize=True)
+        return path
     tp = (spec.get("thumbnail") or {}).get("photo")
     if tp:
         return _photo_short_thumb(spec, out_dir, tp)

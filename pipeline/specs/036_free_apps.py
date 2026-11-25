@@ -67,16 +67,16 @@ spec = {
                "summary": "Meta a tiré 63,1 milliards de dollars de la publicité de juillet à septembre 2026, environ 685 millions "
                           "par jour. Sur Instagram, l'annonceur paie ; vous payez avec votre attention."},
     },
+    "thumbnail": {"photo": {"file": "assets/photos/social_apps_phone_screen.jpg", "focus": [0.47, 0.45]}},
     "scenes": [
         # hook: the biggest number on frame 0 + contradiction ("from free apps")
         {"say": "Six hundred and eighty-five million dollars a day, from free apps.",
          "visual": {"type": "stat", "value": f"${per_day/1e6:.0f}M", "label": "Meta ad revenue, per day",
                     "sub": "July to Sept 2026 average · Meta Q3 results", "color": "gold"}},
         {"say": "That's Meta's ad money, July to September: sixty-three billion dollars in three months.",
-         "visual": {"type": "equation", "title": "Meta ad revenue, Q3 2026",
-                    "lines": [{"text": f"${AD_REV/1e9:.1f}B ÷ {DAYS_Q3} days", "color": "text", "size": 88},
-                              {"text": f"≈ ${per_day/1e6:.0f}M a day", "color": "gold", "size": 100},
-                              {"text": f"ads = {ad_share:.0%} of all its revenue", "color": "muted", "size": 50}]}},
+         "visual": {"type": "photo", "file": "assets/photos/instagram_hq_menlo_park.jpg", "title": "Meta ad revenue, Q3 2026",
+                    "value": f"${AD_REV/1e9:.0f}B", "color": "gold", "label": "in 3 months · Instagram HQ, Menlo Park",
+                    "focus": [0.5, 0.45]}},
         {"say": "Here's how. You're not the customer. Advertisers are, and they pay for your attention.",
          "visual": {"type": "pair", "title": "Who pays?",
                     "left": {"label": "You", "sub": "use it free", "color": "green"},
@@ -87,9 +87,8 @@ spec = {
                               {"label": "Price per ad", "value": PRICE_PER_AD_GROWTH, "color": "gold"}]}},
         # mid-video re-hook: opens a second loop (what are you worth?)
         {"say": "Now the twist: Meta's own numbers put a price on you.",
-         "visual": {"type": "equation", "title": "The twist",
-                    "lines": [{"text": "What are you", "color": "text", "size": 110},
-                              {"text": "worth to Meta?", "color": "gold", "size": 110}]}},
+         "visual": {"type": "photo", "file": "assets/photos/social_apps_phone_screen.jpg", "title": "The twist",
+                    "label": "What are you worth to Meta?", "focus": [0.55, 0.45]}},
         {"say": "About seventeen dollars seventy per daily user, in just three months.",
          "visual": {"type": "stat", "value": f"${arpp:.2f}", "label": "revenue per daily user, one quarter",
                     "sub": "Q3 2026 · 3.64B people use Meta's apps daily", "color": "green"}},
