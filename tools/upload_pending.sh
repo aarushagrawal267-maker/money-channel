@@ -16,6 +16,7 @@ failures=0
 while read -r id when <&3; do
   [ -z "${id:-}" ] && continue
   [[ "$id" == \#* ]] && continue
+  if [ -f pipeline/hold.txt ] && grep -qx -- "$id" pipeline/hold.txt; then echo "HOLD $id (being re-edited; see pipeline/hold.txt)"; continue; fi
   done_already=$(python3 - "$id" </dev/null <<'PY'
 import json, sys
 print(any(e["id"] == sys.argv[1] and e.get("publish_at") and not e.get("superseded")

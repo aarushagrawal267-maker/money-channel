@@ -4,7 +4,7 @@ Usage: python3 render_long.py spec.json out_dir
 
 Reuses audio, ASR caption sync and drawing helpers from render.py.
 Scene visual types: chapter, title, stat, count, stat_grid, hbars, share, flywheel, bullets,
-equation, line, cta, waterfall, donut, columns, versus, timeline, quote, table.
+equation, line, cta, waterfall, donut, columns, versus, timeline, quote, table, photo.
 Writes <id>.mp4, <id>_chapters.txt (YouTube chapters) and <id>_thumb.png.
 """
 import json, math, os, subprocess, sys
@@ -379,10 +379,46 @@ def v_table(d, v, t, dur):
             c = "gold" if hl else ("text" if j == 0 else v.get("col_colors", {}).get(str(j), "text"))
             text_c(d, (L + (j + 0.5) * cw, y), str(cell), font(50 if j else 44, "Black" if j else "Bold"), col(c, a))
 
+def v_photo(d, v, t, dur):
+    """Real photo with text. v: {"type": "photo", "file", "title"?, "value"?, "color"?, "label"?, "sub"?,
+    "layout": "side" (photo left, text right; default) | "full" (wide photo, value over it), "focus"?: [fx, fy]}"""
+    title(d, v.get("title"), t)
+    a = ease(t / 0.5)
+    focus = tuple(v.get("focus", (0.5, 0.4)))
+    if v.get("layout") == "full":
+        x0, y0, x1, y1 = 150, TOP - 10, W - 150, BOT - 20
+        R.paste_photo(d, v["file"], (x0, y0 + int(20 * (1 - a)), x1, y1 + int(20 * (1 - a))), a, focus, r=30)
+        if v.get("value"):
+            text_c(d, (x0 + 50, y1 - 150), v["value"], font(int(150 * (0.9 + 0.1 * a)), "Black"),
+                   col(v.get("color", "gold"), a), anchor="lm", stroke=12, stroke_fill=(0, 0, 0, int(255 * a)))
+        if v.get("label"):
+            text_c(d, (x0 + 54, y1 - 55), v["label"], font(46, "Bold"), col("text", a), anchor="lm",
+                   stroke=6, stroke_fill=(0, 0, 0, int(255 * a)))
+        return
+    x0, y0, x1, y1 = 110, TOP - 10, 1060, BOT - 10
+    R.paste_photo(d, v["file"], (x0 - int(30 * (1 - a)), y0, x1 - int(30 * (1 - a)), y1), a, focus, r=30)
+    rx = 1490
+    b = ease((t - 0.25) / 0.5)
+    y = 470 if v.get("value") else 520
+    if v.get("value"):
+        size = 150
+        while font(size, "Black").getlength(v["value"]) > 760 and size > 70:
+            size -= 10
+        text_c(d, (rx, y), v["value"], font(size, "Black"), col(v.get("color", "gold"), b))
+        y += 120
+    if v.get("label"):
+        for i, ln in enumerate(R._wrap(v["label"], font(50, "Bold"), 760)[:3]):
+            text_c(d, (rx, y + i * 62), ln, font(50, "Bold"), col("text", b))
+        y += 62 * min(3, len(R._wrap(v["label"], font(50, "Bold"), 760))) + 20
+    if v.get("sub"):
+        for i, ln in enumerate(R._wrap(v["sub"], font(36, "Medium", False), 760)[:3]):
+            text_c(d, (rx, y + i * 46), ln, font(36, "Medium", False), col("muted", b))
+
 VISUALS = dict(chapter=v_chapter, title=v_title, stat=v_stat, stat_grid=v_stat_grid, hbars=v_hbars,
                share=v_share, flywheel=v_flywheel, bullets=v_bullets, equation=v_equation,
                cta=v_cta, line=v_line, count=v_count, waterfall=v_waterfall, donut=v_donut,
-               columns=v_columns, versus=v_versus, timeline=v_timeline, quote=v_quote, table=v_table)
+               columns=v_columns, versus=v_versus, timeline=v_timeline, quote=v_quote, table=v_table,
+               photo=v_photo)
 
 # ------------------------------------------------------------------ captions
 def draw_caps(img, chunks, t):
@@ -400,6 +436,38 @@ def draw_caps(img, chunks, t):
                 x += wd + sp
             break
 
+def _photo_thumb(spec, out_dir, th, img):
+    """Bold photo thumbnail: real photo on the right, fading into the dark background; huge number left."""
+    from PIL import ImageEnhance
+    tp = th["photo"]
+    ph = R.cover(R.load_photo(tp["file"]), 760, 720, tuple(tp.get("focus", (0.5, 0.35))))
+    ph = ImageEnhance.Contrast(ImageEnhance.Color(ph).enhance(1.25)).enhance(1.12).convert("RGBA")
+    fade = np.clip(np.linspace(-0.2, 1.6, 760), 0, 1)[None, :].repeat(720, 0)
+    ph.putalpha(Image.fromarray((fade * 255).astype(np.uint8), "L"))
+    img.alpha_composite(ph, (520, 0))
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, 1279, 719], outline=col(th.get("color", "gold")), width=14)
+    lx = 330
+    size = 230
+    while font(size, "Black").getlength(th["big"]) > 600 and size > 100:
+        size -= 10
+    text_c(d, (lx + 8, 250 + 8), th["big"], font(size, "Black"), (0, 0, 0, 160))
+    text_c(d, (lx, 250), th["big"], font(size, "Black"), col(th.get("color", "gold")), stroke=12, stroke_fill=(0, 0, 0, 255))
+    fsz = 80
+    while True:
+        lines = R._wrap(th["line"], font(fsz, "Black"), 600)
+        if len(lines) <= 2 or fsz <= 54:
+            break
+        fsz -= 6
+    for i, ln in enumerate(lines[:2]):
+        text_c(d, (lx, 430 + i * fsz * 1.08), ln, font(fsz, "Black"), col("text"), stroke=8, stroke_fill=(0, 0, 0, 255))
+    if th.get("tag"):
+        f = font(44, "Black")
+        tw = f.getlength(th["tag"]) + 56
+        rrect(d, [lx - tw / 2, 610, lx + tw / 2, 690], 20, fill=col(th.get("tag_color", "green")))
+        text_c(d, (lx, 650), th["tag"], f, col("bg0"))
+    img.convert("RGB").save(os.path.join(out_dir, spec["id"] + "_thumb.png"))
+
 def make_thumb(spec, out_dir):
     th = spec.get("thumbnail")
     if not th:
@@ -407,6 +475,8 @@ def make_thumb(spec, out_dir):
     img = Image.new("RGBA", (1280, 720))
     bg = background().resize((1440, 810)).crop((80, 45, 1360, 765))
     img.alpha_composite(bg)
+    if th.get("photo"):
+        return _photo_thumb(spec, out_dir, th, img)
     d = ImageDraw.Draw(img)
     text_c(d, (640, 300), th["big"], font(250, "Black"), col(th.get("color", "gold")),
            stroke=8, stroke_fill=(0, 0, 0, 255))

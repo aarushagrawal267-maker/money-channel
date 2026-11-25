@@ -51,6 +51,27 @@ def fit_tags(tags):
     return out
 
 
+def photo_credits(spec):
+    """One credit line per real photo used in the scenes or thumbnail (from assets/photos/<name>.json)."""
+    root = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+    files = [sc["visual"]["file"] for sc in spec.get("scenes", []) if sc["visual"].get("type") == "photo"]
+    tp = (spec.get("thumbnail") or {}).get("photo")
+    if tp:
+        files.append(tp["file"])
+    lines, seen = [], set()
+    for f in files:
+        if f in seen:
+            continue
+        seen.add(f)
+        try:
+            c = json.load(open(os.path.join(root, os.path.splitext(f)[0] + ".json")))
+        except FileNotFoundError:
+            sys.exit(f"Photo {f} has no credit file; fetch it with tools/fetch_photo.py")
+        lic = c["license"] + (f" ({c['license_url']})" if c.get("license_url") else "")
+        lines.append(f"- {c.get('title') or 'Photo'} by {c['creator']}, {lic}" + (f", {c['source_url']}" if c.get("source_url") else ""))
+    return lines
+
+
 def build_body(spec, chapters=None, privacy="private", publish_at=None):
     title = spec["title"].replace("<", "").replace(">", "")
     if len(title) > MAX_TITLE:
@@ -66,6 +87,9 @@ def build_body(spec, chapters=None, privacy="private", publish_at=None):
     if chapters:   # chapters right after the opening summary, where viewers (and search) see them
         first, _, rest = body.partition("\n\n")
         desc = first + "\n\nChapters\n" + chapters.strip() + ("\n\n" + rest if rest else "")
+    credits = photo_credits(spec)
+    if credits:
+        desc += "\n\nPhotos (used under their licenses):\n" + "\n".join(credits)
     desc += "\n\n" + AI_LINE + "\n\n" + SUBSCRIBE_LINE
     if hashtags:
         desc += "\n\n" + " ".join(hashtags)

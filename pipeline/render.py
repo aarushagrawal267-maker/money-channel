@@ -4,7 +4,7 @@ Usage: python3 render.py spec.json out_dir
 
 Spec: {"id", "voice", "speed", "badge", "disclaimer",
        "scenes": [{"say": "...", "visual": {"type": ..., ...}}]}
-Visual types: pair, compare, timeline, stat, bars, equation, line, cta.
+Visual types: pair, compare, timeline, stat, bars, equation, line, cta, photo.
 """
 import json, math, os, subprocess, sys
 import numpy as np
@@ -276,8 +276,77 @@ def v_cta(d, v, t, dur):
         rrect(d, [170, 1010, 910, 1110], 50, fill=col("green", 0.9 * a))
         text_c(d, (CX, 1060), v["sub"], font(40, "Bold"), col("bg0", a))
 
+
+# ---------------------------------------------------------------- real photos (assets/photos, see tools/fetch_photo.py)
+ROOT = os.path.normpath(os.path.join(HERE, ".."))
+_photo_cache = {}
+
+def load_photo(path):
+    if path not in _photo_cache:
+        _photo_cache[path] = Image.open(os.path.join(ROOT, path)).convert("RGB")
+    return _photo_cache[path]
+
+def photo_credit(path):
+    try:
+        return json.load(open(os.path.join(ROOT, os.path.splitext(path)[0] + ".json"))).get("short", "")
+    except (FileNotFoundError, ValueError):
+        return ""
+
+def cover(im, w, h, focus=(0.5, 0.4), zoom=1.0):
+    """Crop im to w:h around focus (fractions of width/height) and resize: like CSS object-fit: cover."""
+    iw, ih = im.size
+    if iw / ih > w / h:
+        cw, ch = ih * w / h, ih
+    else:
+        cw, ch = iw, iw * h / w
+    cw, ch = cw / zoom, ch / zoom
+    x0 = min(max(focus[0] * iw - cw / 2, 0), iw - cw)
+    y0 = min(max(focus[1] * ih - ch / 2, 0), ih - ch)
+    return im.resize((int(w), int(h)), Image.LANCZOS, box=(x0, y0, x0 + cw, y0 + ch))
+
+def photo_tile(path, w, h, focus=(0.5, 0.4), r=36):
+    key = (path, w, h, tuple(focus), r)
+    if key not in _photo_cache:
+        tile = cover(load_photo(path), w, h, focus).convert("RGBA")
+        mask = Image.new("L", (w, h), 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, w - 1, h - 1], r, fill=255)
+        tile.putalpha(mask)
+        _photo_cache[key] = tile
+    return _photo_cache[key]
+
+def paste_photo(d, path, box, a=1.0, focus=(0.5, 0.4), r=36, credit=True):
+    """Paste a rounded photo into the image behind ImageDraw d, fading with a; small credit in the corner."""
+    x0, y0, x1, y1 = [int(v) for v in box]
+    tile = photo_tile(path, x1 - x0, y1 - y0, focus, r)
+    if a < 0.999:
+        tile = tile.copy()
+        tile.putalpha(tile.getchannel("A").point(lambda p: int(p * a)))
+    d._image.alpha_composite(tile, (x0, y0))
+    d.rounded_rectangle([x0, y0, x1, y1], r, outline=col("text", 0.18 * a), width=3)
+    if credit:
+        c = photo_credit(path)
+        if c:
+            d.text((x1 - 16, y1 - 14), c, font=font(20, "Medium", False), fill=col("text", 0.85 * a),
+                   anchor="rb", stroke_width=3, stroke_fill=(0, 0, 0, int(200 * a)))
+
+def v_photo(d, v, t, dur):
+    """Real photo (person, company, product, place) with optional big number and label.
+    v: {"type": "photo", "file": "assets/photos/x.jpg", "title"?, "value"?, "color"?, "label"?, "focus"?: [fx, fy]}"""
+    scene_title(d, v.get("title"), t)
+    a = ease(t / 0.45)
+    w = 940
+    h = 600 if v.get("label") else 700
+    x, y = CX - w // 2, 480 + int(25 * (1 - a))
+    paste_photo(d, v["file"], (x, y, x + w, y + h), a, tuple(v.get("focus", (0.5, 0.4))))
+    if v.get("value"):
+        sc = 0.85 + 0.15 * a
+        text_c(d, (CX, y + h - 85), v["value"], font(int(150 * sc), "Black"), col(v.get("color", "gold"), a),
+               stroke=12, stroke_fill=(0, 0, 0, int(255 * a)))
+    if v.get("label"):
+        text_c(d, (CX, y + h + 50), v["label"], font(44, "SemiBold", False), col("text", a))
+
 VISUALS = dict(pair=v_pair, compare=v_compare, timeline=v_timeline, stat=v_stat,
-               bars=v_bars, equation=v_equation, line=v_line, cta=v_cta)
+               bars=v_bars, equation=v_equation, line=v_line, cta=v_cta, photo=v_photo)
 
 # ---------------------------------------------------------------- audio
 def speech_bounds(x, thr=0.02):
@@ -635,8 +704,53 @@ def _wrap(text, f, width):
             lines.append(cur); cur = w
     return lines + ([cur] if cur else [])
 
+def _photo_short_thumb(spec, out_dir, tp):
+    """Photo thumbnail: the real person/company full-bleed, dark gradient, huge outlined number, bold title."""
+    import numpy as np
+    img = cover(load_photo(tp["file"]), W, H, tuple(tp.get("focus", (0.5, 0.35)))).convert("RGBA")
+    from PIL import ImageEnhance
+    img = ImageEnhance.Contrast(ImageEnhance.Color(img.convert("RGB")).enhance(1.25)).enhance(1.1).convert("RGBA")
+    yy = np.linspace(0, 1, H)[:, None]
+    shade = np.clip(np.maximum(0, (yy - 0.30) / 0.45) * 0.88 + np.maximum(0, (0.16 - yy) / 0.16) * 0.55, 0, 0.9)
+    over = np.zeros((H, W, 4), np.uint8); over[..., 3] = (shade * 255).astype(np.uint8).repeat(W, 1)
+    over[..., :3] = (6, 10, 22)
+    img.alpha_composite(Image.fromarray(over, "RGBA"))
+    d = ImageDraw.Draw(img)
+    th = spec.get("thumbnail") or {}
+    line = th.get("line") or spec["title"]
+    big, color = _thumb_big(spec)
+    badge = spec.get("badge")
+    if badge:
+        f = font(46, "Black"); bw = f.getlength(badge) + 80
+        rrect(d, [CX - bw / 2, 425, CX + bw / 2, 515], 45, fill=col("green"))
+        text_c(d, (CX, 470), badge, f, col("bg0"))
+    y = 1000
+    if big:
+        size = 340
+        while font(size, "Black").getlength(big) > 980 and size > 120:
+            size -= 10
+        text_c(d, (CX + 8, y + 10), big, font(size, "Black"), (0, 0, 0, 150))          # drop shadow
+        text_c(d, (CX, y), big, font(size, "Black"), col(color), stroke=16, stroke_fill=(0, 0, 0, 255))
+        ty = y + size * 0.62
+    else:
+        ty = 950
+    for size in (96, 88, 80, 72, 66):
+        f = font(size, "Black")
+        lines = _wrap(line.upper(), f, 960)
+        if len(lines) <= 3:
+            break
+    for i, ln in enumerate(lines):
+        text_c(d, (CX, ty + i * size * 1.12), ln, f, col("gold") if i == 0 and len(lines) > 1 else col("text"),
+               stroke=9, stroke_fill=(0, 0, 0, 255))
+    path = os.path.join(out_dir, spec["id"] + "_thumb.png")
+    img.convert("RGB").save(path, optimize=True)
+    return path
+
 def make_short_thumb(spec, out_dir):
     """Vertical Shorts thumbnail: badge, big number, title. Kept inside y 380-1450 (clear of Shorts overlays)."""
+    tp = (spec.get("thumbnail") or {}).get("photo")
+    if tp:
+        return _photo_short_thumb(spec, out_dir, tp)
     img = make_background().copy()
     d = ImageDraw.Draw(img)
     th = spec.get("thumbnail") or {}
