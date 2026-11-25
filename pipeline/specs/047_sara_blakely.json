@@ -47,6 +47,17 @@
    "summary": "Sara Blakely a fondé Spanx en 2000 avec 5 000 dollars d'économies, après avoir vendu des fax en porte-à-porte. En 2021, Blackstone a pris la majorité en valorisant Spanx à 1,2 milliard de dollars. La leçon : tester une solution bon marché à un vrai problème."
   }
  },
+ "thumbnail": {
+  "big": "$1B",
+  "color": "green",
+  "photo": {
+   "file": "assets/photos/spanx_store.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Five thousand dollars in savings. Twelve years later, Forbes said: billionaire. How?",
@@ -68,10 +79,14 @@
   {
    "say": "She'd sold fax machines door to door for seven years.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/fax_machine_generic.jpg",
+    "focus": [
+     0.5,
+     0.45
+    ],
     "value": "7 years",
     "label": "selling fax machines door to door",
-    "sub": "before Spanx · CNBC, Fortune",
     "color": "gold"
    }
   },
@@ -139,11 +154,14 @@
   {
    "say": "By twenty twelve, Forbes called her a billionaire.",
    "visual": {
-    "type": "stat",
-    "value": "$1B",
-    "label": "youngest self-made woman billionaire",
-    "sub": "Forbes, 2012 · age 41",
-    "color": "green"
+    "type": "photo",
+    "file": "assets/photos/sara_blakely_2012.jpg",
+    "focus": [
+     0.5,
+     0.3
+    ],
+    "title": "$1B · Forbes, 2012 · age 41",
+    "label": "youngest self-made woman billionaire"
    }
   },
   {
@@ -173,10 +191,14 @@
   {
    "say": "In twenty twenty-one, Blackstone bought control, valuing Spanx at one point two billion.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/spanx_store.jpg",
+    "focus": [
+     0.55,
+     0.4
+    ],
     "value": "$1.2B",
-    "label": "Blackstone majority deal",
-    "sub": "2021 · Blakely kept a stake · Reuters",
+    "label": "Blackstone majority deal, 2021",
     "color": "gold"
    }
   },

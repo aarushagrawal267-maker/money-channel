@@ -44,15 +44,30 @@
    "summary": "Forbes estimait sa fortune à 250 millions de dollars en 1982, à 52 ans ; environ 154 milliards en novembre 2026. Voici les maths des intérêts composés dans la durée."
   }
  },
+ "thumbnail": {
+  "big": "99%+",
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/warren_buffett_student_visit.jpg",
+   "focus": [
+    0.64,
+    0.3
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "More than ninety-nine percent of Warren Buffett's fortune came after he turned fifty-two.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/warren_buffett_student_visit.jpg",
     "value": "99%+",
     "label": "of his fortune came after age 52",
-    "sub": "Forbes estimates, 1982 vs Nov 2026",
-    "color": "gold"
+    "color": "gold",
+    "focus": [
+     0.62,
+     0.35
+    ]
    }
   },
   {
@@ -233,24 +248,13 @@
   {
    "say": "His returns were exceptional, and nobody can count on them. The real lesson is time: start early, and give compounding decades to work.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/berkshire_shareholders_sign.jpg",
     "title": "The lesson",
-    "lines": [
-     {
-      "text": "Not his returns.",
-      "color": "muted",
-      "size": 76
-     },
-     {
-      "text": "His time.",
-      "color": "gold",
-      "size": 120
-     },
-     {
-      "text": "Start early. Stay in.",
-      "color": "text",
-      "size": 64
-     }
+    "label": "Not his returns. His time.",
+    "focus": [
+     0.5,
+     0.55
     ]
    }
   },

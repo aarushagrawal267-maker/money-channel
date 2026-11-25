@@ -44,6 +44,15 @@
    "summary": "Selon FICO, le score se compose ainsi : historique de paiement 35 %, montants dus 30 %, ancienneté 15 %, nouveaux crédits 10 % et diversité des crédits 10 %."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/credit_cards_fanned.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "One habit makes up thirty-five percent of your credit score. Guess which.",
@@ -87,18 +96,16 @@
   {
    "say": "The answer: paying every bill on time. Autopay helps.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/bill_due_dates_planner.jpg",
+    "focus": [
+     0.55,
+     0.5
+    ],
     "title": "Payment history · 35%",
-    "left": {
-     "label": "On time",
-     "sub": "every bill",
-     "color": "green"
-    },
-    "right": {
-     "label": "Late",
-     "sub": "hurts most",
-     "color": "red"
-    }
+    "value": "On time",
+    "label": "every bill · autopay helps",
+    "color": "green"
    }
   },
   {
@@ -150,18 +157,16 @@
   {
    "say": "Checking your own score doesn't lower it. Just don't open many cards at once.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/check_credit_report_tiles.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
     "title": "Quick rules",
-    "left": {
-     "label": "Check",
-     "sub": "your own score",
-     "color": "green"
-    },
-    "right": {
-     "label": "Apply",
-     "sub": "few at a time",
-     "color": "red"
-    }
+    "value": "Check: OK",
+    "label": "don't apply for many cards at once",
+    "color": "green"
    }
   },
   {

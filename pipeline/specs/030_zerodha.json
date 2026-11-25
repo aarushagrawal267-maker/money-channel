@@ -44,6 +44,15 @@
    "summary": "Le courtier indien Zerodha ne facture aucun courtage pour acheter et garder des actions, mais a gagné environ ₹43 milliards sur l'année à mars 2026. Les traders, les intérêts et les prêts paient."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/bse_building_mumbai.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Zerodha, one of India's biggest stockbrokers, charges zero brokerage when you buy shares to keep. Yet in its latest financial year, it made about forty-three billion rupees in profit.",
@@ -95,19 +104,15 @@
   {
    "say": "It also lends traders money to buy shares. These margin loans are now about a tenth of its revenue.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/bse_building_mumbai.jpg",
     "title": "Third money maker",
-    "lines": [
-     {
-      "text": "Margin loans",
-      "color": "text",
-      "size": 100
-     },
-     {
-      "text": "≈ 10% of revenue",
-      "color": "gold",
-      "size": 84
-     }
+    "value": "≈10%",
+    "color": "gold",
+    "label": "of revenue: margin loans to traders",
+    "focus": [
+     0.45,
+     0.62
     ]
    }
   },
@@ -124,18 +129,13 @@
   {
    "say": "So investing can cost very little. Most of the bill is paid by people who trade a lot.",
    "visual": {
-    "type": "equation",
-    "lines": [
-     {
-      "text": "Investing: cheap",
-      "color": "green",
-      "size": 100
-     },
-     {
-      "text": "Trading: paid",
-      "color": "gold",
-      "size": 100
-     }
+    "type": "photo",
+    "file": "assets/photos/dalal_street_mumbai.jpg",
+    "title": "Dalal Street, Mumbai",
+    "label": "Investing: cheap · Trading: paid",
+    "focus": [
+     0.5,
+     0.55
     ]
    }
   },

@@ -47,6 +47,15 @@
    "summary": "En 1981, Sudha Murty a donné 10 000 roupies à son mari, Narayana Murthy, pour fonder Infosys avec six autres ingénieurs. Aujourd'hui, 20,2 milliards de dollars de revenus par an. L'histoire, revers compris."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/infosys_pyramid_bangalore.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Ten thousand rupees, nineteen eighty-one. Now twenty billion dollars a year. How?",
@@ -124,21 +133,15 @@
   {
    "say": "By nineteen ninety-nine, it was the first India-registered company on Nasdaq.",
    "visual": {
-    "type": "timeline",
+    "type": "photo",
+    "file": "assets/photos/nasdaq_marketsite_wall.jpg",
     "title": "Slow, then fast",
-    "start": 1980,
-    "end": 2010,
-    "rows": [
-     {
-      "label": "Listed in India",
-      "from": 1993,
-      "color": "gold"
-     },
-     {
-      "label": "Listed on Nasdaq",
-      "from": 1999,
-      "color": "green"
-     }
+    "value": "1999",
+    "color": "green",
+    "label": "first India-registered company on Nasdaq",
+    "focus": [
+     0.5,
+     0.4
     ]
    }
   },
@@ -169,18 +172,16 @@
   {
    "say": "The lesson: you can start small. Infosis took twelve years to go public.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/infosys_pyramid_bangalore.jpg",
     "title": "The lesson",
-    "left": {
-     "label": "Start small",
-     "sub": "₹10,000",
-     "color": "gold"
-    },
-    "right": {
-     "label": "Stay long",
-     "sub": "12 years to the IPO",
-     "color": "green"
-    }
+    "value": "12 years",
+    "color": "gold",
+    "label": "from ₹10,000 to the IPO · Infosys, Bangalore",
+    "focus": [
+     0.55,
+     0.4
+    ]
    }
   },
   {

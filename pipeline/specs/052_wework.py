@@ -79,11 +79,13 @@ spec = {
         "fr": {"title": "WeWork : de 47 milliards de dollars à la faillite",
                "summary": "En 2019, WeWork était valorisée 47 milliards de dollars ; en 2023, elle s'est placée sous le Chapter 11. Elle perdait plus qu'elle ne gagnait et avait signé 47,2 milliards de loyers futurs. La leçon : une valorisation n'est pas un profit."},
     },
+    "thumbnail": {"big": f"${VALUATION_2019 / 1e9:.0f}B", "color": "gold",
+                  "photo": {"file": "assets/photos/wework_miami_sign.jpg", "focus": [0.5, 0.3]}},
     "scenes": [
         # hook: the big number on frame 0 + open loop ("why?")
         {"say": "Forty-seven billion dollars in twenty nineteen. Bankrupt by twenty twenty-three. Why?",
-         "visual": {"type": "stat", "value": f"${VALUATION_2019 / 1e9:.0f}B", "label": "WeWork's valuation",
-                    "sub": f"Jan {VALUATION_YEAR} · private funding round", "color": "gold"}},
+         "visual": {"type": "photo", "file": "assets/photos/wework_miami_sign.jpg", "focus": [0.5, 0.35],
+                    "value": f"${VALUATION_2019 / 1e9:.0f}B", "label": f"WeWork's valuation, Jan {VALUATION_YEAR}", "color": "gold"}},
         {"say": "It signed long office leases, then rented desks on shorter deals.",
          "visual": {"type": "pair", "title": "The business model",
                     "left": {"label": "Leases", "sub": f"~{US_LEASE_YEARS} years (US)", "color": "red"},
@@ -98,8 +100,8 @@ spec = {
                               {"text": f"${loss_per_dollar:.2f} lost", "color": "red", "size": 130}]}},
         # mid-video re-hook: opens a second loop (the same number, on the other side)
         {"say": "Now the twist: its future rent bill was also about forty-seven billion.",
-         "visual": {"type": "stat", "value": f"${LEASE_OBLIGATIONS / 1e9:.1f}B", "label": "future lease payments (undiscounted)",
-                    "sub": "as of June 30, 2019 · IPO filing", "color": "red"}},
+         "visual": {"type": "photo", "file": "assets/photos/wework_empty_floor_sf.jpg", "focus": [0.5, 0.45],
+                    "value": f"${LEASE_OBLIGATIONS / 1e9:.1f}B", "label": "future lease payments (June 2019)", "color": "red"}},
         {"say": "After the filing showed huge losses, the I-P-O was pulled.",
          "visual": {"type": "pair", "title": f"Sept {IPO_PULLED_YEAR}",
                     "left": {"label": "IPO", "sub": "planned", "color": "slate"},
@@ -113,9 +115,8 @@ spec = {
                     "left": {"label": "Assets", "value": ASSETS_2023, "color": "slate"},
                     "right": {"label": "Liabilities", "value": LIABILITIES_2023, "color": "red"}}},
         {"say": "The lesson: a valuation is an opinion. Profit and cash are facts.",
-         "visual": {"type": "equation", "title": "The lesson",
-                    "lines": [{"text": "Valuation = opinion", "color": "muted", "size": 90},
-                              {"text": "Profit + cash = facts", "color": "gold", "size": 90}]}},
+         "visual": {"type": "photo", "file": "assets/photos/wework_coworking_vancouver.jpg", "focus": [0.5, 0.5],
+                    "title": "Valuation = opinion", "label": "Profit + cash = facts"}},
         # loop line: runs back into "Forty-seven billion dollars in twenty nineteen..."
         {"say": "Forget that, and you go from...",
          "visual": {"type": "cta", "lines": ["Valuation", "≠ profit."],

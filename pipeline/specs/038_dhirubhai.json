@@ -43,6 +43,15 @@
    "summary": "À 17 ans, il part travailler à Aden, au Yémen, puis fonde Reliance, qui réalise aujourd'hui environ 124 milliards de dollars de revenus par an. Son histoire, éloges et critiques compris."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/dhirubhai_ambani_nail_art.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Over eleven lakh crore rupees a year. Its founder started in Yemen.",
@@ -71,18 +80,14 @@
   {
    "say": "At seventeen, Dhirubhai Ambani left India for Aden, in today's Yemen.",
    "visual": {
-    "type": "pair",
-    "title": "Age 17",
-    "left": {
-     "label": "India",
-     "sub": "leaves home",
-     "color": "green"
-    },
-    "right": {
-     "label": "Aden",
-     "sub": "today's Yemen",
-     "color": "gold"
-    }
+    "type": "photo",
+    "file": "assets/photos/dhirubhai_ambani_nail_art.jpg",
+    "title": "Dhirubhai Ambani",
+    "label": "Age 17: leaves India for Aden, today's Yemen",
+    "focus": [
+     0.5,
+     0.45
+    ]
    }
   },
   {
@@ -112,21 +117,15 @@
   {
    "say": "Back in Mumbai, he traded yarn and spices. At forty-four, he took Reliance public.",
    "visual": {
-    "type": "timeline",
-    "title": "A slow build",
-    "start": 15,
-    "end": 70,
-    "rows": [
-     {
-      "label": "Working",
-      "from": 17,
-      "color": "green"
-     },
-     {
-      "label": "Listed company",
-      "from": 44,
-      "color": "gold"
-     }
+    "type": "photo",
+    "file": "assets/photos/bse_building_mumbai.jpg",
+    "title": "Back in Mumbai",
+    "value": "Age 44",
+    "color": "gold",
+    "label": "takes Reliance public (1977) · BSE today",
+    "focus": [
+     0.45,
+     0.35
     ]
    }
   },

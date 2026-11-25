@@ -74,6 +74,7 @@ spec = {
                "summary": "Selon FICO, le score se compose ainsi : historique de paiement 35 %, montants dus 30 %, "
                           "ancienneté 15 %, nouveaux crédits 10 % et diversité des crédits 10 %."},
     },
+    "thumbnail": {"photo": {"file": "assets/photos/credit_cards_fanned.jpg", "focus": [0.55, 0.5]}},
     "scenes": [
         # hook: the key number on frame 0 + open loop ("guess which")
         {"say": "One habit makes up thirty-five percent of your credit score. Guess which.",
@@ -85,9 +86,9 @@ spec = {
                               for (k, v), c in zip(list(FACTORS.items())[:3], ["gold", "green", "text"])]
                              + [{"text": f"New credit, mix  {FACTORS['New credit']}% each", "color": "muted", "size": 60}]}},
         {"say": "The answer: paying every bill on time. Autopay helps.",
-         "visual": {"type": "pair", "title": "Payment history · 35%",
-                    "left": {"label": "On time", "sub": "every bill", "color": "green"},
-                    "right": {"label": "Late", "sub": "hurts most", "color": "red"}}},
+         "visual": {"type": "photo", "file": "assets/photos/bill_due_dates_planner.jpg", "focus": [0.55, 0.5],
+                    "title": "Payment history · 35%", "value": "On time", "label": "every bill · autopay helps",
+                    "color": "green"}},
         {"say": "Second, thirty percent: amounts owed, like how much of your limits you use.",
          "visual": {"type": "stat", "value": f"{FACTORS['Amounts owed']}%", "label": "amounts owed",
                     "sub": "incl. how much of your card limits you use", "color": "green"}},
@@ -101,9 +102,9 @@ spec = {
                     "lines": [{"text": "Feels risky.", "color": "text", "size": 110},
                               {"text": "Doesn't hurt.", "color": "green", "size": 110}]}},
         {"say": "Checking your own score doesn't lower it. Just don't open many cards at once.",
-         "visual": {"type": "pair", "title": "Quick rules",
-                    "left": {"label": "Check", "sub": "your own score", "color": "green"},
-                    "right": {"label": "Apply", "sub": "few at a time", "color": "red"}}},
+         "visual": {"type": "photo", "file": "assets/photos/check_credit_report_tiles.jpg", "focus": [0.5, 0.5],
+                    "title": "Quick rules", "value": "Check: OK", "label": "don't apply for many cards at once",
+                    "color": "green"}},
         {"say": "Focus on those two: together, almost two-thirds of your score.",
          "visual": {"type": "stat", "value": "65%", "label": "on-time payments + low balances",
                     "sub": "35% + 30%", "color": "green"}},

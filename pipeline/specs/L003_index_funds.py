@@ -305,7 +305,7 @@ scene("But the idea grew into an industry. By the end of 2025, US index mutual f
       label="in US index mutual funds and ETFs", sub="year-end 2025 · Investment Company Institute")
 scene("Then came Warren Buffett. In 2007, he made a one million dollar bet, for charity, "
       "that a plain S and P five hundred index fund would beat hedge fund experts over the next ten years.",
-      type="photo", title="Buffett's bet", file="assets/photos/warren_buffett_2010s.jpg", layout="side",
+      type="photo", title="Buffett's bet", file="assets/photos/warren_buffett_2010_cropped.jpg", layout="side",
       focus=[0.3, 0.4], value="$1M", color="gold", label="for charity, 10 years: 2008 to 2017",
       sub="one S&P 500 index fund vs hedge fund experts")
 scene("His opponent, Protégé Partners, picked five funds of funds. Together, they owned stakes in more than "

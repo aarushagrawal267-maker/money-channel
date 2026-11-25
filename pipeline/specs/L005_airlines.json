@@ -12,7 +12,14 @@
   "big": "$4.50",
   "line": "PROFIT PER PASSENGER",
   "tag": "SO WHAT PAYS?",
-  "color": "gold"
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/american_airlines_777_cabin.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  }
  },
  "description": "The world's airlines are expected to earn about $4.50 of net profit per passenger in 2026, a 2% margin, and the industry has never had a net margin above 5%. So what actually pays? Credit card miles, bag fees, premium cabins and cargo. We break down the economics of flying, the 2020 losses, United's $21.9 billion loyalty program, Warren Buffett's airline warning, and what it means for your miles.\n\nThe per-flight example (180 seats, 84% full) and the miles/card examples are simple illustrations, not airline data. 2025 industry figures are IATA estimates; 2026 figures are IATA forecasts.\n\nSources:\n- IATA, industry outlook press release (7 June 2026): https://www.iata.org/en/pressroom/2026-releases/06-07-middle-east-disruptions-high-fuel-prices-halve-airline-industry-profitability/\n- IATA, Industry Statistics fact sheet (June 2026): https://www.iata.org/en/iata-repository/pressroom/fact-sheets/industry-statistics/\n- IATA, Chart of the Week, Profits and Margins to Shrink in 2026 (19 June 2026)\n- US Bureau of Transportation Statistics, US Airlines gained $6.0 billion in 2025 (May 12, 2026): https://www.bts.gov/newsroom\n- Delta Air Lines, December quarter and full-year 2025 results (Jan 13, 2026): https://ir.delta.com\n- American Airlines Group, 2025 Form 10-K and Q4 2025 earnings release (Jan 27, 2026): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000006201\n- United Airlines Holdings, Form 8-K and MileagePlus investor presentation (June 15, 2020): https://www.sec.gov/Archives/edgar/data/100517/000110465920073190/tm2022354d3_8k.htm\n- United, Completion of MileagePlus Senior Secured Notes Offering (July 2, 2020): https://united.mediaroom.com/2020-07-02-United-Announces-Completion-of-MileagePlus-Senior-Secured-Notes-Offering\n- Berkshire Hathaway 2007 shareholder letter: https://www.berkshirehathaway.com/letters/2007ltr.pdf\n\nFor education only. Not financial advice.\n\n#airlines #businessbreakdown #frequentflyer #creditcards #personalfinance",
  "tags": [
@@ -295,25 +302,18 @@
   {
    "say": "Here's a rough example using those industry averages. Take a plane with one hundred and eighty seats, eighty-four percent full. That's about a hundred and fifty-one passengers.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
     "title": "One flight (illustration)",
-    "lines": [
-     {
-      "text": "180 seats × 84% full",
-      "color": "muted",
-      "size": 90
-     },
-     {
-      "text": "↓",
-      "color": "dim",
-      "size": 80
-     },
-     {
-      "text": "≈ 151 passengers",
-      "color": "text",
-      "size": 120
-     }
-    ]
+    "file": "assets/photos/american_airlines_777_cabin.jpg",
+    "layout": "side",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "value": "≈ 151",
+    "color": "text",
+    "label": "passengers",
+    "sub": "180 seats × 84% full"
    }
   },
   {
@@ -389,15 +389,17 @@
   {
    "say": "Why is this business so tough? An empty seat can't be saved for later. Once the door closes, it's worth nothing. Most costs are fixed. Rivals can add seats on your route fast. And shocks hit everyone at once.",
    "visual": {
-    "type": "bullets",
+    "type": "photo",
     "title": "Four reasons flying barely pays",
+    "file": "assets/photos/delta_jets_at_gate_amsterdam.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "value": "4 reasons",
     "color": "red",
-    "items": [
-     "Empty seats expire at take-off",
-     "Most costs are fixed",
-     "Rivals add seats fast",
-     "Shocks hit everyone at once"
-    ]
+    "label": "Empty seats expire · fixed costs · rivals add seats · shocks hit all"
    }
   },
   {
@@ -539,25 +541,18 @@
   {
    "say": "So where does the real money come from? Start with miles. Airlines sell miles to banks. Banks hand them to you as credit card rewards. And you redeem them for a seat, later.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
     "title": "How the miles machine works",
-    "lines": [
-     {
-      "text": "Airline sells miles to a bank",
-      "color": "text",
-      "size": 76
-     },
-     {
-      "text": "Bank gives them to you",
-      "color": "gold",
-      "size": 76
-     },
-     {
-      "text": "You claim a seat later",
-      "color": "green",
-      "size": 76
-     }
-    ]
+    "file": "assets/photos/american_airlines_737_at_gate.jpg",
+    "layout": "side",
+    "focus": [
+     0.45,
+     0.5
+    ],
+    "value": "Miles",
+    "color": "gold",
+    "label": "Airline sells miles to a bank. Bank gives them to you.",
+    "sub": "You claim a seat later"
    }
   },
   {
@@ -585,21 +580,18 @@
   {
    "say": "At Delta, American Express alone paid eight point two billion dollars last year. That's more than Delta's entire pre-tax profit of six point two billion.",
    "visual": {
-    "type": "versus",
+    "type": "photo",
     "title": "Delta, 2025",
-    "left": {
-     "label": "Paid by American Express",
-     "value": "$8.2B",
-     "sub": "card partnership",
-     "color": "gold"
-    },
-    "right": {
-     "label": "Delta's pre-tax profit",
-     "value": "$6.2B",
-     "sub": "the whole airline",
-     "color": "blue"
-    },
-    "verdict": "The card deal beats the whole airline's profit"
+    "file": "assets/photos/delta_a350_in_flight.jpg",
+    "layout": "side",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "value": "$8.2B",
+    "color": "gold",
+    "label": "paid to Delta by American Express",
+    "sub": "more than Delta's entire pre-tax profit of $6.2B"
    }
   },
   {
@@ -707,11 +699,17 @@
   {
    "say": "Next, fees. In twenty twenty-five, US airlines collected seven point four billion dollars in baggage fees, according to the US Bureau of Transportation Statistics.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/airport_baggage_claim_suitcases.jpg",
+    "layout": "side",
+    "focus": [
+     0.6,
+     0.6
+    ],
     "value": "$7.4B",
     "label": "US airline baggage fees, 2025",
-    "sub": "US Bureau of Transportation Statistics, May 2026",
-    "color": "gold"
+    "color": "gold",
+    "sub": "US Bureau of Transportation Statistics, May 2026"
    }
   },
   {
@@ -814,13 +812,17 @@
   {
    "say": "Why chase premium flyers? They tend to care more about comfort and flexibility than price. And they're often the most loyal members, the ones with the airline's credit card.",
    "visual": {
-    "type": "bullets",
+    "type": "photo",
     "title": "Why airlines chase the front cabin",
-    "items": [
-     "Less focused on price",
-     "Pay for comfort & flexibility",
-     "Often the most loyal members"
-    ]
+    "file": "assets/photos/premium_cabin_first_class.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.55
+    ],
+    "value": "Premium",
+    "color": "gold",
+    "label": "Less price-focused · pay for comfort · often the most loyal"
    }
   },
   {
@@ -895,11 +897,17 @@
   {
    "say": "Warren Buffett put it bluntly. In his letter to shareholders for twenty oh seven, he wrote that the worst sort of business is one that grows rapidly, requires significant capital to engender the growth, and then earns little or no money. Think airlines.",
    "visual": {
-    "type": "quote",
-    "text": "\"The worst sort of business ...\nThink airlines.\"",
-    "first_color": "text",
+    "type": "photo",
+    "file": "assets/photos/warren_buffett_2010_cropped.jpg",
+    "layout": "side",
+    "focus": [
+     0.3,
+     0.4
+    ],
+    "value": "\"Think airlines.\"",
     "color": "gold",
-    "source": "Warren Buffett, Berkshire Hathaway 2007 letter"
+    "label": "\"The worst sort of business\" grows fast, needs capital, earns little",
+    "sub": "Warren Buffett, Berkshire Hathaway 2007 letter"
    }
   },
   {

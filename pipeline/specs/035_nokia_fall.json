@@ -44,14 +44,29 @@
    "summary": "En 2007, Nokia vendait environ 4 téléphones sur 10 dans le monde. En 2013, son activité mobile a été vendue à Microsoft pour 5,44 milliards d'euros. Pourquoi le succès peut ralentir le changement."
   }
  },
+ "thumbnail": {
+  "big": "40%",
+  "color": "blue",
+  "photo": {
+   "file": "assets/photos/nokia_classic_phones.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Nokia once sold four in every ten phones. So what went wrong?",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/nokia_classic_phones.jpg",
+    "focus": [
+     0.5,
+     0.35
+    ],
     "value": "40%",
-    "label": "of phones sold were Nokias",
-    "sub": "end of 2007 · Nokia's own estimate",
+    "label": "of phones sold were Nokias (end of 2007)",
     "color": "blue"
    }
   },
@@ -75,25 +90,14 @@
   {
    "say": "By twenty eleven, its boss admitted: we fell behind, we missed big trends.",
    "visual": {
-    "type": "equation",
-    "title": "Nokia CEO memo, 2011",
-    "lines": [
-     {
-      "text": "“We fell behind,",
-      "color": "text",
-      "size": 84
-     },
-     {
-      "text": "we missed big trends,",
-      "color": "text",
-      "size": 84
-     },
-     {
-      "text": "and we lost time.”",
-      "color": "gold",
-      "size": 84
-     }
-    ]
+    "type": "photo",
+    "file": "assets/photos/stephen_elop.jpg",
+    "focus": [
+     0.4,
+     0.3
+    ],
+    "title": "Nokia CEO Stephen Elop, memo, 2011",
+    "label": "“We fell behind, we missed big trends”"
    }
   },
   {
@@ -160,10 +164,14 @@
   {
    "say": "Two years later, Microsoft wrote off seven point six billion dollars.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/nokia_lumia_microsoft.jpg",
+    "focus": [
+     0.5,
+     0.45
+    ],
     "value": "$7.6B",
-    "label": "written off by Microsoft",
-    "sub": "July 2015 · tied to the Nokia phone deal",
+    "label": "written off by Microsoft, July 2015",
     "color": "red"
    }
   },

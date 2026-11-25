@@ -43,14 +43,30 @@
    "summary": "La Fed a relevé son taux à 3,75 %-4 % en septembre 2026. Sur un prêt variable de 300 000 $ sur 30 ans, passer de 6 % à 6,25 % augmente la mensualité d'environ 48,50 $."
   }
  },
+ "thumbnail": {
+  "big": "3.75%",
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/federal_reserve_building_blue_sky.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "One decision in Washington can change your loan payment. The Fed's target rate is now three and three quarters to four percent, after a quarter point rise in September.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/federal_reserve_building.jpg",
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "title": "The Federal Reserve",
     "value": "3.75%",
     "label": "to 4%: the Fed's target range",
-    "sub": "raised Sept 16, 2026 · held Oct 28, 2026",
     "color": "gold"
    }
   },
@@ -98,18 +114,16 @@
   {
    "say": "A fixed rate loan you already have? No change.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/suburban_houses_texas.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
     "title": "Loans you already have",
-    "left": {
-     "label": "Fixed",
-     "sub": "payment stays",
-     "color": "green"
-    },
-    "right": {
-     "label": "Variable",
-     "sub": "payment moves",
-     "color": "red"
-    }
+    "value": "No change",
+    "label": "on a fixed-rate loan",
+    "color": "green"
    }
   },
   {

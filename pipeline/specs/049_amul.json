@@ -48,15 +48,30 @@
    "summary": "Amul est une coopérative de 3,6 millions d'éleveurs laitiers en Inde. Selon Amul, ils touchent environ 80 roupies sur 100, et pourtant la marque vend plus de 10 milliards de dollars par an."
   }
  },
+ "thumbnail": {
+  "big": "₹80–85",
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/amul_butter_pack.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Ah-mool says of every hundred rupees you spend, about eighty reach farmers.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/amul_butter_pack.jpg",
     "value": "₹80–85",
-    "label": "of every ₹100 goes to farmers",
-    "sub": "Amul's own claim (GCMMF AGM speech)",
-    "color": "gold"
+    "label": "of every ₹100 goes to farmers (Amul's claim)",
+    "color": "gold",
+    "focus": [
+     0.5,
+     0.4
+    ]
    }
   },
   {
@@ -140,24 +155,15 @@
   {
    "say": "Yet Ah-mool brand sales topped one lakh crore rupees: over ten billion dollars.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/amul_billboard.jpg",
     "title": "Amul brand sales, FY2025-26",
-    "lines": [
-     {
-      "text": "₹1 lakh crore+",
-      "color": "green",
-      "size": 110
-     },
-     {
-      "text": "≈ $10.7 billion",
-      "color": "text",
-      "size": 72
-     },
-     {
-      "text": "source: GCMMF, April 2026",
-      "color": "muted",
-      "size": 44
-     }
+    "value": "$10B+",
+    "color": "green",
+    "label": "₹1 lakh crore+ (≈ $10.7B) · GCMMF, April 2026",
+    "focus": [
+     0.45,
+     0.4
     ]
    }
   },

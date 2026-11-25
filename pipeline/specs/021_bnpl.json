@@ -45,6 +45,17 @@
    "summary": "Payer $200 en 4 fois $50 sans intérêts semble gratuit, mais les prêteurs gagnent surtout sur le commerçant : environ 3 % par vente, selon la CFPB. Certains facturent aussi des frais de retard, et le risque discret est de cumuler plusieurs paiements à la fois."
   }
  },
+ "thumbnail": {
+  "big": "3%",
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/online_shopping_phone_cart.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Split two hundred dollars into four payments of fifty, with no interest. So how does the lender make money?",
@@ -90,10 +101,14 @@
   {
    "say": "Stores pay because it helps them sell. In a LendingTree survey, sixty-eight percent of users said BNPL makes them overspend.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/online_shopping_phone_cart.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
     "value": "68%",
     "label": "of users say BNPL makes them overspend",
-    "sub": "LendingTree survey · March 2026",
     "color": "gold"
    }
   },
@@ -125,10 +140,15 @@
   {
    "say": "Then there's stacking. The CFPB found about six in ten borrowers had several loans open at once. Small payments add up fast.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/bill_due_dates_planner.jpg",
+    "focus": [
+     0.55,
+     0.5
+    ],
+    "title": "Stacking",
     "value": "6 in 10",
     "label": "had several BNPL loans at once",
-    "sub": "CFPB, Jan 2025 · 2022 data",
     "color": "red"
    }
   },

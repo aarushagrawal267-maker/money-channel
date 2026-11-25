@@ -44,6 +44,15 @@
    "summary": "Kodak a construit un appareil photo numérique en 1975, mais la pellicule payait les factures. En 2012, Kodak s'est placé sous la protection du Chapter 11. Pourquoi les profits d'aujourd'hui peuvent freiner l'avenir."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/kodak_tower_rochester_tall.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "In nineteen seventy-five, Kodak built a digital camera. Why did Kodak lose?",
@@ -82,18 +91,14 @@
   {
    "say": "It never went into production. Film still paid the bills.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/kodak_film_shop.jpg",
+    "focus": [
+     0.3,
+     0.35
+    ],
     "title": "Kodak's choice",
-    "left": {
-     "label": "Digital",
-     "sub": "a prototype",
-     "color": "slate"
-    },
-    "right": {
-     "label": "Film",
-     "sub": "the cash machine",
-     "color": "gold"
-    }
+    "label": "Film: the cash machine"
    }
   },
   {
@@ -128,10 +133,14 @@
   {
    "say": "By two thousand five, it was America's top digital camera seller.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/kodak_easyshare_camera.jpg",
+    "focus": [
+     0.45,
+     0.4
+    ],
     "value": "No. 1",
     "label": "US digital camera seller, 2005",
-    "sub": "24.9% share · IDC, via AP",
     "color": "green"
    }
   },
@@ -175,20 +184,14 @@
   {
    "say": "Weeks later, it announced an exit from digital cameras.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/kodak_tower_rochester.jpg",
+    "focus": [
+     0.3,
+     0.4
+    ],
     "title": "Feb 9, 2012",
-    "lines": [
-     {
-      "text": "Kodak phases out",
-      "color": "text",
-      "size": 96
-     },
-     {
-      "text": "its digital cameras",
-      "color": "red",
-      "size": 96
-     }
-    ]
+    "label": "Kodak phases out its digital cameras"
    }
   },
   {

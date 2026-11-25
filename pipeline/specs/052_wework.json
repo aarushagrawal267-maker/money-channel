@@ -44,14 +44,29 @@
    "summary": "En 2019, WeWork était valorisée 47 milliards de dollars ; en 2023, elle s'est placée sous le Chapter 11. Elle perdait plus qu'elle ne gagnait et avait signé 47,2 milliards de loyers futurs. La leçon : une valorisation n'est pas un profit."
   }
  },
+ "thumbnail": {
+  "big": "$47B",
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/wework_miami_sign.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Forty-seven billion dollars in twenty nineteen. Bankrupt by twenty twenty-three. Why?",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/wework_miami_sign.jpg",
+    "focus": [
+     0.5,
+     0.35
+    ],
     "value": "$47B",
-    "label": "WeWork's valuation",
-    "sub": "Jan 2019 · private funding round",
+    "label": "WeWork's valuation, Jan 2019",
     "color": "gold"
    }
   },
@@ -111,10 +126,14 @@
   {
    "say": "Now the twist: its future rent bill was also about forty-seven billion.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/wework_empty_floor_sf.jpg",
+    "focus": [
+     0.5,
+     0.45
+    ],
     "value": "$47.2B",
-    "label": "future lease payments (undiscounted)",
-    "sub": "as of June 30, 2019 · IPO filing",
+    "label": "future lease payments (June 2019)",
     "color": "red"
    }
   },
@@ -175,20 +194,14 @@
   {
    "say": "The lesson: a valuation is an opinion. Profit and cash are facts.",
    "visual": {
-    "type": "equation",
-    "title": "The lesson",
-    "lines": [
-     {
-      "text": "Valuation = opinion",
-      "color": "muted",
-      "size": 90
-     },
-     {
-      "text": "Profit + cash = facts",
-      "color": "gold",
-      "size": 90
-     }
-    ]
+    "type": "photo",
+    "file": "assets/photos/wework_coworking_vancouver.jpg",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "title": "Valuation = opinion",
+    "label": "Profit + cash = facts"
    }
   },
   {

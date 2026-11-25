@@ -185,10 +185,9 @@ scene("And it's not because planes fly empty. This year, airlines are expected t
       rows=[{"label": "Global airlines, 2026 forecast", "share": LF_26, "color": "green", "dp": 0}],
       note="Source: IATA, June 2026")
 scene("Here's a rough example using those industry averages. Take a plane with one hundred and eighty seats, eighty-four percent full. That's about a hundred and fifty-one passengers.",
-      type="equation", title="One flight (illustration)",
-      lines=[{"text": "180 seats × 84% full", "color": "muted", "size": 90},
-             {"text": "↓", "color": "dim", "size": 80},
-             {"text": f"≈ {pax} passengers", "color": "text", "size": 120}])
+      type="photo", title="One flight (illustration)", file="assets/photos/american_airlines_777_cabin.jpg",
+      layout="side", focus=[0.5, 0.5], value=f"≈ {pax}", color="text", label="passengers",
+      sub="180 seats × 84% full")
 scene("At two hundred and twenty-nine dollars each, they bring in about thirty-four thousand six hundred dollars. At four fifty each, the airline keeps about six hundred and eighty.",
       type="stat_grid", title="One flight at industry averages",
       items=[{"value": str(pax), "label": "passengers", "color": "text"},
@@ -205,8 +204,9 @@ scene("In this simple example, the break-even point is about a hundred and forty
 # ---------------------------------------------------------------- 2
 scene("Chapter two. Why it's so hard.", type="chapter", n=2, title="Why it's so hard")
 scene("Why is this business so tough? An empty seat can't be saved for later. Once the door closes, it's worth nothing. Most costs are fixed. Rivals can add seats on your route fast. And shocks hit everyone at once.",
-      type="bullets", title="Four reasons flying barely pays", color="red",
-      items=["Empty seats expire at take-off", "Most costs are fixed", "Rivals add seats fast", "Shocks hit everyone at once"])
+      type="photo", title="Four reasons flying barely pays", file="assets/photos/delta_jets_at_gate_amsterdam.jpg",
+      layout="full", focus=[0.5, 0.5], value="4 reasons", color="red",
+      label="Empty seats expire · fixed costs · rivals add seats · shocks hit all")
 scene("That creates a trap. Airlines buy planes to grow. More seats push fares down. Thin profits leave little cushion. And when times are good, everyone adds seats again.",
       type="flywheel", title="The airline trap", center="TRAP",
       steps=["Buy planes", "Add seats", "Fares fall", "Thin profits"])
@@ -238,20 +238,18 @@ scene("Add it up. From twenty twenty to twenty twenty-two, the industry lost abo
 # ---------------------------------------------------------------- 3
 scene("Chapter three. The miles machine.", type="chapter", n=3, title="The miles machine")
 scene("So where does the real money come from? Start with miles. Airlines sell miles to banks. Banks hand them to you as credit card rewards. And you redeem them for a seat, later.",
-      type="equation", title="How the miles machine works",
-      lines=[{"text": "Airline sells miles to a bank", "color": "text", "size": 76},
-             {"text": "Bank gives them to you", "color": "gold", "size": 76},
-             {"text": "You claim a seat later", "color": "green", "size": 76}])
+      type="photo", title="How the miles machine works", file="assets/photos/american_airlines_737_at_gate.jpg",
+      layout="side", focus=[0.45, 0.5], value="Miles", color="gold",
+      label="Airline sells miles to a bank. Bank gives them to you.", sub="You claim a seat later")
 scene("Take American Airlines. In twenty twenty-five, it made a net profit of just one hundred and eleven million dollars. Its credit card and other partners paid it six point two billion in cash. About fifty-six times more.",
       type="columns", title="American Airlines, 2025",
       items=[{"label": "Net profit", "value": AAL_NET, "display": "$111M", "color": "slate"},
              {"label": "Cash from card & other partners", "value": AAL_PARTNER_CASH, "display": "$6.2B", "color": "gold"}],
       note="Source: American Airlines 2025 10-K · partner cash is revenue, not profit")
 scene("At Delta, American Express alone paid eight point two billion dollars last year. That's more than Delta's entire pre-tax profit of six point two billion.",
-      type="versus", title="Delta, 2025",
-      left={"label": "Paid by American Express", "value": "$8.2B", "sub": "card partnership", "color": "gold"},
-      right={"label": "Delta's pre-tax profit", "value": "$6.2B", "sub": "the whole airline", "color": "blue"},
-      verdict="The card deal beats the whole airline's profit")
+      type="photo", title="Delta, 2025", file="assets/photos/delta_a350_in_flight.jpg", layout="side",
+      focus=[0.5, 0.5], value="$8.2B", color="gold", label="paid to Delta by American Express",
+      sub="more than Delta's entire pre-tax profit of $6.2B")
 scene("It works out to about one in every eight dollars Delta brought in.",
       type="share", title="American Express payments as a share of Delta's revenue",
       rows=[{"label": "Delta, 2025", "share": amex_share, "color": "gold", "dp": 0}],
@@ -278,8 +276,9 @@ scene("In other words, a big part of an airline's value isn't the planes. It's t
 # ---------------------------------------------------------------- 4
 scene("Chapter four. Bags, front seats, and freight.", type="chapter", n=4, title="Bags, seats & freight")
 scene("Next, fees. In twenty twenty-five, US airlines collected seven point four billion dollars in baggage fees, according to the US Bureau of Transportation Statistics.",
-      type="stat", value="$7.4B", label="US airline baggage fees, 2025",
-      sub="US Bureau of Transportation Statistics, May 2026", color="gold")
+      type="photo", file="assets/photos/airport_baggage_claim_suitcases.jpg", layout="side", focus=[0.6, 0.6],
+      value="$7.4B", label="US airline baggage fees, 2025", color="gold",
+      sub="US Bureau of Transportation Statistics, May 2026")
 scene("Compare that with what those same airlines earned in total after tax: six billion. Fees aren't pure profit, but bags alone brought in more than the whole industry's profit. Change fees added another one point one billion.",
       type="columns", title="US airlines, 2025",
       items=[{"label": "Baggage fees", "value": US_BAGS_25, "display": "$7.4B", "color": "gold"},
@@ -301,8 +300,9 @@ scene("Premium cabins now bring in almost as much as the main cabin, even though
       items=[{"label": "Main cabin", "value": DAL_MAIN[2025], "display": "$23.4B", "color": "slate"},
              {"label": "Premium", "value": DAL_PREMIUM[2025], "display": "$22.1B", "color": "gold"}])
 scene("Why chase premium flyers? They tend to care more about comfort and flexibility than price. And they're often the most loyal members, the ones with the airline's credit card.",
-      type="bullets", title="Why airlines chase the front cabin",
-      items=["Less focused on price", "Pay for comfort & flexibility", "Often the most loyal members"])
+      type="photo", title="Why airlines chase the front cabin", file="assets/photos/premium_cabin_first_class.jpg",
+      layout="full", focus=[0.5, 0.55], value="Premium", color="gold",
+      label="Less price-focused · pay for comfort · often the most loyal")
 scene("Finally, the belly of the plane. Cargo brought the industry about a hundred and one billion dollars in twenty nineteen. When passenger flights stopped in the pandemic, freight prices soared, and cargo hit two hundred and ten billion in twenty twenty-one.",
       type="line", title="Global air cargo revenue ($ billions)", format="num",
       x=list(CARGO_REV), series=[{"label": "Cargo", "values": list(CARGO_REV.values()), "color": "blue"}])
@@ -316,8 +316,9 @@ scene("This year, cargo is expected to bring in a hundred and sixty-two billion.
 # ---------------------------------------------------------------- 5
 scene("Chapter five. Buffett's warning.", type="chapter", n=5, title="Buffett's warning")
 scene("Warren Buffett put it bluntly. In his letter to shareholders for twenty oh seven, he wrote that the worst sort of business is one that grows rapidly, requires significant capital to engender the growth, and then earns little or no money. Think airlines.",
-      type="quote", text="\"The worst sort of business ...\nThink airlines.\"", first_color="text", color="gold",
-      source="Warren Buffett, Berkshire Hathaway 2007 letter")
+      type="photo", file="assets/photos/warren_buffett_2010_cropped.jpg", layout="side", focus=[0.3, 0.4],
+      value="\"Think airlines.\"", color="gold", label="\"The worst sort of business\" grows fast, needs capital, earns little",
+      sub="Warren Buffett, Berkshire Hathaway 2007 letter")
 scene("Airlines tick every box. They grow fast. They need enormous sums for planes. And they keep very little of what they earn.",
       type="bullets", title="Buffett's \"worst sort of business\"",
       items=["Grows rapidly", "Needs significant capital", "Earns little or no money"])
@@ -382,7 +383,8 @@ spec = {
     "disclaimer": "Figures: IATA (2026 = forecast), US BTS, airline filings · education, not investment advice",
     "title": "How Airlines Really Make Money: $4.50 a Passenger",
     "intro_chapter": "The $4.50 problem",
-    "thumbnail": {"big": "$4.50", "line": "PROFIT PER PASSENGER", "tag": "SO WHAT PAYS?", "color": "gold"},
+    "thumbnail": {"big": "$4.50", "line": "PROFIT PER PASSENGER", "tag": "SO WHAT PAYS?", "color": "gold",
+                  "photo": {"file": "assets/photos/american_airlines_777_cabin.jpg", "focus": [0.5, 0.5]}},
     "description": (
         "The world's airlines are expected to earn about $4.50 of net profit per passenger in 2026, a 2% margin, "
         "and the industry has never had a net margin above 5%. So what actually pays? Credit card miles, bag "

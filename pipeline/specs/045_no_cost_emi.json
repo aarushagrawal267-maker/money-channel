@@ -43,6 +43,15 @@
    "summary": "En Inde, les mensualités \"sans frais\" portent des intérêts, payés par la marque via une remise. Mais vous payez 18 % de GST sur ces intérêts et souvent des frais de dossier."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/credit_card_tap_terminal_hand.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "No-cost E-M-I still charges interest. Who actually pays it?",
@@ -57,24 +66,15 @@
   {
    "say": "S-B-I Card's example: a thirty-five thousand rupee purchase, about three hundred seventy-five dollars.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/credit_card_tap_terminal_hand.jpg",
     "title": "SBI Card's example",
-    "lines": [
-     {
-      "text": "₹35,000",
-      "color": "gold",
-      "size": 130
-     },
-     {
-      "text": "≈ $375",
-      "color": "text",
-      "size": 76
-     },
-     {
-      "text": "6 monthly EMIs",
-      "color": "muted",
-      "size": 56
-     }
+    "value": "₹35,000",
+    "color": "gold",
+    "label": "≈ $375 · 6 monthly EMIs",
+    "focus": [
+     0.55,
+     0.45
     ]
    }
   },
@@ -187,18 +187,14 @@
   {
    "say": "Compare the full-payment price, and add every fee.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/online_shopping_cart_phone.jpg",
     "title": "Before you click",
-    "left": {
-     "label": "Pay in full",
-     "sub": "check the price",
-     "color": "green"
-    },
-    "right": {
-     "label": "EMI",
-     "sub": "+ GST + fees",
-     "color": "gold"
-    }
+    "label": "Full price vs EMI + GST + fees",
+    "focus": [
+     0.45,
+     0.5
+    ]
    }
   },
   {
