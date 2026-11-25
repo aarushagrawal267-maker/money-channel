@@ -515,6 +515,7 @@ def shadow_text(img, xy, s, f, fill, anchor="mm", blur=10, offset=(0, 8), alpha=
 # ---------------------------------------------------------------- thumbnail look (shared by both renderers)
 THUMB_TOP, THUMB_BOT = (24, 38, 68), (11, 18, 37)   # navy lifted a little so it stands out in dark-mode feeds
 THUMB_LIGHT = (66, 104, 160)                          # cool light behind the subject (never red)
+THUMB_SCRIM = (15, 24, 46)                            # navy used to fade photos under text
 
 def smooth(x):
     x = np.clip(x, 0, 1)
@@ -547,6 +548,22 @@ def shade(img, a, color=None, x=0, y=0):
     lay[..., 3] = (np.clip(a, 0, 1) * 255).astype(np.uint8)
     img.alpha_composite(Image.fromarray(lay, "RGBA"), (int(x), int(y)))
 
+def main_person(path):
+    """load_cutout(path) with only the main figure kept (the largest connected shape): bystanders the
+    matting model also picked up are dropped. Same size as load_cutout(path)."""
+    key = ("main", path)
+    if key not in _photo_cache:
+        from scipy.ndimage import label, binary_dilation
+        c = load_cutout(path)
+        a = np.asarray(c.getchannel("A"))
+        lab, n = label(binary_dilation(a > 60, iterations=2))
+        if n > 1:
+            sizes = np.bincount(lab.ravel()); sizes[0] = 0
+            keep = lab == sizes.argmax()
+            c = c.copy(); c.putalpha(Image.fromarray(np.where(keep, a, 0).astype(np.uint8)))
+        _photo_cache[key] = c
+    return _photo_cache[key]
+
 def head_profile(path):
     """(head height, head centre x) in load_cutout(path) pixels, from the mask's row widths: the head runs
     from the top down to the neck (the first narrowing before the shoulders widen). Portraits with no clear
@@ -554,7 +571,7 @@ def head_profile(path):
     key = ("head", path)
     if key not in _photo_cache:
         from scipy.ndimage import uniform_filter1d
-        c = load_cutout(path)
+        c = main_person(path)
         a = np.asarray(c.getchannel("A")) > 100
         n = len(a)
         w = uniform_filter1d(a.sum(1).astype(np.float32), max(3, n // 60))
@@ -593,32 +610,39 @@ def clean_person(im, rim_a=0.32, shadow_a=0.6, shadow_blur=22, offset=(14, 18)):
 
 def person_layer(path, head_px, reach, max_w, zoom=1.0):
     """The person from path scaled so the head is head_px tall, cropped below at `reach` px from the top of
-    the head (head and shoulders: the canvas edge), at most max_w wide. Returns (layer, pad, head_cx, open)
-    with head_cx in layer pixels and open = sides where the person is cut straight (to put on a canvas edge)."""
-    c = load_cutout(path)
+    the head (head and shoulders: the canvas edge) and to a max_w window around the head (sides cut by the
+    window fade out softly). Returns (layer, pad, head_cx, open) with head_cx in layer pixels and
+    open = sides the photo itself cut straight (to put on a canvas edge)."""
+    c = main_person(path)
     hh, hcx = head_profile(path)
     op = cutout_open(path)
     s = head_px * zoom / hh
-    for _ in range(2):
-        crop_h = min(c.height, int(math.ceil(reach / s)) + 2)
-        bb = c.crop((0, 0, c.width, crop_h)).getchannel("A").point(lambda p: 255 if p > 30 else 0).getbbox()
-        if (bb[2] - bb[0]) * s <= max_w:
-            break
-        s = max_w / (bb[2] - bb[0])
-    bust = c.crop((bb[0], 0, bb[2], crop_h))
-    sides = ("l" if "l" in op and bb[0] <= 2 else "") + ("r" if "r" in op and bb[2] >= c.width - 2 else "")
+    crop_h = min(c.height, int(math.ceil(reach / s)) + 2)
+    half = max_w / (2 * s)
+    wx0, wx1 = int(max(0, hcx - half)), int(min(c.width, hcx + half))
+    bb = c.crop((wx0, 0, wx1, crop_h)).getchannel("A").point(lambda p: 255 if p > 30 else 0).getbbox()
+    x0, x1 = wx0 + bb[0], wx0 + bb[2]
+    sides = ("l" if "l" in op and x0 <= 2 else "") + ("r" if "r" in op and x1 >= c.width - 2 else "")
+    fade = ("l" if x0 > 2 and x0 <= wx0 + 1 or "l" in sides and "r" not in sides else "") + \
+           ("r" if x1 < c.width - 2 and x1 >= wx1 - 1 else "")
+    bust = c.crop((x0, 0, x1, crop_h))
     im = bust.resize((max(1, round(bust.width * s)), max(1, round(crop_h * s))), Image.LANCZOS)
     if s > 1.2:
         im = im.filter(ImageFilter.UnsharpMask(2, 70, 2))
     im = grade(im, k=0.06, sat=1.05, con=1.05)
-    if im.height < reach - 4 and "b" in op:         # photo cuts the body above the canvas edge: fade it out
-        im = fade_bottom(im, 0.18)
+    if im.height < reach - 4:                        # person ends above the canvas edge: soften the bottom
+        im = fade_bottom(im, 0.18 if "b" in op else 0.12)
+    if fade:                                         # sides cut by the crop window or the photo: fade softly
+        a = np.asarray(im.getchannel("A"), np.float32)
+        xs = np.arange(im.width, dtype=np.float32)
+        ramp = np.ones(im.width, np.float32)
+        if "l" in fade:
+            ramp *= smooth(xs / (0.18 * im.width))
+        if "r" in fade:
+            ramp *= smooth((im.width - 1 - xs) / (0.18 * im.width))
+        im.putalpha(Image.fromarray((a * ramp[None, :]).astype(np.uint8)))
     lay, pad = clean_person(im)
-    if "l" in sides and "r" not in sides:            # left side cut by the photo: fade it out softly
-        a = np.asarray(lay.getchannel("A"), np.float32)
-        ramp = smooth((np.arange(lay.width) - pad) / (0.25 * im.width))[None, :]
-        lay.putalpha(Image.fromarray((a * ramp).astype(np.uint8)))
-    return lay, pad, (hcx - bb[0]) * s, sides
+    return lay, pad, (hcx - x0) * s, sides
 
 def place_person(img, path, head_px, head_top, head_cx, max_w, zoom=1.0):
     """Head-and-shoulders cut-out with its head top at head_top, centred on head_cx, reaching the bottom
@@ -635,7 +659,7 @@ def photo_layer(path, w, h, focus=(0.5, 0.4), zoom=1.0):
 
 def trend_of(big):
     s = str(big or "").strip()
-    return "down" if s[:1] in "-−↓" else "up"
+    return "down" if s and s[0] in "-−↓" else "up"
 
 def trend_graphic(w, h, trend="up", color="green", bars=False, width=None, ss=2):
     """Simple chart mark: one thick line with an arrowhead and a soft glow (bars=True adds faint columns)."""
@@ -678,12 +702,13 @@ def fit_font(text, max_w, start, weight="Black", min_size=40, step=6):
         size -= step
     return font(size, weight), size
 
-def wrap_fit(text, max_w, sizes, max_lines, weight="Black"):
+def wrap_fit(text, max_w, sizes, max_lines, weight="Black", keep=0.9):
     """Wrap text into as few lines as possible (up to max_lines), at the largest size from `sizes`
-    that fits max_w, with the lines balanced ("YOUR CASH IS / SHRINKING", not "YOUR CASH / IS / ...")."""
+    that fits max_w, with the lines balanced ("YOUR CASH IS / SHRINKING", not "YOUR CASH / IS / ...").
+    A line is saved only while the size stays >= keep x the largest size."""
     for n in range(1, max_lines + 1):
         for s in sizes:
-            if n < max_lines and s < sizes[0] * 0.9:     # fewer lines only if the text stays big
+            if n < max_lines and s < sizes[0] * keep:    # fewer lines only if the text stays big
                 break
             f = font(s, weight)
             lines = _wrap(text, f, max_w)
@@ -711,24 +736,25 @@ CAP = 0.727            # Inter cap height / em
 
 def thumb_parts(th):
     big = str(th.get("big", "")).strip()
-    trend = th.get("trend") or trend_of(big)
+    trend = th.get("trend") or ("down" if th.get("color") == "red" else trend_of(big))   # red = bad news
     accent = th.get("color") or ("red" if trend == "down" else "gold")
     return big, th.get("line", "").upper(), th.get("tag", "").upper(), trend, accent
 
 def text_block(img, th, x, yc, max_w, big_color, line_color="text", tag_fill="green", tag_text="bg0",
                 big_max=230, sizes=(86, 80, 74, 68, 62, 56), max_lines=2, align="l", shadow=0.55, cue=None,
-                tag_size=32):
-    """Tag pill + huge number + 1-3 line headline, vertically centred on yc. Returns the number's box."""
+                tag_size=32, keep=0.9, top=None):
+    """Tag pill + huge number + 1-3 line headline, vertically centred on yc (or starting at `top`).
+    Returns the bottom y of the block."""
     big, line, tag, trend, _ = thumb_parts(th)
     fb, bs = fit_font(big, max_w, big_max, min_size=90, step=4)
     if not big:
         bs, cue = 0, None
-    lines, ls = wrap_fit(line, max_w, sizes, max_lines) if line else ([], 0)
+    lines, ls = wrap_fit(line, max_w, sizes, max_lines, keep=keep) if line else ([], 0)
     fl = font(ls, "Black") if lines else None
     tag_h, tag_gap = (int(tag_size * 1.9), int(tag_size * 0.95)) if tag else (0, 0)
-    gap, lead = (34 if big else 0), ls * 1.06
+    gap, lead = (34 + (bs * 0.13 if any(c in big for c in ",/;()") else 0) if big else 0), ls * 1.06   # room for descenders
     total = tag_h + tag_gap + bs * CAP + (gap + ls * CAP + lead * (len(lines) - 1) if lines else 0)
-    y = yc - total / 2
+    y = yc - total / 2 if top is None else top
     anc = {"l": "ls", "r": "rs", "m": "ms"}[align]
     d = ImageDraw.Draw(img)
     if tag:
@@ -755,7 +781,7 @@ def text_block(img, th, x, yc, max_w, big_color, line_color="text", tag_fill="gr
             shadow_text(img, (x, ly), ln, fl, col(line_color), anc, blur=8, offset=(0, 5), alpha=shadow * 0.9)
         else:
             ImageDraw.Draw(img).text((x, ly), ln, font=fl, fill=col(line_color), anchor=anc)
-    return (bx0, by - bs * CAP, bx0 + bw, by)
+    return y + (ls * CAP + lead * (len(lines) - 1) if lines else -gap)
 
 def v_photo(d, v, t, dur):
     """Real photo (person, company, product, place) with optional big number and label.
@@ -1163,10 +1189,15 @@ def short_thumb_image(th):
                    sizes=(88, 82, 76, 70, 64), max_lines=2, align="m", shadow=0, tag_size=42)
         return img
 
-    py = 900                                          # subject area starts here (text block sits above)
-    img = thumb_bg(W, H, (CX, 1330, 600, 520), grid=90)
+    # text first (on its own layer) so the subject can start right under it, whatever its length
+    sizes = (104, 96, 88, 80, 72, 66, 60) if big else (124, 114, 104, 96, 88, 80, 72)
+    txt = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    bottom = text_block(txt, {**th, "tag": ""}, CX, 0, 960, accent, big_max=300, sizes=sizes,
+                        max_lines=3 if big else 4, align="m", cue=None, keep=0.8, top=440)
+    py = int(min(max(bottom + 40, 760), 960))         # subject area starts here
+    img = thumb_bg(W, H, (CX, py + 420, 600, 520), grid=0 if kind == "photo" else 90)
     if kind == "cutout":
-        place_person(img, path, 400, 945, CX, W * 1.05, zoom)
+        place_person(img, path, 470, py + 50, CX, W * 1.05, zoom)
     elif kind == "photo":
         ph = photo_layer(path, W, H - py, focus, zoom)
         a = smooth(np.arange(H - py, dtype=np.float32) / 330)[:, None].repeat(W, 1)
@@ -1174,20 +1205,18 @@ def short_thumb_image(th):
         img.alpha_composite(ph, (0, py))
         shade(img, (smooth((np.linspace(0, 1, H - py) - 0.72) / 0.28) * 0.55)[:, None].repeat(W, 1), y=py)
     else:
-        overlay(img, trend_graphic(900, 520, trend, tone), 90, 990)
-    sizes = (104, 96, 88, 80, 72, 66, 60) if big else (124, 114, 104, 96, 88, 80, 72)
-    text_block(img, {**th, "tag": ""}, CX, 640, 960, accent, big_max=300, sizes=sizes,
-               max_lines=3 if big else 4, align="m", cue=None)
+        overlay(img, trend_graphic(920, 640, trend, tone, width=40), 80, py + 90)
+    img.alpha_composite(txt)
     return img
 
 def thumb_headline(title):
-    """Short headline from a video title when the spec gives no thumbnail line: its first clause if that is
-    2-8 words ("Sara Blakely", "Car Loan Math"), else the whole title. Drops "#shorts" and (asides)."""
+    """Short headline from a video title when the spec gives no thumbnail line: its first clause
+    ("Sara Blakely", "Car Loan Math") if that has 2+ words, else the whole title. Drops "#shorts" and (asides)."""
     import re
     t = re.sub(r"\s*\(.*?\)", "", title.replace("#shorts", "")).strip()
     m = re.match(r"^(.+?[?:.])\s", t + " ")
     head = (m.group(1).rstrip(":.") if m else t).strip()
-    return head if 2 <= len(head.split()) <= 8 else t
+    return head if len(head.split()) >= 2 else t
 
 def make_short_thumb(spec, out_dir):
     """Vertical Shorts thumbnail (style A by default): big number + short headline, subject below."""

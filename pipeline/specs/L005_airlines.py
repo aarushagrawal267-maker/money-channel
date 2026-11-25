@@ -383,7 +383,7 @@ spec = {
     "disclaimer": "Figures: IATA (2026 = forecast), US BTS, airline filings · education, not investment advice",
     "title": "How Airlines Really Make Money: $4.50 a Passenger",
     "intro_chapter": "The $4.50 problem",
-    "thumbnail": {"big": "3 SEATS", "line": "From a loss", "tag": "SO WHAT PAYS?", "color": "red",
+    "thumbnail": {"big": "3 SEATS", "line": "From a loss", "tag": "SO WHAT PAYS?", "color": "gold",
                   "photo": {"file": "assets/photos/american_airlines_777_cabin.jpg", "focus": [0.5, 0.5]}},
     "description": (
         "The world's airlines are expected to earn about $4.50 of net profit per passenger in 2026, a 2% margin, "

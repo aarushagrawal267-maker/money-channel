@@ -607,7 +607,7 @@ CAP = 0.727            # Inter cap height / em
 _tparts = R.thumb_parts
 _text_block = R.text_block
 
-def _photo_right(img, path, focus, zoom, pw=880, ramp=400):
+def _photo_right(img, path, focus, zoom, pw=820, ramp=360):
     """Company/place photo full-bleed on the right, fading into the navy on its left edge."""
     ph = R.photo_layer(path, pw, TH, focus, zoom)
     a = R.smooth(np.arange(pw, dtype=np.float32) / ramp) ** 1.2
@@ -617,7 +617,7 @@ def _photo_right(img, path, focus, zoom, pw=880, ramp=400):
 def _left_scrim(img, solid=360, to=760, strength=0.9):
     """Navy gradient from the left so the text always reads over a photo."""
     g = (1 - R.smooth((np.arange(TW, dtype=np.float32) - solid) / (to - solid))) * strength
-    R.shade(img, g[None, :].repeat(TH, 0))
+    R.shade(img, g[None, :].repeat(TH, 0), R.THUMB_SCRIM)
 
 def thumb_image(th):
     """Long-video thumbnail (1280x720 RGBA); th["style"] in A (default) / B / C."""
@@ -663,18 +663,18 @@ def thumb_image(th):
         return img
     # A "Spotlight" (default)
     if kind == "photo":
-        img = R.thumb_bg(TW, TH, (760, 330, 420, 380), grid=64)
+        img = R.thumb_bg(TW, TH, (760, 330, 420, 380))
         _photo_right(img, path, focus, zoom)
-        _left_scrim(img)
-        R.shade(img, (R.smooth((np.linspace(0, 1, TH) - 0.62) / 0.38) * 0.45)[:, None].repeat(TW, 1))
+        _left_scrim(img, 380, 740)
+        R.shade(img, (R.smooth((np.linspace(0, 1, TH) - 0.62) / 0.38) * 0.45)[:, None].repeat(TW, 1), R.THUMB_SCRIM)
     elif kind == "cutout":
         img = R.thumb_bg(TW, TH, (930, 300, 470, 400), grid=64)
         R.place_person(img, path, 300, 34, 935, 640, zoom)
     else:
         img = R.thumb_bg(TW, TH, (930, 330, 470, 360), grid=64)
         R.overlay(img, R.trend_graphic(540, 400, trend, tone, width=30), 650, 120)
-    _text_block(img, {**th, "tag": ""}, 64, 350, 580, accent, big_max=250,
-                sizes=(92, 86, 80, 74, 68, 62, 56), max_lines=3, cue=(trend, tone) if kind == "photo" else None)
+    _text_block(img, {**th, "tag": ""}, 64, 350, 540 if kind == "photo" else 580, accent, big_max=250,
+                sizes=(92, 86, 80, 74, 68, 62, 56), max_lines=3, keep=0.78, cue=(trend, tone) if kind == "photo" else None)
     return img
 
 def make_thumb(spec, out_dir):

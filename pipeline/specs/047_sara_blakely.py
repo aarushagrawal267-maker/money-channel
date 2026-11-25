@@ -77,7 +77,7 @@ spec = {
                "summary": "Sara Blakely a fondé Spanx en 2000 avec 5 000 dollars d'économies, après avoir vendu des fax en porte-à-porte. En 2021, Blackstone a pris la majorité en valorisant Spanx à 1,2 milliard de dollars. La leçon : tester une solution bon marché à un vrai problème."},
     },
     "thumbnail": {"big": "100%", "line": "No outside investors", "color": "green",
-                  "photo": {"file": "assets/photos/spanx_store.jpg", "focus": [0.6, 0.4]}},
+                  "photo": {"file": "assets/photos/sara_blakely_2012.jpg", "focus": [0.5, 0.3], "cutout": True}},
     "scenes": [
         # hook: the big gap on frame 0 + open loop ("how?")
         {"say": "Five thousand dollars in savings. Twelve years later, Forbes said: billionaire. How?",
