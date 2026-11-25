@@ -376,6 +376,7 @@ DESCRIPTION = (
 spec = {
     "id": "L014_apple_1997", "currency": "usd", "voice": "af_heart", "speed": 1.0, "gap": 0.35,
     "badge": "CASE STUDY",
+    "caption_fix": {"Uh-mellio": "Amelio"},   # Kokoro says "Emilio"
     "disclaimer": "Figures: Apple 10-K filings & press releases · for education, not investment advice",
     "title": "Apple in 1997: How a $1 Billion Loss Became a Comeback",
     "intro_chapter": "The $1B loss",
