@@ -9,7 +9,7 @@ Writes <id>.mp4, <id>_chapters.txt (YouTube chapters) and <id>_thumb.png.
 """
 import json, math, os, subprocess, sys
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 import render as R
 from render import font, col, ease, text_c, rrect, fmt
 
@@ -504,8 +504,8 @@ def _text_block(img, th, x, yc, max_w, big_color, line_color="text", tag_fill="g
     fb, bs = R.fit_font(big, max_w, big_max, min_size=90, step=4)
     lines, ls = R.wrap_fit(line, max_w, sizes, max_lines) if line else ([], 0)
     fl = font(ls, "Black") if lines else None
-    tag_h, tag_gap, gap, lead = (54, 30) if tag else (0, 0), 34, ls * 1.06
-    tag_h, tag_gap = tag_h
+    tag_h, tag_gap = (54, 30) if tag else (0, 0)
+    gap, lead = 34, ls * 1.06
     total = tag_h + tag_gap + bs * CAP + (gap + ls * CAP + lead * (len(lines) - 1) if lines else 0)
     y = yc - total / 2
     anc = {"l": "ls", "r": "rs", "m": "ms"}[align]

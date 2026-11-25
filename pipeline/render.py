@@ -353,7 +353,8 @@ def _clean_cutout(src, alpha):
             # (and lie near the outline), so e.g. red lips inside the face are never touched
             like = (dist < 95) | outside
             lab, _ = label(like)
-            ids = np.unique(lab[outside]); ids = ids[ids > 0]
+            border = np.zeros_like(outside); border[0, :] = border[-1, :] = border[:, 0] = border[:, -1] = True
+            ids = np.unique(lab[outside | (border & like)]); ids = ids[ids > 0]
             drop = np.isin(lab, ids) & _edge_band(a > 0.05, 90)
             a = np.where(drop, 0, a)
             band = _edge_band(a > 0.05, 8)
@@ -388,12 +389,35 @@ def load_cutout(path):
             src = load_photo(path)
             cut = _clean_cutout(src, remove(src, session=new_session("u2net_human_seg")).getchannel("A"))
             cut.save(cp)
+        _photo_cache[("alpha", path)] = cut.getchannel("A")
         box = cut.getchannel("A").point(lambda p: 255 if p > 30 else 0).getbbox() or (0, 0) + cut.size
         # sides where the photo itself crops the person (no outline should be drawn there)
         _photo_cache[("open", path)] = "".join(k for k, hit in zip("ltrb", (box[0] <= 2, box[1] <= 2,
                                                box[2] >= cut.width - 2, box[3] >= cut.height - 2)) if hit)
         _photo_cache[key] = cut.crop(box)
     return _photo_cache[key]
+
+def cutout_alpha(path):
+    """Full-size alpha matte of the person in the original photo (same size as load_photo(path))."""
+    load_cutout(path)
+    return _photo_cache[("alpha", path)]
+
+def remove_person(path, size, focus=(0.5, 0.4), zoom=1.0, sigma=22):
+    """The photo's own backdrop with the person painted out (blurred fill from around them): for depth
+    behind a sharp cut-out, without a ghost of their face."""
+    from scipy.ndimage import gaussian_filter, binary_dilation
+    w, h = size
+    rgb = np.asarray(cover(load_photo(path), w, h, focus, zoom), np.float32)
+    a = np.asarray(cover(cutout_alpha(path).convert("RGB"), w, h, focus, zoom).getchannel("R"), np.float32) / 255
+    keep = (~binary_dilation(a > 0.1, iterations=12)).astype(np.float32)
+    num = np.stack([gaussian_filter(rgb[..., i] * keep, sigma) for i in range(3)], -1)
+    den = gaussian_filter(keep, sigma)[..., None]
+    fill = num / np.maximum(den, 1e-3)
+    if den.max() < 0.02:
+        fill[:] = rgb.reshape(-1, 3).mean(0)
+    out = np.where(keep[..., None] > 0.5, rgb, fill)
+    out = np.stack([gaussian_filter(out[..., i], sigma * 0.6) for i in range(3)], -1)
+    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGB")
 
 def cutout_open(path):
     """Which sides ("l", "t", "r", "b") of load_cutout(path) are cropped by the photo frame."""
@@ -545,11 +569,21 @@ def fit_font(text, max_w, start, weight="Black", min_size=40, step=6):
     return font(size, weight), size
 
 def wrap_fit(text, max_w, sizes, max_lines, weight="Black"):
-    """Largest size from `sizes` at which text wraps into <= max_lines lines of width max_w."""
-    for s in sizes:
-        lines = _wrap(text, font(s, weight), max_w)
-        if len(lines) <= max_lines and all(font(s, weight).getlength(l) <= max_w for l in lines):
-            return lines, s
+    """Wrap text into as few lines as possible (up to max_lines), at the largest size from `sizes`
+    that fits max_w, with the lines balanced ("YOUR CASH IS / SHRINKING", not "YOUR CASH / IS / ...")."""
+    for n in range(1, max_lines + 1):
+        for s in sizes:
+            f = font(s, weight)
+            lines = _wrap(text, f, max_w)
+            if len(lines) <= n and all(f.getlength(l) <= max_w for l in lines):
+                lo, hi = max(f.getlength(w) for w in text.split()), max_w
+                while hi - lo > 4:                      # narrowest width that keeps the same line count
+                    mid = (lo + hi) / 2
+                    if len(_wrap(text, f, mid)) <= len(lines):
+                        hi = mid
+                    else:
+                        lo = mid
+                return _wrap(text, f, hi), s
     return _wrap(text, font(sizes[-1], weight), max_w), sizes[-1]
 
 def thumb_subject(th):
