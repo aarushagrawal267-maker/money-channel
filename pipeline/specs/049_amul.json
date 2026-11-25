@@ -1,0 +1,199 @@
+{
+ "id": "049_amul",
+ "currency": "inr",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "INDIA STORY",
+ "disclaimer": "Sources: GCMMF / Amul (FY2025-26), Rural Voice · see description",
+ "title": "Amul Business Model: ₹80 of Every ₹100 to Farmers",
+ "description": "How does Amul's business model work? Amul is a cooperative owned by about 3.6 million dairy farmers in Gujarat, India. Amul says farmers get about ₹80-85 of every ₹100 a shopper spends on its products, compared with about a third in many other countries (Amul's own estimate, not an independent audit). That leaves little for everything else, yet the Amul brand topped ₹1 lakh crore (₹1 trillion, about $10.7 billion) in sales in FY2025-26, on about 31 million litres of milk a day. The lesson: a thin margin on huge volume can build a giant.\n\nHow it works: village dairy cooperatives collect the milk, 18 district unions process it, and the Gujarat Cooperative Milk Marketing Federation (GCMMF) sells it under the Amul brand. GCMMF's own sales were ₹73,450 crore; the brand figure also includes the district unions.\n\nSources: GCMMF FY2025-26 results (5 Apr 2026, via DeshGujarat and Dairy Industries International); Jayen Mehta, GCMMF, quoted by Rural Voice (25 Jun 2022); Amul, 'The Amul Model' and 'A note on the achievements of the dairy cooperatives' (amul.com). Dollar figure at ₹93.44 per $ (PTI, 18 Nov 2026). 1 crore = 10 million; 1 lakh crore = 1 trillion.\n\n#amul #india #business #cooperative #businessmodel",
+ "tags": [
+  "amul business model",
+  "amul case study",
+  "how amul works",
+  "amul cooperative",
+  "gcmmf",
+  "dairy cooperative",
+  "indian business",
+  "business breakdown",
+  "india"
+ ],
+ "localizations": {
+  "es": {
+   "title": "El modelo de Amul: ₹80 de cada ₹100 para los granjeros",
+   "summary": "Amul es una cooperativa de 3,6 millones de ganaderos en la India. Según Amul, el productor recibe unas 80 de cada 100 rupias, y aun así su marca vende más de 10.000 millones de dólares al año."
+  },
+  "pt": {
+   "title": "O modelo da Amul: ₹80 de cada ₹100 para os produtores",
+   "summary": "A Amul é uma cooperativa de 3,6 milhões de produtores de leite na Índia. Segundo a Amul, o produtor recebe cerca de 80 de cada 100 rúpias, e mesmo assim a marca vende mais de 10 bilhões de dólares por ano."
+  },
+  "hi": {
+   "title": "Amul का बिज़नेस मॉडल: हर ₹100 में से ₹80 किसानों को",
+   "summary": "Amul 36 लाख डेयरी किसानों की सहकारी संस्था है। Amul के मुताबिक हर ₹100 में से करीब ₹80-85 किसानों को जाते हैं, फिर भी ब्रांड की बिक्री ₹1 लाख करोड़ के पार है।"
+  },
+  "id": {
+   "title": "Model Bisnis Amul: ₹80 dari Tiap ₹100 untuk Peternak",
+   "summary": "Amul adalah koperasi milik 3,6 juta peternak sapi perah di India. Menurut Amul, peternak menerima sekitar 80 dari tiap 100 rupee, namun penjualan mereknya tetap di atas 10 miliar dolar setahun."
+  },
+  "de": {
+   "title": "Amuls Geschäftsmodell: ₹80 von ₹100 für die Bauern",
+   "summary": "Amul ist eine Genossenschaft von 3,6 Millionen Milchbauern in Indien. Laut Amul erhalten sie rund 80 von 100 Rupien, und trotzdem setzt die Marke über 10 Milliarden Dollar im Jahr um."
+  },
+  "fr": {
+   "title": "Le modèle d'Amul : ₹80 sur ₹100 pour les éleveurs",
+   "summary": "Amul est une coopérative de 3,6 millions d'éleveurs laitiers en Inde. Selon Amul, ils touchent environ 80 roupies sur 100, et pourtant la marque vend plus de 10 milliards de dollars par an."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Spend a hundred rupees on Amul: about eighty goes to farmers. Why?",
+   "visual": {
+    "type": "stat",
+    "value": "₹80–85",
+    "label": "of every ₹100 goes to farmers",
+    "sub": "Amul's own estimate (GCMMF, 2022)",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Amul's Jayen Mehta says elsewhere, farmers often get about a third.",
+   "visual": {
+    "type": "bars",
+    "title": "Farmers' share of ₹100 spent",
+    "format": "num",
+    "items": [
+     {
+      "label": "Amul",
+      "value": 80,
+      "color": "green"
+     },
+     {
+      "label": "Elsewhere",
+      "value": 33,
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Because farmers own it. Three point six million of them.",
+   "visual": {
+    "type": "pair",
+    "title": "3.6 million owners",
+    "left": {
+     "label": "Farmers",
+     "sub": "own the business",
+     "color": "green"
+    },
+    "right": {
+     "label": "Amul",
+     "sub": "sells for them",
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "Villages collect the milk, eighteen district unions process it, one federation sells it.",
+   "visual": {
+    "type": "equation",
+    "title": "The Amul model",
+    "lines": [
+     {
+      "text": "Village: collects",
+      "color": "text",
+      "size": 80
+     },
+     {
+      "text": "18 unions: process",
+      "color": "text",
+      "size": 80
+     },
+     {
+      "text": "Federation: sells",
+      "color": "gold",
+      "size": 80
+     }
+    ]
+   }
+  },
+  {
+   "say": "Now the twist: that leaves Amul at most twenty rupees for everything else.",
+   "visual": {
+    "type": "compare",
+    "title": "Of every ₹100 (Amul's estimate)",
+    "left": {
+     "label": "Farmers",
+     "value": 80,
+     "color": "green"
+    },
+    "right": {
+     "label": "Everything else",
+     "value": 20,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Yet Amul brand sales topped one lakh crore rupees: over ten billion dollars.",
+   "visual": {
+    "type": "equation",
+    "title": "Amul brand sales, FY2025-26",
+    "lines": [
+     {
+      "text": "₹1 lakh crore+",
+      "color": "green",
+      "size": 110
+     },
+     {
+      "text": "≈ $10.7 billion",
+      "color": "text",
+      "size": 72
+     },
+     {
+      "text": "source: GCMMF, April 2026",
+      "color": "muted",
+      "size": 44
+     }
+    ]
+   }
+  },
+  {
+   "say": "That's from thirty-one million litres of milk, every single day.",
+   "visual": {
+    "type": "stat",
+    "value": "31M",
+    "label": "litres of milk, every day",
+    "sub": "from 3.6 million farmer-owners",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "The lesson: thin margins on huge volume can build a giant.",
+   "visual": {
+    "type": "pair",
+    "title": "The lesson",
+    "left": {
+     "label": "Thin margin",
+     "sub": "per litre",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Huge volume",
+     "sub": "every day",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "So next time you buy a packet of milk, remember...",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "₹80 of ₹100.",
+     "Farmer-owned."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}
