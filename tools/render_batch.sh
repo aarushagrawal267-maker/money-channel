@@ -23,7 +23,8 @@ for id in "$@"; do
   fi
   start=$(date +%s)
   w="output/work_$id"
-  rm -rf "$w" "$stamp"
+  rm -rf "$w"
+  : > "$stamp"   # empty until this render succeeds, so a failed re-render is never trusted by the check above
   if [[ "$id" == L* ]]; then
     python3 pipeline/render_long.py "$spec" output >/dev/null 2>>output/batch.log </dev/null
   else

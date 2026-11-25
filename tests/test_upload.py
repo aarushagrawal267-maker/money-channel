@@ -76,6 +76,13 @@ def test_retry_policy():
     assert not U.is_transient(KeyError("bug"))
 
 
+def test_retry_policy_token_refresh():
+    """A network error while refreshing the login token is retried; a refused login is not."""
+    exc = pytest.importorskip("google.auth.exceptions")
+    assert U.is_transient(exc.TransportError("proxy reset"))
+    assert not U.is_transient(exc.RefreshError("invalid_grant"))
+
+
 def test_save_posted_is_atomic_and_round_trips(tmp_path, monkeypatch):
     p = tmp_path / "posted.json"
     monkeypatch.setattr(U, "POSTED", str(p))

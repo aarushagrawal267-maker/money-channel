@@ -116,6 +116,12 @@ def is_transient(e):
         return code in RETRY_STATUS
     if isinstance(e, (OSError, socket.timeout, http.client.HTTPException)):
         return True
+    try:   # network failure while refreshing the access token (not RefreshError, which is a login problem)
+        from google.auth.exceptions import TransportError
+        if isinstance(e, TransportError):
+            return True
+    except ImportError:
+        pass
     return type(e).__module__.startswith("httplib2")   # e.g. ServerNotFoundError
 
 
