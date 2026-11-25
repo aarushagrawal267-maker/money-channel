@@ -8,7 +8,7 @@ Safe to run repeatedly: playlists are found by title (or pipeline/playlists.json
 in a playlist are skipped. Only the snippet/localizations parts are updated, never status, so a
 scheduled video keeps its publish time.
 """
-import json, os, sys, urllib.request
+import json, os, sys, urllib.parse, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "pipeline"))
@@ -40,7 +40,9 @@ def scopes(yt):
     from google.auth.transport.requests import Request
     c = yt._http.credentials
     c.refresh(Request())
-    info = json.load(urllib.request.urlopen("https://oauth2.googleapis.com/tokeninfo?access_token=" + c.token))
+    # POST the token in the body: a query string ends up in proxy and server logs.
+    body = urllib.parse.urlencode({"access_token": c.token}).encode()
+    info = json.load(urllib.request.urlopen("https://oauth2.googleapis.com/tokeninfo", data=body))
     return info.get("scope", "")
 
 

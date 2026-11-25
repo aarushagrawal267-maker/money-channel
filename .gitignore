@@ -15,3 +15,22 @@ client_secret*.json
 .env
 review/
 .pytest_cache/
+# more credential file types (keep these out even if someone drops one in)
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+token*.json
+credentials*.json
+# local environments and dependencies
+.venv/
+venv/
+env/
+node_modules/
+# data dumps
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+*.dump
