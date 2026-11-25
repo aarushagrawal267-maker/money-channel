@@ -47,8 +47,9 @@ def title(d, s, t, y=TOP - 70):
 def v_chapter(d, v, t, dur):
     a = ease(t / 0.5)
     n = str(v["n"])
-    # huge faint chapter number behind, drifting slightly
-    text_c(d, (CX + 6 * t, 520), n.zfill(2) if n.isdigit() else n, font(520, "Black"), col("green", 0.07 * a))
+    # big chapter number, very faint and off to the right so it never fights the title
+    text_c(d, (W - 90 + 4 * t, 560), n.zfill(2) if n.isdigit() else n, font(440, "Black"), col("green", 0.035 * a),
+           anchor="rm")
     f = font(38, "Black")
     lab = f"CHAPTER {n}"
     pw = f.getlength(lab) + 64
@@ -421,10 +422,10 @@ def _value_reveal(d, v, cx, y, t, max_w, size=150, anchor="mm", underline=True):
     wfull = f.getlength(v["value"])
     uw = min(wfull, 260) * ease((t - 0.7) / 0.6) if underline else 0
     ux = cx - uw / 2 if anchor == "mm" else cx
-    uy = y + size * 0.56
+    uy = y + size * 0.56 + 10
     if uw > 2:
         rrect(d, [ux, uy, ux + uw, uy + 10], 5, fill=col(c, 0.9 * b))
-    return uy + 80
+    return uy + 70
 
 def _kb_tile(path, w, h, focus, zoom, r):
     """Rounded photo tile with a slow push-in (Ken Burns); the corner mask is cached."""
@@ -480,7 +481,7 @@ def _cut_scene_layer(path, h):
     key = ("cut", path, int(h))
     if key not in _lc:
         c = R.grade(R.fit_height(R.load_cutout(path), h), k=0.08, sat=1.05, con=1.04)
-        lay, pad = R.rim(c, 3, (255, 255, 255), 0.35, 26, R.COLORS["bg0"], 0.55, R.cutout_open(path))
+        lay, pad = R.clean_person(c)
         _lc[key] = (lay, pad)
     return _lc[key]
 
@@ -592,202 +593,96 @@ def draw_caps(img, chunks, t):
                 x += wd + sp
             break
 
-def _photo_thumb(spec, out_dir, th, img):
-    """Bold photo thumbnail: real photo on the right, fading into the dark background; huge number left."""
-    from PIL import ImageEnhance
-    tp = th["photo"]
-    ph = R.cover(R.load_photo(tp["file"]), 760, 720, tuple(tp.get("focus", (0.5, 0.35))))
-    ph = ImageEnhance.Contrast(ImageEnhance.Color(ph).enhance(1.25)).enhance(1.12).convert("RGBA")
-    fade = np.clip(np.linspace(-0.2, 1.6, 760), 0, 1)[None, :].repeat(720, 0)
-    ph.putalpha(Image.fromarray((fade * 255).astype(np.uint8), "L"))
-    img.alpha_composite(ph, (520, 0))
-    d = ImageDraw.Draw(img)
-    d.rectangle([0, 0, 1279, 719], outline=col(th.get("color", "gold")), width=14)
-    lx = 330
-    size = 230
-    while font(size, "Black").getlength(th["big"]) > 600 and size > 100:
-        size -= 10
-    text_c(d, (lx + 8, 250 + 8), th["big"], font(size, "Black"), (0, 0, 0, 160))
-    text_c(d, (lx, 250), th["big"], font(size, "Black"), col(th.get("color", "gold")), stroke=12, stroke_fill=(0, 0, 0, 255))
-    fsz = 80
-    while True:
-        lines = R._wrap(th["line"], font(fsz, "Black"), 600)
-        if len(lines) <= 2 or fsz <= 54:
-            break
-        fsz -= 6
-    for i, ln in enumerate(lines[:2]):
-        text_c(d, (lx, 430 + i * fsz * 1.08), ln, font(fsz, "Black"), col("text"), stroke=8, stroke_fill=(0, 0, 0, 255))
-    if th.get("tag"):
-        f = font(44, "Black")
-        tw = f.getlength(th["tag"]) + 56
-        rrect(d, [lx - tw / 2, 610, lx + tw / 2, 690], 20, fill=col(th.get("tag_color", "green")))
-        text_c(d, (lx, 650), th["tag"], f, col("bg0"))
-    img.convert("RGB").save(os.path.join(out_dir, spec["id"] + "_thumb.png"))
-
-# ------------------------------------------------------------------ styled thumbnails (spec["thumbnail"]["style"])
-# Inputs: big (number/short phrase), line (2-5 words), tag, photo {file, focus, zoom?}, cutout (bool; or
-# photo.cutout), color (accent; default gold, red when big starts with "-"), trend ("up"/"down"; default from big).
-# A "Spotlight": person cut out on a clean navy stage with a soft accent glow; text left.
+# ------------------------------------------------------------------ thumbnails (spec["thumbnail"])
+# Inputs: big (number/short phrase), line (2-4 word headline; up to ~6 fits), photo {file, focus?, zoom?,
+# cutout?}, cutout (bool; or photo.cutout: the photo is a person, shown head-and-shoulders), color (accent;
+# default gold, red when big starts with "-"), trend ("up"/"down"; default from big), style.
+# A "Spotlight" (default): navy, number + headline left; right: the person cut out (head and shoulders),
+#   or a company/place photo full-bleed fading into navy, or a clean trend arrow. No pill. Losses stay
+#   navy: only the number and the arrow turn red. Bottom-right ~20% kept free (YouTube's duration badge).
 # B "Colour block": solid accent panel (navy text) on the left; person/photo/chart on the right.
 # C "Cinematic": full-bleed real photo, softly graded into the palette (person kept sharp, backdrop blurred).
 TW, TH = 1280, 720
 CAP = 0.727            # Inter cap height / em
-
-def _tbg(glows=(), vignette=0.55):
-    y = np.linspace(0, 1, TH)[:, None, None]
-    b0, b1 = np.array(R.COLORS["bg0"], np.float32), np.array(R.COLORS["bg1"], np.float32)
-    base = b1 + (b0 - b1) * y
-    img = Image.fromarray(np.clip(base.repeat(TW, 1), 0, 255).astype(np.uint8), "RGB").convert("RGBA")
-    for g in glows:
-        img.alpha_composite(R.radial(TW, TH, *g))
-    if vignette:
-        yy, xx = np.mgrid[0:TH, 0:TW].astype(np.float32)
-        v = np.clip(((xx / TW - 0.5) ** 2 + (yy / TH - 0.5) ** 2) * 2.2 - 0.15, 0, 1) * vignette
-        lay = np.zeros((TH, TW, 4), np.uint8); lay[..., :3] = R.COLORS["bg0"]; lay[..., 3] = (v * 255).astype(np.uint8)
-        img.alpha_composite(Image.fromarray(lay, "RGBA"))
-    return img
-
 _tparts = R.thumb_parts
 _text_block = R.text_block
 
-def _cutout_layer(path, h, max_w, glow_color, rim_a=0.5, glow=24, glow_a=0.65, canvas_bottom=None, top=0):
-    """Cut-out person scaled to height h (or max_w wide), with a thin light rim and a soft accent glow."""
-    c = R.load_cutout(path)
-    if c.width * h / c.height > max_w:
-        h = c.height * max_w / c.width
-    c = R.grade(R.fit_height(c, h), k=0.08, sat=1.06, con=1.04)
-    lay, pad = R.rim(c, 3, (255, 255, 255), rim_a, glow, R.COLORS.get(glow_color, glow_color), glow_a, R.cutout_open(path))
-    if "b" in R.cutout_open(path) and canvas_bottom is not None and top + h < canvas_bottom + 4:
-        lay = R.fade_bottom(lay, 0.0, start=pad + h * 0.78)       # photo crops the body above the frame edge
-    return lay, pad
+def _photo_right(img, path, focus, zoom, pw=880, ramp=400):
+    """Company/place photo full-bleed on the right, fading into the navy on its left edge."""
+    ph = R.photo_layer(path, pw, TH, focus, zoom)
+    a = R.smooth(np.arange(pw, dtype=np.float32) / ramp) ** 1.2
+    ph.putalpha(Image.fromarray((a[None, :].repeat(TH, 0) * 255).astype(np.uint8)))
+    img.alpha_composite(ph, (TW - pw, 0))
 
-def _place_cutout(img, lay, pad, path, cx, top, right_edge=None):
-    """Put a cut-out layer centred on cx; if the photo crops the person at the side, push that side
-    off the canvas edge (or fade it) so no straight cut line shows."""
-    op = R.cutout_open(path)
-    right_edge = img.width if right_edge is None else right_edge
-    x = cx - lay.width / 2
-    if "r" in op and x + lay.width - pad < right_edge:
-        x = right_edge - (lay.width - pad)
-    if "l" in op and ("r" not in op or x + pad > 0):
-        a = np.asarray(lay.getchannel("A"), np.float32)
-        ramp = np.clip((np.arange(lay.width) - pad) / (0.22 * (lay.width - 2 * pad)), 0, 1)[None, :]
-        lay = lay.copy(); lay.putalpha(Image.fromarray((a * ramp).astype(np.uint8)))
-    R.overlay(img, lay, x, top - pad)
-
-def _subject(img, th, kind, path, box, accent, trend, style):
-    """Draw the subject (cut-out person / photo / chart) into box = (x0, y0, x1, y1)."""
-    x0, y0, x1, y1 = box
-    tp = th.get("photo") or {}
-    focus = tuple(tp.get("focus", (0.5, 0.4)))
-    zoom = tp.get("zoom", 1.0)
-    if kind == "cutout":
-        h = (y1 - y0) * zoom
-        lay, pad = _cutout_layer(path, h, (x1 - x0) * 1.05, "green" if style != "B" else "text",
-                                 glow_a=0.55 if style != "B" else 0.35, canvas_bottom=TH, top=y0)
-        _place_cutout(img, lay, pad, path, (x0 + x1) / 2, y0)
-    elif kind == "photo":
-        w, h = int((x1 - x0) * 0.86), int((y1 - y0) * 0.7)
-        lay, pad = R.card(R.load_photo(path), w, h, focus, r=24, border=8, tilt=-3.5, shadow=26)
-        R.overlay(img, lay, (x0 + x1) / 2 - lay.width / 2, (y0 + y1) / 2 - lay.height / 2)
-    else:
-        w, h = int(x1 - x0), int(y1 - y0)
-        R.overlay(img, R.trend_graphic(w, h, trend, "green" if trend == "up" else "red"), x0, y0)
+def _left_scrim(img, solid=360, to=760, strength=0.9):
+    """Navy gradient from the left so the text always reads over a photo."""
+    g = (1 - R.smooth((np.arange(TW, dtype=np.float32) - solid) / (to - solid))) * strength
+    R.shade(img, g[None, :].repeat(TH, 0))
 
 def thumb_image(th):
-    """Styled long-video thumbnail (1280x720 RGBA) for th["style"] in A/B/C."""
-    style = str(th.get("style", "A")).upper()
+    """Long-video thumbnail (1280x720 RGBA); th["style"] in A (default) / B / C."""
+    style = str(th.get("style") or "A").upper()
     big, line, tag, trend, accent = _tparts(th)
     kind, path = R.thumb_subject(th)
     tone = "green" if trend == "up" else "red"
+    tp = th.get("photo") or {}
+    focus, zoom = tuple(tp.get("focus", (0.5, 0.4))), tp.get("zoom", 1.0)
     if style == "B":
         txt = "bg0"
-        img = _tbg([(940, 360, 420, 380, tone, 0.22)], vignette=0.35)
+        img = R.thumb_bg(TW, TH, (940, 360, 420, 380), vignette=0.3)
         if kind == "photo":
-            tp = th["photo"]
-            ph = R.grade(R.cover(R.load_photo(path), TW - 530, TH, tuple(tp.get("focus", (0.5, 0.4)))), k=0.3).convert("RGBA")
-            img.alpha_composite(ph, (530, 0))
+            img.alpha_composite(R.photo_layer(path, TW - 530, TH, focus, zoom), (530, 0))
+        elif kind == "cutout":
+            R.place_person(img, path, 300, 40, 930, 640, zoom)
         else:
-            _subject(img, th, kind, path, (600, 40 if kind == "cutout" else 120, 1250, TH if kind == "cutout" else 640),
-                     accent, trend, "B")
+            R.overlay(img, R.trend_graphic(600, 460, trend, tone), 630, 120)
         panel = Image.new("RGBA", (TW, TH), (0, 0, 0, 0))
-        pd = ImageDraw.Draw(panel)
-        pd.polygon([(0, 0), (600, 0), (520, TH), (0, TH)], fill=col(accent))
+        ImageDraw.Draw(panel).polygon([(0, 0), (600, 0), (520, TH), (0, TH)], fill=col(accent))
         sh = Image.new("RGBA", (TW, TH), (0, 0, 0, 0))
         ImageDraw.Draw(sh).polygon([(0, 0), (612, 0), (532, TH), (0, TH)], fill=(0, 0, 0, 140))
         img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(10)))
         img.alpha_composite(panel)
         _text_block(img, th, 52, 360, 470, txt, txt, tag_fill="bg0", tag_text=accent, big_max=210,
                     sizes=(78, 72, 66, 60, 54, 50), max_lines=2, shadow=0)
-    elif style == "C":
-        if kind in ("cutout", "photo"):
-            tp = th["photo"]
-            focus = tuple(tp.get("focus", (0.5, 0.4)))
-            src = R.load_photo(path)
-            if kind == "cutout":   # the photo's own backdrop (person painted out, blurred, dimmed) + sharp person
-                back = R.remove_person(path, (TW, TH), focus, zoom=1.1)
-                img = R.grade(back, k=0.75, sat=0.55, con=0.9).convert("RGBA")
-            else:                  # photo on the right, fading into navy under the text
-                img = _tbg([], vignette=0.3)
-                pw = 860
-                ph = R.grade(R.cover(src, pw, TH, focus), k=0.25).convert("RGBA")
-                ramp = np.clip(np.arange(pw) / 320, 0, 1) ** 1.4
-                ph.putalpha(Image.fromarray((ramp[None, :].repeat(TH, 0) * 255).astype(np.uint8)))
-                img.alpha_composite(ph, (TW - pw, 0))
+        return img
+    if style == "C":
+        if kind == "cutout":     # the photo's own backdrop (person painted out, blurred, dimmed) + sharp person
+            img = R.grade(R.remove_person(path, (TW, TH), focus, zoom=1.1), k=0.75, sat=0.55, con=0.9).convert("RGBA")
         else:
-            img = _tbg([(980, 380, 380, 300, tone, 0.30)], vignette=0.3)
-            _subject(img, th, kind, path, (560, 110, 1240, 600), accent, trend, "C")
-        # left-to-right navy gradient so the text always reads
-        g = np.clip(1.05 - np.linspace(0, 1, TW) / 0.62, 0, 0.92) ** 1.2
-        lay = np.zeros((TH, TW, 4), np.uint8); lay[..., :3] = R.COLORS["bg0"]
-        lay[..., 3] = (g[None, :].repeat(TH, 0) * 255).astype(np.uint8)
-        img.alpha_composite(Image.fromarray(lay, "RGBA"))
-        bot = np.clip((np.linspace(0, 1, TH) - 0.7) / 0.3, 0, 1)[:, None] * 0.5
-        lay2 = np.zeros((TH, TW, 4), np.uint8); lay2[..., :3] = R.COLORS["bg0"]
-        lay2[..., 3] = (bot.repeat(TW, 1) * 255).astype(np.uint8)
-        img.alpha_composite(Image.fromarray(lay2, "RGBA"))
+            img = R.thumb_bg(TW, TH, (980, 380, 380, 300), vignette=0.3)
+            if kind == "photo":
+                _photo_right(img, path, focus, zoom, 860, 320)
+            else:
+                R.overlay(img, R.trend_graphic(620, 440, trend, tone), 600, 130)
+        _left_scrim(img, 0, 790, 0.92)
+        R.shade(img, (R.smooth((np.linspace(0, 1, TH) - 0.7) / 0.3) * 0.5)[:, None].repeat(TW, 1))
         if kind == "cutout":
-            lay, pad = _cutout_layer(path, 690 * th["photo"].get("zoom", 1.0), 660, "bg0", rim_a=0.0,
-                                     glow=30, glow_a=0.7, canvas_bottom=TH, top=40)
-            _place_cutout(img, lay, pad, path, 950, 40)
+            R.place_person(img, path, 280, 40, 950, 660, zoom)
         _text_block(img, th, 60, 380, 560, accent, cue=(trend, tone) if kind != "graphic" else None)
         ImageDraw.Draw(img).rectangle([0, TH - 10, TW, TH], fill=col(accent))
-    else:  # A
-        img = _tbg([(930, 400, 400, 360, "green" if kind == "cutout" else tone, 0.30),
-                    (1100, 120, 260, 200, accent, 0.10)])
-        d = ImageDraw.Draw(img)
-        for gx in range(0, TW, 64):     # faint grid, like the videos
-            d.line([(gx, 0), (gx, TH)], fill=col("grid", 0.22))
-        for gy in range(0, TH, 64):
-            d.line([(0, gy), (TW, gy)], fill=col("grid", 0.22))
-        box = (640, 40, 1250, TH) if kind == "cutout" else ((700, 90, 1260, 640) if kind == "photo" else (660, 130, 1240, 600))
-        _subject(img, th, kind, path, box, accent, trend, "A")
-        _text_block(img, th, 64, 370, 580 if kind == "photo" else 600, accent, big_max=250,
-                    cue=(trend, tone) if kind != "graphic" else None)
+        return img
+    # A "Spotlight" (default)
+    if kind == "photo":
+        img = R.thumb_bg(TW, TH, (760, 330, 420, 380), grid=64)
+        _photo_right(img, path, focus, zoom)
+        _left_scrim(img)
+        R.shade(img, (R.smooth((np.linspace(0, 1, TH) - 0.62) / 0.38) * 0.45)[:, None].repeat(TW, 1))
+    elif kind == "cutout":
+        img = R.thumb_bg(TW, TH, (930, 300, 470, 400), grid=64)
+        R.place_person(img, path, 300, 34, 935, 640, zoom)
+    else:
+        img = R.thumb_bg(TW, TH, (930, 330, 470, 360), grid=64)
+        R.overlay(img, R.trend_graphic(540, 400, trend, tone, width=30), 650, 120)
+    _text_block(img, {**th, "tag": ""}, 64, 350, 580, accent, big_max=250,
+                sizes=(92, 86, 80, 74, 68, 62, 56), max_lines=3, cue=(trend, tone) if kind == "photo" else None)
     return img
 
 def make_thumb(spec, out_dir):
-    th = spec.get("thumbnail")
-    if not th:
-        return
-    if th.get("style"):
-        thumb_image(th).convert("RGB").save(os.path.join(out_dir, spec["id"] + "_thumb.png"))
-        return
-    img = Image.new("RGBA", (1280, 720))
-    bg = background().resize((1440, 810)).crop((80, 45, 1360, 765))
-    img.alpha_composite(bg)
-    if th.get("photo"):
-        return _photo_thumb(spec, out_dir, th, img)
-    d = ImageDraw.Draw(img)
-    text_c(d, (640, 300), th["big"], font(250, "Black"), col(th.get("color", "gold")),
-           stroke=8, stroke_fill=(0, 0, 0, 255))
-    text_c(d, (640, 520), th["line"], font(92, "Black"), col("text"), stroke=6, stroke_fill=(0, 0, 0, 255))
-    if th.get("tag"):
-        f = font(48, "Black")
-        tw = f.getlength(th["tag"]) + 60
-        rrect(d, [640 - tw / 2, 596, 640 + tw / 2, 684], 22, fill=col(th.get("tag_color", "green")))
-        text_c(d, (640, 640), th["tag"], f, col("bg0"))
-    img.convert("RGB").save(os.path.join(out_dir, spec["id"] + "_thumb.png"))
+    th = dict(spec.get("thumbnail") or {})
+    th.setdefault("line", spec.get("title", ""))
+    path = os.path.join(out_dir, spec["id"] + "_thumb.png")
+    thumb_image(th).convert("RGB").save(path)
+    return path
 
 def render(spec_path, out_dir):
     spec = json.load(open(spec_path))

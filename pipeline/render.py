@@ -512,33 +512,135 @@ def shadow_text(img, xy, s, f, fill, anchor="mm", blur=10, offset=(0, 8), alpha=
     img.alpha_composite(lay.filter(ImageFilter.GaussianBlur(blur)))
     ImageDraw.Draw(img).text(xy, s, font=f, fill=fill, anchor=anchor)
 
-def card(im, w, h, focus=(0.5, 0.4), r=28, border=10, tilt=0.0, shadow=28):
-    """A real photo as a rounded white-bordered card, optionally tilted, with a soft shadow. Returns (RGBA, pad)."""
-    ph = grade(cover(im, w, h, focus)).convert("RGBA")
-    m = Image.new("L", (w, h), 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, w - 1, h - 1], r, fill=255)
-    ph.putalpha(m)
-    bw, bh = w + 2 * border, h + 2 * border
-    c = Image.new("RGBA", (bw, bh), (0, 0, 0, 0))
-    ImageDraw.Draw(c).rounded_rectangle([0, 0, bw - 1, bh - 1], r + border, fill=(255, 255, 255, 255))
-    c.alpha_composite(ph, (border, border))
-    if tilt:
-        c = c.rotate(tilt, Image.BICUBIC, expand=True)
-    pad = shadow * 2
-    out = Image.new("RGBA", (c.width + 2 * pad, c.height + 2 * pad), (0, 0, 0, 0))
-    sh = Image.new("RGBA", out.size, (0, 0, 0, 0))
-    sh.paste((0, 0, 0, 150), (pad, pad + shadow // 2), c.getchannel("A"))
-    out.alpha_composite(sh.filter(ImageFilter.GaussianBlur(shadow)))
-    out.alpha_composite(c, (pad, pad))
+# ---------------------------------------------------------------- thumbnail look (shared by both renderers)
+THUMB_TOP, THUMB_BOT = (24, 38, 68), (11, 18, 37)   # navy lifted a little so it stands out in dark-mode feeds
+THUMB_LIGHT = (66, 104, 160)                          # cool light behind the subject (never red)
+
+def smooth(x):
+    x = np.clip(x, 0, 1)
+    return x * x * (3 - 2 * x)
+
+def thumb_bg(w, h, light=None, grid=0, grid_a=0.14, vignette=0.35):
+    """Thumbnail background: lifted navy gradient, a soft radial light (cx, cy, rx, ry) behind the subject,
+    an optional very faint grid (like the videos) and a gentle edge vignette."""
+    y = np.linspace(0, 1, h, dtype=np.float32)[:, None, None]
+    top, bot = np.array(THUMB_TOP, np.float32), np.array(THUMB_BOT, np.float32)
+    img = Image.fromarray(np.clip(top + (bot - top) * y, 0, 255).astype(np.uint8).repeat(w, 1), "RGB").convert("RGBA")
+    if light:
+        img.alpha_composite(radial(w, h, *light, THUMB_LIGHT, 0.42))
+    if grid:
+        d = ImageDraw.Draw(img)
+        for gx in range(0, w, grid):
+            d.line([(gx, 0), (gx, h)], fill=col("grid", grid_a))
+        for gy in range(0, h, grid):
+            d.line([(0, gy), (w, gy)], fill=col("grid", grid_a))
+    if vignette:
+        yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+        v = np.clip(((xx / w - 0.5) ** 2 + (yy / h - 0.5) ** 2) * 2.0 - 0.2, 0, 1) * vignette
+        shade(img, v)
+    return img
+
+def shade(img, a, color=None, x=0, y=0):
+    """Composite a flat colour (default deepest navy) with per-pixel alpha array a (0-1) onto img at (x, y)."""
+    lay = np.zeros(a.shape + (4,), np.uint8)
+    lay[..., :3] = COLORS["bg0"] if color is None else color
+    lay[..., 3] = (np.clip(a, 0, 1) * 255).astype(np.uint8)
+    img.alpha_composite(Image.fromarray(lay, "RGBA"), (int(x), int(y)))
+
+def head_profile(path):
+    """(head height, head centre x) in load_cutout(path) pixels, from the mask's row widths: the head runs
+    from the top down to the neck (the first narrowing before the shoulders widen). Portraits with no clear
+    neck (head and shoulders already) count the top 55% as the head."""
+    key = ("head", path)
+    if key not in _photo_cache:
+        from scipy.ndimage import uniform_filter1d
+        c = load_cutout(path)
+        a = np.asarray(c.getchannel("A")) > 100
+        n = len(a)
+        w = uniform_filter1d(a.sum(1).astype(np.float32), max(3, n // 60))
+        k = max(2, n // 50)
+        hh = None
+        for y in range(max(k, int(n * 0.08)), int(n * 0.6)):
+            if w[y] <= w[y - k:y + k + 1].min() and w[y] < 0.95 * w[:y].max() \
+                    and w[y:y + int(n * 0.3)].max() > 1.3 * w[y]:
+                hh = y
+                break
+        hh = hh or int(n * 0.55)
+        cols = a[:hh].sum(0).astype(np.float32)
+        _photo_cache[key] = (hh, float(np.average(np.arange(c.width), weights=cols + 1e-6)))
+    return _photo_cache[key]
+
+def clean_person(im, rim_a=0.32, shadow_a=0.6, shadow_blur=22, offset=(14, 18)):
+    """Returns (layer, pad): a cut-out person with a clean edge, a subtle thin backlight rim (stronger at the
+    top, none along sides the photo itself cropped) and a soft dark drop shadow. No coloured glow."""
+    from scipy.ndimage import grey_erosion, gaussian_filter
+    a = np.asarray(im.getchannel("A"), np.float32) / 255
+    rgb = np.asarray(im.convert("RGB"), np.float32)
+    band = gaussian_filter(np.clip(a - grey_erosion(a, size=(5, 5), mode="nearest"), 0, 1), 0.9) * a
+    k = (band * rim_a * np.linspace(1.0, 0.3, a.shape[0], dtype=np.float32)[:, None])[..., None]
+    rgb = rgb * (1 - k) + np.array((236, 243, 255), np.float32) * k
+    person = Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8), "RGB").convert("RGBA")
+    person.putalpha(im.getchannel("A"))
+    pad = shadow_blur * 2 + max(offset)
+    out = Image.new("RGBA", (im.width + 2 * pad, im.height + 2 * pad), (0, 0, 0, 0))
+    for blur, (dx, dy), alpha in ((shadow_blur, offset, shadow_a), (5, (0, 3), 0.35)):   # soft drop + contact shadow
+        sh = Image.new("RGBA", out.size, (2, 6, 16, 0))
+        m = Image.new("L", out.size, 0); m.paste(im.getchannel("A"), (pad + dx, pad + dy))
+        sh.putalpha(m.filter(ImageFilter.GaussianBlur(blur)).point(lambda p: int(p * alpha)))
+        out.alpha_composite(sh)
+    out.alpha_composite(person, (pad, pad))
     return out, pad
+
+def person_layer(path, head_px, reach, max_w, zoom=1.0):
+    """The person from path scaled so the head is head_px tall, cropped below at `reach` px from the top of
+    the head (head and shoulders: the canvas edge), at most max_w wide. Returns (layer, pad, head_cx, open)
+    with head_cx in layer pixels and open = sides where the person is cut straight (to put on a canvas edge)."""
+    c = load_cutout(path)
+    hh, hcx = head_profile(path)
+    op = cutout_open(path)
+    s = head_px * zoom / hh
+    for _ in range(2):
+        crop_h = min(c.height, int(math.ceil(reach / s)) + 2)
+        bb = c.crop((0, 0, c.width, crop_h)).getchannel("A").point(lambda p: 255 if p > 30 else 0).getbbox()
+        if (bb[2] - bb[0]) * s <= max_w:
+            break
+        s = max_w / (bb[2] - bb[0])
+    bust = c.crop((bb[0], 0, bb[2], crop_h))
+    sides = ("l" if "l" in op and bb[0] <= 2 else "") + ("r" if "r" in op and bb[2] >= c.width - 2 else "")
+    im = bust.resize((max(1, round(bust.width * s)), max(1, round(crop_h * s))), Image.LANCZOS)
+    if s > 1.2:
+        im = im.filter(ImageFilter.UnsharpMask(2, 70, 2))
+    im = grade(im, k=0.06, sat=1.05, con=1.05)
+    if im.height < reach - 4 and "b" in op:         # photo cuts the body above the canvas edge: fade it out
+        im = fade_bottom(im, 0.18)
+    lay, pad = clean_person(im)
+    if "l" in sides and "r" not in sides:            # left side cut by the photo: fade it out softly
+        a = np.asarray(lay.getchannel("A"), np.float32)
+        ramp = smooth((np.arange(lay.width) - pad) / (0.25 * im.width))[None, :]
+        lay.putalpha(Image.fromarray((a * ramp).astype(np.uint8)))
+    return lay, pad, (hcx - bb[0]) * s, sides
+
+def place_person(img, path, head_px, head_top, head_cx, max_w, zoom=1.0):
+    """Head-and-shoulders cut-out with its head top at head_top, centred on head_cx, reaching the bottom
+    edge. If the photo cut the person on the right, that side goes on the canvas's right edge."""
+    lay, pad, hx, sides = person_layer(path, head_px, img.height - head_top, max_w, zoom)
+    x = head_cx - hx - pad
+    if "r" in sides:
+        x = img.width - (lay.width - pad)
+    overlay(img, lay, x, head_top - pad)
+
+def photo_layer(path, w, h, focus=(0.5, 0.4), zoom=1.0):
+    """A real photo cropped to w x h, graded gently toward the palette (straight, no frame)."""
+    return grade(cover(load_photo(path), w, h, focus, zoom), k=0.16, sat=1.08, con=1.06).convert("RGBA")
 
 def trend_of(big):
     s = str(big or "").strip()
     return "down" if s[:1] in "-−↓" else "up"
 
-def trend_graphic(w, h, trend="up", color="green", bars=True, width=None, ss=2):
-    """Simple chart mark: faint rising/falling columns + one thick line with an arrowhead and a glow."""
+def trend_graphic(w, h, trend="up", color="green", bars=False, width=None, ss=2):
+    """Simple chart mark: one thick line with an arrowhead and a soft glow (bars=True adds faint columns)."""
     W2, H2 = w * ss, h * ss
-    lw = (width or max(10, h // 22)) * ss
+    lw = (width or max(14, h // 15)) * ss
     pts = [(0.04, 0.82), (0.26, 0.62), (0.42, 0.70), (0.66, 0.40), (0.80, 0.47), (0.95, 0.12)]
     if trend == "down":
         pts = [(x, 1.0 - y) for x, y in pts]
@@ -567,7 +669,7 @@ def trend_graphic(w, h, trend="up", color="green", bars=True, width=None, ss=2):
     right = (base[0] - ah * 0.62 * math.cos(ang + math.pi / 2), base[1] - ah * 0.62 * math.sin(ang + math.pi / 2))
     dl.polygon([tip, left, right], fill=col(color))
     glow = line.filter(ImageFilter.GaussianBlur(lw * 1.4))
-    lay.alpha_composite(glow); lay.alpha_composite(glow); lay.alpha_composite(line)
+    lay.alpha_composite(glow); lay.alpha_composite(line)
     return lay.resize((w, h), Image.LANCZOS)
 
 def fit_font(text, max_w, start, weight="Black", min_size=40, step=6):
@@ -1030,95 +1132,27 @@ def _wrap(text, f, width):
             lines.append(cur); cur = w
     return lines + ([cur] if cur else [])
 
-def _photo_short_thumb(spec, out_dir, tp):
-    """Photo thumbnail: the real person/company full-bleed, dark gradient, huge outlined number, bold title."""
-    import numpy as np
-    img = cover(load_photo(tp["file"]), W, H, tuple(tp.get("focus", (0.5, 0.35)))).convert("RGBA")
-    from PIL import ImageEnhance
-    img = ImageEnhance.Contrast(ImageEnhance.Color(img.convert("RGB")).enhance(1.25)).enhance(1.1).convert("RGBA")
-    yy = np.linspace(0, 1, H)[:, None]
-    shade = np.clip(np.maximum(0, (yy - 0.30) / 0.45) * 0.88 + np.maximum(0, (0.16 - yy) / 0.16) * 0.55, 0, 0.9)
-    over = np.zeros((H, W, 4), np.uint8); over[..., 3] = (shade * 255).astype(np.uint8).repeat(W, 1)
-    over[..., :3] = (6, 10, 22)
-    img.alpha_composite(Image.fromarray(over, "RGBA"))
-    d = ImageDraw.Draw(img)
-    th = spec.get("thumbnail") or {}
-    line = th.get("line") or spec["title"]
-    big, color = _thumb_big(spec)
-    badge = spec.get("badge")
-    if badge:
-        f = font(46, "Black"); bw = f.getlength(badge) + 80
-        rrect(d, [CX - bw / 2, 425, CX + bw / 2, 515], 45, fill=col("green"))
-        text_c(d, (CX, 470), badge, f, col("bg0"))
-    y = 1000
-    if big:
-        size = 340
-        while font(size, "Black").getlength(big) > 980 and size > 120:
-            size -= 10
-        text_c(d, (CX + 8, y + 10), big, font(size, "Black"), (0, 0, 0, 150))          # drop shadow
-        text_c(d, (CX, y), big, font(size, "Black"), col(color), stroke=16, stroke_fill=(0, 0, 0, 255))
-        ty = y + size * 0.62
-    else:
-        ty = 950
-    for size in (96, 88, 80, 72, 66):
-        f = font(size, "Black")
-        lines = _wrap(line.upper(), f, 960)
-        if len(lines) <= 3:
-            break
-    for i, ln in enumerate(lines):
-        text_c(d, (CX, ty + i * size * 1.12), ln, f, col("gold") if i == 0 and len(lines) > 1 else col("text"),
-               stroke=9, stroke_fill=(0, 0, 0, 255))
-    path = os.path.join(out_dir, spec["id"] + "_thumb.png")
-    img.convert("RGB").save(path, optimize=True)
-    return path
-
 def short_thumb_image(th):
-    """Styled vertical thumbnail (1080x1920 RGBA); all text kept inside y 380-1450.
-    th: big, line, tag, photo {file, focus, zoom?}, cutout, color, trend, style "A" | "B".
-    A "Spotlight": number + headline on top, the person/photo/chart below on a clean navy stage.
+    """Styled vertical thumbnail (1080x1920 RGBA); all text kept inside y 380-1450 (clear of Shorts overlays).
+    th: big, line, photo {file, focus?, zoom?, cutout?}, cutout, color, trend, style "A" (default) | "B".
+    A "Spotlight": number + headline on top; below, the person (head and shoulders), a straight full-width
+      photo fading into navy, or a clean trend arrow. No pill.
     B "Colour block": person/photo/chart on top, solid accent panel with navy text below."""
-    style = str(th.get("style", "A")).upper()
+    style = str(th.get("style") or "A").upper()
     big, line, tag, trend, accent = thumb_parts(th)
     kind, path = thumb_subject(th)
     tp = th.get("photo") or {}
     focus, zoom = tuple(tp.get("focus", (0.5, 0.4))), tp.get("zoom", 1.0)
     tone = "green" if trend == "up" else "red"
-    img = make_background().copy()
-
-    def person(top, h, cx=CX, glow="green", glow_a=0.6):
-        c = load_cutout(path)
-        h = h * zoom
-        if c.width * h / c.height > W * 1.1:
-            h = c.height * W * 1.1 / c.width
-        c = grade(fit_height(c, h), k=0.08, sat=1.06, con=1.04)
-        op = cutout_open(path)
-        lay, pad = rim(c, 4, (255, 255, 255), 0.5, 30, COLORS.get(glow, glow), glow_a, op)
-        x = cx - lay.width / 2
-        if "r" in op and x + lay.width - pad < W:
-            x = W - (lay.width - pad)
-        if "l" in op and x + pad > 0:
-            if "r" in op:
-                x = -pad
-            else:
-                a = np.asarray(lay.getchannel("A"), np.float32)
-                ramp = np.clip((np.arange(lay.width) - pad) / (0.22 * c.width), 0, 1)[None, :]
-                lay = lay.copy(); lay.putalpha(Image.fromarray((a * ramp).astype(np.uint8)))
-        if "b" in op and top + h < H:
-            lay = fade_bottom(lay, 0.0, start=pad + h * 0.8)
-        overlay(img, lay, x, top - pad)
 
     if style == "B":
+        img = thumb_bg(W, H, (CX, 640, 520, 420))
         py = 1000                                     # panel top (left end); text sits in 1010-1440
-        img.alpha_composite(radial(W, H, CX, 640, 520, 420, "green" if kind == "cutout" else tone, 0.30))
         if kind == "cutout":
-            person(330, 900)
+            place_person(img, path, 380, 330, CX, W * 1.05, zoom)
         elif kind == "photo":
-            ph = grade(cover(load_photo(path), W, py + 80, focus), k=0.25).convert("RGBA")
-            img.alpha_composite(ph, (0, 0))
-            top = np.clip(1 - np.linspace(0, 1, py + 80) / 0.22, 0, 1) ** 2 * 0.75   # keep the very top calm
-            lay = np.zeros((py + 80, W, 4), np.uint8); lay[..., :3] = COLORS["bg0"]
-            lay[..., 3] = (top[:, None].repeat(W, 1) * 255).astype(np.uint8)
-            img.alpha_composite(Image.fromarray(lay, "RGBA"))
+            img.alpha_composite(photo_layer(path, W, py + 80, focus, zoom), (0, 0))
+            shade(img, (smooth(1 - np.linspace(0, 1, py + 80) / 0.22) * 0.75)[:, None].repeat(W, 1))
         else:
             overlay(img, trend_graphic(900, 560, trend, tone), 90, 400)
         sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -1127,62 +1161,42 @@ def short_thumb_image(th):
         ImageDraw.Draw(img).polygon([(0, py), (W, py + 64), (W, H), (0, H)], fill=col(accent))
         text_block(img, th, CX, 1250, 960, "bg0", "bg0", tag_fill="bg0", tag_text=accent, big_max=250,
                    sizes=(88, 82, 76, 70, 64), max_lines=2, align="m", shadow=0, tag_size=42)
+        return img
+
+    py = 900                                          # subject area starts here (text block sits above)
+    img = thumb_bg(W, H, (CX, 1330, 600, 520), grid=90)
+    if kind == "cutout":
+        place_person(img, path, 400, 945, CX, W * 1.05, zoom)
+    elif kind == "photo":
+        ph = photo_layer(path, W, H - py, focus, zoom)
+        a = smooth(np.arange(H - py, dtype=np.float32) / 330)[:, None].repeat(W, 1)
+        ph.putalpha(Image.fromarray((a * 255).astype(np.uint8)))
+        img.alpha_composite(ph, (0, py))
+        shade(img, (smooth((np.linspace(0, 1, H - py) - 0.72) / 0.28) * 0.55)[:, None].repeat(W, 1), y=py)
     else:
-        img.alpha_composite(radial(W, H, CX, 1350, 560, 520, "green" if kind == "cutout" else tone, 0.32))
-        if kind == "cutout":
-            person(930, 1080)
-        elif kind == "photo":
-            lay, pad = card(load_photo(path), 880, 620, focus, r=30, border=10, tilt=-3.0, shadow=30)
-            overlay(img, lay, CX - lay.width / 2, 1310 - lay.height / 2)
-        else:
-            overlay(img, trend_graphic(960, 620, trend, tone), 60, 960)
-        text_block(img, th, CX, 650, 960, accent, big_max=300, sizes=(100, 92, 84, 76, 70), max_lines=3,
-                   align="m", cue=None, tag_size=42)
+        overlay(img, trend_graphic(900, 520, trend, tone), 90, 990)
+    sizes = (104, 96, 88, 80, 72, 66, 60) if big else (124, 114, 104, 96, 88, 80, 72)
+    text_block(img, {**th, "tag": ""}, CX, 640, 960, accent, big_max=300, sizes=sizes,
+               max_lines=3 if big else 4, align="m", cue=None)
     return img
 
+def thumb_headline(title):
+    """Short headline from a video title when the spec gives no thumbnail line: its first clause if that is
+    2-8 words ("Sara Blakely", "Car Loan Math"), else the whole title. Drops "#shorts" and (asides)."""
+    import re
+    t = re.sub(r"\s*\(.*?\)", "", title.replace("#shorts", "")).strip()
+    m = re.match(r"^(.+?[?:.])\s", t + " ")
+    head = (m.group(1).rstrip(":.") if m else t).strip()
+    return head if 2 <= len(head.split()) <= 8 else t
+
 def make_short_thumb(spec, out_dir):
-    """Vertical Shorts thumbnail: badge, big number, title. Kept inside y 380-1450 (clear of Shorts overlays)."""
-    th = spec.get("thumbnail") or {}
-    if th.get("style"):
-        big, color = _thumb_big(spec)
-        th = {**th, "big": th.get("big") or big or "", "color": th.get("color") or (color if big else None),
-              "line": th.get("line") or spec["title"].replace("#shorts", "").strip(),
-              "tag": th.get("tag") or spec.get("badge", "")}
-        path = os.path.join(out_dir, spec["id"] + "_thumb.png")
-        short_thumb_image(th).convert("RGB").save(path, optimize=True)
-        return path
-    tp = (spec.get("thumbnail") or {}).get("photo")
-    if tp:
-        return _photo_short_thumb(spec, out_dir, tp)
-    img = make_background().copy()
-    d = ImageDraw.Draw(img)
-    th = spec.get("thumbnail") or {}
-    line = th.get("line") or spec["title"].replace("#shorts", "").strip()
+    """Vertical Shorts thumbnail (style A by default): big number + short headline, subject below."""
+    th = dict(spec.get("thumbnail") or {})
     big, color = _thumb_big(spec)
-    y = 470
-    badge = spec.get("badge")
-    if badge:
-        f = font(46, "Black")
-        bw = f.getlength(badge) + 80
-        rrect(d, [CX - bw / 2, y - 45, CX + bw / 2, y + 45], 45, fill=col("green"))
-        text_c(d, (CX, y), badge, f, col("bg0"))
-    if big:
-        size = 330
-        while font(size, "Black").getlength(big) > 940 and size > 120:
-            size -= 10
-        text_c(d, (CX, 800), big, font(size, "Black"), col(color), stroke=10, stroke_fill=(0, 0, 0, 255))
-        ty = 1060
-    else:
-        ty = 760
-    for size in (110, 100, 90, 80, 72):
-        f = font(size, "Black")
-        lines = _wrap(line.upper(), f, 940)
-        if len(lines) <= (3 if big else 5):
-            break
-    for i, ln in enumerate(lines):
-        text_c(d, (CX, ty + i * size * 1.12), ln, f, col("text"), stroke=7, stroke_fill=(0, 0, 0, 255))
+    th.update(big=th.get("big") or big or "", color=th.get("color") or (color if big else None),
+              line=th.get("line") or thumb_headline(spec["title"]))
     path = os.path.join(out_dir, spec["id"] + "_thumb.png")
-    img.convert("RGB").save(path, optimize=True)
+    short_thumb_image(th).convert("RGB").save(path, optimize=True)
     return path
 
 # ---------------------------------------------------------------- main render
