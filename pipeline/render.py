@@ -329,6 +329,238 @@ def paste_photo(d, path, box, a=1.0, focus=(0.5, 0.4), r=36, credit=True):
             d.text((x1 - 16, y1 - 14), c, font=font(20, "Medium", False), fill=col("text", 0.85 * a),
                    anchor="rb", stroke_width=3, stroke_fill=(0, 0, 0, int(200 * a)))
 
+# ---------------------------------------------------------------- cutouts, glows, simple graphics
+# Shared by the thumbnails (both renderers) and the long-video photo scenes.
+def _edge_band(mask, px):
+    """True where a pixel is inside mask but within ~px of its outline."""
+    from scipy.ndimage import binary_erosion
+    return mask & ~binary_erosion(mask, iterations=px)
+
+def _clean_cutout(src, alpha):
+    """Tidy a rembg matte: drop faint specks, key out backdrop-coloured pixels near the outline
+    (red-carpet fringe in hair, etc.), pull the backdrop colour out of soft edge pixels."""
+    rgb = np.asarray(src, np.float32)
+    a = np.asarray(alpha, np.float32) / 255
+    a[a < 0.1] = 0
+    outside = a < 0.05
+    if outside.mean() > 0.05:
+        bg = np.median(rgb[outside], 0)
+        spread = np.median(np.abs(rgb[outside] - bg).sum(1))
+        if spread < 90:                                   # plain backdrop: safe to key its colour
+            from scipy.ndimage import label
+            dist = np.abs(rgb - bg).sum(-1)
+            # backdrop-coloured patches the model kept: drop them if they connect to the outside
+            # (and lie near the outline), so e.g. red lips inside the face are never touched
+            like = (dist < 95) | outside
+            lab, _ = label(like)
+            ids = np.unique(lab[outside]); ids = ids[ids > 0]
+            drop = np.isin(lab, ids) & _edge_band(a > 0.05, 90)
+            a = np.where(drop, 0, a)
+            band = _edge_band(a > 0.05, 8)
+            key = np.clip((dist - 60) / 110, 0, 1)
+            a = np.where(band, np.minimum(a, key), a)
+            soft = band & (a > 0.05)
+            k = np.maximum(a, 0.35)[..., None]
+            fixed = np.clip((rgb - (1 - k) * bg) / k, 0, 255)
+            rgb = np.where(soft[..., None], fixed, rgb)
+    from scipy.ndimage import label
+    lab, n = label(a > 0.3)
+    if n > 1:                                             # drop floating specks, keep the person
+        sizes = np.bincount(lab.ravel()); sizes[0] = 0
+        small = np.nonzero(sizes < sizes.max() * 0.01)[0]
+        a = np.where(np.isin(lab, small[small > 0]), 0, a)
+        a = np.where(a <= 0.3, a * 0.6, a)               # thin the faint halo left around them
+    al = Image.fromarray((a * 255).astype(np.uint8)).filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(0.8))
+    out = Image.fromarray(rgb.astype(np.uint8), "RGB").convert("RGBA")
+    out.putalpha(al)
+    return out
+
+def load_cutout(path):
+    """The person in a photo with the background removed, cropped to them. Computed once with rembg
+    (u2net_human_seg, ~2 s) and cached as assets/photos/<name>_cut.png; delete that file to redo it."""
+    key = ("cut", path)
+    if key not in _photo_cache:
+        cp = os.path.join(ROOT, os.path.splitext(path)[0] + "_cut.png")
+        if os.path.exists(cp):
+            cut = Image.open(cp).convert("RGBA")
+        else:
+            from rembg import remove, new_session
+            src = load_photo(path)
+            cut = _clean_cutout(src, remove(src, session=new_session("u2net_human_seg")).getchannel("A"))
+            cut.save(cp)
+        box = cut.getchannel("A").point(lambda p: 255 if p > 30 else 0).getbbox() or (0, 0) + cut.size
+        # sides where the photo itself crops the person (no outline should be drawn there)
+        _photo_cache[("open", path)] = "".join(k for k, hit in zip("ltrb", (box[0] <= 2, box[1] <= 2,
+                                               box[2] >= cut.width - 2, box[3] >= cut.height - 2)) if hit)
+        _photo_cache[key] = cut.crop(box)
+    return _photo_cache[key]
+
+def cutout_open(path):
+    """Which sides ("l", "t", "r", "b") of load_cutout(path) are cropped by the photo frame."""
+    load_cutout(path)
+    return _photo_cache[("open", path)]
+
+def overlay(img, layer, x, y):
+    """alpha_composite layer onto img at (x, y), clipping anything outside img (offsets may be negative)."""
+    x, y = int(round(x)), int(round(y))
+    sx, sy = max(0, -x), max(0, -y)
+    w, h = min(layer.width - sx, img.width - x - sx), min(layer.height - sy, img.height - y - sy)
+    if w > 0 and h > 0:
+        img.alpha_composite(layer, (x + sx, y + sy), (sx, sy, sx + w, sy + h))
+
+def fit_height(im, h):
+    return im.resize((max(1, int(im.width * h / im.height)), int(h)), Image.LANCZOS)
+
+def fade_bottom(im, frac=0.25, start=None):
+    """Fade the bottom `frac` of an RGBA image to transparent (hides where a cut-out body is cropped)."""
+    im = im.copy()
+    hgt = im.height
+    s = hgt * (1 - frac) if start is None else start
+    ramp = np.clip(1 - (np.arange(hgt) - s) / max(1, hgt - s), 0, 1)[:, None]
+    a = np.asarray(im.getchannel("A"), np.float32) * ramp
+    im.putalpha(Image.fromarray(a.astype(np.uint8)))
+    return im
+
+def rim(im, width=5, color=(255, 255, 255), alpha=0.95, glow=0, glow_color=None, glow_alpha=0.8, open_edges=""):
+    """Return (image, pad): im with a thin outline (and optional soft coloured glow) around its alpha shape.
+    open_edges: sides cropped by the photo frame; no outline/glow is drawn past them."""
+    pad = width + glow * 2 + 4
+    base = Image.new("RGBA", (im.width + 2 * pad, im.height + 2 * pad), (0, 0, 0, 0))
+    base.alpha_composite(im, (pad, pad))
+    a = base.getchannel("A").point(lambda p: 255 if p > 90 else 0)
+    out = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    if glow:
+        g = a.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.GaussianBlur(glow))
+        lay = Image.new("RGBA", base.size, tuple(glow_color or color) + (0,))
+        lay.putalpha(g.point(lambda p: int(p * glow_alpha)))
+        out.alpha_composite(lay)
+    if width:
+        ring = a.filter(ImageFilter.MaxFilter(2 * width + 1)).filter(ImageFilter.GaussianBlur(0.7))
+        lay = Image.new("RGBA", base.size, tuple(color) + (0,))
+        lay.putalpha(ring.point(lambda p: int(p * alpha)))
+        out.alpha_composite(lay)
+    out.alpha_composite(base)
+    if open_edges:
+        a = np.asarray(out.getchannel("A")).copy()
+        if "l" in open_edges: a[:, :pad] = 0
+        if "r" in open_edges: a[:, -pad:] = 0
+        if "t" in open_edges: a[:pad, :] = 0
+        if "b" in open_edges: a[-pad:, :] = 0
+        out.putalpha(Image.fromarray(a))
+    return out, pad
+
+def radial(w, h, cx, cy, rx, ry, color, strength=1.0):
+    """RGBA layer: soft elliptical glow of `color`."""
+    y = np.arange(h, dtype=np.float32)[:, None]
+    x = np.arange(w, dtype=np.float32)[None, :]
+    g = np.exp(-(((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2)) * strength
+    arr = np.zeros((h, w, 4), np.uint8)
+    arr[..., :3] = COLORS.get(color, color) if isinstance(color, str) else color
+    arr[..., 3] = (np.clip(g, 0, 1) * 255).astype(np.uint8)
+    return Image.fromarray(arr, "RGBA")
+
+def grade(im, k=0.22, sat=1.12, con=1.08):
+    """Nudge a real photo toward the channel palette: a little more punch, navy-tinted shadows."""
+    from PIL import ImageEnhance
+    rgb = im.convert("RGB")
+    rgb = ImageEnhance.Contrast(ImageEnhance.Color(rgb).enhance(sat)).enhance(con)
+    arr = np.asarray(rgb, np.float32)
+    lum = (arr @ np.array([0.299, 0.587, 0.114], np.float32))[..., None] / 255
+    navy = np.array(COLORS["bg1"], np.float32)
+    w = k * (1 - lum) ** 1.5
+    out = Image.fromarray(np.clip(arr * (1 - w) + navy * w, 0, 255).astype(np.uint8), "RGB")
+    if im.mode == "RGBA":
+        out = out.convert("RGBA"); out.putalpha(im.getchannel("A"))
+    return out
+
+def shadow_text(img, xy, s, f, fill, anchor="mm", blur=10, offset=(0, 8), alpha=0.6):
+    """Text with a soft drop shadow (cleaner than a thick black outline)."""
+    lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ImageDraw.Draw(lay).text((xy[0] + offset[0], xy[1] + offset[1]), s, font=f, fill=(0, 0, 0, int(255 * alpha)), anchor=anchor)
+    img.alpha_composite(lay.filter(ImageFilter.GaussianBlur(blur)))
+    ImageDraw.Draw(img).text(xy, s, font=f, fill=fill, anchor=anchor)
+
+def card(im, w, h, focus=(0.5, 0.4), r=28, border=10, tilt=0.0, shadow=28):
+    """A real photo as a rounded white-bordered card, optionally tilted, with a soft shadow. Returns (RGBA, pad)."""
+    ph = grade(cover(im, w, h, focus)).convert("RGBA")
+    m = Image.new("L", (w, h), 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, w - 1, h - 1], r, fill=255)
+    ph.putalpha(m)
+    bw, bh = w + 2 * border, h + 2 * border
+    c = Image.new("RGBA", (bw, bh), (0, 0, 0, 0))
+    ImageDraw.Draw(c).rounded_rectangle([0, 0, bw - 1, bh - 1], r + border, fill=(255, 255, 255, 255))
+    c.alpha_composite(ph, (border, border))
+    if tilt:
+        c = c.rotate(tilt, Image.BICUBIC, expand=True)
+    pad = shadow * 2
+    out = Image.new("RGBA", (c.width + 2 * pad, c.height + 2 * pad), (0, 0, 0, 0))
+    sh = Image.new("RGBA", out.size, (0, 0, 0, 0))
+    sh.paste((0, 0, 0, 150), (pad, pad + shadow // 2), c.getchannel("A"))
+    out.alpha_composite(sh.filter(ImageFilter.GaussianBlur(shadow)))
+    out.alpha_composite(c, (pad, pad))
+    return out, pad
+
+def trend_of(big):
+    s = str(big or "").strip()
+    return "down" if s[:1] in "-−↓" else "up"
+
+def trend_graphic(w, h, trend="up", color="green", bars=True, width=None, ss=2):
+    """Simple chart mark: faint rising/falling columns + one thick line with an arrowhead and a glow."""
+    W2, H2 = w * ss, h * ss
+    lw = (width or max(10, h // 22)) * ss
+    pts = [(0.04, 0.82), (0.26, 0.62), (0.42, 0.70), (0.66, 0.40), (0.80, 0.47), (0.95, 0.12)]
+    if trend == "down":
+        pts = [(x, 1.0 - y) for x, y in pts]
+    P = [(x * W2, y * H2) for x, y in pts]
+    lay = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+    d = ImageDraw.Draw(lay)
+    if bars:
+        n = 7
+        for i in range(n):
+            fx = (i + 0.5) / n
+            hy = 0.22 + 0.62 * (i + 1) / n if trend == "up" else 0.22 + 0.62 * (n - i) / n
+            bx = fx * W2
+            d.rounded_rectangle([bx - W2 / n * 0.3, H2 * (1 - hy), bx + W2 / n * 0.3, H2], 8 * ss,
+                                fill=col(color, 0.13))
+    line = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+    dl = ImageDraw.Draw(line)
+    (x1, y1), (x2, y2) = P[-2], P[-1]
+    ang = math.atan2(y2 - y1, x2 - x1)
+    ah = lw * 3.2
+    tip = (x2, y2)
+    base = (x2 - ah * math.cos(ang), y2 - ah * math.sin(ang))
+    dl.line(P[:-1] + [base], fill=col(color), width=lw, joint="curve")
+    for p in P[:-1]:
+        dl.ellipse([p[0] - lw / 2, p[1] - lw / 2, p[0] + lw / 2, p[1] + lw / 2], fill=col(color))
+    left = (base[0] + ah * 0.62 * math.cos(ang + math.pi / 2), base[1] + ah * 0.62 * math.sin(ang + math.pi / 2))
+    right = (base[0] - ah * 0.62 * math.cos(ang + math.pi / 2), base[1] - ah * 0.62 * math.sin(ang + math.pi / 2))
+    dl.polygon([tip, left, right], fill=col(color))
+    glow = line.filter(ImageFilter.GaussianBlur(lw * 1.4))
+    lay.alpha_composite(glow); lay.alpha_composite(glow); lay.alpha_composite(line)
+    return lay.resize((w, h), Image.LANCZOS)
+
+def fit_font(text, max_w, start, weight="Black", min_size=40, step=6):
+    size = start
+    while font(size, weight).getlength(text) > max_w and size > min_size:
+        size -= step
+    return font(size, weight), size
+
+def wrap_fit(text, max_w, sizes, max_lines, weight="Black"):
+    """Largest size from `sizes` at which text wraps into <= max_lines lines of width max_w."""
+    for s in sizes:
+        lines = _wrap(text, font(s, weight), max_w)
+        if len(lines) <= max_lines and all(font(s, weight).getlength(l) <= max_w for l in lines):
+            return lines, s
+    return _wrap(text, font(sizes[-1], weight), max_w), sizes[-1]
+
+def thumb_subject(th):
+    """What the thumbnail shows beside the text: ('cutout', path), ('photo', path) or ('graphic', None)."""
+    tp = th.get("photo")
+    if not tp:
+        return "graphic", None
+    if th.get("cutout") or tp.get("cutout"):
+        return "cutout", tp["file"]
+    return "photo", tp["file"]
+
 def v_photo(d, v, t, dur):
     """Real photo (person, company, product, place) with optional big number and label.
     v: {"type": "photo", "file": "assets/photos/x.jpg", "title"?, "value"?, "color"?, "label"?, "focus"?: [fx, fy]}"""
