@@ -128,7 +128,7 @@ def scene(say, **visual):
 scene("In nineteen ninety-seven, Apple lost over a billion dollars in a single year. Its sales had fallen by more than a third in two years.",
       type="count", to=-NET[1997] / 1e9, dp=3, prefix="−$", suffix="B", label="Apple's net loss, fiscal 1997",
       sub="Apple 10-K · sales down 36% in two years", color="red")
-scene("Last year, Apple's profit was about a hundred and thirty-two billion dollars. At that pace, it earns back that whole nineteen ninety-seven loss in under three days.",
+scene("In its latest fiscal year, which ended in September, Apple's profit was about a hundred and thirty-two billion dollars. At that pace, it earns back that whole nineteen ninety-seven loss in under three days.",
       type="equation", title="Apple, fiscal 2026",
       lines=[{"text": "$132.2B profit ÷ 365 days", "color": "muted", "size": 80},
              {"text": f"≈ ${profit_per_day_26 / 1e6:.0f}M a day", "color": "green", "size": 120},
@@ -156,7 +156,7 @@ scene("In September nineteen ninety-six, Apple had about one point seven five bi
       left={"label": "Sept 1996", "value": "$1.75B", "sub": "Apple 10-K", "color": "blue"},
       right={"label": "Sept 1997", "value": "$1.46B", "sub": f"down ${cash_drop_97 / 1e6:.0f}M", "color": "red"},
       verdict="Not broke. But bleeding.")
-scene("Lenders noticed. In October nineteen ninety-seven, Standard and Poor's cut Apple's debt ratings to B minus and triple C, deep in junk territory. Apple's own filing warned of significant voluntary employee turnover. And its old operating system was falling behind. Apple needed a new one, fast. So it went shopping.",
+scene("Lenders noticed. In October nineteen ninety-seven, Standard and Poor's cut Apple's debt ratings to B minus and triple C, deep in junk territory. Apple's own filing warned of significant voluntary employee turnover. And its old operating system was falling behind. Back in late nineteen ninety-six, Apple had already gone shopping for a new one.",
       type="bullets", title="Warning signs, 1997", color="red",
       items=["Debt cut to junk (S&P: B− / CCC)", "Staff leaving", "Sales falling every year", "An aging operating system"])
 
@@ -244,10 +244,10 @@ scene("In its first quarter on sale, Apple shipped two hundred and seventy-eight
       segments=[{"label": "iMac (278,000)", "value": IMAC_SHARE_Q4_98, "color": "green"},
                 {"label": "Other Macs", "value": 1 - IMAC_SHARE_Q4_98, "color": "slate"}],
       center="33%", center_sub="were iMacs")
-scene("And Apple was profitable again. After four losing quarters in a row, it made money in every quarter of fiscal ninety-eight. Notice the profits started before the iMac even shipped. Cost cuts came first.",
+scene("And Apple was profitable again. After four losing quarters in a row, it made money in every quarter of fiscal ninety-eight. Notice the profits started before the iMac even shipped. Cost cuts came first, helped by a faster Power Mac G3 line launched in late nineteen ninety-seven.",
       type="columns", title="Apple quarterly profit, fiscal 1998", highlight=3,
       items=[{"label": f"Q{i + 1}", "value": q, "display": f"${q / 1e6:.0f}M"} for i, q in enumerate(Q_1998)],
-      note="iMac shipped in Q4 (Aug 1998) · Source: Apple 10-K, fiscal 1998")
+      note="Power Mac G3 from Q1 · iMac shipped in Q4 (Aug 1998) · Source: Apple 10-K, fiscal 1998")
 scene("Now the least glamorous fix. Inventory: unsold computers and parts. Apple cut it from four hundred and thirty-seven million dollars to just seventy-eight million in one year. From thirty-one days of supply, to six.",
       type="hbars", title="Apple inventory (end of fiscal year)",
       items=[{"label": "Sept 1997", "value": INV[1997], "display": f"$437M · {INV_DAYS[1997]} days", "color": "red"},
@@ -257,7 +257,7 @@ scene("That released about three hundred and fifty-nine million dollars in cash.
       lines=[{"text": "$437M − $78M inventory", "color": "muted", "size": 80},
              {"text": f"= ${inv_cut / 1e6:.0f}M of cash freed", "color": "green", "size": 110},
              {"text": f"{inv_cut / MSFT:.1f}× Microsoft's $150M", "color": "gold", "size": 72}])
-scene("By September nineteen ninety-eight, Apple had made three hundred and nine million dollars for the year, and its cash had grown to two point three billion. Apple was alive. But it was still a shrinking computer company. Real growth came from the software it bought in nineteen ninety-six.",
+scene("By September nineteen ninety-eight, Apple had made three hundred and nine million dollars for the year, and its cash had grown to two point three billion. Apple was alive. But it was still a shrinking computer company. Real growth would come later, built on the software it agreed to buy in nineteen ninety-six.",
       type="stat_grid", title="Apple, fiscal 1998",
       items=[{"value": "+$309M", "label": "net profit", "sub": "after −$1.045B", "color": "green"},
              {"value": "$2.3B", "label": "cash & investments", "sub": "up from $1.46B", "color": "gold"},
@@ -282,11 +282,11 @@ scene("Today, the iPhone alone brought in about two hundred and fifty-four billi
                 {"label": "Wearables, home", "value": FY26["wear"], "color": "slate"},
                 {"label": "iPad", "value": FY26["ipad"], "color": "red"}],
       center=f"{iphone_share:.0%}", center_sub="from iPhone")
-scene("Put the two years side by side. Revenue is up nearly sixty-eight times. A billion-dollar loss became a hundred and thirty-two billion dollar profit. And about eight thousand four hundred employees became about a hundred and sixty-seven thousand.",
-      type="table", title="Apple: then and now",
+scene("Put the two years side by side. Before inflation, revenue is up nearly sixty-eight times. A billion-dollar loss became a hundred and thirty-two billion dollar profit. And about eight thousand four hundred regular employees became about a hundred and sixty-seven thousand full-time equivalents.",
+      type="table", title="Apple: then and now (not inflation-adjusted)",
       header=["", "Fiscal 1997", "Fiscal 2026"],
       rows=[["Revenue", "$7.08B", "$478.8B"], ["Net result", "−$1.045B", "+$132.2B"],
-            ["Employees", f"{EMPLOYEES[1997]:,}", f"~{EMP_26:,}"]],
+            ["Staff (regular / FTE)", f"{EMPLOYEES[1997]:,}", f"~{EMP_26:,}"]],
       col_colors={"1": "red", "2": "green"})
 scene("A fair warning about hindsight. None of this was guaranteed in nineteen ninety-eight. Apple's sales were still shrinking that year, and the iPhone was nearly a decade away. The turnaround bought a chance, not a result. So what can you take from it?",
       type="quote", text="The turnaround bought a chance,\nnot a result.", first_color="text", color="gold")
@@ -328,8 +328,8 @@ assert S[0]["say"].lower().startswith("in nineteen ninety-seven, apple lost over
 intro_words = sum(len(x["say"].split()) for x in S[:next(i for i, x in enumerate(S) if x["visual"]["type"] == "chapter")])
 assert intro_words <= 150, intro_words
 # every chapter's last scene ends on an open loop into the next chapter (a question or a forward-looking line)
-LOOPS = ["So it went shopping.", "it came from its fiercest rival.", "What Apple did with that time was cut, hard.",
-         "all-in-one computer.", "the software it bought in nineteen ninety-six.", "So what can you take from it?"]
+LOOPS = ["Apple had already gone shopping for a new one.", "it came from its fiercest rival.", "What Apple did with that time was cut, hard.",
+         "all-in-one computer.", "the software it agreed to buy in nineteen ninety-six.", "So what can you take from it?"]
 ch_idx = [i for i, x in enumerate(S) if x["visual"]["type"] == "chapter"]
 for i, loop in zip(ch_idx[1:], LOOPS):
     assert S[i - 1]["say"].endswith(loop), (S[i - 1]["say"][-60:], loop)
@@ -361,7 +361,9 @@ DESCRIPTION = (
     "acquisition and Steve Jobs' return, the $150 million Microsoft deal, cutting the product line, the iMac, a "
     "huge inventory cut, and how it set up the iPod and iPhone era. Plus three business lessons you can use: "
     "focus, cash runway and cutting complexity.\n\n"
-    "Apple's fiscal year ends in late September; years in the video are fiscal years. \"Under three days\" = "
+    "Apple's fiscal year ends in late September; years in the video are fiscal years. Dollar figures are not adjusted "
+    "for inflation; US prices roughly doubled between 1997 and 2026. Staff: 1997 = regular employees (excl. 1,739 "
+    "temporary staff and contractors), 2026 = full-time equivalents. \"Under three days\" = "
     "Apple's fiscal 1997 net loss ($1.045B) / its fiscal 2026 net income per day ($132.2B / 365). The \"90 days\" "
     "line is Steve Jobs' own later recollection (2010), not a figure from Apple's filings. The two-by-two product "
     "grid is as described by biographer Walter Isaacson; the four product lines are from Apple's 1999 10-K. The "
