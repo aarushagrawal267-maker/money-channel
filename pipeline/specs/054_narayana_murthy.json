@@ -4,6 +4,9 @@
  "voice": "af_heart",
  "speed": 1.05,
  "badge": "FOUNDER STORY",
+ "caption_fix": {
+  "Infosis": "Infosys"
+ },
  "disclaimer": "Sources: Infosys, Business Today, PTI · see description",
  "title": "Infosys Started With ₹10,000. Its IPO Nearly Flopped",
  "description": "Infosys started in 1981 with ₹10,000 that Sudha Murty gave her husband, Narayana Murthy, out of the ₹10,250 she had. He and six other engineers founded the company in Pune. In the year to March 2026 Infosys reported $20.2 billion in revenue (₹1.79 lakh crore). The road wasn't smooth: its 1993 public share sale only scraped through after Morgan Stanley bought 13% of the company. By 1999 it was the first India-registered company listed on Nasdaq.\n\nThe other side: Murthy later said keeping his wife, an engineer, out of the company was \"wrongly idealistic\" (CNBC-TV18, Jan 2024), and his 2023 call for young people to work 70 hours a week was criticised; an IT employees' union called a 70-hour week \"illegal\" (CNBC, Nov 2023). The lesson: you can start small, but expect years of work and near-misses.\n\nSources: Infosys Q4 FY2025-26 press release (23 Apr 2026); PTI via ThePrint (23 Apr 2026); Business Today (15 Mar 2024, Sudha Murty at the India Today Conclave; 4 Jan 2024, Murthy to CNBC-TV18; 9 Jan 2011, 1993 IPO); CNBC (6 Nov 2023); India Today (29 Mar 1999) on the Nasdaq listing; Infosys company history. 1 lakh crore = 1 trillion. Educational content, not investment advice.\n\n#infosys #india #founderstory #business #entrepreneurship",
@@ -56,7 +59,7 @@
    }
   },
   {
-   "say": "That's Infosys, founded by Narayana Murthy and six other engineers.",
+   "say": "That's Infosis, founded by Narayana Murthy and six other engineers.",
    "visual": {
     "type": "pair",
     "title": "Pune, 1981",
@@ -140,7 +143,7 @@
    }
   },
   {
-   "say": "Murthy later said keeping his wife out of Infosys was 'wrongly idealistic.'",
+   "say": "Murthy later said keeping his wife out of Infosis was 'wrongly idealistic.'",
    "visual": {
     "type": "equation",
     "title": "Narayana Murthy, 2024",
@@ -164,7 +167,7 @@
    }
   },
   {
-   "say": "The lesson: you can start small. Infosys took twelve years to go public.",
+   "say": "The lesson: you can start small. Infosis took twelve years to go public.",
    "visual": {
     "type": "pair",
     "title": "The lesson",

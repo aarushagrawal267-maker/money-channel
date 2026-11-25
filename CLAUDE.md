@@ -33,7 +33,7 @@ instructions with screenshots. Explain in plain language, one step at a time. Ne
 - `faster-whisper` decode via `av` fails; pass a numpy array (render.py converts to 16 kHz wav with ffmpeg and reads with soundfile).
 - Rendering: Short ≈ 1–1.5 min, 3-min long video ≈ 4.5 min on 4 CPUs.
 - Banner safe area: 1546x423 centred on 2560x1440.
-- Voice (Kokoro) gotchas: write numbers as words; hyphenated acronyms break ("FDIC-insured" -> "f dick and short"; say "insured by the FDIC"); "PhonePe" -> write "Phone-Pay"; "Paytm" -> "PayTM"; "IPO" -> "I-P-O"; "Oprah" -> write "Oh-pruh" plus spec `"caption_fix": {"Oh-pruh": "Oprah"}` (captions can show a different spelling than the voice text). After every render run `tools/voice_check.py SPEC.json output/work_<id>/[work/]audio.wav` and read the non-number differences.
+- Voice (Kokoro) gotchas: write numbers as words; hyphenated acronyms break ("FDIC-insured" -> "f dick and short"; say "insured by the FDIC"); "PhonePe" -> write "Phone-Pay"; "Paytm" -> "PayTM"; "IPO" -> "I-P-O"; "Oprah" -> write "Oh-pruh" plus spec `"caption_fix": {"Oh-pruh": "Oprah"}` (captions can show a different spelling than the voice text). Also "Amul" -> "Ah-mool", "Infosys" -> "Infosis", "Mehta" -> "Mayta" (each with a caption_fix). After every render run `tools/voice_check.py SPEC.json output/work_<id>/[work/]audio.wav` and read the non-number differences.
 - Render times: Short ≈ 1 min; 9–10 min long video ≈ 10–11 min.
 
 ## Setup status

@@ -4,6 +4,10 @@
  "voice": "af_heart",
  "speed": 1.05,
  "badge": "INDIA STORY",
+ "caption_fix": {
+  "Ah-mool": "Amul",
+  "Mayta": "Mehta"
+ },
  "disclaimer": "Sources: GCMMF / Amul (FY2025-26), Rural Voice · see description",
  "title": "Amul Business Model: Do Farmers Get ₹80 of ₹100?",
  "description": "How does Amul's business model work? Amul is a cooperative owned by about 3.6 million dairy farmers in Gujarat, India. Amul says farmers get about ₹80-85 of every ₹100 a shopper spends on its products, compared with about a third in many other countries (Amul's own claim from GCMMF annual general meeting speeches, not an independent audit; the one-third comparison is from Jayen Mehta via Rural Voice). That leaves little for everything else, yet the Amul brand topped ₹1 lakh crore (₹1 trillion, about $10.7 billion) in sales in FY2025-26, on about 31 million litres of milk a day. The lesson: a thin margin on huge volume can build a giant.\n\nHow it works: village dairy cooperatives collect the milk, 18 district unions process it, and the Gujarat Cooperative Milk Marketing Federation (GCMMF) sells it under the Amul brand. GCMMF's own sales were ₹73,450 crore; the brand figure also includes the district unions.\n\nSources: GCMMF FY2025-26 results (5 Apr 2026, via DeshGujarat and Dairy Industries International); Jayen Mehta, GCMMF, quoted by Rural Voice (25 Jun 2022); GCMMF chairman's address, 50th Annual General Body Meeting (amul.com); Amul, 'The Amul Model' and 'A note on the achievements of the dairy cooperatives' (amul.com). Dollar figure at ₹93.44 per $ (PTI, 18 Nov 2026). 1 crore = 10 million; 1 lakh crore = 1 trillion.\n\n#amul #india #business #cooperative #businessmodel",
@@ -46,7 +50,7 @@
  },
  "scenes": [
   {
-   "say": "Amul says of every hundred rupees you spend, about eighty reach farmers.",
+   "say": "Ah-mool says of every hundred rupees you spend, about eighty reach farmers.",
    "visual": {
     "type": "stat",
     "value": "₹80–85",
@@ -56,7 +60,7 @@
    }
   },
   {
-   "say": "Amul's Jayen Mehta says elsewhere, farmers often get about a third.",
+   "say": "Ah-mool's Jayen Mayta says elsewhere, farmers often get about a third.",
    "visual": {
     "type": "bars",
     "title": "Farmers' share of ₹100 spent",
@@ -134,7 +138,7 @@
    }
   },
   {
-   "say": "Yet Amul brand sales topped one lakh crore rupees: over ten billion dollars.",
+   "say": "Yet Ah-mool brand sales topped one lakh crore rupees: over ten billion dollars.",
    "visual": {
     "type": "equation",
     "title": "Amul brand sales, FY2025-26",

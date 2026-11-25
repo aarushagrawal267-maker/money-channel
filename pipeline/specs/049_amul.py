@@ -50,6 +50,7 @@ spec = {
     "id": "049_amul",
     "currency": "inr", "voice": "af_heart", "speed": 1.05,
     "badge": "INDIA STORY",
+    "caption_fix": {'Ah-mool': 'Amul', 'Mayta': 'Mehta'},   # Kokoro mispronounces these names
     "disclaimer": "Sources: GCMMF / Amul (FY2025-26), Rural Voice · see description",
     "title": "Amul Business Model: Do Farmers Get ₹80 of ₹100?",
     "description": (
@@ -85,10 +86,10 @@ spec = {
     },
     "scenes": [
         # hook: the surprising number on frame 0 + open loop ("why?")
-        {"say": "Amul says of every hundred rupees you spend, about eighty reach farmers.",
+        {"say": "Ah-mool says of every hundred rupees you spend, about eighty reach farmers.",
          "visual": {"type": "stat", "value": f"₹{per_100[0]}–{per_100[1]}", "label": "of every ₹100 goes to farmers",
                     "sub": "Amul's own claim (GCMMF AGM speech)", "color": "gold"}},
-        {"say": "Amul's Jayen Mehta says elsewhere, farmers often get about a third.",
+        {"say": "Ah-mool's Jayen Mayta says elsewhere, farmers often get about a third.",
          "visual": {"type": "bars", "title": "Farmers' share of ₹100 spent", "format": "num",
                     "items": [{"label": "Amul", "value": per_100[0], "color": "green"},
                               {"label": "Elsewhere", "value": round(FARMER_SHARE_ELSEWHERE * 100), "color": "slate"}]}},
@@ -106,7 +107,7 @@ spec = {
          "visual": {"type": "compare", "title": "Of every ₹100 (Amul's estimate)",
                     "left": {"label": "Farmers", "value": per_100[0], "color": "green"},
                     "right": {"label": "Everything else", "value": left_over, "color": "red"}}},
-        {"say": "Yet Amul brand sales topped one lakh crore rupees: over ten billion dollars.",
+        {"say": "Yet Ah-mool brand sales topped one lakh crore rupees: over ten billion dollars.",
          "visual": {"type": "equation", "title": "Amul brand sales, FY2025-26",
                     "lines": [{"text": "₹1 lakh crore+", "color": "green", "size": 110},
                               {"text": f"≈ ${usd_now / 1e9:.1f} billion", "color": "text", "size": 72},
