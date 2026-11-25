@@ -1,0 +1,223 @@
+{
+ "id": "042_kodak",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "CASE STUDY",
+ "disclaimer": "Sources: Kodak 10-Ks, IEEE Spectrum, AP/IDC · see description",
+ "title": "Kodak Invented the Digital Camera. Then It Lost to It",
+ "description": "Kodak built a digital camera in 1975, when engineer Steven Sasson made a prototype that took 23 seconds to save one black-and-white photo. It never went into production, and film kept paying the bills: Kodak's sales were almost $16 billion in 1996. Kodak did go digital and was America's No. 1 digital camera seller in 2005, but its gross margin fell from about 48% (1996) to 15% (2011). Kodak filed for Chapter 11 on January 19, 2012, and weeks later said it would stop making digital cameras. It emerged from bankruptcy in September 2013 as a smaller company focused on printing and imaging for business. The lesson: don't let today's profits decide whether you build tomorrow's business.\n\nSources: IEEE Spectrum, 'The First Digital Camera' (Apr 6, 2022); Eastman Kodak Form 10-K for 1996 (sales $15,968M, cost of goods sold $8,326M; gross margin computed); Associated Press via NBC News (Feb 9, 2006), citing IDC (24.9% US share in 2005); Eastman Kodak Form 10-K for 2011 (sales $6,022M, gross profit margin 15%, Chapter 11 filing and Feb 9, 2012 phase-out of digital cameras); Kodak 8-K (Sept 3, 2013) on emerging from Chapter 11. Educational content, not investment advice.\n\n#kodak #business #casestudy #innovation #photography",
+ "tags": [
+  "kodak",
+  "kodak digital camera",
+  "why kodak failed",
+  "kodak bankruptcy",
+  "steve sasson",
+  "business case study",
+  "business lessons",
+  "disruption",
+  "innovator's dilemma"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Kodak inventó la cámara digital. Y luego perdió",
+   "summary": "Kodak construyó una cámara digital en 1975, pero el cine fotográfico seguía pagando las cuentas. En 2012 se declaró en quiebra (Capítulo 11). Por qué los beneficios de hoy pueden frenar el futuro."
+  },
+  "pt": {
+   "title": "A Kodak inventou a câmera digital. E depois perdeu",
+   "summary": "A Kodak construiu uma câmera digital em 1975, mas o filme ainda pagava as contas. Em 2012 entrou com pedido de recuperação judicial (Chapter 11). Por que o lucro de hoje pode travar o futuro."
+  },
+  "hi": {
+   "title": "Kodak ने डिजिटल कैमरा बनाया, फिर उसी से हार गया",
+   "summary": "Kodak ने 1975 में डिजिटल कैमरा बना लिया था, पर कमाई फ़िल्म से हो रही थी। 2012 में कंपनी ने दिवालियापन (Chapter 11) के लिए आवेदन किया। आज का मुनाफ़ा कल के बिज़नेस को कैसे रोक सकता है।"
+  },
+  "id": {
+   "title": "Kodak Menemukan Kamera Digital, Lalu Kalah Olehnya",
+   "summary": "Kodak membuat kamera digital pada 1975, tetapi film masih menjadi sumber uang. Pada 2012 Kodak mengajukan kebangkrutan (Chapter 11). Mengapa laba hari ini bisa menghambat masa depan."
+  },
+  "de": {
+   "title": "Kodak erfand die Digitalkamera – und verlor gegen sie",
+   "summary": "Kodak baute 1975 eine Digitalkamera, doch das Geld kam vom Film. 2012 meldete Kodak Insolvenz nach Chapter 11 an. Warum die Gewinne von heute das Geschäft von morgen bremsen können."
+  },
+  "fr": {
+   "title": "Kodak a inventé l'appareil numérique, puis a perdu",
+   "summary": "Kodak a construit un appareil photo numérique en 1975, mais la pellicule payait les factures. En 2012, Kodak s'est placé sous la protection du Chapter 11. Pourquoi les profits d'aujourd'hui peuvent freiner l'avenir."
+  }
+ },
+ "scenes": [
+  {
+   "say": "In nineteen seventy-five, Kodak built a digital camera. Why did Kodak lose?",
+   "visual": {
+    "type": "stat",
+    "value": "1975",
+    "label": "Kodak builds a digital camera",
+    "sub": "then Chapter 11 in 2012",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Steve Sasson's prototype took twenty-three seconds to save one photo.",
+   "visual": {
+    "type": "equation",
+    "title": "Steve Sasson's prototype",
+    "lines": [
+     {
+      "text": "100 × 100 pixels",
+      "color": "text",
+      "size": 84
+     },
+     {
+      "text": "≈ 8 lb (3.6 kg)",
+      "color": "text",
+      "size": 84
+     },
+     {
+      "text": "23 s to save a photo",
+      "color": "gold",
+      "size": 84
+     }
+    ]
+   }
+  },
+  {
+   "say": "It never went into production. Film still paid the bills.",
+   "visual": {
+    "type": "pair",
+    "title": "Kodak's choice",
+    "left": {
+     "label": "Digital",
+     "sub": "a prototype",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Film",
+     "sub": "the cash machine",
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "By nineteen ninety-six, sales hit almost sixteen billion dollars.",
+   "visual": {
+    "type": "stat",
+    "value": "$15.97B",
+    "label": "Kodak sales in 1996",
+    "sub": "Kodak annual report (10-K)",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Now the twist: Kodak did go digital.",
+   "visual": {
+    "type": "equation",
+    "title": "The twist",
+    "lines": [
+     {
+      "text": "Kodak went digital.",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "And led the market.",
+      "color": "gold",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "By two thousand five, it was America's top digital camera seller.",
+   "visual": {
+    "type": "stat",
+    "value": "No. 1",
+    "label": "US digital camera seller, 2005",
+    "sub": "24.9% share · IDC, via AP",
+    "color": "green"
+   }
+  },
+  {
+   "say": "The catch: Kodak's gross margin fell from forty-eight percent to fifteen.",
+   "visual": {
+    "type": "bars",
+    "title": "Kodak gross margin (%)",
+    "format": "num",
+    "items": [
+     {
+      "label": "1996",
+      "value": 48,
+      "color": "green"
+     },
+     {
+      "label": "2011",
+      "value": 15,
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "In January twenty twelve, Kodak filed for bankruptcy.",
+   "visual": {
+    "type": "compare",
+    "title": "Before Chapter 11 (Jan 2012)",
+    "left": {
+     "label": "Sales 1996",
+     "value": 15968000000.0,
+     "color": "slate"
+    },
+    "right": {
+     "label": "Sales 2011",
+     "value": 6022000000.0,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Weeks later, it announced an exit from digital cameras.",
+   "visual": {
+    "type": "equation",
+    "title": "Feb 9, 2012",
+    "lines": [
+     {
+      "text": "Kodak phases out",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "its digital cameras",
+      "color": "red",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "The lesson: protect tomorrow's business, not just today's profits.",
+   "visual": {
+    "type": "pair",
+    "title": "The lesson",
+    "left": {
+     "label": "Profits",
+     "sub": "today's",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Future",
+     "sub": "build it anyway",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Inventing the future isn't enough. Ask Kodak.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Invent it.",
+     "Then sell it."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

@@ -1,0 +1,197 @@
+{
+ "id": "051_insurance_types",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "SMART FINANCING",
+ "disclaimer": "Sample rates: Policygenius, Oct 2024 · not advice",
+ "title": "Term vs Whole Life Insurance: The $1M Question",
+ "description": "Term vs whole life insurance: for the same $1 million payout, Policygenius sample rates for a healthy 30-year-old man were $48.89 a month for 20-year term life and $920 a month for whole life, nearly 19 times more. Term covers a set number of years and then ends; whole life lasts for life and builds cash value. Which fits depends on how long someone relies on your income.\n\nSource: Policygenius, \"How much does a $1 million life insurance policy cost?\" (rate illustration valid as of Oct 1, 2024). Term rates: average of 11 carriers, non-smokers, Preferred health class. Whole life rates: sample policy paid up at age 100 through MassMutual, non-smokers, Preferred Plus health class. For a 30-year-old woman the same tables show $36.90 vs $801. Our 20-year totals multiply those monthly premiums by 240 months; they ignore the cash value a whole life policy builds and any dividends. Real premiums depend on your age, health, insurer, state and the date. This is a general explainer, not insurance or financial advice; compare quotes and policy documents before you buy.\n\n#lifeinsurance #personalfinance #insurance #moneytips #financialliteracy",
+ "tags": [
+  "term vs whole life insurance",
+  "term life insurance",
+  "whole life insurance",
+  "1 million life insurance cost",
+  "life insurance explained",
+  "cash value life insurance",
+  "personal finance",
+  "money tips"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Seguro de vida a plazo vs vida entera: $1M",
+   "summary": "Mismo pago de $1 millón: unos $49 al mes con seguro a plazo de 20 años, o $920 con vida entera (tarifas de ejemplo de Policygenius, hombre de 30 años). Qué cubre cada uno."
+  },
+  "pt": {
+   "title": "Seguro de vida temporário vs vitalício: US$1M",
+   "summary": "Mesma indenização de US$1 milhão: cerca de US$49 por mês no temporário de 20 anos ou US$920 no vitalício (taxas de exemplo da Policygenius, homem de 30 anos). O que cada um cobre."
+  },
+  "hi": {
+   "title": "टर्म बनाम होल लाइफ़ इंश्योरेंस: $1M का सवाल",
+   "summary": "एक ही $10 लाख डॉलर के कवर के लिए 30 साल के पुरुष का 20 साल का टर्म प्लान करीब $49 महीना, होल लाइफ़ $920 महीना (Policygenius के नमूना रेट)। दोनों में क्या फ़र्क है।"
+  },
+  "id": {
+   "title": "Asuransi Jiwa Berjangka vs Seumur Hidup: $1 Juta",
+   "summary": "Untuk uang pertanggungan $1 juta yang sama: sekitar $49 per bulan untuk berjangka 20 tahun, atau $920 untuk seumur hidup (contoh tarif Policygenius, pria 30 tahun). Apa bedanya."
+  },
+  "de": {
+   "title": "Risikoleben vs. Kapitalleben: Die $1-Mio.-Frage",
+   "summary": "Gleiche Auszahlung von 1 Mio. Dollar: rund 49 Dollar im Monat für 20 Jahre Risikoschutz oder 920 Dollar für eine lebenslange Police (Beispieltarife von Policygenius, Mann, 30)."
+  },
+  "fr": {
+   "title": "Assurance vie temporaire ou entière : la question à 1 M$",
+   "summary": "Même capital de 1 million de dollars : environ 49 $ par mois en temporaire 20 ans, ou 920 $ en vie entière (tarifs d'exemple Policygenius, homme de 30 ans). Ce que couvre chacune."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Same million dollar payout: forty-nine a month, or nine hundred twenty. Why?",
+   "visual": {
+    "type": "compare",
+    "title": "$1M cover · man, 30 · per month",
+    "left": {
+     "label": "Term, 20 yrs",
+     "value": 48.89,
+     "color": "green"
+    },
+    "right": {
+     "label": "Whole life",
+     "value": 920,
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "Policy Genius sample rates, healthy thirty-year-old man: nearly nineteen times more.",
+   "visual": {
+    "type": "stat",
+    "value": "~19×",
+    "label": "whole life vs 20-year term premium",
+    "sub": "Policygenius sample rates · Oct 2024",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Term covers set years, then ends. Whole life lasts for life, building cash value.",
+   "visual": {
+    "type": "equation",
+    "title": "What you're buying",
+    "lines": [
+     {
+      "text": "Term:",
+      "color": "green",
+      "size": 76
+     },
+     {
+      "text": "set years, then ends",
+      "color": "text",
+      "size": 76
+     },
+     {
+      "text": "Whole life:",
+      "color": "gold",
+      "size": 76
+     },
+     {
+      "text": "for life + cash value",
+      "color": "text",
+      "size": 76
+     }
+    ]
+   }
+  },
+  {
+   "say": "Twenty years of premiums: about twelve thousand dollars, versus two hundred twenty-one thousand.",
+   "visual": {
+    "type": "bars",
+    "title": "Premiums paid over 20 years",
+    "items": [
+     {
+      "label": "Term",
+      "value": 11733.600000000002,
+      "color": "green"
+     },
+     {
+      "label": "Whole life",
+      "value": 220800,
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Part of that builds cash value. Term pays nothing if you outlive it.",
+   "visual": {
+    "type": "pair",
+    "title": "The trade-off",
+    "left": {
+     "label": "Whole life",
+     "sub": "part → cash value",
+     "color": "gold"
+    },
+    "right": {
+     "label": "Term",
+     "sub": "$0 if you outlive it",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "So which is better? It depends on one question.",
+   "visual": {
+    "type": "equation",
+    "title": "Which is better?",
+    "lines": [
+     {
+      "text": "It depends on",
+      "color": "text",
+      "size": 100
+     },
+     {
+      "text": "one question.",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "How long will someone depend on your income?",
+   "visual": {
+    "type": "stat",
+    "value": "?",
+    "label": "How long do others rely on your income?",
+    "sub": "kids, a partner, a mortgage...",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "A fixed number of years? Term fits. A lifelong need? Whole life fits.",
+   "visual": {
+    "type": "pair",
+    "title": "Match the need",
+    "left": {
+     "label": "Term",
+     "sub": "a fixed number of years",
+     "color": "green"
+    },
+    "right": {
+     "label": "Whole life",
+     "sub": "a lifelong need",
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "Need first. Otherwise you're just comparing...",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Need first.",
+     "Policy second."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

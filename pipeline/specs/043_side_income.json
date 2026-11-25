@@ -1,0 +1,246 @@
+{
+ "id": "043_side_income",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "EARN MORE",
+ "disclaimer": "Assumed 7%/yr, not guaranteed · not financial advice",
+ "title": "$500/Month Side Income: What It's Worth in 10 Years",
+ "description": "What is $500 a month of side income worth in 10 years? Spend it and that's $60,000 of extras. Invest it at an assumed 7% a year and it could grow to about $85,526: your own $60,000 plus about $25,526 of growth. Most of that growth comes late: about $190 in year one versus $5,380 in year ten.\n\nAssumptions (our own math): $500 left after tax, invested at the end of every month for 10 years; a steady 7% yearly return (at 4% it would be about $73,348, at 10% about $99,932); no fees, no tax on the growth, no inflation adjustment. Real returns vary, can be negative and are not guaranteed. Taxes: in the US, side income is usually subject to income tax, and if you're self-employed with net earnings of $400 or more, self-employment tax of 15.3% (12.4% Social Security + 2.9% Medicare; IRS Tax Topic 554). Set tax money aside before you invest; rules differ in other countries. Educational only, not financial advice.\n\n#sideincome #sidehustle #investing #personalfinance #compoundinterest",
+ "tags": [
+  "side income",
+  "side hustle",
+  "500 a month invested",
+  "invest 500 a month",
+  "compound interest",
+  "spend or invest",
+  "earn more money",
+  "personal finance",
+  "self employment tax"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Ingreso extra de $500/mes: cuánto vale en 10 años",
+   "summary": "Gastarlo: $60.000 en 10 años. Invertirlo a un 7% anual supuesto: unos $85.526. El crecimiento llega tarde, y los impuestos van primero."
+  },
+  "pt": {
+   "title": "Renda extra de US$500/mês: quanto vale em 10 anos",
+   "summary": "Gastar: US$60.000 em 10 anos. Investir a 7% ao ano (suposição): cerca de US$85.526. O crescimento vem no fim, e os impostos vêm antes."
+  },
+  "hi": {
+   "title": "$500 महीने की साइड इनकम: 10 साल में कितनी?",
+   "summary": "खर्च करें तो 10 साल में $60,000। 7% सालाना (अनुमान) पर निवेश करें तो लगभग $85,526। बढ़त बाद के सालों में आती है, और टैक्स पहले अलग रखें।"
+  },
+  "id": {
+   "title": "Penghasilan Sampingan $500/Bulan: Nilainya dalam 10 Tahun",
+   "summary": "Dihabiskan: $60.000 dalam 10 tahun. Diinvestasikan dengan asumsi 7% per tahun: sekitar $85.526. Pertumbuhan datang belakangan, pajak disisihkan dulu."
+  },
+  "de": {
+   "title": "$500 Nebeneinkommen im Monat: Wert nach 10 Jahren",
+   "summary": "Ausgegeben: 60.000 Dollar in 10 Jahren. Angelegt bei angenommenen 7 % pro Jahr: rund 85.526 Dollar. Das Wachstum kommt spät, die Steuer zuerst."
+  },
+  "fr": {
+   "title": "500 $/mois de revenu d'appoint : combien en 10 ans ?",
+   "summary": "Dépensés : 60 000 $ en 10 ans. Investis à 7 % par an (hypothèse) : environ 85 526 $. La croissance arrive tard, et l'impôt passe d'abord."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Five hundred a month on the side: eighty-five thousand dollars, or zero?",
+   "visual": {
+    "type": "stat",
+    "value": "$85.5K",
+    "label": "$500 a month, invested 10 years",
+    "sub": "assumed 7% a year · not guaranteed",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Say a side gig nets five hundred a month, after tax.",
+   "visual": {
+    "type": "pair",
+    "title": "The setup",
+    "left": {
+     "label": "Side gig",
+     "sub": "$500 a month",
+     "color": "green"
+    },
+    "right": {
+     "label": "Tax",
+     "sub": "set aside first",
+     "color": "slate"
+    }
+   }
+  },
+  {
+   "say": "Spend it all: sixty thousand dollars over ten years.",
+   "visual": {
+    "type": "equation",
+    "title": "Option 1: spend it",
+    "lines": [
+     {
+      "text": "$500 × 120 months",
+      "color": "text",
+      "size": 88
+     },
+     {
+      "text": "= $60,000 spent",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Invest it instead, at an assumed seven percent a year...",
+   "visual": {
+    "type": "line",
+    "title": "Option 2: invest it (assumed 7%/yr)",
+    "format": "usd",
+    "x": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "x_label": "years",
+    "series": [
+     {
+      "label": "Put in",
+      "values": [
+       0,
+       6000,
+       12000,
+       18000,
+       24000,
+       30000,
+       36000,
+       42000,
+       48000,
+       54000,
+       60000
+      ],
+      "color": "slate"
+     },
+     {
+      "label": "Invested",
+      "values": [
+       0.0,
+       6190.148572755699,
+       12813.6075456043,
+       19900.708646552303,
+       27483.906824566668,
+       35597.92887504203,
+       44279.93246905068,
+       53569.67631463992,
+       63509.70222942039,
+       74145.52995823551,
+       85525.86562806771
+      ],
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "...and it could grow to about eighty-five thousand dollars.",
+   "visual": {
+    "type": "compare",
+    "title": "After 10 years",
+    "left": {
+     "label": "You put in",
+     "value": 60000,
+     "color": "slate"
+    },
+    "right": {
+     "label": "Worth",
+     "value": 85525.86562806771,
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Here's the catch: early years feel like nothing.",
+   "visual": {
+    "type": "equation",
+    "title": "The catch",
+    "lines": [
+     {
+      "text": "Early years",
+      "color": "text",
+      "size": 110
+     },
+     {
+      "text": "feel like nothing.",
+      "color": "gold",
+      "size": 100
+     }
+    ]
+   }
+  },
+  {
+   "say": "Year one, growth adds under two hundred dollars. Year ten, over five thousand.",
+   "visual": {
+    "type": "bars",
+    "title": "Growth earned in that year",
+    "items": [
+     {
+      "label": "Year 1",
+      "value": 190.14857275569986,
+      "color": "slate"
+     },
+     {
+      "label": "Year 10",
+      "value": 5380.335669832183,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Sixty thousand is your own money. Time adds about twenty-five thousand more.",
+   "visual": {
+    "type": "stat",
+    "value": "+$25.5K",
+    "label": "added by growth over 10 years",
+    "sub": "on $60,000 put in · assumed 7%",
+    "color": "green"
+   }
+  },
+  {
+   "say": "No shortcut. Just a steady habit and patience.",
+   "visual": {
+    "type": "pair",
+    "title": "The real formula",
+    "left": {
+     "label": "Habit",
+     "sub": "every month",
+     "color": "green"
+    },
+    "right": {
+     "label": "Time",
+     "sub": "10+ years",
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "So what will your five hundred become?",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "$500 a month.",
+     "Spend or grow?"
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

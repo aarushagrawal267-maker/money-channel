@@ -1,0 +1,217 @@
+{
+ "id": "050_dividends_buybacks",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "HOW MARKETS WORK",
+ "disclaimer": "Simplified example · not investment advice",
+ "title": "Dividends vs Buybacks: Which Pays You More?",
+ "description": "Dividends vs buybacks: how do companies return money to shareholders? A dividend pays you cash; a buyback uses the cash to buy back shares, so each remaining share owns a bigger slice. In the 12 months to September 2025, S&P 500 companies spent a record $1.02 trillion on buybacks and $664.9 billion on dividends. On day one both give you the same value; the differences are taxes, timing and the price the company pays.\n\nSource: S&P Dow Jones Indices, S&P 500 buybacks and dividends, Q3 2025 release (Dec 18, 2025; 12 months to September 2025, the latest release we could confirm).\n\nOur simplified example: a company worth $10,000 (including $100 of spare cash) with 100 shares at $100. Dividend: $1 per share is paid and, in theory, the share price falls to $99 ($99 + $1 = $100). Buyback: the company buys 1 share for $100; the $9,900 company now has 99 shares, still $100 each. Real prices move for many other reasons. Tax: in a taxable account, dividends are usually taxed in the year you receive them, while gains from a higher share price are usually taxed only when you sell; rules vary by country and account type. US companies also pay a 1% excise tax on net buybacks. A buyback only helps remaining owners if the company doesn't overpay. Educational only, not investment advice.\n\n#investing #dividends #stockmarket #buybacks #personalfinance",
+ "tags": [
+  "dividends vs buybacks",
+  "stock buybacks explained",
+  "share buyback",
+  "how dividends work",
+  "what is a stock buyback",
+  "S&P 500 buybacks",
+  "how markets work",
+  "investing basics"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Dividendos vs recompras: ¿cuál te paga más?",
+   "summary": "En 12 meses hasta septiembre de 2025, las empresas del S&P 500 gastaron 1,02 billones de dólares en recompras y 664.900 millones en dividendos. El primer día valen lo mismo; cambian impuestos y precio."
+  },
+  "pt": {
+   "title": "Dividendos vs recompras: qual paga mais?",
+   "summary": "Em 12 meses até setembro de 2025, as empresas do S&P 500 gastaram US$1,02 trilhão em recompras e US$664,9 bilhões em dividendos. No primeiro dia valem o mesmo; mudam impostos e preço."
+  },
+  "hi": {
+   "title": "डिविडेंड बनाम बायबैक: किससे ज़्यादा फ़ायदा?",
+   "summary": "सितंबर 2025 तक 12 महीनों में S&P 500 कंपनियों ने बायबैक पर $1.02 ट्रिलियन और डिविडेंड पर $664.9 अरब खर्च किए। पहले दिन दोनों की कीमत बराबर; फ़र्क टैक्स और कीमत का है।"
+  },
+  "id": {
+   "title": "Dividen vs Buyback: Mana yang Lebih Untung?",
+   "summary": "Dalam 12 bulan hingga September 2025, perusahaan S&P 500 menghabiskan $1,02 triliun untuk buyback dan $664,9 miliar untuk dividen. Di hari pertama nilainya sama; bedanya pajak dan harga."
+  },
+  "de": {
+   "title": "Dividende vs. Aktienrückkauf: Was bringt mehr?",
+   "summary": "In den 12 Monaten bis September 2025 gaben S&P-500-Firmen 1,02 Billionen Dollar für Rückkäufe und 664,9 Mrd. Dollar für Dividenden aus. Am ersten Tag gleich viel wert; Steuern und Preis machen den Unterschied."
+  },
+  "fr": {
+   "title": "Dividendes ou rachats d'actions : lequel rapporte plus ?",
+   "summary": "Sur 12 mois jusqu'à septembre 2025, les sociétés du S&P 500 ont consacré 1 020 milliards de dollars aux rachats et 664,9 milliards aux dividendes. Même valeur au départ ; la fiscalité et le prix changent tout."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Over a trillion dollars, spent by companies on their own shares. Why?",
+   "visual": {
+    "type": "stat",
+    "value": "$1.02T",
+    "label": "spent on buybacks in one year",
+    "sub": "S&P 500 · 12 months to Sept 2025 · S&P DJI",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "They paid six hundred sixty-five billion in dividends too.",
+   "visual": {
+    "type": "bars",
+    "title": "S&P 500, 12 months to Sept 2025 ($B)",
+    "format": "num",
+    "items": [
+     {
+      "label": "Buybacks",
+      "value": 1020.0,
+      "color": "gold"
+     },
+     {
+      "label": "Dividends",
+      "value": 664.9,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Ten thousand dollar company, one hundred shares, a hundred dollars to give back.",
+   "visual": {
+    "type": "equation",
+    "title": "Simple example",
+    "lines": [
+     {
+      "text": "$10,000 company",
+      "color": "text",
+      "size": 92
+     },
+     {
+      "text": "100 shares × $100",
+      "color": "muted",
+      "size": 76
+     },
+     {
+      "text": "$100 to give back",
+      "color": "gold",
+      "size": 92
+     }
+    ]
+   }
+  },
+  {
+   "say": "Dividend: you get one dollar, and in theory your share drops to ninety-nine.",
+   "visual": {
+    "type": "compare",
+    "title": "Dividend: your 1 share",
+    "left": {
+     "label": "Share price",
+     "value": 99.0,
+     "color": "blue"
+    },
+    "right": {
+     "label": "Cash to you",
+     "value": 1.0,
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Buyback: it buys one share back. Ninety-nine shares, still one hundred each.",
+   "visual": {
+    "type": "equation",
+    "title": "Buyback: your 1 share",
+    "lines": [
+     {
+      "text": "$9,900 ÷ 99 shares",
+      "color": "text",
+      "size": 88
+     },
+     {
+      "text": "= $100 each",
+      "color": "gold",
+      "size": 110
+     },
+     {
+      "text": "you own a bigger slice",
+      "color": "muted",
+      "size": 56
+     }
+    ]
+   }
+  },
+  {
+   "say": "Same value either way. But here's the catch.",
+   "visual": {
+    "type": "pair",
+    "title": "Day one: both = $100",
+    "left": {
+     "label": "Dividend",
+     "sub": "$99 share + $1",
+     "color": "green"
+    },
+    "right": {
+     "label": "Buyback",
+     "sub": "$100 share",
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "Dividends are usually taxed when paid. Buyback gains, only when you sell.",
+   "visual": {
+    "type": "equation",
+    "title": "Taxes (taxable accounts)",
+    "lines": [
+     {
+      "text": "Dividend:",
+      "color": "green",
+      "size": 80
+     },
+     {
+      "text": "taxed when paid",
+      "color": "text",
+      "size": 80
+     },
+     {
+      "text": "Buyback gain:",
+      "color": "gold",
+      "size": 80
+     },
+     {
+      "text": "taxed when you sell",
+      "color": "text",
+      "size": 80
+     }
+    ]
+   }
+  },
+  {
+   "say": "And a buyback only helps if the company pays a fair price.",
+   "visual": {
+    "type": "pair",
+    "title": "Price matters",
+    "left": {
+     "label": "Fair price",
+     "sub": "owners gain",
+     "color": "green"
+    },
+    "right": {
+     "label": "Overpay",
+     "sub": "owners lose",
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "Remember that the next time you hear...",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Same value.",
+     "Different taxes."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}

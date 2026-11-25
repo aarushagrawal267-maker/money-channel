@@ -1,0 +1,924 @@
+{
+ "id": "L014_apple_1997",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "gap": 0.35,
+ "badge": "CASE STUDY",
+ "disclaimer": "Figures: Apple 10-K filings & press releases · for education, not investment advice",
+ "title": "Apple in 1997: How a $1 Billion Loss Became a Comeback",
+ "intro_chapter": "The $1B loss",
+ "thumbnail": {
+  "big": "−$1B",
+  "line": "HOW APPLE SURVIVED",
+  "tag": "APPLE IN 1997",
+  "color": "red"
+ },
+ "description": "Apple in 1997 lost over $1 billion, its sales had fallen by more than a third in two years, and its debt was rated junk. This case study uses Apple's own 10-K filings to show how the company turned around: the NeXT acquisition and Steve Jobs' return, the $150 million Microsoft deal, cutting the product line, the iMac, a huge inventory cut, and how it set up the iPod and iPhone era. Plus three business lessons you can use: focus, cash runway and cutting complexity.\n\nApple's fiscal year ends in late September; years in the video are fiscal years. \"Under three days\" = Apple's fiscal 1997 net loss ($1.045B) / its fiscal 2026 net income per day ($132.2B / 365). The \"90 days\" line is Steve Jobs' own later recollection (2010), not a figure from Apple's filings. The two-by-two product grid is as described by biographer Walter Isaacson; the four product lines are from Apple's 1999 10-K. The $9,000 runway example is illustrative.\n\nSources:\n- Apple Form 10-K for fiscal 1996 (employees): https://www.sec.gov/Archives/edgar/data/320193/0000320193-96-000023.txt\n- Apple Form 10-K for fiscal 1997 (sales, losses, cash, NeXT price and write-off, quarterly results, debt ratings, Microsoft agreements, new board, Power Computing, employees): https://www.sec.gov/Archives/edgar/data/320193/0001047469-97-006960.txt\n- Apple Form 10-K405 for fiscal 1998 (return to profit, product line from ~15 products to 3 families, Newton/eMate discontinued, inventory, iMac units, employees, executive officers): https://www.sec.gov/Archives/edgar/data/320193/0001047469-98-044981.txt\n- Apple Form 10-K for fiscal 1999 (1.8M iMacs; iMac, iBook, Power Mac, PowerBook): https://www.sec.gov/Archives/edgar/data/320193/0000912057-99-010244.txt\n- Apple Form 10-K405 for fiscal 2001 (Mac OS X released): https://www.sec.gov/Archives/edgar/data/320193/000091205701544436/a2066171z10-k405.htm\n- Apple Form 10-K for fiscal 2026 (revenue by product, net income, employees): https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm\n- Apple press release, Apple to acquire NeXT (Dec 20, 1996; 8-K exhibit): https://www.sec.gov/Archives/edgar/data/320193/0000320193-96-000027.txt\n- Apple press releases: Amelio resigns (Jul 9, 1997) and Jobs named interim CEO (Sept 16, 1997), 8-K exhibits: https://www.sec.gov/Archives/edgar/data/320193/0000320193-97-000012.txt and https://www.sec.gov/Archives/edgar/data/320193/0000320193-97-000018.txt\n- Microsoft press release (Aug 6, 1997): https://news.microsoft.com/1997/08/06/microsoft-and-apple-affirm-commitment-to-build-next-generation-software-for-macintosh/\n- Maclean's, Microsoft rescues Apple (Aug 18, 1997): https://thecanadianencyclopedia.ca/en/article/microsoft-rescues-apple\n- Stratechery, Steve Jobs at Macworld Boston in 1997 (transcript): https://stratechery.com/2013/steve-jobs-at-macworld-boston-in-1997/\n- Apple press release, Apple unveils iMac (May 6, 1998), via MacTech: https://www.mactech.com/1998/05/06/md1-apples-imac/\n- Apple press release, Retailers experience record consumer demand for iMac (Aug 19, 1998), via MacTech: https://www.mactech.com/1998/08/20/md1-apple-pr-retailers-experience-record-consumer-demand-for-imac/\n- Macworld, Apple design guru Jony Ive to leave Apple (Jun 27, 2019): https://www.macworld.com/article/232955/apple-design-guru-jony-ive-to-leave-apple.html\n- Computer History Museum, The Deep History of Your Apps: Steve Jobs, NeXTSTEP, and Early Object-Oriented Programming: https://computerhistory.org/blog/the-deep-history-of-your-apps-steve-jobs-nextstep-and-early-object-oriented-programming/\n- Apple press releases: iPod (Oct 23, 2001) https://www.apple.com/newsroom/2001/10/23Apple-Presents-iPod/ and iPhone (Jan 9, 2007) https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/\n- The Next Web, Steve Jobs: We were 90 days from going bankrupt (Jun 2, 2010): https://thenextweb.com/news/steve-jobs-90-days\n- Walter Isaacson, Steve Jobs (Simon & Schuster, 2011): the two-by-two product grid\n\nFor education only. Not financial or investment advice.\n\n#apple #stevejobs #casestudy #business #businessstrategy",
+ "tags": [
+  "apple 1997",
+  "apple turnaround",
+  "how apple was saved",
+  "steve jobs return to apple",
+  "microsoft apple 150 million",
+  "apple next acquisition",
+  "imac 1998",
+  "business case study",
+  "apple history",
+  "tim cook inventory",
+  "business strategy",
+  "corporate turnaround"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Apple en 1997: de perder $1.000 M a la gran remontada",
+   "summary": "En 1997 Apple perdió más de 1.000 millones de dólares, sus ventas habían caído más de un tercio en dos años y su deuda era calificada como basura. Con los informes 10-K de Apple vemos cómo se recuperó: la compra de NeXT y el regreso de Steve Jobs, el acuerdo de 150 millones con Microsoft, el recorte de productos, el iMac y un enorme recorte de inventario. Y tres lecciones de negocio: enfoque, margen de caja y menos complejidad."
+  },
+  "pt": {
+   "title": "Apple em 1997: do prejuízo de US$ 1 bi à grande virada",
+   "summary": "Em 1997 a Apple perdeu mais de US$ 1 bilhão, suas vendas tinham caído mais de um terço em dois anos e sua dívida era considerada lixo. Com os relatórios 10-K da Apple, mostramos a virada: a compra da NeXT e a volta de Steve Jobs, o acordo de US$ 150 milhões com a Microsoft, o corte de produtos, o iMac e um enorme corte de estoque. E três lições de negócios: foco, fôlego de caixa e menos complexidade."
+  },
+  "hi": {
+   "title": "Apple 1997: $1 अरब के घाटे से वापसी तक",
+   "summary": "1997 में Apple को 1 अरब डॉलर से ज़्यादा का घाटा हुआ, दो साल में बिक्री एक-तिहाई से ज़्यादा गिर गई और उसके कर्ज़ को जंक रेटिंग मिली। Apple की अपनी 10-K फ़ाइलिंग से देखिए कंपनी कैसे संभली: NeXT की ख़रीद और Steve Jobs की वापसी, Microsoft का 15 करोड़ डॉलर ($150M) का सौदा, प्रोडक्ट्स में कटौती, iMac और इन्वेंटरी में भारी कमी। साथ में बिज़नेस के तीन सबक: फ़ोकस, कैश रनवे और कम जटिलता।"
+  },
+  "id": {
+   "title": "Apple 1997: Dari Rugi $1 Miliar Menjadi Kebangkitan",
+   "summary": "Pada 1997 Apple rugi lebih dari 1 miliar dolar AS, penjualannya turun lebih dari sepertiga dalam dua tahun, dan utangnya berperingkat sampah. Dengan laporan 10-K Apple sendiri, kita lihat cara Apple bangkit: akuisisi NeXT dan kembalinya Steve Jobs, kesepakatan 150 juta dolar dengan Microsoft, pemangkasan produk, iMac, dan pemangkasan persediaan besar-besaran. Plus tiga pelajaran bisnis: fokus, runway kas, dan mengurangi kerumitan."
+  },
+  "de": {
+   "title": "Apple 1997: Wie aus 1 Mrd. $ Verlust ein Comeback wurde",
+   "summary": "1997 verlor Apple über 1 Milliarde Dollar, der Umsatz war in zwei Jahren um mehr als ein Drittel gefallen und die Schulden galten als Ramsch. Anhand von Apples eigenen 10-K-Berichten zeigen wir die Wende: die Übernahme von NeXT und Steve Jobs' Rückkehr, der 150-Millionen-Deal mit Microsoft, weniger Produkte, der iMac und ein riesiger Lagerabbau. Dazu drei Business-Lektionen: Fokus, finanzieller Spielraum und weniger Komplexität."
+  },
+  "fr": {
+   "title": "Apple en 1997 : d'une perte de 1 Md$ au grand retour",
+   "summary": "En 1997, Apple a perdu plus d'un milliard de dollars, ses ventes avaient chuté de plus d'un tiers en deux ans et sa dette était classée « pourrie ». À partir des rapports 10-K d'Apple, on suit le redressement : le rachat de NeXT et le retour de Steve Jobs, l'accord de 150 millions avec Microsoft, la gamme réduite, l'iMac et une énorme baisse des stocks. Et trois leçons de business : se concentrer, connaître sa trésorerie, simplifier."
+  }
+ },
+ "scenes": [
+  {
+   "say": "In nineteen ninety-seven, Apple lost over a billion dollars in a single year. Its sales had fallen by more than a third in two years.",
+   "visual": {
+    "type": "count",
+    "to": 1.045,
+    "dp": 3,
+    "prefix": "−$",
+    "suffix": "B",
+    "label": "Apple's net loss, fiscal 1997",
+    "sub": "Apple 10-K · sales down 36% in two years",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Last year, Apple's profit was about a hundred and thirty-two billion dollars. At that pace, it earns back that whole nineteen ninety-seven loss in under three days.",
+   "visual": {
+    "type": "equation",
+    "title": "Apple, fiscal 2026",
+    "lines": [
+     {
+      "text": "$132.2B profit ÷ 365 days",
+      "color": "muted",
+      "size": 80
+     },
+     {
+      "text": "≈ $362M a day",
+      "color": "green",
+      "size": 120
+     },
+     {
+      "text": "1997's loss: back in 2.9 days",
+      "color": "gold",
+      "size": 64
+     }
+    ]
+   }
+  },
+  {
+   "say": "So how did a company with shrinking sales and junk-rated debt turn around? Using Apple's own filings, we'll walk through the deal with its biggest rival, the products it killed, the computer that brought it back, and the team behind it.",
+   "visual": {
+    "type": "title",
+    "title": "Apple in 1997",
+    "sub": "the turnaround, from the filings"
+   }
+  },
+  {
+   "say": "And by the end, you'll see the least glamorous fix in those filings. It freed more than twice as much cash as Microsoft's famous investment.",
+   "visual": {
+    "type": "stat",
+    "value": "2×",
+    "label": "more cash than Microsoft put in",
+    "sub": "the boring fix · chapter five",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Chapter one. The hole.",
+   "visual": {
+    "type": "chapter",
+    "n": 1,
+    "title": "The hole"
+   }
+  },
+  {
+   "say": "Start with sales. In fiscal nineteen ninety-five, Apple sold about eleven billion dollars' worth of products. Two years later, about seven billion. And it kept falling, to under six billion in nineteen ninety-eight.",
+   "visual": {
+    "type": "line",
+    "title": "Apple net sales by fiscal year",
+    "x": [
+     1995,
+     1996,
+     1997,
+     1998
+    ],
+    "series": [
+     {
+      "label": "Apple",
+      "values": [
+       11062000000.0,
+       9833000000.0,
+       7081000000.0,
+       5941000000.0
+      ],
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "The losses were huge. Eight hundred and sixteen million dollars in fiscal ninety-six. One point oh four billion in ninety-seven. Nearly one point nine billion dollars gone in two years.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Apple's net losses",
+    "items": [
+     {
+      "value": "−$816M",
+      "label": "fiscal 1996",
+      "sub": "year to Sept 1996",
+      "color": "red"
+     },
+     {
+      "value": "−$1.045B",
+      "label": "fiscal 1997",
+      "sub": "year to Sept 1997",
+      "color": "red"
+     },
+     {
+      "value": "−$1.86B",
+      "label": "two years",
+      "sub": "combined",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Steve Jobs later said, at a conference in twenty ten, that Apple had been ninety days from going bankrupt. That's his memory, thirteen years on. The filings tell a more precise story.",
+   "visual": {
+    "type": "quote",
+    "text": "\"We were 90 days from\ngoing bankrupt.\"",
+    "first_color": "text",
+    "color": "text",
+    "source": "Steve Jobs, D8 conference, 2010 (his recollection)"
+   }
+  },
+  {
+   "say": "In September nineteen ninety-six, Apple had about one point seven five billion dollars in cash and short-term investments. A year later, one point four six billion. Down about two hundred and eighty-six million dollars, even after a cash injection we'll get to.",
+   "visual": {
+    "type": "versus",
+    "title": "Cash & short-term investments",
+    "left": {
+     "label": "Sept 1996",
+     "value": "$1.75B",
+     "sub": "Apple 10-K",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Sept 1997",
+     "value": "$1.46B",
+     "sub": "down $286M",
+     "color": "red"
+    },
+    "verdict": "Not broke. But bleeding."
+   }
+  },
+  {
+   "say": "Lenders noticed. In October nineteen ninety-seven, Standard and Poor's cut Apple's debt ratings to B minus and triple C, deep in junk territory. Apple's own filing warned of significant voluntary employee turnover. And its old operating system was falling behind. Apple needed a new one, fast. So it went shopping.",
+   "visual": {
+    "type": "bullets",
+    "title": "Warning signs, 1997",
+    "color": "red",
+    "items": [
+     "Debt cut to junk (S&P: B− / CCC)",
+     "Staff leaving",
+     "Sales falling every year",
+     "An aging operating system"
+    ]
+   }
+  },
+  {
+   "say": "Chapter two. The Next bet.",
+   "visual": {
+    "type": "chapter",
+    "n": 2,
+    "title": "The NeXT bet"
+   }
+  },
+  {
+   "say": "On December twentieth, nineteen ninety-six, Apple, then run by chief executive Gil Amelio, agreed to buy Next, the company Steve Jobs started after he left Apple. The deal closed in February nineteen ninety-seven.",
+   "visual": {
+    "type": "timeline",
+    "title": "Apple, 1996–97",
+    "events": [
+     {
+      "when": "Dec 1996",
+      "text": "Deal to buy\nNeXT"
+     },
+     {
+      "when": "Feb 1997",
+      "text": "NeXT deal\ncloses"
+     },
+     {
+      "when": "Jul 1997",
+      "text": "CEO Amelio\nresigns"
+     },
+     {
+      "when": "Sep 1997",
+      "text": "Jobs named\ninterim CEO"
+     }
+    ]
+   }
+  },
+  {
+   "say": "The headline price was four hundred million dollars. Apple's annual report puts the full cost at four hundred and twenty-seven million: mostly cash to Next's owners, plus stock, options, and paying off Next's debt.",
+   "visual": {
+    "type": "waterfall",
+    "title": "What Apple paid for NeXT",
+    "steps": [
+     {
+      "label": "Cash",
+      "value": 319000000.0,
+      "kind": "start",
+      "display": "$319M"
+     },
+     {
+      "label": "Stock",
+      "value": 25000000.0,
+      "kind": "plus",
+      "display": "+$25M"
+     },
+     {
+      "label": "Options",
+      "value": 16000000.0,
+      "kind": "plus",
+      "display": "+$16M"
+     },
+     {
+      "label": "Debt paid",
+      "value": 56000000.0,
+      "kind": "plus",
+      "display": "+$56M"
+     },
+     {
+      "label": "Costs, other",
+      "value": 11000000.0,
+      "kind": "plus",
+      "display": "+$11M"
+     },
+     {
+      "label": "Total",
+      "value": 427000000.0,
+      "kind": "total",
+      "display": "$427M"
+     }
+    ]
+   }
+  },
+  {
+   "say": "And three hundred and seventy-five million of it was written off straight away, as research still in progress. Add a restructuring charge, and Apple lost seven hundred and eight million dollars in the first three months of nineteen ninety-seven alone.",
+   "visual": {
+    "type": "stat",
+    "value": "−$708M",
+    "label": "Apple's loss in one quarter (Jan–Mar 1997)",
+    "sub": "incl. $375M NeXT write-off + $155M restructuring",
+    "color": "red"
+   }
+  },
+  {
+   "say": "So what did Apple really buy? People and software. Avie Tevanian came from Next to run software. Jon Rubinstein, a former Next hardware chief, took over hardware. And to be fair to Amelio, his team had already hired finance chief Fred Anderson, and started the cost cuts in nineteen ninety-six.",
+   "visual": {
+    "type": "table",
+    "title": "The team taking shape",
+    "header": [
+     "Who",
+     "Role",
+     "Joined"
+    ],
+    "rows": [
+     [
+      "Avie Tevanian",
+      "Software",
+      "1997, NeXT"
+     ],
+     [
+      "Jon Rubinstein",
+      "Hardware",
+      "1997, ex-NeXT"
+     ],
+     [
+      "Fred Anderson",
+      "Finance (CFO)",
+      "April 1996"
+     ],
+     [
+      "Steve Jobs",
+      "Adviser",
+      "1997, NeXT"
+     ]
+    ],
+    "col_colors": {
+     "1": "green",
+     "2": "muted"
+    }
+   }
+  },
+  {
+   "say": "In July nineteen ninety-seven, Amelio resigned. In September, the board named Jobs interim chief executive, in its words, until a new one was found. But new software takes years. Apple needed help sooner, and it came from its fiercest rival.",
+   "visual": {
+    "type": "title",
+    "title": "Interim CEO",
+    "sub": "\"until a new CEO is named\" · Apple, Sept 16, 1997"
+   }
+  },
+  {
+   "say": "Chapter three. The rival's lifeline.",
+   "visual": {
+    "type": "chapter",
+    "n": 3,
+    "title": "The rival's lifeline"
+   }
+  },
+  {
+   "say": "August sixth, nineteen ninety-seven. On stage at the Macworld show in Boston, Jobs announced that Microsoft would invest one hundred and fifty million dollars in Apple.",
+   "visual": {
+    "type": "stat",
+    "value": "$150M",
+    "label": "Microsoft's investment in Apple",
+    "sub": "announced Aug 6, 1997 · Macworld Boston",
+    "color": "blue"
+   }
+  },
+  {
+   "say": "Microsoft bought non-voting shares, so it got no say in running Apple. It promised to keep making Office for the Mac for five years. Apple made Internet Explorer the Mac's default browser. And the two companies cross-licensed their patents.",
+   "visual": {
+    "type": "bullets",
+    "title": "The 1997 Apple–Microsoft deal",
+    "items": [
+     "$150M of non-voting stock",
+     "Office for Mac, for 5 years",
+     "Internet Explorer as default",
+     "Patent cross-license"
+    ]
+   }
+  },
+  {
+   "say": "Here's the surprising part. The cash was small: about a tenth of Apple's cash pile. Apple's own filing calls Microsoft an important developer of Mac software. A five-year promise on Office mattered more than the money.",
+   "visual": {
+    "type": "share",
+    "title": "Microsoft's $150M vs Apple's cash (Sept 1997)",
+    "rows": [
+     {
+      "label": "Share of Apple's $1.46B cash pile",
+      "share": 0.10281014393420151,
+      "color": "blue",
+      "dp": 0
+     }
+    ],
+    "note": "Source: Apple 10-K, fiscal 1997"
+   }
+  },
+  {
+   "say": "Not everyone liked it. Maclean's reported that the announcement drew boos and jeers. Jobs told the crowd: We have to let go of the notion that for Apple to win, Microsoft has to lose.",
+   "visual": {
+    "type": "quote",
+    "text": "\"We have to let go of the notion\nthat for Apple to win,\nMicrosoft has to lose.\"",
+    "first_color": "text",
+    "color": "gold",
+    "source": "Steve Jobs, Macworld Boston, Aug 6, 1997 (via Maclean's)"
+   }
+  },
+  {
+   "say": "The same day, Apple announced a new board. All but two directors were replaced. The money and the promise bought time. What Apple did with that time was cut, hard.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "August 1997",
+    "items": [
+     {
+      "value": "$150M",
+      "label": "from Microsoft",
+      "sub": "non-voting",
+      "color": "blue"
+     },
+     {
+      "value": "5 yrs",
+      "label": "of Office for Mac",
+      "sub": "promised",
+      "color": "green"
+     },
+     {
+      "value": "All but 2",
+      "label": "directors replaced",
+      "sub": "new board",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter four. Cutting to four boxes.",
+   "visual": {
+    "type": "chapter",
+    "n": 4,
+    "title": "Cutting to four boxes"
+   }
+  },
+  {
+   "say": "Apple's nineteen ninety-eight annual report says it simplified its product line, from about fifteen separate products to three main product families.",
+   "visual": {
+    "type": "versus",
+    "title": "Apple's product line",
+    "left": {
+     "label": "Before",
+     "value": "~15",
+     "sub": "separate products",
+     "color": "red"
+    },
+    "right": {
+     "label": "By 1998",
+     "value": "3",
+     "sub": "main product families",
+     "color": "green"
+    },
+    "verdict": "Source: Apple 10-K, fiscal 1998"
+   }
+  },
+  {
+   "say": "Out went the Newton handheld and the eMate. Many printers and monitors went too. And Apple ended the Mac clone business, agreeing to buy Power Computing's Mac license and customer list for about a hundred and ten million dollars, mostly in stock.",
+   "visual": {
+    "type": "bullets",
+    "title": "What Apple cut",
+    "color": "red",
+    "items": [
+     "Newton MessagePad and eMate",
+     "Many printers and monitors",
+     "Mac clones (Power Computing, ~$110M)"
+    ]
+   }
+  },
+  {
+   "say": "Jobs' biographer, Walter Isaacson, describes him drawing a simple grid: consumer and pro, desktop and portable. By nineteen ninety-nine, Apple's filing listed four computer lines filling those boxes: iMac, iBook, Power Mac, and PowerBook.",
+   "visual": {
+    "type": "table",
+    "title": "Four boxes (Apple's Macs by 1999)",
+    "header": [
+     "",
+     "Desktop",
+     "Portable"
+    ],
+    "rows": [
+     [
+      "Consumer",
+      "iMac",
+      "iBook"
+     ],
+     [
+      "Pro",
+      "Power Mac",
+      "PowerBook"
+     ]
+    ],
+    "col_colors": {
+     "1": "green",
+     "2": "gold"
+    }
+   }
+  },
+  {
+   "say": "The cuts hit people, too. Apple had about ten thousand nine hundred regular employees in nineteen ninety-six, eight thousand four hundred a year later, and six thousand seven hundred by nineteen ninety-eight. Nearly four in ten jobs, gone in two years.",
+   "visual": {
+    "type": "columns",
+    "title": "Apple regular employees (September each year)",
+    "format": "num",
+    "highlight": 2,
+    "color": "blue",
+    "items": [
+     {
+      "label": "1996",
+      "value": 10896,
+      "display": "10,896"
+     },
+     {
+      "label": "1997",
+      "value": 8437,
+      "display": "8,437"
+     },
+     {
+      "label": "1998",
+      "value": 6658,
+      "display": "6,658"
+     }
+    ],
+    "note": "Source: Apple 10-K filings, fiscal 1996–1998"
+   }
+  },
+  {
+   "say": "Fewer products meant every bet had to count. The first big one was a strange-looking, all-in-one computer.",
+   "visual": {
+    "type": "equation",
+    "lines": [
+     {
+      "text": "Fewer products",
+      "color": "muted",
+      "size": 90
+     },
+     {
+      "text": "= every bet counts",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter five. The iMac, and the boring fix.",
+   "visual": {
+    "type": "chapter",
+    "n": 5,
+    "title": "The iMac, and the boring fix"
+   }
+  },
+  {
+   "say": "In May nineteen ninety-eight, Apple unveiled the iMac: an all-in-one computer, built for getting online, for twelve hundred and ninety-nine dollars. It went on sale on August fifteenth.",
+   "visual": {
+    "type": "stat",
+    "value": "$1,299",
+    "label": "the iMac",
+    "sub": "unveiled May 6, 1998 · on sale Aug 15, 1998",
+    "color": "green"
+   }
+  },
+  {
+   "say": "It came from a team. Jony Ive, at Apple since nineteen ninety-two, led the industrial design group that shaped its look. Jon Rubinstein's engineers built the hardware.",
+   "visual": {
+    "type": "bullets",
+    "title": "Who built the iMac",
+    "items": [
+     "Design: Jony Ive's team",
+     "Hardware: Jon Rubinstein's team",
+     "Focus and launch: Steve Jobs"
+    ]
+   }
+  },
+  {
+   "say": "In its first quarter on sale, Apple shipped two hundred and seventy-eight thousand iMacs. That was a third of all the Macs it shipped. The next year, it sold about one point eight million.",
+   "visual": {
+    "type": "donut",
+    "title": "Macs shipped, July–Sept 1998",
+    "segments": [
+     {
+      "label": "iMac (278,000)",
+      "value": 0.33,
+      "color": "green"
+     },
+     {
+      "label": "Other Macs",
+      "value": 0.6699999999999999,
+      "color": "slate"
+     }
+    ],
+    "center": "33%",
+    "center_sub": "were iMacs"
+   }
+  },
+  {
+   "say": "And Apple was profitable again. After four losing quarters in a row, it made money in every quarter of fiscal ninety-eight. Notice the profits started before the iMac even shipped. Cost cuts came first.",
+   "visual": {
+    "type": "columns",
+    "title": "Apple quarterly profit, fiscal 1998",
+    "highlight": 3,
+    "items": [
+     {
+      "label": "Q1",
+      "value": 47000000.0,
+      "display": "$47M"
+     },
+     {
+      "label": "Q2",
+      "value": 55000000.0,
+      "display": "$55M"
+     },
+     {
+      "label": "Q3",
+      "value": 101000000.0,
+      "display": "$101M"
+     },
+     {
+      "label": "Q4",
+      "value": 106000000.0,
+      "display": "$106M"
+     }
+    ],
+    "note": "iMac shipped in Q4 (Aug 1998) · Source: Apple 10-K, fiscal 1998"
+   }
+  },
+  {
+   "say": "Now the least glamorous fix. Inventory: unsold computers and parts. Apple cut it from four hundred and thirty-seven million dollars to just seventy-eight million in one year. From thirty-one days of supply, to six.",
+   "visual": {
+    "type": "hbars",
+    "title": "Apple inventory (end of fiscal year)",
+    "items": [
+     {
+      "label": "Sept 1997",
+      "value": 437000000.0,
+      "display": "$437M · 31 days",
+      "color": "red"
+     },
+     {
+      "label": "Sept 1998",
+      "value": 78000000.0,
+      "display": "$78M · 6 days",
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "That released about three hundred and fifty-nine million dollars in cash. More than twice what Microsoft invested. Fewer products made it possible, along with standard parts, fewer warehouses, and a new operations chief hired from Compaq in March nineteen ninety-eight: Tim Cook.",
+   "visual": {
+    "type": "equation",
+    "title": "The boring fix",
+    "lines": [
+     {
+      "text": "$437M − $78M inventory",
+      "color": "muted",
+      "size": 80
+     },
+     {
+      "text": "= $359M of cash freed",
+      "color": "green",
+      "size": 110
+     },
+     {
+      "text": "2.4× Microsoft's $150M",
+      "color": "gold",
+      "size": 72
+     }
+    ]
+   }
+  },
+  {
+   "say": "By September nineteen ninety-eight, Apple had made three hundred and nine million dollars for the year, and its cash had grown to two point three billion. Apple was alive. But it was still a shrinking computer company. Real growth came from the software it bought in nineteen ninety-six.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Apple, fiscal 1998",
+    "items": [
+     {
+      "value": "+$309M",
+      "label": "net profit",
+      "sub": "after −$1.045B",
+      "color": "green"
+     },
+     {
+      "value": "$2.3B",
+      "label": "cash & investments",
+      "sub": "up from $1.46B",
+      "color": "gold"
+     },
+     {
+      "value": "25%",
+      "label": "gross margin",
+      "sub": "up from 19%",
+      "color": "blue"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter six. From iMac to iPhone.",
+   "visual": {
+    "type": "chapter",
+    "n": 6,
+    "title": "From iMac to iPhone"
+   }
+  },
+  {
+   "say": "Next's software became the base of Mac O S Ten, released in two thousand one. That same year, Apple introduced the iPod. In January two thousand seven came the iPhone, whose software, the Computer History Museum notes, was built on Mac O S Ten.",
+   "visual": {
+    "type": "timeline",
+    "title": "What the turnaround made possible",
+    "events": [
+     {
+      "when": "1998",
+      "text": "iMac"
+     },
+     {
+      "when": "2001",
+      "text": "Mac OS X\n(NeXT roots)"
+     },
+     {
+      "when": "2001",
+      "text": "iPod"
+     },
+     {
+      "when": "2007",
+      "text": "iPhone"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Notice the loop. Focus made better products. Better products brought back profit and cash. And that cash paid for bigger, riskier bets, like a music player, and later a phone. Each turn made the next one possible.",
+   "visual": {
+    "type": "flywheel",
+    "title": "The loop 1997 started",
+    "center": "FOCUS",
+    "steps": [
+     "Fewer products",
+     "Better products",
+     "Profit and cash",
+     "Bigger bets"
+    ]
+   }
+  },
+  {
+   "say": "Today, the iPhone alone brought in about two hundred and fifty-four billion dollars in fiscal twenty twenty-six. That's over half of Apple's revenue. Services added another hundred and twenty-three billion.",
+   "visual": {
+    "type": "donut",
+    "title": "Apple revenue, fiscal 2026 ($478.8B)",
+    "segments": [
+     {
+      "label": "iPhone",
+      "value": 254098000000.0,
+      "color": "green"
+     },
+     {
+      "label": "Services",
+      "value": 123301000000.0,
+      "color": "gold"
+     },
+     {
+      "label": "Mac",
+      "value": 37929000000.0,
+      "color": "blue"
+     },
+     {
+      "label": "Wearables, home",
+      "value": 35577000000.0,
+      "color": "slate"
+     },
+     {
+      "label": "iPad",
+      "value": 27929000000.0,
+      "color": "red"
+     }
+    ],
+    "center": "53%",
+    "center_sub": "from iPhone"
+   }
+  },
+  {
+   "say": "Put the two years side by side. Revenue is up nearly sixty-eight times. A billion-dollar loss became a hundred and thirty-two billion dollar profit. And about eight thousand four hundred employees became about a hundred and sixty-seven thousand.",
+   "visual": {
+    "type": "table",
+    "title": "Apple: then and now",
+    "header": [
+     "",
+     "Fiscal 1997",
+     "Fiscal 2026"
+    ],
+    "rows": [
+     [
+      "Revenue",
+      "$7.08B",
+      "$478.8B"
+     ],
+     [
+      "Net result",
+      "−$1.045B",
+      "+$132.2B"
+     ],
+     [
+      "Employees",
+      "8,437",
+      "~167,000"
+     ]
+    ],
+    "col_colors": {
+     "1": "red",
+     "2": "green"
+    }
+   }
+  },
+  {
+   "say": "A fair warning about hindsight. None of this was guaranteed in nineteen ninety-eight. Apple's sales were still shrinking that year, and the iPhone was nearly a decade away. The turnaround bought a chance, not a result. So what can you take from it?",
+   "visual": {
+    "type": "quote",
+    "text": "The turnaround bought a chance,\nnot a result.",
+    "first_color": "text",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Chapter seven. The lessons.",
+   "visual": {
+    "type": "chapter",
+    "n": 7,
+    "title": "The lessons"
+   }
+  },
+  {
+   "say": "Lesson one: focus. Fifteen products became a handful. Saying no freed money, people and attention for the few things that mattered. In your own life, list everything that costs you money or time each month, and cut what doesn't earn its place.",
+   "visual": {
+    "type": "versus",
+    "title": "Lesson 1: Focus",
+    "left": {
+     "label": "Apple before",
+     "value": "~15",
+     "sub": "products",
+     "color": "red"
+    },
+    "right": {
+     "label": "Apple by 1999",
+     "value": "4",
+     "sub": "computer lines",
+     "color": "green"
+    },
+    "verdict": "Say no to most things"
+   }
+  },
+  {
+   "say": "Lesson two: know your runway. That's your cash, divided by what you burn each month. If you have nine thousand dollars saved and three thousand in essential costs each month, your runway is three months. Apple's cash bought it time to fix things. Yours does the same.",
+   "visual": {
+    "type": "equation",
+    "title": "Lesson 2: Know your runway",
+    "lines": [
+     {
+      "text": "Cash ÷ monthly costs = runway",
+      "color": "muted",
+      "size": 72
+     },
+     {
+      "text": "$9,000 ÷ $3,000 a month",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "= 3 months of runway",
+      "color": "gold",
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "say": "Lesson three: complexity costs cash. Once Apple had fewer products, its inventory fell by more than eighty percent. For you, fewer cards, accounts and subscriptions means fewer fees and fewer surprises.",
+   "visual": {
+    "type": "share",
+    "title": "Lesson 3: Complexity costs cash",
+    "rows": [
+     {
+      "label": "Apple inventory, Sept 1997",
+      "share": 1.0,
+      "color": "red",
+      "dp": 0
+     },
+     {
+      "label": "Sept 1998 (as % of 1997)",
+      "share": 0.17848970251716248,
+      "color": "green",
+      "dp": 0
+     }
+    ],
+    "note": "Source: Apple 10-K, fiscal 1998"
+   }
+  },
+  {
+   "say": "And remember who did it. Amelio's team started the cuts and bought Next. Jobs set the focus. Ive, Rubinstein, Tevanian, Anderson and Cook did much of the work. A turnaround is a team effort.",
+   "visual": {
+    "type": "title",
+    "title": "Not one genius. A team.",
+    "sub": "Amelio · Jobs · Ive · Rubinstein · Tevanian · Anderson · Cook"
+   }
+  },
+  {
+   "say": "If you learned something, subscribe. We break down how money and business really work, every week.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "How money",
+     "really works."
+    ],
+    "sub": "Subscribe for weekly breakdowns"
+   }
+  }
+ ]
+}

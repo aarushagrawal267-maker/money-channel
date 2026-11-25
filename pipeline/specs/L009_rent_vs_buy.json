@@ -1,0 +1,999 @@
+{
+ "id": "L009_rent_vs_buy",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "gap": 0.35,
+ "badge": "MONEY TRAPS",
+ "disclaimer": "Illustration · assumed returns & growth · not financial advice",
+ "title": "Rent vs Buy a Home: The Full Math Nobody Shows You",
+ "intro_chapter": "20 years or 5?",
+ "thumbnail": {
+  "big": "20 YRS",
+  "line": "TO BEAT RENTING?",
+  "tag": "RENT VS BUY: FULL MATH",
+  "color": "gold"
+ },
+ "description": "Rent vs buy a home: we run the full math for a typical US house at today's mortgage rates, including property tax, insurance, repairs, closing and selling costs, and what your down payment could earn if you rented instead. With our assumptions, buying takes about 20 years to beat renting, but one number, the price-to-rent ratio, can cut that to 5 years or push it past 30. Plus a 5-question checklist.\n\nOur example: $421,900 home (NAR median single-family, Oct 2026), $2,243/month rent (Zillow typical single-family rent, Oct 2026), 20% down, 30-year fixed at 7.28% (Freddie Mac, Nov 19, 2026), property tax 0.9% a year (ATTOM), insurance $2,564 a year (NerdWallet).\nAssumptions (ours, not predictions): 3% to buy, 6% to sell, repairs 1% of value a year (a rule of thumb), home prices, rent and costs grow 3% a year, investments earn 6% a year, whoever spends less each month invests the difference, 15% tax on investment gains when cashed out, the home's gain is tax-free (true up to $250,000 single / $500,000 married; at year 21 our example gain is above the single limit), no mortgage-interest deduction (it only helps if you itemize), no renters insurance. Real returns, prices and rents vary and can be negative. Zillow's break-even estimates use Zillow's own model and assumptions.\n\nSources:\n- National Association of Realtors, Existing-Home Sales Decreased 5.5% in October (Nov 12, 2026): https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report\n- Zillow, A house doesn't have to mean a mortgage: Renting requires $14K less income than buying (Nov 12, 2026; typical single-family rent, Zillow Observed Rent Index): https://s25.q4cdn.com/975009107/files/doc_news/A-house-doesnt-have-to-mean-a-mortgage-Renting-requires-14K-less-income-than-buying-2026.pdf\n- Zillow, Rent or buy: How long it takes for buying a home to pay off in each metro (Jun 4, 2026): https://zillow.mediaroom.com/2026-06-04-Rent-or-buy-How-long-it-takes-for-buying-a-home-to-pay-off-in-each-metro\n- Freddie Mac, Primary Mortgage Market Survey (Nov 19, 2026 and Jun 4, 2026): https://www.freddiemac.com/pmms\n- ATTOM, 2025 property tax analysis (Apr 9, 2026): https://www.attomdata.com/news/market-trends/home-sales-prices/2025-annual-tax-report\n- NerdWallet, Home insurance pricing report 2026 (Oct 2, 2026): https://www.nerdwallet.com/insurance/homeowners/home-insurance-pricing-report-2026\n- Redfin, What are closing costs (Apr 24, 2026): https://www.redfin.com/blog/closing-costs-when-buying-a-home/\n- Clever Real Estate, True cost of selling a home: 2026 edition (Oct 26, 2026): https://listwithclever.com/research/how-much-does-it-cost-to-sell-a-house/\n- IRS Topic 409, Capital gains and losses: https://www.irs.gov/taxtopics/tc409\n- IRS Topic 701, Sale of your home: https://www.irs.gov/taxtopics/tc701\n\nFor education only. Not financial advice. Past results don't guarantee future returns.\n\n#rentvsbuy #realestate #personalfinance #homebuying #mortgage",
+ "tags": [
+  "rent vs buy",
+  "rent or buy a house",
+  "renting vs buying a home",
+  "is renting throwing money away",
+  "price to rent ratio",
+  "break even buying a house",
+  "mortgage rates 2026",
+  "home buying",
+  "real estate math",
+  "personal finance",
+  "first time home buyer",
+  "opportunity cost"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Alquilar o comprar casa: las cuentas que nadie te muestra",
+   "summary": "Alquilar o comprar vivienda en EE. UU.: hacemos todas las cuentas con una casa típica y las tasas hipotecarias actuales (7,28%), incluyendo impuestos, seguro, reparaciones, costos de compra y venta, y lo que podría rendir el pago inicial. Con nuestros supuestos, comprar tarda unos 20 años en superar al alquiler, pero un solo número puede bajarlo a 5."
+  },
+  "pt": {
+   "title": "Alugar ou comprar casa: a conta que ninguém mostra",
+   "summary": "Alugar ou comprar imóvel nos EUA: fazemos a conta completa com uma casa típica e os juros atuais (7,28%), incluindo impostos, seguro, reparos, custos de compra e venda e o que a entrada poderia render. Com nossas premissas, comprar leva cerca de 20 anos para superar o aluguel, mas um único número pode reduzir isso para 5."
+  },
+  "hi": {
+   "title": "किराया या घर ख़रीदें: पूरा हिसाब जो कोई नहीं दिखाता",
+   "summary": "अमेरिका में किराए पर रहें या घर ख़रीदें? आज की 7.28% मॉर्गेज दर पर एक सामान्य घर का पूरा हिसाब: टैक्स, बीमा, मरम्मत, ख़रीदने-बेचने का ख़र्च, और डाउन पेमेंट निवेश करने पर कितना कमाता। हमारी मान्यताओं पर ख़रीदना लगभग 20 साल में किराए से आगे निकलता है, लेकिन एक संख्या इसे 5 साल तक ला सकती है।"
+  },
+  "id": {
+   "title": "Sewa atau Beli Rumah: Hitungan Lengkap yang Jarang Dibahas",
+   "summary": "Sewa atau beli rumah di AS: kami hitung lengkap untuk rumah biasa dengan bunga KPR saat ini (7,28%), termasuk pajak, asuransi, perbaikan, biaya beli dan jual, serta hasil yang bisa didapat dari uang muka. Dengan asumsi kami, membeli butuh sekitar 20 tahun untuk mengalahkan sewa, tetapi satu angka bisa memangkasnya jadi 5 tahun."
+  },
+  "de": {
+   "title": "Mieten oder kaufen: Die ganze Rechnung, die keiner zeigt",
+   "summary": "Mieten oder kaufen in den USA: Wir rechnen ein typisches Haus zum aktuellen Zins von 7,28 % komplett durch, mit Grundsteuer, Versicherung, Reparaturen, Kauf- und Verkaufskosten und dem, was das Eigenkapital anderswo bringen könnte. Mit unseren Annahmen dauert es rund 20 Jahre, bis Kaufen das Mieten schlägt; eine Zahl kann daraus 5 Jahre machen."
+  },
+  "fr": {
+   "title": "Louer ou acheter : le vrai calcul que personne ne montre",
+   "summary": "Louer ou acheter aux États-Unis : nous faisons le calcul complet pour une maison type au taux actuel de 7,28 %, avec taxe foncière, assurance, travaux, frais d'achat et de vente, et ce que l'apport aurait pu rapporter. Avec nos hypothèses, acheter met environ 20 ans à battre la location, mais un seul chiffre peut ramener cela à 5 ans."
+  }
+ },
+ "scenes": [
+  {
+   "say": "At today's mortgage rates, a typical American house could take about twenty years to beat renting. Or five. It depends on one number most buyers never check.",
+   "visual": {
+    "type": "count",
+    "to": 20,
+    "suffix": " years",
+    "label": "to beat renting, typical US house",
+    "sub": "Nov 2026 rates · our model, assumptions below",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Same rent, same street, a cheaper price, and the answer flips. Most rent versus buy advice skips this part.",
+   "visual": {
+    "type": "versus",
+    "title": "Break-even vs renting",
+    "left": {
+     "label": "Typical home today",
+     "value": "~20 yrs",
+     "sub": "price = 15.7 years of rent",
+     "color": "red"
+    },
+    "right": {
+     "label": "Same rent, cheaper home",
+     "value": "~5 yrs",
+     "sub": "price = 12 years of rent",
+     "color": "green"
+    },
+    "verdict": "One number moves the answer"
+   }
+  },
+  {
+   "say": "So we'll run the full math nobody shows you: the mortgage, property tax, insurance, repairs, the fees to buy and sell, and what your down payment could have earned instead.",
+   "visual": {
+    "type": "bullets",
+    "title": "The full math",
+    "items": [
+     "Mortgage, tax, insurance, repairs",
+     "Fees to buy and to sell",
+     "What your cash could earn instead"
+    ]
+   }
+  },
+  {
+   "say": "By the end, you'll know that one number for your own city, and you'll have a five-question checklist to use before you sign anything.",
+   "visual": {
+    "type": "title",
+    "title": "Rent vs Buy",
+    "sub": "the full math, and a checklist"
+   }
+  },
+  {
+   "say": "Chapter one. The two homes.",
+   "visual": {
+    "type": "chapter",
+    "n": 1,
+    "title": "The two homes"
+   }
+  },
+  {
+   "say": "We'll use real, current US numbers. In October, the median existing single-family home sold for four hundred twenty-one thousand nine hundred dollars, according to the National Association of Realtors.",
+   "visual": {
+    "type": "stat",
+    "value": "$421,900",
+    "label": "median US single-family home price",
+    "sub": "existing homes, October 2026 · NAR",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Renting a similar home? Zillow says the typical single-family rent in October was two thousand two hundred forty-three dollars a month, up three point two percent from a year earlier.",
+   "visual": {
+    "type": "versus",
+    "title": "The same kind of home",
+    "left": {
+     "label": "Buy",
+     "value": "$421.9K",
+     "sub": "median price · NAR",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Rent",
+     "value": "$2,243",
+     "sub": "a month · Zillow, Oct 2026",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Our buyer puts twenty percent down, about eighty-four thousand dollars, and borrows the rest, about three hundred thirty-seven and a half thousand, on a thirty-year fixed mortgage.",
+   "visual": {
+    "type": "equation",
+    "title": "The buyer's loan",
+    "lines": [
+     {
+      "text": "$421,900 × 20% = $84,380 down",
+      "color": "muted",
+      "size": 76
+     },
+     {
+      "text": "Loan: $337,520",
+      "color": "gold",
+      "size": 120
+     },
+     {
+      "text": "30-year fixed",
+      "color": "text",
+      "size": 56
+     }
+    ]
+   }
+  },
+  {
+   "say": "The rate: Freddie Mac's weekly survey put the average thirty-year fixed rate at seven point two eight percent on November nineteenth. A year earlier, it was six point two six.",
+   "visual": {
+    "type": "columns",
+    "title": "30-year fixed mortgage rate (Freddie Mac)",
+    "highlight": 1,
+    "color": "blue",
+    "items": [
+     {
+      "label": "Nov 2025",
+      "value": 6.260000000000001,
+      "display": "6.26%"
+     },
+     {
+      "label": "Nov 19, 2026",
+      "value": 7.28,
+      "display": "7.28%"
+     }
+    ]
+   }
+  },
+  {
+   "say": "On top of the down payment come closing costs. Redfin says buyers usually pay two to five percent of the price. We'll use three percent: almost thirteen thousand dollars.",
+   "visual": {
+    "type": "stat",
+    "value": "$12,657",
+    "label": "closing costs to buy (3%, our assumption)",
+    "sub": "Redfin: buyers usually pay 2%–5%",
+    "color": "red"
+   }
+  },
+  {
+   "say": "So the buyer needs about ninety-seven thousand dollars in cash on day one. The renter keeps that money and invests it. Now, what does owning really cost each month? More than the mortgage.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Cash on day one",
+    "items": [
+     {
+      "value": "$84,380",
+      "label": "down payment",
+      "sub": "20%",
+      "color": "blue"
+     },
+     {
+      "value": "$12,657",
+      "label": "closing costs",
+      "sub": "3%",
+      "color": "red"
+     },
+     {
+      "value": "$97,037",
+      "label": "total cash",
+      "sub": "the renter invests this",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter two. The monthly bill.",
+   "visual": {
+    "type": "chapter",
+    "n": 2,
+    "title": "The monthly bill"
+   }
+  },
+  {
+   "say": "The mortgage payment, principal plus interest, is about two thousand three hundred nine dollars a month, fixed for thirty years.",
+   "visual": {
+    "type": "count",
+    "to": 2309,
+    "prefix": "$",
+    "label": "mortgage payment a month",
+    "sub": "$337,520 at 7.28% for 30 years",
+    "color": "blue"
+   }
+  },
+  {
+   "say": "Then property tax. The data firm Attom puts the average effective rate on US single-family homes at about zero point nine percent of the value a year. Here, that's about three hundred sixteen dollars a month.",
+   "visual": {
+    "type": "equation",
+    "title": "Property tax",
+    "lines": [
+     {
+      "text": "$421,900 × 0.9% ÷ 12",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "≈ $316 a month",
+      "color": "gold",
+      "size": 120
+     },
+     {
+      "text": "national average rate · ATTOM, 2025",
+      "color": "text",
+      "size": 48
+     }
+    ]
+   }
+  },
+  {
+   "say": "Home insurance: NerdWallet's typical US premium in early twenty twenty-six was two thousand five hundred sixty-four dollars a year. About two hundred fourteen a month, and far more in some states.",
+   "visual": {
+    "type": "stat",
+    "value": "$2,564",
+    "label": "typical home insurance a year",
+    "sub": "≈ $214 a month · NerdWallet, 2026",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "And repairs. A common rule of thumb says set aside about one percent of the home's value every year. It's a rough guide, not data: older homes can need more. Here, about three hundred fifty a month.",
+   "visual": {
+    "type": "quote",
+    "text": "Budget about 1% of\nthe home's value a year",
+    "first_color": "text",
+    "color": "gold",
+    "source": "rule of thumb for repairs · here ≈ $352 a month"
+   }
+  },
+  {
+   "say": "Add it up, and owning costs about three thousand one hundred ninety dollars a month. Renting the same kind of home: two thousand two hundred forty-three.",
+   "visual": {
+    "type": "waterfall",
+    "title": "Monthly cost, year one",
+    "steps": [
+     {
+      "label": "Mortgage",
+      "value": 2309.3532950339195,
+      "kind": "start",
+      "display": "$2,309"
+     },
+     {
+      "label": "Tax",
+      "value": 316.425,
+      "kind": "plus",
+      "display": "+$316",
+      "color": "red"
+     },
+     {
+      "label": "Insurance",
+      "value": 213.66666666666666,
+      "kind": "plus",
+      "display": "+$214",
+      "color": "red"
+     },
+     {
+      "label": "Repairs",
+      "value": 351.5833333333333,
+      "kind": "plus",
+      "display": "+$352",
+      "color": "red"
+     },
+     {
+      "label": "Owning",
+      "value": 3191.0282950339197,
+      "kind": "total",
+      "display": "$3,191"
+     },
+     {
+      "label": "Renting",
+      "value": 2243,
+      "kind": "start",
+      "display": "$2,243",
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "That's about nine hundred fifty dollars a month more to own. But that comparison is unfair to the buyer, because part of that payment isn't a cost at all.",
+   "visual": {
+    "type": "equation",
+    "title": "Owning vs renting, per month",
+    "lines": [
+     {
+      "text": "$3,191 − $2,243",
+      "color": "muted",
+      "size": 90
+     },
+     {
+      "text": "≈ $948 more to own",
+      "color": "red",
+      "size": 120
+     },
+     {
+      "text": "but is it all a cost?",
+      "color": "gold",
+      "size": 60
+     }
+    ]
+   }
+  },
+  {
+   "say": "Chapter three. Money gone, money kept.",
+   "visual": {
+    "type": "chapter",
+    "n": 3,
+    "title": "Money gone, money kept"
+   }
+  },
+  {
+   "say": "In year one, the buyer pays the bank about twenty-seven thousand seven hundred dollars. About twenty-four and a half thousand of it is interest. Only about three thousand two hundred pays down the loan.",
+   "visual": {
+    "type": "donut",
+    "title": "Mortgage payments, year one",
+    "segments": [
+     {
+      "label": "Interest ($24.5K)",
+      "value": 24464.510074272144,
+      "color": "red"
+     },
+     {
+      "label": "Loan payoff ($3.2K)",
+      "value": 3247.729466134915,
+      "color": "green"
+     }
+    ],
+    "center": "$27.7K",
+    "center_sub": "paid in year one"
+   }
+  },
+  {
+   "say": "That loan payoff is savings. It's still yours. So the honest comparison is the money that's gone for good: interest, tax, insurance and repairs. These are often called unrecoverable costs.",
+   "visual": {
+    "type": "bullets",
+    "title": "Gone for good (unrecoverable)",
+    "color": "red",
+    "items": [
+     "Mortgage interest",
+     "Property tax",
+     "Insurance",
+     "Repairs"
+    ]
+   }
+  },
+  {
+   "say": "Plus one that's easy to miss: that ninety-seven thousand dollars of cash. Invested at six percent a year, our assumption, it could have earned about five thousand eight hundred dollars in year one.",
+   "visual": {
+    "type": "equation",
+    "title": "What the cash could have earned",
+    "lines": [
+     {
+      "text": "$97,037 × 6% a year",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "≈ $5,822 in year one",
+      "color": "gold",
+      "size": 116
+     },
+     {
+      "text": "assumed return, not guaranteed",
+      "color": "text",
+      "size": 52
+     }
+    ]
+   }
+  },
+  {
+   "say": "Add it all up, and the buyer's money that's gone is about three thousand four hundred dollars a month. The renter's rent is gone too: two thousand two hundred forty-three.",
+   "visual": {
+    "type": "hbars",
+    "title": "Money gone for good, per month (year one)",
+    "items": [
+     {
+      "label": "Owning",
+      "value": 3405.5691728560123,
+      "display": "$3,406",
+      "color": "red"
+     },
+     {
+      "label": "Renting",
+      "value": 2243,
+      "display": "$2,243",
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Now the buyer's big advantage: the house can grow in value. At an assumed three percent a year, that's about twelve thousand seven hundred dollars in year one. But prices don't always rise. Over the past year, the national median rose just zero point four percent.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "Home price growth",
+    "items": [
+     {
+      "value": "+3%",
+      "label": "our assumption, a year",
+      "sub": "≈ $12,657 in year one",
+      "color": "green"
+     },
+     {
+      "value": "+0.4%",
+      "label": "actual, past year",
+      "sub": "US median, Oct 2026 · NAR",
+      "color": "gold"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Take that growth off, and owning costs about two thousand three hundred fifty a month, against two thousand two hundred forty-three for renting. Close. So why could break-even take twenty years? Two big fees: one to get in, one to get out.",
+   "visual": {
+    "type": "versus",
+    "title": "Money gone, minus price growth (per month)",
+    "left": {
+     "label": "Owning",
+     "value": "$2,351",
+     "sub": "if prices rise 3% a year",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Renting",
+     "value": "$2,243",
+     "sub": "rent",
+     "color": "green"
+    },
+    "verdict": "Close. So why so long?"
+   }
+  },
+  {
+   "say": "Chapter four. The fees to get in and out.",
+   "visual": {
+    "type": "chapter",
+    "n": 4,
+    "title": "The fees to get in and out"
+   }
+  },
+  {
+   "say": "Getting in costs those closing costs. Getting out costs more. In one twenty twenty-six survey, agent commissions alone averaged about five and a half percent of the sale price. We assume six percent in total to sell.",
+   "visual": {
+    "type": "share",
+    "title": "Fees as a share of the home price",
+    "rows": [
+     {
+      "label": "To buy (closing costs)",
+      "share": 0.03,
+      "color": "gold",
+      "dp": 0
+     },
+     {
+      "label": "To sell (agents + other costs)",
+      "share": 0.06,
+      "color": "red",
+      "dp": 0
+     }
+    ],
+    "note": "Our assumptions · Redfin: 2–5% to buy · Clever (2026): agent fees avg 5.46%"
+   }
+  },
+  {
+   "say": "Sell after five years, and the house might be worth about four hundred eighty-nine thousand dollars. Six percent of that is about twenty-nine thousand. Add the thirteen thousand to buy, and that's about forty-two thousand dollars in fees.",
+   "visual": {
+    "type": "equation",
+    "title": "Buy now, sell in 5 years",
+    "lines": [
+     {
+      "text": "$12.7K to buy + $29.3K to sell",
+      "color": "muted",
+      "size": 80
+     },
+     {
+      "text": "≈ $42K in fees",
+      "color": "red",
+      "size": 130
+     },
+     {
+      "text": "if the home is worth $489K by then",
+      "color": "text",
+      "size": 52
+     }
+    ]
+   }
+  },
+  {
+   "say": "To come out ahead, the buyer has to win those fees back, through rising prices and paying down the loan, before the renter's investments pull too far ahead.",
+   "visual": {
+    "type": "flywheel",
+    "title": "How the buyer catches up",
+    "center": "Equity",
+    "steps": [
+     "Prices rise",
+     "Loan shrinks",
+     "Rent keeps rising",
+     "Payment stays fixed"
+    ]
+   }
+  },
+  {
+   "say": "Fees come first. Time pays them back, slowly. So when does the buyer actually catch up? Let's run all thirty years.",
+   "visual": {
+    "type": "quote",
+    "text": "Fees come first.\nTime pays them back.",
+    "first_color": "text",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Chapter five. The break-even year.",
+   "visual": {
+    "type": "chapter",
+    "n": 5,
+    "title": "The break-even year"
+   }
+  },
+  {
+   "say": "Here are the rules. Each month, whoever spends less invests the difference at six percent. Rent, home prices, tax, insurance and repairs all rise three percent a year. These are assumptions, not predictions.",
+   "visual": {
+    "type": "bullets",
+    "title": "The rules (our assumptions)",
+    "items": [
+     "Whoever spends less invests the gap at 6%",
+     "Rent and home prices rise 3% a year",
+     "Tax, insurance, repairs rise 3% too"
+    ]
+   }
+  },
+  {
+   "say": "When we compare, the renter pays fifteen percent tax on investment gains, a typical US rate on long-term gains. The buyer's home profit is usually tax-free, up to a limit. And the buyer pays the six percent to sell.",
+   "visual": {
+    "type": "stat_grid",
+    "title": "When each side cashes out",
+    "items": [
+     {
+      "value": "15%",
+      "label": "tax on investment gains",
+      "sub": "IRS: at most 15% for most people",
+      "color": "blue"
+     },
+     {
+      "value": "0%",
+      "label": "tax on home profit",
+      "sub": "up to $250K / $500K married",
+      "color": "green"
+     },
+     {
+      "value": "6%",
+      "label": "cost to sell the home",
+      "sub": "our assumption",
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Here's how far ahead the renter would be if both cashed out. The renter starts ahead, with all that cash invested. The buyer starts behind, because of the fees. Then the gap slowly shrinks.",
+   "visual": {
+    "type": "columns",
+    "title": "Renter's lead if both cashed out",
+    "color": "green",
+    "highlight": 1,
+    "items": [
+     {
+      "label": "Year 1",
+      "value": 39414.041465546616,
+      "display": "$39K"
+     },
+     {
+      "label": "Year 5",
+      "value": 42918.19140873835,
+      "display": "$43K"
+     },
+     {
+      "label": "Year 10",
+      "value": 40715.67720408423,
+      "display": "$41K"
+     },
+     {
+      "label": "Year 15",
+      "value": 28138.352475044143,
+      "display": "$28K"
+     },
+     {
+      "label": "Year 20",
+      "value": 513.7278956584632,
+      "display": "$1K"
+     }
+    ],
+    "note": "our model · assumptions above · not a prediction"
+   }
+  },
+  {
+   "say": "After five years, the renter is about forty-three thousand dollars ahead. After ten, still about forty-one thousand ahead.",
+   "visual": {
+    "type": "table",
+    "title": "Wealth if cashed out (our model)",
+    "header": [
+     "Year",
+     "Buyer",
+     "Renter",
+     "Ahead"
+    ],
+    "rows": [
+     [
+      "1",
+      "$74K",
+      "$114K",
+      "Renter +$39K"
+     ],
+     [
+      "5",
+      "$141K",
+      "$184K",
+      "Renter +$43K"
+     ],
+     [
+      "10",
+      "$241K",
+      "$282K",
+      "Renter +$41K"
+     ],
+     [
+      "20",
+      "$521K",
+      "$521K",
+      "Renter +$1K"
+     ],
+     [
+      "30",
+      "$1.04M",
+      "$908K",
+      "Buyer +$130K"
+     ]
+    ],
+    "col_colors": {
+     "1": "gold",
+     "2": "green",
+     "3": "text"
+    }
+   }
+  },
+  {
+   "say": "Then, around year twenty, the lines cross. Rent keeps rising every year, while the mortgage payment stays fixed. By then, the rent costs more than owning each month, and the buyer pulls ahead.",
+   "visual": {
+    "type": "timeline",
+    "title": "Thirty years, two paths",
+    "events": [
+     {
+      "when": "Year 0",
+      "text": "Buyer pays\n$97K cash"
+     },
+     {
+      "when": "Year 5",
+      "text": "Renter ahead\nby ~$43K"
+     },
+     {
+      "when": "Year 20",
+      "text": "Lines\ncross"
+     },
+     {
+      "when": "Year 30",
+      "text": "Mortgage\npaid off"
+     }
+    ]
+   }
+  },
+  {
+   "say": "By year thirty, with the mortgage paid off, the buyer is ahead by about a hundred and thirty thousand dollars.",
+   "visual": {
+    "type": "stat",
+    "value": "+$130K",
+    "label": "buyer ahead after 30 years",
+    "sub": "our model · assumed 3% price growth, 6% returns",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "But only if the renter really invests the difference, every month, for decades. Many people don't. A mortgage forces you to save. Renting doesn't. So is buying a bad deal? Not necessarily. Watch what happens when we change one number.",
+   "visual": {
+    "type": "quote",
+    "text": "Renting wins only if you\ninvest the difference.",
+    "first_color": "text",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Chapter six. Change one number.",
+   "visual": {
+    "type": "chapter",
+    "n": 6,
+    "title": "Change one number"
+   }
+  },
+  {
+   "say": "That number is the price-to-rent ratio. Divide the home's price by a full year of rent. Here, four hundred twenty-one thousand nine hundred, divided by about twenty-seven thousand, is about fifteen point seven.",
+   "visual": {
+    "type": "equation",
+    "title": "Price-to-rent ratio",
+    "lines": [
+     {
+      "text": "$421,900 ÷ ($2,243 × 12)",
+      "color": "muted",
+      "size": 84
+     },
+     {
+      "text": "≈ 15.7",
+      "color": "gold",
+      "size": 150
+     },
+     {
+      "text": "years of rent to buy the home",
+      "color": "text",
+      "size": 54
+     }
+    ]
+   }
+  },
+  {
+   "say": "Keep the same rent, and change only the price. At twelve times a year's rent, break-even drops to about five years. At ten times, about three. At fourteen, about ten. And at eighteen, the buyer doesn't catch up within thirty years.",
+   "visual": {
+    "type": "hbars",
+    "title": "Break-even year, by price-to-rent ratio",
+    "format": "num",
+    "items": [
+     {
+      "label": "10×",
+      "value": 3,
+      "display": "3 yrs",
+      "color": "green"
+     },
+     {
+      "label": "12×",
+      "value": 5,
+      "display": "5 yrs",
+      "color": "green"
+     },
+     {
+      "label": "14×",
+      "value": 10,
+      "display": "10 yrs",
+      "color": "gold"
+     },
+     {
+      "label": "15.7× (ours)",
+      "value": 21,
+      "display": "~20 yrs",
+      "color": "gold"
+     },
+     {
+      "label": "18×",
+      "value": 31,
+      "display": "30+ yrs",
+      "color": "red"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Real cities show the same spread. Back in June, when rates were lower, Zillow estimated buying pays off in about six years nationally. In Columbus, Ohio, about four. In San Diego, over twenty-three. In San Francisco and San Jose, never within thirty years.",
+   "visual": {
+    "type": "columns",
+    "title": "Zillow: years for buying to pay off (June 2026)",
+    "format": "num",
+    "highlight": 1,
+    "items": [
+     {
+      "label": "Columbus",
+      "value": 4.1,
+      "display": "4.1"
+     },
+     {
+      "label": "US",
+      "value": 6,
+      "display": "~6"
+     },
+     {
+      "label": "San Diego",
+      "value": 23.3,
+      "display": "23.3"
+     },
+     {
+      "label": "San Francisco",
+      "value": 30,
+      "display": "never",
+      "color": "red"
+     }
+    ],
+    "note": "Zillow's own model · Freddie Mac rate then 6.48%, now 7.28%"
+   }
+  },
+  {
+   "say": "Other dials matter too. A six percent mortgage rate: about nine years. Home prices rising four percent a year: about ten. Only two percent: about thirty. Investments earning five percent: about fourteen. Earning seven: the renter stays ahead for over thirty years.",
+   "visual": {
+    "type": "table",
+    "title": "Change one thing (everything else the same)",
+    "header": [
+     "Change",
+     "Break-even"
+    ],
+    "rows": [
+     [
+      "Our base case",
+      "~20 yrs"
+     ],
+     [
+      "Mortgage rate 6%",
+      "9 yrs"
+     ],
+     [
+      "Prices +4% a year",
+      "10 yrs"
+     ],
+     [
+      "Prices +2% a year",
+      "30 yrs"
+     ],
+     [
+      "Investments earn 5%",
+      "14 yrs"
+     ],
+     [
+      "Investments earn 7%",
+      "30+ yrs"
+     ]
+    ],
+    "highlight_row": 0,
+    "col_colors": {
+     "1": "gold"
+    }
+   }
+  },
+  {
+   "say": "From three years to more than thirty, from small changes. So anyone who says renting is throwing money away, or that buying is always a trap, is skipping the math. How do you find your own answer? Five questions.",
+   "visual": {
+    "type": "quote",
+    "text": "\"Renting is throwing money away\"\nskips the math.",
+    "first_color": "text",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Chapter seven. Your checklist.",
+   "visual": {
+    "type": "chapter",
+    "n": 7,
+    "title": "Your checklist"
+   }
+  },
+  {
+   "say": "One: how long will you stay? Two: what's the price-to-rent ratio where you live? Three: what's the full monthly cost, not just the mortgage? Four: can you afford the fees to buy and to sell? Five: if you rent, will you really invest the difference?",
+   "visual": {
+    "type": "bullets",
+    "title": "Rent or buy: 5 questions",
+    "items": [
+     "How long will you stay?",
+     "Price ÷ yearly rent where you live?",
+     "Full monthly cost, not just the mortgage?",
+     "Can you afford the fees to buy and sell?",
+     "Will you invest the difference?"
+    ]
+   }
+  },
+  {
+   "say": "For question one: short stays usually favor renting, because the fees come first. With our numbers, selling after five years leaves the buyer about forty-three thousand dollars behind.",
+   "visual": {
+    "type": "stat",
+    "value": "−$43K",
+    "label": "buyer vs renter after 5 years",
+    "sub": "our model · fees come first",
+    "color": "red"
+   }
+  },
+  {
+   "say": "For question three, use the same list we did: interest, tax, insurance, about one percent for repairs, and what your cash could earn. Take off the price growth you expect, then compare that with the rent.",
+   "visual": {
+    "type": "equation",
+    "title": "Your own comparison",
+    "lines": [
+     {
+      "text": "Interest + tax + insurance + repairs",
+      "color": "muted",
+      "size": 64
+     },
+     {
+      "text": "+ lost return − price growth",
+      "color": "muted",
+      "size": 64
+     },
+     {
+      "text": "vs. rent",
+      "color": "gold",
+      "size": 120
+     }
+    ]
+   }
+  },
+  {
+   "say": "And remember what the math leaves out. Owning gives you stability and control over your home. Renting gives you flexibility, and the landlord pays for the new roof. Only you can put a price on those.",
+   "visual": {
+    "type": "versus",
+    "title": "What the math leaves out",
+    "left": {
+     "label": "Owning",
+     "value": "Stability",
+     "sub": "your home, your rules",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Renting",
+     "value": "Flexibility",
+     "sub": "easy to move, no roof bills",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Rent versus buy isn't a moral question. It's a math question, and a life question. How long you stay and your local prices decide most of it. Run your own numbers before you sign anything.",
+   "visual": {
+    "type": "title",
+    "title": "Run your own numbers",
+    "sub": "how long you stay + local prices decide it"
+   }
+  },
+  {
+   "say": "If this helped, subscribe. We break down how money really works, every week.",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "How money",
+     "really works."
+    ],
+    "sub": "Subscribe for weekly breakdowns"
+   }
+  }
+ ]
+}

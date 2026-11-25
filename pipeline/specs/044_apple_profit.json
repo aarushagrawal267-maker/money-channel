@@ -1,0 +1,199 @@
+{
+ "id": "044_apple_profit",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "BUSINESS BREAKDOWN",
+ "disclaimer": "Source: Apple fiscal 2026 Form 10-K · not investment advice",
+ "title": "How Apple Makes $4,200 Profit Every Second",
+ "description": "How does Apple make so much money? In fiscal 2026 (year to Sept 26, 2026) Apple's net income was $132.2 billion: about $363 million a day, or roughly $4,203 every second. Devices like the iPhone bring in most of the sales, but Services (App Store, iCloud, Apple Music and more) are the profit engine: 26% of sales, yet 40% of gross profit, with a 76.2% gross margin versus 39.3% on products.\n\nSources: Apple Inc. Form 10-K for fiscal 2026 (fiscal year ended Sept 26, 2026; SEC EDGAR); Apple newsroom, \"Apple reports fourth quarter results\" (Nov 2, 2026). Per-day and per-second figures are our own math: net income divided by the 364-day fiscal year. Gross margin is sales minus the direct cost of those sales, before operating costs and tax; Apple says its fiscal 2026 products margin was helped by product mix and tariff refunds. Apple's App Store fees have been challenged by regulators and courts, which is a risk to Services profits. This is a business explainer, not investment advice.\n\n#apple #business #iphone #appstore #businessmodel",
+ "tags": [
+  "how apple makes money",
+  "apple profit",
+  "apple services",
+  "apple net income 2026",
+  "apple business model",
+  "iphone profit",
+  "app store",
+  "business breakdown",
+  "gross margin"
+ ],
+ "localizations": {
+  "es": {
+   "title": "Cómo Apple gana $4.200 de beneficio cada segundo",
+   "summary": "En su año fiscal 2026, Apple ganó 132.200 millones de dólares netos, unos 4.200 por segundo. Los servicios son solo un 26% de las ventas, pero el 40% del beneficio bruto."
+  },
+  "pt": {
+   "title": "Como a Apple lucra US$4.200 a cada segundo",
+   "summary": "No ano fiscal de 2026, a Apple teve lucro líquido de US$132,2 bilhões, cerca de US$4.200 por segundo. Serviços são só 26% das vendas, mas 40% do lucro bruto."
+  },
+  "hi": {
+   "title": "Apple हर सेकंड $4,200 मुनाफ़ा कैसे कमाता है",
+   "summary": "वित्त वर्ष 2026 में Apple का शुद्ध मुनाफ़ा $132.2 अरब रहा, यानी हर सेकंड करीब $4,200। Services बिक्री का सिर्फ़ 26% हैं, पर सकल मुनाफ़े का 40%।"
+  },
+  "id": {
+   "title": "Cara Apple Raup Laba $4.200 Setiap Detik",
+   "summary": "Pada tahun fiskal 2026, laba bersih Apple $132,2 miliar, sekitar $4.200 per detik. Layanan hanya 26% dari penjualan, tapi 40% dari laba kotor."
+  },
+  "de": {
+   "title": "Wie Apple jede Sekunde $4.200 Gewinn macht",
+   "summary": "Im Geschäftsjahr 2026 erzielte Apple 132,2 Mrd. Dollar Nettogewinn, rund 4.200 Dollar pro Sekunde. Services sind nur 26 % des Umsatzes, aber 40 % des Bruttogewinns."
+  },
+  "fr": {
+   "title": "Comment Apple gagne 4 200 $ de profit par seconde",
+   "summary": "Sur l'exercice 2026, Apple a dégagé 132,2 milliards de dollars de bénéfice net, environ 4 200 $ par seconde. Les services font 26 % des ventes, mais 40 % de la marge brute."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Apple clears four thousand two hundred dollars profit every second. From what?",
+   "visual": {
+    "type": "stat",
+    "value": "$4,200",
+    "label": "Apple profit, every second",
+    "sub": "fiscal 2026 net income ÷ 364 days",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "Fiscal twenty twenty-six profit: one hundred thirty-two billion dollars.",
+   "visual": {
+    "type": "equation",
+    "title": "Apple net income, fiscal 2026",
+    "lines": [
+     {
+      "text": "$132.2B",
+      "color": "gold",
+      "size": 130
+     },
+     {
+      "text": "÷ 364 days",
+      "color": "text",
+      "size": 80
+     },
+     {
+      "text": "≈ $363M a day",
+      "color": "green",
+      "size": 96
+     }
+    ]
+   }
+  },
+  {
+   "say": "Most sales are devices like the iPhone. Services are about a quarter.",
+   "visual": {
+    "type": "compare",
+    "title": "Apple sales, fiscal 2026",
+    "left": {
+     "label": "Devices",
+     "value": 355533000000.0,
+     "color": "blue"
+    },
+    "right": {
+     "label": "Services",
+     "value": 123301000000.0,
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "But here's the twist: the smaller part is the profit engine.",
+   "visual": {
+    "type": "pair",
+    "title": "The twist",
+    "left": {
+     "label": "Devices",
+     "sub": "most of the sales",
+     "color": "blue"
+    },
+    "right": {
+     "label": "Services",
+     "sub": "fattest margins",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "After direct costs, Apple keeps seventy-six cents per Services dollar. Devices: thirty-nine.",
+   "visual": {
+    "type": "bars",
+    "title": "Gross margin: ¢ kept per $1 sold",
+    "format": "num",
+    "items": [
+     {
+      "label": "Devices",
+      "value": 39.3,
+      "color": "blue"
+     },
+     {
+      "label": "Services",
+      "value": 76.2,
+      "color": "green"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Services: a quarter of sales, but forty percent of gross profit.",
+   "visual": {
+    "type": "stat",
+    "value": "40%",
+    "label": "of Apple's gross profit is Services",
+    "sub": "from just 26% of sales · fiscal 2026",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Why? Every phone needs new parts. Software costs far less to deliver.",
+   "visual": {
+    "type": "pair",
+    "title": "Why the gap?",
+    "left": {
+     "label": "iPhone",
+     "sub": "new parts each sale",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Software",
+     "sub": "cheap to deliver",
+     "color": "gold"
+    }
+   }
+  },
+  {
+   "say": "The lesson: one sale pays once. A loyal customer pays again and again.",
+   "visual": {
+    "type": "equation",
+    "title": "The lesson",
+    "lines": [
+     {
+      "text": "One sale pays once.",
+      "color": "text",
+      "size": 84
+     },
+     {
+      "text": "A loyal customer",
+      "color": "gold",
+      "size": 92
+     },
+     {
+      "text": "pays again and again.",
+      "color": "gold",
+      "size": 84
+     }
+    ]
+   }
+  },
+  {
+   "say": "Do that at Apple's scale, and that's how...",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "$4,200",
+     "every second."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}
