@@ -55,7 +55,7 @@ spec = {
         "lease payments, with U.S. leases averaging about 15 years while members signed much shorter deals. "
         "After the filings revealed massive losses (AP), the IPO was pulled in September 2019; co-founder Adam "
         "Neumann had stepped down as CEO days earlier. By Q2 2023, paying for space took 74% of revenue, and the "
-        "bankruptcy filing listed $18.66 billion of liabilities against $15.06 billion of assets (Reuters). "
+        "bankruptcy filing listed $18.66 billion of liabilities against $15.06 billion of assets as of June 30, 2023 (Reuters). The 2018 net loss includes minority owners' share; the loss attributable to WeWork was about $1.6 billion. "
         "WeWork emerged from bankruptcy in June 2024 under new owners. The lesson: a valuation is an opinion; "
         "profit and cash flow pay the bills.\n\n"
         "Sources: Reuters (Jan 8, 2019; Nov 7, 2023); WeWork Form S-1 (SEC, Aug 14, 2019); AP (Sept 30, 2019; "
@@ -98,7 +98,7 @@ spec = {
                               {"text": f"${loss_per_dollar:.2f} lost", "color": "red", "size": 130}]}},
         # mid-video re-hook: opens a second loop (the same number, on the other side)
         {"say": "Now the twist: its future rent bill was also about forty-seven billion.",
-         "visual": {"type": "stat", "value": f"${LEASE_OBLIGATIONS / 1e9:.1f}B", "label": "future lease payments signed",
+         "visual": {"type": "stat", "value": f"${LEASE_OBLIGATIONS / 1e9:.1f}B", "label": "future lease payments (undiscounted)",
                     "sub": "as of June 30, 2019 · IPO filing", "color": "red"}},
         {"say": "After the filing showed huge losses, the I-P-O was pulled.",
          "visual": {"type": "pair", "title": f"Sept {IPO_PULLED_YEAR}",
@@ -107,7 +107,7 @@ spec = {
         {"say": "By twenty twenty-three, space costs ate seventy-four percent of revenue.",
          "visual": {"type": "bars", "title": "Share of revenue, Q2 2023 (%)", "format": "num",
                     "items": [{"label": "Space", "value": SPACE_COST_SHARE_Q2_2023, "color": "red"},
-                              {"label": "Left over", "value": 100 - SPACE_COST_SHARE_Q2_2023, "color": "slate"}]}},
+                              {"label": "Everything else", "value": 100 - SPACE_COST_SHARE_Q2_2023, "color": "slate"}]}},
         {"say": "That November, WeWork filed for Chapter eleven bankruptcy.",
          "visual": {"type": "compare", "title": f"Chapter 11 filing, Nov {CH11_YEAR}",
                     "left": {"label": "Assets", "value": ASSETS_2023, "color": "slate"},

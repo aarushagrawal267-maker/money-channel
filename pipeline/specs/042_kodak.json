@@ -6,7 +6,7 @@
  "badge": "CASE STUDY",
  "disclaimer": "Sources: Kodak 10-Ks, IEEE Spectrum, AP/IDC · see description",
  "title": "Kodak Invented the Digital Camera. Then It Lost to It",
- "description": "Kodak built a digital camera in 1975, when engineer Steven Sasson made a prototype that took 23 seconds to save one black-and-white photo. It never went into production, and film kept paying the bills: Kodak's sales were almost $16 billion in 1996. Kodak did go digital and was America's No. 1 digital camera seller in 2005, but its gross margin fell from about 48% (1996) to 15% (2011). Kodak filed for Chapter 11 on January 19, 2012, and weeks later said it would stop making digital cameras. It emerged from bankruptcy in September 2013 as a smaller company focused on printing and imaging for business. The lesson: don't let today's profits decide whether you build tomorrow's business.\n\nSources: IEEE Spectrum, 'The First Digital Camera' (Apr 6, 2022); Eastman Kodak Form 10-K for 1996 (sales $15,968M, cost of goods sold $8,326M; gross margin computed); Associated Press via NBC News (Feb 9, 2006), citing IDC (24.9% US share in 2005); Eastman Kodak Form 10-K for 2011 (sales $6,022M, gross profit margin 15%, Chapter 11 filing and Feb 9, 2012 phase-out of digital cameras); Kodak 8-K (Sept 3, 2013) on emerging from Chapter 11. Educational content, not investment advice.\n\n#kodak #business #casestudy #innovation #photography",
+ "description": "Kodak built a digital camera in 1975, when engineer Steven Sasson made a prototype that took 23 seconds to save one black-and-white photo. It never went into production, and film kept paying the bills: Kodak's sales were almost $16 billion in 1996. Kodak did go digital and was America's No. 1 digital camera seller in 2005, but its gross margin fell from about 48% (1996) to 15% (2011). Kodak filed for Chapter 11 on January 19, 2012, and weeks later said it would stop making digital cameras. It emerged from bankruptcy in September 2013 as a smaller company focused on printing and imaging for business. The lesson: don't let today's profits decide whether you build tomorrow's business.\n\nCompany-wide figures; 1996 includes businesses Kodak later sold (e.g. the Health Group, 2007).\n\nSources: IEEE Spectrum, 'The First Digital Camera' (Apr 6, 2022); Eastman Kodak Form 10-K for 1996 (sales $15,968M, cost of goods sold $8,326M; gross margin computed); Associated Press via NBC News (Feb 9, 2006), citing IDC (24.9% US share in 2005); Eastman Kodak Form 10-K for 2011 (sales $6,022M, gross profit margin 15%, Chapter 11 filing and Feb 9, 2012 phase-out of digital cameras); Kodak 8-K (Sept 3, 2013) on emerging from Chapter 11. Educational content, not investment advice.\n\n#kodak #business #casestudy #innovation #photography",
  "tags": [
   "kodak",
   "kodak digital camera",
@@ -21,7 +21,7 @@
  "localizations": {
   "es": {
    "title": "Kodak inventó la cámara digital. Y luego perdió",
-   "summary": "Kodak construyó una cámara digital en 1975, pero el cine fotográfico seguía pagando las cuentas. En 2012 se declaró en quiebra (Capítulo 11). Por qué los beneficios de hoy pueden frenar el futuro."
+   "summary": "Kodak construyó una cámara digital en 1975, pero la película fotográfica seguía pagando las cuentas. En 2012 se declaró en quiebra (Capítulo 11). Por qué los beneficios de hoy pueden frenar el futuro."
   },
   "pt": {
    "title": "A Kodak inventou a câmera digital. E depois perdeu",

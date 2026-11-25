@@ -6,7 +6,7 @@
  "badge": "CASE STUDY",
  "disclaimer": "Sources: WeWork S-1, Reuters, AP, CNBC · see description",
  "title": "WeWork: From a $47B Valuation to Bankruptcy",
- "description": "WeWork was valued at $47 billion in a SoftBank funding round in January 2019 and filed for Chapter 11 bankruptcy in November 2023. Its 2019 IPO filing showed why: in 2018 it lost $1.93 billion on $1.82 billion of revenue (about $1.06 lost per dollar of revenue), and it had signed $47.2 billion of future lease payments, with U.S. leases averaging about 15 years while members signed much shorter deals. After the filings revealed massive losses (AP), the IPO was pulled in September 2019; co-founder Adam Neumann had stepped down as CEO days earlier. By Q2 2023, paying for space took 74% of revenue, and the bankruptcy filing listed $18.66 billion of liabilities against $15.06 billion of assets (Reuters). WeWork emerged from bankruptcy in June 2024 under new owners. The lesson: a valuation is an opinion; profit and cash flow pay the bills.\n\nSources: Reuters (Jan 8, 2019; Nov 7, 2023); WeWork Form S-1 (SEC, Aug 14, 2019); AP (Sept 30, 2019; June 12, 2024); NPR (Sept 24, 2019); CNBC (Nov 6, 2023). The 2019 valuation was a private funding-round price, not a stock market value. Educational content, not investment advice.\n\n#wework #business #casestudy #startups #valuation",
+ "description": "WeWork was valued at $47 billion in a SoftBank funding round in January 2019 and filed for Chapter 11 bankruptcy in November 2023. Its 2019 IPO filing showed why: in 2018 it lost $1.93 billion on $1.82 billion of revenue (about $1.06 lost per dollar of revenue), and it had signed $47.2 billion of future lease payments, with U.S. leases averaging about 15 years while members signed much shorter deals. After the filings revealed massive losses (AP), the IPO was pulled in September 2019; co-founder Adam Neumann had stepped down as CEO days earlier. By Q2 2023, paying for space took 74% of revenue, and the bankruptcy filing listed $18.66 billion of liabilities against $15.06 billion of assets as of June 30, 2023 (Reuters). The 2018 net loss includes minority owners' share; the loss attributable to WeWork was about $1.6 billion. WeWork emerged from bankruptcy in June 2024 under new owners. The lesson: a valuation is an opinion; profit and cash flow pay the bills.\n\nSources: Reuters (Jan 8, 2019; Nov 7, 2023); WeWork Form S-1 (SEC, Aug 14, 2019); AP (Sept 30, 2019; June 12, 2024); NPR (Sept 24, 2019); CNBC (Nov 6, 2023). The 2019 valuation was a private funding-round price, not a stock market value. Educational content, not investment advice.\n\n#wework #business #casestudy #startups #valuation",
  "tags": [
   "wework",
   "wework bankruptcy",
@@ -113,7 +113,7 @@
    "visual": {
     "type": "stat",
     "value": "$47.2B",
-    "label": "future lease payments signed",
+    "label": "future lease payments (undiscounted)",
     "sub": "as of June 30, 2019 · IPO filing",
     "color": "red"
    }
@@ -148,7 +148,7 @@
       "color": "red"
      },
      {
-      "label": "Left over",
+      "label": "Everything else",
       "value": 26,
       "color": "slate"
      }

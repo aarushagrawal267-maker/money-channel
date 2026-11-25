@@ -63,6 +63,7 @@ spec = {
         "on January 19, 2012, and weeks later said it would stop making digital cameras. It emerged from "
         "bankruptcy in September 2013 as a smaller company focused on printing and imaging for business. The "
         "lesson: don't let today's profits decide whether you build tomorrow's business.\n\n"
+        "Company-wide figures; 1996 includes businesses Kodak later sold (e.g. the Health Group, 2007).\n\n"
         "Sources: IEEE Spectrum, 'The First Digital Camera' (Apr 6, 2022); Eastman Kodak Form 10-K for 1996 "
         "(sales $15,968M, cost of goods sold $8,326M; gross margin computed); Associated Press via NBC News "
         "(Feb 9, 2006), citing IDC (24.9% US share in 2005); Eastman Kodak Form 10-K for 2011 (sales $6,022M, "
@@ -74,7 +75,7 @@ spec = {
              "business case study", "business lessons", "disruption", "innovator's dilemma"],
     "localizations": {
         "es": {"title": "Kodak inventó la cámara digital. Y luego perdió",
-               "summary": "Kodak construyó una cámara digital en 1975, pero el cine fotográfico seguía pagando las cuentas. En 2012 se declaró en quiebra (Capítulo 11). Por qué los beneficios de hoy pueden frenar el futuro."},
+               "summary": "Kodak construyó una cámara digital en 1975, pero la película fotográfica seguía pagando las cuentas. En 2012 se declaró en quiebra (Capítulo 11). Por qué los beneficios de hoy pueden frenar el futuro."},
         "pt": {"title": "A Kodak inventou a câmera digital. E depois perdeu",
                "summary": "A Kodak construiu uma câmera digital em 1975, mas o filme ainda pagava as contas. Em 2012 entrou com pedido de recuperação judicial (Chapter 11). Por que o lucro de hoje pode travar o futuro."},
         "hi": {"title": "Kodak ने डिजिटल कैमरा बनाया, फिर उसी से हार गया",

@@ -66,9 +66,9 @@ spec = {
                "summary": "Sara Blakely fundó Spanx en 2000 con 5.000 dólares de ahorros, tras vender faxes puerta a puerta. En 2021, Blackstone compró la mayoría valorando Spanx en 1.200 millones de dólares. La lección: prueba una solución barata a un problema real."},
         "pt": {"title": "Sara Blakely: de 5 mil dólares de poupança à Spanx",
                "summary": "Sara Blakely fundou a Spanx em 2000 com 5 mil dólares de poupança, depois de vender aparelhos de fax de porta em porta. Em 2021, a Blackstone comprou o controle avaliando a Spanx em 1,2 bilhão de dólares. A lição: teste uma solução barata para um problema real."},
-        "hi": {"title": "Sara Blakely: 5,000 डॉलर की बचत से अरबों की Spanx",
+        "hi": {"title": "Sara Blakely: 5,000 डॉलर की बचत से अरब डॉलर की Spanx",
                "summary": "Sara Blakely ने 2000 में 5,000 डॉलर की बचत से Spanx शुरू की, उससे पहले वे घर-घर जाकर फ़ैक्स मशीनें बेचती थीं। 2021 में Blackstone ने बहुमत हिस्सेदारी ली और Spanx का मूल्य 1.2 अरब डॉलर आँका। सीख: अपनी असली समस्या का सस्ता हल पहले आज़माएँ।"},
-        "id": {"title": "Sara Blakely: Dari Tabungan $5.000 ke Spanx Miliaran",
+        "id": {"title": "Sara Blakely: Dari Tabungan $5.000 ke Spanx Bernilai $1 Miliar",
                "summary": "Sara Blakely mendirikan Spanx pada 2000 dengan tabungan 5.000 dolar, setelah menjual mesin faks dari pintu ke pintu. Pada 2021, Blackstone membeli saham mayoritas dengan valuasi 1,2 miliar dolar. Pelajarannya: uji solusi murah untuk masalah nyata."},
         "de": {"title": "Sara Blakely: Mit 5.000 $ Erspartem zur Milliardenfirma",
                "summary": "Sara Blakely gründete Spanx im Jahr 2000 mit 5.000 Dollar Erspartem, nachdem sie Faxgeräte an der Haustür verkauft hatte. 2021 übernahm Blackstone die Mehrheit bei einer Bewertung von 1,2 Milliarden Dollar. Die Lehre: Teste erst eine günstige Lösung für ein echtes Problem."},
@@ -77,7 +77,7 @@ spec = {
     },
     "scenes": [
         # hook: the big gap on frame 0 + open loop ("how?")
-        {"say": "Five thousand dollars in savings. Twelve years later: a billionaire. How?",
+        {"say": "Five thousand dollars in savings. Twelve years later, Forbes said: billionaire. How?",
          "visual": {"type": "compare", "title": "Sara Blakely",
                     "left": {"label": f"Savings, {FOUNDED}", "value": SAVINGS, "color": "slate"},
                     "right": {"label": f"Forbes est., {FORBES_YEAR}", "value": FORBES_VALUE, "color": "green"}}},
