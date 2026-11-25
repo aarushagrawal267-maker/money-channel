@@ -76,6 +76,7 @@ spec = {
                "summary": f"Une obligation est un prêt : 1 000 $ sur 10 ans à 4 %, soit 40 $ d'intérêts par an. Si les "
                           f"nouvelles paient 5 %, le prix de la vôtre tombe à environ {p_new:,.0f} $."},
     },
+    "thumbnail": {"photo": {"file": "assets/photos/us_treasury_building.jpg", "focus": [0.45, 0.45]}},
     "scenes": [
         # hook: payoff number on frame 0 + contradiction ("nobody missed a payment") + open loop ("why?")
         {"say": "Your bond lost seventy-seven dollars, and nobody missed a payment. Why?",
@@ -86,18 +87,19 @@ spec = {
                     "left": {"label": "You", "sub": "lend $1,000", "color": "green"},
                     "right": {"label": "Friend", "sub": "borrows for 10 yrs", "color": "blue"}}},
         {"say": "He pays forty dollars a year: the coupon, four percent.",
-         "visual": {"type": "equation", "title": "The coupon",
-                    "lines": [{"text": f"${FACE:,} × {COUPON_RATE:.0%}", "color": "text", "size": 96},
-                              {"text": f"= ${coupon:.0f} a year", "color": "gold", "size": 120}]}},
+         "visual": {"type": "photo", "file": "assets/photos/dollar_bills_100s.jpg",
+                    "title": f"The coupon: ${FACE:,} × {COUPON_RATE:.0%}",
+                    "value": f"${coupon:.0f}/yr", "color": "gold", "label": "the coupon, every year", "focus": [0.5, 0.4]}},
         {"say": "In year ten, he repays the thousand. That's maturity.",
          "visual": {"type": "compare", "title": "Over 10 years", "format": "usd",
                     "left": {"label": "Coupons", "value": coupon * YEARS, "color": "gold"},
                     "right": {"label": "At maturity", "value": FACE, "color": "green"}}},
         # mid-video re-hook: second loop
         {"say": "The twist: rates rise. New bonds pay five percent.",
-         "visual": {"type": "equation", "title": "The twist",
-                    "lines": [{"text": "Rates rise", "color": "red", "size": 110},
-                              {"text": f"New bonds pay {NEW_RATE:.0%}", "color": "gold", "size": 90}]}},
+         "visual": {"type": "photo", "file": "assets/photos/us_treasury_building.jpg",
+                    "title": "The twist: rates rise",
+                    "value": f"{NEW_RATE:.0%}", "color": "red", "label": "what new bonds pay",
+                    "focus": [0.5, 0.45]}},
         {"say": "Who pays a thousand for your forty, when new bonds pay fifty?",
          "visual": {"type": "bars", "title": "Interest a year, same $1,000", "format": "usd",
                     "items": [{"label": "Your bond", "value": coupon, "color": "slate"},

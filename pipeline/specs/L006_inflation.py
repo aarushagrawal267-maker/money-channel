@@ -176,8 +176,8 @@ scene("In the US, it's measured by the Bureau of Labor Statistics. Every month, 
              {"value": "200+", "label": "categories", "color": "blue"},
              {"value": "90%+", "label": "of people covered", "sub": "CPI-U", "color": "green"}])
 scene("Rent, groceries, gas, car insurance, doctor visits, phone bills. Together they form a basket, and the price of that basket is the Consumer Price Index, or C-P-I.",
-      type="bullets", title="The basket", color="gold",
-      items=["Rent & housing", "Groceries & restaurants", "Gas & electricity", "Cars, insurance, doctors, phones"])
+      type="photo", file="assets/photos/grocery_aisle_prices.jpg", layout="full", focus=[0.5, 0.45],
+      title="The basket", value="CPI", label="rent, groceries, gas, insurance, doctors, phones")
 scene("The basket is weighted by what households actually spend. Shelter, meaning rent and the rental value of owned homes, is the biggest piece, about thirty-six percent. Food is about fourteen. Energy, about six.",
       type="donut", title="What's in the US price basket (CPI-U)",
       segments=[{"label": "Shelter", "value": W_SHELTER, "color": "gold", "display": f"{W_SHELTER:.0f}%"},
@@ -226,10 +226,10 @@ scene("First, demand. When people, businesses and governments try to buy more th
              {"text": "+ the same goods", "color": "muted", "size": 80},
              {"text": "= higher prices", "color": "gold", "size": 110}])
 scene("Second, supply shocks. When something essential suddenly gets scarce or expensive, like oil, the cost ripples through everything. In June twenty twenty-two, energy prices were up forty-two percent in a year. Gasoline, sixty percent.",
-      type="stat_grid", title="2 · Supply shock: June 2022 vs a year earlier",
-      items=[{"value": f"+{ENERGY_JUN22 * 100:.1f}%", "label": "energy", "color": "red"},
-             {"value": f"+{GAS_JUN22 * 100:.1f}%", "label": "gasoline", "color": "red"},
-             {"value": f"+{YOY_JUN22 * 100:.1f}%", "label": "all items", "color": "gold"}])
+      type="photo", file="assets/photos/gas_station_price_sign.jpg", layout="side", focus=[0.4, 0.5],
+      title="2 · Supply shock: June 2022 vs a year earlier", value=f"+{GAS_JUN22 * 100:.1f}%", color="red",
+      label="gasoline prices in a year",
+      sub=f"energy +{ENERGY_JUN22 * 100:.1f}% · all items +{YOY_JUN22 * 100:.1f}% · BLS")
 scene("And it's happening again. In the year to September, energy rose about twenty percent and gasoline thirty-four. But prices without food and energy rose just two point six percent.",
       type="hbars", title="12 months to Sept 2026",
       items=[{"label": "Gasoline", "value": GAS_SEP26, "display": f"+{GAS_SEP26 * 100:.1f}%", "color": "red"},
@@ -246,7 +246,8 @@ scene("And inflation can feed itself. If people expect higher prices, workers pu
 # ---------------------------------------------------------------- 4
 scene("Chapter four. Why the Fed aims for two percent.", type="chapter", n=4, title="Why the Fed aims for 2%")
 scene("The US Federal Reserve aims for inflation of two percent a year, measured by a cousin of the C-P-I called the P-C-E price index. It made that goal official in January twenty twelve, and reaffirmed it this January.",
-      type="stat", value="2%", label="the Fed's longer-run inflation goal",
+      type="photo", file="assets/photos/federal_reserve_eccles_building.jpg", layout="side", focus=[0.5, 0.5],
+      title="The Federal Reserve, Washington DC", value="2%", label="the Fed's longer-run inflation goal",
       sub="PCE price index · adopted 2012, reaffirmed Jan 2026", color="green")
 scene("Why not zero? A St. Louis Fed economist gives three reasons. Price measures may run slightly high, so two percent measured may be closer to zero in reality. Falling prices, called deflation, may do more harm. And a little inflation leaves room to cut interest rates in a recession. Not every economist agrees.",
       type="bullets", title="Why not 0%?", color="green",
@@ -283,10 +284,8 @@ scene("Now the winners. Borrowers with fixed-rate loans. Say your fixed mortgage
              {"label": "In 20 years", "value": pay20, "display": f"${pay20:,.0f}", "color": "green"}],
       note="Example: principal & interest only, 3% inflation a year · only helps if your income keeps up")
 scene("That's the twist. Inflation quietly moves value from lenders to fixed-rate borrowers. The bank gets paid back in cheaper dollars, especially when inflation turns out higher than expected when the loan was made, and as long as the borrower's income keeps rising.",
-      type="equation", title="The twist",
-      lines=[{"text": "Fixed payment", "color": "text", "size": 96},
-             {"text": "+ rising prices & pay", "color": "muted", "size": 80},
-             {"text": "= cheaper debt", "color": "gold", "size": 110}])
+      type="photo", file="assets/photos/house_keys_on_money.jpg", layout="full", focus=[0.5, 0.5],
+      title="The twist", value="Cheaper debt", label="fixed payment + rising prices & pay")
 scene("Workers are in the middle. It depends on whether pay keeps up. In the year to June twenty twenty-two, average hourly pay rose about five percent, but prices rose about nine. So real pay, meaning pay after inflation, fell three point six percent. In the year to September twenty twenty-six, average pay rose three percent, but prices rose three point seven. Real pay fell zero point seven percent.",
       type="table", title="US average hourly pay vs prices (seasonally adjusted)",
       header=["12 months to", "Pay", "Prices", "Real pay"],
@@ -305,7 +304,8 @@ scene("Here it is. Your real return is one plus your interest rate, divided by o
              {"text": "≈", "color": "dim", "size": 80},
              {"text": "your rate − inflation", "color": "gold", "size": 100}])
 scene("That's why our drawer lost about three hundred and sixty dollars, not three hundred and seventy. Prices rose three point seven four percent, and ten thousand divided by one point zero three seven four is about nine thousand six hundred and forty.",
-      type="stat", value=f"${round(cash_real, -1):,.0f}", label=f"= $10,000 ÷ {r:.4f}",
+      type="photo", file="assets/photos/dollar_bills_100s.jpg", layout="side", focus=[0.5, 0.5],
+      value=f"${round(cash_real, -1):,.0f}", label=f"= $10,000 ÷ {r:.4f}",
       sub=f"lost ≈ ${lost:.0f}, not ${P * YOY_SEP26:.0f}", color="gold")
 scene("Now compare three homes for that ten thousand over the same year, before tax. In cash, down about three hundred and sixty. At the average savings rate, down about three hundred and twenty-three. At three and a half percent, an example rate, not a quote, down only about twenty-three.",
       type="table", title="$10,000 for a year, before tax (Sept 2025 → Sept 2026)",
@@ -332,10 +332,8 @@ scene("Here are four practical moves. None of them is a product pitch, and none 
       items=["Let your emergency fund earn", "Understand inflation-protected bonds", "Invest long-term money for growth",
              "Check your raise against inflation"])
 scene("First, your emergency fund. It needs to be safe and easy to reach, so it shouldn't swing with markets. But it doesn't have to earn nothing. Some banks pay more than the national average, and rates change, so compare.",
-      type="equation", title="1 · Your emergency fund",
-      lines=[{"text": "Safe", "color": "text", "size": 96},
-             {"text": "+ easy to reach", "color": "text", "size": 96},
-             {"text": "+ earning something", "color": "gold", "size": 96}])
+      type="photo", file="assets/photos/piggy_bank_coins.jpg", layout="side", focus=[0.55, 0.5],
+      title="1 · Your emergency fund", label="safe + easy to reach + earning something")
 scene("Second, inflation-protected bonds from the US Treasury. With TIPS, the principal rises with the C-P-I and interest is paid on the adjusted amount. Held to maturity, you never get back less than the original principal. I bonds work differently: the rate itself has an inflation part that resets every six months.",
       type="table", title="Inflation-protected US Treasury bonds",
       header=["", "TIPS", "I bonds"],
@@ -355,7 +353,8 @@ scene("Third, money you won't need for many years. Over long periods, a diversif
       right={"label": "Needed in 10+ yrs", "value": "Invested", "sub": "can beat prices, can also fall", "color": "green"},
       verdict="Not advice · investments can lose value")
 scene("Fourth, check your raise against inflation. A three percent raise in a year when prices rise three point seven percent is a small pay cut in disguise.",
-      type="stat", value=f"−{-REAL_AHE_SEP26 * 100:.1f}%", label="a 3.0% raise when prices rise 3.7%",
+      type="photo", file="assets/photos/construction_worker_welding.jpg", layout="side", focus=[0.5, 0.4],
+      value=f"−{-REAL_AHE_SEP26 * 100:.1f}%", label="a 3.0% raise when prices rise 3.7%",
       sub="your real raise · use the formula", color="red")
 scene("Inflation never takes your money. It takes what your money can do. Now you know how to measure it, and how to keep up.",
       type="title", title="Measure it. Keep up.", sub="inflation takes what your money can do")
@@ -387,7 +386,8 @@ spec = {
     "disclaimer": "Data: BLS, Federal Reserve, FDIC, TreasuryDirect · examples labelled · education, not advice",
     "title": "Inflation Explained: Why Your Money Quietly Shrinks",
     "intro_chapter": "The $360 drawer",
-    "thumbnail": {"big": f"−${lost:.0f}", "line": "LOST FROM $10K CASH", "tag": "NOBODY TOOK IT", "color": "red"},
+    "thumbnail": {"big": f"−${lost:.0f}", "line": "LOST FROM $10K CASH", "tag": "NOBODY TOOK IT", "color": "red",
+                  "photo": {"file": "assets/photos/dollar_bills_100s.jpg", "focus": [0.55, 0.5]}},
     "description": (
         "Inflation explained simply: what the Consumer Price Index (CPI) measures, why US prices rose 3.7% in "
         f"the year to September 2026, and why $10,000 in cash lost about ${lost:.0f} of buying power. We cover "

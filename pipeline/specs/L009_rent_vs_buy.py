@@ -197,7 +197,8 @@ scene("By the end, you'll know that one number for your own city, and you'll hav
 # ---------------------------------------------------------------- 1
 scene("Chapter one. The two homes.", type="chapter", n=1, title="The two homes")
 scene("We'll use real, current US numbers. In October, the median existing single-family home sold for four hundred twenty-one thousand nine hundred dollars, according to the National Association of Realtors.",
-      type="stat", value=f"${PRICE:,}", label="median US single-family home price", sub="existing homes, October 2026 · NAR", color="gold")
+      type="photo", file="assets/photos/single_family_home_brick.jpg", layout="side", focus=[0.5, 0.45],
+      value=f"${PRICE:,}", label="median US single-family home price", sub="existing homes, October 2026 · NAR", color="gold")
 scene("Renting a single-family home? Zillow says the typical asking rent in October was two thousand two hundred forty-three dollars a month, up three point two percent in a year. A sale price and an asking rent aren't the exact same homes, but they're a fair national match.",
       type="versus", title="Single-family: buy or rent",
       left={"label": "Buy", "value": f"${PRICE / 1e3:,.1f}K", "sub": "median price · NAR", "color": "blue"},
@@ -229,7 +230,8 @@ scene("Then property tax. The data firm Attom puts the average effective rate on
              {"text": f"≈ ${tax_m:,.0f} a month", "color": "gold", "size": 120},
              {"text": "national average rate · ATTOM, 2025", "color": "text", "size": 48}])
 scene("Home insurance: NerdWallet's typical US premium in early twenty twenty-six was two thousand five hundred sixty-four dollars a year. About two hundred fourteen a month, and far more in some states.",
-      type="stat", value=f"${INSURANCE:,}", label="typical home insurance a year", sub=f"≈ ${ins_m:,.0f} a month · NerdWallet, 2026", color="gold")
+      type="photo", file="assets/photos/single_family_homes_snow.jpg", layout="full", focus=[0.5, 0.5],
+      title="Home insurance", value=f"${INSURANCE:,} a year", label=f"typical US premium · ≈ ${ins_m:,.0f} a month · NerdWallet, 2026", color="gold")
 scene("And repairs. A common rule of thumb says set aside about one percent of the home's value every year. It's a rough guide, not data: older homes can need more. Here, about three hundred fifty a month.",
       type="quote", text="Budget about 1% of\nthe home's value a year", first_color="text", color="gold",
       source=f"rule of thumb for repairs · here ≈ ${maint_m:,.0f} a month")
@@ -258,10 +260,9 @@ scene("That loan payoff is savings. It's still yours. So the honest comparison i
       type="bullets", title="Gone for good (unrecoverable)", color="red",
       items=["Mortgage interest", "Property tax", "Insurance", "Repairs"])
 scene("Plus one that's easy to miss: that ninety-seven thousand dollars of cash. Invested at six percent a year, our assumption, it could have earned about five thousand eight hundred dollars in year one.",
-      type="equation", title="What the cash could have earned",
-      lines=[{"text": f"${cash:,.0f} × 6% a year", "color": "muted", "size": 84},
-             {"text": f"≈ ${lost_return_y1:,.0f} in year one", "color": "gold", "size": 116},
-             {"text": "assumed return, not guaranteed", "color": "text", "size": 52}])
+      type="photo", file="assets/photos/dollar_bills_100s.jpg", layout="side", focus=[0.5, 0.5],
+      title="What the cash could have earned", value=f"≈ ${lost_return_y1:,.0f}",
+      label=f"${cash:,.0f} × 6% a year, in year one", sub="assumed return, not guaranteed", color="gold")
 scene("Add it all up, and the buyer's money that's gone is about three thousand four hundred dollars a month. The renter's rent is gone too: two thousand two hundred forty-three.",
       type="hbars", title="Money gone for good, per month (year one)",
       items=[{"label": "Owning", "value": gone_m, "display": f"${gone_m:,.0f}", "color": "red"},
@@ -284,10 +285,9 @@ scene("Getting in costs those closing costs. Getting out costs more. In one twen
             {"label": "To sell (agents + other costs)", "share": SELL_COST, "color": "red", "dp": 0}],
       note="Our assumptions · Redfin: 2–5% to buy · Clever (2026): agent fees avg 5.46%")
 scene("Sell after five years, and the house might be worth about four hundred eighty-nine thousand dollars. Six percent of that is about twenty-nine thousand. Add the thirteen thousand to buy, and that's about forty-two thousand dollars in fees.",
-      type="equation", title="Buy now, sell in 5 years",
-      lines=[{"text": f"${closing / 1e3:.1f}K to buy + ${sell_5 / 1e3:.1f}K to sell", "color": "muted", "size": 80},
-             {"text": f"≈ ${fees_5 / 1e3:.0f}K in fees", "color": "red", "size": 130},
-             {"text": f"if the home is worth ${value_5 / 1e3:.0f}K by then", "color": "text", "size": 52}])
+      type="photo", file="assets/photos/for_sale_sign_generic.jpg", layout="full", focus=[0.5, 0.9],
+      title="Buy now, sell in 5 years", value=f"≈ ${fees_5 / 1e3:.0f}K in fees", color="red",
+      label=f"${closing / 1e3:.1f}K to buy + ${sell_5 / 1e3:.1f}K to sell, if the home is worth ${value_5 / 1e3:.0f}K")
 scene("To come out ahead, the buyer has to win those fees back, through rising prices and paying down the loan, before the renter's investments pull too far ahead.",
       type="flywheel", title="How the buyer catches up", center="Equity",
       steps=["Prices rise", "Loan shrinks", "Rent keeps rising", "Payment stays fixed"])
@@ -322,7 +322,8 @@ scene("Then, around year twenty, the lines cross. Rent keeps rising every year, 
               {"when": "Year 20", "text": "Lines\ncross"},
               {"when": "Year 30", "text": "Mortgage\npaid off"}])
 scene("By year thirty, with the mortgage paid off, the buyer is ahead by about a hundred and twenty-six thousand dollars.",
-      type="stat", value=f"+{K(-gap[30])}", label="buyer ahead after 30 years", sub="our model · assumed 3% price growth, 6% returns", color="gold")
+      type="photo", file="assets/photos/house_keys_on_money.jpg", layout="side", focus=[0.5, 0.5],
+      value=f"+{K(-gap[30])}", label="buyer ahead after 30 years", sub="our model · assumed 3% price growth, 6% returns", color="gold")
 scene("But only if the renter really invests the difference, every month, for decades. Many people don't. A mortgage forces you to save. Renting doesn't. So is buying a bad deal? Not necessarily. Watch what happens when we change one number.",
       type="quote", text="Renting wins only if you\ninvest the difference.", first_color="text", color="green")
 
@@ -354,7 +355,8 @@ scene("Other dials matter too. A six percent mortgage rate: about nine years. Ho
             ["Prices +2% a year", f"{S_G2} yrs"], ["Investments earn 5%", f"{S_R5} yrs"], ["Investments earn 7%", "30+ yrs"]],
       highlight_row=0, col_colors={"1": "gold"})
 scene("From three years to more than thirty, from small changes. So anyone who says renting is throwing money away, or that buying is always a trap, is skipping the math. How do you find your own answer? Five questions.",
-      type="quote", text="\"Renting is throwing money away\"\nskips the math.", first_color="text", color="gold")
+      type="photo", file="assets/photos/apartment_building_brick.jpg", layout="full", focus=[0.5, 0.4],
+      title="Renting vs buying", label="\"Renting is throwing money away\" skips the math")
 
 # ---------------------------------------------------------------- 7
 scene("Chapter seven. Your checklist.", type="chapter", n=7, title="Your checklist")
@@ -374,7 +376,8 @@ scene("And remember what the math leaves out. Owning gives you stability and con
       left={"label": "Owning", "value": "Stability", "sub": "your home, your rules", "color": "blue"},
       right={"label": "Renting", "value": "Flexibility", "sub": "easy to move, no roof bills", "color": "green"})
 scene("Rent versus buy isn't a moral question. It's a math question, and a life question. How long you stay and your local prices decide a lot of it. Run your own numbers before you sign anything.",
-      type="title", title="Run your own numbers", sub="how long you stay + local prices decide a lot")
+      type="photo", file="assets/photos/houses_dc_logan_circle.jpg", layout="full", focus=[0.5, 0.45],
+      title="Run your own numbers", label="how long you stay + local prices decide a lot")
 scene("If this helped, subscribe. We break down how money really works, every week.",
       type="cta", lines=["How money", "really works."], sub="Subscribe for weekly breakdowns")
 
@@ -444,7 +447,8 @@ spec = {
     "disclaimer": "Illustration · assumed returns & growth · not financial advice",
     "title": "Rent vs Buy a Home: The Full Math Nobody Shows You",
     "intro_chapter": "5 years or 20?",
-    "thumbnail": {"big": "5 OR 20", "line": "YRS TO BEAT RENTING?", "tag": "RENT VS BUY: FULL MATH", "color": "gold"},
+    "thumbnail": {"big": "5 OR 20", "line": "YRS TO BEAT RENTING?", "tag": "RENT VS BUY: FULL MATH", "color": "gold",
+                  "photo": {"file": "assets/photos/for_sale_sign_generic.jpg", "focus": [0.45, 0.5]}},
     "description": DESCRIPTION,
     "tags": ["rent vs buy", "rent or buy a house", "renting vs buying a home", "is renting throwing money away",
              "price to rent ratio", "break even buying a house", "mortgage rates 2026", "home buying",

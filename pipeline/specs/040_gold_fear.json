@@ -42,15 +42,31 @@
    "summary": "L'or ne rapporte pas d'intérêts, mais ce n'est la dette de personne : beaucoup y voient une valeur refuge. Les banques centrales en ont acheté 321 tonnes au T3 2026, 42 % de plus qu'un an plus tôt."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/gold_bars_stack.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  "big": "+23%",
+  "color": "gold"
+ },
  "scenes": [
   {
    "say": "Gold pays nothing. Its average price still rose twenty-three percent.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/gold_bars_stack.jpg",
+    "title": "Q3 2026 · $4,262 an ounce",
     "value": "+23%",
+    "color": "gold",
     "label": "average gold price vs a year earlier",
-    "sub": "Q3 2026 · $4,262 an ounce · World Gold Council",
-    "color": "gold"
+    "focus": [
+     0.5,
+     0.5
+    ]
    }
   },
   {
@@ -97,20 +113,15 @@
   {
    "say": "Central banks bought a net three hundred and twenty-one tonnes in one quarter.",
    "visual": {
-    "type": "bars",
-    "title": "Central bank buying (tonnes) · +42%",
-    "format": "num",
-    "items": [
-     {
-      "label": "Q3 2025",
-      "value": 226,
-      "color": "slate"
-     },
-     {
-      "label": "Q3 2026",
-      "value": 321,
-      "color": "gold"
-     }
+    "type": "photo",
+    "file": "assets/photos/bank_of_canada_gold_vault.jpg",
+    "title": "Central bank buying, Q3 2026",
+    "value": "321 t",
+    "color": "gold",
+    "label": "net, one quarter · +42% vs Q3 2025",
+    "focus": [
+     0.5,
+     0.45
     ]
    }
   },

@@ -43,6 +43,15 @@
    "summary": "La capitalisation boursière, c'est le cours de l'action multiplié par le nombre d'actions, pas les ventes. Walmart vend plus du double de Microsoft, mais Microsoft vaut presque quatre fois plus."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/walmart_store_front.jpg",
+   "focus": [
+    0.82,
+    0.3
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Walmart sells more than twice as much as Microsoft. Yet Microsoft is worth almost four times as much. How?",
@@ -64,24 +73,13 @@
   {
    "say": "Because a company's value isn't its sales. Its value, called market cap, is the share price times the number of shares.",
    "visual": {
-    "type": "equation",
-    "title": "Market cap",
-    "lines": [
-     {
-      "text": "Share price",
-      "color": "text",
-      "size": 92
-     },
-     {
-      "text": "× number of shares",
-      "color": "muted",
-      "size": 72
-     },
-     {
-      "text": "= market cap",
-      "color": "gold",
-      "size": 92
-     }
+    "type": "photo",
+    "file": "assets/photos/walmart_store_front.jpg",
+    "title": "Market cap = price × shares",
+    "label": "a company's value isn't its sales",
+    "focus": [
+     0.55,
+     0.35
     ]
    }
   },
@@ -108,18 +106,16 @@
   {
    "say": "Investors aren't buying sales. They're buying future profits. Microsoft kept about forty cents of every dollar it sold as profit. Walmart kept about three cents.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/microsoft_sign_campus.jpg",
     "title": "Profit from each $1 of sales",
-    "left": {
-     "label": "Microsoft",
-     "sub": "about 40¢",
-     "color": "blue"
-    },
-    "right": {
-     "label": "Walmart",
-     "sub": "about 3¢",
-     "color": "gold"
-    }
+    "value": "40¢",
+    "color": "blue",
+    "label": "Microsoft · Walmart: about 3¢",
+    "focus": [
+     0.4,
+     0.4
+    ]
    }
   },
   {

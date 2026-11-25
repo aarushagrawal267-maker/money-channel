@@ -44,6 +44,15 @@
    "summary": "Une obligation est un prêt : 1 000 $ sur 10 ans à 4 %, soit 40 $ d'intérêts par an. Si les nouvelles paient 5 %, le prix de la vôtre tombe à environ 923 $."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/us_treasury_building.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Your bond lost seventy-seven dollars, and nobody missed a payment. Why?",
@@ -75,19 +84,15 @@
   {
    "say": "He pays forty dollars a year: the coupon, four percent.",
    "visual": {
-    "type": "equation",
-    "title": "The coupon",
-    "lines": [
-     {
-      "text": "$1,000 × 4%",
-      "color": "text",
-      "size": 96
-     },
-     {
-      "text": "= $40 a year",
-      "color": "gold",
-      "size": 120
-     }
+    "type": "photo",
+    "file": "assets/photos/dollar_bills_100s.jpg",
+    "title": "The coupon: $1,000 × 4%",
+    "value": "$40/yr",
+    "color": "gold",
+    "label": "the coupon, every year",
+    "focus": [
+     0.5,
+     0.4
     ]
    }
   },
@@ -112,19 +117,15 @@
   {
    "say": "The twist: rates rise. New bonds pay five percent.",
    "visual": {
-    "type": "equation",
-    "title": "The twist",
-    "lines": [
-     {
-      "text": "Rates rise",
-      "color": "red",
-      "size": 110
-     },
-     {
-      "text": "New bonds pay 5%",
-      "color": "gold",
-      "size": 90
-     }
+    "type": "photo",
+    "file": "assets/photos/us_treasury_building.jpg",
+    "title": "The twist: rates rise",
+    "value": "5%",
+    "color": "red",
+    "label": "what new bonds pay",
+    "focus": [
+     0.5,
+     0.45
     ]
    }
   },

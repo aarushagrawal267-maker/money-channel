@@ -82,11 +82,15 @@ spec = {
                "summary": "Sur 12 mois jusqu'à septembre 2025, les sociétés du S&P 500 ont consacré 1 020 milliards de dollars aux "
                           "rachats et 664,9 milliards aux dividendes. Même valeur au départ ; la fiscalité et le prix changent tout."},
     },
+    "thumbnail": {"photo": {"file": "assets/photos/nyse_facade_wall_street.jpg", "focus": [0.5, 0.4]},
+                  "big": f"${BUYBACKS_12M / 1e12:.2f}T", "color": "gold"},
     "scenes": [
         # hook: the biggest number on frame 0 + open loop ("Why?")
         {"say": "Over a trillion dollars, spent by companies on their own shares. Why?",
-         "visual": {"type": "stat", "value": f"${BUYBACKS_12M / 1e12:.2f}T", "label": "spent on buybacks in one year",
-                    "sub": "S&P 500 · 12 months to Sept 2025 · S&P DJI", "color": "gold"}},
+         "visual": {"type": "photo", "file": "assets/photos/nyse_facade_wall_street.jpg",
+                    "title": "S&P 500 · 12 months to Sept 2025",
+                    "value": f"${BUYBACKS_12M / 1e12:.2f}T", "color": "gold", "label": "spent on buybacks in one year",
+                    "focus": [0.5, 0.45]}},
         {"say": "They paid six hundred sixty-five billion in dividends too.",
          "visual": {"type": "bars", "title": "S&P 500, 12 months to Sept 2025 ($B)", "format": "num",
                     "items": [{"label": "Buybacks", "value": BUYBACKS_12M / 1e9, "color": "gold"},
@@ -117,9 +121,9 @@ spec = {
                               {"text": "Buyback gain:", "color": "gold", "size": 80},
                               {"text": "taxed when you sell", "color": "text", "size": 80}]}},
         {"say": "And a buyback only helps if the company pays a fair price.",
-         "visual": {"type": "pair", "title": "Price matters",
-                    "left": {"label": "Fair price", "sub": "owners gain", "color": "green"},
-                    "right": {"label": "Overpay", "sub": "owners lose", "color": "red"}}},
+         "visual": {"type": "photo", "file": "assets/photos/wall_street_sign.jpg",
+                    "title": "Price matters",
+                    "label": "Fair price: owners gain · overpay: they lose", "focus": [0.4, 0.4]}},
         # loop line: runs back into "Over a trillion dollars, spent by companies on their own shares."
         {"say": "Remember that the next time you hear...",
          "visual": {"type": "cta", "lines": ["Same value.", "Different taxes."],

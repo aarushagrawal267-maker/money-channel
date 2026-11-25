@@ -44,6 +44,15 @@
    "summary": "Dépensés : 60 000 $ en 10 ans. Investis à 7 % par an (hypothèse) : environ 85 526 $. La croissance arrive tard, et l'impôt passe d'abord."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/freelancer_laptop_sunset.jpg",
+   "focus": [
+    0.62,
+    0.45
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Five hundred a month on the side: spent, or eighty-five thousand dollars?",
@@ -58,18 +67,16 @@
   {
    "say": "Say a side gig nets five hundred a month, after tax.",
    "visual": {
-    "type": "pair",
-    "title": "The setup",
-    "left": {
-     "label": "Side gig",
-     "sub": "$500 a month",
-     "color": "green"
-    },
-    "right": {
-     "label": "Tax",
-     "sub": "set aside first",
-     "color": "slate"
-    }
+    "type": "photo",
+    "file": "assets/photos/food_delivery_cyclist.jpg",
+    "title": "The setup: a side gig",
+    "value": "$500/mo",
+    "color": "green",
+    "label": "after tax (set tax aside first)",
+    "focus": [
+     0.65,
+     0.4
+    ]
    }
   },
   {
@@ -217,18 +224,14 @@
   {
    "say": "No shortcut. Just a steady habit and patience.",
    "visual": {
-    "type": "pair",
+    "type": "photo",
+    "file": "assets/photos/freelancer_laptop_sunset.jpg",
     "title": "The real formula",
-    "left": {
-     "label": "Habit",
-     "sub": "every month",
-     "color": "green"
-    },
-    "right": {
-     "label": "Time",
-     "sub": "10+ years",
-     "color": "gold"
-    }
+    "label": "a habit every month + 10+ years of time",
+    "focus": [
+     0.6,
+     0.5
+    ]
    }
   },
   {

@@ -44,6 +44,17 @@
    "summary": "Exemple : deux personnes débutent à $60,000. Rester avec 3 % par an ou changer tous les trois ans avec 10 % de plus : environ $62K d'écart en 10 ans."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/business_meeting_coworkers.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  },
+  "big": "$62K?",
+  "color": "gold"
+ },
  "scenes": [
   {
    "say": "In this example, staying loyal costs about sixty-two thousand dollars over ten years. Here's the math, and the catch.",
@@ -108,11 +119,16 @@
   {
    "say": "Over the decade, Leo earns about sixty-two thousand dollars more.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/office_workers_desks.jpg",
+    "title": "Example: 3 switches at +10%",
     "value": "+$62K",
+    "color": "green",
     "label": "more earned over 10 years",
-    "sub": "example: 3 switches at +10%",
-    "color": "green"
+    "focus": [
+     0.6,
+     0.4
+    ]
    }
   },
   {
@@ -135,24 +151,13 @@
   {
    "say": "Switching has costs too: risk, and lost bonuses or benefits.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/business_meeting_coworkers.jpg",
     "title": "The catch",
-    "lines": [
-     {
-      "text": "New-job risk",
-      "color": "red",
-      "size": 88
-     },
-     {
-      "text": "Lost bonuses",
-      "color": "red",
-      "size": 88
-     },
-     {
-      "text": "Benefits reset",
-      "color": "red",
-      "size": 88
-     }
+    "label": "New-job risk · lost bonuses · benefits reset",
+    "focus": [
+     0.5,
+     0.5
     ]
    }
   },

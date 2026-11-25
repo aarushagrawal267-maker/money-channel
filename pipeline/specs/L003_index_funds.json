@@ -12,7 +12,14 @@
   "big": "92.6%",
   "line": "LOST TO THE INDEX",
   "tag": "PRO FUNDS · 20 YEARS",
-  "color": "gold"
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/nyse_facade_low_angle.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ]
+  }
  },
  "description": "Over the 20 years to June 2026, more than 9 in 10 actively managed large-cap US stock funds trailed the S&P 500. Why do full-time professionals keep losing to a fund that does no research at all? We explain what an index fund is, William Sharpe's \"arithmetic of active management\", how a fee gap of less than 1% a year compounds over 30 years, why past winners rarely stay winners, the story of the first index fund (1976) and Warren Buffett's 10-year bet against hedge funds, and the honest weaknesses of index funds: they buy overpriced stocks too, the S&P 500 is top-heavy, and you take the full market crash.\n\nThe 30-year fee example is a hypothetical illustration ($100,000, 7% a year before fees, 2025 average asset-weighted expense ratios from ICI), not a prediction. This video explains how markets work; it does not recommend any fund or security.\n\nSources:\n- S&P Dow Jones Indices, SPIVA U.S. Mid-Year 2026 Scorecard (data to June 30, 2026): https://www.spglobal.com/spdji/en/documents/spiva/spiva-us-mid-year-2026.pdf\n- S&P Dow Jones Indices, SPIVA U.S. Year-End 2025 Scorecard: https://www.spglobal.com/spdji/en/spiva/article/spiva-us-year-end-2025/\n- S&P Dow Jones Indices, U.S. Persistence Scorecard Year-End 2025: https://www.spglobal.com/spdji/en/documents/spiva/persistence-scorecard-year-end-2025.pdf\n- Investment Company Institute, Trends in the Expenses and Fees of Funds, 2025 (March 2026): https://www.ici.org/system/files/2026-03/per32-01.pdf\n- Investment Company Institute, 2026 Investment Company Fact Book, ch. 2: https://icifactbook.org/pdf/2026-factbook-ch2.pdf\n- William F. Sharpe, The Arithmetic of Active Management (Financial Analysts Journal, 1991): https://web.stanford.edu/~wfsharpe/art/active/active.htm\n- Vanguard, 50th anniversary of the Vanguard 500 Index Fund (Aug 31, 2026): https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-50th-anniversary-vanguard-500-index-fund-083126.html\n- Berkshire Hathaway 2017 shareholder letter (the bet): https://www.berkshirehathaway.com/letters/2017ltr.pdf\n- RBC Wealth Management, The Great Narrowing: S&P 500 concentration (Jan 22, 2026): https://www.rbcwealthmanagement.com/en-us/insights/the-great-narrowing-sp-500-concentration\n\nNot financial advice. Past performance doesn't guarantee future results.\n\n#indexfunds #investing #stockmarket #personalfinance #warrenbuffett",
  "description_sources": [
@@ -138,10 +145,15 @@
   {
    "say": "An index is just a list. The S and P five hundred, for example, is a list of about five hundred of the largest companies in the United States.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/nyse_facade_flag.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.45
+    ],
     "value": "~500",
-    "label": "large US companies, one list",
-    "sub": "the S&P 500 index",
+    "label": "large US companies, one list: the S&P 500",
     "color": "gold"
    }
   },
@@ -268,15 +280,18 @@
   {
    "say": "An active fund manager tries to beat the index. They research companies, buy the ones they like, skip the ones they don't, and keep trading as their views change.",
    "visual": {
-    "type": "flywheel",
+    "type": "photo",
     "title": "What an active manager does",
-    "center": "BEAT IT?",
-    "steps": [
-     "Research",
-     "Pick stocks",
-     "Trade",
-     "Review"
-    ]
+    "file": "assets/photos/stock_ticker_exchange_hall.jpg",
+    "layout": "side",
+    "focus": [
+     0.5,
+     0.4
+    ],
+    "value": "Beat it?",
+    "label": "Research, pick stocks, trade, review",
+    "sub": "the goal: do better than the index",
+    "color": "gold"
    }
   },
   {
@@ -474,14 +489,17 @@
   {
    "say": "And fees aren't the only cost. Active funds trade more, so they pay more trading costs. And in a regular taxable account, frequent selling can mean paying tax on gains sooner.",
    "visual": {
-    "type": "bullets",
+    "type": "photo",
     "title": "Costs that quietly eat returns",
-    "items": [
-     "Yearly fees",
-     "Trading costs",
-     "Taxes on gains from selling"
+    "file": "assets/photos/wall_street_sign.jpg",
+    "layout": "side",
+    "focus": [
+     0.4,
+     0.5
     ],
-    "color": "red"
+    "value": "3 costs",
+    "color": "red",
+    "label": "Yearly fees, trading costs, taxes on gains from selling"
    }
   },
   {
@@ -573,25 +591,17 @@
   {
    "say": "It's the obvious idea: find a fund that's been beating the market, and invest with it. S and P actually tests this, in a report called the Persistence Scorecard.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
     "title": "The obvious plan",
-    "lines": [
-     {
-      "text": "Find a recent winner",
-      "color": "text",
-      "size": 96
-     },
-     {
-      "text": "→ invest with it",
-      "color": "muted",
-      "size": 80
-     },
-     {
-      "text": "→ keeps winning?",
-      "color": "gold",
-      "size": 110
-     }
-    ]
+    "file": "assets/photos/chicago_stock_exchange_board.jpg",
+    "layout": "full",
+    "focus": [
+     0.6,
+     0.4
+    ],
+    "value": "Keeps winning?",
+    "color": "gold",
+    "label": "Find a recent winner, invest with it"
    }
   },
   {
@@ -758,25 +768,18 @@
   {
    "say": "Then came Warren Buffett. In 2007, he made a one million dollar bet, for charity, that a plain S and P five hundred index fund would beat hedge fund experts over the next ten years.",
    "visual": {
-    "type": "stat_grid",
+    "type": "photo",
     "title": "Buffett's bet",
-    "items": [
-     {
-      "value": "$1M",
-      "label": "for charity",
-      "color": "gold"
-     },
-     {
-      "value": "10 yrs",
-      "label": "2008 to 2017",
-      "color": "text"
-     },
-     {
-      "value": "1 fund",
-      "label": "S&P 500 index",
-      "color": "green"
-     }
-    ]
+    "file": "assets/photos/warren_buffett_2010s.jpg",
+    "layout": "side",
+    "focus": [
+     0.3,
+     0.4
+    ],
+    "value": "$1M",
+    "color": "gold",
+    "label": "for charity, 10 years: 2008 to 2017",
+    "sub": "one S&P 500 index fund vs hedge fund experts"
    }
   },
   {
@@ -912,20 +915,17 @@
   {
    "say": "First, an index fund holds everything on the list, including companies that may be overpriced. It never asks whether a stock is a bargain. It just buys it.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
     "title": "No judgment, by design",
-    "lines": [
-     {
-      "text": "It buys the bargains…",
-      "color": "green",
-      "size": 96
-     },
-     {
-      "text": "…and the bubbles too.",
-      "color": "red",
-      "size": 96
-     }
-    ]
+    "file": "assets/photos/nyse_facade_low_angle.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "value": "Bubbles too",
+    "color": "red",
+    "label": "It buys the bargains… and the overpriced stocks"
    }
   },
   {

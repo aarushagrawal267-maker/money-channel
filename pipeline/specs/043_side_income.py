@@ -89,15 +89,17 @@ spec = {
                "summary": f"Dépensés : 60 000 $ en 10 ans. Investis à 7 % par an (hypothèse) : environ {fv:,.0f} $".replace(",", " ")
                           + ". La croissance arrive tard, et l'impôt passe d'abord."},
     },
+    "thumbnail": {"photo": {"file": "assets/photos/freelancer_laptop_sunset.jpg", "focus": [0.62, 0.45]}},
     "scenes": [
         # hook: the biggest number on frame 0 + contradiction/open loop ("or zero?")
         {"say": "Five hundred a month on the side: spent, or eighty-five thousand dollars?",
          "visual": {"type": "stat", "value": f"${fv / 1e3:.1f}K", "label": "$500 a month, invested 10 years",
                     "sub": "assumed 7% a year · not guaranteed", "color": "green"}},
         {"say": "Say a side gig nets five hundred a month, after tax.",
-         "visual": {"type": "pair", "title": "The setup",
-                    "left": {"label": "Side gig", "sub": "$500 a month", "color": "green"},
-                    "right": {"label": "Tax", "sub": "set aside first", "color": "slate"}}},
+         "visual": {"type": "photo", "file": "assets/photos/food_delivery_cyclist.jpg",
+                    "title": "The setup: a side gig",
+                    "value": f"${MONTHLY}/mo", "color": "green", "label": "after tax (set tax aside first)",
+                    "focus": [0.65, 0.4]}},
         {"say": "Spend it all: sixty thousand dollars over ten years.",
          "visual": {"type": "equation", "title": "Option 1: spend it",
                     "lines": [{"text": f"${MONTHLY} × {months} months", "color": "text", "size": 88},
@@ -124,9 +126,9 @@ spec = {
          "visual": {"type": "stat", "value": f"+${gain / 1e3:.1f}K", "label": "added by growth over 10 years",
                     "sub": f"on ${put_in:,} put in · assumed 7%", "color": "green"}},
         {"say": "No shortcut. Just a steady habit and patience.",
-         "visual": {"type": "pair", "title": "The real formula",
-                    "left": {"label": "Habit", "sub": "every month", "color": "green"},
-                    "right": {"label": "Time", "sub": "10+ years", "color": "gold"}}},
+         "visual": {"type": "photo", "file": "assets/photos/freelancer_laptop_sunset.jpg",
+                    "title": "The real formula",
+                    "label": "a habit every month + 10+ years of time", "focus": [0.6, 0.5]}},
         # loop line: runs back into "Five hundred a month on the side: spent, or eighty-five thousand dollars?"
         {"say": "So what will your five hundred become?",
          "visual": {"type": "cta", "lines": ["$500 a month.", "Spend or grow?"],

@@ -63,11 +63,15 @@ spec = {
                "summary": "L'or ne rapporte pas d'intérêts, mais ce n'est la dette de personne : beaucoup y voient une valeur "
                           "refuge. Les banques centrales en ont acheté 321 tonnes au T3 2026, 42 % de plus qu'un an plus tôt."},
     },
+    "thumbnail": {"photo": {"file": "assets/photos/gold_bars_stack.jpg", "focus": [0.5, 0.5]},
+                  "big": f"+{yoy:.0%}", "color": "gold"},
     "scenes": [
         # hook: contradiction + the number on frame 0; the open loop is "why?"
         {"say": "Gold pays nothing. Its average price still rose twenty-three percent.",
-         "visual": {"type": "stat", "value": f"+{yoy:.0%}", "label": "average gold price vs a year earlier",
-                    "sub": f"Q3 2026 · ${PRICE['Q3 2026']:,.0f} an ounce · World Gold Council", "color": "gold"}},
+         "visual": {"type": "photo", "file": "assets/photos/gold_bars_stack.jpg",
+                    "title": f"Q3 2026 · ${PRICE['Q3 2026']:,.0f} an ounce",
+                    "value": f"+{yoy:.0%}", "color": "gold", "label": "average gold price vs a year earlier",
+                    "focus": [0.5, 0.5]}},
         {"say": "Why? Gold is nobody's debt, so it can't default, and can't be printed.",
          "visual": {"type": "equation", "title": "Why gold feels safe",
                     "lines": [{"text": "Nobody's debt", "color": "gold", "size": 96},
@@ -78,9 +82,10 @@ spec = {
                     "left": {"label": "Crisis", "sub": "wars, crashes", "color": "red"},
                     "right": {"label": "Gold", "sub": "a safe haven", "color": "gold"}}},
         {"say": "Central banks bought a net three hundred and twenty-one tonnes in one quarter.",
-         "visual": {"type": "bars", "title": f"Central bank buying (tonnes) · +{cb_growth:.0%}", "format": "num",
-                    "items": [{"label": "Q3 2025", "value": round(CB_Q3_25), "color": "slate"},
-                              {"label": "Q3 2026", "value": round(CB_Q3_26), "color": "gold"}]}},
+         "visual": {"type": "photo", "file": "assets/photos/bank_of_canada_gold_vault.jpg",
+                    "title": "Central bank buying, Q3 2026",
+                    "value": f"{round(CB_Q3_26)} t", "color": "gold",
+                    "label": f"net, one quarter · +{cb_growth:.0%} vs Q3 2025", "focus": [0.5, 0.45]}},
         # mid-video re-hook: opens a second loop (if it's safe, why isn't it steady?)
         {"say": "But here's the catch: safe doesn't mean steady.",
          "visual": {"type": "equation", "title": "The catch",

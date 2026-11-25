@@ -87,6 +87,7 @@ spec = {
                "summary": f"Exemple : un fonds passe de 100 $ à 50 $ puis revient à 100 $. Avec 500 $ par mois, 6 000 $ "
                           f"deviennent environ {value[-1]:,.0f} $ (+{end_gain:.0%}). À mi-parcours, le compte perdait {mid_loss:.0%}."},
     },
+    "thumbnail": {"photo": {"file": "assets/photos/stock_screens_tokyo_chart.jpg", "focus": [0.3, 0.45]}},
     "scenes": [
         # hook: payoff number on frame 0 + contradiction ("price back to even, yet up 41%")
         {"say": "Price back to even, yet this monthly investor is up forty-one percent.",
@@ -100,9 +101,10 @@ spec = {
                     "items": [{"label": "At $100", "value": units_at_100, "color": "slate"},
                               {"label": "At $50", "value": units_at_50, "color": "green"}]}},
         {"say": "So a crash is a sale. But here's the catch.",
-         "visual": {"type": "pair", "title": "A crash means",
-                    "left": {"label": "Price", "sub": "cut in half", "color": "red"},
-                    "right": {"label": "Units", "sub": "twice as many", "color": "green"}}},
+         "visual": {"type": "photo", "file": "assets/photos/stock_screens_tokyo_chart.jpg",
+                    "title": "A crash means",
+                    "value": f"{units_at_50 // units_at_100:.0f}× units", "color": "green",
+                    "label": "price cut in half: twice as many units", "focus": [0.4, 0.4]}},
         # mid-video re-hook: the painful middle
         {"say": "Halfway, you're down almost thirty percent. Many people quit here.",
          "visual": {"type": "compare", "title": "Month 6, at the bottom", "format": "usd",
@@ -113,8 +115,10 @@ spec = {
                     "series": [{"label": "Worth", "values": [round(v) for v in value], "color": "green"},
                                {"label": "", "values": put_in, "color": "slate"}]}},
         {"say": "Real crashes run deep: the S and P five hundred once fell fifty-seven percent.",
-         "visual": {"type": "stat", "value": f"−{fall_0809:.0%}", "label": "S&P 500, Oct 2007 → Mar 2009",
-                    "sub": "closing record to closing low · AP", "color": "red"}},
+         "visual": {"type": "photo", "file": "assets/photos/lehman_brothers_hq_2008.jpg",
+                    "title": "Real crash: 2007–2009",
+                    "value": f"−{fall_0809:.0%}", "color": "red", "label": "S&P 500, Oct 2007 → Mar 2009",
+                    "focus": [0.5, 0.4]}},
         {"say": "Its record took about five and a half years to return.",
          "visual": {"type": "equation", "title": "Real history: slow recovery",
                     "lines": [{"text": "Oct 2007 → Mar 2013", "color": "text", "size": 84},

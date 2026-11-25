@@ -12,7 +12,14 @@
   "big": "5 OR 20",
   "line": "YRS TO BEAT RENTING?",
   "tag": "RENT VS BUY: FULL MATH",
-  "color": "gold"
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/for_sale_sign_generic.jpg",
+   "focus": [
+    0.45,
+    0.5
+   ]
+  }
  },
  "description": "Rent vs buy a home: we run the full math for a median-priced US house at today's mortgage rates, including property tax, insurance, repairs, closing and selling costs, and what your down payment could earn if you rented instead. Buying can take 5 years to beat renting, or 20: with our assumptions it's about 20 at the median sale price, and the price-to-rent ratio, the number most buyers never check, can cut that to 5 or push it past 30. Plus a 5-question checklist.\n\nOur example: $421,900 home (NAR median single-family, Oct 2026), $2,243/month rent (Zillow typical single-family asking rent, Oct 2026), 20% down, 30-year fixed at 7.28% (Freddie Mac, Nov 19, 2026), property tax 0.9% a year (ATTOM), insurance $2,564 a year (NerdWallet).\nAssumptions (ours, not predictions): 3% to buy, 6% to sell, repairs 1% of value a year (a rule of thumb), home prices, rent and costs grow 3% a year, investments earn 6% a year, whoever spends less each month invests the difference, 15% tax on investment gains when cashed out, the buyers are a married couple, so the home's gain is tax-free up to $500,000 and 15% above that (IRS exclusion; single owners: $250,000, which our example passes in year 19, so a single owner breaks even about a year later, in year 22, and leads by less at year 30), no mortgage-interest deduction (it only helps if you itemize), no renters insurance. The NAR price is a median sale price and the Zillow rent a typical asking rent, so they are not the exact same homes. Real returns, prices and rents vary and can be negative. Zillow's break-even estimates use Zillow's own model and inputs, including its lower typical home value ($364,812 in October 2026, which includes condos); at that value our model gives about 9 years.\n\nSources:\n- National Association of Realtors, Existing-Home Sales Decreased 5.5% in October (Nov 12, 2026): https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report\n- Zillow, A house doesn't have to mean a mortgage: Renting requires $14K less income than buying (Nov 12, 2026; typical single-family rent, Zillow Observed Rent Index): https://s25.q4cdn.com/975009107/files/doc_news/A-house-doesnt-have-to-mean-a-mortgage-Renting-requires-14K-less-income-than-buying-2026.pdf\n- Zillow, Rent or buy: How long it takes for buying a home to pay off in each metro (Jun 4, 2026): https://zillow.mediaroom.com/2026-06-04-Rent-or-buy-How-long-it-takes-for-buying-a-home-to-pay-off-in-each-metro\n- Zillow, Newly pending listings fell 17% in October (Nov 2026; typical home value, ZHVI): https://s25.q4cdn.com/975009107/files/doc_news/Newly-pending-listings-fell-17-in-October-the-biggest-year-over-year-drop-since-2023-2026.pdf\n- Freddie Mac, Primary Mortgage Market Survey (Nov 19, 2026 and Jun 4, 2026): https://www.freddiemac.com/pmms\n- ATTOM, 2025 property tax analysis (Apr 9, 2026): https://www.attomdata.com/news/market-trends/home-sales-prices/2025-annual-tax-report\n- NerdWallet, Home insurance pricing report 2026 (Oct 2, 2026): https://www.nerdwallet.com/insurance/homeowners/home-insurance-pricing-report-2026\n- Redfin, What are closing costs (Apr 24, 2026): https://www.redfin.com/blog/closing-costs-when-buying-a-home/\n- Clever Real Estate, True cost of selling a home: 2026 edition (Oct 26, 2026): https://listwithclever.com/research/how-much-does-it-cost-to-sell-a-house/\n- IRS Topic 409, Capital gains and losses: https://www.irs.gov/taxtopics/tc409\n- IRS Topic 701, Sale of your home: https://www.irs.gov/taxtopics/tc701\n\nFor education only. Not financial advice. Past results don't guarantee future returns.\n\n#rentvsbuy #realestate #personalfinance #homebuying #mortgage",
  "tags": [
@@ -117,7 +124,13 @@
   {
    "say": "We'll use real, current US numbers. In October, the median existing single-family home sold for four hundred twenty-one thousand nine hundred dollars, according to the National Association of Realtors.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/single_family_home_brick.jpg",
+    "layout": "side",
+    "focus": [
+     0.5,
+     0.45
+    ],
     "value": "$421,900",
     "label": "median US single-family home price",
     "sub": "existing homes, October 2026 · NAR",
@@ -271,10 +284,16 @@
   {
    "say": "Home insurance: NerdWallet's typical US premium in early twenty twenty-six was two thousand five hundred sixty-four dollars a year. About two hundred fourteen a month, and far more in some states.",
    "visual": {
-    "type": "stat",
-    "value": "$2,564",
-    "label": "typical home insurance a year",
-    "sub": "≈ $214 a month · NerdWallet, 2026",
+    "type": "photo",
+    "file": "assets/photos/single_family_homes_snow.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "title": "Home insurance",
+    "value": "$2,564 a year",
+    "label": "typical US premium · ≈ $214 a month · NerdWallet, 2026",
     "color": "gold"
    }
   },
@@ -407,25 +426,18 @@
   {
    "say": "Plus one that's easy to miss: that ninety-seven thousand dollars of cash. Invested at six percent a year, our assumption, it could have earned about five thousand eight hundred dollars in year one.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/dollar_bills_100s.jpg",
+    "layout": "side",
+    "focus": [
+     0.5,
+     0.5
+    ],
     "title": "What the cash could have earned",
-    "lines": [
-     {
-      "text": "$97,037 × 6% a year",
-      "color": "muted",
-      "size": 84
-     },
-     {
-      "text": "≈ $5,822 in year one",
-      "color": "gold",
-      "size": 116
-     },
-     {
-      "text": "assumed return, not guaranteed",
-      "color": "text",
-      "size": 52
-     }
-    ]
+    "value": "≈ $5,822",
+    "label": "$97,037 × 6% a year, in year one",
+    "sub": "assumed return, not guaranteed",
+    "color": "gold"
    }
   },
   {
@@ -523,25 +535,17 @@
   {
    "say": "Sell after five years, and the house might be worth about four hundred eighty-nine thousand dollars. Six percent of that is about twenty-nine thousand. Add the thirteen thousand to buy, and that's about forty-two thousand dollars in fees.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/for_sale_sign_generic.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.9
+    ],
     "title": "Buy now, sell in 5 years",
-    "lines": [
-     {
-      "text": "$12.7K to buy + $29.3K to sell",
-      "color": "muted",
-      "size": 80
-     },
-     {
-      "text": "≈ $42K in fees",
-      "color": "red",
-      "size": 130
-     },
-     {
-      "text": "if the home is worth $489K by then",
-      "color": "text",
-      "size": 52
-     }
-    ]
+    "value": "≈ $42K in fees",
+    "color": "red",
+    "label": "$12.7K to buy + $29.3K to sell, if the home is worth $489K"
    }
   },
   {
@@ -729,7 +733,13 @@
   {
    "say": "By year thirty, with the mortgage paid off, the buyer is ahead by about a hundred and twenty-six thousand dollars.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/house_keys_on_money.jpg",
+    "layout": "side",
+    "focus": [
+     0.5,
+     0.5
+    ],
     "value": "+$126K",
     "label": "buyer ahead after 30 years",
     "sub": "our model · assumed 3% price growth, 6% returns",
@@ -894,10 +904,15 @@
   {
    "say": "From three years to more than thirty, from small changes. So anyone who says renting is throwing money away, or that buying is always a trap, is skipping the math. How do you find your own answer? Five questions.",
    "visual": {
-    "type": "quote",
-    "text": "\"Renting is throwing money away\"\nskips the math.",
-    "first_color": "text",
-    "color": "gold"
+    "type": "photo",
+    "file": "assets/photos/apartment_building_brick.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.4
+    ],
+    "title": "Renting vs buying",
+    "label": "\"Renting is throwing money away\" skips the math"
    }
   },
   {
@@ -978,9 +993,15 @@
   {
    "say": "Rent versus buy isn't a moral question. It's a math question, and a life question. How long you stay and your local prices decide a lot of it. Run your own numbers before you sign anything.",
    "visual": {
-    "type": "title",
+    "type": "photo",
+    "file": "assets/photos/houses_dc_logan_circle.jpg",
+    "layout": "full",
+    "focus": [
+     0.5,
+     0.45
+    ],
     "title": "Run your own numbers",
-    "sub": "how long you stay + local prices decide a lot"
+    "label": "how long you stay + local prices decide a lot"
    }
   },
   {

@@ -71,6 +71,7 @@ spec = {
                "summary": "Même capital de 1 million de dollars : environ 49 $ par mois en temporaire 20 ans, ou 920 $ en vie "
                           "entière (tarifs d'exemple Policygenius, homme de 30 ans). Ce que couvre chacune."},
     },
+    "thumbnail": {"photo": {"file": "assets/photos/family_beach_sunset.jpg", "focus": [0.6, 0.5]}},
     "scenes": [
         # hook: the two prices on frame 0 + open loop ("Why?")
         {"say": "Same million dollar payout: forty-nine a month, or nine hundred twenty. Why?",
@@ -91,17 +92,19 @@ spec = {
                     "items": [{"label": "Term", "value": term_20y, "color": "green"},
                               {"label": "Whole life", "value": whole_20y, "color": "gold"}]}},
         {"say": "Part of that builds cash value. Term pays nothing if you outlive it.",
-         "visual": {"type": "pair", "title": "The trade-off",
-                    "left": {"label": "Whole life", "sub": "part → cash value", "color": "gold"},
-                    "right": {"label": "Term", "sub": "$0 if you outlive it", "color": "green"}}},
+         "visual": {"type": "photo", "file": "assets/photos/retired_couple_hand_in_hand.jpg",
+                    "title": "Term: $0 if you outlive it",
+                    "label": "whole life: part → cash value", "focus": [0.6, 0.4]}},
         # mid-video re-hook: opens a second loop (which one question?)
         {"say": "So which is better? It depends on one question.",
          "visual": {"type": "equation", "title": "Which is better?",
                     "lines": [{"text": "It depends on", "color": "text", "size": 100},
                               {"text": "one question.", "color": "gold", "size": 110}]}},
         {"say": "How long will someone depend on your income?",
-         "visual": {"type": "stat", "value": "?", "label": "How long do others rely on your income?",
-                    "sub": "kids, a partner, a mortgage...", "color": "gold"}},
+         "visual": {"type": "photo", "file": "assets/photos/family_beach_sunset.jpg",
+                    "title": "Kids, a partner, a mortgage...",
+                    "value": "?", "color": "gold", "label": "How long do others rely on your income?",
+                    "focus": [0.6, 0.5]}},
         {"say": "A fixed number of years? Term fits. A lifelong need? Whole life fits.",
          "visual": {"type": "pair", "title": "Match the need",
                     "left": {"label": "Term", "sub": "a fixed number of years", "color": "green"},

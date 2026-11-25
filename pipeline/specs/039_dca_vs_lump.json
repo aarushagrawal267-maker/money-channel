@@ -44,6 +44,17 @@
    "summary": "Selon Vanguard (actions mondiales, 1976–2022), investir d'un coup a battu l'investissement étalé 68 % du temps. Mais étaler a battu le cash 69 % du temps."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/nyse_traders_gotfryd.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  "big": "68%",
+  "color": "gold"
+ },
  "scenes": [
   {
    "say": "You have twelve thousand dollars to invest. All at once, or a thousand a month? History has a favorite.",
@@ -65,11 +76,16 @@
   {
    "say": "Vanguard studied global stocks from nineteen seventy-six to twenty twenty-two. Investing all at once beat splitting it over three months about two-thirds of the time.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/nyse_trading_floor_gotfryd.jpg",
+    "title": "Vanguard · global stocks · 1976–2022",
     "value": "68%",
-    "label": "of the time, lump sum won",
-    "sub": "vs 3 monthly parts · Vanguard · 1976–2022",
-    "color": "gold"
+    "color": "gold",
+    "label": "of the time, lump sum beat 3 monthly parts",
+    "focus": [
+     0.5,
+     0.45
+    ]
    }
   },
   {
@@ -116,11 +132,16 @@
   {
    "say": "But if the market drops right after you invest, spreading it out wins. And splitting it over three months still beat cash sixty-nine percent of the time.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/stock_screens_tokyo_board.jpg",
+    "title": "If the market drops right after",
     "value": "69%",
+    "color": "green",
     "label": "of the time, 3 monthly parts beat cash",
-    "sub": "Vanguard · global stocks · 1976–2022",
-    "color": "green"
+    "focus": [
+     0.5,
+     0.4
+    ]
    }
   },
   {

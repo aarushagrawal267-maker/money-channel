@@ -44,14 +44,29 @@
    "summary": "En 2000, les fondateurs de Netflix disent avoir proposé leur société à Blockbuster pour 50 millions de dollars. Blockbuster a refusé, a fait faillite en 2010, et Netflix a réalisé 45,2 milliards de dollars de revenus en 2025."
   }
  },
+ "thumbnail": {
+  "big": "$50M",
+  "color": "gold",
+  "photo": {
+   "file": "assets/photos/reed_hastings_film_archive.jpg",
+   "focus": [
+    0.42,
+    0.3
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "In two thousand, Netflix's founders say they offered to sell their company to Blockbuster for fifty million dollars. Blockbuster said no.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/blockbuster_store_uk.jpg",
+    "focus": [
+     0.5,
+     0.45
+    ],
     "value": "$50M",
     "label": "Netflix's asking price, 2000",
-    "sub": "as told by both Netflix co-founders",
     "color": "gold"
    }
   },
@@ -92,30 +107,16 @@
   {
    "say": "Blockbuster peaked at about nine thousand one hundred stores in two thousand four. In September twenty ten, it filed for bankruptcy.",
    "visual": {
-    "type": "equation",
-    "title": "Blockbuster",
-    "lines": [
-     {
-      "text": "9,100 stores",
-      "color": "blue",
-      "size": 110
-     },
-     {
-      "text": "at its peak, 2004",
-      "color": "muted",
-      "size": 52
-     },
-     {
-      "text": "Bankrupt",
-      "color": "red",
-      "size": 110
-     },
-     {
-      "text": "September 2010",
-      "color": "muted",
-      "size": 52
-     }
-    ]
+    "type": "photo",
+    "file": "assets/photos/blockbuster_store_closing.jpg",
+    "focus": [
+     0.5,
+     0.55
+    ],
+    "title": "9,100 stores at its peak (2004)",
+    "value": "Bankrupt",
+    "label": "September 2010",
+    "color": "red"
    }
   },
   {
@@ -140,25 +141,15 @@
   {
    "say": "The lesson: protecting this year's profits can cost you the future. Keep asking what your customers will want next.",
    "visual": {
-    "type": "equation",
-    "title": "The lesson",
-    "lines": [
-     {
-      "text": "Protect today's profits?",
-      "color": "muted",
-      "size": 64
-     },
-     {
-      "text": "Protect the future.",
-      "color": "gold",
-      "size": 84
-     },
-     {
-      "text": "Ask what customers want next",
-      "color": "text",
-      "size": 50
-     }
-    ]
+    "type": "photo",
+    "file": "assets/photos/netflix_tv_streaming.jpg",
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "title": "Protect the future",
+    "label": "Ask what customers want next",
+    "color": "gold"
    }
   },
   {

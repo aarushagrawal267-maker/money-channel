@@ -43,6 +43,15 @@
    "summary": "Même capital de 1 million de dollars : environ 49 $ par mois en temporaire 20 ans, ou 920 $ en vie entière (tarifs d'exemple Policygenius, homme de 30 ans). Ce que couvre chacune."
   }
  },
+ "thumbnail": {
+  "photo": {
+   "file": "assets/photos/family_beach_sunset.jpg",
+   "focus": [
+    0.6,
+    0.5
+   ]
+  }
+ },
  "scenes": [
   {
    "say": "Same million dollar payout: forty-nine a month, or nine hundred twenty. Why?",
@@ -122,18 +131,14 @@
   {
    "say": "Part of that builds cash value. Term pays nothing if you outlive it.",
    "visual": {
-    "type": "pair",
-    "title": "The trade-off",
-    "left": {
-     "label": "Whole life",
-     "sub": "part → cash value",
-     "color": "gold"
-    },
-    "right": {
-     "label": "Term",
-     "sub": "$0 if you outlive it",
-     "color": "green"
-    }
+    "type": "photo",
+    "file": "assets/photos/retired_couple_hand_in_hand.jpg",
+    "title": "Term: $0 if you outlive it",
+    "label": "whole life: part → cash value",
+    "focus": [
+     0.6,
+     0.4
+    ]
    }
   },
   {
@@ -158,11 +163,16 @@
   {
    "say": "How long will someone depend on your income?",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/family_beach_sunset.jpg",
+    "title": "Kids, a partner, a mortgage...",
     "value": "?",
+    "color": "gold",
     "label": "How long do others rely on your income?",
-    "sub": "kids, a partner, a mortgage...",
-    "color": "gold"
+    "focus": [
+     0.6,
+     0.5
+    ]
    }
   },
   {

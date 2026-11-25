@@ -4,6 +4,17 @@
  "voice": "af_heart",
  "speed": 1.05,
  "badge": "MONEY MATH",
+ "thumbnail": {
+  "big": "$42,963",
+  "color": "red",
+  "photo": {
+   "file": "assets/photos/car_lot_buy_here_pay_here.jpg",
+   "focus": [
+    0.62,
+    0.5
+   ]
+  }
+ },
  "disclaimer": "Example · 7% APR on both loans · your rate and costs will differ",
  "title": "Car Loan Math: 72 vs 48 Months on a $35,000 Car",
  "description": "A 72-month car loan makes the monthly payment look smaller, but you pay more in total. On a $35,000 car at an example 7% APR, 72 months costs about $7,963 in interest versus about $5,230 over 48 months: roughly $2,734 more for the same car. We also run the 20/4/10 rule of thumb.\n\nAssumptions: $35,000 borrowed in full, 7% APR on both terms (an example; real rates depend on your credit and the lender, and longer loans can carry different rates), fixed monthly payments, no fees, taxes or add-ons. The 20/4/10 rule is a common guideline, not a law: put 20% down, borrow for 4 years or less, and keep car costs under 10% of gross income. The income figure uses the loan payment alone. Not financial advice.\n\n#carloan #personalfinance #debt #moneytips #financialliteracy",
@@ -48,24 +59,15 @@
   {
    "say": "A thirty-five thousand dollar car can cost you almost forty-three thousand. Here's how.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/car_showroom_interior.jpg",
     "title": "The real price",
-    "lines": [
-     {
-      "text": "$35,000 car",
-      "color": "text",
-      "size": 110
-     },
-     {
-      "text": "↓",
-      "color": "dim",
-      "size": 80
-     },
-     {
-      "text": "$42,963 paid",
-      "color": "red",
-      "size": 130
-     }
+    "value": "$42,963",
+    "label": "paid for a $35,000 car (72 months)",
+    "color": "red",
+    "focus": [
+     0.5,
+     0.6
     ]
    }
   },
@@ -118,11 +120,16 @@
   {
    "say": "Same car, same rate. Two extra years of payments cost you over twenty-seven hundred dollars more.",
    "visual": {
-    "type": "stat",
+    "type": "photo",
+    "file": "assets/photos/car_lot_buy_here_pay_here.jpg",
+    "title": "Same car · same rate",
     "value": "+$2.7K",
     "label": "extra interest for 2 more years",
-    "sub": "same car · same rate",
-    "color": "red"
+    "color": "red",
+    "focus": [
+     0.5,
+     0.4
+    ]
    }
   },
   {
@@ -152,18 +159,16 @@
   {
    "say": "For this car, that's a payment of about six hundred seventy a month. By that guide, you'd want to earn over eighty thousand dollars a year, before even counting insurance.",
    "visual": {
-    "type": "compare",
+    "type": "photo",
+    "file": "assets/photos/office_workers_desks.jpg",
     "title": "This car, by 20/4/10",
-    "left": {
-     "label": "Payment",
-     "value": 670.4948505483991,
-     "color": "gold"
-    },
-    "right": {
-     "label": "Income / yr",
-     "value": 80459.38206580789,
-     "color": "green"
-    }
+    "value": "$80K+/yr",
+    "label": "income for a $670/mo payment",
+    "color": "green",
+    "focus": [
+     0.6,
+     0.4
+    ]
    }
   },
   {

@@ -4,6 +4,17 @@
  "voice": "af_heart",
  "speed": 1.05,
  "badge": "MONEY TRAP",
+ "thumbnail": {
+  "big": "+$0",
+  "color": "red",
+  "photo": {
+   "file": "assets/photos/piggy_bank_coin_drop.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  }
+ },
  "disclaimer": "Example · 30% tax · assumes 7% a year · not financial advice",
  "title": "Lifestyle Inflation: Why Your Raise Leaves You No Richer",
  "description": "Lifestyle inflation is when spending rises as fast as your pay, so a raise leaves you no richer. In this example, a $5,000 raise is about $292 a month after tax. Spend it all on upgrades and you have nothing extra in 20 years; save half and invest it, and it could grow to about $76K, while you still enjoy the other half.\n\nExample assumptions: $5,000 yearly raise, 30% combined tax on the extra pay (yours will differ), half of the after-tax raise ($145.83 a month) invested at the start of every month for 20 years at an assumed 7% average yearly return compounded monthly, no fees or taxes on the investment, no further raises. Illustration only: real returns vary, can be negative, and are not guaranteed. Not financial advice.\n\n#personalfinance #lifestyleinflation #saving #investing #moneytips",
@@ -72,11 +83,16 @@
   {
    "say": "After an example thirty percent in taxes, you keep three thousand five hundred a year. Almost three hundred dollars a month.",
    "visual": {
-    "type": "stat",
-    "value": "$292",
+    "type": "photo",
+    "file": "assets/photos/office_workers_desks.jpg",
+    "title": "$5,000 raise − 30% tax (example)",
+    "value": "$292/mo",
     "label": "extra a month, after tax",
-    "sub": "$5,000 − 30% tax (example) = $3,500 a year",
-    "color": "gold"
+    "color": "gold",
+    "focus": [
+     0.6,
+     0.4
+    ]
    }
   },
   {
@@ -99,24 +115,15 @@
   {
    "say": "That's about one hundred forty-six dollars a month, invested at an assumed seven percent a year. Real returns vary.",
    "visual": {
-    "type": "equation",
+    "type": "photo",
+    "file": "assets/photos/piggy_bank_coins.jpg",
     "title": "Sam's plan",
-    "lines": [
-     {
-      "text": "$146 a month",
-      "color": "green",
-      "size": 110
-     },
-     {
-      "text": "at an assumed 7% a year",
-      "color": "text",
-      "size": 64
-     },
-     {
-      "text": "for 20 years",
-      "color": "muted",
-      "size": 64
-     }
+    "value": "$146/mo",
+    "label": "at an assumed 7% a year, for 20 years",
+    "color": "green",
+    "focus": [
+     0.55,
+     0.5
     ]
    }
   },

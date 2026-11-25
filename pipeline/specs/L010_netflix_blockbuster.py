@@ -118,7 +118,8 @@ def scene(say, **visual):
 scene("In the year two thousand, Netflix's founders say they offered to sell their company to Blockbuster for fifty million dollars. Blockbuster said no.",
       type="count", to=50, prefix="$", suffix="M", label="the price Netflix's founders say they asked", sub="year 2000, by their account", color="gold")
 scene("Ten years later, Blockbuster was bankrupt. Today there is one Blockbuster store left on Earth, in Bend, Oregon.",
-      type="stat", value="1", label="Blockbuster store left on Earth", sub="Bend, Oregon", color="red")
+      type="photo", layout="full", file="assets/photos/blockbuster_last_store_bend.jpg", focus=[0.75, 0.4],
+      value="1", label="Blockbuster store left on Earth · Bend, Oregon", sub="Bend, Oregon", color="red")
 scene("And Netflix? Last year it brought in over forty-five billion dollars in revenue. That's more than seven times Blockbuster's best year ever.",
       type="hbars", title="Annual revenue",
       items=[{"label": "Netflix 2025", "value": NF_REV_2025, "display": "$45.2B", "color": "green"},
@@ -134,8 +135,8 @@ scene("At its peak in two thousand four, Blockbuster had about nine thousand one
              {"value": "$6.05B", "label": "revenue", "sub": "its best year", "color": "gold"},
              {"value": f"{BB_EMPLOYEES_2004:,}", "label": "employees", "sub": "worldwide", "color": "text"}])
 scene("The model was simple. You drove to the store, picked a movie off the wall, and rented it for a few nights. Then you drove back to return it. And if you were late, you paid extra.",
-      type="bullets", title="How renting worked",
-      items=["Drive to the store", "Pick a movie off the wall", "Rent it for a few nights", "Late? Pay a fee"])
+      type="photo", layout="side", file="assets/photos/blockbuster_store_uk.jpg", focus=[0.5, 0.45],
+      title="How renting worked", value="Late?", label="Pay a fee", sub="drive there · pick a movie · drive back", color="red")
 scene("Those late fees were a big deal. Blockbuster's own filing shows that in early nineteen ninety-nine, late fees were sixteen percent of its revenue. The Washington Post reported the same share for the year two thousand.",
       type="donut", title="Blockbuster revenue, 2000",
       segments=[{"label": "Late fees", "value": BB_LATE_SHARE_2000, "color": "red"},
@@ -164,7 +165,8 @@ scene("You may have heard Hastings started Netflix after a forty dollar late fee
       right={"label": "Co-founder Randolph", "value": "Fiction", "sub": "\"a convenient fiction\"", "color": "gold"},
       verdict="Good story. Disputed history.")
 scene("The subscription was the real idea. For nineteen dollars and ninety-five cents a month, you could keep three DVDs at a time. No due dates. No late fees. No shipping charges.",
-      type="stat", value=f"${NF_PRICE_1999}", label="a month · 3 DVDs out at a time",
+      type="photo", layout="side", file="assets/photos/netflix_dvd_mailer.jpg", focus=[0.5, 0.5],
+      value=f"${NF_PRICE_1999}", label="a month · 3 DVDs out at a time",
       sub="no due dates · no late fees · no shipping charges", color="green")
 scene("Think about what that did. Keep a movie as long as you like. Send it back when you're ready, and the next one arrives. Netflix still gets paid every month. The customer's biggest annoyance became the selling point.",
       type="flywheel", title="The subscription loop", center="$19.95",
@@ -176,8 +178,9 @@ scene("But Netflix was tiny. At the end of two thousand, it had about two hundre
 # ---------------------------------------------------------------- 3
 scene("Chapter three. The meeting.", type="chapter", n=3, title="The meeting")
 scene("In two thousand, Hastings and Randolph flew to Blockbuster's headquarters in Dallas. Hastings later wrote that, walking in, he whispered: Blockbuster is a thousand times our size.",
-      type="quote", text="\"Blockbuster is a thousand\ntimes our size.\"", first_color="text", color="text",
-      source="Reed Hastings, No Rules Rules (2020)")
+      type="photo", layout="side", file="assets/photos/reed_hastings_2010.jpg", focus=[0.68, 0.35],
+      value="\"1,000×\"", label="\"Blockbuster is a thousand times our size\"",
+      sub="Reed Hastings, No Rules Rules (2020)", color="gold")
 scene("By revenue, it was more like a hundred and forty times. Still enormous. Blockbuster had nearly five billion dollars in revenue and over seven thousand six hundred stores. Netflix had thirty-six million dollars, and no stores at all.",
       type="table", title="The year 2000",
       header=["", "Blockbuster", "Netflix"],
@@ -241,7 +244,8 @@ scene("In two thousand nine, Blockbuster lost five hundred and fifty-eight milli
       items=[{"value": f"−${BB_NET_LOSS_2009 / 1e6:.1f}M", "label": "Blockbuster", "sub": "net loss", "color": "red"},
              {"value": f"+${NF_NET_INC_2009 / 1e6:.1f}M", "label": "Netflix", "sub": "net profit", "color": "green"}])
 scene("On September twenty-third, two thousand ten, Blockbuster filed for bankruptcy, with nearly a billion dollars of debt and some three thousand US stores left. Netflix, by then, said it had more than fifteen million members.",
-      type="stat", value="2010", label="Blockbuster files for bankruptcy", sub="Sept 23 · nearly $1B of debt · Netflix: 15M+ members", color="red")
+      type="photo", layout="full", file="assets/photos/blockbuster_store_closing.jpg", focus=[0.5, 0.62],
+      value="2010", label="Blockbuster files for bankruptcy · Sept 23", sub="Sept 23 · nearly $1B of debt · Netflix: 15M+ members", color="red")
 scene("In April two thousand eleven, the satellite TV company Dish won Blockbuster's assets at auction, with a three hundred and twenty million dollar bid. The company-owned stores were all closed by two thousand fourteen. And in March two thousand nineteen, when a store in Perth, Australia closed, an independently owned store in Bend, Oregon became the last Blockbuster on Earth.",
       type="table", title="The end of Blockbuster",
       header=["Year", "What happened"],
@@ -256,7 +260,8 @@ scene("Chapter six. Netflix today.", type="chapter", n=6, title="Netflix today")
 scene("At the end of twenty twenty-five, Netflix said it had crossed three hundred and twenty-five million paid memberships. Up from about two hundred and ninety thousand subscribers in two thousand.",
       type="count", to=NF_PAID_MEMBERS / 1e6, suffix="M+", label="Netflix paid memberships", sub="end of 2025 · Netflix Q4 2025 letter", color="green")
 scene("Netflix even shut down the business that beat Blockbuster. It mailed its last DVDs in September twenty twenty-three, after twenty-five years. It replaced its own winner before someone else could.",
-      type="stat", value="2023", label="Netflix mails its last DVD", sub="Sept 29, 2023 · after 25 years of DVD by mail", color="gold")
+      type="photo", layout="side", file="assets/photos/netflix_last_dvd_envelope.jpg", focus=[0.5, 0.5],
+      value="2023", label="Netflix mails its last DVD", sub="Sept 29, 2023 · after 25 years of DVD by mail", color="gold")
 scene("Here's one recent quarter. From July to September twenty twenty-six, Netflix brought in about twelve point nine billion dollars. After the cost of its shows and delivering them, marketing, technology and admin, about four and a half billion was left as operating profit.",
       type="waterfall", title="Netflix, July–September 2026",
       steps=[{"label": "Revenue", "value": Q3["rev"], "kind": "start", "display": "$12.9B"},
@@ -296,7 +301,8 @@ scene("And for your own money: notice the fees you pay only because leaving is a
       type="bullets", title="Use it yourself",
       items=["Spot fees you pay out of habit", "Expect rivals to remove them", "Ask: which profits need no rival?"])
 scene("Netflix isn't guaranteed to win forever, either. It now competes with many other streaming services, and the same rules apply to it. Customers stay only while the deal feels fair.",
-      type="title", title="No one is too big", sub="the same rules apply to Netflix")
+      type="photo", layout="side", file="assets/photos/netflix_tv_streaming.jpg", focus=[0.5, 0.45],
+      value="No one", label="is too big", sub="the same rules apply to Netflix", color="gold")
 scene("If you learned something, subscribe. We break down how money and business really work, every week.",
       type="cta", lines=["How money", "really works."], sub="Subscribe for weekly breakdowns")
 
@@ -356,7 +362,8 @@ spec = {
     "disclaimer": "Figures: company filings & reports · for education, not investment advice",
     "title": "Netflix vs Blockbuster: Why Blockbuster Really Failed",
     "intro_chapter": "The $50M deal",
-    "thumbnail": {"big": "$50M", "line": "THE DEAL THEY REJECTED", "tag": "NETFLIX VS BLOCKBUSTER", "color": "gold"},
+    "thumbnail": {"big": "$50M", "line": "THE DEAL THEY REJECTED", "tag": "NETFLIX VS BLOCKBUSTER", "color": "gold",
+                  "photo": {"file": "assets/photos/blockbuster_store_closing.jpg", "focus": [0.5, 0.35]}},
     "description": DESCRIPTION,
     "tags": ["netflix vs blockbuster", "netflix", "blockbuster", "blockbuster netflix 50 million",
              "why blockbuster failed", "business case study", "disruptive innovation", "late fees",

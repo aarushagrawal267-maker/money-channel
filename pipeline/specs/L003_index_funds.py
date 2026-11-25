@@ -135,7 +135,8 @@ scene("In this video, we'll see why that happens, why it isn't just bad luck, "
 scene("First, what is an index fund?", type="chapter", n=1, title="What is an index fund?")
 scene("An index is just a list. The S and P five hundred, for example, is a list of about five hundred "
       "of the largest companies in the United States.",
-      type="stat", value="~500", label="large US companies, one list", sub="the S&P 500 index", color="gold")
+      type="photo", file="assets/photos/nyse_facade_flag.jpg", layout="full", focus=[0.5, 0.45],
+      value="~500", label="large US companies, one list: the S&P 500", color="gold")
 scene("An index fund simply buys every company on that list, in the same proportions, and holds them. "
       "Nobody inside the fund is trying to guess which stocks will win.",
       type="equation", title="An index fund, in one line",
@@ -169,8 +170,9 @@ scene("And index funds are no longer a niche idea. By the end of 2025, index fun
 scene("Now, the other side.", type="chapter", n=2, title="The active approach")
 scene("An active fund manager tries to beat the index. They research companies, buy the ones they like, "
       "skip the ones they don't, and keep trading as their views change.",
-      type="flywheel", title="What an active manager does", center="BEAT IT?",
-      steps=["Research", "Pick stocks", "Trade", "Review"])
+      type="photo", title="What an active manager does", file="assets/photos/stock_ticker_exchange_hall.jpg",
+      layout="side", focus=[0.5, 0.4], value="Beat it?", label="Research, pick stocks, trade, review",
+      sub="the goal: do better than the index", color="gold")
 scene("All that research and trading costs money, so active funds charge a higher yearly fee. "
       "It's called the expense ratio.",
       type="equation", title="The expense ratio",
@@ -226,8 +228,9 @@ scene("But then the costs come out. Take away the average fee, and the average a
              {"label": "Avg active dollar", "value": AVG_ACTIVE_NET, "kind": "total", "display": f"{AVG_ACTIVE_NET:.2f}%"}])
 scene("And fees aren't the only cost. Active funds trade more, so they pay more trading costs. "
       "And in a regular taxable account, frequent selling can mean paying tax on gains sooner.",
-      type="bullets", title="Costs that quietly eat returns",
-      items=["Yearly fees", "Trading costs", "Taxes on gains from selling"], color="red")
+      type="photo", title="Costs that quietly eat returns", file="assets/photos/wall_street_sign.jpg",
+      layout="side", focus=[0.4, 0.5], value="3 costs", color="red",
+      label="Yearly fees, trading costs, taxes on gains from selling")
 scene("Now watch what a small fee does over a long time. Imagine one hundred thousand dollars growing for "
       "thirty years, at seven percent a year before fees. This is an illustration, not a prediction.",
       type="line", title="Index fee vs active fee: $100,000 over 30 years",
@@ -249,10 +252,9 @@ scene("That's a gap of almost one hundred and fifteen thousand dollars, "
 scene("Can't you just pick the winners?", type="chapter", n=4, title="Picking the winners")
 scene("It's the obvious idea: find a fund that's been beating the market, and invest with it. "
       "S and P actually tests this, in a report called the Persistence Scorecard.",
-      type="equation", title="The obvious plan",
-      lines=[{"text": "Find a recent winner", "color": "text", "size": 96},
-             {"text": "→ invest with it", "color": "muted", "size": 80},
-             {"text": "→ keeps winning?", "color": "gold", "size": 110}])
+      type="photo", title="The obvious plan", file="assets/photos/chicago_stock_exchange_board.jpg",
+      layout="full", focus=[0.6, 0.4], value="Keeps winning?", color="gold",
+      label="Find a recent winner, invest with it")
 scene("They took the large US stock funds that ranked in the top quarter of their peers in 2021. "
       "There were one hundred and sixty-four of them.",
       type="count", to=PERSIST_TOPQ_START, color="green",
@@ -303,10 +305,9 @@ scene("But the idea grew into an industry. By the end of 2025, US index mutual f
       label="in US index mutual funds and ETFs", sub="year-end 2025 · Investment Company Institute")
 scene("Then came Warren Buffett. In 2007, he made a one million dollar bet, for charity, "
       "that a plain S and P five hundred index fund would beat hedge fund experts over the next ten years.",
-      type="stat_grid", title="Buffett's bet",
-      items=[{"value": "$1M", "label": "for charity", "color": "gold"},
-             {"value": "10 yrs", "label": "2008 to 2017", "color": "text"},
-             {"value": "1 fund", "label": "S&P 500 index", "color": "green"}])
+      type="photo", title="Buffett's bet", file="assets/photos/warren_buffett_2010s.jpg", layout="side",
+      focus=[0.3, 0.4], value="$1M", color="gold", label="for charity, 10 years: 2008 to 2017",
+      sub="one S&P 500 index fund vs hedge fund experts")
 scene("His opponent, Protégé Partners, picked five funds of funds. Together, they owned stakes in more than "
       "two hundred hedge funds, and they could switch managers whenever they liked.",
       type="bullets", title="The other side of the bet",
@@ -340,9 +341,9 @@ scene("Buffett summed it up in his letter that year: performance comes, performa
 scene("Now, index funds aren't perfect. Here's the honest catch.", type="chapter", n=6, title="The honest catch")
 scene("First, an index fund holds everything on the list, including companies that may be overpriced. "
       "It never asks whether a stock is a bargain. It just buys it.",
-      type="equation", title="No judgment, by design",
-      lines=[{"text": "It buys the bargains…", "color": "green", "size": 96},
-             {"text": "…and the bubbles too.", "color": "red", "size": 96}])
+      type="photo", title="No judgment, by design", file="assets/photos/nyse_facade_low_angle.jpg",
+      layout="full", focus=[0.5, 0.5], value="Bubbles too", color="red",
+      label="It buys the bargains… and the overpriced stocks")
 scene("Second, because bigger companies get bigger slices, the S and P five hundred has become top-heavy. "
       "At the end of 2025, its ten largest companies made up about forty-one percent of the whole index.",
       type="donut", title="Weight inside the S&P 500, end of 2025", dp=1, center="S&P 500", center_sub="end of 2025",
@@ -444,7 +445,7 @@ spec = {
     "disclaimer": "Past performance doesn't guarantee future results · not investment advice",
     "title": "Why 93% of Fund Managers Lose to a Simple Index Fund",
     "thumbnail": {"big": f"{LC_UNDER['20 yrs']:.1f}%", "line": "LOST TO THE INDEX", "tag": "PRO FUNDS · 20 YEARS",
-                  "color": "gold"},
+                  "color": "gold", "photo": {"file": "assets/photos/nyse_facade_low_angle.jpg", "focus": [0.45, 0.4]}},
     "description": DESCRIPTION,
     "description_sources": SOURCES,
     "tags": ["index funds", "index fund vs active fund", "S&P 500", "SPIVA", "active vs passive investing",
