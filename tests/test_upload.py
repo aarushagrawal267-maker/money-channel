@@ -100,6 +100,22 @@ def test_cli_refuses_missing_files(tmp_path, monkeypatch, capsys):
     assert "not found" in str(e.value)
 
 
+def test_cli_repeat_refused_but_dry_run_still_prints(tmp_path, monkeypatch, capsys):
+    posted = tmp_path / "posted.json"
+    posted.write_text(json.dumps([{"id": SPEC["id"], "video_id": "v1"}]))
+    monkeypatch.setattr(U, "POSTED", str(posted))
+    spec, video = tmp_path / "spec.json", tmp_path / "v.mp4"
+    spec.write_text(json.dumps(SPEC)); video.write_bytes(b"x")
+    monkeypatch.setattr("sys.argv", ["upload.py", str(spec), str(video)])
+    with pytest.raises(SystemExit) as e:                      # a real upload of a posted id is refused
+        U.main()
+    assert "refusing to upload it twice" in str(e.value)
+    monkeypatch.setattr("sys.argv", ["upload.py", str(spec), str(video), "--dry-run"])
+    U.main()                                                  # a dry run only warns and prints the metadata
+    out = capsys.readouterr()
+    assert "NOTE (dry run)" in out.err and json.loads(out.out)["snippet"]["title"] == "Rule of 72 explained"
+
+
 def test_retry_thumbs_picks_only_live_failures():
     import retry_thumbs
     posted = [{"id": "a", "video_id": "1", "thumbnail": False},
