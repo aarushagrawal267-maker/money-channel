@@ -167,9 +167,9 @@ def scene(say, **visual):
     S.append({"say": say, "visual": visual})
 
 # ---------------------------------------------------------------- Hook (payoff in the first line)
-scene("At today's mortgage rates, a typical American house could take about twenty years to beat renting. Or five. It depends on one number most buyers never check.",
-      type="count", to=20, suffix=" years", label="to beat renting, typical US house", sub="Nov 2026 rates · our model, assumptions below", color="gold")
-scene("Same rent, same street, a cheaper price, and the answer flips. Most rent versus buy advice skips this part.",
+scene("An American home can take five years to beat renting, or twenty, at today's mortgage rates. It depends on one number most buyers never check.",
+      type="stat", value="5 or 20", label="years for buying to beat renting", sub="same rent, different price · Nov 2026 rates · our model", color="gold")
+scene("Same rent, same kind of home. At today's typical price, about twenty years. At a cheaper price, about five. Most rent versus buy advice skips this part.",
       type="versus", title="Break-even vs renting",
       left={"label": "Typical home today", "value": "~20 yrs", "sub": "price = 15.7 years of rent", "color": "red"},
       right={"label": "Same rent, cheaper home", "value": "~5 yrs", "sub": "price = 12 years of rent", "color": "green"},
@@ -286,10 +286,10 @@ scene("Here are the rules. Each month, whoever spends less invests the differenc
       type="bullets", title="The rules (our assumptions)",
       items=["Whoever spends less invests the gap at 6%", "Rent and home prices rise 3% a year",
              "Tax, insurance, repairs rise 3% too"])
-scene("When we compare, the renter pays fifteen percent tax on investment gains, a typical US rate on long-term gains. The buyer's home profit is usually tax-free, up to a limit. And the buyer pays the six percent to sell.",
+scene("When we compare, the renter pays fifteen percent tax on investment gains, a typical US rate on long-term gains. The buyer's home profit is tax-free only within the IRS exclusion: up to two hundred fifty thousand dollars, or five hundred thousand for a married couple. We assume it stays within that. And the buyer pays the six percent to sell.",
       type="stat_grid", title="When each side cashes out",
       items=[{"value": "15%", "label": "tax on investment gains", "sub": "IRS: at most 15% for most people", "color": "blue"},
-             {"value": "0%", "label": "tax on home profit", "sub": "up to $250K / $500K married", "color": "green"},
+             {"value": "0%", "label": "tax on home profit", "sub": "IRS limit: $250K / $500K married", "color": "green"},
              {"value": "6%", "label": "cost to sell the home", "sub": "our assumption", "color": "red"}])
 scene("Here's how far ahead the renter would be if both cashed out. The renter starts ahead, with all that cash invested. The buyer starts behind, because of the fees. Then the gap slowly shrinks.",
       type="columns", title="Renter's lead if both cashed out", color="green", highlight=1,
@@ -375,7 +375,8 @@ assert 40 <= len(S) <= 70, len(S)
 assert 6 <= len(chapters) <= 7
 assert len(set(types)) >= 10
 # retention: payoff number inside the first ~10 s; intro (before chapter 1) under ~60 s of speech
-assert S[0]["say"].startswith("At today's mortgage rates, a typical American house could take about twenty years")
+assert S[0]["say"].startswith("An American home can take five years to beat renting, or twenty")
+assert SENS_RATIO[12] == 5 and BE in (20, 21)      # hook: "five years ... or twenty" (ratio 12 vs our base case)
 intro_words = sum(len(x["say"].split()) for x in S[:types.index("chapter")])
 assert intro_words <= 150, intro_words
 # every chapter's last scene ends with a one-line open loop into the next chapter
@@ -401,8 +402,9 @@ SOURCES = [
 DESCRIPTION = (
     "Rent vs buy a home: we run the full math for a typical US house at today's mortgage rates, including "
     "property tax, insurance, repairs, closing and selling costs, and what your down payment could earn if you "
-    "rented instead. With our assumptions, buying takes about 20 years to beat renting, but one number, the "
-    "price-to-rent ratio, can cut that to 5 years or push it past 30. Plus a 5-question checklist.\n\n"
+    "rented instead. Buying can take 5 years to beat renting, or 20: with our assumptions it's about 20 for a "
+    "typical home today, and one number, the price-to-rent ratio, can cut that to 5 or push it past 30. Plus a "
+    "5-question checklist.\n\n"
     f"Our example: ${PRICE:,} home (NAR median single-family, Oct 2026), ${RENT:,}/month rent (Zillow typical "
     f"single-family rent, Oct 2026), 20% down, 30-year fixed at 7.28% (Freddie Mac, Nov 19, 2026), property tax "
     f"0.9% a year (ATTOM), insurance ${INSURANCE:,} a year (NerdWallet).\n"
@@ -422,8 +424,8 @@ spec = {
     "badge": "MONEY TRAPS",
     "disclaimer": "Illustration · assumed returns & growth · not financial advice",
     "title": "Rent vs Buy a Home: The Full Math Nobody Shows You",
-    "intro_chapter": "20 years or 5?",
-    "thumbnail": {"big": "20 YRS", "line": "TO BEAT RENTING?", "tag": "RENT VS BUY: FULL MATH", "color": "gold"},
+    "intro_chapter": "5 years or 20?",
+    "thumbnail": {"big": "5 OR 20", "line": "YRS TO BEAT RENTING?", "tag": "RENT VS BUY: FULL MATH", "color": "gold"},
     "description": DESCRIPTION,
     "tags": ["rent vs buy", "rent or buy a house", "renting vs buying a home", "is renting throwing money away",
              "price to rent ratio", "break even buying a house", "mortgage rates 2026", "home buying",
@@ -464,7 +466,7 @@ spec = {
     "scenes": S,
 }
 assert len(spec["title"]) < 60, len(spec["title"])
-assert len(spec["thumbnail"]["big"]) <= 6 and len(spec["thumbnail"]["line"]) <= 22
+assert len(spec["thumbnail"]["big"]) <= 7 and len(spec["thumbnail"]["line"]) <= 22
 assert all(len(l["title"]) <= 60 for l in spec["localizations"].values())
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "L009_rent_vs_buy.json")

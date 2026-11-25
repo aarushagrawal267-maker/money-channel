@@ -1,0 +1,206 @@
+{
+ "id": "052_wework",
+ "currency": "usd",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "badge": "CASE STUDY",
+ "disclaimer": "Sources: WeWork S-1, Reuters, AP, CNBC · see description",
+ "title": "WeWork: From a $47B Valuation to Bankruptcy",
+ "description": "WeWork was valued at $47 billion in a SoftBank funding round in January 2019 and filed for Chapter 11 bankruptcy in November 2023. Its 2019 IPO filing showed why: in 2018 it lost $1.93 billion on $1.82 billion of revenue (about $1.06 lost per dollar of revenue), and it had signed $47.2 billion of future lease payments, with U.S. leases averaging about 15 years while members signed much shorter deals. After the filings revealed massive losses (AP), the IPO was pulled in September 2019; co-founder Adam Neumann had stepped down as CEO days earlier. By Q2 2023, paying for space took 74% of revenue, and the bankruptcy filing listed $18.66 billion of liabilities against $15.06 billion of assets (Reuters). WeWork emerged from bankruptcy in June 2024 under new owners. The lesson: a valuation is an opinion; profit and cash flow pay the bills.\n\nSources: Reuters (Jan 8, 2019; Nov 7, 2023); WeWork Form S-1 (SEC, Aug 14, 2019); AP (Sept 30, 2019; June 12, 2024); NPR (Sept 24, 2019); CNBC (Nov 6, 2023). The 2019 valuation was a private funding-round price, not a stock market value. Educational content, not investment advice.\n\n#wework #business #casestudy #startups #valuation",
+ "tags": [
+  "wework",
+  "wework bankruptcy",
+  "wework ipo",
+  "what happened to wework",
+  "wework valuation",
+  "softbank wework",
+  "business case study",
+  "startup valuation",
+  "business lessons"
+ ],
+ "localizations": {
+  "es": {
+   "title": "WeWork: de 47.000 millones de dólares a la quiebra",
+   "summary": "En 2019 WeWork fue valorada en 47.000 millones de dólares; en 2023 se acogió al Capítulo 11. Perdía más de lo que ingresaba y firmó 47.200 millones en alquileres futuros. La lección: una valoración no es un beneficio."
+  },
+  "pt": {
+   "title": "WeWork: de 47 bilhões de dólares à falência",
+   "summary": "Em 2019 a WeWork foi avaliada em 47 bilhões de dólares; em 2023 pediu recuperação judicial (Chapter 11). Perdia mais do que faturava e assinou 47,2 bilhões em aluguéis futuros. A lição: valuation não é lucro."
+  },
+  "hi": {
+   "title": "WeWork: 47 अरब डॉलर के मूल्यांकन से दिवालियापन तक",
+   "summary": "2019 में WeWork का मूल्य 47 अरब डॉलर आँका गया और 2023 में उसने Chapter 11 दिवालियापन के लिए आवेदन किया। कंपनी कमाई से ज़्यादा घाटे में थी और 47.2 अरब डॉलर का भविष्य का किराया साइन कर चुकी थी। सीख: वैल्यूएशन मुनाफ़ा नहीं है।"
+  },
+  "id": {
+   "title": "WeWork: Dari Valuasi $47 Miliar ke Kebangkrutan",
+   "summary": "Pada 2019 WeWork divaluasi 47 miliar dolar; pada 2023 mengajukan Chapter 11. Kerugiannya lebih besar dari pendapatannya, dan ia menandatangani sewa masa depan 47,2 miliar dolar. Pelajarannya: valuasi bukan laba."
+  },
+  "de": {
+   "title": "WeWork: Von 47 Mrd. $ Bewertung zur Insolvenz",
+   "summary": "2019 wurde WeWork mit 47 Milliarden Dollar bewertet, 2023 folgte die Insolvenz nach Chapter 11. Die Verluste waren höher als der Umsatz, dazu 47,2 Milliarden Dollar künftige Mieten. Die Lehre: Eine Bewertung ist kein Gewinn."
+  },
+  "fr": {
+   "title": "WeWork : de 47 milliards de dollars à la faillite",
+   "summary": "En 2019, WeWork était valorisée 47 milliards de dollars ; en 2023, elle s'est placée sous le Chapter 11. Elle perdait plus qu'elle ne gagnait et avait signé 47,2 milliards de loyers futurs. La leçon : une valorisation n'est pas un profit."
+  }
+ },
+ "scenes": [
+  {
+   "say": "Forty-seven billion dollars in twenty nineteen. Bankrupt by twenty twenty-three. Why?",
+   "visual": {
+    "type": "stat",
+    "value": "$47B",
+    "label": "WeWork's valuation",
+    "sub": "Jan 2019 · private funding round",
+    "color": "gold"
+   }
+  },
+  {
+   "say": "It signed long office leases, then rented desks on shorter deals.",
+   "visual": {
+    "type": "pair",
+    "title": "The business model",
+    "left": {
+     "label": "Leases",
+     "sub": "~15 years (US)",
+     "color": "red"
+    },
+    "right": {
+     "label": "Members",
+     "sub": "much shorter deals",
+     "color": "green"
+    }
+   }
+  },
+  {
+   "say": "Twenty eighteen: revenue one point eight billion. Losses, one point nine billion.",
+   "visual": {
+    "type": "compare",
+    "title": "2018 (from its IPO filing)",
+    "left": {
+     "label": "Revenue",
+     "value": 1821751000.0,
+     "color": "green"
+    },
+    "right": {
+     "label": "Net loss",
+     "value": 1927419000.0,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "That's a dollar six lost per dollar of revenue.",
+   "visual": {
+    "type": "equation",
+    "title": "Every dollar in",
+    "lines": [
+     {
+      "text": "$1.00 of revenue",
+      "color": "text",
+      "size": 96
+     },
+     {
+      "text": "$1.06 lost",
+      "color": "red",
+      "size": 130
+     }
+    ]
+   }
+  },
+  {
+   "say": "Now the twist: its future rent bill was also about forty-seven billion.",
+   "visual": {
+    "type": "stat",
+    "value": "$47.2B",
+    "label": "future lease payments signed",
+    "sub": "as of June 30, 2019 · IPO filing",
+    "color": "red"
+   }
+  },
+  {
+   "say": "After the filing showed huge losses, the I-P-O was pulled.",
+   "visual": {
+    "type": "pair",
+    "title": "Sept 2019",
+    "left": {
+     "label": "IPO",
+     "sub": "planned",
+     "color": "slate"
+    },
+    "right": {
+     "label": "Pulled",
+     "sub": "lukewarm demand (AP)",
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "By twenty twenty-three, space costs ate seventy-four percent of revenue.",
+   "visual": {
+    "type": "bars",
+    "title": "Share of revenue, Q2 2023 (%)",
+    "format": "num",
+    "items": [
+     {
+      "label": "Space",
+      "value": 74,
+      "color": "red"
+     },
+     {
+      "label": "Left over",
+      "value": 26,
+      "color": "slate"
+     }
+    ]
+   }
+  },
+  {
+   "say": "That November, WeWork filed for Chapter eleven bankruptcy.",
+   "visual": {
+    "type": "compare",
+    "title": "Chapter 11 filing, Nov 2023",
+    "left": {
+     "label": "Assets",
+     "value": 15060000000.0,
+     "color": "slate"
+    },
+    "right": {
+     "label": "Liabilities",
+     "value": 18660000000.0,
+     "color": "red"
+    }
+   }
+  },
+  {
+   "say": "The lesson: a valuation is an opinion. Profit and cash are facts.",
+   "visual": {
+    "type": "equation",
+    "title": "The lesson",
+    "lines": [
+     {
+      "text": "Valuation = opinion",
+      "color": "muted",
+      "size": 90
+     },
+     {
+      "text": "Profit + cash = facts",
+      "color": "gold",
+      "size": 90
+     }
+    ]
+   }
+  },
+  {
+   "say": "Forget that, and you go from...",
+   "visual": {
+    "type": "cta",
+    "lines": [
+     "Valuation",
+     "≠ profit."
+    ],
+    "sub": "Follow for daily money lessons"
+   }
+  }
+ ]
+}
