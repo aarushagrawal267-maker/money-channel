@@ -287,9 +287,9 @@
       "pillar": "case_study",
       "currency": "usd",
       "idea": "Kodak invented the digital camera, then lost to it",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "042_kodak",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "minimum_due_in",
@@ -307,9 +307,9 @@
       "pillar": "business",
       "currency": "usd",
       "idea": "Why Apple makes more profit than almost anyone",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "044_apple_profit",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "phil_knight",
@@ -327,9 +327,9 @@
       "pillar": "earn_more",
       "currency": "usd",
       "idea": "$500/month side income: what it's worth in 10 years",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "043_side_income",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "mortgage_prepay",
@@ -337,9 +337,9 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "One extra mortgage payment a year: what it saves",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "048_mortgage_prepay",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "tata_nano",
@@ -357,9 +357,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "Bonds explained with a friend who borrows money",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "046_bonds_friend",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "no_cost_emi",
@@ -367,9 +367,9 @@
       "pillar": "financing_traps",
       "currency": "inr",
       "idea": "'No-cost EMI': who actually pays the interest (India story)",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "045_no_cost_emi",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "sara_blakely",
@@ -377,9 +377,9 @@
       "pillar": "founder",
       "currency": "usd",
       "idea": "Spanx: from $5,000 in savings to a billion-dollar company",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "047_sara_blakely",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "ipl",
@@ -397,9 +397,9 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "How much to save monthly to reach $1M by 50, 60, 65",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "041_save_for_million",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "wework",
@@ -407,9 +407,9 @@
       "pillar": "case_study",
       "currency": "usd",
       "idea": "WeWork: from a $47B valuation to bankruptcy",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "052_wework",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "dividends_buybacks",
@@ -417,9 +417,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "Dividends vs buybacks: how companies return money",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "050_dividends_buybacks",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "rent_vs_buy",
@@ -437,9 +437,9 @@
       "pillar": "founder",
       "currency": "inr",
       "idea": "Infosys started with ₹10,000 (India story)",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "054_narayana_murthy",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "quick_commerce",
@@ -477,9 +477,9 @@
       "pillar": "markets",
       "currency": "usd",
       "idea": "What a market crash really means for a monthly investor",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "053_crash_and_sip",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "insurance_types",
@@ -487,9 +487,9 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Term vs whole life insurance: the $1M question",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "051_insurance_types",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "ray_kroc",
@@ -507,9 +507,9 @@
       "pillar": "business",
       "currency": "inr",
       "idea": "How Amul sells milk so cheap and still wins (India story)",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "049_amul",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "online_income_ads",
@@ -599,9 +599,9 @@
       "pillar": "money_math",
       "currency": "usd",
       "idea": "Inflation, explained: why your money quietly shrinks",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "L006_inflation",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "L007_upi",
@@ -639,9 +639,9 @@
       "pillar": "financing_traps",
       "currency": "usd",
       "idea": "Rent vs Buy: The Full Math Nobody Shows You",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "L009_rent_vs_buy",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "L013_dhirubhai",
@@ -659,9 +659,9 @@
       "pillar": "case_study",
       "currency": "usd",
       "idea": "Apple in 1997: The Turnaround That Saved the Company",
-      "spec": null,
-      "status": "idea",
-      "week": null
+      "spec": "L014_apple_1997",
+      "status": "rendered",
+      "week": 3
     },
     {
       "slug": "L015_phil_knight",
