@@ -64,7 +64,7 @@ spec = {
                           "refuge. Les banques centrales en ont acheté 321 tonnes au T3 2026, 42 % de plus qu'un an plus tôt."},
     },
     "thumbnail": {"photo": {"file": "assets/photos/gold_bars_stack.jpg", "focus": [0.5, 0.5]},
-                  "big": f"+{yoy:.0%}", "color": "gold"},
+                  "big": f"+{yoy:.0%}", "line": "Safe isn't steady", "color": "gold"},
     "scenes": [
         # hook: contradiction + the number on frame 0; the open loop is "why?"
         {"say": "Gold pays nothing. Its average price still rose twenty-three percent.",

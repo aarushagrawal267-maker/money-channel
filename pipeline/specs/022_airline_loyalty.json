@@ -44,6 +44,9 @@
   }
  },
  "thumbnail": {
+  "big": "$6.2B",
+  "line": "More than its profit",
+  "color": "gold",
   "photo": {
    "file": "assets/photos/american_airlines_737_at_gate.jpg",
    "focus": [

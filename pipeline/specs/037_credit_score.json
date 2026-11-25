@@ -45,6 +45,9 @@
   }
  },
  "thumbnail": {
+  "big": "35%",
+  "line": "One habit. Guess which",
+  "color": "gold",
   "photo": {
    "file": "assets/photos/credit_cards_fanned.jpg",
    "focus": [

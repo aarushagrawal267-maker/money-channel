@@ -46,13 +46,15 @@
  },
  "thumbnail": {
   "big": "$50M",
+  "line": "Bankrupt 10 years later",
   "color": "gold",
   "photo": {
    "file": "assets/photos/reed_hastings_film_archive.jpg",
    "focus": [
     0.42,
     0.3
-   ]
+   ],
+   "cutout": true
   }
  },
  "scenes": [

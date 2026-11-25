@@ -74,7 +74,7 @@ spec = {
                "summary": "La Fed a relevé son taux à 3,75 %-4 % en septembre 2026. Sur un prêt variable de 300 000 $ sur 30 ans, "
                           "passer de 6 % à 6,25 % augmente la mensualité d'environ 48,50 $."},
     },
-    "thumbnail": {"big": "3.75%", "color": "gold",
+    "thumbnail": {"big": f"+${extra_month:.2f}", "line": "A month, one hike", "color": "red",
                   "photo": {"file": "assets/photos/federal_reserve_building_blue_sky.jpg", "focus": [0.5, 0.4]}},
     "scenes": [
         {"say": "One decision in Washington can change your loan payment. The Fed's target rate is now three and three quarters to four percent, after a quarter point rise in September.",

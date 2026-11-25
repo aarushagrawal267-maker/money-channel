@@ -46,7 +46,7 @@ spec = {
     "id": "041_save_for_million",
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "MONEY MATH",
-    "thumbnail": {"big": f"${need[65]:,.0f}/MO", "color": "gold",
+    "thumbnail": {"big": f"${need[65]:,.0f}/MO", "line": "From age 25, 7%/yr", "color": "gold",
                   "photo": {"file": "assets/photos/retired_couple_hand_in_hand.jpg", "focus": [0.5, 0.35]}},
     "disclaimer": "Assumes 7%/yr · returns vary, can be negative · not advice",
     "title": "How Much to Save a Month for $1 Million by 50, 60, 65",

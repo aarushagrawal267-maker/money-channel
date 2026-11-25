@@ -71,7 +71,8 @@ spec = {
                "summary": "Même capital de 1 million de dollars : environ 49 $ par mois en temporaire 20 ans, ou 920 $ en vie "
                           "entière (tarifs d'exemple Policygenius, homme de 30 ans). Ce que couvre chacune."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/family_beach_sunset.jpg", "focus": [0.6, 0.5]}},
+    "thumbnail": {"big": f"~{ratio:.0f}×", "line": "Same payout. Why?", "color": "gold",
+                  "photo": {"file": "assets/photos/family_beach_sunset.jpg", "focus": [0.6, 0.5]}},
     "scenes": [
         # hook: the two prices on frame 0 + open loop ("Why?")
         {"say": "Same million dollar payout: forty-nine a month, or nine hundred twenty. Why?",

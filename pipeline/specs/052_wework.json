@@ -45,8 +45,9 @@
   }
  },
  "thumbnail": {
-  "big": "$47B",
-  "color": "gold",
+  "big": "$47.2B",
+  "line": "Its rent bill, too",
+  "color": "red",
   "photo": {
    "file": "assets/photos/wework_miami_sign.jpg",
    "focus": [

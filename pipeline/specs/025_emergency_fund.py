@@ -19,7 +19,7 @@ spec = {
     "id": "025_emergency_fund",
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "SAFETY NET",
-    "thumbnail": {"big": "3–6 MONTHS", "color": "gold",
+    "thumbnail": {"big": "3–6 MONTHS", "line": "If your pay stops", "color": "gold",
                   "photo": {"file": "assets/photos/grocery_aisle_prices.jpg", "focus": [0.45, 0.5]}},
     "disclaimer": "Example · $3,000/month of essentials · not financial advice",
     "title": "Emergency Fund: How Much You Need and Where to Keep It",

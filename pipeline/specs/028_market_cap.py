@@ -84,7 +84,8 @@ spec = {
                "summary": "La capitalisation boursière, c'est le cours de l'action multiplié par le nombre d'actions, pas les ventes. "
                           "Walmart vend plus du double de Microsoft, mais Microsoft vaut presque quatre fois plus."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/walmart_store_front.jpg", "focus": [0.82, 0.3]}},
+    "thumbnail": {"big": f"{wmt_margin * 100:.0f}¢", "line": "Profit per $1 sold", "color": "gold",
+                  "photo": {"file": "assets/photos/walmart_store_front.jpg", "focus": [0.82, 0.3]}},
     "scenes": [
         {"say": "Walmart sells more than twice as much as Microsoft. Yet Microsoft is worth almost four times as much. How?",
          "visual": {"type": "compare", "title": "Sales, last fiscal year",

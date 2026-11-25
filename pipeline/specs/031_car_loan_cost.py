@@ -37,7 +37,7 @@ spec = {
     "id": "031_car_loan_cost",
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "MONEY MATH",
-    "thumbnail": {"big": f"${tot72:,.0f}", "color": "red",
+    "thumbnail": {"big": f"${tot72:,.0f}", "line": "The real price tag", "color": "red",
                   "photo": {"file": "assets/photos/car_lot_buy_here_pay_here.jpg", "focus": [0.62, 0.5]}},
     "disclaimer": "Example · 7% APR on both loans · your rate and costs will differ",
     "title": "Car Loan Math: 72 vs 48 Months on a $35,000 Car",

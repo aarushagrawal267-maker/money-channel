@@ -44,6 +44,9 @@
   }
  },
  "thumbnail": {
+  "big": "₹249",
+  "line": "Still on your bill",
+  "color": "red",
   "photo": {
    "file": "assets/photos/credit_card_tap_terminal_hand.jpg",
    "focus": [

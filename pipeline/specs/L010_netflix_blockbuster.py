@@ -362,7 +362,7 @@ spec = {
     "disclaimer": "Figures: company filings & reports · for education, not investment advice",
     "title": "Netflix vs Blockbuster: Why Blockbuster Really Failed",
     "intro_chapter": "The $50M deal",
-    "thumbnail": {"big": "$50M", "line": "THE DEAL THEY REJECTED", "tag": "NETFLIX VS BLOCKBUSTER", "color": "gold",
+    "thumbnail": {"big": "$50M", "line": "Not the real mistake", "tag": "NETFLIX VS BLOCKBUSTER", "color": "gold",
                   "photo": {"file": "assets/photos/blockbuster_store_closing.jpg", "focus": [0.5, 0.35]}},
     "description": DESCRIPTION,
     "tags": ["netflix vs blockbuster", "netflix", "blockbuster", "blockbuster netflix 50 million",

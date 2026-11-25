@@ -45,6 +45,9 @@
   }
  },
  "thumbnail": {
+  "big": "−$77",
+  "line": "Nobody missed a payment",
+  "color": "red",
   "photo": {
    "file": "assets/photos/us_treasury_building.jpg",
    "focus": [

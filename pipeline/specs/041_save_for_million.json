@@ -6,6 +6,7 @@
  "badge": "MONEY MATH",
  "thumbnail": {
   "big": "$381/MO",
+  "line": "From age 25, 7%/yr",
   "color": "gold",
   "photo": {
    "file": "assets/photos/retired_couple_hand_in_hand.jpg",

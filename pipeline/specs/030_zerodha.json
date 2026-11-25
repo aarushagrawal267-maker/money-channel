@@ -45,6 +45,9 @@
   }
  },
  "thumbnail": {
+  "big": "₹43B",
+  "line": "Profit. So who pays?",
+  "color": "gold",
   "photo": {
    "file": "assets/photos/bse_building_mumbai.jpg",
    "focus": [

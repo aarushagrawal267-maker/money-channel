@@ -79,7 +79,7 @@ spec = {
         "fr": {"title": "WeWork : de 47 milliards de dollars à la faillite",
                "summary": "En 2019, WeWork était valorisée 47 milliards de dollars ; en 2023, elle s'est placée sous le Chapter 11. Elle perdait plus qu'elle ne gagnait et avait signé 47,2 milliards de loyers futurs. La leçon : une valorisation n'est pas un profit."},
     },
-    "thumbnail": {"big": f"${VALUATION_2019 / 1e9:.0f}B", "color": "gold",
+    "thumbnail": {"big": f"${LEASE_OBLIGATIONS / 1e9:.1f}B", "line": "Its rent bill, too", "color": "red",
                   "photo": {"file": "assets/photos/wework_miami_sign.jpg", "focus": [0.5, 0.3]}},
     "scenes": [
         # hook: the big number on frame 0 + open loop ("why?")

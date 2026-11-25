@@ -82,7 +82,7 @@ spec = {
         "fr": {"title": "Warren Buffett : 99 % de sa fortune après 52 ans",
                "summary": "Forbes estimait sa fortune à 250 millions de dollars en 1982, à 52 ans ; environ 154 milliards en novembre 2026. Voici les maths des intérêts composés dans la durée."},
     },
-    "thumbnail": {"big": "99%+", "color": "gold",
+    "thumbnail": {"big": f"+${last_doubling_gain / 1e9:.0f}B", "line": "The last doubling", "color": "gold",
                   "photo": {"file": "assets/photos/warren_buffett_student_visit.jpg", "focus": [0.64, 0.3]}},
     "scenes": [
         {"say": "More than ninety-nine percent of Warren Buffett's fortune came after he turned fifty-two.",

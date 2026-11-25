@@ -81,7 +81,7 @@ spec = {
                "summary": "Sur l'exercice 2026, Apple a dégagé 132,2 milliards de dollars de bénéfice net, environ 4 200 $ par "
                           "seconde. Les services font 26 % des ventes, mais 40 % de la marge brute."},
     },
-    "thumbnail": {"big": f"${round(per_sec, -2):,.0f}", "color": "gold",
+    "thumbnail": {"big": f"{svc_gp_share:.0%}", "line": "Not from devices", "color": "green",
                   "photo": {"file": "assets/photos/apple_store_osaka.jpg", "focus": [0.62, 0.4]}},
     "scenes": [
         # hook: the biggest number on frame 0 + open loop ("From what?")

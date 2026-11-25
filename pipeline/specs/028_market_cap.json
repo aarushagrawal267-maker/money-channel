@@ -44,6 +44,9 @@
   }
  },
  "thumbnail": {
+  "big": "3¢",
+  "line": "Profit per $1 sold",
+  "color": "gold",
   "photo": {
    "file": "assets/photos/walmart_store_front.jpg",
    "focus": [

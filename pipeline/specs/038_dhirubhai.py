@@ -72,7 +72,8 @@ spec = {
         "fr": {"title": "Dhirubhai Ambani : d'un job au Yémen à Reliance",
                "summary": "À 17 ans, il part travailler à Aden, au Yémen, puis fonde Reliance, qui réalise aujourd'hui environ 124 milliards de dollars de revenus par an. Son histoire, éloges et critiques compris."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/dhirubhai_ambani_nail_art.jpg", "focus": [0.5, 0.45]}},
+    "thumbnail": {"big": f"${RIL_REV_FY26_USD / 1e9:.0f}B", "line": "In sales, every year", "color": "gold",
+                  "photo": {"file": "assets/photos/dhirubhai_ambani_nail_art.jpg", "focus": [0.5, 0.45]}},
     "scenes": [
         # hook: the biggest number on frame 0 + open loop (how do you get from Yemen to that?)
         {"say": "Over eleven lakh crore rupees a year. Its founder started in Yemen.",

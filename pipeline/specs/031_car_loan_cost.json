@@ -6,6 +6,7 @@
  "badge": "MONEY MATH",
  "thumbnail": {
   "big": "$42,963",
+  "line": "The real price tag",
   "color": "red",
   "photo": {
    "file": "assets/photos/car_lot_buy_here_pay_here.jpg",

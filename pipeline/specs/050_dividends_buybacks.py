@@ -83,7 +83,7 @@ spec = {
                           "rachats et 664,9 milliards aux dividendes. Même valeur au départ ; la fiscalité et le prix changent tout."},
     },
     "thumbnail": {"photo": {"file": "assets/photos/nyse_facade_wall_street.jpg", "focus": [0.5, 0.4]},
-                  "big": f"${BUYBACKS_12M / 1e12:.2f}T", "color": "gold"},
+                  "big": f"${BUYBACKS_12M / 1e12:.2f}T", "line": "Buying their own shares", "color": "gold"},
     "scenes": [
         # hook: the biggest number on frame 0 + open loop ("Why?")
         {"say": "Over a trillion dollars, spent by companies on their own shares. Why?",

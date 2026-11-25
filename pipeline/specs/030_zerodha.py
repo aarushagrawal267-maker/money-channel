@@ -80,7 +80,8 @@ spec = {
                "summary": "Le courtier indien Zerodha ne facture aucun courtage pour acheter et garder des actions, mais a gagné "
                           "environ ₹43 milliards sur l'année à mars 2026. Les traders, les intérêts et les prêts paient."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/bse_building_mumbai.jpg", "focus": [0.5, 0.5]}},
+    "thumbnail": {"big": f"₹{bn(PROFIT_FY26):.0f}B", "line": "Profit. So who pays?", "color": "gold",
+                  "photo": {"file": "assets/photos/bse_building_mumbai.jpg", "focus": [0.5, 0.5]}},
     "scenes": [
         {"say": "Zerodha, one of India's biggest stockbrokers, charges zero brokerage when you buy shares to keep. Yet in its latest financial year, it made about forty-three billion rupees in profit.",
          "visual": {"type": "stat", "value": "₹43B", "label": "Zerodha's profit, year to March 2026",

@@ -47,6 +47,7 @@
  },
  "thumbnail": {
   "big": "3%",
+  "line": "The store pays it",
   "color": "gold",
   "photo": {
    "file": "assets/photos/online_shopping_phone_cart.jpg",

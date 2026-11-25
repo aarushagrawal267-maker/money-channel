@@ -44,6 +44,9 @@
   }
  },
  "thumbnail": {
+  "big": "~19×",
+  "line": "Same payout. Why?",
+  "color": "gold",
   "photo": {
    "file": "assets/photos/family_beach_sunset.jpg",
    "focus": [

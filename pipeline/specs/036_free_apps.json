@@ -43,6 +43,9 @@
   }
  },
  "thumbnail": {
+  "big": "$17.72",
+  "line": "Meta's price on you",
+  "color": "gold",
   "photo": {
    "file": "assets/photos/social_apps_phone_screen.jpg",
    "focus": [

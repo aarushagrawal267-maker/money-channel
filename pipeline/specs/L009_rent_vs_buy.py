@@ -447,7 +447,7 @@ spec = {
     "disclaimer": "Illustration · assumed returns & growth · not financial advice",
     "title": "Rent vs Buy a Home: The Full Math Nobody Shows You",
     "intro_chapter": "5 years or 20?",
-    "thumbnail": {"big": "5 OR 20", "line": "YRS TO BEAT RENTING?", "tag": "RENT VS BUY: FULL MATH", "color": "gold",
+    "thumbnail": {"big": "5 OR 20", "line": "Years to beat renting", "tag": "RENT VS BUY: FULL MATH", "color": "gold",
                   "photo": {"file": "assets/photos/for_sale_sign_generic.jpg", "focus": [0.45, 0.5]}},
     "description": DESCRIPTION,
     "tags": ["rent vs buy", "rent or buy a house", "renting vs buying a home", "is renting throwing money away",

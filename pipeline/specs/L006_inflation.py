@@ -386,7 +386,7 @@ spec = {
     "disclaimer": "Data: BLS, Federal Reserve, FDIC, TreasuryDirect · examples labelled · education, not advice",
     "title": "Inflation Explained: Why Your Money Quietly Shrinks",
     "intro_chapter": "The $360 drawer",
-    "thumbnail": {"big": f"−${lost:.0f}", "line": "LOST FROM $10K CASH", "tag": "NOBODY TOOK IT", "color": "red",
+    "thumbnail": {"big": f"−${lost:.0f}", "line": "$10K in a drawer", "tag": "NOBODY TOOK IT", "color": "red",
                   "photo": {"file": "assets/photos/dollar_bills_100s.jpg", "focus": [0.55, 0.5]}},
     "description": (
         "Inflation explained simply: what the Consumer Price Index (CPI) measures, why US prices rose 3.7% in "

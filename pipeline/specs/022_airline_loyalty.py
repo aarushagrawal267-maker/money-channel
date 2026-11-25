@@ -60,7 +60,8 @@ spec = {
                "summary": "En 2025, American Airlines a dégagé $111 millions de bénéfice net, tandis que sa carte de crédit et d'autres partenaires lui ont versé $6.2 milliards. "
                           "American Express a versé $8.2 milliards à Delta, plus que son bénéfice avant impôts. L'astuce : vendre des miles aux banques, encaisser aujourd'hui, fournir le siège plus tard."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/american_airlines_737_at_gate.jpg", "focus": [0.62, 0.45]}},
+    "thumbnail": {"big": f"${AAL_PARTNER_CASH_2025 / 1e9:.1f}B", "line": "More than its profit", "color": "gold",
+                  "photo": {"file": "assets/photos/american_airlines_737_at_gate.jpg", "focus": [0.62, 0.45]}},
     "scenes": [
         {"say": "In twenty twenty-five, American Airlines made a hundred and eleven million dollars in profit. Its credit card and other partners paid it six point two billion.",
          "visual": {"type": "compare", "title": "American Airlines, 2025",

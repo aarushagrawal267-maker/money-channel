@@ -89,7 +89,8 @@ spec = {
                "summary": f"Dépensés : 60 000 $ en 10 ans. Investis à 7 % par an (hypothèse) : environ {fv:,.0f} $".replace(",", " ")
                           + ". La croissance arrive tard, et l'impôt passe d'abord."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/freelancer_laptop_sunset.jpg", "focus": [0.62, 0.45]}},
+    "thumbnail": {"big": f"${fv / 1e3:.1f}K", "line": "If invested at 7%", "color": "green",
+                  "photo": {"file": "assets/photos/freelancer_laptop_sunset.jpg", "focus": [0.62, 0.45]}},
     "scenes": [
         # hook: the biggest number on frame 0 + contradiction/open loop ("or zero?")
         {"say": "Five hundred a month on the side: spent, or eighty-five thousand dollars?",

@@ -345,7 +345,7 @@ spec = {
     "disclaimer": "Figures: NY Fed, Federal Reserve, CFPB, Visa & Capital One filings · education, not financial advice",
     "title": "How Credit Card Companies Really Make Money",
     "intro_chapter": "Intro",
-    "thumbnail": {"big": "$160B", "line": "IN CARD INTEREST", "tag": "WHO REALLY PAYS?", "color": "gold",
+    "thumbnail": {"big": "$160B", "line": "Interest in one year", "tag": "WHO REALLY PAYS?", "color": "gold",
                   "photo": {"file": "assets/photos/credit_cards_visa_mc_amex.jpg", "focus": [0.5, 0.5]}},
     "description": (
         "How do credit card companies really make money? Americans owe $1.29 trillion on credit cards, and in "

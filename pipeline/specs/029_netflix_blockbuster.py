@@ -67,8 +67,8 @@ spec = {
         "fr": {"title": "Pourquoi Blockbuster n'a pas acheté Netflix $50 millions",
                "summary": "En 2000, les fondateurs de Netflix disent avoir proposé leur société à Blockbuster pour 50 millions de dollars. Blockbuster a refusé, a fait faillite en 2010, et Netflix a réalisé 45,2 milliards de dollars de revenus en 2025."},
     },
-    "thumbnail": {"big": "$50M", "color": "gold",
-                  "photo": {"file": "assets/photos/reed_hastings_film_archive.jpg", "focus": [0.42, 0.3]}},
+    "thumbnail": {"big": "$50M", "line": "Bankrupt 10 years later", "color": "gold",
+                  "photo": {"file": "assets/photos/reed_hastings_film_archive.jpg", "focus": [0.42, 0.3], "cutout": True}},
     "scenes": [
         {"say": "In two thousand, Netflix's founders say they offered to sell their company to Blockbuster for fifty million dollars. Blockbuster said no.",
          "visual": {"type": "photo", "file": "assets/photos/blockbuster_store_uk.jpg", "focus": [0.5, 0.45],

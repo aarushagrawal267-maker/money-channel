@@ -35,7 +35,7 @@ spec = {
     "id": "027_lifestyle_inflation",
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "MONEY TRAP",
-    "thumbnail": {"big": "+$0", "color": "red",
+    "thumbnail": {"big": "+$0", "line": "20 years later", "color": "red",
                   "photo": {"file": "assets/photos/piggy_bank_coin_drop.jpg", "focus": [0.5, 0.4]}},
     "disclaimer": "Example · 30% tax · assumes 7% a year · not financial advice",
     "title": "Lifestyle Inflation: Why Your Raise Leaves You No Richer",

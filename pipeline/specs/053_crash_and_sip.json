@@ -45,6 +45,9 @@
   }
  },
  "thumbnail": {
+  "big": "2×",
+  "line": "Units at half price",
+  "color": "green",
   "photo": {
    "file": "assets/photos/stock_screens_tokyo_chart.jpg",
    "focus": [

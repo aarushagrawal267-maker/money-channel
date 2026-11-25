@@ -67,7 +67,7 @@ spec = {
                "summary": "Payer $200 en 4 fois $50 sans intérêts semble gratuit, mais les prêteurs gagnent surtout sur le commerçant : environ 3 % par vente, selon la CFPB. "
                           "Certains facturent aussi des frais de retard, et le risque discret est de cumuler plusieurs paiements à la fois."},
     },
-    "thumbnail": {"big": "3%", "color": "gold", "photo": {"file": "assets/photos/online_shopping_phone_cart.jpg", "focus": [0.5, 0.5]}},
+    "thumbnail": {"big": "3%", "line": "The store pays it", "color": "gold", "photo": {"file": "assets/photos/online_shopping_phone_cart.jpg", "focus": [0.5, 0.5]}},
     "scenes": [
         {"say": "Split two hundred dollars into four payments of fifty, with no interest. So how does the lender make money?",
          "visual": {"type": "equation", "title": "Pay in 4",

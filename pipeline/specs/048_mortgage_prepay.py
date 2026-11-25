@@ -65,7 +65,7 @@ spec = {
     "id": "048_mortgage_prepay",
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "MONEY MATH",
-    "thumbnail": {"big": f"${saved/1e3:,.0f}K", "color": "green",
+    "thumbnail": {"big": f"${interest_normal/1e3:,.0f}K", "line": "More than you borrowed", "color": "red",
                   "photo": {"file": "assets/photos/single_family_home_brick.jpg", "focus": [0.45, 0.5]}},
     "disclaimer": f"Example · {RATE*100:.2f}% avg rate (Freddie Mac, {RATE_DATE}) · yours will differ",
     "title": "One Extra Mortgage Payment a Year: $143K Saved?",

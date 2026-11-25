@@ -87,7 +87,8 @@ spec = {
                "summary": f"Exemple : un fonds passe de 100 $ à 50 $ puis revient à 100 $. Avec 500 $ par mois, 6 000 $ "
                           f"deviennent environ {value[-1]:,.0f} $ (+{end_gain:.0%}). À mi-parcours, le compte perdait {mid_loss:.0%}."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/stock_screens_tokyo_chart.jpg", "focus": [0.3, 0.45]}},
+    "thumbnail": {"big": f"{units_at_50 / units_at_100:.0f}×", "line": "Units at half price", "color": "green",
+                  "photo": {"file": "assets/photos/stock_screens_tokyo_chart.jpg", "focus": [0.3, 0.45]}},
     "scenes": [
         # hook: payoff number on frame 0 + contradiction ("price back to even, yet up 41%")
         {"say": "Price back to even, yet this monthly investor is up forty-one percent.",

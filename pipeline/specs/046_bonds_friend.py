@@ -76,7 +76,8 @@ spec = {
                "summary": f"Une obligation est un prêt : 1 000 $ sur 10 ans à 4 %, soit 40 $ d'intérêts par an. Si les "
                           f"nouvelles paient 5 %, le prix de la vôtre tombe à environ {p_new:,.0f} $."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/us_treasury_building.jpg", "focus": [0.45, 0.45]}},
+    "thumbnail": {"big": f"−${drop:,.0f}", "line": "Nobody missed a payment", "color": "red",
+                  "photo": {"file": "assets/photos/us_treasury_building.jpg", "focus": [0.45, 0.45]}},
     "scenes": [
         # hook: payoff number on frame 0 + contradiction ("nobody missed a payment") + open loop ("why?")
         {"say": "Your bond lost seventy-seven dollars, and nobody missed a payment. Why?",

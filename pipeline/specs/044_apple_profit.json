@@ -45,8 +45,9 @@
   }
  },
  "thumbnail": {
-  "big": "$4,200",
-  "color": "gold",
+  "big": "40%",
+  "line": "Not from devices",
+  "color": "green",
   "photo": {
    "file": "assets/photos/apple_store_osaka.jpg",
    "focus": [

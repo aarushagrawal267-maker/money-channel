@@ -33,7 +33,7 @@ spec = {
     "id": "024_expense_ratio",
     "currency": "usd", "voice": "af_heart", "speed": 1.05,
     "badge": "HIDDEN COSTS",
-    "thumbnail": {"big": f"−${gap/1e3:,.0f}K", "color": "red",
+    "thumbnail": {"big": f"−${gap/1e3:,.0f}K", "line": "Same plan, smaller pile", "color": "red",
                   "photo": {"file": "assets/photos/dollar_bills_100s.jpg", "focus": [0.55, 0.5]}},
     "disclaimer": "Illustration · assumes 7% a year before fees · not financial advice",
     "title": "A 1% Investment Fee Can Cost You $120,000. Here's How",

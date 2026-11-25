@@ -81,7 +81,7 @@ spec = {
         "fr": {"title": "Nokia : de 40 % des téléphones à la vente de l'activité",
                "summary": "En 2007, Nokia vendait environ 4 téléphones sur 10 dans le monde. En 2013, son activité mobile a été vendue à Microsoft pour 5,44 milliards d'euros. Pourquoi le succès peut ralentir le changement."},
     },
-    "thumbnail": {"big": f"{NOKIA_SHARE_Q4_2007}%", "color": "blue",
+    "thumbnail": {"big": f"${WRITEOFF_USD / 1e9:.1f}B", "line": "The buyer got burned", "color": "red",
                   "photo": {"file": "assets/photos/nokia_classic_phones.jpg", "focus": [0.5, 0.3]}},
     "scenes": [
         # hook: payoff number on frame 0 + open loop ("what went wrong?")

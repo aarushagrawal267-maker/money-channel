@@ -45,6 +45,9 @@
   }
  },
  "thumbnail": {
+  "big": "No. 1",
+  "line": "Then bankrupt anyway",
+  "color": "gold",
   "photo": {
    "file": "assets/photos/kodak_tower_rochester_tall.jpg",
    "focus": [

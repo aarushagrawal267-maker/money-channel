@@ -84,7 +84,7 @@ spec = {
         "fr": {"title": "Le modèle d'Amul : ₹80 sur ₹100 pour les éleveurs",
                "summary": "Amul est une coopérative de 3,6 millions d'éleveurs laitiers en Inde. Selon Amul, ils touchent environ 80 roupies sur 100, et pourtant la marque vend plus de 10 milliards de dollars par an."},
     },
-    "thumbnail": {"big": f"₹{per_100[0]}–{per_100[1]}", "color": "gold",
+    "thumbnail": {"big": f"{FARMERS / 1e6:.1f}M", "line": "Farmers own it", "color": "gold",
                   "photo": {"file": "assets/photos/amul_butter_pack.jpg", "focus": [0.4, 0.5]}},
     "scenes": [
         # hook: the surprising number on frame 0 + open loop ("why?")

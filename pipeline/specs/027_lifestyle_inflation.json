@@ -6,6 +6,7 @@
  "badge": "MONEY TRAP",
  "thumbnail": {
   "big": "+$0",
+  "line": "20 years later",
   "color": "red",
   "photo": {
    "file": "assets/photos/piggy_bank_coin_drop.jpg",

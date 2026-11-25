@@ -89,7 +89,7 @@ spec = {
                           f"ans avec 10 % de plus : environ ${gap_tot/1e3:,.0f}K d'écart en 10 ans."},
     },
     "thumbnail": {"photo": {"file": "assets/photos/business_meeting_coworkers.jpg", "focus": [0.45, 0.5]},
-                  "big": f"${gap_tot/1e3:,.0f}K?", "color": "gold"},
+                  "big": f"${gap_tot/1e3:,.0f}K?", "line": "The price of staying", "color": "gold"},
     "scenes": [
         {"say": "In this example, staying loyal costs about sixty-two thousand dollars over ten years. Here's the math, and the catch.",
          "visual": {"type": "equation", "title": "Stay or switch?",

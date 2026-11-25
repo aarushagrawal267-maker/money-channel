@@ -87,7 +87,8 @@ spec = {
         "fr": {"title": "Kodak a inventé l'appareil numérique, puis a perdu",
                "summary": "Kodak a construit un appareil photo numérique en 1975, mais la pellicule payait les factures. En 2012, Kodak s'est placé sous la protection du Chapter 11. Pourquoi les profits d'aujourd'hui peuvent freiner l'avenir."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/kodak_tower_rochester_tall.jpg", "focus": [0.5, 0.35]}},
+    "thumbnail": {"big": "No. 1", "line": "Then bankrupt anyway", "color": "gold",
+                  "photo": {"file": "assets/photos/kodak_tower_rochester_tall.jpg", "focus": [0.5, 0.35]}},
     "scenes": [
         # hook: the contradiction on frame 0 + open loop ("why did Kodak lose?")
         {"say": "In nineteen seventy-five, Kodak built a digital camera. Why did Kodak lose?",

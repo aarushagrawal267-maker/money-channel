@@ -5,8 +5,9 @@
  "speed": 1.05,
  "badge": "MONEY MATH",
  "thumbnail": {
-  "big": "$143K",
-  "color": "green",
+  "big": "$585K",
+  "line": "More than you borrowed",
+  "color": "red",
   "photo": {
    "file": "assets/photos/single_family_home_brick.jpg",
    "focus": [

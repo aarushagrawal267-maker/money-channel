@@ -71,7 +71,7 @@ spec = {
                           f"l'investissement étalé {LS_BEATS_CA} % du temps. Mais étaler a battu le cash {CA_BEATS_CASH} % du temps."},
     },
     "thumbnail": {"photo": {"file": "assets/photos/nyse_traders_gotfryd.jpg", "focus": [0.5, 0.5]},
-                  "big": f"{LS_BEATS_CA}%", "color": "gold"},
+                  "big": f"{LS_BEATS_CA}%", "line": "History picks a side", "color": "gold"},
     "scenes": [
         {"say": "You have twelve thousand dollars to invest. All at once, or a thousand a month? History has a favorite.",
          "visual": {"type": "pair", "title": "$12,000 to invest",

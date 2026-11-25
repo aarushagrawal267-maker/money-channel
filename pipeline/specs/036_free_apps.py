@@ -67,7 +67,8 @@ spec = {
                "summary": "Meta a tiré 63,1 milliards de dollars de la publicité de juillet à septembre 2026, environ 685 millions "
                           "par jour. Sur Instagram, l'annonceur paie ; vous payez avec votre attention."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/social_apps_phone_screen.jpg", "focus": [0.47, 0.45]}},
+    "thumbnail": {"big": f"${arpp:.2f}", "line": "Meta's price on you", "color": "gold",
+                  "photo": {"file": "assets/photos/social_apps_phone_screen.jpg", "focus": [0.47, 0.45]}},
     "scenes": [
         # hook: the biggest number on frame 0 + contradiction ("from free apps")
         {"say": "Six hundred and eighty-five million dollars a day, from free apps.",

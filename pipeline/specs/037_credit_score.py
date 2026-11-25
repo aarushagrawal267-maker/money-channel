@@ -74,7 +74,8 @@ spec = {
                "summary": "Selon FICO, le score se compose ainsi : historique de paiement 35 %, montants dus 30 %, "
                           "ancienneté 15 %, nouveaux crédits 10 % et diversité des crédits 10 %."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/credit_cards_fanned.jpg", "focus": [0.55, 0.5]}},
+    "thumbnail": {"big": f"{FACTORS['Payment history']}%", "line": "One habit. Guess which", "color": "gold",
+                  "photo": {"file": "assets/photos/credit_cards_fanned.jpg", "focus": [0.55, 0.5]}},
     "scenes": [
         # hook: the key number on frame 0 + open loop ("guess which")
         {"say": "One habit makes up thirty-five percent of your credit score. Guess which.",

@@ -48,7 +48,8 @@
   }
  },
  "thumbnail": {
-  "big": "$1B",
+  "big": "100%",
+  "line": "No outside investors",
   "color": "green",
   "photo": {
    "file": "assets/photos/spanx_store.jpg",

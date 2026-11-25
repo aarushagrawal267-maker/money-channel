@@ -45,6 +45,9 @@
   }
  },
  "thumbnail": {
+  "big": "$85.5K",
+  "line": "If invested at 7%",
+  "color": "green",
   "photo": {
    "file": "assets/photos/freelancer_laptop_sunset.jpg",
    "focus": [

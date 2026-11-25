@@ -80,7 +80,8 @@ spec = {
         "fr": {"title": "Infosys a démarré avec ₹10 000, son IPO a failli échouer",
                "summary": "En 1981, Sudha Murty a donné 10 000 roupies à son mari, Narayana Murthy, pour fonder Infosys avec six autres ingénieurs. Aujourd'hui, 20,2 milliards de dollars de revenus par an. L'histoire, revers compris."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/infosys_pyramid_bangalore.jpg", "focus": [0.55, 0.5]}},
+    "thumbnail": {"big": f"{MS_STAKE}%", "line": "Who bought it?", "color": "gold",
+                  "photo": {"file": "assets/photos/infosys_pyramid_bangalore.jpg", "focus": [0.55, 0.5]}},
     "scenes": [
         # hook: the starting number on frame 0 + the end result + open loop ("how?")
         {"say": "Ten thousand rupees, nineteen eighty-one. Now twenty billion dollars a year. How?",

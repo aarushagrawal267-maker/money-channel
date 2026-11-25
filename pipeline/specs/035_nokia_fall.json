@@ -45,8 +45,9 @@
   }
  },
  "thumbnail": {
-  "big": "40%",
-  "color": "blue",
+  "big": "$7.6B",
+  "line": "The buyer got burned",
+  "color": "red",
   "photo": {
    "file": "assets/photos/nokia_classic_phones.jpg",
    "focus": [

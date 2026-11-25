@@ -44,8 +44,9 @@
   }
  },
  "thumbnail": {
-  "big": "3.75%",
-  "color": "gold",
+  "big": "+$48.50",
+  "line": "A month, one hike",
+  "color": "red",
   "photo": {
    "file": "assets/photos/federal_reserve_building_blue_sky.jpg",
    "focus": [

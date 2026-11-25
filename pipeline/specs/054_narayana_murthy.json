@@ -48,6 +48,9 @@
   }
  },
  "thumbnail": {
+  "big": "13%",
+  "line": "Who bought it?",
+  "color": "gold",
   "photo": {
    "file": "assets/photos/infosys_pyramid_bangalore.jpg",
    "focus": [

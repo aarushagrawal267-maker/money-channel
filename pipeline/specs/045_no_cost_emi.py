@@ -90,7 +90,8 @@ spec = {
         "fr": {"title": "EMI sans frais : qui paie vraiment les intérêts ?",
                "summary": "En Inde, les mensualités \"sans frais\" portent des intérêts, payés par la marque via une remise. Mais vous payez 18 % de GST sur ces intérêts et souvent des frais de dossier."},
     },
-    "thumbnail": {"photo": {"file": "assets/photos/credit_card_tap_terminal_hand.jpg", "focus": [0.6, 0.5]}},
+    "thumbnail": {"big": f"₹{gst_on_interest:.0f}", "line": "Still on your bill", "color": "red",
+                  "photo": {"file": "assets/photos/credit_card_tap_terminal_hand.jpg", "focus": [0.6, 0.5]}},
     "scenes": [
         # hook: contradiction + the rate on frame 0 + open loop ("who actually pays it?")
         {"say": "No-cost E-M-I still charges interest. Who actually pays it?",

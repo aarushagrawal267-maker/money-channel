@@ -44,6 +44,9 @@
   }
  },
  "thumbnail": {
+  "big": "$124B",
+  "line": "In sales, every year",
+  "color": "gold",
   "photo": {
    "file": "assets/photos/dhirubhai_ambani_nail_art.jpg",
    "focus": [
