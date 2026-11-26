@@ -1,7 +1,5 @@
 # Already-scheduled videos being replaced by re-edited versions (real photos), same publish times.
 # tools/replacements.py marks each old copy superseded once the owner has deleted it in Studio.
-021_bnpl
-022_airline_loyalty
 039_dca_vs_lump
 L003_index_funds
 024_expense_ratio
