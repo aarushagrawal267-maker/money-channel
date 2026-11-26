@@ -51,8 +51,10 @@ def fit_tags(tags):
     return out
 
 
-def photo_credits(spec):
-    """One credit line per real photo used in the scenes or thumbnail (from assets/photos/<name>.json)."""
+def photo_credits(spec, level=0):
+    """One credit line per real photo used in the scenes or thumbnail (from assets/photos/<name>.json).
+    level 0 = full credit; 1 = without the license link (license still named); 2 = also without the
+    photo title. build_body uses the most complete level that fits YouTube's 5,000-byte limit."""
     root = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
     files = [sc["visual"]["file"] for sc in spec.get("scenes", []) if sc["visual"].get("type") == "photo"]
     tp = (spec.get("thumbnail") or {}).get("photo")
@@ -67,8 +69,9 @@ def photo_credits(spec):
             c = json.load(open(os.path.join(root, os.path.splitext(f)[0] + ".json")))
         except FileNotFoundError:
             sys.exit(f"Photo {f} has no credit file; fetch it with tools/fetch_photo.py")
-        lic = c["license"] + (f" ({c['license_url']})" if c.get("license_url") else "")
-        lines.append(f"- {c.get('title') or 'Photo'} by {c['creator']}, {lic}" + (f", {c['source_url']}" if c.get("source_url") else ""))
+        lic = c["license"] + (f" ({c['license_url']})" if c.get("license_url") and level == 0 else "")
+        name = f"{c.get('title') or 'Photo'} by {c['creator']}" if level < 2 else c["creator"]
+        lines.append(f"- {name}, {lic}" + (f", {c['source_url']}" if c.get("source_url") else ""))
     return lines
 
 
@@ -87,14 +90,19 @@ def build_body(spec, chapters=None, privacy="private", publish_at=None):
     if chapters:   # chapters right after the opening summary, where viewers (and search) see them
         first, _, rest = body.partition("\n\n")
         desc = first + "\n\nChapters\n" + chapters.strip() + ("\n\n" + rest if rest else "")
-    credits = photo_credits(spec)
-    if credits:
-        desc += "\n\nPhotos (used under their licenses):\n" + "\n".join(credits)
-    desc += "\n\n" + AI_LINE + "\n\n" + SUBSCRIBE_LINE
-    if hashtags:
-        desc += "\n\n" + " ".join(hashtags)
-    desc += "\n"
-    desc = desc.replace("<", "").replace(">", "")
+    main = desc
+    for level in range(3):
+        desc = main
+        credits = photo_credits(spec, level)
+        if credits:
+            desc += "\n\nPhotos (used under their licenses):\n" + "\n".join(credits)
+        desc += "\n\n" + AI_LINE + "\n\n" + SUBSCRIBE_LINE
+        if hashtags:
+            desc += "\n\n" + " ".join(hashtags)
+        desc += "\n"
+        desc = desc.replace("<", "").replace(">", "")
+        if len(desc.encode("utf-8")) <= MAX_DESC:
+            break
     if len(desc.encode("utf-8")) > MAX_DESC:
         sys.exit(f"Description too long ({len(desc.encode('utf-8'))} bytes, max {MAX_DESC}).")
     status = {

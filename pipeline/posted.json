@@ -393,5 +393,60 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "040_gold_fear",
+    "video_id": "G9_4jHFhQpc",
+    "url": "https://youtu.be/G9_4jHFhQpc",
+    "title": "Why Gold Rises When the World Is Scared (It Pays $0)",
+    "uploaded_at": "2026-11-26T12:18:23Z",
+    "publish_at": "2026-12-06T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "041_save_for_million",
+    "video_id": "jI0lI9CwzIk",
+    "url": "https://youtu.be/jI0lI9CwzIk",
+    "title": "How Much to Save a Month for $1 Million by 50, 60, 65",
+    "uploaded_at": "2026-11-26T12:18:59Z",
+    "publish_at": "2026-12-05T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "042_kodak",
+    "video_id": "3S_2iZlMr_Q",
+    "url": "https://youtu.be/3S_2iZlMr_Q",
+    "title": "Kodak Invented the Digital Camera. Then It Lost to It",
+    "uploaded_at": "2026-11-26T12:19:36Z",
+    "publish_at": "2026-12-07T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "043_side_income",
+    "video_id": "QYlcCkboqyE",
+    "url": "https://youtu.be/QYlcCkboqyE",
+    "title": "$500/Month Side Income: What It's Worth in 10 Years",
+    "uploaded_at": "2026-11-26T12:20:13Z",
+    "publish_at": "2026-12-07T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "044_apple_profit",
+    "video_id": "JuzKj-6kqpg",
+    "url": "https://youtu.be/JuzKj-6kqpg",
+    "title": "How Apple Makes $4,200 Profit Every Second",
+    "uploaded_at": "2026-11-26T12:20:50Z",
+    "publish_at": "2026-12-08T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
   }
 ]
