@@ -448,5 +448,115 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "L014_apple_1997",
+    "video_id": "u-04R2iFCTQ",
+    "url": "https://youtu.be/u-04R2iFCTQ",
+    "title": "Apple in 1997: How a $1 Billion Loss Became a Comeback",
+    "uploaded_at": "2026-11-26T15:38:23Z",
+    "publish_at": "2026-12-07T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "045_no_cost_emi",
+    "video_id": "-Cw0Mh4faDk",
+    "url": "https://youtu.be/-Cw0Mh4faDk",
+    "title": "No-Cost EMI Explained: Who Really Pays the Interest?",
+    "uploaded_at": "2026-11-26T15:39:15Z",
+    "publish_at": "2026-12-08T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "046_bonds_friend",
+    "video_id": "CoebnD1zHUc",
+    "url": "https://youtu.be/CoebnD1zHUc",
+    "title": "Bonds Explained: Why Prices Fall When Rates Rise",
+    "uploaded_at": "2026-11-26T15:39:51Z",
+    "publish_at": "2026-12-09T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "047_sara_blakely",
+    "video_id": "ufcbbTfz1Og",
+    "url": "https://youtu.be/ufcbbTfz1Og",
+    "title": "Sara Blakely: $5,000 in Savings to Billion-Dollar Spanx",
+    "uploaded_at": "2026-11-26T15:40:13Z",
+    "publish_at": "2026-12-09T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "L006_inflation",
+    "video_id": "z9o0gOkprIk",
+    "url": "https://youtu.be/z9o0gOkprIk",
+    "title": "Inflation Explained: Why Your Money Quietly Shrinks",
+    "uploaded_at": "2026-11-26T15:40:40Z",
+    "publish_at": "2026-12-09T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "048_mortgage_prepay",
+    "video_id": "dyT2lyw--KE",
+    "url": "https://youtu.be/dyT2lyw--KE",
+    "title": "One Extra Mortgage Payment a Year: $143K Saved?",
+    "uploaded_at": "2026-11-26T15:41:32Z",
+    "publish_at": "2026-12-10T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "049_amul",
+    "video_id": "66XraHiHFEw",
+    "url": "https://youtu.be/66XraHiHFEw",
+    "title": "Amul Business Model: Do Farmers Get ₹80 of ₹100?",
+    "uploaded_at": "2026-11-26T15:42:12Z",
+    "publish_at": "2026-12-10T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "050_dividends_buybacks",
+    "video_id": "7BMyVYT6SEs",
+    "url": "https://youtu.be/7BMyVYT6SEs",
+    "title": "Dividends vs Buybacks: Which Pays You More?",
+    "uploaded_at": "2026-11-26T15:42:47Z",
+    "publish_at": "2026-12-11T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "051_insurance_types",
+    "video_id": "T3PmyVu3viI",
+    "url": "https://youtu.be/T3PmyVu3viI",
+    "title": "Term vs Whole Life Insurance: The $1M Question",
+    "uploaded_at": "2026-11-26T15:43:40Z",
+    "publish_at": "2026-12-11T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "L009_rent_vs_buy",
+    "video_id": "Q7Nx7Amfl_A",
+    "url": "https://youtu.be/Q7Nx7Amfl_A",
+    "title": "Rent vs Buy a Home: The Full Math Nobody Shows You",
+    "uploaded_at": "2026-11-26T15:44:20Z",
+    "publish_at": "2026-12-11T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
   }
 ]
