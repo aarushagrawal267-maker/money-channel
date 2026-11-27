@@ -1,0 +1,53 @@
+{
+  "015_rule_of_72": {
+    "title": "Rule of 72: How Fast Does Your Money Double?",
+    "lead": "The Rule of 72 tells you how fast your money doubles: divide 72 by your yearly return. At 4% that's 18 years, at 7% about 10, at 10% about 7.2, and the exact answers (17.7, 10.2 and 7.3 years) are very close."
+  },
+  "016_buying_a_share": {
+    "title": "What Happens When You Buy a Stock? (Not What You Think)",
+    "lead": "What happens when you buy a stock? Your money almost never goes to the company. Your broker routes the order to an exchange or a market maker, it's matched with a seller, and one business day later (T+1) the cash and shares swap hands."
+  },
+  "017_upi_free": {
+    "title": "Is UPI Free? Who Pays for 25 Billion Payments a Month",
+    "lead": "Is UPI free? For customers, yes: in October 2026 Indians made about 25.5 billion UPI payments and paid nothing. So who pays? Merchants pay zero by law, the government pays banks an incentive, and apps like PhonePe and Paytm earn from loans and insurance instead."
+  },
+  "018_start_early_us": {
+    "title": "Start Investing at 25 vs 35: $792K vs $368K",
+    "lead": "Start investing at 25 vs 35: two friends invest the same $300 a month at an assumed 7% a year. At 65, one has about $792K and the other about $368K, even though the gap in money put in is only $36,000."
+  },
+  "019_real_hourly_wage": {
+    "title": "Real Hourly Wage: How a $60K Salary Becomes $18/Hour",
+    "lead": "How to calculate your real hourly wage: a $60,000 salary is $28.85 an hour on paper, but after taxes, commuting, unpaid extra time and work costs it's about $18.15 an hour in this example, over a third less."
+  },
+  "023_inflation_100": {
+    "title": "What Will $100 Be Worth in 30 Years? (3% Inflation)",
+    "lead": "What will $100 be worth in 30 years? At 3% inflation a year, $100 in cash buys about $74 of today's goods after 10 years, $55 after 20 and $41 after 30. Just to keep up, it has to grow to $134, $181 and $243."
+  },
+  "020_index_funds_vs_managers": {
+    "title": "Do Fund Managers Beat the S&P 500? 93% Lost Over 20 Years",
+    "lead": "Do fund managers beat the S&P 500? Mostly not. S&P's SPIVA scorecard shows 93% of US large-cap funds trailed it over the 20 years to June 30, 2026 (83% over 10 years, 90% over 15). A big reason is fees."
+  },
+  "021_bnpl": {
+    "title": "How Buy Now, Pay Later Makes Money (It's Not Interest)",
+    "lead": "How does buy now, pay later make money? Mostly from the store: a CFPB study found big BNPL lenders charged partner merchants about 3% per sale (2021). Some also charge late fees, and the quiet risk is stacking several plans at once.",
+    "no_photo_credits": true
+  },
+  "022_airline_loyalty": {
+    "title": "How Airlines Make Money From Credit Cards: $6.2B vs $111M",
+    "lead": "How do airlines make money from credit cards? They sell miles to banks. In 2025, American Airlines' card and other partners paid it $6.2 billion in cash while it made $111 million in net profit, and American Express paid Delta $8.2 billion.",
+    "no_photo_credits": true
+  },
+  "L001_costco": {
+    "title": "How Costco Makes Money (It's Not the Groceries)",
+    "lead": "How does Costco make money? Not mainly from products, which earned it only about 2 cents of operating profit per dollar in fiscal 2026. Membership fees of $5.9 billion, under 2% of revenue, brought in about half of its operating profit."
+  },
+  "L002_compounding": {
+    "title": "Compound Interest Explained: Same $96K, 2.4x the Money",
+    "lead": "Compound interest explained with real numbers: two people each invest $96,000, and one ends with about $494,000 while the other has about $203,000. We break down the four levers (amount, rate, time, leaks), the Rule of 72 and the real cost of a 1% fee."
+  },
+  "L003_index_funds": {
+    "title": "Index Funds Explained: Why 9 in 10 Fund Managers Lose",
+    "lead": "Index funds explained: what an index fund is, and why more than 9 in 10 actively managed large-cap US stock funds trailed the S&P 500 over the 20 years to June 2026. Plus the fee math, Buffett's 10-year bet and the real weaknesses of index funds.",
+    "no_photo_credits": true
+  }
+}

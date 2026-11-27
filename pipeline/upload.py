@@ -75,7 +75,30 @@ def photo_credits(spec, level=0):
     return lines
 
 
+SEO_OVERRIDES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "seo_overrides.json")
+
+
+def apply_seo_override(spec):
+    """Search-tuned title and opening paragraph for videos already on the channel (pipeline/seo_overrides.json,
+    written from docs/reviews/*_live_titles.md). Replaces only the first paragraph of the description."""
+    if not os.path.exists(SEO_OVERRIDES):
+        return spec
+    o = json.load(open(SEO_OVERRIDES)).get(spec["id"])
+    if not o:
+        return spec
+    spec = dict(spec)
+    spec["title"] = o.get("title") or spec["title"]
+    if o.get("no_photo_credits"):   # the live copy predates the photo scenes, so credit no photos
+        spec["scenes"] = [sc for sc in spec.get("scenes", []) if sc["visual"].get("type") != "photo"]
+        spec["thumbnail"] = {k: v for k, v in (spec.get("thumbnail") or {}).items() if k != "photo"}
+    if o.get("lead"):
+        _, sep, rest = spec.get("description", "").partition("\n\n")
+        spec["description"] = o["lead"] + (sep + rest if sep else "")
+    return spec
+
+
 def build_body(spec, chapters=None, privacy="private", publish_at=None):
+    spec = apply_seo_override(spec)
     title = spec["title"].replace("<", "").replace(">", "")
     if len(title) > MAX_TITLE:
         sys.exit(f"Title is {len(title)} chars (max {MAX_TITLE}): {title}")
