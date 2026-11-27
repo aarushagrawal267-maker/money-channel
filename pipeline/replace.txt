@@ -1,6 +1,5 @@
 # Already-scheduled videos being replaced by re-edited versions (real photos), same publish times.
 # tools/replacements.py marks each old copy superseded once the owner has deleted it in Studio.
-024_expense_ratio
 025_emergency_fund
 028_market_cap
 027_lifestyle_inflation

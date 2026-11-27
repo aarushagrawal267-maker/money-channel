@@ -558,5 +558,38 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "052_wework",
+    "video_id": "uuz_QtRp-pQ",
+    "url": "https://youtu.be/uuz_QtRp-pQ",
+    "title": "WeWork: From a $47B Valuation to Bankruptcy",
+    "uploaded_at": "2026-11-27T16:18:19Z",
+    "publish_at": "2026-12-12T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "053_crash_and_sip",
+    "video_id": "mzSTyYyLiWI",
+    "url": "https://youtu.be/mzSTyYyLiWI",
+    "title": "Stock Market Crash: Why Monthly Investors Get a Sale",
+    "uploaded_at": "2026-11-27T16:18:56Z",
+    "publish_at": "2026-12-12T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "054_narayana_murthy",
+    "video_id": "4PtlBQphYXo",
+    "url": "https://youtu.be/4PtlBQphYXo",
+    "title": "Infosys Started With ₹10,000. Its IPO Nearly Flopped",
+    "uploaded_at": "2026-11-27T16:19:18Z",
+    "publish_at": "2026-12-13T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
   }
 ]

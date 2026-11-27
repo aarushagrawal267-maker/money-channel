@@ -100,6 +100,13 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
 copy `superseded` once the owner has deleted it in Studio, so the new one uploads at the same time (never two copies).
 `python3 tools/replacements.py --list` prints what the owner still has to delete.
 
+**YouTube upload limit (observed Nov 2026).** Not a simple "10 per rolling 24 h": 24 Nov 08:06Z 10 ok; 25 Nov 14:45Z 5 ok;
+26 Nov 12:18Z 5 ok then limit; 26 Nov 15:38Z 10 ok then limit (15 within 24 h); 27 Nov 12:17Z and 12:37Z 0;
+27 Nov 16:18Z 3 ok (nothing else pending). Plan on ~10/day, and when a slot is close, schedule an extra
+run a few hours after the previous batch's 24 h mark rather than relying on the 17:47 IST daily check.
+A replacement whose slot comes before the next run that can upload it is removed from `pipeline/replace.txt`
+(the old copy publishes; tell the owner not to delete it).
+
 ## C. News Short (Saturday)
 1. Find this week's biggest global money/business story (economy, markets, a big company move) that a
    general audience cares about. Use 2+ reputable sources, check dates, and avoid politics framed as opinion.
