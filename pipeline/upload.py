@@ -34,9 +34,9 @@ def youtube_client():
     creds = Credentials(
         None, refresh_token=os.environ["YT_REFRESH_TOKEN"].strip(),
         client_id=os.environ["YT_CLIENT_ID"].strip(), client_secret=os.environ["YT_CLIENT_SECRET"].strip(),
-        token_uri="https://oauth2.googleapis.com/token",
-        scopes=["https://www.googleapis.com/auth/youtube.upload",
-                "https://www.googleapis.com/auth/youtube.readonly"])
+        token_uri="https://oauth2.googleapis.com/token")
+    # No `scopes=` here: passing a list makes Google narrow the access token to just those scopes, which
+    # hid the manage/analytics permissions the owner granted. Without it the token gets every granted scope.
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
