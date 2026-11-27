@@ -8,7 +8,7 @@ Safe to run repeatedly: playlists are found by title (or pipeline/playlists.json
 in a playlist are skipped. Only the snippet/localizations parts are updated, never status, so a
 scheduled video keeps its publish time.
 """
-import json, os, sys, urllib.request
+import json, os, sys, time, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "pipeline"))
@@ -101,13 +101,26 @@ def cmd_playlists(yt):
         saved[pl] = pid
         items, req = set(), yt.playlistItems().list(part="contentDetails", playlistId=pid, maxResults=50)
         while req:
-            r = req.execute()
+            try:
+                r = req.execute()
+            except Exception as e:  # noqa: BLE001  a just-created playlist can 404 for a short while
+                if "playlistNotFound" not in str(e):
+                    raise
+                break
             items.update(it["contentDetails"]["videoId"] for it in r["items"])
             req = yt.playlistItems().list_next(req, r)
+        json.dump(saved, open(PL_FILE, "w"), indent=2)   # save new playlist ids at once (no duplicates on a crash)
         if video in items:
             continue
-        yt.playlistItems().insert(part="snippet", body={"snippet": {
-            "playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": video}}}).execute()
+        for attempt in range(5):   # brand-new playlists answer 409 SERVICE_UNAVAILABLE for a few seconds
+            try:
+                yt.playlistItems().insert(part="snippet", body={"snippet": {
+                    "playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": video}}}).execute()
+                break
+            except Exception as e:  # noqa: BLE001
+                if attempt == 4 or not any(k in str(e) for k in ("409", "SERVICE_UNAVAILABLE", "500", "503")):
+                    raise
+                time.sleep(5 * (attempt + 1))
         added += 1
         print(f"added {vid_id} to {title}")
     json.dump(saved, open(PL_FILE, "w"), indent=2)
