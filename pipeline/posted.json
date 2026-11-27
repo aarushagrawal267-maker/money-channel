@@ -227,7 +227,10 @@
     "publish_at": "2026-11-28T17:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "028_market_cap",
@@ -238,7 +241,10 @@
     "publish_at": "2026-11-29T01:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "027_lifestyle_inflation",
@@ -249,7 +255,10 @@
     "publish_at": "2026-11-30T01:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "029_netflix_blockbuster",
@@ -260,7 +269,10 @@
     "publish_at": "2026-11-30T17:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "L010_netflix_blockbuster",
@@ -271,7 +283,10 @@
     "publish_at": "2026-11-30T18:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "030_zerodha",
@@ -282,7 +297,10 @@
     "publish_at": "2026-12-01T01:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "031_car_loan_cost",
@@ -293,7 +311,10 @@
     "publish_at": "2026-12-01T17:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "032_buffett_after_50",
@@ -304,7 +325,10 @@
     "publish_at": "2026-12-02T01:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "033_raise_vs_switch",
@@ -315,7 +339,10 @@
     "publish_at": "2026-12-02T17:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "L004_credit_cards_business",
@@ -326,7 +353,10 @@
     "publish_at": "2026-12-02T18:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "034_rates_and_you",
@@ -337,7 +367,10 @@
     "publish_at": "2026-12-03T01:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
-    "processing": "succeeded"
+    "processing": "succeeded",
+    "superseded": true,
+    "deleted": true,
+    "superseded_reason": "replaced by re-edited version (photos)"
   },
   {
     "id": "035_nokia_fall",
@@ -588,6 +621,83 @@
     "title": "Infosys Started With ₹10,000. Its IPO Nearly Flopped",
     "uploaded_at": "2026-11-27T16:19:18Z",
     "publish_at": "2026-12-13T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "025_emergency_fund",
+    "video_id": "sTDBY_ZdHq4",
+    "url": "https://youtu.be/sTDBY_ZdHq4",
+    "title": "Emergency Fund: How Much You Need and Where to Keep It",
+    "uploaded_at": "2026-11-27T19:16:04Z",
+    "publish_at": "2026-11-28T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "028_market_cap",
+    "video_id": "bGDNOHNFrMc",
+    "url": "https://youtu.be/bGDNOHNFrMc",
+    "title": "Market Cap vs Revenue: Walmart Sells More, Worth Less",
+    "uploaded_at": "2026-11-27T19:16:27Z",
+    "publish_at": "2026-11-29T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "027_lifestyle_inflation",
+    "video_id": "os3Co-Y9c5s",
+    "url": "https://youtu.be/os3Co-Y9c5s",
+    "title": "Lifestyle Inflation: Why Your Raise Leaves You No Richer",
+    "uploaded_at": "2026-11-27T19:17:06Z",
+    "publish_at": "2026-11-30T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "029_netflix_blockbuster",
+    "video_id": "bzJXbe5DUL8",
+    "url": "https://youtu.be/bzJXbe5DUL8",
+    "title": "Why Blockbuster Didn't Buy Netflix for $50 Million",
+    "uploaded_at": "2026-11-27T19:17:59Z",
+    "publish_at": "2026-11-30T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "L010_netflix_blockbuster",
+    "video_id": "RtBKAKYA4ls",
+    "url": "https://youtu.be/RtBKAKYA4ls",
+    "title": "Netflix vs Blockbuster: Why Blockbuster Really Failed",
+    "uploaded_at": "2026-11-27T19:18:40Z",
+    "publish_at": "2026-11-30T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "030_zerodha",
+    "video_id": "IjIOHQGr89I",
+    "url": "https://youtu.be/IjIOHQGr89I",
+    "title": "How Zerodha Makes Money With ₹0 Brokerage",
+    "uploaded_at": "2026-11-27T19:19:46Z",
+    "publish_at": "2026-12-01T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "031_car_loan_cost",
+    "video_id": "-KdZm6lO7_k",
+    "url": "https://youtu.be/-KdZm6lO7_k",
+    "title": "Car Loan Math: 72 vs 48 Months on a $35,000 Car",
+    "uploaded_at": "2026-11-27T19:20:36Z",
+    "publish_at": "2026-12-01T17:00:00.000Z",
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
