@@ -18,9 +18,9 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
    `docs/analytics/<date>.md`: what worked (topics, title styles, lengths), what didn't, what you'll change.
    Act on it: move better-performing topic types up in `pipeline/queue.json`; adjust title style.
    Only change upload times if data covers 3+ weeks; record the change in `CLAUDE.md`.
-2. **Slots.** The first Monday–Sunday week whose slots are not yet in `pipeline/schedule.txt` (stay about one week ahead): Shorts at 06:30 and 22:30 IST; long videos Mon/Wed/Fri 23:30 IST.
+2. **Slots.** The first Monday–Sunday week whose slots are not yet in `pipeline/schedule.txt` (stay about one week ahead): Shorts at 06:30, **18:30** and 22:30 IST (3 a day from week 4, 14 Dec 2026, owner wants faster growth; 18:30 IST = 8 AM ET / 1 PM UK); long videos Mon/Wed/Fri 23:30 IST. That's 20 Shorts + 3 long = 23 uploads a week, under YouTube's ~10/day upload limit.
    Leave **Sunday 22:30 IST** for the news Short (section C). Also fill any empty slot in the next 10 days.
-3. **Pick topics** from `pipeline/queue.json` (status `idea`), keeping: neighbouring Shorts on different
+3. **Pick topics** from `pipeline/queue.json` (status `idea`; if fewer than 25 Short ideas or 6 long ideas remain, first add new ones with a Trend Researcher agent: what people search about money right now, favouring formats that held viewers in Analytics), keeping: neighbouring Shorts on different
    pillars; ~1 in 5 India stories (₹); ~3 case-study Shorts and **1 case-study long video** per week
    (pillar 7); don't repeat a topic covered in the last 4 weeks (check `posted.json` titles).
 4. **Write specs** in `pipeline/specs/` (next free number; long ids `L0xx_`). Copy the structure of the
@@ -70,6 +70,9 @@ Goal: next week's 13 Shorts + 3 long videos written, checked, rendered, uploaded
      - **Long chapters:** end each chapter's last scene with a one-line open loop into the next chapter
        ("So how do airlines keep going? Follow the miles."). A visual change at least every ~8 s.
      - Retention never beats accuracy: every number in a hook or tease is asserted or sourced; keep hedges.
+     - **From Analytics (27 Nov):** the Short people watched to the end (Rule of 72, 99%) asked ONE clear question in
+       the title and answered it with one simple rule; Shorts that opened on a scenario (inflation, minimum payment)
+       lost 60%+ of viewers in the first 15 s. Title = the question people type; first line = the answer.
    - **Real photos + thumbnails (owner order, 25 Nov 2026).** Every video mixes real photos with the animated charts.
      - Find photos with `python3 tools/fetch_photo.py search "QUERY" --out <scratch dir>` (look at `sheet.jpg`),
        then `python3 tools/fetch_photo.py get <openverse_id> <name>` -> `assets/photos/<name>.jpg` + `.json` credit.
