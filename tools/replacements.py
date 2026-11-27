@@ -22,7 +22,10 @@ def main():
         return
     ids = [l.strip() for l in open(REPLACE) if l.strip() and not l.startswith("#")]
     posted = json.load(open(POSTED))
-    active = {e["id"]: e for e in posted if e["id"] in ids and not e.get("superseded") and e.get("publish_at")}
+    # An id whose old copy was already retired for this swap is done: its live entry is the NEW version.
+    done = {e["id"] for e in posted if e.get("superseded_reason", "").startswith("replaced by re-edited")}
+    active = {e["id"]: e for e in posted
+              if e["id"] in ids and e["id"] not in done and not e.get("superseded") and e.get("publish_at")}
     if "--list" in sys.argv:
         for i in ids:
             e = active.get(i)
