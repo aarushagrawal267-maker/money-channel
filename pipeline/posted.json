@@ -701,5 +701,60 @@
     "privacy": "private",
     "thumbnail": true,
     "processing": "succeeded"
+  },
+  {
+    "id": "055_news_holiday_shopping",
+    "video_id": "VUamyTjdFb0",
+    "url": "https://youtu.be/VUamyTjdFb0",
+    "title": "Thanksgiving Shoppers Spent a Record $7.1B Online. Who Wins?",
+    "uploaded_at": "2026-11-28T16:38:09Z",
+    "publish_at": "2026-11-29T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "032_buffett_after_50",
+    "video_id": "MOWLf8M_L5o",
+    "url": "https://youtu.be/MOWLf8M_L5o",
+    "title": "Warren Buffett: 99% of His Fortune Came After 52",
+    "uploaded_at": "2026-11-28T16:38:47Z",
+    "publish_at": "2026-12-02T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "033_raise_vs_switch",
+    "video_id": "AsKlnlZFxsc",
+    "url": "https://youtu.be/AsKlnlZFxsc",
+    "title": "Ask for a Raise or Switch Jobs? The 10-Year Math",
+    "uploaded_at": "2026-11-28T16:39:24Z",
+    "publish_at": "2026-12-02T17:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "L004_credit_cards_business",
+    "video_id": "hUK0Q5fhEeo",
+    "url": "https://youtu.be/hUK0Q5fhEeo",
+    "title": "How Credit Card Companies Really Make Money",
+    "uploaded_at": "2026-11-28T16:39:48Z",
+    "publish_at": "2026-12-02T18:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
+  },
+  {
+    "id": "034_rates_and_you",
+    "video_id": "ioZxHunpT30",
+    "url": "https://youtu.be/ioZxHunpT30",
+    "title": "Fed Rate Hike Explained: What It Does to Your Loan",
+    "uploaded_at": "2026-11-28T16:40:39Z",
+    "publish_at": "2026-12-03T01:00:00.000Z",
+    "privacy": "private",
+    "thumbnail": true,
+    "processing": "succeeded"
   }
 ]
