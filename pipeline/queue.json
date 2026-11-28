@@ -520,6 +520,14 @@
       "spec": null,
       "status": "idea",
       "week": null
+    },
+    {
+      "spec": "055_news_holiday_shopping",
+      "topic": "Record Thanksgiving online spending and the Cyber Monday pitch",
+      "pillar": "news",
+      "currency": "usd",
+      "status": "rendered",
+      "week": 2
     }
   ],
   "long": [
